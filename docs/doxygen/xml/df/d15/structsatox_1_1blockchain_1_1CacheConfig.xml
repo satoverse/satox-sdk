@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/d15/structsatox_1_1blockchain_1_1CacheConfig" kind="struct" language="C++" prot="public">
+    <compoundname>satox::blockchain::CacheConfig</compoundname>
+    <includes refid="dc/d77/core_2include_2satox_2blockchain_2blockchain__manager_8hpp" local="no">blockchain_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1aed841a54ee4929661cb1bd8144360fa9" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::blockchain::CacheConfig::max_block_cache_size</definition>
+        <argsstring></argsstring>
+        <name>max_block_cache_size</name>
+        <qualifiedname>satox::blockchain::CacheConfig::max_block_cache_size</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="106" column="12" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1acb6d0f14ba9783282e6160ecdbdeda4d" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::blockchain::CacheConfig::max_tx_cache_size</definition>
+        <argsstring></argsstring>
+        <name>max_tx_cache_size</name>
+        <qualifiedname>satox::blockchain::CacheConfig::max_tx_cache_size</qualifiedname>
+        <initializer>= 10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="107" column="12" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1abd8502a291d0df46445ed6a90b2150fb" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::blockchain::CacheConfig::max_balance_cache_size</definition>
+        <argsstring></argsstring>
+        <name>max_balance_cache_size</name>
+        <qualifiedname>satox::blockchain::CacheConfig::max_balance_cache_size</qualifiedname>
+        <initializer>= 100000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="108" column="12" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1af04efd5da95620f996a19951c1c02ff0" prot="public" static="no" mutable="no">
+        <type>std::chrono::seconds</type>
+        <definition>std::chrono::seconds satox::blockchain::CacheConfig::block_cache_ttl</definition>
+        <argsstring></argsstring>
+        <name>block_cache_ttl</name>
+        <qualifiedname>satox::blockchain::CacheConfig::block_cache_ttl</qualifiedname>
+        <initializer>{300}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="109" column="26" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1a85589734f235f05cf0adbb75f80f8048" prot="public" static="no" mutable="no">
+        <type>std::chrono::seconds</type>
+        <definition>std::chrono::seconds satox::blockchain::CacheConfig::tx_cache_ttl</definition>
+        <argsstring></argsstring>
+        <name>tx_cache_ttl</name>
+        <qualifiedname>satox::blockchain::CacheConfig::tx_cache_ttl</qualifiedname>
+        <initializer>{60}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="110" column="26" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1a775ef40b41e0b68ee17ae272703c57fa" prot="public" static="no" mutable="no">
+        <type>std::chrono::seconds</type>
+        <definition>std::chrono::seconds satox::blockchain::CacheConfig::balance_cache_ttl</definition>
+        <argsstring></argsstring>
+        <name>balance_cache_ttl</name>
+        <qualifiedname>satox::blockchain::CacheConfig::balance_cache_ttl</qualifiedname>
+        <initializer>{30}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="111" column="26" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="111" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="105" column="1" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="105" bodyend="112"/>
+    <listofallmembers>
+      <member refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1a775ef40b41e0b68ee17ae272703c57fa" prot="public" virt="non-virtual"><scope>satox::blockchain::CacheConfig</scope><name>balance_cache_ttl</name></member>
+      <member refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1af04efd5da95620f996a19951c1c02ff0" prot="public" virt="non-virtual"><scope>satox::blockchain::CacheConfig</scope><name>block_cache_ttl</name></member>
+      <member refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1abd8502a291d0df46445ed6a90b2150fb" prot="public" virt="non-virtual"><scope>satox::blockchain::CacheConfig</scope><name>max_balance_cache_size</name></member>
+      <member refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1aed841a54ee4929661cb1bd8144360fa9" prot="public" virt="non-virtual"><scope>satox::blockchain::CacheConfig</scope><name>max_block_cache_size</name></member>
+      <member refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1acb6d0f14ba9783282e6160ecdbdeda4d" prot="public" virt="non-virtual"><scope>satox::blockchain::CacheConfig</scope><name>max_tx_cache_size</name></member>
+      <member refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig_1a85589734f235f05cf0adbb75f80f8048" prot="public" virt="non-virtual"><scope>satox::blockchain::CacheConfig</scope><name>tx_cache_ttl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

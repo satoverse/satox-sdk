@@ -1,0 +1,300 @@
+=== Satox SDK Test Report ===
+Generated: 2025-06-15T21:51:03.493585
+Total Duration: 6.48s
+Total Tests: 9
+Passed: 3
+Failed: 6
+Errors: 0
+
+Detailed Results:
+
+bindings/lua/tests tests (Lua)
+Status: FAIL
+Duration: 0.01s
+Component: Lua Bindings
+Error: lua: test_runner.lua:4: module 'satox' not found:
+	no field package.preload['satox']
+	no file './satox.lua'
+	no file '/usr/local/share/lua/5.1/satox.lua'
+	no file '/usr/local/share/lua/5.1/satox/init.lua'
+	no file '/usr/local/lib/lua/5.1/satox.lua'
+	no file '/usr/local/lib/lua/5.1/satox/init.lua'
+	no file '/usr/share/lua/5.1/satox.lua'
+	no file '/usr/share/lua/5.1/satox/init.lua'
+	no file './satox.so'
+	no file '/usr/local/lib/lua/5.1/satox.so'
+	no file '/usr/lib/x86_64-linux-gnu/lua/5.1/satox.so'
+	no file '/usr/lib/lua/5.1/satox.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+	[C]: in function 'require'
+	test_runner.lua:4: in main chunk
+	[C]: ?
+
+
+satox-core/tests tests (C++)
+Status: PASS
+Duration: 0.02s
+Component: satox-core
+
+satox-nft/tests tests (C++)
+Status: PASS
+Duration: 0.02s
+Component: satox-nft
+
+satox-ipfs/tests tests (C++)
+Status: PASS
+Duration: 0.02s
+Component: satox-ipfs
+
+bindings/go/tests tests (Go)
+Status: FAIL
+Duration: 0.12s
+Component: Go Bindings
+Error: # github.com/satox-sdk/go/tests
+integration_test.go:6:2: no required module provides package github.com/satox/satox-sdk/bindings/go/asset; to add it:
+	go get github.com/satox/satox-sdk/bindings/go/asset
+
+
+bindings/java/src/test tests (Java)
+Status: FAIL
+Duration: 1.64s
+Component: Java Bindings
+
+satox-java/src/test tests (Java)
+Status: FAIL
+Duration: 1.33s
+Component: Java Bindings
+
+bindings/javascript/tests tests (JavaScript)
+Status: FAIL
+Duration: 3.85s
+Component: JS Bindings
+Error: FAIL ./satox.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/pform/pform-building-stuff/satox-projects/SDKs/satox-sdk/bindings/javascript/src/quantum/post_quantum_algorithms.js:19
+    var _require2 = createRequire(import.meta.url);
+                                         ^^^^
+
+    SyntaxError: Cannot use 'import.meta' outside a module
+
+      1 | const { SatoxManager } = require('./core');
+      2 | const { TransactionManager } = require('./transaction');
+    > 3 | const { PostQuantumAlgorithms } = require('./quantum/post_quantum_algorithms');
+        |                                   ^
+      4 |
+      5 | module.exports = {
+      6 |     SatoxManager,
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1505:14)
+      at Object.require (../src/satox.js:3:35)
+      at Object.require (satox.test.js:1:26)
+
+FAIL ./core.test.js
+  ● SatoxManager › should initialize successfully
+
+    TypeError: manager.initialize is not a function
+
+      10 |
+      11 |     it('should initialize successfully', () => {
+    > 12 |         manager.initialize();
+         |                 ^
+      13 |         expect(manager.isInitialized()).to.be.true;
+      14 |     });
+      15 |
+
+      at Object.initialize (core.test.js:12:17)
+
+  ● SatoxManager › should register components
+
+    TypeError: manager.initialize is not a function
+
+      15 |
+      16 |     it('should register components', () => {
+    > 17 |         manager.initialize();
+         |                 ^
+      18 |         
+      19 |         const component = {
+      20 |             getType: () => 'TestComponent',
+
+      at Object.initialize (core.test.js:17:17)
+
+  ● SatoxManager › should handle errors properly
+
+    TypeError: manager.initialize is not a function
+
+      28 |
+      29 |     it('should handle errors properly', () => {
+    > 30 |         manager.initialize();
+         |                 ^
+      31 |         
+      32 |         expect(() => {
+      33 |             manager.registerComponent(null);
+
+      at Object.initialize (core.test.js:30:17)
+
+  ● SatoxManager › should handle concurrent operations
+
+    TypeError: manager.initialize is not a function
+
+      36 |
+      37 |     it('should handle concurrent operations', async () => {
+    > 38 |         manager.initialize();
+         |                 ^
+      39 |         
+      40 |         const promises = Array(10).fill().map(async () => {
+      41 |             const component = {
+
+      at initialize (core.test.js:38:17)
+      at Generator.call (core.test.js:2:1)
+      at Generator._invoke [as next] (core.test.js:2:1)
+      at asyncGeneratorStep (core.test.js:2:1)
+      at asyncGeneratorStep (core.test.js:2:1)
+      at _next (core.test.js:2:1)
+      at Object.<anonymous> (core.test.js:2:1)
+
+Test Suites: 2 failed, 2 total
+Tests:       4 failed, 4 total
+Snapshots:   0 total
+Time:        2.945 s
+Ran all test suites.
+
+
+bindings/wasm/tests tests (JavaScript)
+Status: FAIL
+Duration: 2.63s
+Component: JS Bindings
+Error: ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+FAIL ./core.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/pform/pform-building-stuff/satox-projects/SDKs/satox-sdk/bindings/wasm/tests/node_modules/chai/chai.js:4101
+    export {
+    ^^^^^^
+
+    SyntaxError: Unexpected token 'export'
+
+    > 1 | const { expect } = require('chai');
+        |                                    ^
+      2 | const { SatoxManager } = require('../dist/satox-wasm');
+      3 |
+      4 | describe('SatoxManager (WASM)', () => {
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1505:14)
+      at Object.<anonymous> (core.test.js:1:122)
+
+FAIL ./satox.test.ts
+  ● Test suite failed to run
+
+    [96msatox.test.ts[0m:[93m28[0m:[93m29[0m - [91merror[0m[90m TS2551: [0mProperty 'isInitialized' does not exist on type 'SatoxManager'. Did you mean 'initialize'?
+
+    [7m28[0m         expect(satoxManager.isInitialized()).toBe(true);
+    [7m  [0m [91m                            ~~~~~~~~~~~~~[0m
+
+      [96m../src/satox.ts[0m:[93m35[0m:[93m11[0m
+        [7m35[0m     async initialize(): Promise<void> {
+        [7m  [0m [96m          ~~~~~~~~~~[0m
+        'initialize' is declared here.
+    [96msatox.test.ts[0m:[93m30[0m:[93m29[0m - [91merror[0m[90m TS2551: [0mProperty 'isInitialized' does not exist on type 'SatoxManager'. Did you mean 'initialize'?
+
+    [7m30[0m         expect(satoxManager.isInitialized()).toBe(false);
+    [7m  [0m [91m                            ~~~~~~~~~~~~~[0m
+
+      [96m../src/satox.ts[0m:[93m35[0m:[93m11[0m
+        [7m35[0m     async initialize(): Promise<void> {
+        [7m  [0m [96m          ~~~~~~~~~~[0m
+        'initialize' is declared here.
+    [96msatox.test.ts[0m:[93m58[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'fee' does not exist in type 'TransactionConfig'.
+
+    [7m58[0m             fee: 0.001,
+    [7m  [0m [91m            ~~~[0m
+    [96msatox.test.ts[0m:[93m66[0m:[93m40[0m - [91merror[0m[90m TS2554: [0mExpected 4 arguments, but got 1.
+
+    [7m66[0m         const result = await txManager.createTransaction({
+    [7m  [0m [91m                                       ~~~~~~~~~~~~~~~~~[0m
+
+      [96m../src/transaction.ts[0m:[93m54[0m:[93m43[0m
+        [7m54[0m     async createTransaction(from: string, to: string, value: number, data: Uint8Array): Promise<Transaction> {
+        [7m  [0m [96m                                          ~~~~~~~~~~[0m
+        An argument for 'to' was not provided.
+    [96msatox.test.ts[0m:[93m71[0m:[93m39[0m - [91merror[0m[90m TS2693: [0m'TransactionResult' only refers to a type, but is being used as a value here.
+
+    [7m71[0m         expect(result).toBeInstanceOf(TransactionResult);
+    [7m  [0m [91m                                      ~~~~~~~~~~~~~~~~~[0m
+    [96msatox.test.ts[0m:[93m72[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'success' does not exist on type 'Transaction'.
+
+    [7m72[0m         expect(result.success).toBe(true);
+    [7m  [0m [91m                      ~~~~~~~[0m
+    [96msatox.test.ts[0m:[93m77[0m:[93m28[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+    [7m77[0m         const algorithms = new PostQuantumAlgorithms();
+    [7m  [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+      [96m../src/quantum/post_quantum_algorithms.ts[0m:[93m17[0m:[93m17[0m
+        [7m17[0m     constructor(memory: Memory) {
+        [7m  [0m [96m                ~~~~~~~~~~~~~~[0m
+        An argument for 'memory' was not provided.
+    [96msatox.test.ts[0m:[93m145[0m:[93m29[0m - [91merror[0m[90m TS2551: [0mProperty 'isInitialized' does not exist on type 'SatoxManager'. Did you mean 'initialize'?
+
+    [7m145[0m         expect(satoxManager.isInitialized()).toBe(true);
+    [7m   [0m [91m                            ~~~~~~~~~~~~~[0m
+
+      [96m../src/satox.ts[0m:[93m35[0m:[93m11[0m
+        [7m35[0m     async initialize(): Promise<void> {
+        [7m  [0m [96m          ~~~~~~~~~~[0m
+        'initialize' is declared here.
+
+Test Suites: 2 failed, 2 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        2.064 s
+Ran all test suites.

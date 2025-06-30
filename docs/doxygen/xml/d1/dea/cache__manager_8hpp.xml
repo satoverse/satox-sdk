@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/dea/cache__manager_8hpp" kind="file" language="C++">
+    <compoundname>cache_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">list</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/cache_manager.hpp</label>
+        <link refid="d1/dea/cache__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>chrono</label>
+      </node>
+      <node id="7">
+        <label>functional</label>
+      </node>
+      <node id="8">
+        <label>list</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="10">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="9">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="db/de3/classsatox_1_1core_1_1CacheManager" prot="public">satox::core::CacheManager</innerclass>
+    <innerclass refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" prot="public">satox::core::CacheManager::CacheEntry</innerclass>
+    <innerclass refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" prot="public">satox::core::CacheManager::CacheStats</innerclass>
+    <innerclass refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" prot="public">satox::core::CacheManager::CacheConfig</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">satox::core</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="db/de3/classsatox_1_1core_1_1CacheManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>entry<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" kindref="compound">CacheEntry</ref><sp/>{</highlight></codeline>
+<codeline lineno="44" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1ac161ae939d85d9d0441c7dcbe9960f95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1ac161ae939d85d9d0441c7dcbe9960f95" kindref="member">key</ref>;</highlight></codeline>
+<codeline lineno="45" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a51e71028246ccaa99cade771baff1c11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a51e71028246ccaa99cade771baff1c11" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="46" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a02fe1465c3fe0489f33bf4f1f2f3adc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a02fe1465c3fe0489f33bf4f1f2f3adc9" kindref="member">expiry</ref>;</highlight></codeline>
+<codeline lineno="47" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a96d639a900f07fd43d29f4046677558e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a96d639a900f07fd43d29f4046677558e" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="48" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a8f7e6fa94e5c9412de8d65dde9cb3173" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a8f7e6fa94e5c9412de8d65dde9cb3173" kindref="member">accessCount</ref>;</highlight></codeline>
+<codeline lineno="49" refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a6a29f065f44cac18b64428a590f93e38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a6a29f065f44cac18b64428a590f93e38" kindref="member">lastAccess</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>statistics<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" kindref="compound">CacheStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="54" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a63da9f68b0d2face01ce285bec199b12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a63da9f68b0d2face01ce285bec199b12" kindref="member">totalEntries</ref>;</highlight></codeline>
+<codeline lineno="55" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1aeb6439ca4a87a507b186e43c6494bb80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1aeb6439ca4a87a507b186e43c6494bb80" kindref="member">totalSize</ref>;</highlight></codeline>
+<codeline lineno="56" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a22f194a3eefeb8809b05daf7a09f8f90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a22f194a3eefeb8809b05daf7a09f8f90" kindref="member">maxSize</ref>;</highlight></codeline>
+<codeline lineno="57" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a71edb3765a38ed334a4edb7d5ea3f8a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a71edb3765a38ed334a4edb7d5ea3f8a7" kindref="member">hitCount</ref>;</highlight></codeline>
+<codeline lineno="58" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a6b83fd5c39f14b5185f8ef367a2a472e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a6b83fd5c39f14b5185f8ef367a2a472e" kindref="member">missCount</ref>;</highlight></codeline>
+<codeline lineno="59" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a2b7777c5a537c1ac910b1f34f253b8a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a2b7777c5a537c1ac910b1f34f253b8a8" kindref="member">hitRate</ref>;</highlight></codeline>
+<codeline lineno="60" refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1ac21f2d4bacb324465c10a6a2100ada4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1ac21f2d4bacb324465c10a6a2100ada4e" kindref="member">evictionCount</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>configuration<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" kindref="compound">CacheConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="65" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1aa96ccf4ba1ff7309f578e1eaa5f6a1d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1aa96ccf4ba1ff7309f578e1eaa5f6a1d8" kindref="member">maxSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>cache<sp/>size<sp/>in<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a3f1f06818665c85931e0fbd6ac3b2415" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a3f1f06818665c85931e0fbd6ac3b2415" kindref="member">maxEntries</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>number<sp/>of<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a3f8b255d303b0f3a995d3f4c5b644662" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a3f8b255d303b0f3a995d3f4c5b644662" kindref="member">defaultTTL</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>time-to-live</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1aedc9dee9f033c06ff864515c9e95cc81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1aedc9dee9f033c06ff864515c9e95cc81" kindref="member">enableLRU</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>Least<sp/>Recently<sp/>Used<sp/>eviction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a062b105b8f49ef70aec36ad1f4ea732c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a062b105b8f49ef70aec36ad1f4ea732c" kindref="member">enableLFU</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>Least<sp/>Frequently<sp/>Used<sp/>eviction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a78db25c5ecedb10e629d19e3651b7378" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a78db25c5ecedb10e629d19e3651b7378" kindref="member">cleanupInterval</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cleanup<sp/>interval<sp/>in<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>callback<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" kindref="member">CacheCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref>&amp;<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afd6382b9e12c0d66533e6bab12b80231" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81" refid="db/de3/classsatox_1_1core_1_1CacheManager_1abf47a60ccd27f43f5f168eb14c636f78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref>&amp;<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1abf47a60ccd27f43f5f168eb14c636f78" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a6430b03deabb3e70f1ac3ee353305ff8" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" kindref="compound">CacheConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a9de0cd5d34aaa5f6912dcf7cce5a5e3d" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>cache<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3741ab92280e103940e90f5f49886aba" kindref="member">set</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>ttl<sp/>=<sp/>std::chrono::seconds(0));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3741ab92280e103940e90f5f49886aba" kindref="member">set</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>value,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>ttl<sp/>=<sp/>std::chrono::seconds(0));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a687a723c4a8976ed448343a0c2c440e9" kindref="member">get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;nlohmann::json&gt;<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1ae9fd95b72c9c8cfdebcdb337d43794c9" kindref="member">getJson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a115c09243e399f56df251988d85335ef" kindref="member">remove</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a6e1fe79e30e04a36492dc3089e986508" kindref="member">exists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8e2005eb4d9f6a6d8a796c39ffdd4e06" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bulk<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a96cf4cb8c853d1f2104d44bbeef02674" kindref="member">setMulti</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>entries,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>ttl<sp/>=<sp/>std::chrono::seconds(0));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a98b7af13a777bf927c97110f61e2a096" kindref="member">getMulti</ref>(</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>keys);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1adf97ee49290bca663983fc0e40395104" kindref="member">removeMulti</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>keys);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a29bae68237f622caba3dc10026159b12" kindref="member">setTTL</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/>std::chrono::seconds<sp/>ttl);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a93bd27b145a5c728a98f8b31d074f739" kindref="member">getExpiry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a4eb35d6fc98e6ac0df6d1a78c75570c0" kindref="member">getSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1aee6cf662b94c609eae14ca21e4942378" kindref="member">getTotalSize</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1ae76bdfcab3dfee3cb3ea6281cc4fd250" kindref="member">getEntryCount</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" kindref="compound">CacheStats</ref><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1ad07f71c600d133a2ed81bd8075b94057" kindref="member">getStats</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a99d7540676f4ef7ab25015cba6d8513a" kindref="member">registerCallback</ref>(<ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" kindref="member">CacheCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a48d4b6a0d193114eabe70f92af0d98e9" kindref="member">unregisterCallback</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>maintenance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a0dc65c2c33716015fa8b02be14833323" kindref="member">cleanup</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a31e39ef32129e9f74d6c4f830bd73907" kindref="member">resize</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>newMaxSize);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a9e003b9a12e7dc7fea575fe8580210a9" kindref="member">setMaxEntries</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>newMaxEntries);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1af23c576eaebaa5f9ca4e38720cd7708d" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8f7a3dbe8e90990ee8ba7fa74453516e" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">CacheManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" kindref="member">~CacheManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>evictEntry();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateAccessStats(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyCallbacks(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateKey(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateValue(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>calculateEntrySize(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" kindref="compound">CacheEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStats(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hit);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>CacheEntry&gt;<sp/>cache_;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;std::string&gt;<sp/>lruList_;<sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>LRU<sp/>eviction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;CacheCallback&gt;<sp/>callbacks_;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" kindref="compound">CacheConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" kindref="compound">CacheStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>lastError_;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/>lastCleanup_;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::core<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/cache_manager.hpp"/>
+  </compounddef>
+</doxygen>

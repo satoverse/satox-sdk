@@ -1,0 +1,39 @@
+{
+  "databases": {
+    "test_db": {
+      "tables": {
+        "test_table": {
+          "indexes": {},
+          "records": [
+            {
+              "age": 25,
+              "email": "test@example.com",
+              "id": "test_id",
+              "name": "Test User"
+            }
+          ],
+          "schema": {
+            "fields": {
+              "age": {
+                "required": false,
+                "type": "integer"
+              },
+              "email": {
+                "required": true,
+                "type": "string"
+              },
+              "id": {
+                "primary": true,
+                "type": "string"
+              },
+              "name": {
+                "required": true,
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

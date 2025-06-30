@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/d46/classsatox_1_1network_1_1LetsEncryptManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::network::LetsEncryptManager</compoundname>
+    <includes refid="d8/d1a/letsencrypt__manager_8hpp" local="no">letsencrypt_manager.hpp</includes>
+    <innerclass refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" prot="public">satox::network::LetsEncryptManager::Certificate</innerclass>
+    <innerclass refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" prot="public">satox::network::LetsEncryptManager::Config</innerclass>
+    <innerclass refid="d8/d7a/classsatox_1_1network_1_1LetsEncryptManager_1_1Impl" prot="public">satox::network::LetsEncryptManager::Impl</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">Certificate</ref> &amp;)&gt;</type>
+        <definition>using satox::network::LetsEncryptManager::CertificateUpdateCallback =  std::function&lt;void(const Certificate&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>CertificateUpdateCallback</name>
+        <qualifiedname>satox::network::LetsEncryptManager::CertificateUpdateCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="76" column="5" bodyfile="src/network/include/satox/network/letsencrypt_manager.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a2cbc2e12b99bde6685f8b4165e045520" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="d8/d7a/classsatox_1_1network_1_1LetsEncryptManager_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; satox::network::LetsEncryptManager::pimpl</definition>
+        <argsstring></argsstring>
+        <name>pimpl</name>
+        <qualifiedname>satox::network::LetsEncryptManager::pimpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="87" column="21" bodyfile="src/network/include/satox/network/letsencrypt_manager.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab677520bdc05be2911259ea06962b06f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::LetsEncryptManager::LetsEncryptManager</definition>
+        <argsstring>()</argsstring>
+        <name>LetsEncryptManager</name>
+        <qualifiedname>satox::network::LetsEncryptManager::LetsEncryptManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="60" column="5" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="481" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4edfd108c6d8cfdfb3d09b560600c2ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::LetsEncryptManager::~LetsEncryptManager</definition>
+        <argsstring>()</argsstring>
+        <name>~LetsEncryptManager</name>
+        <qualifiedname>satox::network::LetsEncryptManager::~LetsEncryptManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="61" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a6851112d73dbcb5188490d98397c9ec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::LetsEncryptManager::initialize</definition>
+        <argsstring>(const Config &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::network::LetsEncryptManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="64" column="10" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="484" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a733618cb2d1fd3a0787085dba1ad0387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::LetsEncryptManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::network::LetsEncryptManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="67" column="10" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="508" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a0d845247599766f96fadfb8da6cad216" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">Certificate</ref></type>
+        <definition>LetsEncryptManager::Certificate satox::network::LetsEncryptManager::getCurrentCertificate</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentCertificate</name>
+        <qualifiedname>satox::network::LetsEncryptManager::getCurrentCertificate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="70" column="17" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="488" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4b41147d17721eb131365d2b20e72e52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::LetsEncryptManager::renewCertificate</definition>
+        <argsstring>()</argsstring>
+        <name>renewCertificate</name>
+        <qualifiedname>satox::network::LetsEncryptManager::renewCertificate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="73" column="10" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="492" bodyend="494"/>
+        <referencedby refid="d8/d7a/classsatox_1_1network_1_1LetsEncryptManager_1_1Impl_1acaeae67b07766ef1b452a887757d38b8" compoundref="d3/d14/letsencrypt__manager_8cpp" startline="63" endline="118">satox::network::LetsEncryptManager::Impl::initialize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4b6923c0d6ec0c2db895b420e2d136ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::LetsEncryptManager::registerUpdateCallback</definition>
+        <argsstring>(CertificateUpdateCallback callback)</argsstring>
+        <name>registerUpdateCallback</name>
+        <qualifiedname>satox::network::LetsEncryptManager::registerUpdateCallback</qualifiedname>
+        <param>
+          <type><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" kindref="member">CertificateUpdateCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="77" column="10" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="496" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab76df24a726d357b88ce98f9b3c08d1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::LetsEncryptManager::isConfigured</definition>
+        <argsstring>() const</argsstring>
+        <name>isConfigured</name>
+        <qualifiedname>satox::network::LetsEncryptManager::isConfigured</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="80" column="10" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="500" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1acf6d7608bbc688f911c14d960242fe7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::network::LetsEncryptManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::network::LetsEncryptManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="83" column="17" bodyfile="src/network/src/letsencrypt_manager.cpp" bodystart="504" bodyend="506"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/network/include/satox/network/letsencrypt_manager.hpp" line="40" column="1" bodyfile="src/network/include/satox/network/letsencrypt_manager.hpp" bodystart="40" bodyend="88"/>
+    <listofallmembers>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>CertificateUpdateCallback</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a0d845247599766f96fadfb8da6cad216" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>getCurrentCertificate</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1acf6d7608bbc688f911c14d960242fe7c" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>getLastError</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a6851112d73dbcb5188490d98397c9ec6" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>initialize</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab76df24a726d357b88ce98f9b3c08d1b" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>isConfigured</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab677520bdc05be2911259ea06962b06f" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>LetsEncryptManager</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a2cbc2e12b99bde6685f8b4165e045520" prot="private" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>pimpl</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4b6923c0d6ec0c2db895b420e2d136ad" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>registerUpdateCallback</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4b41147d17721eb131365d2b20e72e52" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>renewCertificate</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a733618cb2d1fd3a0787085dba1ad0387" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>shutdown</name></member>
+      <member refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4edfd108c6d8cfdfb3d09b560600c2ee" prot="public" virt="non-virtual"><scope>satox::network::LetsEncryptManager</scope><name>~LetsEncryptManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

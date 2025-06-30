@@ -1,0 +1,1044 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/d55/network_2src_2network__manager_8cpp" kind="file" language="C++">
+    <compoundname>network_manager.cpp</compoundname>
+    <includes local="yes">satox/network/network_manager.hpp</includes>
+    <includes local="yes">satox/network/letsencrypt_manager.hpp</includes>
+    <includes local="no">spdlog/spdlog.h</includes>
+    <includes local="no">spdlog/sinks/rotating_file_sink.h</includes>
+    <includes local="no">boost/asio/ip/tcp.hpp</includes>
+    <includes local="no">boost/asio/ssl.hpp</includes>
+    <includes local="no">boost/beast/core.hpp</includes>
+    <includes local="no">boost/beast/http.hpp</includes>
+    <includes local="no">boost/beast/websocket.hpp</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">shared_mutex</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">openssl/ssl.h</includes>
+    <includes local="no">openssl/err.h</includes>
+    <includes local="no">curl/curl.h</includes>
+    <includes local="no">filesystem</includes>
+    <includes local="no">regex</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/network/src/network_manager.cpp</label>
+        <link refid="dd/d55/network_2src_2network__manager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>algorithm</label>
+      </node>
+      <node id="6">
+        <label>boost/asio/ip/tcp.hpp</label>
+      </node>
+      <node id="7">
+        <label>boost/asio/ssl.hpp</label>
+      </node>
+      <node id="8">
+        <label>boost/beast/core.hpp</label>
+      </node>
+      <node id="9">
+        <label>boost/beast/http.hpp</label>
+      </node>
+      <node id="10">
+        <label>boost/beast/websocket.hpp</label>
+      </node>
+      <node id="13">
+        <label>chrono</label>
+      </node>
+      <node id="23">
+        <label>curl/curl.h</label>
+      </node>
+      <node id="24">
+        <label>filesystem</label>
+      </node>
+      <node id="15">
+        <label>iomanip</label>
+      </node>
+      <node id="16">
+        <label>mutex</label>
+      </node>
+      <node id="11">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="22">
+        <label>openssl/err.h</label>
+      </node>
+      <node id="21">
+        <label>openssl/ssl.h</label>
+      </node>
+      <node id="18">
+        <label>queue</label>
+      </node>
+      <node id="25">
+        <label>regex</label>
+      </node>
+      <node id="3">
+        <label>satox/network/letsencrypt_manager.hpp</label>
+      </node>
+      <node id="2">
+        <label>satox/network/network_manager.hpp</label>
+      </node>
+      <node id="17">
+        <label>shared_mutex</label>
+      </node>
+      <node id="5">
+        <label>spdlog/sinks/rotating_file_sink.h</label>
+      </node>
+      <node id="4">
+        <label>spdlog/spdlog.h</label>
+      </node>
+      <node id="14">
+        <label>sstream</label>
+      </node>
+      <node id="12">
+        <label>thread</label>
+      </node>
+      <node id="19">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" prot="public">satox::network::NetworkManager::Impl</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d6/d65/namespacesatox_1_1network">satox::network</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;satox/network/network_manager.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;satox/network/letsencrypt_manager.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;spdlog/spdlog.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;spdlog/sinks/rotating_file_sink.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio/ip/tcp.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio/ssl.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/beast/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/beast/http.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/beast/websocket.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;shared_mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/ssl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/err.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;curl/curl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;regex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d6/d65/namespacesatox_1_1network" kindref="compound">satox::network</ref><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" kindref="compound">NetworkManager::Impl</ref><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3515c03b73fb20bb2671299ea3d2e96b" kindref="member">Impl</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1acba70bd1ea583a7423b4793190ae7e16" kindref="member">~Impl</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Core<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afe8b11709ccd2e9de9f0496fa4a64716" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a8eac8f0822cb366049e08c5ede3f496d" kindref="member">isInitialized</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae26ef55d7092a390076537e76b87ab2a" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae52d8d577663ca00602ea9da126ae6d4" kindref="member">isP2PRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a138ea493b2fef8d14fb53df461bdc438" kindref="member">isRPCRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>P2P<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aeee0e7e15412866b31f1e7d84675730d" kindref="member">startP2P</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aa509aaa3c897a1ddf7a234e7bff5307a" kindref="member">stopP2P</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a8cb8d55ee8760b2a91081833b3021498" kindref="member">connectToPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/>uint16_t<sp/>port);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a72b505bcdb904249f1ef707982327e01" kindref="member">disconnectPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a4a87645ae62dc4a075ecb5ddb7c3b3e8" kindref="member">isPeerConnected</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Peer&gt;<sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a72dc75cfb4c1c0c7b70733b8a4b774bb" kindref="member">getConnectedPeers</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a91647776e4dfed10556979c8779a6846" kindref="member">getPeerCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>RPC<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a306e1b205b480a8c38a4224617168074" kindref="member">startRPC</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a25aab9b30f6b6afcd042ba04e975508d" kindref="member">stopRPC</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ab7f3f2cc02aa1bf02b77e4260daa8e3e" kindref="member">registerRPCMethod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>method,<sp/>std::function&lt;<ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;)&gt;<sp/>handler);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a930fa2c1282722a2ea63a1e200acb7d1" kindref="member">callRPC</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;<sp/>request,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" kindref="member">RPCCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Message<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae28b044cdebc2a9ac29ec45700911a6f" kindref="member">sendP2PMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>peer_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aac2290b9a503801353d6def56a93547c" kindref="member">sendRPCMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>client_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a7281c00d124e4048a9e31f49e4d58bec" kindref="member">registerMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3c63cef74df31bb18841d6e7f9af6541" kindref="member">unregisterMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callback<sp/>registration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a9cf602951392d1aea9a1e48336f8b50b" kindref="member">registerPeerCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a09c42fcb6d192f80af1856741fb12f9e" kindref="member">unregisterPeerCallback</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afea9c0c788ce912e7dabb3743921690d" kindref="member">registerErrorCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a38b7edd31b1a8f5cc3d112b2da6d3afe" kindref="member">unregisterErrorCallback</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Security<sp/>and<sp/>SSL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a56f9125a9ba57c9ea51d2fdffe996b9f" kindref="member">enableEncryption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">LetsEncryptManager::Certificate</ref><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a7422eb68f005eeb24aff403cf57e5476" kindref="member">getCurrentCertificate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3d106b720daca625a2f880b713d84c23" kindref="member">renewCertificate</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1af3295a88c1e5a7b989505fbd225f3d30" kindref="member">registerCertificateUpdateCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>and<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a53b7373049cb08beab8ee2545bf369ba" kindref="member">getNetworkStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1abe59c85a2f5731f6a3be9edaaa35c230" kindref="member">enableStats</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aa8c82ec7cb7e8f9c12410e9f6009f1d8" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a031ad14c76e77f28d81341aa149367e6" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a120543856c8d50a9eacc3b25b8871ffb" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a63c377056feb875ffb1e76475d3ca3b9" kindref="member">healthCheck</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateConfig(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateSecurityConfig(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>helpers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>logError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>logInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>logDebug(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStats();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processReceivedData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::shared_mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>p2p_running_;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>rpc_running_;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stats_enabled_;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>last_error_;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref><sp/>security_config_;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>Peer&gt;<sp/>peers_;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::function&lt;<ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;)&gt;&gt;<sp/>rpc_handlers_;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;MessageType,<sp/>MessageCallback&gt;<sp/>message_callbacks_;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref><sp/>peer_callback_;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref><sp/>error_callback_;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref><sp/>certificate_callback_;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;LetsEncryptManager&gt;<sp/>letsencrypt_manager_;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;boost::asio::ssl::context&gt;<sp/>ssl_context_;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::steady_clock::time_point<sp/>start_time_;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;std::thread&gt;<sp/>p2p_thread_;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;std::thread&gt;<sp/>rpc_thread_;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>shutdown_requested_;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Logger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;spdlog::logger&gt;<sp/>logger_;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">//<sp/>NetworkManager<sp/>implementation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager::NetworkManager</ref>()<sp/>:<sp/>pimpl_(std::make_unique&lt;<ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" kindref="compound">Impl</ref>&gt;())<sp/>{}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac22a0eebf8c41d1468bb123136dfdd27" refkind="member"><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>&amp;<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac22a0eebf8c41d1468bb123136dfdd27" kindref="member">NetworkManager::getInstance</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref><sp/>instance;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instance;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0b483bf2832c88547d6e0a80194a7952" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384" kindref="member">NetworkManager::initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384" kindref="member">initialize</ref>(config);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" kindref="member">NetworkManager::shutdown</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;shutdown();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9d1515ad852f2f2fbc82925cec61fe9f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9d1515ad852f2f2fbc82925cec61fe9f" kindref="member">NetworkManager::isInitialized</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;isInitialized();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a45c5bce667450a3cc15b5baeb0e55ee7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a45c5bce667450a3cc15b5baeb0e55ee7" kindref="member">NetworkManager::isRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;isRunning();</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0f53c40765516fd288cd7dfe377b8eae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0f53c40765516fd288cd7dfe377b8eae" kindref="member">NetworkManager::isP2PRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;isP2PRunning();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1acc3a11eefe463db6184565867518d076" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1acc3a11eefe463db6184565867518d076" kindref="member">NetworkManager::isRPCRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;isRPCRunning();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aea2316b0381413f4fc7c76444f35ccf7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aea2316b0381413f4fc7c76444f35ccf7" kindref="member">NetworkManager::startP2P</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;startP2P();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1db68300569b25205ad413ed550b83a8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1db68300569b25205ad413ed550b83a8" kindref="member">NetworkManager::stopP2P</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;stopP2P();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3bd1e14fca9953461ea3f501df24f7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3bd1e14fca9953461ea3f501df24f7" kindref="member">NetworkManager::connectToPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/>uint16_t<sp/>port)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;connectToPeer(address,<sp/>port);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1abfb9e0633c18a16fc972a1d9c0d409ce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1abfb9e0633c18a16fc972a1d9c0d409ce" kindref="member">NetworkManager::disconnectPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;disconnectPeer(address);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" kindref="member">NetworkManager::isPeerConnected</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;isPeerConnected(address);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a93f8a93d8d0cea17f0aea885704f8e8d" refkind="member"><highlight class="normal">std::vector&lt;NetworkManager::Peer&gt;<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a93f8a93d8d0cea17f0aea885704f8e8d" kindref="member">NetworkManager::getConnectedPeers</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;getConnectedPeers();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" kindref="member">NetworkManager::getPeerCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;getPeerCount();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a52d35cc9b3411614d850fd16454ef06f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a52d35cc9b3411614d850fd16454ef06f" kindref="member">NetworkManager::startRPC</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;startRPC();</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a577b14e32e0cb39b9348be7a2ac64822" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a577b14e32e0cb39b9348be7a2ac64822" kindref="member">NetworkManager::stopRPC</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;stopRPC();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac47d4c2bf60b0b7f131ed350ca4cfb43" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac47d4c2bf60b0b7f131ed350ca4cfb43" kindref="member">NetworkManager::registerRPCMethod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>method,<sp/>std::function&lt;<ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;)&gt;<sp/>handler)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;registerRPCMethod(method,<sp/>handler);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a835c255045db787f429de83cd5d66fbe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a835c255045db787f429de83cd5d66fbe" kindref="member">NetworkManager::callRPC</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;<sp/>request,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" kindref="member">RPCCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;callRPC(address,<sp/>request,<sp/>callback);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a386383c2347d0bfb94b61f5ab359489d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a386383c2347d0bfb94b61f5ab359489d" kindref="member">NetworkManager::sendP2PMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>peer_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;sendP2PMessage(peer_address,<sp/>message);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aff092c3045f529e4ba6b46c45efa426d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aff092c3045f529e4ba6b46c45efa426d" kindref="member">NetworkManager::sendRPCMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>client_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;sendRPCMessage(client_address,<sp/>message);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a6b76f8d53986fe5580e4a36c91572204" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7ab137d83a02921ed48515e1a98bed75" kindref="member">NetworkManager::registerMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;registerMessageCallback(type,<sp/>callback);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19224836d039a8329fd589229693f0e6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19224836d039a8329fd589229693f0e6" kindref="member">NetworkManager::unregisterMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;unregisterMessageCallback(type);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" kindref="member">NetworkManager::registerPeerCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;registerPeerCallback(callback);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1adce4d53d623845faa17659dbc78ae11c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1adce4d53d623845faa17659dbc78ae11c" kindref="member">NetworkManager::unregisterPeerCallback</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;unregisterPeerCallback();</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac306afebb77c6b57f69e8578e796dd37" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac306afebb77c6b57f69e8578e796dd37" kindref="member">NetworkManager::registerErrorCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;registerErrorCallback(callback);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a853ddd2e2f41ce7430354ab9ec00f873" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a853ddd2e2f41ce7430354ab9ec00f873" kindref="member">NetworkManager::unregisterErrorCallback</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;unregisterErrorCallback();</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5514868aab271932db2852e38751afda" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5514868aab271932db2852e38751afda" kindref="member">NetworkManager::enableEncryption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;enableEncryption(config);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa6be25b5659470fad7c93255d056ac3c" refkind="member"><highlight class="normal"><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">LetsEncryptManager::Certificate</ref><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa6be25b5659470fad7c93255d056ac3c" kindref="member">NetworkManager::getCurrentCertificate</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;getCurrentCertificate();</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a73407d67c9b8812885f0c280732d1f3c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a73407d67c9b8812885f0c280732d1f3c" kindref="member">NetworkManager::renewCertificate</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;renewCertificate();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a3d2762652371a04455b0563e12d72a83" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a3d2762652371a04455b0563e12d72a83" kindref="member">NetworkManager::registerCertificateUpdateCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>pimpl_-&gt;registerCertificateUpdateCallback(callback);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a014af406f3e29fd3ba59740b3a354b28" refkind="member"><highlight class="normal"><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkManager::NetworkStats</ref><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a014af406f3e29fd3ba59740b3a354b28" kindref="member">NetworkManager::getNetworkStats</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;getNetworkStats();</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8addda877f2a249f8d75f00f1bf133ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8addda877f2a249f8d75f00f1bf133ec" kindref="member">NetworkManager::enableStats</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable)<sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;enableStats(enable);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae967e67c5ccef0cfc6a868ec99c5c6c7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae967e67c5ccef0cfc6a868ec99c5c6c7" kindref="member">NetworkManager::resetStats</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;resetStats();</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" refkind="member"><highlight class="normal">std::string<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" kindref="member">NetworkManager::getLastError</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;getLastError();</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ab5b0b228aa8c8993beae7816c03ed963" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ab5b0b228aa8c8993beae7816c03ed963" kindref="member">NetworkManager::clearLastError</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;clearLastError();</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa01ba3d876f0dfd0742dbc402f40fadf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa01ba3d876f0dfd0742dbc402f40fadf" kindref="member">NetworkManager::healthCheck</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;healthCheck();</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a32e9e41b455b2da9753e48fe0e9f7de6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a32e9e41b455b2da9753e48fe0e9f7de6" kindref="member">NetworkManager::isHealthy</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pimpl_-&gt;isInitialized())<sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>health<sp/>check<sp/>-<sp/>verify<sp/>that<sp/>the<sp/>manager<sp/>is<sp/>in<sp/>a<sp/>good<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pimpl_-&gt;healthCheck();</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Stub<sp/>implementations<sp/>for<sp/>missing<sp/>SSL<sp/>methods<sp/>called<sp/>by<sp/>tests</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b5e235a3e76498913920b5ae7bd070b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b5e235a3e76498913920b5ae7bd070b" kindref="member">NetworkManager::enableSSL</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pimpl_)<sp/>{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Simple<sp/>SSL<sp/>enable<sp/>stub</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a873a2fa3e7fbe4f8dba63d4869ee045c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a873a2fa3e7fbe4f8dba63d4869ee045c" kindref="member">NetworkManager::disableSSL</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pimpl_)<sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Simple<sp/>SSL<sp/>disable<sp/>stub</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Impl<sp/>implementation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3515c03b73fb20bb2671299ea3d2e96b" refkind="member"><highlight class="normal"><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3515c03b73fb20bb2671299ea3d2e96b" kindref="member">NetworkManager::Impl::Impl</ref>()</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>initialized_(false)</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>p2p_running_(false)</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>rpc_running_(false)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>stats_enabled_(true)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>shutdown_requested_(false)<sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>logger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>log_dir<sp/>=<sp/>std::filesystem::path(</highlight><highlight class="stringliteral">&quot;logs/components/network&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::create_directories(log_dir);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logger_<sp/>=<sp/>spdlog::default_logger();</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fallback<sp/>to<sp/>console<sp/>logger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logger_<sp/>=<sp/>spdlog::default_logger();</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>start_time_<sp/>=<sp/>std::chrono::steady_clock::now();</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;NetworkManager::Impl<sp/>constructed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1acba70bd1ea583a7423b4793190ae7e16" refkind="member"><highlight class="normal"><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1acba70bd1ea583a7423b4793190ae7e16" kindref="member">NetworkManager::Impl::~Impl</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;NetworkManager::Impl<sp/>destroyed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a009528c55ab5f340ff9894e15112335b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a009528c55ab5f340ff9894e15112335b" kindref="member">NetworkManager::Impl::initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>already<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!validateConfig(config))<sp/>{</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>configuration&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>config_<sp/>=<sp/>config;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>SSL<sp/>context<sp/>if<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a4e8f5a810f1a988e84a1750216eaafb2" kindref="member">enable_ssl</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssl_context_<sp/>=<sp/>std::make_shared&lt;boost::asio::ssl::context&gt;(boost::asio::ssl::context::sslv23);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssl_context_-&gt;set_verify_mode(boost::asio::ssl::verify_peer);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssl_context_-&gt;set_default_verify_paths();</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>Let&apos;s<sp/>Encrypt<sp/>manager<sp/>if<sp/>configured</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a739fd76d8c639aa9f49a047d39af7b86" kindref="member">letsencrypt_config</ref>.<ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ae15c8d59dc436749d0365478fd2a74c7" kindref="member">domain</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>letsencrypt_manager_<sp/>=<sp/>std::make_unique&lt;LetsEncryptManager&gt;();</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!letsencrypt_manager_-&gt;initialize(config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a739fd76d8c639aa9f49a047d39af7b86" kindref="member">letsencrypt_config</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>Let&apos;s<sp/>Encrypt<sp/>manager&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>initialized<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Initialization<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afe8b11709ccd2e9de9f0496fa4a64716" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afe8b11709ccd2e9de9f0496fa4a64716" kindref="member">NetworkManager::Impl::shutdown</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shutdown_requested_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>P2P<sp/>and<sp/>RPC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p2p_running_)<sp/>{</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1db68300569b25205ad413ed550b83a8" kindref="member">stopP2P</ref>();</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rpc_running_)<sp/>{</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a577b14e32e0cb39b9348be7a2ac64822" kindref="member">stopRPC</ref>();</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wait<sp/>for<sp/>threads<sp/>to<sp/>finish</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p2p_thread_<sp/>&amp;&amp;<sp/>p2p_thread_-&gt;joinable())<sp/>{</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p2p_thread_-&gt;join();</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rpc_thread_<sp/>&amp;&amp;<sp/>rpc_thread_-&gt;joinable())<sp/>{</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rpc_thread_-&gt;join();</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message_callbacks_.clear();</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rpc_handlers_.clear();</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peers_.clear();</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>shutdown<sp/>completed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Shutdown<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="439"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a8eac8f0822cb366049e08c5ede3f496d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a8eac8f0822cb366049e08c5ede3f496d" kindref="member">NetworkManager::Impl::isInitialized</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae26ef55d7092a390076537e76b87ab2a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae26ef55d7092a390076537e76b87ab2a" kindref="member">NetworkManager::Impl::isRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p2p_running_<sp/>||<sp/>rpc_running_;</highlight></codeline>
+<codeline lineno="449"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight></codeline>
+<codeline lineno="451" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae52d8d577663ca00602ea9da126ae6d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae52d8d577663ca00602ea9da126ae6d4" kindref="member">NetworkManager::Impl::isP2PRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p2p_running_;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight></codeline>
+<codeline lineno="456" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a138ea493b2fef8d14fb53df461bdc438" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a138ea493b2fef8d14fb53df461bdc438" kindref="member">NetworkManager::Impl::isRPCRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rpc_running_;</highlight></codeline>
+<codeline lineno="459"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aeee0e7e15412866b31f1e7d84675730d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aeee0e7e15412866b31f1e7d84675730d" kindref="member">NetworkManager::Impl::startP2P</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p2p_running_)<sp/>{</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;P2P<sp/>already<sp/>running&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement<sp/>actual<sp/>P2P<sp/>start<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p2p_running_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;P2P<sp/>network<sp/>started&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>start<sp/>P2P:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="483"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aa509aaa3c897a1ddf7a234e7bff5307a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aa509aaa3c897a1ddf7a234e7bff5307a" kindref="member">NetworkManager::Impl::stopP2P</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!p2p_running_)<sp/>{</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p2p_running_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;P2P<sp/>network<sp/>stopped&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>stop<sp/>P2P:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a8cb8d55ee8760b2a91081833b3021498" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a8cb8d55ee8760b2a91081833b3021498" kindref="member">NetworkManager::Impl::connectToPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/>uint16_t<sp/>port)<sp/>{</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Peer<sp/>peer;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.address<sp/>=<sp/>address;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.port<sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.last_seen<sp/>=<sp/>std::chrono::system_clock::now().time_since_epoch().count();</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.inbound<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.whitelisted<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.bytes_sent<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer.bytes_received<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peers_[address]<sp/>=<sp/>peer;</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(peer_callback_)<sp/>{</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer_callback_(address,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Connected<sp/>to<sp/>peer:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>address<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(port));</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>connect<sp/>to<sp/>peer:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="530"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"></highlight></codeline>
+<codeline lineno="532" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a72b505bcdb904249f1ef707982327e01" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a72b505bcdb904249f1ef707982327e01" kindref="member">NetworkManager::Impl::disconnectPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address)<sp/>{</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>peers_.find(address);</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>peers_.end())<sp/>{</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(peer_callback_)<sp/>{</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peer_callback_(address,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peers_.erase(it);</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Disconnected<sp/>from<sp/>peer:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>address);</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>disconnect<sp/>peer:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight></codeline>
+<codeline lineno="549" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a4a87645ae62dc4a075ecb5ddb7c3b3e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a4a87645ae62dc4a075ecb5ddb7c3b3e8" kindref="member">NetworkManager::Impl::isPeerConnected</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>peers_.find(address)<sp/>!=<sp/>peers_.end();</highlight></codeline>
+<codeline lineno="552"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"></highlight></codeline>
+<codeline lineno="554" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a72dc75cfb4c1c0c7b70733b8a4b774bb" refkind="member"><highlight class="normal">std::vector&lt;NetworkManager::Peer&gt;<sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a72dc75cfb4c1c0c7b70733b8a4b774bb" kindref="member">NetworkManager::Impl::getConnectedPeers</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Peer&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/>result.reserve(peers_.size());</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pair<sp/>:<sp/>peers_)<sp/>{</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.push_back(pair.second);</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="564"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a91647776e4dfed10556979c8779a6846" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a91647776e4dfed10556979c8779a6846" kindref="member">NetworkManager::Impl::getPeerCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(peers_.size());</highlight></codeline>
+<codeline lineno="569"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"></highlight></codeline>
+<codeline lineno="571" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a306e1b205b480a8c38a4224617168074" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a306e1b205b480a8c38a4224617168074" kindref="member">NetworkManager::Impl::startRPC</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rpc_running_)<sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;RPC<sp/>already<sp/>running&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement<sp/>actual<sp/>RPC<sp/>start<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rpc_running_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;RPC<sp/>server<sp/>started&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>start<sp/>RPC:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="593"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="595" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a25aab9b30f6b6afcd042ba04e975508d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a25aab9b30f6b6afcd042ba04e975508d" kindref="member">NetworkManager::Impl::stopRPC</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!rpc_running_)<sp/>{</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rpc_running_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;RPC<sp/>server<sp/>stopped&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>stop<sp/>RPC:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="608"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="610" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ab7f3f2cc02aa1bf02b77e4260daa8e3e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ab7f3f2cc02aa1bf02b77e4260daa8e3e" kindref="member">NetworkManager::Impl::registerRPCMethod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>method,<sp/>std::function&lt;<ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;)&gt;<sp/>handler)<sp/>{</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rpc_handlers_[method]<sp/>=<sp/>handler;</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Registered<sp/>RPC<sp/>method:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>method);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>register<sp/>RPC<sp/>method:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="626"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a930fa2c1282722a2ea63a1e200acb7d1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a930fa2c1282722a2ea63a1e200acb7d1" kindref="member">NetworkManager::Impl::callRPC</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;<sp/>request,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" kindref="member">RPCCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement<sp/>actual<sp/>RPC<sp/>call<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logDebug(</highlight><highlight class="stringliteral">&quot;RPC<sp/>call<sp/>to<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>address<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>request.<ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a9de35782f6d7a14b5117e8071858f1aa" kindref="member">method</ref>);</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>call<sp/>RPC:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="644"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"></highlight></codeline>
+<codeline lineno="646" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae28b044cdebc2a9ac29ec45700911a6f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1ae28b044cdebc2a9ac29ec45700911a6f" kindref="member">NetworkManager::Impl::sendP2PMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>peer_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>peers_.find(peer_address);</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>peers_.end())<sp/>{</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Peer<sp/>not<sp/>connected:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>peer_address);</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement<sp/>actual<sp/>message<sp/>sending</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second.bytes_sent<sp/>+=<sp/>message.size();</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stats_.bytes_sent<sp/>+=<sp/>message.size();</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logDebug(</highlight><highlight class="stringliteral">&quot;Sent<sp/>P2P<sp/>message<sp/>to<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>peer_address<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(message.size())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>send<sp/>P2P<sp/>message:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="671"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"></highlight></codeline>
+<codeline lineno="673" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aac2290b9a503801353d6def56a93547c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aac2290b9a503801353d6def56a93547c" kindref="member">NetworkManager::Impl::sendRPCMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>client_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;NetworkManager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement<sp/>actual<sp/>RPC<sp/>message<sp/>sending</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logDebug(</highlight><highlight class="stringliteral">&quot;Sent<sp/>RPC<sp/>message<sp/>to<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>client_address);</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>send<sp/>RPC<sp/>message:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="689"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight></codeline>
+<codeline lineno="691" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a7281c00d124e4048a9e31f49e4d58bec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a7281c00d124e4048a9e31f49e4d58bec" kindref="member">NetworkManager::Impl::registerMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/>message_callbacks_[type]<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Registered<sp/>message<sp/>callback<sp/>for<sp/>type:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(type)));</highlight></codeline>
+<codeline lineno="695"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"></highlight></codeline>
+<codeline lineno="697" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3c63cef74df31bb18841d6e7f9af6541" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3c63cef74df31bb18841d6e7f9af6541" kindref="member">NetworkManager::Impl::unregisterMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type)<sp/>{</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/>message_callbacks_.erase(type);</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Unregistered<sp/>message<sp/>callback<sp/>for<sp/>type:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(type)));</highlight></codeline>
+<codeline lineno="701"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="703" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a9cf602951392d1aea9a1e48336f8b50b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a9cf602951392d1aea9a1e48336f8b50b" kindref="member">NetworkManager::Impl::registerPeerCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/>peer_callback_<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Registered<sp/>peer<sp/>callback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="707"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"></highlight></codeline>
+<codeline lineno="709" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a09c42fcb6d192f80af1856741fb12f9e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a09c42fcb6d192f80af1856741fb12f9e" kindref="member">NetworkManager::Impl::unregisterPeerCallback</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/>peer_callback_<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Unregistered<sp/>peer<sp/>callback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="713"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"></highlight></codeline>
+<codeline lineno="715" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afea9c0c788ce912e7dabb3743921690d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afea9c0c788ce912e7dabb3743921690d" kindref="member">NetworkManager::Impl::registerErrorCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/>error_callback_<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Registered<sp/>error<sp/>callback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="719"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="721" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a38b7edd31b1a8f5cc3d112b2da6d3afe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a38b7edd31b1a8f5cc3d112b2da6d3afe" kindref="member">NetworkManager::Impl::unregisterErrorCallback</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/>error_callback_<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Unregistered<sp/>error<sp/>callback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="725"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"></highlight></codeline>
+<codeline lineno="727" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a56f9125a9ba57c9ea51d2fdffe996b9f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a56f9125a9ba57c9ea51d2fdffe996b9f" kindref="member">NetworkManager::Impl::enableEncryption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!validateSecurityConfig(config))<sp/>{</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>security<sp/>configuration&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>security_config_<sp/>=<sp/>config;</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Encryption<sp/>enabled&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>enable<sp/>encryption:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="743"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"></highlight></codeline>
+<codeline lineno="745" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a7422eb68f005eeb24aff403cf57e5476" refkind="member"><highlight class="normal"><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">LetsEncryptManager::Certificate</ref><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a7422eb68f005eeb24aff403cf57e5476" kindref="member">NetworkManager::Impl::getCurrentCertificate</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(letsencrypt_manager_)<sp/>{</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>letsencrypt_manager_-&gt;getCurrentCertificate();</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">LetsEncryptManager::Certificate</ref>{};</highlight></codeline>
+<codeline lineno="753"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"></highlight></codeline>
+<codeline lineno="755" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3d106b720daca625a2f880b713d84c23" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a3d106b720daca625a2f880b713d84c23" kindref="member">NetworkManager::Impl::renewCertificate</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!letsencrypt_manager_)<sp/>{</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Let&apos;s<sp/>Encrypt<sp/>manager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>letsencrypt_manager_-&gt;renewCertificate();</highlight></codeline>
+<codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result)<sp/>{</highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Certificate<sp/>renewed<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>renew<sp/>certificate&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="769"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Certificate<sp/>renewal<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(e.what()));</highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="775"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"></highlight></codeline>
+<codeline lineno="777" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1af3295a88c1e5a7b989505fbd225f3d30" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1af3295a88c1e5a7b989505fbd225f3d30" kindref="member">NetworkManager::Impl::registerCertificateUpdateCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref><sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/>certificate_callback_<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Registered<sp/>certificate<sp/>update<sp/>callback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="781"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"></highlight></codeline>
+<codeline lineno="783" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a53b7373049cb08beab8ee2545bf369ba" refkind="member"><highlight class="normal"><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkManager::NetworkStats</ref><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a53b7373049cb08beab8ee2545bf369ba" kindref="member">NetworkManager::Impl::getNetworkStats</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref><sp/>current_stats<sp/>=<sp/>stats_;</highlight></codeline>
+<codeline lineno="787"><highlight class="normal"><sp/><sp/><sp/><sp/>current_stats.<ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a8a861d7ed1453bc36ff0e4c6151e433c" kindref="member">uptime_seconds</ref><sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(</highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::steady_clock::now()<sp/>-<sp/>start_time_).count();</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_stats;</highlight></codeline>
+<codeline lineno="791"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="792"><highlight class="normal"></highlight></codeline>
+<codeline lineno="793" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1abe59c85a2f5731f6a3be9edaaa35c230" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1abe59c85a2f5731f6a3be9edaaa35c230" kindref="member">NetworkManager::Impl::enableStats</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable)<sp/>{</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/>stats_enabled_<sp/>=<sp/>enable;</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Stats<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(enable<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;enabled&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;disabled&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="798"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"></highlight></codeline>
+<codeline lineno="800" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aa8c82ec7cb7e8f9c12410e9f6009f1d8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1aa8c82ec7cb7e8f9c12410e9f6009f1d8" kindref="member">NetworkManager::Impl::resetStats</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/>stats_<sp/>=<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref>{};</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/>logInfo(</highlight><highlight class="stringliteral">&quot;Stats<sp/>reset&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="805"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="806"><highlight class="normal"></highlight></codeline>
+<codeline lineno="807" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a031ad14c76e77f28d81341aa149367e6" refkind="member"><highlight class="normal">std::string<sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a031ad14c76e77f28d81341aa149367e6" kindref="member">NetworkManager::Impl::getLastError</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>last_error_;</highlight></codeline>
+<codeline lineno="810"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"></highlight></codeline>
+<codeline lineno="812" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a120543856c8d50a9eacc3b25b8871ffb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a120543856c8d50a9eacc3b25b8871ffb" kindref="member">NetworkManager::Impl::clearLastError</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="814"><highlight class="normal"><sp/><sp/><sp/><sp/>last_error_.clear();</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="816"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"></highlight></codeline>
+<codeline lineno="818" refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a63c377056feb875ffb1e76475d3ca3b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1a63c377056feb875ffb1e76475d3ca3b9" kindref="member">NetworkManager::Impl::healthCheck</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_lock&lt;std::shared_mutex&gt;<sp/>lock(mutex_);</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>health<sp/>check<sp/>-<sp/>can<sp/>be<sp/>extended</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="827"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"></highlight></codeline>
+<codeline lineno="829"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Private<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="830"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>NetworkManager::Impl::validateConfig(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1abb3fb7860b7a7fbac4d0377eaa223270" kindref="member">host</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Host<sp/>cannot<sp/>be<sp/>empty&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1ac04ca9131b192b6a6067c8fe0f2c26c4" kindref="member">p2p_port</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;P2P<sp/>port<sp/>cannot<sp/>be<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1acf0d8fd8fe695e0b9bbc057e3b58f9d0" kindref="member">rpc_port</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;RPC<sp/>port<sp/>cannot<sp/>be<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.<ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a2fa942d0b0f078425788dae6af063a40" kindref="member">max_connections</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;Max<sp/>connections<sp/>cannot<sp/>be<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="852"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"></highlight></codeline>
+<codeline lineno="854"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>NetworkManager::Impl::validateSecurityConfig(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.enable_encryption)<sp/>{</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.ssl_cert_path.empty())<sp/>{</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;SSL<sp/>certificate<sp/>path<sp/>required<sp/>when<sp/>encryption<sp/>is<sp/>enabled&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.ssl_key_path.empty())<sp/>{</highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logError(</highlight><highlight class="stringliteral">&quot;SSL<sp/>key<sp/>path<sp/>required<sp/>when<sp/>encryption<sp/>is<sp/>enabled&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="867"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="868"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="869"><highlight class="normal"></highlight></codeline>
+<codeline lineno="870"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NetworkManager::Impl::logError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error)<sp/>{</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/>last_error_<sp/>=<sp/>error;</highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/>logger_-&gt;error(error);</highlight></codeline>
+<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error_callback_)<sp/>{</highlight></codeline>
+<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error_callback_(error);</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="877"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"></highlight></codeline>
+<codeline lineno="879"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NetworkManager::Impl::logInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/>logger_-&gt;info(message);</highlight></codeline>
+<codeline lineno="881"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"></highlight></codeline>
+<codeline lineno="883"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NetworkManager::Impl::logDebug(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/>logger_-&gt;debug(message);</highlight></codeline>
+<codeline lineno="885"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"></highlight></codeline>
+<codeline lineno="887"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NetworkManager::Impl::updateStats()<sp/>{</highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!stats_enabled_)<sp/>{</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/>stats_.active_connections<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(peers_.size());</highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/>stats_.total_connections<sp/>=<sp/>stats_.active_connections;<sp/></highlight><highlight class="comment">//<sp/>Simplified<sp/>for<sp/>now</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="894"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"></highlight></codeline>
+<codeline lineno="896"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NetworkManager::Impl::processReceivedData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement<sp/>data<sp/>processing<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/>logDebug(</highlight><highlight class="stringliteral">&quot;Received<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(length)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes<sp/>from<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>address);</highlight></codeline>
+<codeline lineno="899"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="900"><highlight class="normal"></highlight></codeline>
+<codeline lineno="901"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::network<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/network/src/network_manager.cpp"/>
+  </compounddef>
+</doxygen>

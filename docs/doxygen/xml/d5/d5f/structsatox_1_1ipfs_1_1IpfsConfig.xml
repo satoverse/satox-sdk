@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig" kind="struct" language="C++" prot="public">
+    <compoundname>satox::ipfs::IpfsConfig</compoundname>
+    <includes refid="d8/d5d/ipfs_2include_2satox_2ipfs_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1a842eb88fb579d8a9405486b5a0d711b7" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IpfsConfig::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>satox::ipfs::IpfsConfig::name</qualifiedname>
+        <initializer>= &quot;satox_ipfs&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="51" column="17" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1ac41d0017eadc9d4c3e6d4c3229189d01" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IpfsConfig::enableLogging</definition>
+        <argsstring></argsstring>
+        <name>enableLogging</name>
+        <qualifiedname>satox::ipfs::IpfsConfig::enableLogging</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="52" column="10" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1ad2c1efd7964b25b8d3ba824a12852457" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IpfsConfig::logPath</definition>
+        <argsstring></argsstring>
+        <name>logPath</name>
+        <qualifiedname>satox::ipfs::IpfsConfig::logPath</qualifiedname>
+        <initializer>= &quot;logs/components/ipfs/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="53" column="17" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1a40c27a7d8d4e690b6149636f01698a86" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::ipfs::IpfsConfig::additionalConfig</definition>
+        <argsstring></argsstring>
+        <name>additionalConfig</name>
+        <qualifiedname>satox::ipfs::IpfsConfig::additionalConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="54" column="20" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::ipfs::IpfsConfig</label>
+        <link refid="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>logPath</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/ipfs/include/satox/ipfs/types.hpp" line="50" column="1" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="50" bodyend="55"/>
+    <listofallmembers>
+      <member refid="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1a40c27a7d8d4e690b6149636f01698a86" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsConfig</scope><name>additionalConfig</name></member>
+      <member refid="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1ac41d0017eadc9d4c3e6d4c3229189d01" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsConfig</scope><name>enableLogging</name></member>
+      <member refid="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1ad2c1efd7964b25b8d3ba824a12852457" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsConfig</scope><name>logPath</name></member>
+      <member refid="d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig_1a842eb88fb579d8a9405486b5a0d711b7" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsConfig</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

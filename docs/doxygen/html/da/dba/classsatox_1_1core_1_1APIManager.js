@@ -1,0 +1,26 @@
+var classsatox_1_1core_1_1APIManager =
+[
+    [ "Config", "db/d17/structsatox_1_1core_1_1APIManager_1_1Config.html", "db/d17/structsatox_1_1core_1_1APIManager_1_1Config" ],
+    [ "Impl", "dd/d93/classsatox_1_1core_1_1APIManager_1_1Impl.html", "dd/d93/classsatox_1_1core_1_1APIManager_1_1Impl" ],
+    [ "Request", "d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request.html", "d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" ],
+    [ "Response", "d4/d03/structsatox_1_1core_1_1APIManager_1_1Response.html", "d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" ],
+    [ "WebSocketMessage", "d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage.html", "d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" ],
+    [ "RequestHandler", "da/dba/classsatox_1_1core_1_1APIManager.html#ae89ce1da5895f3ad0931edd970745b32", null ],
+    [ "WebSocketHandler", "da/dba/classsatox_1_1core_1_1APIManager.html#ad6a98d6f969b5844053a1745503f0e9a", null ],
+    [ "APIManager", "da/dba/classsatox_1_1core_1_1APIManager.html#aac92e68ce13433ace119754cb1ef53b8", null ],
+    [ "~APIManager", "da/dba/classsatox_1_1core_1_1APIManager.html#a7d14741a5bb5de5317e71e192c61fee1", null ],
+    [ "broadcastWebSocketMessage", "da/dba/classsatox_1_1core_1_1APIManager.html#a13c4f7c34d6309d7dfcd9fe3e55d7ca5", null ],
+    [ "clearError", "da/dba/classsatox_1_1core_1_1APIManager.html#af7833f5f06a42f7553ef07f618ca6a42", null ],
+    [ "getLastError", "da/dba/classsatox_1_1core_1_1APIManager.html#a2573c67a52b58f2cb082d365cd20ea02", null ],
+    [ "initialize", "da/dba/classsatox_1_1core_1_1APIManager.html#a9cf3f704e5bc9c8052d52d9e0477b311", null ],
+    [ "isRateLimited", "da/dba/classsatox_1_1core_1_1APIManager.html#ac6a40e4aed20922374e57e7d7302efa1", null ],
+    [ "isRunning", "da/dba/classsatox_1_1core_1_1APIManager.html#a1f0b6de0c6b40b14262da58ff1d30dc2", null ],
+    [ "registerEndpoint", "da/dba/classsatox_1_1core_1_1APIManager.html#ad97596e43b10939de7b812028d6b5bcc", null ],
+    [ "registerWebSocketHandler", "da/dba/classsatox_1_1core_1_1APIManager.html#ad7d14947fe009de49a3ccf5e596b90b1", null ],
+    [ "sendWebSocketMessage", "da/dba/classsatox_1_1core_1_1APIManager.html#a6144b146b98388621e95b981150b5898", null ],
+    [ "setRateLimit", "da/dba/classsatox_1_1core_1_1APIManager.html#a53750530907f9b286cd7cd0dc8891215", null ],
+    [ "start", "da/dba/classsatox_1_1core_1_1APIManager.html#a3f453d69e81ba5ca8ce5bc495d27391b", null ],
+    [ "stop", "da/dba/classsatox_1_1core_1_1APIManager.html#a7771c2bc51c97f93999d308accb002be", null ],
+    [ "unregisterEndpoint", "da/dba/classsatox_1_1core_1_1APIManager.html#a04f2be0c60ae3e94927b898605ace946", null ],
+    [ "unregisterWebSocketHandler", "da/dba/classsatox_1_1core_1_1APIManager.html#a3840f9634b79ed1432410712788197e4", null ]
+];

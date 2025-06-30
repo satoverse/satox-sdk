@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/def/classsatox_1_1core_1_1MessageHandler" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::MessageHandler</compoundname>
+    <includes refid="dc/d84/message__handler_8hpp" local="no">message_handler.hpp</includes>
+    <innerclass refid="de/d79/structsatox_1_1core_1_1MessageHandler_1_1PendingResponse" prot="private">satox::core::MessageHandler::PendingResponse</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a71256453f9fc22bd7c80a3ebda136d07" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;)&gt;</type>
+        <definition>using satox::core::MessageHandler::MessageCallback =  std::function&lt;void(const NetworkMessage&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>MessageCallback</name>
+        <qualifiedname>satox::core::MessageHandler::MessageCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="60" column="5" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a7e9d5d642ea75b7b43f84f20332c68f9" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &gt;</type>
+        <definition>std::queue&lt;NetworkMessage&gt; satox::core::MessageHandler::messageQueue_</definition>
+        <argsstring></argsstring>
+        <name>messageQueue_</name>
+        <qualifiedname>satox::core::MessageHandler::messageQueue_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="66" column="16" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1ae4811eae1489562aa5ce407aa8bac7a4" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::MessageHandler::queueMutex_</definition>
+        <argsstring></argsstring>
+        <name>queueMutex_</name>
+        <qualifiedname>satox::core::MessageHandler::queueMutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="67" column="16" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1abd7fb3f7c10ccc810820df653873a27d" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::core::MessageHandler::queueCondition_</definition>
+        <argsstring></argsstring>
+        <name>queueCondition_</name>
+        <qualifiedname>satox::core::MessageHandler::queueCondition_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="68" column="29" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a1fec15055b16e663d4fade8dafe7a775" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::MessageHandler::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::core::MessageHandler::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="69" column="10" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1aa4b0233cec0d65a5dcd52be7505bcfb3" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, PendingResponse &gt;</type>
+        <definition>std::unordered_map&lt;std::string, PendingResponse&gt; satox::core::MessageHandler::pendingResponses_</definition>
+        <argsstring></argsstring>
+        <name>pendingResponses_</name>
+        <qualifiedname>satox::core::MessageHandler::pendingResponses_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="76" column="24" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a85028679659308d44f42a9be75061233" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::MessageHandler::responseMutex_</definition>
+        <argsstring></argsstring>
+        <name>responseMutex_</name>
+        <qualifiedname>satox::core::MessageHandler::responseMutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="77" column="16" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1afe9c545bbf215692c477903778b67bf2" prot="private" static="no" mutable="no">
+        <type><ref refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a71256453f9fc22bd7c80a3ebda136d07" kindref="member">MessageCallback</ref></type>
+        <definition>MessageCallback satox::core::MessageHandler::messageCallback_</definition>
+        <argsstring></argsstring>
+        <name>messageCallback_</name>
+        <qualifiedname>satox::core::MessageHandler::messageCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="80" column="21" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a8f9a669f2637aaea8cc2d34325996d97" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>std::function&lt;void(const std::string&amp;)&gt; satox::core::MessageHandler::errorCallback_</definition>
+        <argsstring></argsstring>
+        <name>errorCallback_</name>
+        <qualifiedname>satox::core::MessageHandler::errorCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="81" column="19" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1adf9d791fc56f268d63ce31902f3fadcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::MessageHandler::MessageHandler</definition>
+        <argsstring>()</argsstring>
+        <name>MessageHandler</name>
+        <qualifiedname>satox::core::MessageHandler::MessageHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="44" column="5" bodyfile="src/core/src/message_handler.cpp" bodystart="39" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a4ab1747d7a9c4e7210052bf15bf549d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::MessageHandler::~MessageHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~MessageHandler</name>
+        <qualifiedname>satox::core::MessageHandler::~MessageHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="45" column="5" bodyfile="src/core/src/message_handler.cpp" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a845ed3aaa94fc544eb1a09af50dfaf31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::enqueueMessage</definition>
+        <argsstring>(const NetworkMessage &amp;message)</argsstring>
+        <name>enqueueMessage</name>
+        <qualifiedname>satox::core::MessageHandler::enqueueMessage</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="48" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1aff2564461adcd67f3fb7bd4a36f0e7d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::MessageHandler::processNextMessage</definition>
+        <argsstring>()</argsstring>
+        <name>processNextMessage</name>
+        <qualifiedname>satox::core::MessageHandler::processNextMessage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="49" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1ac23b890a665b9b64d1754d5c879f5b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::startProcessing</definition>
+        <argsstring>()</argsstring>
+        <name>startProcessing</name>
+        <qualifiedname>satox::core::MessageHandler::startProcessing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="50" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1adab2c8f3f9779818e5d60998b770cb6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::stopProcessing</definition>
+        <argsstring>()</argsstring>
+        <name>stopProcessing</name>
+        <qualifiedname>satox::core::MessageHandler::stopProcessing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="51" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1aef9a891ede6f3fb01b2070c6cb34e05b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::MessageHandler::generateRequestId</definition>
+        <argsstring>()</argsstring>
+        <name>generateRequestId</name>
+        <qualifiedname>satox::core::MessageHandler::generateRequestId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="54" column="17" bodyfile="src/core/src/message_handler.cpp" bodystart="46" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a21b5cf8188e023b66bde01b7d3acbb3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &gt;</type>
+        <definition>NetworkResponse satox::core::MessageHandler::waitForResponse</definition>
+        <argsstring>(const std::string &amp;requestId, std::chrono::milliseconds timeout)</argsstring>
+        <name>waitForResponse</name>
+        <qualifiedname>satox::core::MessageHandler::waitForResponse</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>requestId</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="55" column="17" bodyfile="src/core/src/message_handler.cpp" bodystart="87" bodyend="112"/>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a6c4a10dd6560c3486dde41a3b9a581e4" compoundref="d1/da1/network__interface_8h" startline="66">satox::core::NetworkResponse::error</references>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a6b4a4352ba67329cce32632b896ac410" compoundref="d1/da1/network__interface_8h" startline="64">satox::core::NetworkResponse::success</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a9665d75b87b954618c86e55340eacff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::handleResponse</definition>
+        <argsstring>(const NetworkMessage &amp;response)</argsstring>
+        <name>handleResponse</name>
+        <qualifiedname>satox::core::MessageHandler::handleResponse</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="57" column="10" bodyfile="src/core/src/message_handler.cpp" bodystart="67" bodyend="85"/>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1aee2c13de7437202054bfdf0c000a451b" compoundref="d1/da1/network__interface_8h" startline="65">satox::core::NetworkResponse::data</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2babb1ca97ec761fc37101737ba0aa2e7c5" compoundref="d1/da1/network__interface_8h" startline="53">satox::core::NetworkMessage::ERROR</references>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a6c4a10dd6560c3486dde41a3b9a581e4" compoundref="d1/da1/network__interface_8h" startline="66">satox::core::NetworkResponse::error</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a6b4a4352ba67329cce32632b896ac410" compoundref="d1/da1/network__interface_8h" startline="64">satox::core::NetworkResponse::success</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a25fb2c45ee954e6b62de9c5102666a31" compoundref="d1/da1/network__interface_8h" startline="59">satox::core::NetworkMessage::timestamp</references>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a93c9967166e4e07d433dd35978475ebb" compoundref="d1/da1/network__interface_8h" startline="67">satox::core::NetworkResponse::timestamp</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a188e998fbbda6ca8a3edb50223b9ab8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::setMessageCallback</definition>
+        <argsstring>(MessageCallback callback)</argsstring>
+        <name>setMessageCallback</name>
+        <qualifiedname>satox::core::MessageHandler::setMessageCallback</qualifiedname>
+        <param>
+          <type><ref refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a71256453f9fc22bd7c80a3ebda136d07" kindref="member">MessageCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="61" column="10" bodyfile="src/core/src/message_handler.cpp" bodystart="139" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1ae70c74bc1688e5129d05d20ce1a3f7e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::setErrorCallback</definition>
+        <argsstring>(std::function&lt; void(const std::string &amp;)&gt; callback)</argsstring>
+        <name>setErrorCallback</name>
+        <qualifiedname>satox::core::MessageHandler::setErrorCallback</qualifiedname>
+        <param>
+          <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="62" column="10" bodyfile="src/core/src/message_handler.cpp" bodystart="143" bodyend="145"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1af4713a58f9128deee1ccea28564729e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::cleanupExpiredResponses</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupExpiredResponses</name>
+        <qualifiedname>satox::core::MessageHandler::cleanupExpiredResponses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="84" column="10" bodyfile="src/core/src/message_handler.cpp" bodystart="121" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/def/classsatox_1_1core_1_1MessageHandler_1a69c684514c28fa57b1529fad2e1e672a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::MessageHandler::processMessageQueue</definition>
+        <argsstring>()</argsstring>
+        <name>processMessageQueue</name>
+        <qualifiedname>satox::core::MessageHandler::processMessageQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/message_handler.hpp" line="85" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/message_handler.hpp" line="42" column="1" bodyfile="src/core/include/satox/core/message_handler.hpp" bodystart="42" bodyend="86"/>
+    <listofallmembers>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1af4713a58f9128deee1ccea28564729e0" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>cleanupExpiredResponses</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a845ed3aaa94fc544eb1a09af50dfaf31" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>enqueueMessage</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a8f9a669f2637aaea8cc2d34325996d97" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>errorCallback_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1aef9a891ede6f3fb01b2070c6cb34e05b" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>generateRequestId</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a9665d75b87b954618c86e55340eacff8" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>handleResponse</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a71256453f9fc22bd7c80a3ebda136d07" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>MessageCallback</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1afe9c545bbf215692c477903778b67bf2" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>messageCallback_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1adf9d791fc56f268d63ce31902f3fadcc" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>MessageHandler</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a7e9d5d642ea75b7b43f84f20332c68f9" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>messageQueue_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1aa4b0233cec0d65a5dcd52be7505bcfb3" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>pendingResponses_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a69c684514c28fa57b1529fad2e1e672a" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>processMessageQueue</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1aff2564461adcd67f3fb7bd4a36f0e7d5" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>processNextMessage</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1abd7fb3f7c10ccc810820df653873a27d" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>queueCondition_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1ae4811eae1489562aa5ce407aa8bac7a4" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>queueMutex_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a85028679659308d44f42a9be75061233" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>responseMutex_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a1fec15055b16e663d4fade8dafe7a775" prot="private" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>running_</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1ae70c74bc1688e5129d05d20ce1a3f7e1" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>setErrorCallback</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a188e998fbbda6ca8a3edb50223b9ab8e" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>setMessageCallback</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1ac23b890a665b9b64d1754d5c879f5b6e" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>startProcessing</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1adab2c8f3f9779818e5d60998b770cb6d" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>stopProcessing</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a21b5cf8188e023b66bde01b7d3acbb3e" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>waitForResponse</name></member>
+      <member refid="d1/def/classsatox_1_1core_1_1MessageHandler_1a4ab1747d7a9c4e7210052bf15bf549d9" prot="public" virt="non-virtual"><scope>satox::core::MessageHandler</scope><name>~MessageHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

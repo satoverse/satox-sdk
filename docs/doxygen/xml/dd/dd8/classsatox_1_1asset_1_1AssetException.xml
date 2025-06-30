@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/dd8/classsatox_1_1asset_1_1AssetException" kind="class" language="C++" prot="public">
+    <compoundname>satox::asset::AssetException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="dd/d38/classsatox_1_1asset_1_1AssetInitializationException" prot="public" virt="non-virtual">satox::asset::AssetInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="da/d96/classsatox_1_1asset_1_1AssetOperationException" prot="public" virt="non-virtual">satox::asset::AssetOperationException</derivedcompoundref>
+    <includes refid="dd/dca/asset_2include_2satox_2asset_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/dd8/classsatox_1_1asset_1_1AssetException_1a6c25bcd22b418465bd774182411109bd" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d84/namespacesatox_1_1asset_1a5f24e823a37106716f7b777afaae972f" kindref="member">AssetErrorCode</ref></type>
+        <definition>AssetErrorCode satox::asset::AssetException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::asset::AssetException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/asset/include/satox/asset/error.hpp" line="70" column="20" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dd8/classsatox_1_1asset_1_1AssetException_1a559ee8c60c58a75e28223332130021a5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::asset::AssetException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::asset::AssetException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/asset/include/satox/asset/error.hpp" line="71" column="17" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/dd8/classsatox_1_1asset_1_1AssetException_1a8157ed7dd6a1d193950f206834e74072" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::asset::AssetException::AssetException</definition>
+        <argsstring>(AssetErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>AssetException</name>
+        <qualifiedname>satox::asset::AssetException::AssetException</qualifiedname>
+        <param>
+          <type><ref refid="d5/d84/namespacesatox_1_1asset_1a5f24e823a37106716f7b777afaae972f" kindref="member">AssetErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/asset/include/satox/asset/error.hpp" line="54" column="5" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="54" bodyend="55"/>
+        <references refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1af3ffde8fcd9bbe87c8b445ee40008756" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="61" endline="63">code</references>
+        <references refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1acf57f4973eb6306ec3a11985f21a9df9" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="65" endline="67">message</references>
+        <referencedby refid="dd/d38/classsatox_1_1asset_1_1AssetInitializationException_1ab330a4af3873c519d47eb65bbca38e15" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="77" endline="78">satox::asset::AssetInitializationException::AssetInitializationException</referencedby>
+        <referencedby refid="da/d96/classsatox_1_1asset_1_1AssetOperationException_1af3230e01c931d5436155d61c7bad110e" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="83" endline="84">satox::asset::AssetOperationException::AssetOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/dd8/classsatox_1_1asset_1_1AssetException_1a54a26e473771401c06b0db5e452872ed" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::asset::AssetException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::asset::AssetException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/asset/include/satox/asset/error.hpp" line="57" column="16" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dd8/classsatox_1_1asset_1_1AssetException_1af3ffde8fcd9bbe87c8b445ee40008756" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d5/d84/namespacesatox_1_1asset_1a5f24e823a37106716f7b777afaae972f" kindref="member">AssetErrorCode</ref></type>
+        <definition>AssetErrorCode satox::asset::AssetException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::asset::AssetException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/asset/include/satox/asset/error.hpp" line="61" column="20" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="61" bodyend="63"/>
+        <referencedby refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1a8157ed7dd6a1d193950f206834e74072" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="54" endline="55">AssetException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/dd8/classsatox_1_1asset_1_1AssetException_1acf57f4973eb6306ec3a11985f21a9df9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::asset::AssetException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::asset::AssetException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/asset/include/satox/asset/error.hpp" line="65" column="23" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="65" bodyend="67"/>
+        <referencedby refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1a8157ed7dd6a1d193950f206834e74072" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="54" endline="55">AssetException</referencedby>
+        <referencedby refid="dd/d38/classsatox_1_1asset_1_1AssetInitializationException_1ab330a4af3873c519d47eb65bbca38e15" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="77" endline="78">satox::asset::AssetInitializationException::AssetInitializationException</referencedby>
+        <referencedby refid="da/d96/classsatox_1_1asset_1_1AssetOperationException_1af3230e01c931d5436155d61c7bad110e" compoundref="dd/dca/asset_2include_2satox_2asset_2error_8hpp" startline="83" endline="84">satox::asset::AssetOperationException::AssetOperationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::asset::AssetException</label>
+        <link refid="dd/dd8/classsatox_1_1asset_1_1AssetException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::asset::AssetInitializationException</label>
+        <link refid="dd/d38/classsatox_1_1asset_1_1AssetInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::asset::AssetOperationException</label>
+        <link refid="da/d96/classsatox_1_1asset_1_1AssetOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::asset::AssetException</label>
+        <link refid="dd/dd8/classsatox_1_1asset_1_1AssetException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/asset/include/satox/asset/error.hpp" line="52" column="1" bodyfile="src/asset/include/satox/asset/error.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1a8157ed7dd6a1d193950f206834e74072" prot="public" virt="non-virtual"><scope>satox::asset::AssetException</scope><name>AssetException</name></member>
+      <member refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1af3ffde8fcd9bbe87c8b445ee40008756" prot="public" virt="non-virtual"><scope>satox::asset::AssetException</scope><name>code</name></member>
+      <member refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1a6c25bcd22b418465bd774182411109bd" prot="private" virt="non-virtual"><scope>satox::asset::AssetException</scope><name>code_</name></member>
+      <member refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1acf57f4973eb6306ec3a11985f21a9df9" prot="public" virt="non-virtual"><scope>satox::asset::AssetException</scope><name>message</name></member>
+      <member refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1a559ee8c60c58a75e28223332130021a5" prot="private" virt="non-virtual"><scope>satox::asset::AssetException</scope><name>message_</name></member>
+      <member refid="dd/dd8/classsatox_1_1asset_1_1AssetException_1a54a26e473771401c06b0db5e452872ed" prot="public" virt="non-virtual"><scope>satox::asset::AssetException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

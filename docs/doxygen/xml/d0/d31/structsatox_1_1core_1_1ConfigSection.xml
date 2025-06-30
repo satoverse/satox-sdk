@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/d31/structsatox_1_1core_1_1ConfigSection" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::ConfigSection</compoundname>
+    <includes refid="dd/d27/core_2include_2satox_2core_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d0/d31/structsatox_1_1core_1_1ConfigSection_1ae8299b68143e190fb19215b9afaac702" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::ConfigSection::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>satox::core::ConfigSection::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="138" column="17" bodyfile="src/core/include/satox/core/types.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d31/structsatox_1_1core_1_1ConfigSection_1a67f1b910af1c2c1d26b17b519accf309" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="d4/df5/structsatox_1_1core_1_1ConfigValue" kindref="compound">ConfigValue</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, ConfigValue&gt; satox::core::ConfigSection::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <qualifiedname>satox::core::ConfigSection::values</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="139" column="24" bodyfile="src/core/include/satox/core/types.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d31/structsatox_1_1core_1_1ConfigSection_1a9f9f8a7c55536abb6cc6d681edf701dc" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::ConfigSection::last_modified</definition>
+        <argsstring></argsstring>
+        <name>last_modified</name>
+        <qualifiedname>satox::core::ConfigSection::last_modified</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="140" column="43" bodyfile="src/core/include/satox/core/types.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>K</label>
+      </node>
+      <node id="8">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::core::ConfigSection</label>
+        <link refid="d0/d31/structsatox_1_1core_1_1ConfigSection"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>values</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>satox::core::ConfigValue</label>
+        <link refid="d4/df5/structsatox_1_1core_1_1ConfigValue"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>string_value</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::unordered_map&lt; K, T &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_map&lt; std::string, satox::core::ConfigValue &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="template-instance">
+          <edgelabel>&lt; std::string, satox::core::ConfigValue &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/types.hpp" line="137" column="1" bodyfile="src/core/include/satox/core/types.hpp" bodystart="137" bodyend="141"/>
+    <listofallmembers>
+      <member refid="d0/d31/structsatox_1_1core_1_1ConfigSection_1a9f9f8a7c55536abb6cc6d681edf701dc" prot="public" virt="non-virtual"><scope>satox::core::ConfigSection</scope><name>last_modified</name></member>
+      <member refid="d0/d31/structsatox_1_1core_1_1ConfigSection_1ae8299b68143e190fb19215b9afaac702" prot="public" virt="non-virtual"><scope>satox::core::ConfigSection</scope><name>name</name></member>
+      <member refid="d0/d31/structsatox_1_1core_1_1ConfigSection_1a67f1b910af1c2c1d26b17b519accf309" prot="public" virt="non-virtual"><scope>satox::core::ConfigSection</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

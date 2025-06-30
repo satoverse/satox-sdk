@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['impl_0',['Impl',['../dd/d93/classsatox_1_1core_1_1APIManager_1_1Impl.html',1,'satox::core::APIManager::Impl'],['../d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl.html',1,'satox::core::cloud::AWSManager::Impl'],['../dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl.html',1,'satox::core::cloud::FirebaseManager::Impl'],['../d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl.html',1,'satox::core::cloud::SupabaseManager::Impl'],['../d3/deb/classsatox_1_1core_1_1DatabaseManager_1_1Impl.html',1,'satox::core::DatabaseManager::Impl'],['../da/d77/structsatox_1_1core_1_1FirebaseManager_1_1Impl.html',1,'satox::core::FirebaseManager::Impl'],['../d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl.html',1,'satox::core::PerformanceOptimization::Impl'],['../d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl.html',1,'satox::core::SupabaseManager::Impl'],['../d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl.html',1,'satox::network::CertificateRevocation::Impl'],['../d8/d7a/classsatox_1_1network_1_1LetsEncryptManager_1_1Impl.html',1,'satox::network::LetsEncryptManager::Impl'],['../d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl.html',1,'satox::network::NetworkManager::Impl'],['../da/d30/classsatox_1_1nft_1_1NFTManager_1_1Impl.html',1,'satox::nft::NFTManager::Impl'],['../dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl.html',1,'satox::security::pqc::HybridCrypto::Impl'],['../dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl.html',1,'satox::security::pqc::KeyManager::Impl'],['../db/d3a/classsatox_1_1security_1_1pqc_1_1MLDSA_1_1Impl.html',1,'satox::security::pqc::MLDSA::Impl'],['../d7/d59/classsatox_1_1security_1_1pqc_1_1MLKEM_1_1Impl.html',1,'satox::security::pqc::MLKEM::Impl'],['../dd/dd3/classsatox_1_1security_1_1SecurityManager_1_1Impl.html',1,'satox::security::SecurityManager::Impl']]],
+  ['indexinfo_1',['IndexInfo',['../d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo.html',1,'satox::database::QueryOptimizer']]],
+  ['input_2',['Input',['../d3/de8/structsatox_1_1core_1_1Input.html',1,'satox::core::Input'],['../d4/d63/structsatox_1_1core_1_1TransactionManager_1_1Input.html',1,'satox::core::TransactionManager::Input']]],
+  ['inputvalidator_3',['InputValidator',['../d2/dca/classsatox_1_1security_1_1InputValidator.html',1,'satox::security']]],
+  ['invvector_4',['InvVector',['../d7/dc5/structsatox_1_1InvVector.html',1,'satox']]],
+  ['ipfsclient_5',['IPFSClient',['../d6/def/classsatox_1_1IPFSClient.html',1,'satox']]],
+  ['ipfsconfig_6',['IPFSConfig',['../db/d79/structsatox_1_1ipfs_1_1IPFSConfig.html',1,'satox::ipfs']]],
+  ['ipfsconfig_7',['IpfsConfig',['../d5/d5f/structsatox_1_1ipfs_1_1IpfsConfig.html',1,'satox::ipfs']]],
+  ['ipfscontent_8',['IPFSContent',['../dc/d95/structsatox_1_1ipfs_1_1IPFSContent.html',1,'satox::ipfs']]],
+  ['ipfsdata_9',['IPFSData',['../de/dfa/structsatox_1_1wallet_1_1WalletManager_1_1IPFSData.html',1,'satox::wallet::WalletManager']]],
+  ['ipfsexception_10',['IpfsException',['../d6/dea/classsatox_1_1ipfs_1_1IpfsException.html',1,'satox::ipfs']]],
+  ['ipfsfile_11',['IPFSFile',['../d4/de9/classsatox_1_1database_1_1IPFSFile.html',1,'satox::database']]],
+  ['ipfshealth_12',['IpfsHealth',['../de/d98/structsatox_1_1ipfs_1_1IpfsHealth.html',1,'satox::ipfs']]],
+  ['ipfsinitializationexception_13',['IpfsInitializationException',['../da/de9/classsatox_1_1ipfs_1_1IpfsInitializationException.html',1,'satox::ipfs']]],
+  ['ipfsmanager_14',['IPFSManager',['../da/d68/classsatox_1_1core_1_1IPFSManager.html',1,'satox::core::IPFSManager'],['../dc/d29/classsatox_1_1ipfs_1_1IPFSManager.html',1,'satox::ipfs::IPFSManager']]],
+  ['ipfsoperationexception_15',['IpfsOperationException',['../d7/dbb/classsatox_1_1ipfs_1_1IpfsOperationException.html',1,'satox::ipfs']]],
+  ['ipfsresult_16',['IpfsResult',['../d1/d5f/structsatox_1_1ipfs_1_1IpfsResult.html',1,'satox::ipfs']]],
+  ['ipfsstatistics_17',['IPFSStatistics',['../d0/d7a/structsatox_1_1ipfs_1_1IPFSManager_1_1IPFSStatistics.html',1,'satox::ipfs::IPFSManager']]],
+  ['ipfsstats_18',['IPFSStats',['../d9/daf/structsatox_1_1core_1_1IPFSManager_1_1IPFSStats.html',1,'satox::core::IPFSManager']]],
+  ['ipfsstats_19',['IpfsStats',['../d6/dea/structsatox_1_1ipfs_1_1IpfsStats.html',1,'satox::ipfs']]],
+  ['iplugin_20',['IPlugin',['../d4/d0c/classsatox_1_1core_1_1PluginManager_1_1IPlugin.html',1,'satox::core::PluginManager']]],
+  ['ipluginfactory_21',['IPluginFactory',['../d9/d38/classsatox_1_1core_1_1PluginManager_1_1IPluginFactory.html',1,'satox::core::PluginManager']]],
+  ['ishutdownable_22',['IShutdownable',['../d2/dcd/classsatox_1_1core_1_1IShutdownable.html',1,'satox::core']]]
+];

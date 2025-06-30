@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/dd1/azure__config_8cpp" kind="file" language="C++">
+    <compoundname>azure_config.cpp</compoundname>
+    <includes local="yes">satox/core/cloud/azure_config.hpp</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/cloud/azure_config.cpp</label>
+        <link refid="d3/dd1/azure__config_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>satox/core/cloud/azure_config.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <innernamespace refid="dd/dc3/namespacesatox_1_1core_1_1cloud">satox::core::cloud</innernamespace>
+    <briefdescription>
+<para>Azure configuration implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Satox SDK Team </para>
+</simplesect>
+<simplesect kind="date"><para>$(date &apos;+Y-m-d&apos;) </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0 @license MIT </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;satox/core/cloud/azure_config.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dd/dc3/namespacesatox_1_1core_1_1cloud" kindref="compound">cloud</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="dd/dc3/namespacesatox_1_1core_1_1cloud_1aff23fba0ad4e61aa0bd76007d3f84ee3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dc3/namespacesatox_1_1core_1_1cloud_1a04f55b113e6ed5c85e963a726d603d21" kindref="member">to_json</ref>(nlohmann::json&amp;<sp/>j,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AzureConfig&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>j<sp/>=<sp/>nlohmann::json{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;tenant_id&quot;</highlight><highlight class="normal">,<sp/>config.tenant_id},</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;client_id&quot;</highlight><highlight class="normal">,<sp/>config.client_id},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;client_secret&quot;</highlight><highlight class="normal">,<sp/>config.client_secret},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;subscription_id&quot;</highlight><highlight class="normal">,<sp/>config.subscription_id},</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;resource_group&quot;</highlight><highlight class="normal">,<sp/>config.resource_group},</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;storage_account&quot;</highlight><highlight class="normal">,<sp/>config.storage_account},</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;cosmos_db_endpoint&quot;</highlight><highlight class="normal">,<sp/>config.cosmos_db_endpoint},</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;cosmos_db_key&quot;</highlight><highlight class="normal">,<sp/>config.cosmos_db_key},</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;function_app_name&quot;</highlight><highlight class="normal">,<sp/>config.function_app_name},</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;timeout_seconds&quot;</highlight><highlight class="normal">,<sp/>config.timeout_seconds},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;max_retries&quot;</highlight><highlight class="normal">,<sp/>config.max_retries},</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;enable_ssl_verification&quot;</highlight><highlight class="normal">,<sp/>config.enable_ssl_verification},</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;headers&quot;</highlight><highlight class="normal">,<sp/>config.headers}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="dd/dc3/namespacesatox_1_1core_1_1cloud_1a6a736ecc060f7457b7fbb28521de48b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dc3/namespacesatox_1_1core_1_1cloud_1ac0a95ceb2f4bec369993a611d026f257" kindref="member">from_json</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>j,<sp/>AzureConfig&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;tenant_id&quot;</highlight><highlight class="normal">).get_to(config.tenant_id);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;client_id&quot;</highlight><highlight class="normal">).get_to(config.client_id);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;client_secret&quot;</highlight><highlight class="normal">).get_to(config.client_secret);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;subscription_id&quot;</highlight><highlight class="normal">).get_to(config.subscription_id);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;resource_group&quot;</highlight><highlight class="normal">).get_to(config.resource_group);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;storage_account&quot;</highlight><highlight class="normal">).get_to(config.storage_account);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;cosmos_db_endpoint&quot;</highlight><highlight class="normal">).get_to(config.cosmos_db_endpoint);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;cosmos_db_key&quot;</highlight><highlight class="normal">).get_to(config.cosmos_db_key);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;function_app_name&quot;</highlight><highlight class="normal">).get_to(config.function_app_name);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;timeout_seconds&quot;</highlight><highlight class="normal">).get_to(config.timeout_seconds);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;max_retries&quot;</highlight><highlight class="normal">).get_to(config.max_retries);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;enable_ssl_verification&quot;</highlight><highlight class="normal">).get_to(config.enable_ssl_verification);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>j.at(</highlight><highlight class="stringliteral">&quot;headers&quot;</highlight><highlight class="normal">).get_to(config.headers);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>cloud</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/cloud/azure_config.cpp"/>
+  </compounddef>
+</doxygen>

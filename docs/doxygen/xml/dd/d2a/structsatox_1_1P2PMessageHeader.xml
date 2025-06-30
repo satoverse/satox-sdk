@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/d2a/structsatox_1_1P2PMessageHeader" kind="struct" language="C++" prot="public">
+    <compoundname>satox::P2PMessageHeader</compoundname>
+    <includes refid="da/d86/p2p__protocol_8hpp" local="no">p2p_protocol.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/d2a/structsatox_1_1P2PMessageHeader_1a529800d31d39de8cdcc3597efa357610" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::P2PMessageHeader::magic</definition>
+        <argsstring></argsstring>
+        <name>magic</name>
+        <qualifiedname>satox::P2PMessageHeader::magic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="80" column="14" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="80" bodyend="-1"/>
+        <referencedby refid="df/daa/namespacesatox_1ab631626a1a7d1e1ea09c09fab02357c5" compoundref="d9/db5/p2p__protocol_8cpp" startline="159" endline="199">satox::deserializeMessage</referencedby>
+        <referencedby refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a82fd69eeffedbf9b4379c7f78c24d5f4" compoundref="da/d86/p2p__protocol_8hpp" startline="85" endline="87">P2PMessageHeader</referencedby>
+        <referencedby refid="df/daa/namespacesatox_1a07fa45fd0fed5c5a7c48b26fa685dcad" compoundref="d9/db5/p2p__protocol_8cpp" startline="139" endline="157">satox::serializeMessage</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d2a/structsatox_1_1P2PMessageHeader_1aee0155cd14de7addc6ad26dfdd0689da" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char satox::P2PMessageHeader::command[12]</definition>
+        <argsstring>[12]</argsstring>
+        <name>command</name>
+        <qualifiedname>satox::P2PMessageHeader::command</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="81" column="10" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="81" bodyend="-1"/>
+        <referencedby refid="df/daa/namespacesatox_1ab631626a1a7d1e1ea09c09fab02357c5" compoundref="d9/db5/p2p__protocol_8cpp" startline="159" endline="199">satox::deserializeMessage</referencedby>
+        <referencedby refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a82fd69eeffedbf9b4379c7f78c24d5f4" compoundref="da/d86/p2p__protocol_8hpp" startline="85" endline="87">P2PMessageHeader</referencedby>
+        <referencedby refid="df/daa/namespacesatox_1a07fa45fd0fed5c5a7c48b26fa685dcad" compoundref="d9/db5/p2p__protocol_8cpp" startline="139" endline="157">satox::serializeMessage</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d2a/structsatox_1_1P2PMessageHeader_1a515f1a00be7aa3ae0fa996e5dd3424a1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::P2PMessageHeader::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>satox::P2PMessageHeader::length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="82" column="14" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="82" bodyend="-1"/>
+        <referencedby refid="df/daa/namespacesatox_1ab631626a1a7d1e1ea09c09fab02357c5" compoundref="d9/db5/p2p__protocol_8cpp" startline="159" endline="199">satox::deserializeMessage</referencedby>
+        <referencedby refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a82fd69eeffedbf9b4379c7f78c24d5f4" compoundref="da/d86/p2p__protocol_8hpp" startline="85" endline="87">P2PMessageHeader</referencedby>
+        <referencedby refid="df/daa/namespacesatox_1a07fa45fd0fed5c5a7c48b26fa685dcad" compoundref="d9/db5/p2p__protocol_8cpp" startline="139" endline="157">satox::serializeMessage</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d2a/structsatox_1_1P2PMessageHeader_1a2fd40c965ea79c7268727ed08bc0d4c4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::P2PMessageHeader::checksum</definition>
+        <argsstring></argsstring>
+        <name>checksum</name>
+        <qualifiedname>satox::P2PMessageHeader::checksum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="83" column="14" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="83" bodyend="-1"/>
+        <referencedby refid="df/daa/namespacesatox_1ab631626a1a7d1e1ea09c09fab02357c5" compoundref="d9/db5/p2p__protocol_8cpp" startline="159" endline="199">satox::deserializeMessage</referencedby>
+        <referencedby refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a82fd69eeffedbf9b4379c7f78c24d5f4" compoundref="da/d86/p2p__protocol_8hpp" startline="85" endline="87">P2PMessageHeader</referencedby>
+        <referencedby refid="df/daa/namespacesatox_1a07fa45fd0fed5c5a7c48b26fa685dcad" compoundref="d9/db5/p2p__protocol_8cpp" startline="139" endline="157">satox::serializeMessage</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d2a/structsatox_1_1P2PMessageHeader_1a82fd69eeffedbf9b4379c7f78c24d5f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::P2PMessageHeader::P2PMessageHeader</definition>
+        <argsstring>()</argsstring>
+        <name>P2PMessageHeader</name>
+        <qualifiedname>satox::P2PMessageHeader::P2PMessageHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="85" column="5" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="85" bodyend="87"/>
+        <references refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a2fd40c965ea79c7268727ed08bc0d4c4" compoundref="da/d86/p2p__protocol_8hpp" startline="83">checksum</references>
+        <references refid="dd/d2a/structsatox_1_1P2PMessageHeader_1aee0155cd14de7addc6ad26dfdd0689da" compoundref="da/d86/p2p__protocol_8hpp" startline="81">command</references>
+        <references refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a515f1a00be7aa3ae0fa996e5dd3424a1" compoundref="da/d86/p2p__protocol_8hpp" startline="82">length</references>
+        <references refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a529800d31d39de8cdcc3597efa357610" compoundref="da/d86/p2p__protocol_8hpp" startline="80">magic</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/network/src/p2p_protocol.hpp" line="79" column="1" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="79" bodyend="88"/>
+    <listofallmembers>
+      <member refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a2fd40c965ea79c7268727ed08bc0d4c4" prot="public" virt="non-virtual"><scope>satox::P2PMessageHeader</scope><name>checksum</name></member>
+      <member refid="dd/d2a/structsatox_1_1P2PMessageHeader_1aee0155cd14de7addc6ad26dfdd0689da" prot="public" virt="non-virtual"><scope>satox::P2PMessageHeader</scope><name>command</name></member>
+      <member refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a515f1a00be7aa3ae0fa996e5dd3424a1" prot="public" virt="non-virtual"><scope>satox::P2PMessageHeader</scope><name>length</name></member>
+      <member refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a529800d31d39de8cdcc3597efa357610" prot="public" virt="non-virtual"><scope>satox::P2PMessageHeader</scope><name>magic</name></member>
+      <member refid="dd/d2a/structsatox_1_1P2PMessageHeader_1a82fd69eeffedbf9b4379c7f78c24d5f4" prot="public" virt="non-virtual"><scope>satox::P2PMessageHeader</scope><name>P2PMessageHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

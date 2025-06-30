@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::SupabaseConnection</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1abedcb0a13c64371fa99f348f9d2d5ecf" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::SupabaseConnection::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>satox::core::SupabaseConnection::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="20" column="17" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1a4e2c8f9a12aba0a7659209b9afd6d93b" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig" kindref="compound">SupabaseConfig</ref></type>
+        <definition>SupabaseConfig satox::core::SupabaseConnection::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>satox::core::SupabaseConnection::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="21" column="20" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1a31470e0e0cf9c3f34da606f9ac45c67b" prot="public" static="no" mutable="no">
+        <type>CURL *</type>
+        <definition>CURL* satox::core::SupabaseConnection::curl_handle</definition>
+        <argsstring></argsstring>
+        <name>curl_handle</name>
+        <qualifiedname>satox::core::SupabaseConnection::curl_handle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="22" column="10" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1ae6408bc3822be51c899ae43102613286" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::SupabaseConnection::connected</definition>
+        <argsstring></argsstring>
+        <name>connected</name>
+        <qualifiedname>satox::core::SupabaseConnection::connected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="23" column="10" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1ad8ec1c01beb14c1a7c41b3d9e08fa3d1" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::SupabaseConnection::last_activity</definition>
+        <argsstring></argsstring>
+        <name>last_activity</name>
+        <qualifiedname>satox::core::SupabaseConnection::last_activity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="24" column="43" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1aa016b1ba009746aea364aa41127dc193" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;void(const nlohmann::json&amp;)&gt; &gt; satox::core::SupabaseConnection::subscriptions</definition>
+        <argsstring></argsstring>
+        <name>subscriptions</name>
+        <qualifiedname>satox::core::SupabaseConnection::subscriptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="25" column="24" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>K</label>
+      </node>
+      <node id="8">
+        <label>T</label>
+      </node>
+      <node id="4">
+        <label>satox::core::SupabaseConfig</label>
+        <link refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>anon_key</edgelabel>
+          <edgelabel>auth_scheme</edgelabel>
+          <edgelabel>database_url</edgelabel>
+          <edgelabel>log_level</edgelabel>
+          <edgelabel>schema</edgelabel>
+          <edgelabel>service_role_key</edgelabel>
+          <edgelabel>url</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>satox::core::SupabaseConnection</label>
+        <link refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>subscriptions</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::unordered_map&lt; K, T &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::unordered_map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="template-instance">
+          <edgelabel>&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/src/cloud/supabase_manager.cpp" line="19" column="1" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="19" bodyend="26"/>
+    <listofallmembers>
+      <member refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1a4e2c8f9a12aba0a7659209b9afd6d93b" prot="public" virt="non-virtual"><scope>satox::core::SupabaseConnection</scope><name>config</name></member>
+      <member refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1ae6408bc3822be51c899ae43102613286" prot="public" virt="non-virtual"><scope>satox::core::SupabaseConnection</scope><name>connected</name></member>
+      <member refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1a31470e0e0cf9c3f34da606f9ac45c67b" prot="public" virt="non-virtual"><scope>satox::core::SupabaseConnection</scope><name>curl_handle</name></member>
+      <member refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1abedcb0a13c64371fa99f348f9d2d5ecf" prot="public" virt="non-virtual"><scope>satox::core::SupabaseConnection</scope><name>id</name></member>
+      <member refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1ad8ec1c01beb14c1a7c41b3d9e08fa3d1" prot="public" virt="non-virtual"><scope>satox::core::SupabaseConnection</scope><name>last_activity</name></member>
+      <member refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection_1aa016b1ba009746aea364aa41127dc193" prot="public" virt="non-virtual"><scope>satox::core::SupabaseConnection</scope><name>subscriptions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

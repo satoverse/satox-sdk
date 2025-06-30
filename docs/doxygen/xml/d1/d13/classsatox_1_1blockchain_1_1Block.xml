@@ -1,0 +1,922 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d13/classsatox_1_1blockchain_1_1Block" kind="class" language="C++" prot="public">
+    <compoundname>satox::blockchain::Block</compoundname>
+    <includes refid="d9/db2/block_8hpp" local="no">block.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ab2c5064834606465a810c3204b6b9965" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::hash_</definition>
+        <argsstring></argsstring>
+        <name>hash_</name>
+        <qualifiedname>satox::blockchain::Block::hash_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="94" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a9b256a96d9ac027691cbf27ce098d2c7" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::previous_hash_</definition>
+        <argsstring></argsstring>
+        <name>previous_hash_</name>
+        <qualifiedname>satox::blockchain::Block::previous_hash_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="95" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a9bcff431f601339480b000865d615a73" prot="private" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::blockchain::Block::timestamp_</definition>
+        <argsstring></argsstring>
+        <name>timestamp_</name>
+        <qualifiedname>satox::blockchain::Block::timestamp_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="96" column="43" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ab5fcba3e6e541582a269e39dfb02cd2a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kindref="compound">Transaction</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Transaction&gt; &gt; satox::blockchain::Block::transactions_</definition>
+        <argsstring></argsstring>
+        <name>transactions_</name>
+        <qualifiedname>satox::blockchain::Block::transactions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="97" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a891d0ecb990e3306b515ca5d86442ec6" prot="private" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t satox::blockchain::Block::nonce_</definition>
+        <argsstring></argsstring>
+        <name>nonce_</name>
+        <qualifiedname>satox::blockchain::Block::nonce_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="98" column="13" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="98" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1afa4fb901a0510445799b1dac2b80383c" prot="private" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::blockchain::Block::metadata_</definition>
+        <argsstring></argsstring>
+        <name>metadata_</name>
+        <qualifiedname>satox::blockchain::Block::metadata_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="99" column="20" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a5cc92bc14474c560cd8809face274c6b" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::Block::difficulty_</definition>
+        <argsstring></argsstring>
+        <name>difficulty_</name>
+        <qualifiedname>satox::blockchain::Block::difficulty_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="102" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a590c7d22dab6314f0776b53397023298" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::merkle_root_</definition>
+        <argsstring></argsstring>
+        <name>merkle_root_</name>
+        <qualifiedname>satox::blockchain::Block::merkle_root_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="103" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1aa32d4cff1bfa300d0a058cb7c653ccc7" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::Block::version_</definition>
+        <argsstring></argsstring>
+        <name>version_</name>
+        <qualifiedname>satox::blockchain::Block::version_</qualifiedname>
+        <initializer>{1}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="104" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="104" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a877498c4e8597ed07956d829dcdfcc94" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Block::height_</definition>
+        <argsstring></argsstring>
+        <name>height_</name>
+        <qualifiedname>satox::blockchain::Block::height_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="105" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="105" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a5c82decaa43c0a6f98132a1b0b52a5a2" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::miner_address_</definition>
+        <argsstring></argsstring>
+        <name>miner_address_</name>
+        <qualifiedname>satox::blockchain::Block::miner_address_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="106" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a4b75321efba2d75c5fdea87e70170b3e" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Block::block_reward_</definition>
+        <argsstring></argsstring>
+        <name>block_reward_</name>
+        <qualifiedname>satox::blockchain::Block::block_reward_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="107" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a06426613d2b004fa4bb7aad38adebef2" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::kawpow_mix_hash_</definition>
+        <argsstring></argsstring>
+        <name>kawpow_mix_hash_</name>
+        <qualifiedname>satox::blockchain::Block::kawpow_mix_hash_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="108" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ade709db257b13a886305e3ff604f6c17" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::kawpow_header_hash_</definition>
+        <argsstring></argsstring>
+        <name>kawpow_header_hash_</name>
+        <qualifiedname>satox::blockchain::Block::kawpow_header_hash_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="109" column="17" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ae54af5fc6b4cef71cd664ffec30a38a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::Block::Block</definition>
+        <argsstring>()=default</argsstring>
+        <name>Block</name>
+        <qualifiedname>satox::blockchain::Block::Block</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="42" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a941aa0d9cc895c53ba365b6f895fa890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::Block::~Block</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Block</name>
+        <qualifiedname>satox::blockchain::Block::~Block</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="43" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a43c9af3526202aa09f99f3ce31538c2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Block::getHash</definition>
+        <argsstring>() const</argsstring>
+        <name>getHash</name>
+        <qualifiedname>satox::blockchain::Block::getHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="46" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a16629e94f2cb92da2852bea61d5bda50" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Block::getPreviousHash</definition>
+        <argsstring>() const</argsstring>
+        <name>getPreviousHash</name>
+        <qualifiedname>satox::blockchain::Block::getPreviousHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="47" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a67cdf032c19b426cdcf921b34b6acfa6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::blockchain::Block::getTimestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>getTimestamp</name>
+        <qualifiedname>satox::blockchain::Block::getTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="48" column="43" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a089ec10f73c9b6e617161c639ba01ed9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kindref="compound">Transaction</ref> &gt; &gt; &amp;</type>
+        <definition>const std::vector&lt; std::shared_ptr&lt; Transaction &gt; &gt; &amp; satox::blockchain::Block::getTransactions</definition>
+        <argsstring>() const</argsstring>
+        <name>getTransactions</name>
+        <qualifiedname>satox::blockchain::Block::getTransactions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="49" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a6f82e01821ba2da704ec1bd4a37379c0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int64_t</type>
+        <definition>int64_t satox::blockchain::Block::getNonce</definition>
+        <argsstring>() const</argsstring>
+        <name>getNonce</name>
+        <qualifiedname>satox::blockchain::Block::getNonce</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="50" column="13" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a633f22b0f7c9b4aa93eb84cef5c4df08" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const nlohmann::json &amp;</type>
+        <definition>const nlohmann::json &amp; satox::blockchain::Block::getMetadata</definition>
+        <argsstring>() const</argsstring>
+        <name>getMetadata</name>
+        <qualifiedname>satox::blockchain::Block::getMetadata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="51" column="26" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a15545daebdc7efe498c33db20ac9764d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::Block::getDifficulty</definition>
+        <argsstring>() const</argsstring>
+        <name>getDifficulty</name>
+        <qualifiedname>satox::blockchain::Block::getDifficulty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="52" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a8b0f39216fa551a1f796ad2f5fe209be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Block::getMerkleRoot</definition>
+        <argsstring>() const</argsstring>
+        <name>getMerkleRoot</name>
+        <qualifiedname>satox::blockchain::Block::getMerkleRoot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="53" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a0053bb883bcf4d4cbcc89b65069946b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::Block::getVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersion</name>
+        <qualifiedname>satox::blockchain::Block::getVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="54" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a443ef0d4a82925b9199a4b92c4cb1ebd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Block::getHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>getHeight</name>
+        <qualifiedname>satox::blockchain::Block::getHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="55" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a29bd77edf6757e371bfcf63a8b005d5b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Block::getMinerAddress</definition>
+        <argsstring>() const</argsstring>
+        <name>getMinerAddress</name>
+        <qualifiedname>satox::blockchain::Block::getMinerAddress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="56" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a28336513cb7e571a50a05fa9ce88e35b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Block::getBlockReward</definition>
+        <argsstring>() const</argsstring>
+        <name>getBlockReward</name>
+        <qualifiedname>satox::blockchain::Block::getBlockReward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="57" column="14" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a5faef27e5006994d6472c3fb57a3eec1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Block::getKawpowMixHash</definition>
+        <argsstring>() const</argsstring>
+        <name>getKawpowMixHash</name>
+        <qualifiedname>satox::blockchain::Block::getKawpowMixHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="58" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ae93fdc006822931b7b3b05ce8b2369c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Block::getKawpowHeaderHash</definition>
+        <argsstring>() const</argsstring>
+        <name>getKawpowHeaderHash</name>
+        <qualifiedname>satox::blockchain::Block::getKawpowHeaderHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="59" column="23" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a608a6a50372cc5f9ef7cf19aec7d3646" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setHash</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>setHash</name>
+        <qualifiedname>satox::blockchain::Block::setHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="62" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ad3fdb5a710fac63eac32550c29a2a74b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setPreviousHash</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>setPreviousHash</name>
+        <qualifiedname>satox::blockchain::Block::setPreviousHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="63" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ab80dc98f2dca343d3ab14e4fe1f4d54b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setTimestamp</definition>
+        <argsstring>(std::chrono::system_clock::time_point timestamp)</argsstring>
+        <name>setTimestamp</name>
+        <qualifiedname>satox::blockchain::Block::setTimestamp</qualifiedname>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="64" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a915ea17d61c2ad81df702c0b78166eb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setTransactions</definition>
+        <argsstring>(const std::vector&lt; std::shared_ptr&lt; Transaction &gt; &gt; &amp;txs)</argsstring>
+        <name>setTransactions</name>
+        <qualifiedname>satox::blockchain::Block::setTransactions</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kindref="compound">Transaction</ref> &gt; &gt; &amp;</type>
+          <declname>txs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="65" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ae1f62301b39ea942261c20b0a6712d93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setNonce</definition>
+        <argsstring>(int64_t nonce)</argsstring>
+        <name>setNonce</name>
+        <qualifiedname>satox::blockchain::Block::setNonce</qualifiedname>
+        <param>
+          <type>int64_t</type>
+          <declname>nonce</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="66" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a7cf618417d75a6693840ece7ba79f701" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setMetadata</definition>
+        <argsstring>(const nlohmann::json &amp;metadata)</argsstring>
+        <name>setMetadata</name>
+        <qualifiedname>satox::blockchain::Block::setMetadata</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="67" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a349b98ca3b645f32d198a428c2cf66ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setDifficulty</definition>
+        <argsstring>(uint32_t difficulty)</argsstring>
+        <name>setDifficulty</name>
+        <qualifiedname>satox::blockchain::Block::setDifficulty</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>difficulty</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="68" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a73c903a6323b2f19e21539abe530c90a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setMerkleRoot</definition>
+        <argsstring>(const std::string &amp;root)</argsstring>
+        <name>setMerkleRoot</name>
+        <qualifiedname>satox::blockchain::Block::setMerkleRoot</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="69" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1aa2cb4fab361795968e17684be054efe8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setVersion</definition>
+        <argsstring>(uint32_t version)</argsstring>
+        <name>setVersion</name>
+        <qualifiedname>satox::blockchain::Block::setVersion</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="70" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a8f1d813215bbbdef98b3ef1160f39d3f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setHeight</definition>
+        <argsstring>(uint64_t height)</argsstring>
+        <name>setHeight</name>
+        <qualifiedname>satox::blockchain::Block::setHeight</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="71" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a31f1a31a29436cf99b30d274bae54939" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setMinerAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>setMinerAddress</name>
+        <qualifiedname>satox::blockchain::Block::setMinerAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="72" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a77a969dc5466077d27500ab2786ed1b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setBlockReward</definition>
+        <argsstring>(uint64_t reward)</argsstring>
+        <name>setBlockReward</name>
+        <qualifiedname>satox::blockchain::Block::setBlockReward</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>reward</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="73" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ac74d90e8d0432ff09be9b6f08eacab4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setKawpowMixHash</definition>
+        <argsstring>(const std::string &amp;mix_hash)</argsstring>
+        <name>setKawpowMixHash</name>
+        <qualifiedname>satox::blockchain::Block::setKawpowMixHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>mix_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="74" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1aa5746f17cda55b0a4d55d1647409e6d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Block::setKawpowHeaderHash</definition>
+        <argsstring>(const std::string &amp;header_hash)</argsstring>
+        <name>setKawpowHeaderHash</name>
+        <qualifiedname>satox::blockchain::Block::setKawpowHeaderHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>header_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="75" column="10" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1aae1c4dda753a453f2599f71b61a50f79" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Block::validateKawpowProof</definition>
+        <argsstring>() const</argsstring>
+        <name>validateKawpowProof</name>
+        <qualifiedname>satox::blockchain::Block::validateKawpowProof</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="78" column="10" bodyfile="src/blockchain/src/block.cpp" bodystart="38" bodyend="75"/>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aa9b559827cc484ff11f1bd0ee1e31419" compoundref="d8/d09/kawpow_8hpp" startline="43">satox::blockchain::KAWPOW_HASH_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1a553308b8eeed384443ad2ca8552d2b50" compoundref="d8/d09/kawpow_8hpp" startline="45">satox::blockchain::KAWPOW_HEADER_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aada5dccd80bdc23ae7c601f41ba28250" compoundref="d8/d09/kawpow_8hpp" startline="46">satox::blockchain::KAWPOW_MIX_BYTES</references>
+        <references refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a51f46e944a0f264c6d072a1ee74b88f2" compoundref="dd/dfe/kawpow_8cpp" startline="92" endline="114">satox::blockchain::Kawpow::verifyHash</references>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" compoundref="d9/d4d/block_8cpp" startline="171" endline="201">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a6fd73c8dc052521fa1119411ee12e314" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::calculateKawpowHeaderHash</definition>
+        <argsstring>() const</argsstring>
+        <name>calculateKawpowHeaderHash</name>
+        <qualifiedname>satox::blockchain::Block::calculateKawpowHeaderHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="79" column="17" bodyfile="src/blockchain/src/block.cpp" bodystart="77" bodyend="106"/>
+        <references refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a478ba815600c918718842f45027ef362" compoundref="dd/dfe/kawpow_8cpp" startline="50" endline="90">satox::blockchain::Kawpow::computeHash</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aa9b559827cc484ff11f1bd0ee1e31419" compoundref="d8/d09/kawpow_8hpp" startline="43">satox::blockchain::KAWPOW_HASH_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1a553308b8eeed384443ad2ca8552d2b50" compoundref="d8/d09/kawpow_8hpp" startline="45">satox::blockchain::KAWPOW_HEADER_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aada5dccd80bdc23ae7c601f41ba28250" compoundref="d8/d09/kawpow_8hpp" startline="46">satox::blockchain::KAWPOW_MIX_BYTES</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ae891e3f49a9be28772eb0048b193428b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Block::calculateKawpowMixHash</definition>
+        <argsstring>() const</argsstring>
+        <name>calculateKawpowMixHash</name>
+        <qualifiedname>satox::blockchain::Block::calculateKawpowMixHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="80" column="17" bodyfile="src/blockchain/src/block.cpp" bodystart="108" bodyend="137"/>
+        <references refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a478ba815600c918718842f45027ef362" compoundref="dd/dfe/kawpow_8cpp" startline="50" endline="90">satox::blockchain::Kawpow::computeHash</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aa9b559827cc484ff11f1bd0ee1e31419" compoundref="d8/d09/kawpow_8hpp" startline="43">satox::blockchain::KAWPOW_HASH_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1a553308b8eeed384443ad2ca8552d2b50" compoundref="d8/d09/kawpow_8hpp" startline="45">satox::blockchain::KAWPOW_HEADER_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aada5dccd80bdc23ae7c601f41ba28250" compoundref="d8/d09/kawpow_8hpp" startline="46">satox::blockchain::KAWPOW_MIX_BYTES</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a4e0b139e5f83673169c09764c17c7064" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Block::verifyKawpowDifficulty</definition>
+        <argsstring>() const</argsstring>
+        <name>verifyKawpowDifficulty</name>
+        <qualifiedname>satox::blockchain::Block::verifyKawpowDifficulty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="81" column="10" bodyfile="src/blockchain/src/block.cpp" bodystart="139" bodyend="169"/>
+        <references refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a478ba815600c918718842f45027ef362" compoundref="dd/dfe/kawpow_8cpp" startline="50" endline="90">satox::blockchain::Kawpow::computeHash</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aa9b559827cc484ff11f1bd0ee1e31419" compoundref="d8/d09/kawpow_8hpp" startline="43">satox::blockchain::KAWPOW_HASH_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1a553308b8eeed384443ad2ca8552d2b50" compoundref="d8/d09/kawpow_8hpp" startline="45">satox::blockchain::KAWPOW_HEADER_BYTES</references>
+        <references refid="d9/db3/namespacesatox_1_1blockchain_1aada5dccd80bdc23ae7c601f41ba28250" compoundref="d8/d09/kawpow_8hpp" startline="46">satox::blockchain::KAWPOW_MIX_BYTES</references>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" compoundref="d9/d4d/block_8cpp" startline="171" endline="201">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Block::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>satox::blockchain::Block::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="84" column="10" bodyfile="src/blockchain/src/block.cpp" bodystart="171" bodyend="201"/>
+        <references refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aae1c4dda753a453f2599f71b61a50f79" compoundref="d9/d4d/block_8cpp" startline="38" endline="75">validateKawpowProof</references>
+        <references refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a4e0b139e5f83673169c09764c17c7064" compoundref="d9/d4d/block_8cpp" startline="139" endline="169">verifyKawpowDifficulty</references>
+        <references refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a37ea3f70fa4bed7e9a649e5b96ce1d75" compoundref="d9/d4d/block_8cpp" startline="203" endline="206">verifyMerkleRoot</references>
+        <references refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ada78517b4ab8d12cbc25acd7facc2b99" compoundref="d9/d4d/block_8cpp" startline="217" endline="223">verifyTimestamp</references>
+        <references refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a00e5ee339bba5fc023589728afd75863" compoundref="d9/d4d/block_8cpp" startline="208" endline="215">verifyTransactions</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a37ea3f70fa4bed7e9a649e5b96ce1d75" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Block::verifyMerkleRoot</definition>
+        <argsstring>() const</argsstring>
+        <name>verifyMerkleRoot</name>
+        <qualifiedname>satox::blockchain::Block::verifyMerkleRoot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="85" column="10" bodyfile="src/blockchain/src/block.cpp" bodystart="203" bodyend="206"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" compoundref="d9/d4d/block_8cpp" startline="171" endline="201">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a00e5ee339bba5fc023589728afd75863" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Block::verifyTransactions</definition>
+        <argsstring>() const</argsstring>
+        <name>verifyTransactions</name>
+        <qualifiedname>satox::blockchain::Block::verifyTransactions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="86" column="10" bodyfile="src/blockchain/src/block.cpp" bodystart="208" bodyend="215"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" compoundref="d9/d4d/block_8cpp" startline="171" endline="201">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ada78517b4ab8d12cbc25acd7facc2b99" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Block::verifyTimestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>verifyTimestamp</name>
+        <qualifiedname>satox::blockchain::Block::verifyTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="87" column="10" bodyfile="src/blockchain/src/block.cpp" bodystart="217" bodyend="223"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" compoundref="d9/d4d/block_8cpp" startline="171" endline="201">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1a166ba0a39ede7ebb6b6ec7e90240dcf3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::blockchain::Block::toJson</definition>
+        <argsstring>() const</argsstring>
+        <name>toJson</name>
+        <qualifiedname>satox::blockchain::Block::toJson</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="90" column="20" bodyfile="src/blockchain/src/block.cpp" bodystart="225" bodyend="251"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d1/d13/classsatox_1_1blockchain_1_1Block_1ad2d583164682bf904ce8be6d9172d5b1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="d1/d13/classsatox_1_1blockchain_1_1Block" kindref="compound">Block</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Block &gt; satox::blockchain::Block::fromJson</definition>
+        <argsstring>(const nlohmann::json &amp;json)</argsstring>
+        <name>fromJson</name>
+        <qualifiedname>satox::blockchain::Block::fromJson</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/block.hpp" line="91" column="28" bodyfile="src/blockchain/src/block.cpp" bodystart="253" bodyend="280"/>
+        <references refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a3eae15625b7c238c2eed809a8185df73" compoundref="db/da9/blockchain_2src_2transaction_8cpp" startline="73" endline="95">satox::blockchain::Transaction::fromJson</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/blockchain/include/satox/blockchain/block.hpp" line="40" column="1" bodyfile="src/blockchain/include/satox/blockchain/block.hpp" bodystart="40" bodyend="110"/>
+    <listofallmembers>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae54af5fc6b4cef71cd664ffec30a38a8" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>Block</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a4b75321efba2d75c5fdea87e70170b3e" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>block_reward_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a6fd73c8dc052521fa1119411ee12e314" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>calculateKawpowHeaderHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae891e3f49a9be28772eb0048b193428b" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>calculateKawpowMixHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a5cc92bc14474c560cd8809face274c6b" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>difficulty_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ad2d583164682bf904ce8be6d9172d5b1" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>fromJson</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a28336513cb7e571a50a05fa9ce88e35b" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getBlockReward</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a15545daebdc7efe498c33db20ac9764d" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getDifficulty</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a43c9af3526202aa09f99f3ce31538c2d" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a443ef0d4a82925b9199a4b92c4cb1ebd" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getHeight</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae93fdc006822931b7b3b05ce8b2369c7" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getKawpowHeaderHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a5faef27e5006994d6472c3fb57a3eec1" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getKawpowMixHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a8b0f39216fa551a1f796ad2f5fe209be" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getMerkleRoot</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a633f22b0f7c9b4aa93eb84cef5c4df08" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getMetadata</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a29bd77edf6757e371bfcf63a8b005d5b" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getMinerAddress</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a6f82e01821ba2da704ec1bd4a37379c0" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getNonce</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a16629e94f2cb92da2852bea61d5bda50" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getPreviousHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a67cdf032c19b426cdcf921b34b6acfa6" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getTimestamp</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a089ec10f73c9b6e617161c639ba01ed9" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getTransactions</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a0053bb883bcf4d4cbcc89b65069946b9" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>getVersion</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ab2c5064834606465a810c3204b6b9965" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>hash_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a877498c4e8597ed07956d829dcdfcc94" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>height_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1abe6656ac81e651e9d97abf8b9f5387f8" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>isValid</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ade709db257b13a886305e3ff604f6c17" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>kawpow_header_hash_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a06426613d2b004fa4bb7aad38adebef2" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>kawpow_mix_hash_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a590c7d22dab6314f0776b53397023298" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>merkle_root_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1afa4fb901a0510445799b1dac2b80383c" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>metadata_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a5c82decaa43c0a6f98132a1b0b52a5a2" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>miner_address_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a891d0ecb990e3306b515ca5d86442ec6" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>nonce_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a9b256a96d9ac027691cbf27ce098d2c7" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>previous_hash_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a77a969dc5466077d27500ab2786ed1b8" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setBlockReward</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a349b98ca3b645f32d198a428c2cf66ca" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setDifficulty</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a608a6a50372cc5f9ef7cf19aec7d3646" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a8f1d813215bbbdef98b3ef1160f39d3f" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setHeight</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aa5746f17cda55b0a4d55d1647409e6d4" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setKawpowHeaderHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ac74d90e8d0432ff09be9b6f08eacab4d" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setKawpowMixHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a73c903a6323b2f19e21539abe530c90a" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setMerkleRoot</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a7cf618417d75a6693840ece7ba79f701" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setMetadata</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a31f1a31a29436cf99b30d274bae54939" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setMinerAddress</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae1f62301b39ea942261c20b0a6712d93" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setNonce</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ad3fdb5a710fac63eac32550c29a2a74b" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setPreviousHash</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ab80dc98f2dca343d3ab14e4fe1f4d54b" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setTimestamp</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a915ea17d61c2ad81df702c0b78166eb9" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setTransactions</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aa2cb4fab361795968e17684be054efe8" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>setVersion</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a9bcff431f601339480b000865d615a73" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>timestamp_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a166ba0a39ede7ebb6b6ec7e90240dcf3" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>toJson</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ab5fcba3e6e541582a269e39dfb02cd2a" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>transactions_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aae1c4dda753a453f2599f71b61a50f79" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>validateKawpowProof</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a4e0b139e5f83673169c09764c17c7064" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>verifyKawpowDifficulty</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a37ea3f70fa4bed7e9a649e5b96ce1d75" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>verifyMerkleRoot</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ada78517b4ab8d12cbc25acd7facc2b99" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>verifyTimestamp</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a00e5ee339bba5fc023589728afd75863" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>verifyTransactions</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aa32d4cff1bfa300d0a058cb7c653ccc7" prot="private" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>version_</name></member>
+      <member refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a941aa0d9cc895c53ba365b6f895fa890" prot="public" virt="non-virtual"><scope>satox::blockchain::Block</scope><name>~Block</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

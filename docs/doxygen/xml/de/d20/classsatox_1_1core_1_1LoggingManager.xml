@@ -1,0 +1,993 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d20/classsatox_1_1core_1_1LoggingManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::LoggingManager</compoundname>
+    <includes refid="d7/d8e/logging__manager_8hpp" local="no">logging_manager.hpp</includes>
+    <innerclass refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" prot="public">satox::core::LoggingManager::LogConfig</innerclass>
+    <innerclass refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" prot="public">satox::core::LoggingManager::LogEntry</innerclass>
+    <innerclass refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" prot="public">satox::core::LoggingManager::LogStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Level</name>
+        <qualifiedname>satox::core::LoggingManager::Level</qualifiedname>
+        <enumvalue id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a2d3e4144aa384b18849ab9a8abad74d6" prot="public">
+          <name>TRACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6adc30ec20708ef7b0f641ef78b7880a15" prot="public">
+          <name>DEBUG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a551b723eafd6a31d444fcb2f5920fbd3" prot="public">
+          <name>INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a059e9861e0400dfbe05c98a841f3f96b" prot="public">
+          <name>WARNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a19da7170bea36556dde582519795f3fc" prot="public">
+          <name>FATAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="47" column="5" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="47" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="typedef" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;)&gt;</type>
+        <definition>using satox::core::LoggingManager::LogCallback =  std::function&lt;void(const LogEntry&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>LogCallback</name>
+        <qualifiedname>satox::core::LoggingManager::LogCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="85" column="5" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a09e7f02fcca2758fbdb3ef75c729b3cb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::LoggingManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::LoggingManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="159" column="10" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a9b6db3b42840d55c210590fe9940bc7c" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::LoggingManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::LoggingManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="160" column="24" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a21477b0006f84c02d7b189801f5d2a5f" prot="private" static="no" mutable="no">
+        <type><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref></type>
+        <definition>LogConfig satox::core::LoggingManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::LoggingManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="161" column="15" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1acea9aeff635e2ae23efe466d94fb3d9f" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream satox::core::LoggingManager::logFile_</definition>
+        <argsstring></argsstring>
+        <name>logFile_</name>
+        <qualifiedname>satox::core::LoggingManager::logFile_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="162" column="19" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1aaafb0e51060ad92df7e2722545ff8ba5" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &gt;</type>
+        <definition>std::queue&lt;LogEntry&gt; satox::core::LoggingManager::logQueue_</definition>
+        <argsstring></argsstring>
+        <name>logQueue_</name>
+        <qualifiedname>satox::core::LoggingManager::logQueue_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="163" column="16" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1acf450746f628713bb31f737d55a0e11d" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread satox::core::LoggingManager::workerThread_</definition>
+        <argsstring></argsstring>
+        <name>workerThread_</name>
+        <qualifiedname>satox::core::LoggingManager::workerThread_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="164" column="17" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a8f07047c4d8c013c71d27d687279cfac" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::LoggingManager::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::core::LoggingManager::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="165" column="17" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ad65a39aafe7e1673b1b05aaf0f67fa02" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" kindref="member">LogCallback</ref> &gt;</type>
+        <definition>std::vector&lt;LogCallback&gt; satox::core::LoggingManager::callbacks_</definition>
+        <argsstring></argsstring>
+        <name>callbacks_</name>
+        <qualifiedname>satox::core::LoggingManager::callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="166" column="17" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a44a7aba9462e4a5478ccf1f3e65432c8" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" kindref="compound">LogStats</ref></type>
+        <definition>LogStats satox::core::LoggingManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::LoggingManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="167" column="14" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a108769f3db383b9f87390ae614475065" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::LoggingManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::LoggingManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="168" column="17" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a2f84449b733a3f46fad13047764b0161" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::thread::id, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::thread::id, std::string&gt; satox::core::LoggingManager::threadIds_</definition>
+        <argsstring></argsstring>
+        <name>threadIds_</name>
+        <qualifiedname>satox::core::LoggingManager::threadIds_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="169" column="24" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="169" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::LoggingManager::LoggingManager</definition>
+        <argsstring>(const LoggingManager &amp;)=delete</argsstring>
+        <name>LoggingManager</name>
+        <qualifiedname>satox::core::LoggingManager::LoggingManager</qualifiedname>
+        <param>
+          <type>const <ref refid="de/d20/classsatox_1_1core_1_1LoggingManager" kindref="compound">LoggingManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="91" column="5"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1">LoggingManager</references>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1">LoggingManager</referencedby>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ac47c1c5fb9fa3f2d428b1f8ce0167db8">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ac47c1c5fb9fa3f2d428b1f8ce0167db8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager" kindref="compound">LoggingManager</ref> &amp;</type>
+        <definition>LoggingManager &amp; satox::core::LoggingManager::operator=</definition>
+        <argsstring>(const LoggingManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::LoggingManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="de/d20/classsatox_1_1core_1_1LoggingManager" kindref="compound">LoggingManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="92" column="20"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1">LoggingManager</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a64b1344f6662cfc7770ccd76d00409e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::LoggingManager::LoggingManager</definition>
+        <argsstring>()</argsstring>
+        <name>LoggingManager</name>
+        <qualifiedname>satox::core::LoggingManager::LoggingManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="94" column="5" bodyfile="src/core/src/logging_manager.cpp" bodystart="35" bodyend="53"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a551b723eafd6a31d444fcb2f5920fbd3" compoundref="d7/d8e/logging__manager_8hpp" startline="50">INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a26ff378eaa0f7c05c965b49045f900ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::LoggingManager::~LoggingManager</definition>
+        <argsstring>()</argsstring>
+        <name>~LoggingManager</name>
+        <qualifiedname>satox::core::LoggingManager::~LoggingManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="95" column="5" bodyfile="src/core/src/logging_manager.cpp" bodystart="55" bodyend="57"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a6e141bd715f2662dc56330cc6fd1b5a6" compoundref="d0/dfb/logging__manager_8cpp" startline="95" endline="112">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a7f7059eb63639dd3b9a380100e701624" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::LoggingManager::initialize</definition>
+        <argsstring>(const LogConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::LoggingManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="98" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="59" bodyend="93"/>
+        <references refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1af9db0b2c63ebfcbcf7e4d2acc6024364" compoundref="d7/d8e/logging__manager_8hpp" startline="135">satox::core::LoggingManager::LogStats::lastFlush</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a6e141bd715f2662dc56330cc6fd1b5a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::LoggingManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="99" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="95" bodyend="112"/>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a26ff378eaa0f7c05c965b49045f900ed" compoundref="d0/dfb/logging__manager_8cpp" startline="55" endline="57">~LoggingManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::log</definition>
+        <argsstring>(Level level, const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>log</name>
+        <qualifiedname>satox::core::LoggingManager::log</qualifiedname>
+        <param>
+          <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="102" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="114" bodyend="140"/>
+        <references refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1aa1f0775f3de16dc4e04cc43d0b49766d" compoundref="d7/d8e/logging__manager_8hpp" startline="58">satox::core::LoggingManager::LogEntry::level</references>
+        <references refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1abc5faa5939ef8c1da25a2ccb073da59f" compoundref="d7/d8e/logging__manager_8hpp" startline="59">satox::core::LoggingManager::LogEntry::message</references>
+        <references refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1af9177f2f0d5567e1dd784377adf7e16f" compoundref="d7/d8e/logging__manager_8hpp" startline="63">satox::core::LoggingManager::LogEntry::metadata</references>
+        <references refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1ad0100c13a7fbee8a40c6cf7bf8ef42b0" compoundref="d7/d8e/logging__manager_8hpp" startline="60">satox::core::LoggingManager::LogEntry::source</references>
+        <references refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1aa6a2d1848fa5d176ec9e17d7406416b5" compoundref="d7/d8e/logging__manager_8hpp" startline="61">satox::core::LoggingManager::LogEntry::threadId</references>
+        <references refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1af53e6cbb30f54e4e9f636ec1414be8d2" compoundref="d7/d8e/logging__manager_8hpp" startline="62">satox::core::LoggingManager::LogEntry::timestamp</references>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aaff148860237a894f2f166e2eca8441d" compoundref="d0/dfb/logging__manager_8cpp" startline="147" endline="150">debug</referencedby>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a7b48a11b120e0d68779127afbf215d21" compoundref="d0/dfb/logging__manager_8cpp" startline="162" endline="165">error</referencedby>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a2785cf8d1ba1e773023d6ed27a7d3553" compoundref="d0/dfb/logging__manager_8cpp" startline="167" endline="170">fatal</referencedby>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ab09bef73a872beac5e5e1b6a3d2ae608" compoundref="d0/dfb/logging__manager_8cpp" startline="152" endline="155">info</referencedby>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae9ef9ae2a6636831a40fd90f6cb16297" compoundref="d0/dfb/logging__manager_8cpp" startline="142" endline="145">trace</referencedby>
+        <referencedby refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a78e6eb72676677c7d7efaa495e3b498c" compoundref="d0/dfb/logging__manager_8cpp" startline="157" endline="160">warning</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae9ef9ae2a6636831a40fd90f6cb16297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::trace</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>trace</name>
+        <qualifiedname>satox::core::LoggingManager::trace</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="104" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="142" bodyend="145"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" compoundref="d0/dfb/logging__manager_8cpp" startline="114" endline="140">log</references>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a2d3e4144aa384b18849ab9a8abad74d6" compoundref="d7/d8e/logging__manager_8hpp" startline="48">TRACE</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1aaff148860237a894f2f166e2eca8441d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::debug</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>debug</name>
+        <qualifiedname>satox::core::LoggingManager::debug</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="106" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="147" bodyend="150"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6adc30ec20708ef7b0f641ef78b7880a15" compoundref="d7/d8e/logging__manager_8hpp" startline="49">DEBUG</references>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" compoundref="d0/dfb/logging__manager_8cpp" startline="114" endline="140">log</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ab09bef73a872beac5e5e1b6a3d2ae608" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::info</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>info</name>
+        <qualifiedname>satox::core::LoggingManager::info</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="108" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="152" bodyend="155"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a551b723eafd6a31d444fcb2f5920fbd3" compoundref="d7/d8e/logging__manager_8hpp" startline="50">INFO</references>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" compoundref="d0/dfb/logging__manager_8cpp" startline="114" endline="140">log</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a78e6eb72676677c7d7efaa495e3b498c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::warning</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>warning</name>
+        <qualifiedname>satox::core::LoggingManager::warning</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="110" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="157" bodyend="160"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" compoundref="d0/dfb/logging__manager_8cpp" startline="114" endline="140">log</references>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a059e9861e0400dfbe05c98a841f3f96b" compoundref="d7/d8e/logging__manager_8hpp" startline="51">WARNING</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a7b48a11b120e0d68779127afbf215d21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::error</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>error</name>
+        <qualifiedname>satox::core::LoggingManager::error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="112" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="162" bodyend="165"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6abb1ca97ec761fc37101737ba0aa2e7c5" compoundref="d7/d8e/logging__manager_8hpp" startline="52">ERROR</references>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" compoundref="d0/dfb/logging__manager_8cpp" startline="114" endline="140">log</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a2785cf8d1ba1e773023d6ed27a7d3553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::fatal</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;source=&quot;&quot;, const nlohmann::json &amp;metadata=nlohmann::json())</argsstring>
+        <name>fatal</name>
+        <qualifiedname>satox::core::LoggingManager::fatal</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>source</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>nlohmann::json()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="114" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="167" bodyend="170"/>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a19da7170bea36556dde582519795f3fc" compoundref="d7/d8e/logging__manager_8hpp" startline="53">FATAL</references>
+        <references refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" compoundref="d0/dfb/logging__manager_8cpp" startline="114" endline="140">log</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a0531c705e99cb83f1c9eb78cb1cf3cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::setLogLevel</definition>
+        <argsstring>(Level level)</argsstring>
+        <name>setLogLevel</name>
+        <qualifiedname>satox::core::LoggingManager::setLogLevel</qualifiedname>
+        <param>
+          <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="118" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="172" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1acb879e3b90cc959e905adb2cd6fbc0d7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref></type>
+        <definition>LoggingManager::Level satox::core::LoggingManager::getLogLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getLogLevel</name>
+        <qualifiedname>satox::core::LoggingManager::getLogLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="119" column="11" bodyfile="src/core/src/logging_manager.cpp" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a69c61031886b08ed0e37344d174a677d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::setLogFormat</definition>
+        <argsstring>(const std::string &amp;format)</argsstring>
+        <name>setLogFormat</name>
+        <qualifiedname>satox::core::LoggingManager::setLogFormat</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="120" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ab15aa66eb7918ce8d6d6706ed2d7bbdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::LoggingManager::getLogFormat</definition>
+        <argsstring>() const</argsstring>
+        <name>getLogFormat</name>
+        <qualifiedname>satox::core::LoggingManager::getLogFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="121" column="17" bodyfile="src/core/src/logging_manager.cpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a98443cef16b63778b08cdad7c90c5a75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <qualifiedname>satox::core::LoggingManager::flush</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="122" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="192" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a803583b9fd08c4847e705c3e567e7d34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::rotate</definition>
+        <argsstring>()</argsstring>
+        <name>rotate</name>
+        <qualifiedname>satox::core::LoggingManager::rotate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="123" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="210" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae8a820df53a0591a37e611dec49a433b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::registerCallback</definition>
+        <argsstring>(LogCallback callback)</argsstring>
+        <name>registerCallback</name>
+        <qualifiedname>satox::core::LoggingManager::registerCallback</qualifiedname>
+        <param>
+          <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" kindref="member">LogCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="126" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1aa12a2b73380fe18d6dc5a325003ef68c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::unregisterCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterCallback</name>
+        <qualifiedname>satox::core::LoggingManager::unregisterCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="127" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="243" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a9b9ce266537db81b033558d4a36a40d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" kindref="compound">LogStats</ref></type>
+        <definition>LoggingManager::LogStats satox::core::LoggingManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::LoggingManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="137" column="14" bodyfile="src/core/src/logging_manager.cpp" bodystart="248" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a439ac12b0056274529e30a3475aaecbf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::LoggingManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::LoggingManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="140" column="17" bodyfile="src/core/src/logging_manager.cpp" bodystart="253" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a50f0c63f66ec88c518c496ff4355680e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::LoggingManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="141" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="257" bodyend="259"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a86cf921ade51d408e36358f06f9aef8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::processLogEntry</definition>
+        <argsstring>(const LogEntry &amp;entry)</argsstring>
+        <name>processLogEntry</name>
+        <qualifiedname>satox::core::LoggingManager::processLogEntry</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="145" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="261" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1aedfffd828c81be13c203e00b97220d70" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::writeToFile</definition>
+        <argsstring>(const LogEntry &amp;entry)</argsstring>
+        <name>writeToFile</name>
+        <qualifiedname>satox::core::LoggingManager::writeToFile</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="146" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="274" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a1c1f60f2173838c25ba35a867630109b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::writeToConsole</definition>
+        <argsstring>(const LogEntry &amp;entry)</argsstring>
+        <name>writeToConsole</name>
+        <qualifiedname>satox::core::LoggingManager::writeToConsole</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="147" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="283" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1af2c4f5cb041b08d1ff9e5838ce724b86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::LoggingManager::formatLogEntry</definition>
+        <argsstring>(const LogEntry &amp;entry)</argsstring>
+        <name>formatLogEntry</name>
+        <qualifiedname>satox::core::LoggingManager::formatLogEntry</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="148" column="17" bodyfile="src/core/src/logging_manager.cpp" bodystart="287" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ac4db5b0a1869cddce235f438c3d0853f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::checkRotation</definition>
+        <argsstring>()</argsstring>
+        <name>checkRotation</name>
+        <qualifiedname>satox::core::LoggingManager::checkRotation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="149" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="314" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a6b5539980c6b710c7dbb1f8a9a716502" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::asyncLoggingWorker</definition>
+        <argsstring>()</argsstring>
+        <name>asyncLoggingWorker</name>
+        <qualifiedname>satox::core::LoggingManager::asyncLoggingWorker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="150" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="324" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a66377af63110872296be5cb864ad36db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::notifyCallbacks</definition>
+        <argsstring>(const LogEntry &amp;entry)</argsstring>
+        <name>notifyCallbacks</name>
+        <qualifiedname>satox::core::LoggingManager::notifyCallbacks</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="151" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="353" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a62518d1f7d44208be79b3703aa6e5eea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::LoggingManager::getThreadId</definition>
+        <argsstring>()</argsstring>
+        <name>getThreadId</name>
+        <qualifiedname>satox::core::LoggingManager::getThreadId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="152" column="17" bodyfile="src/core/src/logging_manager.cpp" bodystart="359" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1adacf91316dd84a328ce2a9af8e8d9782" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::LoggingManager::levelToString</definition>
+        <argsstring>(Level level) const</argsstring>
+        <name>levelToString</name>
+        <qualifiedname>satox::core::LoggingManager::levelToString</qualifiedname>
+        <param>
+          <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="153" column="17" bodyfile="src/core/src/logging_manager.cpp" bodystart="374" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1a1b4274c42a4ada33f74094d490f9cacd" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref></type>
+        <definition>LoggingManager::Level satox::core::LoggingManager::stringToLevel</definition>
+        <argsstring>(const std::string &amp;level) const</argsstring>
+        <name>stringToLevel</name>
+        <qualifiedname>satox::core::LoggingManager::stringToLevel</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="154" column="11" bodyfile="src/core/src/logging_manager.cpp" bodystart="386" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1adfd1be9ee3e881c8b2f7cd09e0bfe71f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::LoggingManager::validateConfig</definition>
+        <argsstring>(const LogConfig &amp;config)</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::core::LoggingManager::validateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="155" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="400" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d20/classsatox_1_1core_1_1LoggingManager_1ae50c9291e425b141028c67dc4f72d46c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::LoggingManager::updateStats</definition>
+        <argsstring>(const LogEntry &amp;entry)</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::core::LoggingManager::updateStats</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/logging_manager.hpp" line="156" column="10" bodyfile="src/core/src/logging_manager.cpp" bodystart="429" bodyend="432"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/logging_manager.hpp" line="44" column="1" bodyfile="src/core/include/satox/core/logging_manager.hpp" bodystart="44" bodyend="170"/>
+    <listofallmembers>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a6b5539980c6b710c7dbb1f8a9a716502" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>asyncLoggingWorker</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ad65a39aafe7e1673b1b05aaf0f67fa02" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>callbacks_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ac4db5b0a1869cddce235f438c3d0853f" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>checkRotation</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a50f0c63f66ec88c518c496ff4355680e" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>clearLastError</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a21477b0006f84c02d7b189801f5d2a5f" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>config_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aaff148860237a894f2f166e2eca8441d" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>debug</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a7b48a11b120e0d68779127afbf215d21" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>error</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a2785cf8d1ba1e773023d6ed27a7d3553" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>fatal</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a98443cef16b63778b08cdad7c90c5a75" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>flush</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1af2c4f5cb041b08d1ff9e5838ce724b86" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>formatLogEntry</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a439ac12b0056274529e30a3475aaecbf" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>getLastError</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ab15aa66eb7918ce8d6d6706ed2d7bbdc" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>getLogFormat</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1acb879e3b90cc959e905adb2cd6fbc0d7" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>getLogLevel</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a9b9ce266537db81b033558d4a36a40d3" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>getStats</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a62518d1f7d44208be79b3703aa6e5eea" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>getThreadId</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ab09bef73a872beac5e5e1b6a3d2ae608" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>info</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a7f7059eb63639dd3b9a380100e701624" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>initialize</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a09e7f02fcca2758fbdb3ef75c729b3cb" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>initialized_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a108769f3db383b9f87390ae614475065" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>lastError_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>Level</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1adacf91316dd84a328ce2a9af8e8d9782" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>levelToString</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>log</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>LogCallback</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1acea9aeff635e2ae23efe466d94fb3d9f" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>logFile_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>LoggingManager</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a64b1344f6662cfc7770ccd76d00409e3" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>LoggingManager</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aaafb0e51060ad92df7e2722545ff8ba5" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>logQueue_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a9b6db3b42840d55c210590fe9940bc7c" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>mutex_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a66377af63110872296be5cb864ad36db" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>notifyCallbacks</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ac47c1c5fb9fa3f2d428b1f8ce0167db8" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>operator=</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a86cf921ade51d408e36358f06f9aef8f" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>processLogEntry</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae8a820df53a0591a37e611dec49a433b" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>registerCallback</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a803583b9fd08c4847e705c3e567e7d34" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>rotate</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a8f07047c4d8c013c71d27d687279cfac" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>running_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a69c61031886b08ed0e37344d174a677d" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>setLogFormat</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a0531c705e99cb83f1c9eb78cb1cf3cfb" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>setLogLevel</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a6e141bd715f2662dc56330cc6fd1b5a6" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>shutdown</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a44a7aba9462e4a5478ccf1f3e65432c8" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>stats_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a1b4274c42a4ada33f74094d490f9cacd" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>stringToLevel</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a2f84449b733a3f46fad13047764b0161" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>threadIds_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae9ef9ae2a6636831a40fd90f6cb16297" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>trace</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa12a2b73380fe18d6dc5a325003ef68c" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>unregisterCallback</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae50c9291e425b141028c67dc4f72d46c" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>updateStats</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1adfd1be9ee3e881c8b2f7cd09e0bfe71f" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>validateConfig</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a78e6eb72676677c7d7efaa495e3b498c" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>warning</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1acf450746f628713bb31f737d55a0e11d" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>workerThread_</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a1c1f60f2173838c25ba35a867630109b" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>writeToConsole</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aedfffd828c81be13c203e00b97220d70" prot="private" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>writeToFile</name></member>
+      <member refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a26ff378eaa0f7c05c965b49045f900ed" prot="public" virt="non-virtual"><scope>satox::core::LoggingManager</scope><name>~LoggingManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

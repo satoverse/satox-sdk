@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/dcd/core__manager_8hpp" kind="file" language="C++">
+    <compoundname>core_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/core_manager.hpp</label>
+        <link refid="d6/dcd/core__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>chrono</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>mutex</label>
+      </node>
+      <node id="11">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="10">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d6/df9/structsatox_1_1core_1_1CoreConfig" prot="public">satox::core::CoreConfig</innerclass>
+    <innerclass refid="d0/d53/structsatox_1_1core_1_1CoreStats" prot="public">satox::core::CoreStats</innerclass>
+    <innerclass refid="d1/deb/structsatox_1_1core_1_1ComponentStatus" prot="public">satox::core::ComponentStatus</innerclass>
+    <innerclass refid="d4/df5/structsatox_1_1core_1_1SystemInfo" prot="public">satox::core::SystemInfo</innerclass>
+    <innerclass refid="de/d4d/classsatox_1_1core_1_1CoreManager" prot="public">satox::core::CoreManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>MIT<sp/>License</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Satoxcoin<sp/>Core<sp/>Developer</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d5/d44/classsatox_1_1core_1_1NetworkManager" kindref="compound">NetworkManager</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/d68/classsatox_1_1core_1_1IPFSManager" kindref="compound">IPFSManager</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager" kindref="compound">BlockchainManager</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager" kindref="compound">DatabaseManager</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Enums</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" kindref="member">ComponentState</ref><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecadd652546039b18970b8dcf2cff824268" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecadd652546039b18970b8dcf2cff824268" kindref="member">UNINITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="52" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca86bf8c89d85949f8f45cde2f73fce113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca86bf8c89d85949f8f45cde2f73fce113" kindref="member">INITIALIZING</ref>,</highlight></codeline>
+<codeline lineno="53" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca43491564ebcfd38568918efbd6e840fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca43491564ebcfd38568918efbd6e840fd" kindref="member">RUNNING</ref>,</highlight></codeline>
+<codeline lineno="54" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca323facdc30df77817126b699c7cf49f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca323facdc30df77817126b699c7cf49f3" kindref="member">RESTARTING</ref>,</highlight></codeline>
+<codeline lineno="55" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecabb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecabb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="56" refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecab9984206799a7f9fe4bd1b6c18db8112" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecab9984206799a7f9fe4bd1b6c18db8112" kindref="member">SHUTDOWN</ref></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configuration<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="d6/df9/structsatox_1_1core_1_1CoreConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="61" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ae4124933dcc721345aceb9d2cefafcd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ae4124933dcc721345aceb9d2cefafcd5" kindref="member">data_dir</ref>;</highlight></codeline>
+<codeline lineno="62" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a79d7ee99ea3ab92e9b086e7fa89f15a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a79d7ee99ea3ab92e9b086e7fa89f15a7" kindref="member">network</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;mainnet&quot;,<sp/>&quot;testnet&quot;,<sp/>&quot;regtest&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a35fd1cc67c4f0a02d8f32456cda97fbe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a35fd1cc67c4f0a02d8f32456cda97fbe" kindref="member">enable_mining</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aac337ffc8f70cf5213f9ca030efa9ca8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aac337ffc8f70cf5213f9ca030efa9ca8" kindref="member">enable_sync</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ab31aa355b3213e8033fd24b4c96b50a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ab31aa355b3213e8033fd24b4c96b50a7" kindref="member">sync_interval_ms</ref><sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="66" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ace6db773942a3ac6f3def5a8312ce5d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ace6db773942a3ac6f3def5a8312ce5d9" kindref="member">mining_threads</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="67" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a503977260a3af15c3ff6fdffadbdbca3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a503977260a3af15c3ff6fdffadbdbca3" kindref="member">rpc_endpoint</ref>;</highlight></codeline>
+<codeline lineno="68" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ad75f1865cf10d12a809e5261800ddf67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ad75f1865cf10d12a809e5261800ddf67" kindref="member">rpc_username</ref>;</highlight></codeline>
+<codeline lineno="69" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ad3106ae28b2234d4f27668ded3ecd4fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ad3106ae28b2234d4f27668ded3ecd4fd" kindref="member">rpc_password</ref>;</highlight></codeline>
+<codeline lineno="70" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a3b86ffa3b13ee1e3b1a77883d7325290" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a3b86ffa3b13ee1e3b1a77883d7325290" kindref="member">timeout_ms</ref><sp/>=<sp/>30000;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Component-specific<sp/>configurations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aeff46edd0728833539165ef97ce24fb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aeff46edd0728833539165ef97ce24fb0" kindref="member">database</ref>;</highlight></codeline>
+<codeline lineno="74" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ac482a6952017941d2818f91a9a268971" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ac482a6952017941d2818f91a9a268971" kindref="member">network_config</ref>;</highlight></codeline>
+<codeline lineno="75" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a3b632c1a4a2ede06c8e51e4b7a596e54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a3b632c1a4a2ede06c8e51e4b7a596e54" kindref="member">blockchain</ref>;</highlight></codeline>
+<codeline lineno="76" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a859e4cb13abd8a9e43b76edd771c4082" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a859e4cb13abd8a9e43b76edd771c4082" kindref="member">wallet</ref>;</highlight></codeline>
+<codeline lineno="77" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aa57a622a8f795e92235f9baf36977342" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aa57a622a8f795e92235f9baf36977342" kindref="member">asset</ref>;</highlight></codeline>
+<codeline lineno="78" refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a8a465d06794b4c8bb2332f93aa0611b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a8a465d06794b4c8bb2332f93aa0611b5" kindref="member">ipfs</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Statistics<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="d0/d53/structsatox_1_1core_1_1CoreStats" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats" kindref="compound">CoreStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="83" refid="d0/d53/structsatox_1_1core_1_1CoreStats_1ad750c4548bd983f884ea1aba1313d809" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats_1ad750c4548bd983f884ea1aba1313d809" kindref="member">start_time</ref>;</highlight></codeline>
+<codeline lineno="84" refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a2b300480f6ee09b19d12d0fe55e96350" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a2b300480f6ee09b19d12d0fe55e96350" kindref="member">last_activity</ref>;</highlight></codeline>
+<codeline lineno="85" refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a602f26f4e916f9bb4681d8d28a52dd7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a602f26f4e916f9bb4681d8d28a52dd7d" kindref="member">total_components</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86" refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a9772d0a239569769a75740c3e9f797cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a9772d0a239569769a75740c3e9f797cf" kindref="member">active_components</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="87" refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a7349a515ca7ccd0d6259f77b34e68a2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a7349a515ca7ccd0d6259f77b34e68a2f" kindref="member">failed_components</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88" refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a5cc0b76eb3443b7517873890e8bd5620" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a5cc0b76eb3443b7517873890e8bd5620" kindref="member">additional_stats</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>status<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus" kindref="compound">ComponentStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="93" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a0e4d1ae88bd0e7cdead51400051d8c0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a0e4d1ae88bd0e7cdead51400051d8c0f" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="94" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ac3047cf286170ce772503fedfe8cdb2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" kindref="member">ComponentState</ref><sp/><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ac3047cf286170ce772503fedfe8cdb2c" kindref="member">state</ref><sp/>=<sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecadd652546039b18970b8dcf2cff824268" kindref="member">ComponentState::UNINITIALIZED</ref>;</highlight></codeline>
+<codeline lineno="95" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1aace1b0cc18759adcc6c541d8da7e8eed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1aace1b0cc18759adcc6c541d8da7e8eed" kindref="member">last_update</ref>;</highlight></codeline>
+<codeline lineno="96" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ae3c0ae28ca4c2f1eb53f4e8b88cc8b42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ae3c0ae28ca4c2f1eb53f4e8b88cc8b42" kindref="member">error_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a20dfaec49bc4790ed8a2e4124d3c1b7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a20dfaec49bc4790ed8a2e4124d3c1b7f" kindref="member">last_error</ref>;</highlight></codeline>
+<codeline lineno="98" refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1addcd97c4d49a829b19b324f8302ae6a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1addcd97c4d49a829b19b324f8302ae6a2" kindref="member">additional_info</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment">//<sp/>System<sp/>information<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="d4/df5/structsatox_1_1core_1_1SystemInfo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo" kindref="compound">SystemInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="103" refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a7d77738b0c60f3bf0cb36e7352211e1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a7d77738b0c60f3bf0cb36e7352211e1d" kindref="member">version</ref>;</highlight></codeline>
+<codeline lineno="104" refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1ad2b7bdbf99167e83265b7d7d32e193c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1ad2b7bdbf99167e83265b7d7d32e193c8" kindref="member">network</ref>;</highlight></codeline>
+<codeline lineno="105" refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a813f394c5c05f966aeefcd109b638162" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a813f394c5c05f966aeefcd109b638162" kindref="member">uptime</ref>;</highlight></codeline>
+<codeline lineno="106" refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a75b4606f80f6bcbf9513175d002d8b2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a75b4606f80f6bcbf9513175d002d8b2e" kindref="member">start_time</ref>;</highlight></codeline>
+<codeline lineno="107" refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1ab5e9726df742aab14316fb3d0f180f48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1ab5e9726df742aab14316fb3d0f180f48" kindref="member">metadata</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Callback<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="d9/dd3/namespacesatox_1_1core_1a3a4a5137d19f5f5ead5876807b033e8e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core_1a3a4a5137d19f5f5ead5876807b033e8e" kindref="member">ErrorCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;;</highlight></codeline>
+<codeline lineno="112" refid="d9/dd3/namespacesatox_1_1core_1a9b3fa6865dea2c1d869d22e10c4ac898" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core_1a9b3fa6865dea2c1d869d22e10c4ac898" kindref="member">StatusCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" kindref="member">ComponentState</ref>)&gt;;</highlight></codeline>
+<codeline lineno="113" refid="d9/dd3/namespacesatox_1_1core_1ad21027336d3dfa264649a416848e1d2a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core_1ad21027336d3dfa264649a416848e1d2a" kindref="member">ShutdownCallback</ref><sp/>=<sp/>std::function&lt;void()&gt;;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Main<sp/>manager<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="de/d4d/classsatox_1_1core_1_1CoreManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" kindref="member">CoreManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Singleton<sp/>pattern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" kindref="member">CoreManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a649ac2234732b2e90101cbb9170a951b" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor/Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" kindref="member">CoreManager</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a515133a2de3e0f211f8a3eb9de2696b0" kindref="member">~CoreManager</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>copy<sp/>and<sp/>assignment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a467271d1f1d64a6607f8ba630abc7fb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a467271d1f1d64a6607f8ba630abc7fb6" kindref="member">CoreManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" kindref="member">CoreManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127" refid="de/d4d/classsatox_1_1core_1_1CoreManager_1adbc1f896eab367fa35252ad9fe1fc803" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" kindref="member">CoreManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1adbc1f896eab367fa35252ad9fe1fc803" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" kindref="member">CoreManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a3eeabb592a597f1e01244d9e1328381a" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a2e83411ed88d1b1ab5ee236b3598f814" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab71c685a7f7412d32a798cb62e11c8aa" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a2fd1ddcb4da92159a8b177e31425903e" kindref="member">isInitialized</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a1d566f47a8f27027599c0ea6302c15d0" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Component<sp/>access<sp/>(singleton<sp/>pattern)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d44/classsatox_1_1core_1_1NetworkManager" kindref="compound">NetworkManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5eb075cef75cb104af312eb0dbcf5676" kindref="member">getNetworkManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab395831966f78b829ccac1f027c0184f" kindref="member">getAssetManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d68/classsatox_1_1core_1_1IPFSManager" kindref="compound">IPFSManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad656bc6237bd6489ddb5f5ac1aeb1b87" kindref="member">getIPFSManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a095e8ed4004eb1443622eca855d563d9" kindref="member">getWalletManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager" kindref="compound">BlockchainManager</ref>&amp;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a297f08b07bee7831816bbf84781b06da" kindref="member">getBlockchainManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>System<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad64eb3d538e32cbc886b211c66cf59b9" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1aeb2e7a002998e4d514e4eda6df42c975" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Component<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" kindref="member">restartComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>component);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a64026a035a4f44c3f4cecb5bfce8e6b5" kindref="member">updateComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>component,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;ComponentStatus&gt;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a786cd4c62d8a8c26a2ff446e308dfd40" kindref="member">getComponentStatus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>component)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5364408705f0679ae7ce7873120bf995" kindref="member">updateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;CoreConfig&gt;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab21e6642d060ed6cc25d09256a32b544" kindref="member">getConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a6dafc3fb760a5d13f9b8bb6e8c09a685" kindref="member">validateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref>&amp;<sp/>config)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1af7f55b159be1ac25ff0324b1d123ec84" kindref="member">backupConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>backup_path)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5e7ba0c8981c0dbe07b43c402a8d5042" kindref="member">restoreConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>backup_path);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>and<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;SystemInfo&gt;<sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad0c527e403767e3f3e61d949a7336bee" kindref="member">getSystemInfo</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats" kindref="compound">CoreStats</ref><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a39abb62858fa18461e011cf798a3d8a0" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7a73b878c3db337b77752bec3cafaf04" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callback<sp/>registration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a8ef0701cbed3656cc9ca0ace7dc03a71" kindref="member">registerErrorCallback</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1a3a4a5137d19f5f5ead5876807b033e8e" kindref="member">ErrorCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad8555e4ce89f8f0de0bd0ad004719f45" kindref="member">registerStatusCallback</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1a9b3fa6865dea2c1d869d22e10c4ac898" kindref="member">StatusCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad550b0e51d02d91e5ec491a84febf4e4" kindref="member">registerShutdownCallback</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1ad21027336d3dfa264649a416848e1d2a" kindref="member">ShutdownCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TESTING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test-only<sp/>method<sp/>to<sp/>reset<sp/>singleton<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetForTesting();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test-only<sp/>method<sp/>to<sp/>forcibly<sp/>set<sp/>running<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRunningForTesting(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d0a/main_8cpp_1a7c10027ca174fc9d529796f04aca6bd4" kindref="member">running</ref>);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initializeComponents();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>shutdownComponents();</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateAllComponents();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initializeComponentStatus();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyStatusChange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>component,<sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" kindref="member">ComponentState</ref><sp/>state);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyShutdown();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats" kindref="compound">CoreStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>ComponentStatus&gt;<sp/>component_status_;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ErrorCallback&gt;<sp/>errorCallbacks_;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;StatusCallback&gt;<sp/>statusCallbacks_;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ShutdownCallback&gt;<sp/>shutdownCallbacks_;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>lastError_;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_running_;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/core_manager.hpp"/>
+  </compounddef>
+</doxygen>

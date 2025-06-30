@@ -1,0 +1,616 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::monitoring::SecurityMonitor</compoundname>
+    <includes refid="dd/dc3/security__monitor_8hpp" local="no">security_monitor.hpp</includes>
+    <innerclass refid="d4/d59/structsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1_1CacheMetrics" prot="private">satox::security::monitoring::SecurityMonitor::CacheMetrics</innerclass>
+    <innerclass refid="d9/d3a/structsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1_1ErrorMetrics" prot="private">satox::security::monitoring::SecurityMonitor::ErrorMetrics</innerclass>
+    <innerclass refid="df/da5/structsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1_1OperationMetrics" prot="private">satox::security::monitoring::SecurityMonitor::OperationMetrics</innerclass>
+    <innerclass refid="d0/dc8/structsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1_1ResourceMetrics" prot="private">satox::security::monitoring::SecurityMonitor::ResourceMetrics</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a630a3b9edad9bcd77105d2fc4813708e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, OperationMetrics &gt;</type>
+        <definition>std::unordered_map&lt;std::string, OperationMetrics&gt; satox::security::monitoring::SecurityMonitor::operationMetrics</definition>
+        <argsstring></argsstring>
+        <name>operationMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::operationMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="116" column="24" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a27c796aac970209a57d07c2ab1859c4e" prot="private" static="no" mutable="no">
+        <type>CacheMetrics</type>
+        <definition>CacheMetrics satox::security::monitoring::SecurityMonitor::cacheMetrics</definition>
+        <argsstring></argsstring>
+        <name>cacheMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::cacheMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="117" column="18" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a8026d62a2ffda5c20ecd400bc28ce918" prot="private" static="no" mutable="no">
+        <type>ResourceMetrics</type>
+        <definition>ResourceMetrics satox::security::monitoring::SecurityMonitor::resourceMetrics</definition>
+        <argsstring></argsstring>
+        <name>resourceMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::resourceMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="118" column="21" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af72d08e2fa4f3c31c88ae69dda1a285f" prot="private" static="no" mutable="no">
+        <type>ErrorMetrics</type>
+        <definition>ErrorMetrics satox::security::monitoring::SecurityMonitor::errorMetrics</definition>
+        <argsstring></argsstring>
+        <name>errorMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::errorMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="119" column="18" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af1390054acb095d8fb1a59434e682f60" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; prometheus::Registry &gt;</type>
+        <definition>std::shared_ptr&lt;prometheus::Registry&gt; satox::security::monitoring::SecurityMonitor::registry</definition>
+        <argsstring></argsstring>
+        <name>registry</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::registry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="122" column="21" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a91c293af7ba2145d0f9c83607e3d940f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, prometheus::Counter * &gt;</type>
+        <definition>std::unordered_map&lt;std::string, prometheus::Counter*&gt; satox::security::monitoring::SecurityMonitor::operationCounters</definition>
+        <argsstring></argsstring>
+        <name>operationCounters</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::operationCounters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="123" column="24" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a5bc45132adfcd7722d0e1132e61a483f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, prometheus::Histogram * &gt;</type>
+        <definition>std::unordered_map&lt;std::string, prometheus::Histogram*&gt; satox::security::monitoring::SecurityMonitor::operationDurations</definition>
+        <argsstring></argsstring>
+        <name>operationDurations</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::operationDurations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="124" column="24" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a3e7bb089b507ec385bf3742af24f0cd4" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, prometheus::Counter * &gt;</type>
+        <definition>std::unordered_map&lt;std::string, prometheus::Counter*&gt; satox::security::monitoring::SecurityMonitor::errorCounters</definition>
+        <argsstring></argsstring>
+        <name>errorCounters</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::errorCounters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="125" column="24" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1aed90a942838e609f8cb1dee51df6c3d8" prot="private" static="no" mutable="no">
+        <type>prometheus::Gauge *</type>
+        <definition>prometheus::Gauge* satox::security::monitoring::SecurityMonitor::memoryGauge</definition>
+        <argsstring></argsstring>
+        <name>memoryGauge</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::memoryGauge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="126" column="23" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab147ee29666a935c493904129c81b0b1" prot="private" static="no" mutable="no">
+        <type>prometheus::Gauge *</type>
+        <definition>prometheus::Gauge* satox::security::monitoring::SecurityMonitor::cpuGauge</definition>
+        <argsstring></argsstring>
+        <name>cpuGauge</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::cpuGauge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="127" column="23" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a2e71cd6abf0b6eb4411a7fba65cd0ab6" prot="private" static="no" mutable="no">
+        <type>prometheus::Counter *</type>
+        <definition>prometheus::Counter* satox::security::monitoring::SecurityMonitor::cacheHitCounter</definition>
+        <argsstring></argsstring>
+        <name>cacheHitCounter</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::cacheHitCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="128" column="25" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0cf1e1f63ba80fa80ccdd8d95fa0731d" prot="private" static="no" mutable="no">
+        <type>prometheus::Counter *</type>
+        <definition>prometheus::Counter* satox::security::monitoring::SecurityMonitor::cacheMissCounter</definition>
+        <argsstring></argsstring>
+        <name>cacheMissCounter</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::cacheMissCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="129" column="25" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a36cb40cff4bec5b5b0fd37f263b02c94" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor" kindref="compound">SecurityMonitor</ref> &amp;</type>
+        <definition>static SecurityMonitor &amp; satox::security::monitoring::SecurityMonitor::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="46" column="28" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab3f1dcba1539553d60f6480a040f475b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::recordOperation</definition>
+        <argsstring>(const std::string &amp;operation, const std::chrono::milliseconds &amp;duration, bool success)</argsstring>
+        <name>recordOperation</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::recordOperation</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::chrono::milliseconds &amp;</type>
+          <declname>duration</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="52" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="124" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a4b9861bb77258d624a58015d28159e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::recordKeyOperation</definition>
+        <argsstring>(const std::string &amp;operation, const std::string &amp;keyId, bool success)</argsstring>
+        <name>recordKeyOperation</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::recordKeyOperation</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="56" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="153" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af7cd3cd2fe524ecf7964fc9f65e37bb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::recordCacheOperation</definition>
+        <argsstring>(const std::string &amp;operation, bool hit)</argsstring>
+        <name>recordCacheOperation</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::recordCacheOperation</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="60" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="166" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a82e35537c857f9d1324d768327af4380" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::recordResourceUsage</definition>
+        <argsstring>(size_t memoryUsage, double cpuUsage)</argsstring>
+        <name>recordResourceUsage</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::recordResourceUsage</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>memoryUsage</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cpuUsage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="63" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="177" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ad5972ad31dd1fce6ac8ee83704687449" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::recordError</definition>
+        <argsstring>(const std::string &amp;operation, const std::string &amp;errorType)</argsstring>
+        <name>recordError</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::recordError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>errorType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="66" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="197" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a7b721df2b4d8382aa158b583615e8b5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::security::monitoring::SecurityMonitor::getAverageOperationTime</definition>
+        <argsstring>(const std::string &amp;operation) const</argsstring>
+        <name>getAverageOperationTime</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getAverageOperationTime</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="70" column="12" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="210" bodyend="222"/>
+        <referencedby refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" compoundref="d1/d4c/security__monitor_8cpp" startline="261" endline="295">exportMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0f890bf9de5c002880a5d5497d4d0a92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::security::monitoring::SecurityMonitor::getOperationSuccessRate</definition>
+        <argsstring>(const std::string &amp;operation) const</argsstring>
+        <name>getOperationSuccessRate</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getOperationSuccessRate</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="71" column="12" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="224" bodyend="236"/>
+        <referencedby refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" compoundref="d1/d4c/security__monitor_8cpp" startline="261" endline="295">exportMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0ba1d1630c101fc951dfbd03ec7f3cdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::security::monitoring::SecurityMonitor::getCacheHitRate</definition>
+        <argsstring>() const</argsstring>
+        <name>getCacheHitRate</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getCacheHitRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="72" column="12" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="238" bodyend="245"/>
+        <referencedby refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" compoundref="d1/d4c/security__monitor_8cpp" startline="261" endline="295">exportMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1acdad567fcb3cc2b38a1d3658323c4664" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::monitoring::SecurityMonitor::getCurrentMemoryUsage</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentMemoryUsage</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getCurrentMemoryUsage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="73" column="12" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="247" bodyend="249"/>
+        <referencedby refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" compoundref="d1/d4c/security__monitor_8cpp" startline="261" endline="295">exportMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ac164268a7017457ff562731af887b6e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::security::monitoring::SecurityMonitor::getCurrentCpuUsage</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentCpuUsage</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getCurrentCpuUsage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="74" column="12" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="251" bodyend="253"/>
+        <referencedby refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" compoundref="d1/d4c/security__monitor_8cpp" startline="261" endline="295">exportMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab687cc47d0a77664163473492fe2a8b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::monitoring::SecurityMonitor::getErrorCount</definition>
+        <argsstring>(const std::string &amp;operation) const</argsstring>
+        <name>getErrorCount</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::getErrorCount</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="75" column="12" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="255" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::monitoring::SecurityMonitor::exportMetrics</definition>
+        <argsstring>() const</argsstring>
+        <name>exportMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::exportMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="78" column="17" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="261" bodyend="295"/>
+        <references refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a7b721df2b4d8382aa158b583615e8b5e" compoundref="d1/d4c/security__monitor_8cpp" startline="210" endline="222">getAverageOperationTime</references>
+        <references refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0ba1d1630c101fc951dfbd03ec7f3cdc" compoundref="d1/d4c/security__monitor_8cpp" startline="238" endline="245">getCacheHitRate</references>
+        <references refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ac164268a7017457ff562731af887b6e1" compoundref="d1/d4c/security__monitor_8cpp" startline="251" endline="253">getCurrentCpuUsage</references>
+        <references refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1acdad567fcb3cc2b38a1d3658323c4664" compoundref="d1/d4c/security__monitor_8cpp" startline="247" endline="249">getCurrentMemoryUsage</references>
+        <references refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0f890bf9de5c002880a5d5497d4d0a92" compoundref="d1/d4c/security__monitor_8cpp" startline="224" endline="236">getOperationSuccessRate</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af5335d2902c929e4ec2dc768472e628c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::exportToPrometheus</definition>
+        <argsstring>(const std::string &amp;endpoint)</argsstring>
+        <name>exportToPrometheus</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::exportToPrometheus</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>endpoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="79" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="297" bodyend="308"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1add129d71935bd7d4133ff3573553e819" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::monitoring::SecurityMonitor::SecurityMonitor</definition>
+        <argsstring>()</argsstring>
+        <name>SecurityMonitor</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::SecurityMonitor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="82" column="5" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1abc81c4997628abf8e320926a866abbbc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::monitoring::SecurityMonitor::~SecurityMonitor</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SecurityMonitor</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::~SecurityMonitor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="83" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1aa2b4759b01ddf9b146f7ef5c34344ed6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::monitoring::SecurityMonitor::SecurityMonitor</definition>
+        <argsstring>(const SecurityMonitor &amp;)=delete</argsstring>
+        <name>SecurityMonitor</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::SecurityMonitor</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor" kindref="compound">SecurityMonitor</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="84" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a338a1d4004debe63e9e0ac01712ea0e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor" kindref="compound">SecurityMonitor</ref> &amp;</type>
+        <definition>SecurityMonitor &amp; satox::security::monitoring::SecurityMonitor::operator=</definition>
+        <argsstring>(const SecurityMonitor &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor" kindref="compound">SecurityMonitor</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="85" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0431aca0edd54f33e8f3e54a397c20d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::initializePrometheusMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>initializePrometheusMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::initializePrometheusMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="132" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="40" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1acd205252fbe18fb0631f3c644d48c247" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::updatePrometheusMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>updatePrometheusMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::updatePrometheusMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="133" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="310" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a9ac3337fe6e77e69bce4c6b7697abacc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::monitoring::SecurityMonitor::cleanupOldMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupOldMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::cleanupOldMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="134" column="10" bodyfile="src/security/monitoring/security_monitor.cpp" bodystart="342" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a6e279164131db8e4049fd38496297d21" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::monitoring::SecurityMonitor::formatMetrics</definition>
+        <argsstring>() const</argsstring>
+        <name>formatMetrics</name>
+        <qualifiedname>satox::security::monitoring::SecurityMonitor::formatMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/monitoring/security_monitor.hpp" line="135" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/security/monitoring/security_monitor.hpp" line="44" column="1" bodyfile="src/security/monitoring/security_monitor.hpp" bodystart="44" bodyend="136"/>
+    <listofallmembers>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a2e71cd6abf0b6eb4411a7fba65cd0ab6" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>cacheHitCounter</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a27c796aac970209a57d07c2ab1859c4e" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>cacheMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0cf1e1f63ba80fa80ccdd8d95fa0731d" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>cacheMissCounter</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a9ac3337fe6e77e69bce4c6b7697abacc" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>cleanupOldMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab147ee29666a935c493904129c81b0b1" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>cpuGauge</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a3e7bb089b507ec385bf3742af24f0cd4" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>errorCounters</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af72d08e2fa4f3c31c88ae69dda1a285f" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>errorMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab40e2cc4db717f38985d90a0e4702f5f" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>exportMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af5335d2902c929e4ec2dc768472e628c" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>exportToPrometheus</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a6e279164131db8e4049fd38496297d21" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>formatMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a7b721df2b4d8382aa158b583615e8b5e" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getAverageOperationTime</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0ba1d1630c101fc951dfbd03ec7f3cdc" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getCacheHitRate</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ac164268a7017457ff562731af887b6e1" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getCurrentCpuUsage</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1acdad567fcb3cc2b38a1d3658323c4664" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getCurrentMemoryUsage</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab687cc47d0a77664163473492fe2a8b1" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getErrorCount</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a36cb40cff4bec5b5b0fd37f263b02c94" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getInstance</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0f890bf9de5c002880a5d5497d4d0a92" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>getOperationSuccessRate</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a0431aca0edd54f33e8f3e54a397c20d7" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>initializePrometheusMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1aed90a942838e609f8cb1dee51df6c3d8" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>memoryGauge</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a91c293af7ba2145d0f9c83607e3d940f" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>operationCounters</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a5bc45132adfcd7722d0e1132e61a483f" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>operationDurations</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a630a3b9edad9bcd77105d2fc4813708e" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>operationMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a338a1d4004debe63e9e0ac01712ea0e4" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>operator=</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af7cd3cd2fe524ecf7964fc9f65e37bb7" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>recordCacheOperation</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ad5972ad31dd1fce6ac8ee83704687449" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>recordError</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a4b9861bb77258d624a58015d28159e5c" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>recordKeyOperation</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1ab3f1dcba1539553d60f6480a040f475b" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>recordOperation</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a82e35537c857f9d1324d768327af4380" prot="public" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>recordResourceUsage</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1af1390054acb095d8fb1a59434e682f60" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>registry</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1a8026d62a2ffda5c20ecd400bc28ce918" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>resourceMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1add129d71935bd7d4133ff3573553e819" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>SecurityMonitor</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1aa2b4759b01ddf9b146f7ef5c34344ed6" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>SecurityMonitor</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1acd205252fbe18fb0631f3c644d48c247" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>updatePrometheusMetrics</name></member>
+      <member refid="d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor_1abc81c4997628abf8e320926a866abbbc" prot="private" virt="non-virtual"><scope>satox::security::monitoring::SecurityMonitor</scope><name>~SecurityMonitor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

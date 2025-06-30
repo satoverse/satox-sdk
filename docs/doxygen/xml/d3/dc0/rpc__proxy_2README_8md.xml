@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/dc0/rpc__proxy_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Satox<sp/>SDK<sp/>RPC<sp/>Proxy<sp/>Component</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>RPC<sp/>Proxy<sp/>component<sp/>provides<sp/>a<sp/>thread-safe,<sp/>configurable,<sp/>and<sp/>monitored<sp/>proxy<sp/>for<sp/>forwarding<sp/>JSON-RPC<sp/>requests<sp/>to<sp/>blockchain<sp/>nodes<sp/>or<sp/>other<sp/>services.<sp/>It<sp/>is<sp/>implemented<sp/>as<sp/>a<sp/>Satox<sp/>SDK<sp/>core<sp/>component,<sp/>following<sp/>all<sp/>template<sp/>and<sp/>quality<sp/>rules.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Singleton<sp/>pattern<sp/>(`getInstance()`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Thread-safe<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Configurable<sp/>endpoint,<sp/>credentials,<sp/>and<sp/>timeouts</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Structured<sp/>logging<sp/>to<sp/>`logs/components/rpc_proxy/`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Health<sp/>checks<sp/>and<sp/>statistics</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Callback/event<sp/>support<sp/>for<sp/>errors<sp/>and<sp/>health</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Full<sp/>test<sp/>coverage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;satox/rpc_proxy/rpc_proxy_manager.hpp&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">satox::rpc_proxy::RpcProxyConfig<sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.endpoint<sp/>=<sp/>&quot;http://localhost:8545&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.username<sp/>=<sp/>&quot;user&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.password<sp/>=<sp/>&quot;pass&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.timeout_ms<sp/>=<sp/>1000;</highlight></codeline>
+<codeline><highlight class="normal">config.enableLogging<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">config.logPath<sp/>=<sp/>&quot;logs/components/rpc_proxy/&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">auto&amp;<sp/>proxy<sp/>=<sp/>satox::rpc_proxy::RpcProxyManager::getInstance();</highlight></codeline>
+<codeline><highlight class="normal">proxy.initialize(config);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>req<sp/>=<sp/>{{&quot;method&quot;,<sp/>&quot;ping&quot;},<sp/>{&quot;id&quot;,<sp/>&quot;1&quot;}};</highlight></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>resp;</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(proxy.sendRpcRequest(req,<sp/>resp))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>response</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">proxy.shutdown();</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Configuration</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`endpoint`:<sp/>Target<sp/>RPC<sp/>server<sp/>URL</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`username`,<sp/>`password`:<sp/>Optional<sp/>credentials</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`timeout_ms`:<sp/>Request<sp/>timeout</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`enableLogging`:<sp/>Enable/disable<sp/>logging</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`logPath`:<sp/>Log<sp/>file<sp/>directory</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Compliance</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Follows<sp/>Satox<sp/>SDK<sp/>`component_templates.md`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MIT<sp/>License</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Satoxcoin<sp/>Core<sp/>Developer<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>⚠️<sp/>Limitations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Blockchain<sp/>Compatibility**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**No<sp/>Smart<sp/>Contract<sp/>Support:**<sp/>Satox<sp/>is<sp/>based<sp/>on<sp/>Ravencoin<sp/>and<sp/>does<sp/>**not**<sp/>support<sp/>smart<sp/>contracts<sp/>or<sp/>EVM<sp/>compatibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset-Based:**<sp/>Focuses<sp/>on<sp/>asset<sp/>creation,<sp/>management,<sp/>and<sp/>transfer<sp/>rather<sp/>than<sp/>programmable<sp/>contracts</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**UTXO<sp/>Model:**<sp/>Uses<sp/>Unspent<sp/>Transaction<sp/>Output<sp/>(UTXO)<sp/>model<sp/>like<sp/>Bitcoin/Ravencoin,<sp/>not<sp/>account-based<sp/>like<sp/>Ethereum</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Platform<sp/>Support**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Desktop<sp/>Focus:**<sp/>Primarily<sp/>designed<sp/>for<sp/>desktop/server<sp/>environments</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mobile<sp/>Limitations:**<sp/>Mobile<sp/>SDK<sp/>provides<sp/>limited<sp/>functionality<sp/>compared<sp/>to<sp/>core<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Browser<sp/>Support:**<sp/>WebAssembly<sp/>bindings<sp/>have<sp/>performance<sp/>limitations<sp/>for<sp/>complex<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Network<sp/>Requirements**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Internet<sp/>Connection:**<sp/>Requires<sp/>active<sp/>internet<sp/>connection<sp/>for<sp/>blockchain<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Node<sp/>Synchronization:**<sp/>Full<sp/>node<sp/>operations<sp/>require<sp/>significant<sp/>storage<sp/>and<sp/>bandwidth</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**API<sp/>Dependencies:**<sp/>Some<sp/>features<sp/>depend<sp/>on<sp/>external<sp/>API<sp/>services</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Development<sp/>Considerations**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Learning<sp/>Curve:**<sp/>Ravencoin/UTXO<sp/>model<sp/>differs<sp/>from<sp/>Ethereum/smart<sp/>contract<sp/>development</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Testing<sp/>Environment:**<sp/>Testnet<sp/>required<sp/>for<sp/>development<sp/>and<sp/>testing</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset<sp/>Management:**<sp/>Asset<sp/>creation<sp/>and<sp/>management<sp/>have<sp/>specific<sp/>requirements<sp/>and<sp/>limitations</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="src/rpc_proxy/README.md"/>
+  </compounddef>
+</doxygen>

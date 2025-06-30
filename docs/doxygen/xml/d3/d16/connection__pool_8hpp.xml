@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/d16/connection__pool_8hpp" kind="file" language="C++">
+    <compoundname>connection_pool.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">condition_variable</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="d1/dd1/migration__manager_8hpp" local="yes">src/database/include/satox/database/migration_manager.hpp</includedby>
+    <includedby refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp" local="yes">src/database/include/satox/database/transaction_manager.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/database/include/satox/database/connection_pool.hpp</label>
+        <link refid="d3/d16/connection__pool_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>atomic</label>
+      </node>
+      <node id="8">
+        <label>chrono</label>
+      </node>
+      <node id="6">
+        <label>condition_variable</label>
+      </node>
+      <node id="10">
+        <label>functional</label>
+      </node>
+      <node id="9">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="11">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="4">
+        <label>queue</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/database/include/satox/database/connection_pool.hpp</label>
+        <link refid="d3/d16/connection__pool_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/database/include/satox/database/migration_manager.hpp</label>
+        <link refid="d1/dd1/migration__manager_8hpp"/>
+      </node>
+      <node id="3">
+        <label>src/database/include/satox/database/transaction_manager.hpp</label>
+        <link refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool" prot="public">satox::database::ConnectionPool</innerclass>
+    <innerclass refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" prot="public">satox::database::ConnectionPool::ConnectionConfig</innerclass>
+    <innerclass refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats" prot="public">satox::database::ConnectionPool::ConnectionStats</innerclass>
+    <innerclass refid="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection" prot="private">satox::database::ConnectionPool::Connection</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="db/dfd/namespacesatox_1_1database">satox::database</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="40" refid="db/dfd/namespacesatox_1_1database" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/dfd/namespacesatox_1_1database" kindref="compound">database</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ConnectionPool<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" kindref="compound">ConnectionConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="45" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a61fe6a5a7ea19bee63d6c9522b323cac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a61fe6a5a7ea19bee63d6c9522b323cac" kindref="member">host</ref>;</highlight></codeline>
+<codeline lineno="46" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1afdb8b3ed63ae3c4fd7bc4f98a763c2e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1afdb8b3ed63ae3c4fd7bc4f98a763c2e5" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="47" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1ab006144ab0b3aece783e5780f8c18dfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1ab006144ab0b3aece783e5780f8c18dfa" kindref="member">database</ref>;</highlight></codeline>
+<codeline lineno="48" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1ad2b292613852b0570bb6286af9887229" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1ad2b292613852b0570bb6286af9887229" kindref="member">username</ref>;</highlight></codeline>
+<codeline lineno="49" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a8fb9922f53fbec13c061af7ad84f82e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a8fb9922f53fbec13c061af7ad84f82e2" kindref="member">password</ref>;</highlight></codeline>
+<codeline lineno="50" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a77372911f7e4be429b01cf4edf77b0ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a77372911f7e4be429b01cf4edf77b0ff" kindref="member">use_ssl</ref>;</highlight></codeline>
+<codeline lineno="51" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a157aecd586bfd1d883489d595bb71a6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a157aecd586bfd1d883489d595bb71a6b" kindref="member">max_connections</ref>;</highlight></codeline>
+<codeline lineno="52" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a1fca2a5d7f68541593adc93939cf08d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a1fca2a5d7f68541593adc93939cf08d5" kindref="member">min_connections</ref>;</highlight></codeline>
+<codeline lineno="53" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a72bb16b82529a41b31c746a586497b0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a72bb16b82529a41b31c746a586497b0b" kindref="member">connection_timeout</ref>;</highlight></codeline>
+<codeline lineno="54" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a5d2a357139a0274c922bd252108607a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a5d2a357139a0274c922bd252108607a7" kindref="member">idle_timeout</ref>;</highlight></codeline>
+<codeline lineno="55" refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a14fd48edbb2463df7c3b5c056aa9462f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig_1a14fd48edbb2463df7c3b5c056aa9462f" kindref="member">max_lifetime</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats" kindref="compound">ConnectionStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a0ff6e9efa4bafb0326b0f6b3a546d41d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a0ff6e9efa4bafb0326b0f6b3a546d41d" kindref="member">total_connections</ref>;</highlight></codeline>
+<codeline lineno="60" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a09f84fa19b011f4e49407dd14e8d3f74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a09f84fa19b011f4e49407dd14e8d3f74" kindref="member">active_connections</ref>;</highlight></codeline>
+<codeline lineno="61" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a333cb3d1376981a1fac6abf1ea99471e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a333cb3d1376981a1fac6abf1ea99471e" kindref="member">idle_connections</ref>;</highlight></codeline>
+<codeline lineno="62" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a299dfc9f823071897a3cb411d4cd68da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a299dfc9f823071897a3cb411d4cd68da" kindref="member">waiting_requests</ref>;</highlight></codeline>
+<codeline lineno="63" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a82c514379a840a606bd4351c8f28a157" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a82c514379a840a606bd4351c8f28a157" kindref="member">avg_wait_time</ref>;</highlight></codeline>
+<codeline lineno="64" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a2629d4c2b8f65265c79cec757b21686c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1a2629d4c2b8f65265c79cec757b21686c" kindref="member">connection_errors</ref>;</highlight></codeline>
+<codeline lineno="65" refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1aeaa38343497ffd6ab44ec2b79dd7fa66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats_1aeaa38343497ffd6ab44ec2b79dd7fa66" kindref="member">timeout_errors</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a30e0698d1b6c80bd394af8b6bab3c113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ConnectionPool&amp;<sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a30e0698d1b6c80bd394af8b6bab3c113" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ae36ee816c48af45a6cb1c58bc49be7dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ae36ee816c48af45a6cb1c58bc49be7dd" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" kindref="compound">ConnectionConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="71" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac5b34964e0996d7d17598114e5e17044" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac5b34964e0996d7d17598114e5e17044" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connection<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a3dd95b5d07b75a1fa55239c79d1d04ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;void&gt;<sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a3dd95b5d07b75a1fa55239c79d1d04ee" kindref="member">acquireConnection</ref>();</highlight></codeline>
+<codeline lineno="75" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a186440a05c81239b5adb82cc222bcaf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a186440a05c81239b5adb82cc222bcaf8" kindref="member">releaseConnection</ref>(std::shared_ptr&lt;void&gt;<sp/>connection);</highlight></codeline>
+<codeline lineno="76" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aaeed3dc77057e678588ad33ef7ced89e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aaeed3dc77057e678588ad33ef7ced89e" kindref="member">testConnection</ref>(std::shared_ptr&lt;void&gt;<sp/>connection);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pool<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ad1555f01656551efc65348325f26e128" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ad1555f01656551efc65348325f26e128" kindref="member">setMaxConnections</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>max);</highlight></codeline>
+<codeline lineno="80" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a9ed0091d9de1fc070c1a61532e66e1f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a9ed0091d9de1fc070c1a61532e66e1f6" kindref="member">setMinConnections</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>min);</highlight></codeline>
+<codeline lineno="81" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aae0cf70e23bd38a8c6897ee6183de372" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aae0cf70e23bd38a8c6897ee6183de372" kindref="member">setConnectionTimeout</ref>(std::chrono::seconds<sp/>timeout);</highlight></codeline>
+<codeline lineno="82" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a5b9452aeed8af468cacc79acc1cb9113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a5b9452aeed8af468cacc79acc1cb9113" kindref="member">setIdleTimeout</ref>(std::chrono::seconds<sp/>timeout);</highlight></codeline>
+<codeline lineno="83" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a281e332ae903436e08500f913db6c090" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a281e332ae903436e08500f913db6c090" kindref="member">setMaxLifetime</ref>(std::chrono::seconds<sp/>lifetime);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac36be68810f349fe3dff050c7d506ebe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats" kindref="compound">ConnectionStats</ref><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac36be68810f349fe3dff050c7d506ebe" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a6a80c1dfa37b0c463cd15e4a9ec7cb39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a6a80c1dfa37b0c463cd15e4a9ec7cb39" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a68b4a7ac8b6ed5859ee41a7af10d2c13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a68b4a7ac8b6ed5859ee41a7af10d2c13" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91" refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a8472b3aafd0a553d6bc7a2430428137a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a8472b3aafd0a553d6bc7a2430428137a" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>ConnectionPool()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>~ConnectionPool();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>ConnectionPool(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ConnectionPool&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>ConnectionPool&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ConnectionPool&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connection<sp/>lifecycle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;void&gt;<sp/>createConnection();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>destroyConnection(std::shared_ptr&lt;void&gt;<sp/>connection);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanupIdleConnections();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>maintainPool();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Connection<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;void&gt;<sp/>handle;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::steady_clock::time_point<sp/>created_at;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::steady_clock::time_point<sp/>last_used;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>in_use;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>ConnectionConfig<sp/>config_;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Connection&gt;<sp/>connections_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::queue&lt;size_t&gt;<sp/>available_connections_;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::condition_variable<sp/>cv_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>running_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>total_connections_;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>active_connections_;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>waiting_requests_;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>connection_errors_;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>timeout_errors_;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::steady_clock::time_point<sp/>start_time_;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>last_error_;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>std::thread<sp/>maintenance_thread_;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/database/include/satox/database/connection_pool.hpp"/>
+  </compounddef>
+</doxygen>

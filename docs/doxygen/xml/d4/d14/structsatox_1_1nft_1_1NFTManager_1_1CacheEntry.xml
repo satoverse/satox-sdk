@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry" kind="struct" language="C++" prot="public">
+    <compoundname>satox::nft::NFTManager::CacheEntry</compoundname>
+    <includes refid="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" local="no">nft_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry_1a9dffd3157b9adf5b96396cc07f9d77b7" prot="public" static="no" mutable="no">
+        <type><ref refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref></type>
+        <definition>NFT satox::nft::NFTManager::CacheEntry::nft</definition>
+        <argsstring></argsstring>
+        <name>nft</name>
+        <qualifiedname>satox::nft::NFTManager::CacheEntry::nft</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_manager.hpp" line="127" column="13" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry_1a035fc8c158a6fe91b4cf70160c76e4db" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::nft::NFTManager::CacheEntry::expiry</definition>
+        <argsstring></argsstring>
+        <name>expiry</name>
+        <qualifiedname>satox::nft::NFTManager::CacheEntry::expiry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_manager.hpp" line="128" column="47" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="8">
+        <label>K</label>
+      </node>
+      <node id="9">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::nft::NFTManager::CacheEntry</label>
+        <link refid="d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>nft</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>satox::nft::NFTManager::NFT</label>
+        <link refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>contractAddress</edgelabel>
+          <edgelabel>creator</edgelabel>
+          <edgelabel>id</edgelabel>
+          <edgelabel>owner</edgelabel>
+          <edgelabel>royaltyRecipient</edgelabel>
+          <edgelabel>tokenURI</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>metadata</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>satox::nft::NFTManager::NFTMetadata</label>
+        <link refid="d0/d3f/structsatox_1_1nft_1_1NFTManager_1_1NFTMetadata"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>description</edgelabel>
+          <edgelabel>externalUrl</edgelabel>
+          <edgelabel>image</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>attributes</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::map&lt; std::string, std::string &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; std::string, std::string &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/nft/include/satox/nft/nft_manager.hpp" line="126" column="5" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="126" bodyend="129"/>
+    <listofallmembers>
+      <member refid="d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry_1a035fc8c158a6fe91b4cf70160c76e4db" prot="public" virt="non-virtual"><scope>satox::nft::NFTManager::CacheEntry</scope><name>expiry</name></member>
+      <member refid="d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry_1a9dffd3157b9adf5b96396cc07f9d77b7" prot="public" virt="non-virtual"><scope>satox::nft::NFTManager::CacheEntry</scope><name>nft</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d78/structsatox_1_1wallet_1_1WalletResult" kind="struct" language="C++" prot="public">
+    <compoundname>satox::wallet::WalletResult</compoundname>
+    <includes refid="d2/d3c/wallet_2include_2satox_2wallet_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a2efcb729fb89ce14f39bba5f11bf3774" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::wallet::WalletResult::success</definition>
+        <argsstring></argsstring>
+        <name>success</name>
+        <qualifiedname>satox::wallet::WalletResult::success</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/types.hpp" line="69" column="10" bodyfile="src/wallet/include/satox/wallet/types.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a3516741ee2e02d8f783be4a847af96fe" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::WalletResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::wallet::WalletResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/types.hpp" line="70" column="17" bodyfile="src/wallet/include/satox/wallet/types.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a6c12ebf76714e28382a2c70d889cca4f" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::wallet::WalletResult::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>satox::wallet::WalletResult::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/types.hpp" line="71" column="20" bodyfile="src/wallet/include/satox/wallet/types.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a136b175b6957e5d063bcf7f05144e5d0" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::wallet::WalletResult::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>satox::wallet::WalletResult::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/types.hpp" line="72" column="31" bodyfile="src/wallet/include/satox/wallet/types.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::wallet::WalletResult</label>
+        <link refid="d4/d78/structsatox_1_1wallet_1_1WalletResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/wallet/include/satox/wallet/types.hpp" line="68" column="1" bodyfile="src/wallet/include/satox/wallet/types.hpp" bodystart="68" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a6c12ebf76714e28382a2c70d889cca4f" prot="public" virt="non-virtual"><scope>satox::wallet::WalletResult</scope><name>data</name></member>
+      <member refid="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a136b175b6957e5d063bcf7f05144e5d0" prot="public" virt="non-virtual"><scope>satox::wallet::WalletResult</scope><name>duration</name></member>
+      <member refid="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a3516741ee2e02d8f783be4a847af96fe" prot="public" virt="non-virtual"><scope>satox::wallet::WalletResult</scope><name>error</name></member>
+      <member refid="d4/d78/structsatox_1_1wallet_1_1WalletResult_1a2efcb729fb89ce14f39bba5f11bf3774" prot="public" virt="non-virtual"><scope>satox::wallet::WalletResult</scope><name>success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d18/content__distribution_8hpp" kind="file" language="C++">
+    <compoundname>content_distribution.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">future</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="d4/d94/content__distribution_8cpp" local="yes">src/ipfs/src/content_distribution.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/ipfs/include/satox/ipfs/content_distribution.hpp</label>
+        <link refid="dc/d18/content__distribution_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>future</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="9">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>unordered_map</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/ipfs/include/satox/ipfs/content_distribution.hpp</label>
+        <link refid="dc/d18/content__distribution_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/ipfs/src/content_distribution.cpp</label>
+        <link refid="d4/d94/content__distribution_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" prot="public">satox::ipfs::ContentDistribution</innerclass>
+    <innerclass refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" prot="public">satox::ipfs::ContentDistribution::DistributionStatus</innerclass>
+    <innerclass refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" prot="public">satox::ipfs::ContentDistribution::Error</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d2/dc8/namespacesatox_1_1ipfs">satox::ipfs</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;future&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d2/dc8/namespacesatox_1_1ipfs" kindref="compound">ipfs</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ContentDistribution<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ContentDistribution&amp;<sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a710c90ce2e122d1f5bc8db56e5f8439b" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>cleanup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1acb9f2a45580c5ee60561dab8b0165442" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>configPath);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a178ee5660c9b8f0785aee478a9d66715" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Distribution<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;bool&gt;<sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5ae95fe27b3927c70d33b7d0fbfd9feb" kindref="member">distributeContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentHash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>targetNodes);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;bool&gt;<sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5f7d3cdc29466f9cb6bfcc37ca4197b2" kindref="member">distributeFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filePath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>targetNodes);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;bool&gt;<sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae26ef13ff2c4c69f7b3414c1a509acf0" kindref="member">distributeDirectory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>directoryPath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>targetNodes);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7735088c0efaa2b3f87fa4c25884e1a4" kindref="member">addNode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>nodeId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a56f9c779a182ba98b5a0863b2d8cdd0c" kindref="member">removeNode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>nodeId);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1afdd52608b12d3915e9ded6cda5935ec0" kindref="member">updateNode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>nodeId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>newAddress);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a41d6cd00755408611f321f81e5cb10f0" kindref="member">getAvailableNodes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7c470f1340d2181a90024737f3a631cc" kindref="member">isNodeAvailable</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>nodeId)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Distribution<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="63" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1ac6fb1af5d6db863d4b063732f75ddac1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1ac6fb1af5d6db863d4b063732f75ddac1" kindref="member">contentHash</ref>;</highlight></codeline>
+<codeline lineno="64" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a2bbfc92fd334607e3ca3cebee70ec02a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a2bbfc92fd334607e3ca3cebee70ec02a" kindref="member">status</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;pending&quot;,<sp/>&quot;in_progress&quot;,<sp/>&quot;completed&quot;,<sp/>&quot;failed&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a38e7c7facc46091c7b4d895c0a3d1ba0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a38e7c7facc46091c7b4d895c0a3d1ba0" kindref="member">progress</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0-100<sp/>percentage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a79e2a2cb8bd92e0663d16852b3d0fb6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a79e2a2cb8bd92e0663d16852b3d0fb6b" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="67" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1af5b7b6ba2993fb0bb5e8816887f85318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1af5b7b6ba2993fb0bb5e8816887f85318" kindref="member">completedNodes</ref>;</highlight></codeline>
+<codeline lineno="68" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1ad7098a4638ba16d0f009ec91454286a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1ad7098a4638ba16d0f009ec91454286a4" kindref="member">failedNodes</ref>;</highlight></codeline>
+<codeline lineno="69" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a5b8e2e663f964aea788a8a1fbe2e5437" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a5b8e2e663f964aea788a8a1fbe2e5437" kindref="member">startTime</ref>;</highlight></codeline>
+<codeline lineno="70" refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a6c3cfc2128983fc160f2fd721a6fdf22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a6c3cfc2128983fc160f2fd721a6fdf22" kindref="member">endTime</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae9e06cbfc8100ce68a2cd765d7b80b8d" kindref="member">getDistributionStatus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentHash)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;DistributionStatus&gt;<sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7d756b6bc8fea4c7c825702914b8f270" kindref="member">getActiveDistributions</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1aed0e16090b33fce61cc6583184be8062" kindref="member">cancelDistribution</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentHash);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bandwidth<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a9e4477bfc664e9d2e64f373d599f23b7" kindref="member">setBandwidthLimit</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bytesPerSecond);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1adde5a07355f31753c07bc49e8ddc9261" kindref="member">getBandwidthLimit</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac278cf19667bfe9112729b5b56a31e75" kindref="member">getCurrentBandwidthUsage</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Priority<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ab37336153fb8154edc836602a5f76871" kindref="member">setDistributionPriority</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentHash,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a24fe6b150bad29f1d3b48a459e94296f" kindref="member">getDistributionPriority</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentHash)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Event<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" kindref="member">StatusCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac3c20c734923abb6fa5208e4b5068575" kindref="member">setStatusCallback</ref>(<ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" kindref="member">StatusCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7ebaf101f9b43228f17dc1ac7d07b3ba" kindref="member">clearStatusCallback</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" kindref="compound">Error</ref><sp/>{</highlight></codeline>
+<codeline lineno="93" refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error_1a7af505d16adcd92fa122233d16fc565d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error_1a7af505d16adcd92fa122233d16fc565d" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="94" refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error_1af676b5e31dddcd3dab3e28ddb96cc53a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error_1af676b5e31dddcd3dab3e28ddb96cc53a" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" kindref="compound">Error</ref><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a98b95062848c7277148d906073a34e5b" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a32811127fddfa9d701d41f44cc9e536c" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>ContentDistribution()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>~ContentDistribution()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>ContentDistribution(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ContentDistribution&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>ContentDistribution&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ContentDistribution&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateNode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>nodeId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateDistributionStatus(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentHash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref>&amp;<sp/>status);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyStatusCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref>&amp;<sp/>status);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>handleError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>configPath_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>nodes_;<sp/><sp/></highlight><highlight class="comment">//<sp/>nodeId<sp/>-&gt;<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>DistributionStatus&gt;<sp/>activeDistributions_;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>int&gt;<sp/>distributionPriorities_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bandwidthLimit_<sp/>=<sp/>1024<sp/>*<sp/>1024;<sp/><sp/></highlight><highlight class="comment">//<sp/>1MB/s<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" kindref="member">StatusCallback</ref><sp/>statusCallback_;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" kindref="compound">Error</ref><sp/>lastError_;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ipfs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/dd5/structsatox_1_1core_1_1CoreResult" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::CoreResult</compoundname>
+    <includes refid="dd/d27/core_2include_2satox_2core_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d6/dd5/structsatox_1_1core_1_1CoreResult_1aa6222ece9ee50a9d5e709f2fc2251bf9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::CoreResult::success</definition>
+        <argsstring></argsstring>
+        <name>success</name>
+        <qualifiedname>satox::core::CoreResult::success</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="49" column="10" bodyfile="src/core/include/satox/core/types.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dd5/structsatox_1_1core_1_1CoreResult_1a6f1fd50d3a76436bb12b07b680e39a2d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CoreResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::core::CoreResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="50" column="17" bodyfile="src/core/include/satox/core/types.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dd5/structsatox_1_1core_1_1CoreResult_1a809ce04d91ea3cca3e74f3b5045973a7" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CoreResult::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>satox::core::CoreResult::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="51" column="20" bodyfile="src/core/include/satox/core/types.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dd5/structsatox_1_1core_1_1CoreResult_1a2325445716ce97987462e72a2e040372" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::core::CoreResult::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>satox::core::CoreResult::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="52" column="31" bodyfile="src/core/include/satox/core/types.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::core::CoreResult</label>
+        <link refid="d6/dd5/structsatox_1_1core_1_1CoreResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/types.hpp" line="48" column="1" bodyfile="src/core/include/satox/core/types.hpp" bodystart="48" bodyend="53"/>
+    <listofallmembers>
+      <member refid="d6/dd5/structsatox_1_1core_1_1CoreResult_1a809ce04d91ea3cca3e74f3b5045973a7" prot="public" virt="non-virtual"><scope>satox::core::CoreResult</scope><name>data</name></member>
+      <member refid="d6/dd5/structsatox_1_1core_1_1CoreResult_1a2325445716ce97987462e72a2e040372" prot="public" virt="non-virtual"><scope>satox::core::CoreResult</scope><name>duration</name></member>
+      <member refid="d6/dd5/structsatox_1_1core_1_1CoreResult_1a6f1fd50d3a76436bb12b07b680e39a2d" prot="public" virt="non-virtual"><scope>satox::core::CoreResult</scope><name>error</name></member>
+      <member refid="d6/dd5/structsatox_1_1core_1_1CoreResult_1aa6222ece9ee50a9d5e709f2fc2251bf9" prot="public" virt="non-virtual"><scope>satox::core::CoreResult</scope><name>success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

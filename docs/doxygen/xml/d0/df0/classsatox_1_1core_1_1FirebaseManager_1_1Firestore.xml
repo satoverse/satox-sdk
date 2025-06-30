@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::FirebaseManager::Firestore</compoundname>
+    <includes refid="d8/d06/firebase__manager_8hpp" local="no">firebase_manager.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1a5f79a4c8e490b6e5d5cd45a08676273d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::FirebaseManager::Firestore::getDocument</definition>
+        <argsstring>(const std::string &amp;connection_id, const std::string &amp;collection, const std::string &amp;document_id, nlohmann::json &amp;result)</argsstring>
+        <name>getDocument</name>
+        <qualifiedname>satox::core::FirebaseManager::Firestore::getDocument</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>collection</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>document_id</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Get a document. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>collection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Collection name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>document_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/firebase_manager.hpp" line="69" column="14" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="295" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1a9ae9da7f11cda61d10729580b032c6c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::FirebaseManager::Firestore::setDocument</definition>
+        <argsstring>(const std::string &amp;connection_id, const std::string &amp;collection, const std::string &amp;document_id, const nlohmann::json &amp;data, nlohmann::json &amp;result)</argsstring>
+        <name>setDocument</name>
+        <qualifiedname>satox::core::FirebaseManager::Firestore::setDocument</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>collection</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>document_id</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Set a document. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>collection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Collection name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>document_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation result </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/firebase_manager.hpp" line="83" column="14" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="301" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1a43f0650f3421a0f307dd416fcc9a70e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::FirebaseManager::Firestore::updateDocument</definition>
+        <argsstring>(const std::string &amp;connection_id, const std::string &amp;collection, const std::string &amp;document_id, const nlohmann::json &amp;data, nlohmann::json &amp;result)</argsstring>
+        <name>updateDocument</name>
+        <qualifiedname>satox::core::FirebaseManager::Firestore::updateDocument</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>collection</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>document_id</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Update a document. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>collection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Collection name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>document_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document data to update </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation result </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/firebase_manager.hpp" line="98" column="14" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="307" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1ab7be2dbba0e15ea8a272f9e733c51587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::FirebaseManager::Firestore::deleteDocument</definition>
+        <argsstring>(const std::string &amp;connection_id, const std::string &amp;collection, const std::string &amp;document_id, nlohmann::json &amp;result)</argsstring>
+        <name>deleteDocument</name>
+        <qualifiedname>satox::core::FirebaseManager::Firestore::deleteDocument</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>collection</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>document_id</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Delete a document. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>collection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Collection name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>document_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation result </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/firebase_manager.hpp" line="112" column="14" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="313" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1ac6a4ff6d5570f1abe5c154fa225798f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::FirebaseManager::Firestore::queryDocuments</definition>
+        <argsstring>(const std::string &amp;connection_id, const std::string &amp;collection, const nlohmann::json &amp;query, nlohmann::json &amp;result)</argsstring>
+        <name>queryDocuments</name>
+        <qualifiedname>satox::core::FirebaseManager::Firestore::queryDocuments</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>collection</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Query documents. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>collection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Collection name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query conditions </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query results </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/firebase_manager.hpp" line="125" column="14" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="319" bodyend="323"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore" kindref="compound">Firestore</ref> operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/cloud/firebase_manager.hpp" line="59" column="5" bodyfile="src/core/include/satox/core/cloud/firebase_manager.hpp" bodystart="59" bodyend="129"/>
+    <listofallmembers>
+      <member refid="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1ab7be2dbba0e15ea8a272f9e733c51587" prot="public" virt="non-virtual"><scope>satox::core::FirebaseManager::Firestore</scope><name>deleteDocument</name></member>
+      <member refid="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1a5f79a4c8e490b6e5d5cd45a08676273d" prot="public" virt="non-virtual"><scope>satox::core::FirebaseManager::Firestore</scope><name>getDocument</name></member>
+      <member refid="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1ac6a4ff6d5570f1abe5c154fa225798f5" prot="public" virt="non-virtual"><scope>satox::core::FirebaseManager::Firestore</scope><name>queryDocuments</name></member>
+      <member refid="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1a9ae9da7f11cda61d10729580b032c6c5" prot="public" virt="non-virtual"><scope>satox::core::FirebaseManager::Firestore</scope><name>setDocument</name></member>
+      <member refid="d0/df0/classsatox_1_1core_1_1FirebaseManager_1_1Firestore_1a43f0650f3421a0f307dd416fcc9a70e9" prot="public" virt="non-virtual"><scope>satox::core::FirebaseManager::Firestore</scope><name>updateDocument</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

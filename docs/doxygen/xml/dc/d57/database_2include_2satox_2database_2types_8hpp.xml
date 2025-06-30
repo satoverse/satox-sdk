@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d57/database_2include_2satox_2database_2types_8hpp" kind="file" language="C++">
+    <compoundname>types.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="dc/d21/database_2include_2satox_2database_2database__manager_8hpp" local="yes">src/database/include/satox/database/database_manager.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/database/include/satox/database/types.hpp</label>
+        <link refid="dc/d57/database_2include_2satox_2database_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/database/include/satox/database/database_manager.hpp</label>
+        <link refid="dc/d21/database_2include_2satox_2database_2database__manager_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/database/include/satox/database/types.hpp</label>
+        <link refid="dc/d57/database_2include_2satox_2database_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/database/src/database_manager.cpp</label>
+        <link refid="d7/d7a/database_2src_2database__manager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/satox_sdk_c.cpp</label>
+        <link refid="dd/deb/satox__sdk__c_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="dd/d53/structsatox_1_1database_1_1Version" prot="public">satox::database::Version</innerclass>
+    <innerclass refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" prot="public">satox::database::DatabaseConfig</innerclass>
+    <innerclass refid="df/d6a/structsatox_1_1database_1_1DatabaseStats" prot="public">satox::database::DatabaseStats</innerclass>
+    <innerclass refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult" prot="public">satox::database::DatabaseResult</innerclass>
+    <innerclass refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" prot="public">satox::database::DatabaseHealth</innerclass>
+    <innerclass refid="d6/d2d/structsatox_1_1database_1_1TableData" prot="public">satox::database::TableData</innerclass>
+    <innerclass refid="db/d15/structsatox_1_1database_1_1DatabaseData" prot="public">satox::database::DatabaseData</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="db/dfd/namespacesatox_1_1database">satox::database</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/dfd/namespacesatox_1_1database" kindref="compound">satox::database</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Version<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="dd/d53/structsatox_1_1database_1_1Version" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/d53/structsatox_1_1database_1_1Version" kindref="compound">Version</ref><sp/>{</highlight></codeline>
+<codeline lineno="38" refid="dd/d53/structsatox_1_1database_1_1Version_1aee51cbb6e2808d8a222a04fef5d8d39b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d53/structsatox_1_1database_1_1Version_1aee51cbb6e2808d8a222a04fef5d8d39b" kindref="member">major</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39" refid="dd/d53/structsatox_1_1database_1_1Version_1add26f8578ae3b89c8c5c50207a3f680a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d53/structsatox_1_1database_1_1Version_1add26f8578ae3b89c8c5c50207a3f680a" kindref="member">minor</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="40" refid="dd/d53/structsatox_1_1database_1_1Version_1af4164ac7fc212feab9c5df05f486168f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d53/structsatox_1_1database_1_1Version_1af4164ac7fc212feab9c5df05f486168f" kindref="member">patch</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41" refid="dd/d53/structsatox_1_1database_1_1Version_1a77f2d45e248e079f2637eb0e6180a933" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d53/structsatox_1_1database_1_1Version_1a77f2d45e248e079f2637eb0e6180a933" kindref="member">build</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42" refid="dd/d53/structsatox_1_1database_1_1Version_1a5aa52ff3de513c7b3ef8b418732ae59e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d53/structsatox_1_1database_1_1Version_1a5aa52ff3de513c7b3ef8b418732ae59e" kindref="member">commit</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="dd/d53/structsatox_1_1database_1_1Version_1a0c74f3ccab3bf4b686db6e139b265ee2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d53/structsatox_1_1database_1_1Version_1a0c74f3ccab3bf4b686db6e139b265ee2" kindref="member">toString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::to_string(<ref refid="dd/d53/structsatox_1_1database_1_1Version_1aee51cbb6e2808d8a222a04fef5d8d39b" kindref="member">major</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="dd/d53/structsatox_1_1database_1_1Version_1add26f8578ae3b89c8c5c50207a3f680a" kindref="member">minor</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="dd/d53/structsatox_1_1database_1_1Version_1af4164ac7fc212feab9c5df05f486168f" kindref="member">patch</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configuration<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a2b628c7dbd95742a5850efcf202e89e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a2b628c7dbd95742a5850efcf202e89e3" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;satox_database&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1ac2a6acec1a314217fa9112fa453a7aaf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1ac2a6acec1a314217fa9112fa453a7aaf" kindref="member">enableLogging</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a22f19d5de470facb43ab5dc85e2f030a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a22f19d5de470facb43ab5dc85e2f030a" kindref="member">logPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/components/database/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a9c3a5d0de3446ee27388acfcbb3eeb07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a9c3a5d0de3446ee27388acfcbb3eeb07" kindref="member">maxConnections</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="55" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a126d0f6d00000ab9365c7c30bc4d0eeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a126d0f6d00000ab9365c7c30bc4d0eeb" kindref="member">connectionTimeout</ref><sp/>=<sp/>5000;</highlight></codeline>
+<codeline lineno="56" refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a55a33623c39d4ae87ef0fd22773cd019" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a55a33623c39d4ae87ef0fd22773cd019" kindref="member">additionalConfig</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Statistics<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats" kindref="compound">DatabaseStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="61" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aa79b72e83175326c11a05637c573eb0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aa79b72e83175326c11a05637c573eb0a" kindref="member">totalOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1addfe6166fc3c54ff1e1f1df40e16b80b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1addfe6166fc3c54ff1e1f1df40e16b80b" kindref="member">successfulOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a88841708b58cba5c0b41d41a72c07723" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a88841708b58cba5c0b41d41a72c07723" kindref="member">failedOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aab836210933cf96faa738f39376ff467" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aab836210933cf96faa738f39376ff467" kindref="member">lastOperation</ref>;</highlight></codeline>
+<codeline lineno="65" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a880e3aa545b5f691620ec71fa13ba4e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a880e3aa545b5f691620ec71fa13ba4e9" kindref="member">averageOperationTime</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="66" refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a21f33e6a1426221acff890b448edd86e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a21f33e6a1426221acff890b448edd86e" kindref="member">additionalStats</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Result<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult" kindref="compound">DatabaseResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="71" refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ae8dd08a6a8c4a8a51d467255f382161c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ae8dd08a6a8c4a8a51d467255f382161c" kindref="member">success</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72" refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6b49cc822220118ffd319bf8d53a9e54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6b49cc822220118ffd319bf8d53a9e54" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="73" refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a97c73c1bc6b5f62e4173f22035bcd6be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a97c73c1bc6b5f62e4173f22035bcd6be" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="74" refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ab8c203fe6f2484487423ff09bda0d6f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ab8c203fe6f2484487423ff09bda0d6f5" kindref="member">duration</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6213ee1e9e1636733485c8541364d761" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6213ee1e9e1636733485c8541364d761" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult" kindref="compound">DatabaseResult</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ae8dd08a6a8c4a8a51d467255f382161c" kindref="member">success</ref><sp/>==<sp/>other.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ae8dd08a6a8c4a8a51d467255f382161c" kindref="member">success</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6b49cc822220118ffd319bf8d53a9e54" kindref="member">error</ref><sp/>==<sp/>other.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6b49cc822220118ffd319bf8d53a9e54" kindref="member">error</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a97c73c1bc6b5f62e4173f22035bcd6be" kindref="member">data</ref><sp/>==<sp/>other.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a97c73c1bc6b5f62e4173f22035bcd6be" kindref="member">data</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ab8c203fe6f2484487423ff09bda0d6f5" kindref="member">duration</ref><sp/>==<sp/>other.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ab8c203fe6f2484487423ff09bda0d6f5" kindref="member">duration</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GoogleTest<sp/>PrintTo<sp/>for<sp/>DatabaseResult</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="db/dfd/namespacesatox_1_1database_1a2360208dfe9f3544f16b76599283d5cd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a2360208dfe9f3544f16b76599283d5cd" kindref="member">PrintTo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult" kindref="compound">DatabaseResult</ref>&amp;<sp/>result,<sp/>std::ostream*<sp/>os)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DatabaseResult{&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;success:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>result.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ae8dd08a6a8c4a8a51d467255f382161c" kindref="member">success</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;error:<sp/>&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>result.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a6b49cc822220118ffd319bf8d53a9e54" kindref="member">error</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&apos;,<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;data:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>result.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1a97c73c1bc6b5f62e4173f22035bcd6be" kindref="member">data</ref>.dump()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;duration:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>result.<ref refid="d8/dd6/structsatox_1_1database_1_1DatabaseResult_1ab8c203fe6f2484487423ff09bda0d6f5" kindref="member">duration</ref>.count()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ms&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052" kindref="member">DatabaseStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="96" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a696b031073e74bf2cb98e5ef201d4aa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">UNKNOWN</ref>,</highlight></codeline>
+<codeline lineno="97" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a86bf8c89d85949f8f45cde2f73fce113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a86bf8c89d85949f8f45cde2f73fce113" kindref="member">INITIALIZING</ref>,</highlight></codeline>
+<codeline lineno="98" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052adee5f03c2c4e73657824e028494b18c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052adee5f03c2c4e73657824e028494b18c0" kindref="member">INITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="99" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a43491564ebcfd38568918efbd6e840fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a43491564ebcfd38568918efbd6e840fd" kindref="member">RUNNING</ref>,</highlight></codeline>
+<codeline lineno="100" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a09d4d696b4e935115b9313e3c412509a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a09d4d696b4e935115b9313e3c412509a" kindref="member">STOPPED</ref>,</highlight></codeline>
+<codeline lineno="101" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052abb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="102" refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a055c1a591abb0e8cd86dc969727bcc0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a055c1a591abb0e8cd86dc969727bcc0b" kindref="member">DISABLED</ref></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>health</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" kindref="compound">DatabaseHealth</ref><sp/>{</highlight></codeline>
+<codeline lineno="107" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1aeecddb8a6810279843409e3375031d20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052" kindref="member">DatabaseStatus</ref><sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1aeecddb8a6810279843409e3375031d20" kindref="member">status</ref><sp/>=<sp/><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">DatabaseStatus::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="108" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8262e51d51cec89a6a41c7e390c89b7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8262e51d51cec89a6a41c7e390c89b7a" kindref="member">healthy</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8eb1cc3f6438bc51e4b461487c9b5111" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8eb1cc3f6438bc51e4b461487c9b5111" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="110" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac2a6142906d71a4d8ef49359b456e0c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac2a6142906d71a4d8ef49359b456e0c3" kindref="member">lastCheck</ref>;</highlight></codeline>
+<codeline lineno="111" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a9b1f4a7e3ab850323523c24b9c83f896" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a9b1f4a7e3ab850323523c24b9c83f896" kindref="member">consecutiveFailures</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="112" refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac73c3fd6d6c577daafd00db462be4974" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac73c3fd6d6c577daafd00db462be4974" kindref="member">details</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Database<sp/>storage<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="d6/d2d/structsatox_1_1database_1_1TableData" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d6/d2d/structsatox_1_1database_1_1TableData" kindref="compound">TableData</ref><sp/>{</highlight></codeline>
+<codeline lineno="117" refid="d6/d2d/structsatox_1_1database_1_1TableData_1a3b4aab964b6047a4338acccbaeb68a35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/d2d/structsatox_1_1database_1_1TableData_1a3b4aab964b6047a4338acccbaeb68a35" kindref="member">schema</ref>;</highlight></codeline>
+<codeline lineno="118" refid="d6/d2d/structsatox_1_1database_1_1TableData_1adb50fbe1712c7e30bd17005ca01d6ac9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;nlohmann::json&gt;<sp/><ref refid="d6/d2d/structsatox_1_1database_1_1TableData_1adb50fbe1712c7e30bd17005ca01d6ac9" kindref="member">records</ref>;</highlight></codeline>
+<codeline lineno="119" refid="d6/d2d/structsatox_1_1database_1_1TableData_1aaf668d7bc0f602b23adf3d0efc2324cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::vector&lt;std::string&gt;&gt;<sp/><ref refid="d6/d2d/structsatox_1_1database_1_1TableData_1aaf668d7bc0f602b23adf3d0efc2324cd" kindref="member">indexes</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="db/d15/structsatox_1_1database_1_1DatabaseData" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d15/structsatox_1_1database_1_1DatabaseData" kindref="compound">DatabaseData</ref><sp/>{</highlight></codeline>
+<codeline lineno="123" refid="db/d15/structsatox_1_1database_1_1DatabaseData_1a29d4c5b97daea7a51e5c383c74779a14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d15/structsatox_1_1database_1_1DatabaseData_1a29d4c5b97daea7a51e5c383c74779a14" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="124" refid="db/d15/structsatox_1_1database_1_1DatabaseData_1adf9a5df0be549752f5c4fb023fc15d04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>TableData&gt;<sp/><ref refid="db/d15/structsatox_1_1database_1_1DatabaseData_1adf9a5df0be549752f5c4fb023fc15d04" kindref="member">tables</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::database</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/database/include/satox/database/types.hpp"/>
+  </compounddef>
+</doxygen>

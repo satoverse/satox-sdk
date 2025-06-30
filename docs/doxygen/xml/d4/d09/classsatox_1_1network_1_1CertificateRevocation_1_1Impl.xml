@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::network::CertificateRevocation::Impl</compoundname>
+    <innerclass refid="d4/d25/structsatox_1_1network_1_1CertificateRevocation_1_1Impl_1_1CertificateKey" prot="private">satox::network::CertificateRevocation::Impl::CertificateKey</innerclass>
+    <innerclass refid="df/dfe/structsatox_1_1network_1_1CertificateRevocation_1_1Impl_1_1CertificateKeyHash" prot="private">satox::network::CertificateRevocation::Impl::CertificateKeyHash</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a1aad580e7774c28a943ea6472e981577" prot="private" static="no" mutable="no">
+        <type><ref refid="d1/d11/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationConfig" kindref="compound">RevocationConfig</ref></type>
+        <definition>RevocationConfig satox::network::CertificateRevocation::Impl::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="413" column="22" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="413" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1afdd05892b0e7b8b394fb2703922ceb0f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; CertificateKey, <ref refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus" kindref="compound">RevocationStatus</ref>, CertificateKeyHash &gt;</type>
+        <definition>std::unordered_map&lt;CertificateKey, RevocationStatus, CertificateKeyHash&gt; satox::network::CertificateRevocation::Impl::revocation_cache</definition>
+        <argsstring></argsstring>
+        <name>revocation_cache</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::revocation_cache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="414" column="24" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="414" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1ad57819dd9b56a3ad618c90948b921a00" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::network::CertificateRevocation::Impl::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::mutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="415" column="24" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a7c5532add5c0815784c183ade9acf806" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::network::CertificateRevocation::Impl::last_error</definition>
+        <argsstring></argsstring>
+        <name>last_error</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::last_error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="416" column="17" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="416" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a31edcfa37ed8f79f899627f9d3bd51c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::CertificateRevocation::Impl::Impl</definition>
+        <argsstring>(const RevocationConfig &amp;config)</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::Impl</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/d11/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationConfig" kindref="compound">RevocationConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="46" column="5" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a155f9e633b564fe1a25103e48e3d7943" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::CertificateRevocation::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="50" column="5" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1aed4064dd2e1e15f2916b8c62f5ec31c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus" kindref="compound">RevocationStatus</ref></type>
+        <definition>RevocationStatus satox::network::CertificateRevocation::Impl::checkRevocation</definition>
+        <argsstring>(X509 *cert)</argsstring>
+        <name>checkRevocation</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::checkRevocation</qualifiedname>
+        <param>
+          <type>X509 *</type>
+          <declname>cert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="54" column="22" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="54" bodyend="96"/>
+        <references refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus_1a1af63dc2979f165029099accaa562446" compoundref="d9/dce/certificate__revocation_8hpp" startline="58">satox::network::CertificateRevocation::RevocationStatus::check_time</references>
+        <references refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus_1a129026d0c398b528c1cf7c355cfb24eb" compoundref="d9/dce/certificate__revocation_8hpp" startline="55">satox::network::CertificateRevocation::RevocationStatus::is_revoked</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a9e05dc2438ab6d4861f631c57c03921e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::CertificateRevocation::Impl::updateRevocationInfo</definition>
+        <argsstring>()</argsstring>
+        <name>updateRevocationInfo</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::updateRevocationInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="98" column="10" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="98" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1aa784feca9b7e1b392226e6e68f4918f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::network::CertificateRevocation::Impl::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="110" column="17" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1acbab0d65953cc97944138577ee730d51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::CertificateRevocation::Impl::configure</definition>
+        <argsstring>(const RevocationConfig &amp;new_config)</argsstring>
+        <name>configure</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::configure</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/d11/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationConfig" kindref="compound">RevocationConfig</ref> &amp;</type>
+          <declname>new_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="115" column="10" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="115" bodyend="118"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a62e3c9ba4c7a45776b44efc471a438f9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>CertificateKey</type>
+        <definition>CertificateKey satox::network::CertificateRevocation::Impl::getCertificateKey</definition>
+        <argsstring>(X509 *cert)</argsstring>
+        <name>getCertificateKey</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::getCertificateKey</qualifiedname>
+        <param>
+          <type>X509 *</type>
+          <declname>cert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="137" column="20" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="137" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a5d54286d5d4a9f8ce8ecf95a84c428b3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::CertificateRevocation::Impl::checkOCSP</definition>
+        <argsstring>(X509 *cert, RevocationStatus &amp;status)</argsstring>
+        <name>checkOCSP</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::checkOCSP</qualifiedname>
+        <param>
+          <type>X509 *</type>
+          <declname>cert</declname>
+        </param>
+        <param>
+          <type><ref refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus" kindref="compound">RevocationStatus</ref> &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="167" column="10" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="167" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a3b9bdcc1eae6461119a64fb3c9da54de" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::CertificateRevocation::Impl::checkCRL</definition>
+        <argsstring>(X509 *cert, RevocationStatus &amp;status)</argsstring>
+        <name>checkCRL</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::checkCRL</qualifiedname>
+        <param>
+          <type>X509 *</type>
+          <declname>cert</declname>
+        </param>
+        <param>
+          <type><ref refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus" kindref="compound">RevocationStatus</ref> &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="281" column="10" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="281" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1ac9f8c8e2036c67104067104ae5cd525a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::CertificateRevocation::Impl::updateCRL</definition>
+        <argsstring>()</argsstring>
+        <name>updateCRL</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::updateCRL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="366" column="10" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="366" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1ae4df9a6675330dbebdab8af9710f2760" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::CertificateRevocation::Impl::updateCache</definition>
+        <argsstring>(const CertificateKey &amp;key, const RevocationStatus &amp;status)</argsstring>
+        <name>updateCache</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::updateCache</qualifiedname>
+        <param>
+          <type>const CertificateKey &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/de6/structsatox_1_1network_1_1CertificateRevocation_1_1RevocationStatus" kindref="compound">RevocationStatus</ref> &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="404" column="10" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="404" bodyend="406"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a7bf0fde3651c4a65e599d478297adf14" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t satox::network::CertificateRevocation::Impl::writeCallback</definition>
+        <argsstring>(void *contents, size_t size, size_t nmemb, void *userp)</argsstring>
+        <name>writeCallback</name>
+        <qualifiedname>satox::network::CertificateRevocation::Impl::writeCallback</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nmemb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/certificate_revocation.cpp" line="408" column="19" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="408" bodyend="411"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/network/src/certificate_revocation.cpp" line="44" column="1" bodyfile="src/network/src/certificate_revocation.cpp" bodystart="44" bodyend="417"/>
+    <listofallmembers>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a3b9bdcc1eae6461119a64fb3c9da54de" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>checkCRL</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a5d54286d5d4a9f8ce8ecf95a84c428b3" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>checkOCSP</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1aed4064dd2e1e15f2916b8c62f5ec31c6" prot="public" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>checkRevocation</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a1aad580e7774c28a943ea6472e981577" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>config</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1acbab0d65953cc97944138577ee730d51" prot="public" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>configure</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a62e3c9ba4c7a45776b44efc471a438f9" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>getCertificateKey</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1aa784feca9b7e1b392226e6e68f4918f5" prot="public" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>getLastError</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a31edcfa37ed8f79f899627f9d3bd51c0" prot="public" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>Impl</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a7c5532add5c0815784c183ade9acf806" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>last_error</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1ad57819dd9b56a3ad618c90948b921a00" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>mutex</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1afdd05892b0e7b8b394fb2703922ceb0f" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>revocation_cache</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1ae4df9a6675330dbebdab8af9710f2760" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>updateCache</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1ac9f8c8e2036c67104067104ae5cd525a" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>updateCRL</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a9e05dc2438ab6d4861f631c57c03921e" prot="public" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>updateRevocationInfo</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a7bf0fde3651c4a65e599d478297adf14" prot="private" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>writeCallback</name></member>
+      <member refid="d4/d09/classsatox_1_1network_1_1CertificateRevocation_1_1Impl_1a155f9e633b564fe1a25103e48e3d7943" prot="public" virt="non-virtual"><scope>satox::network::CertificateRevocation::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

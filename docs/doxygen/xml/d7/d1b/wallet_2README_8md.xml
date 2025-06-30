@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d7/d1b/wallet_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Satox<sp/>Wallet<sp/>Library</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>standalone<sp/>C++<sp/>wallet<sp/>library<sp/>for<sp/>the<sp/>Satox<sp/>blockchain,<sp/>providing<sp/>key<sp/>management,<sp/>address<sp/>derivation,<sp/>and<sp/>cryptographic<sp/>utilities.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Key<sp/>pair<sp/>generation<sp/>and<sp/>validation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Address<sp/>derivation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Secure<sp/>cryptographic<sp/>operations<sp/>using<sp/>OpenSSL<sp/>EVP<sp/>API</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Designed<sp/>for<sp/>standalone<sp/>use<sp/>or<sp/>SDK<sp/>integration</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Build<sp/>Instructions</highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Install</highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Standalone<sp/>Usage<sp/>Example</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;satox/wallet/key_manager.hpp&gt;</highlight></codeline>
+<codeline><highlight class="normal">using<sp/>namespace<sp/>satox::wallet;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>KeyManager<sp/>km;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>km.initialize();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>KeyManager::KeyPair<sp/>kp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(km.generateKeyPair(kp))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Use<sp/>kp.privateKey,<sp/>kp.publicKey,<sp/>kp.address</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>SDK<sp/>Integration<sp/>Example</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>your<sp/>SDK&apos;s<sp/>CMakeLists.txt:</highlight></codeline>
+<codeline><highlight class="normal">```cmake</highlight></codeline>
+<codeline><highlight class="normal">add_subdirectory(path/to/satox-wallet)</highlight></codeline>
+<codeline><highlight class="normal">target_link_libraries(satox-sdk<sp/>PRIVATE<sp/>satox-wallet)</highlight></codeline>
+<codeline><highlight class="normal">target_include_directories(satox-sdk<sp/>PRIVATE<sp/>path/to/satox-wallet/include)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Testing</highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">ctest</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>API<sp/>Documentation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>See<sp/>`include/satox/wallet/key_manager.hpp`<sp/>for<sp/>Doxygen-style<sp/>comments<sp/>and<sp/>API<sp/>details.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>⚠️<sp/>Limitations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Blockchain<sp/>Compatibility**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**No<sp/>Smart<sp/>Contract<sp/>Support:**<sp/>Satox<sp/>is<sp/>based<sp/>on<sp/>Ravencoin<sp/>and<sp/>does<sp/>**not**<sp/>support<sp/>smart<sp/>contracts<sp/>or<sp/>EVM<sp/>compatibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset-Based:**<sp/>Focuses<sp/>on<sp/>asset<sp/>creation,<sp/>management,<sp/>and<sp/>transfer<sp/>rather<sp/>than<sp/>programmable<sp/>contracts</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**UTXO<sp/>Model:**<sp/>Uses<sp/>Unspent<sp/>Transaction<sp/>Output<sp/>(UTXO)<sp/>model<sp/>like<sp/>Bitcoin/Ravencoin,<sp/>not<sp/>account-based<sp/>like<sp/>Ethereum</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Platform<sp/>Support**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Desktop<sp/>Focus:**<sp/>Primarily<sp/>designed<sp/>for<sp/>desktop/server<sp/>environments</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mobile<sp/>Limitations:**<sp/>Mobile<sp/>SDK<sp/>provides<sp/>limited<sp/>functionality<sp/>compared<sp/>to<sp/>core<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Browser<sp/>Support:**<sp/>WebAssembly<sp/>bindings<sp/>have<sp/>performance<sp/>limitations<sp/>for<sp/>complex<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Network<sp/>Requirements**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Internet<sp/>Connection:**<sp/>Requires<sp/>active<sp/>internet<sp/>connection<sp/>for<sp/>blockchain<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Node<sp/>Synchronization:**<sp/>Full<sp/>node<sp/>operations<sp/>require<sp/>significant<sp/>storage<sp/>and<sp/>bandwidth</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**API<sp/>Dependencies:**<sp/>Some<sp/>features<sp/>depend<sp/>on<sp/>external<sp/>API<sp/>services</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Development<sp/>Considerations**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Learning<sp/>Curve:**<sp/>Ravencoin/UTXO<sp/>model<sp/>differs<sp/>from<sp/>Ethereum/smart<sp/>contract<sp/>development</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Testing<sp/>Environment:**<sp/>Testnet<sp/>required<sp/>for<sp/>development<sp/>and<sp/>testing</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset<sp/>Management:**<sp/>Asset<sp/>creation<sp/>and<sp/>management<sp/>have<sp/>specific<sp/>requirements<sp/>and<sp/>limitations</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline><highlight class="normal">MIT</highlight></codeline>
+    </programlisting>
+    <location file="src/wallet/README.md"/>
+  </compounddef>
+</doxygen>

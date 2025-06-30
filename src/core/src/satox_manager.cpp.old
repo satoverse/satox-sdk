@@ -1,0 +1,286 @@
+#include "satox/core/satox_manager.hpp"
+#include "satox/network/network_manager.hpp"
+#include "satox/security/security_manager.hpp"
+#include "satox/database/database_manager.hpp"
+#include "satox/wallet/wallet_manager.hpp"
+#include "satox/quantum/quantum_manager.hpp"
+#include <fstream>
+#include <nlohmann/json.hpp>
+#include <iostream>
+#include <mutex>
+#include <filesystem>
+#include <algorithm>
+#include <chrono>
+
+namespace satox {
+namespace core {
+
+SatoxManager& SatoxManager::getInstance() {
+    static SatoxManager instance;
+    return instance;
+}
+
+bool SatoxManager::initialize(const std::string& configPath) {
+    if (initialized_) {
+        setError("SDK already initialized");
+        return false;
+    }
+
+    try {
+        // Validate config path
+        if (!std::filesystem::exists(configPath)) {
+            setError("Configuration file does not exist: " + configPath);
+            return false;
+        }
+
+        std::ifstream configFile(configPath);
+        if (!configFile.is_open()) {
+            setError("Failed to open configuration file: " + configPath);
+            return false;
+        }
+
+        // Parse configuration
+        nlohmann::json config;
+        try {
+            configFile >> config;
+        } catch (const nlohmann::json::parse_error& e) {
+            setError("Failed to parse configuration file: " + std::string(e.what()));
+            return false;
+        }
+
+        // Validate required configuration sections
+        const std::vector<std::string> required_sections = {
+            "network",
+            "security",
+            "database",
+            "wallet",
+            "quantum"
+        };
+
+        for (const auto& section : required_sections) {
+            if (!config.contains(section)) {
+                setError("Missing required configuration section: " + section);
+                return false;
+            }
+        }
+
+        // Process network configuration
+        const auto& network = config["network"];
+        if (!network.contains("type") || !network.contains("port")) {
+            setError("Invalid network configuration");
+            return false;
+        }
+
+        // Process security configuration
+        const auto& security = config["security"];
+        if (!security.contains("encryption_level") || !security.contains("key_storage_path")) {
+            setError("Invalid security configuration");
+            return false;
+        }
+
+        // Process database configuration
+        const auto& database = config["database"];
+        if (!database.contains("type") || !database.contains("connection_string")) {
+            setError("Invalid database configuration");
+            return false;
+        }
+
+        // Process wallet configuration
+        const auto& wallet = config["wallet"];
+        if (!wallet.contains("storage_path") || !wallet.contains("encryption_key")) {
+            setError("Invalid wallet configuration");
+            return false;
+        }
+
+        // Process quantum configuration
+        const auto& quantum = config["quantum"];
+        if (!quantum.contains("algorithm") || !quantum.contains("key_size")) {
+            setError("Invalid quantum configuration");
+            return false;
+        }
+
+        // Create necessary directories
+        try {
+            std::filesystem::create_directories(security["key_storage_path"].get<std::string>());
+            std::filesystem::create_directories(wallet["storage_path"].get<std::string>());
+        } catch (const std::filesystem::filesystem_error& e) {
+            setError("Failed to create required directories: " + std::string(e.what()));
+            return false;
+        }
+
+        // Store configuration
+        config_ = std::move(config);
+
+        // Initialize components based on configuration
+        if (!initializeComponents()) {
+            return false;
+        }
+
+        initialized_ = true;
+        return true;
+    } catch (const std::exception& e) {
+        setError("Initialization failed: " + std::string(e.what()));
+        return false;
+    }
+}
+
+void SatoxManager::shutdown() {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    if (!initialized_) {
+        return;
+    }
+
+    // Shutdown components in reverse order of registration
+    std::vector<std::string> componentNames;
+    for (const auto& [name, _] : components_) {
+        componentNames.push_back(name);
+    }
+    std::reverse(componentNames.begin(), componentNames.end());
+
+    for (const auto& name : componentNames) {
+        auto it = components_.find(name);
+        if (it != components_.end()) {
+            // Call shutdown on components that support it
+            if (auto shutdownable = std::dynamic_pointer_cast<IShutdownable>(it->second)) {
+                shutdownable->shutdown();
+            }
+        }
+    }
+
+    // Clear components
+    components_.clear();
+    config_ = nlohmann::json();
+    initialized_ = false;
+}
+
+bool SatoxManager::hasComponent(const std::string& name) const {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    return components_.find(name) != components_.end();
+}
+
+std::string SatoxManager::getLastError() const {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    return lastError_;
+}
+
+void SatoxManager::clearLastError() {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    lastError_.clear();
+}
+
+void SatoxManager::setError(const std::string& error) {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    lastError_ = error;
+}
+
+bool SatoxManager::initializeComponents() {
+    try {
+        // Initialize network component
+        if (!initializeNetworkComponent()) {
+            return false;
+        }
+
+        // Initialize security component
+        if (!initializeSecurityComponent()) {
+            return false;
+        }
+
+        // Initialize database component
+        if (!initializeDatabaseComponent()) {
+            return false;
+        }
+
+        // Initialize wallet component
+        if (!initializeWalletComponent()) {
+            return false;
+        }
+
+        // Initialize quantum component
+        if (!initializeQuantumComponent()) {
+            return false;
+        }
+
+        return true;
+    } catch (const std::exception& e) {
+        setError("Component initialization failed: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool SatoxManager::initializeNetworkComponent() {
+    const auto& network = config_["network"];
+    auto networkComponent = std::make_shared<network::NetworkManager>(
+        network["type"].get<std::string>(),
+        network["port"].get<int>()
+    );
+
+    if (!networkComponent->initialize()) {
+        setError("Failed to initialize network component: " + networkComponent->getLastError());
+        return false;
+    }
+
+    return registerComponent("network", networkComponent);
+}
+
+bool SatoxManager::initializeSecurityComponent() {
+    const auto& security = config_["security"];
+    auto securityComponent = std::make_shared<security::SecurityManager>(
+        security["encryption_level"].get<std::string>(),
+        security["key_storage_path"].get<std::string>()
+    );
+
+    if (!securityComponent->initialize()) {
+        setError("Failed to initialize security component: " + securityComponent->getLastError());
+        return false;
+    }
+
+    return registerComponent("security", securityComponent);
+}
+
+bool SatoxManager::initializeDatabaseComponent() {
+    const auto& database = config_["database"];
+    auto databaseComponent = std::make_shared<database::DatabaseManager>(
+        database["type"].get<std::string>(),
+        database["connection_string"].get<std::string>()
+    );
+
+    if (!databaseComponent->initialize()) {
+        setError("Failed to initialize database component: " + databaseComponent->getLastError());
+        return false;
+    }
+
+    return registerComponent("database", databaseComponent);
+}
+
+bool SatoxManager::initializeWalletComponent() {
+    const auto& wallet = config_["wallet"];
+    auto walletComponent = std::make_shared<wallet::WalletManager>(
+        wallet["storage_path"].get<std::string>(),
+        wallet["encryption_key"].get<std::string>()
+    );
+
+    if (!walletComponent->initialize()) {
+        setError("Failed to initialize wallet component: " + walletComponent->getLastError());
+        return false;
+    }
+
+    return registerComponent("wallet", walletComponent);
+}
+
+bool SatoxManager::initializeQuantumComponent() {
+    const auto& quantum = config_["quantum"];
+    auto quantumComponent = std::make_shared<quantum::QuantumManager>(
+        quantum["algorithm"].get<std::string>(),
+        quantum["key_size"].get<int>()
+    );
+
+    if (!quantumComponent->initialize()) {
+        setError("Failed to initialize quantum component: " + quantumComponent->getLastError());
+        return false;
+    }
+
+    return registerComponent("quantum", quantumComponent);
+}
+
+} // namespace core
+} // namespace satox 

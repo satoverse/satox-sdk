@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/d63/database__connection_8hpp" kind="file" language="C++">
+    <compoundname>database_connection.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">functional</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/nft/include/satox/nft/database_connection.hpp</label>
+        <link refid="d0/d63/database__connection_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>mutex</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" prot="public">satox::nft::DatabaseConnection</innerclass>
+    <innerclass refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" prot="public">satox::nft::DatabaseConnection::Config</innerclass>
+    <innerclass refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult" prot="public">satox::nft::DatabaseConnection::QueryResult</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="dc/dd7/namespacesatox_1_1nft">satox::nft</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="36" refid="dc/dd7/namespacesatox_1_1nft" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dc/dd7/namespacesatox_1_1nft" kindref="compound">nft</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" kindref="member">DatabaseConnection</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref><sp/>{</highlight></codeline>
+<codeline lineno="41" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1ab6ea5b4be1868da6cd6978312f604eda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1ab6ea5b4be1868da6cd6978312f604eda" kindref="member">host</ref>;</highlight></codeline>
+<codeline lineno="42" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1a59c031832555f614a01cd2d6d5d09b9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1a59c031832555f614a01cd2d6d5d09b9d" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="43" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1ad230b15cf421f2f3ff87aa1deddeb030" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1ad230b15cf421f2f3ff87aa1deddeb030" kindref="member">database</ref>;</highlight></codeline>
+<codeline lineno="44" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1a702c694d7ea419ce8de6d7cfe8c0a674" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1a702c694d7ea419ce8de6d7cfe8c0a674" kindref="member">username</ref>;</highlight></codeline>
+<codeline lineno="45" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1a859d04eff92ab918c39daddabe9006d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1a859d04eff92ab918c39daddabe9006d5" kindref="member">password</ref>;</highlight></codeline>
+<codeline lineno="46" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1abcaec207cf9ece2fca2b45b6ab594da2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1abcaec207cf9ece2fca2b45b6ab594da2" kindref="member">max_connections</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="47" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1af564e895a6880f266657c0392df1bf58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1af564e895a6880f266657c0392df1bf58" kindref="member">connection_timeout</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="48" refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1aa2072816f240ff5e1e52a0384a67a70d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config_1aa2072816f240ff5e1e52a0384a67a70d" kindref="member">use_ssl</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult" kindref="compound">QueryResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="52" refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult_1af4ab22345c766812dda61b95d14ef9d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult_1af4ab22345c766812dda61b95d14ef9d0" kindref="member">success</ref>;</highlight></codeline>
+<codeline lineno="53" refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult_1ae46a7d0b783d8448f4e75fdc67d14523" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult_1ae46a7d0b783d8448f4e75fdc67d14523" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="54" refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult_1adcdf5bbdf8f4edeca54e63a653538fbc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::map&lt;std::string,<sp/>std::string&gt;&gt;<sp/><ref refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult_1adcdf5bbdf8f4edeca54e63a653538fbc" kindref="member">rows</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" kindref="member">QueryCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult" kindref="compound">QueryResult</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a4be25ffbdfce6214eb59d67eac36a6db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;DatabaseConnection&gt;<sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a4be25ffbdfce6214eb59d67eac36a6db" kindref="member">create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="60" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aaa3fd2149abb7884c729d3abe39ed94f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aaa3fd2149abb7884c729d3abe39ed94f" kindref="member">~DatabaseConnection</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a9d449432bb001519749eeb6c32a31f7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a9d449432bb001519749eeb6c32a31f7c" kindref="member">connect</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab45c65f357f8f874ed9dd588bf7f9dd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab45c65f357f8f874ed9dd588bf7f9dd9" kindref="member">disconnect</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a30acc3653a019cb3d7b011fb425dc121" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a30acc3653a019cb3d7b011fb425dc121" kindref="member">isConnected</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8163e21b7d5a7ba169e864b2ac2ede84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8163e21b7d5a7ba169e864b2ac2ede84" kindref="member">executeQuery</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>query,<sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" kindref="member">QueryCallback</ref><sp/>callback)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="66" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1af4881399a90f98062b3093ebc1945315" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1af4881399a90f98062b3093ebc1945315" kindref="member">executeTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>queries,<sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" kindref="member">QueryCallback</ref><sp/>callback)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a5f0f41e3cd13d8cdad070f7fbd775f57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a5f0f41e3cd13d8cdad070f7fbd775f57" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8f065179d5790c23582b499f691525c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8f065179d5790c23582b499f691525c0" kindref="member">ping</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="69" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ae3b7fef02a0ef6aac3a4810ad3af5fae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ae3b7fef02a0ef6aac3a4810ad3af5fae" kindref="member">setConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref>&amp;<sp/>config)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="70" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab5c8049be52b0538e91c90b640861aa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab5c8049be52b0538e91c90b640861aa8" kindref="member">getConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="73" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" kindref="member">DatabaseConnection</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a6eba5d379394c179588f4d2bda91f725" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a6eba5d379394c179588f4d2bda91f725" kindref="member">DatabaseConnection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" kindref="member">DatabaseConnection</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75" refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aa1a21c97332cee522f0cfa8d2dbc1bbe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" kindref="member">DatabaseConnection</ref>&amp;<sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aa1a21c97332cee522f0cfa8d2dbc1bbe" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" kindref="member">DatabaseConnection</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>nft</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/nft/include/satox/nft/database_connection.hpp"/>
+  </compounddef>
+</doxygen>

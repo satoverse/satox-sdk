@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/de2/blockchain_2include_2satox_2blockchain_2types_8hpp" kind="file" language="C++">
+    <compoundname>types.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="d8/dd1/blockchain_2include_2satox_2blockchain_2blockchain__manager_8hpp" local="yes">src/blockchain/include/satox/blockchain/blockchain_manager.hpp</includedby>
+    <includedby refid="db/d14/blockchain_2src_2blockchain__manager_8cpp" local="yes">src/blockchain/src/blockchain_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/blockchain/include/satox/blockchain/types.hpp</label>
+        <link refid="de/de2/blockchain_2include_2satox_2blockchain_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/blockchain/include/satox/blockchain/blockchain_manager.hpp</label>
+        <link refid="d8/dd1/blockchain_2include_2satox_2blockchain_2blockchain__manager_8hpp"/>
+      </node>
+      <node id="1">
+        <label>src/blockchain/include/satox/blockchain/types.hpp</label>
+        <link refid="de/de2/blockchain_2include_2satox_2blockchain_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/blockchain/src/blockchain_manager.cpp</label>
+        <link refid="db/d14/blockchain_2src_2blockchain__manager_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d0/de4/structsatox_1_1blockchain_1_1Version" prot="public">satox::blockchain::Version</innerclass>
+    <innerclass refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" prot="public">satox::blockchain::NetworkConfig</innerclass>
+    <innerclass refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" prot="public">satox::blockchain::BlockchainConfig</innerclass>
+    <innerclass refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats" prot="public">satox::blockchain::BlockchainStats</innerclass>
+    <innerclass refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult" prot="public">satox::blockchain::BlockchainResult</innerclass>
+    <innerclass refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth" prot="public">satox::blockchain::BlockchainHealth</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/db3/namespacesatox_1_1blockchain">satox::blockchain</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>MIT<sp/>License</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright(c)<sp/>2025<sp/>Satoxcoin<sp/>Core<sp/>Developer</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain" kindref="compound">satox::blockchain</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Version<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="d0/de4/structsatox_1_1blockchain_1_1Version" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version" kindref="compound">Version</ref><sp/>{</highlight></codeline>
+<codeline lineno="18" refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ab5a1776e6d7f6736fabc66a741c341bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ab5a1776e6d7f6736fabc66a741c341bc" kindref="member">major</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="19" refid="d0/de4/structsatox_1_1blockchain_1_1Version_1aa8b472ae487245a487264d3b2b3cc2e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1aa8b472ae487245a487264d3b2b3cc2e5" kindref="member">minor</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="20" refid="d0/de4/structsatox_1_1blockchain_1_1Version_1aad481327b925c728c8dddb1ffe045b19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1aad481327b925c728c8dddb1ffe045b19" kindref="member">patch</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="21" refid="d0/de4/structsatox_1_1blockchain_1_1Version_1a407ad30a5d59422d40ed33c8956ca405" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1a407ad30a5d59422d40ed33c8956ca405" kindref="member">build</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22" refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ac6dd4072d0f904a3907f88a3bdcdb4a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ac6dd4072d0f904a3907f88a3bdcdb4a1" kindref="member">commit</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24" refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ae2d928b7c0b1f82431bdeb54e12cad7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ae2d928b7c0b1f82431bdeb54e12cad7e" kindref="member">toString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::to_string(<ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1ab5a1776e6d7f6736fabc66a741c341bc" kindref="member">major</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1aa8b472ae487245a487264d3b2b3cc2e5" kindref="member">minor</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="d0/de4/structsatox_1_1blockchain_1_1Version_1aad481327b925c728c8dddb1ffe045b19" kindref="member">patch</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Network<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="31" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a2943b34f048c9c410f5daebc99d220ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a2943b34f048c9c410f5daebc99d220ea" kindref="member">host</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;127.0.0.1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a7a6e1e80d08b09899f583225b988de92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a7a6e1e80d08b09899f583225b988de92" kindref="member">port</ref><sp/>=<sp/>7777;</highlight></codeline>
+<codeline lineno="33" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a7e7689405309ad3e95b22c5697b0ce89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a7e7689405309ad3e95b22c5697b0ce89" kindref="member">username</ref>;</highlight></codeline>
+<codeline lineno="34" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1ab9cb55b933c89d00b20c33acc93f8fd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1ab9cb55b933c89d00b20c33acc93f8fd4" kindref="member">password</ref>;</highlight></codeline>
+<codeline lineno="35" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a0051498bee777ef651b45a3e67dc3f22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a0051498bee777ef651b45a3e67dc3f22" kindref="member">timeout</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="36" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1ab8741146bb13bbf5fd06cfaa1418c372" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1ab8741146bb13bbf5fd06cfaa1418c372" kindref="member">enableSSL</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1ace82275e5fbe9fd646115da826211f6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1ace82275e5fbe9fd646115da826211f6b" kindref="member">sslCertPath</ref>;</highlight></codeline>
+<codeline lineno="38" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a54d94ee4607bbf704b49410e42def329" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a54d94ee4607bbf704b49410e42def329" kindref="member">sslKeyPath</ref>;</highlight></codeline>
+<codeline lineno="39" refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a63281e6a41ac5b51395eb9f8ee9ec9be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig_1a63281e6a41ac5b51395eb9f8ee9ec9be" kindref="member">additionalConfig</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configuration<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" kindref="compound">BlockchainConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="44" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a981c53be7384cea37c13152971168b4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a981c53be7384cea37c13152971168b4d" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;satox_blockchain&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a2aa8f98bd6b9570192aa6059b50d93c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a2aa8f98bd6b9570192aa6059b50d93c6" kindref="member">enableLogging</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a1e6e105b580edb4436b369ff611aadf1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a1e6e105b580edb4436b369ff611aadf1" kindref="member">logPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/components/blockchain/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1abc33af61e68653b478489bf5490a2def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1abc33af61e68653b478489bf5490a2def" kindref="member">networkConfig</ref>;</highlight></codeline>
+<codeline lineno="48" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1ab9a1ffb24a2a1ed1b5cfd2c0b6ecf600" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1ab9a1ffb24a2a1ed1b5cfd2c0b6ecf600" kindref="member">maxConnections</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="49" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a3c831b69d30d0c9a83100bf2e751cfc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a3c831b69d30d0c9a83100bf2e751cfc7" kindref="member">timeout</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="50" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a8c3e837c22f7726c6d1062ddec30b726" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a8c3e837c22f7726c6d1062ddec30b726" kindref="member">enableKawpowValidation</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51" refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a0fe4102cda72232ac0a98c1f6bc1e49c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig_1a0fe4102cda72232ac0a98c1f6bc1e49c" kindref="member">additionalConfig</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Statistics<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats" kindref="compound">BlockchainStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1ac6cd38288e32706a2078ef8f4721b7bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1ac6cd38288e32706a2078ef8f4721b7bb" kindref="member">totalOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1ac4fdb2fb37ea22c55d76fb857c1566b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1ac4fdb2fb37ea22c55d76fb857c1566b8" kindref="member">successfulOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a03f275b4f1f249281c2a75a9e370d842" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a03f275b4f1f249281c2a75a9e370d842" kindref="member">failedOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a23daaf84929327db2bddfac4dc6c474e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a23daaf84929327db2bddfac4dc6c474e" kindref="member">activeConnections</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a5d843d1a9923fe73321416b0c91893ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a5d843d1a9923fe73321416b0c91893ec" kindref="member">currentHeight</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a63194fe31fb36f4e599422af82ccd4b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a63194fe31fb36f4e599422af82ccd4b3" kindref="member">totalBlocks</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a79669ebd707eb6fe6ef8500ca08ed68b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a79669ebd707eb6fe6ef8500ca08ed68b" kindref="member">totalTransactions</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a46a268fb6176ccb1a87ebf61e9da9e9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a46a268fb6176ccb1a87ebf61e9da9e9f" kindref="member">lastOperation</ref>;</highlight></codeline>
+<codeline lineno="64" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a3e25117daf9011c3db56cff52ebbc25a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a3e25117daf9011c3db56cff52ebbc25a" kindref="member">averageOperationTime</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="65" refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a4c18bfc26632f2c6f962919f165babb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats_1a4c18bfc26632f2c6f962919f165babb6" kindref="member">additionalStats</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Result<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult" kindref="compound">BlockchainResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="70" refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a6fd839871e4811fb1e8925c77af2b666" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a6fd839871e4811fb1e8925c77af2b666" kindref="member">success</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71" refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a97df8319396e8344c6b5e9789980865b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a97df8319396e8344c6b5e9789980865b" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="72" refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a5015bed264c82e9708045093ca287749" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a5015bed264c82e9708045093ca287749" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="73" refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a6afc5a15ea92a3f9fbfceae70309c16e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult_1a6afc5a15ea92a3f9fbfceae70309c16e" kindref="member">duration</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ec" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ec" kindref="member">BlockchainStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="78" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca696b031073e74bf2cb98e5ef201d4aa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca696b031073e74bf2cb98e5ef201d4aa3" kindref="member">UNKNOWN</ref>,</highlight></codeline>
+<codeline lineno="79" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca86bf8c89d85949f8f45cde2f73fce113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a86bf8c89d85949f8f45cde2f73fce113" kindref="member">INITIALIZING</ref>,</highlight></codeline>
+<codeline lineno="80" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ecadee5f03c2c4e73657824e028494b18c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461adee5f03c2c4e73657824e028494b18c0" kindref="member">INITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="81" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca43491564ebcfd38568918efbd6e840fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca43491564ebcfd38568918efbd6e840fd" kindref="member">RUNNING</ref>,</highlight></codeline>
+<codeline lineno="82" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca09d4d696b4e935115b9313e3c412509a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca09d4d696b4e935115b9313e3c412509a" kindref="member">STOPPED</ref>,</highlight></codeline>
+<codeline lineno="83" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ecabb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="84" refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca055c1a591abb0e8cd86dc969727bcc0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca055c1a591abb0e8cd86dc969727bcc0b" kindref="member">DISABLED</ref></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>health</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth" kindref="compound">BlockchainHealth</ref><sp/>{</highlight></codeline>
+<codeline lineno="89" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a46dd87b61cd0168545c0a0e2f3c5bcc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ec" kindref="member">BlockchainStatus</ref><sp/><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a46dd87b61cd0168545c0a0e2f3c5bcc4" kindref="member">status</ref><sp/>=<sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca696b031073e74bf2cb98e5ef201d4aa3" kindref="member">BlockchainStatus::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="90" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a4208de12697bfa5b45485fa67cf9e288" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a4208de12697bfa5b45485fa67cf9e288" kindref="member">healthy</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a9f5779aa7b58cb41d751d711aaf82d9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a9f5779aa7b58cb41d751d711aaf82d9e" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="92" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a5c5c8c9984543e1988cf99a61df43584" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1a5c5c8c9984543e1988cf99a61df43584" kindref="member">lastCheck</ref>;</highlight></codeline>
+<codeline lineno="93" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1acb3983d0801fbd2bd0c5761d17547a64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1acb3983d0801fbd2bd0c5761d17547a64" kindref="member">consecutiveFailures</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="94" refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1abd8817bd49c9cf047845681b46eee9cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth_1abd8817bd49c9cf047845681b46eee9cc" kindref="member">details</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::blockchain</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/blockchain/include/satox/blockchain/types.hpp"/>
+  </compounddef>
+</doxygen>

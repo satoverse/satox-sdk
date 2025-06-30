@@ -1,0 +1,2071 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::CloudMonitoring</compoundname>
+    <includes refid="d3/d7b/cloud__monitoring_8hpp" local="no">cloud_monitoring.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa0d29034220a40eaed3b8f891845168c" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::CloudMonitoring::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::CloudMonitoring::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="440" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a5f5a0e9782ff7744aed544f8762e63c0" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::CloudMonitoring::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::CloudMonitoring::initialized_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="441" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="441" bodyend="441"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a314e81e0a86150756d3f1da108a25a75" prot="private" static="no" mutable="no">
+        <type><ref refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig" kindref="compound">CloudMonitoringConfig</ref></type>
+        <definition>CloudMonitoringConfig satox::core::CloudMonitoring::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::CloudMonitoring::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="442" column="27" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4622846453f1dbc150ec23e82df836e5" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt;spdlog::logger&gt; satox::core::CloudMonitoring::logger_</definition>
+        <argsstring></argsstring>
+        <name>logger_</name>
+        <qualifiedname>satox::core::CloudMonitoring::logger_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="445" column="21" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a7da1188296719a797b9076c1c050ab4c" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt;spdlog::logger&gt; satox::core::CloudMonitoring::error_logger_</definition>
+        <argsstring></argsstring>
+        <name>error_logger_</name>
+        <qualifiedname>satox::core::CloudMonitoring::error_logger_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="446" column="21" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="446" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a79528894c92e6a0282380c5dad8a18c4" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt;spdlog::logger&gt; satox::core::CloudMonitoring::performance_logger_</definition>
+        <argsstring></argsstring>
+        <name>performance_logger_</name>
+        <qualifiedname>satox::core::CloudMonitoring::performance_logger_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="447" column="21" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa7776a5b64b681a3c4c8fb2768ab2d6a" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt;spdlog::logger&gt; satox::core::CloudMonitoring::security_logger_</definition>
+        <argsstring></argsstring>
+        <name>security_logger_</name>
+        <qualifiedname>satox::core::CloudMonitoring::security_logger_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="448" column="21" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1adb7c06c8bf982f2fcb0f094a10f33cc6" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt;spdlog::logger&gt; satox::core::CloudMonitoring::audit_logger_</definition>
+        <argsstring></argsstring>
+        <name>audit_logger_</name>
+        <qualifiedname>satox::core::CloudMonitoring::audit_logger_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="449" column="21" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="449" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ae09f6c39b84339840c8769e1f8da67a1" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref>, <ref refid="dd/dee/structsatox_1_1core_1_1CloudMetrics" kindref="compound">CloudMetrics</ref> &gt;</type>
+        <definition>std::unordered_map&lt;CloudProvider, CloudMetrics&gt; satox::core::CloudMonitoring::metrics_</definition>
+        <argsstring></argsstring>
+        <name>metrics_</name>
+        <qualifiedname>satox::core::CloudMonitoring::metrics_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="452" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="452" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a33b2ff94a27b84b79e02ac543687dc60" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::CloudMonitoring::metrics_mutex_</definition>
+        <argsstring></argsstring>
+        <name>metrics_mutex_</name>
+        <qualifiedname>satox::core::CloudMonitoring::metrics_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="453" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="453" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1142bac5f16998a6ab3709a870d2cf7c" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::chrono::system_clock::time_point &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::chrono::system_clock::time_point&gt; satox::core::CloudMonitoring::active_operations_</definition>
+        <argsstring></argsstring>
+        <name>active_operations_</name>
+        <qualifiedname>satox::core::CloudMonitoring::active_operations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="456" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a53a3a05aac8941557563f59eb3649468" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry" kindref="compound">CloudLogEntry</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, CloudLogEntry&gt; satox::core::CloudMonitoring::operation_cache_</definition>
+        <argsstring></argsstring>
+        <name>operation_cache_</name>
+        <qualifiedname>satox::core::CloudMonitoring::operation_cache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="457" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4aa94a8603d414977c121c1b59a023eb" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::CloudMonitoring::operations_mutex_</definition>
+        <argsstring></argsstring>
+        <name>operations_mutex_</name>
+        <qualifiedname>satox::core::CloudMonitoring::operations_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="458" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0f21143ebd01f36d1f08f6c54e28950f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1a131c9cfd8f0ae4a52ef873afb6aa42cb" kindref="member">CloudLogCallback</ref> &gt;</type>
+        <definition>std::vector&lt;CloudLogCallback&gt; satox::core::CloudMonitoring::log_callbacks_</definition>
+        <argsstring></argsstring>
+        <name>log_callbacks_</name>
+        <qualifiedname>satox::core::CloudMonitoring::log_callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="461" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="461" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1abfb207640c088e9a77974281f0b453b1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1a2bc3e1594f45134c831226c69dc487de" kindref="member">CloudAlertCallback</ref> &gt;</type>
+        <definition>std::vector&lt;CloudAlertCallback&gt; satox::core::CloudMonitoring::alert_callbacks_</definition>
+        <argsstring></argsstring>
+        <name>alert_callbacks_</name>
+        <qualifiedname>satox::core::CloudMonitoring::alert_callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="462" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="462" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a895df3eb674d3c2158e9a13eb8dd4a7c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1affe807e65ea2b1f2bb17013421bd26a6" kindref="member">CloudHealthCallback</ref> &gt;</type>
+        <definition>std::vector&lt;CloudHealthCallback&gt; satox::core::CloudMonitoring::health_callbacks_</definition>
+        <argsstring></argsstring>
+        <name>health_callbacks_</name>
+        <qualifiedname>satox::core::CloudMonitoring::health_callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="463" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="463" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1ccca61eac3fe9df29c012e44847b8ab" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1a494860b0e33aad15f89c555f1b9df4ba" kindref="member">CloudMetricsCallback</ref> &gt;</type>
+        <definition>std::vector&lt;CloudMetricsCallback&gt; satox::core::CloudMonitoring::metrics_callbacks_</definition>
+        <argsstring></argsstring>
+        <name>metrics_callbacks_</name>
+        <qualifiedname>satox::core::CloudMonitoring::metrics_callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="464" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="464" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1afd7b601f62b2a4cd79ae28b308d2d4f0" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::CloudMonitoring::callbacks_mutex_</definition>
+        <argsstring></argsstring>
+        <name>callbacks_mutex_</name>
+        <qualifiedname>satox::core::CloudMonitoring::callbacks_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="465" column="24" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="465" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a224d3b37d345c05bd4cd41ecba082b4d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::correlation_id_</definition>
+        <argsstring></argsstring>
+        <name>correlation_id_</name>
+        <qualifiedname>satox::core::CloudMonitoring::correlation_id_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="468" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="468" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a06578245a264e7b7155a80b5b0e2e887" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::user_id_</definition>
+        <argsstring></argsstring>
+        <name>user_id_</name>
+        <qualifiedname>satox::core::CloudMonitoring::user_id_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="469" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a5fc5381fcfff8c770cd55ce45e1944c8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::session_id_</definition>
+        <argsstring></argsstring>
+        <name>session_id_</name>
+        <qualifiedname>satox::core::CloudMonitoring::session_id_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="470" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="470" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1d4cb0977c8d15af00a9cc38d9524e63" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::ip_address_</definition>
+        <argsstring></argsstring>
+        <name>ip_address_</name>
+        <qualifiedname>satox::core::CloudMonitoring::ip_address_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="471" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="471" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a5930e5119eff1197b2919743a0476621" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::user_agent_</definition>
+        <argsstring></argsstring>
+        <name>user_agent_</name>
+        <qualifiedname>satox::core::CloudMonitoring::user_agent_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="472" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aeb92f59012cd71e478403524c58f6c9a" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread satox::core::CloudMonitoring::health_check_thread_</definition>
+        <argsstring></argsstring>
+        <name>health_check_thread_</name>
+        <qualifiedname>satox::core::CloudMonitoring::health_check_thread_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="475" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a41b9d50e04e59cd613649f4fba81567c" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread satox::core::CloudMonitoring::metrics_thread_</definition>
+        <argsstring></argsstring>
+        <name>metrics_thread_</name>
+        <qualifiedname>satox::core::CloudMonitoring::metrics_thread_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="476" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="476" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1a1cb1424fded36a8cf73c51cc20459a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::CloudMonitoring::shutdown_requested_</definition>
+        <argsstring></argsstring>
+        <name>shutdown_requested_</name>
+        <qualifiedname>satox::core::CloudMonitoring::shutdown_requested_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="477" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="477" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a83edba274172e76d62bdf4d82bb4b21f" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::core::CloudMonitoring::health_check_cv_</definition>
+        <argsstring></argsstring>
+        <name>health_check_cv_</name>
+        <qualifiedname>satox::core::CloudMonitoring::health_check_cv_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="478" column="29" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a499853256c1fc9de2fdfb8cd73afce6a" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::core::CloudMonitoring::metrics_cv_</definition>
+        <argsstring></argsstring>
+        <name>metrics_cv_</name>
+        <qualifiedname>satox::core::CloudMonitoring::metrics_cv_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="479" column="29" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="479" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1af9c6ee773860a7296bb670ae27a10def" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMonitoring::total_log_entries_</definition>
+        <argsstring></argsstring>
+        <name>total_log_entries_</name>
+        <qualifiedname>satox::core::CloudMonitoring::total_log_entries_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="482" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="482" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9ead1d69bc5103c6708746d1d26ad8b3" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMonitoring::total_alerts_</definition>
+        <argsstring></argsstring>
+        <name>total_alerts_</name>
+        <qualifiedname>satox::core::CloudMonitoring::total_alerts_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="483" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="483" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a66baee8ae1be4d435d004be71c174ae1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMonitoring::total_health_checks_</definition>
+        <argsstring></argsstring>
+        <name>total_health_checks_</name>
+        <qualifiedname>satox::core::CloudMonitoring::total_health_checks_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="484" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="484" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a642a8065f34eb2ad0937530a7c92fc86" prot="private" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CloudMonitoring::last_health_check_</definition>
+        <argsstring></argsstring>
+        <name>last_health_check_</name>
+        <qualifiedname>satox::core::CloudMonitoring::last_health_check_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="485" column="43" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="485" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ad35509a3fc5a17d03a4e621b2931f0c2" prot="private" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CloudMonitoring::last_metrics_update_</definition>
+        <argsstring></argsstring>
+        <name>last_metrics_update_</name>
+        <qualifiedname>satox::core::CloudMonitoring::last_metrics_update_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="486" column="43" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="486" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9db382c0baae037de4dacc864476179e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring" kindref="compound">CloudMonitoring</ref> &amp;</type>
+        <definition>CloudMonitoring &amp; satox::core::CloudMonitoring::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::CloudMonitoring::getInstance</qualifiedname>
+        <briefdescription>
+<para>Get singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to singleton instance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="184" column="28" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="21" bodyend="24"/>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a671c48800cfab7180d6dd1fd24c5a385" compoundref="df/d5d/cloud__monitoring_8cpp" startline="26" endline="33">CloudMonitoring</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a671c48800cfab7180d6dd1fd24c5a385" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CloudMonitoring::CloudMonitoring</definition>
+        <argsstring>()</argsstring>
+        <name>CloudMonitoring</name>
+        <qualifiedname>satox::core::CloudMonitoring::CloudMonitoring</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="189" column="5" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="26" bodyend="33"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a4847e034bb0a55fcbc8a3380d6a3ab80" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="33">satox::core::AWS</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a71335a48a021ae2aeb7df636ba3d2483" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="34">satox::core::AZURE</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a696adc79a202a5ebdfd0d16aea732893" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="32">satox::core::FIREBASE</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a43a097161c73d6bec57d78ce9a44fb2d" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="35">satox::core::GOOGLE_CLOUD</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a6d832e11bf487bb87d0d438663b26d36" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="31">satox::core::SUPABASE</references>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9db382c0baae037de4dacc864476179e" compoundref="df/d5d/cloud__monitoring_8cpp" startline="21" endline="24">getInstance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0f4920c62ab258ea036fbec2ad2246f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CloudMonitoring::~CloudMonitoring</definition>
+        <argsstring>()</argsstring>
+        <name>~CloudMonitoring</name>
+        <qualifiedname>satox::core::CloudMonitoring::~CloudMonitoring</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="194" column="5" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="35" bodyend="37"/>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a480204e09ce1274fdd2f0b87439f4f02" compoundref="df/d5d/cloud__monitoring_8cpp" startline="87" endline="123">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a865a3c54f407261ef446267b0de7fc74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CloudMonitoring::initialize</definition>
+        <argsstring>(const CloudMonitoringConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::CloudMonitoring::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig" kindref="compound">CloudMonitoringConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Initialize monitoring system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Monitoring configuration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if initialization successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="201" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="39" bodyend="85"/>
+        <references refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig_1a7c8518dbd9502d76df7dd7aaad2be9c8" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="142">satox::core::CloudMonitoringConfig::enable_health_checks</references>
+        <references refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig_1ad72fd63c818cc00a891393f1b7537f45" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="138">satox::core::CloudMonitoringConfig::enable_logging</references>
+        <references refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig_1aa150d221619526a163e3cb79281b079b" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="139">satox::core::CloudMonitoringConfig::enable_metrics</references>
+        <references refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig_1afa6a69025a765eb7dd4469e2a8f5b26f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="153">satox::core::CloudMonitoringConfig::health_check_interval_seconds</references>
+        <references refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig_1a3da225e23552fb8c3b89fb06538fdb9b" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="144">satox::core::CloudMonitoringConfig::log_level</references>
+        <references refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig_1a1d1456d9935f60b63e1fc1761334b84d" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="145">satox::core::CloudMonitoringConfig::log_path</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a480204e09ce1274fdd2f0b87439f4f02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::CloudMonitoring::shutdown</qualifiedname>
+        <briefdescription>
+<para>Shutdown monitoring system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="206" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="87" bodyend="123"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0f4920c62ab258ea036fbec2ad2246f3" compoundref="df/d5d/cloud__monitoring_8cpp" startline="35" endline="37">~CloudMonitoring</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::logOperation</definition>
+        <argsstring>(const CloudLogEntry &amp;entry)</argsstring>
+        <name>logOperation</name>
+        <qualifiedname>satox::core::CloudMonitoring::logOperation</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry" kindref="compound">CloudLogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+<para>Log cloud operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log entry to record </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="212" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="125" bodyend="140"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa0f43cf3d8b6747aede302d1877f74cf" compoundref="df/d5d/cloud__monitoring_8cpp" startline="181" endline="229">completeOperation</referencedby>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a523b8f8f2f3bca8a447a7a05e19fafc8" compoundref="df/d5d/cloud__monitoring_8cpp" startline="324" endline="354">logAuditEvent</referencedby>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aaa03e289c29c72ccc127b299d0c7f534" compoundref="df/d5d/cloud__monitoring_8cpp" startline="231" endline="264">logError</referencedby>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4142c97134493e8515104d64fd5ae86d" compoundref="df/d5d/cloud__monitoring_8cpp" startline="266" endline="292">logPerformance</referencedby>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2b44b2cd2a51bfc235a9e3b6d17a7db6" compoundref="df/d5d/cloud__monitoring_8cpp" startline="294" endline="322">logSecurityEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a7cb8bd43b2d28ee42d21803c5e3dbc0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::startOperation</definition>
+        <argsstring>(CloudProvider provider, CloudOperation operation, const std::string &amp;connection_id=&quot;&quot;, const nlohmann::json &amp;metadata={})</argsstring>
+        <name>startOperation</name>
+        <qualifiedname>satox::core::CloudMonitoring::startOperation</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a5c5b3713a3a50c218c8777997d41af4a" kindref="member">CloudOperation</ref></type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Log operation with automatic timing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metadata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional metadata </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Operation ID for tracking </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="222" column="17" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="142" bodyend="179"/>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a13620caa7fada24d861ceb35e3d06994" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="119">satox::core::CloudLogEntry::connection_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aca548b65a2b0cb03e6194853b0c5ae24" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="128">satox::core::CloudLogEntry::context</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a3c0f80580b12f194d60c6ff25123f4c5" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="122">satox::core::CloudLogEntry::correlation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a29cac840a20cb547c328945a64c536ed" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="126">satox::core::CloudLogEntry::duration</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6d9988d4f5ace5aa1c80614dcd489094" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="127">satox::core::CloudLogEntry::metadata</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1abc39df12fdb55be8cac61ad064bfa083" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="117">satox::core::CloudLogEntry::operation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6a9225f5c257a74109884545ab1ddec0" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="115">satox::core::CloudLogEntry::operation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ad005090b1316750cc4b5ae7c4b69d394" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="116">satox::core::CloudLogEntry::provider</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a611ef0ba11b7dd18c72d7b9017a66ebd" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="121">satox::core::CloudLogEntry::session_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac2077c7db36b184710ccfa3129a235d9" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="118">satox::core::CloudLogEntry::status</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ad0749aaba8b833466dfcbb0428e4f89c" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="60">satox::core::SUCCESS</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a76607fa26283d51106501c4092e9f8ce" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="131">satox::core::CloudLogEntry::thread_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a49435a3829439fbef76e6c7219d6788f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="125">satox::core::CloudLogEntry::timestamp</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aeda3a7be2d9d1cd9618c6c5e22909610" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="120">satox::core::CloudLogEntry::user_id</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa0f43cf3d8b6747aede302d1877f74cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::completeOperation</definition>
+        <argsstring>(const std::string &amp;operation_id, CloudOperationStatus status, const std::string &amp;error_message=&quot;&quot;, const nlohmann::json &amp;result={})</argsstring>
+        <name>completeOperation</name>
+        <qualifiedname>satox::core::CloudMonitoring::completeOperation</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation_id</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018" kindref="member">CloudOperationStatus</ref></type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error_message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>result</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Complete operation with status. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>operation_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation status </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error_message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message if failed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Result data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="234" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="181" bodyend="229"/>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a29cac840a20cb547c328945a64c536ed" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="126">satox::core::CloudLogEntry::duration</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac76ee4b81d271d7aea5ed189207756fe" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="123">satox::core::CloudLogEntry::error_message</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" compoundref="df/d5d/cloud__monitoring_8cpp" startline="125" endline="140">logOperation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6d9988d4f5ace5aa1c80614dcd489094" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="127">satox::core::CloudLogEntry::metadata</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac2077c7db36b184710ccfa3129a235d9" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="118">satox::core::CloudLogEntry::status</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ad0749aaba8b833466dfcbb0428e4f89c" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="60">satox::core::SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aaa03e289c29c72ccc127b299d0c7f534" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::logError</definition>
+        <argsstring>(CloudProvider provider, CloudOperation operation, const std::string &amp;error_message, const std::string &amp;error_code=&quot;&quot;, const std::string &amp;connection_id=&quot;&quot;, const nlohmann::json &amp;metadata={})</argsstring>
+        <name>logError</name>
+        <qualifiedname>satox::core::CloudMonitoring::logError</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a5c5b3713a3a50c218c8777997d41af4a" kindref="member">CloudOperation</ref></type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error_message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error_code</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connection_id</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Log error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error_message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error code </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>connection_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connection ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metadata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional metadata </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="248" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="231" bodyend="264"/>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a13620caa7fada24d861ceb35e3d06994" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="119">satox::core::CloudLogEntry::connection_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aca548b65a2b0cb03e6194853b0c5ae24" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="128">satox::core::CloudLogEntry::context</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a3c0f80580b12f194d60c6ff25123f4c5" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="122">satox::core::CloudLogEntry::correlation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a29cac840a20cb547c328945a64c536ed" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="126">satox::core::CloudLogEntry::duration</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a55e25812b9e5e7e28db30dd868dcd7c5" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="124">satox::core::CloudLogEntry::error_code</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac76ee4b81d271d7aea5ed189207756fe" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="123">satox::core::CloudLogEntry::error_message</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ab9e14d9b2886bcff408b85aefa780419" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="61">satox::core::FAILED</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" compoundref="df/d5d/cloud__monitoring_8cpp" startline="125" endline="140">logOperation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6d9988d4f5ace5aa1c80614dcd489094" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="127">satox::core::CloudLogEntry::metadata</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1abc39df12fdb55be8cac61ad064bfa083" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="117">satox::core::CloudLogEntry::operation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6a9225f5c257a74109884545ab1ddec0" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="115">satox::core::CloudLogEntry::operation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ad005090b1316750cc4b5ae7c4b69d394" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="116">satox::core::CloudLogEntry::provider</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a611ef0ba11b7dd18c72d7b9017a66ebd" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="121">satox::core::CloudLogEntry::session_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac2077c7db36b184710ccfa3129a235d9" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="118">satox::core::CloudLogEntry::status</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a76607fa26283d51106501c4092e9f8ce" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="131">satox::core::CloudLogEntry::thread_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a49435a3829439fbef76e6c7219d6788f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="125">satox::core::CloudLogEntry::timestamp</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aeda3a7be2d9d1cd9618c6c5e22909610" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="120">satox::core::CloudLogEntry::user_id</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4142c97134493e8515104d64fd5ae86d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::logPerformance</definition>
+        <argsstring>(CloudProvider provider, CloudOperation operation, std::chrono::milliseconds duration, bool success, const nlohmann::json &amp;metadata={})</argsstring>
+        <name>logPerformance</name>
+        <qualifiedname>satox::core::CloudMonitoring::logPerformance</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a5c5b3713a3a50c218c8777997d41af4a" kindref="member">CloudOperation</ref></type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>duration</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Log performance metrics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation duration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>success</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether operation was successful </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metadata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional metadata </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="263" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="266" bodyend="292"/>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aca548b65a2b0cb03e6194853b0c5ae24" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="128">satox::core::CloudLogEntry::context</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a29cac840a20cb547c328945a64c536ed" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="126">satox::core::CloudLogEntry::duration</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ab9e14d9b2886bcff408b85aefa780419" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="61">satox::core::FAILED</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" compoundref="df/d5d/cloud__monitoring_8cpp" startline="125" endline="140">logOperation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6d9988d4f5ace5aa1c80614dcd489094" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="127">satox::core::CloudLogEntry::metadata</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1abc39df12fdb55be8cac61ad064bfa083" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="117">satox::core::CloudLogEntry::operation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6a9225f5c257a74109884545ab1ddec0" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="115">satox::core::CloudLogEntry::operation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ad005090b1316750cc4b5ae7c4b69d394" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="116">satox::core::CloudLogEntry::provider</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac2077c7db36b184710ccfa3129a235d9" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="118">satox::core::CloudLogEntry::status</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ad0749aaba8b833466dfcbb0428e4f89c" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="60">satox::core::SUCCESS</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a76607fa26283d51106501c4092e9f8ce" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="131">satox::core::CloudLogEntry::thread_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a49435a3829439fbef76e6c7219d6788f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="125">satox::core::CloudLogEntry::timestamp</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2b44b2cd2a51bfc235a9e3b6d17a7db6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::logSecurityEvent</definition>
+        <argsstring>(CloudProvider provider, const std::string &amp;event_type, const std::string &amp;severity, const std::string &amp;details, const nlohmann::json &amp;metadata={})</argsstring>
+        <name>logSecurityEvent</name>
+        <qualifiedname>satox::core::CloudMonitoring::logSecurityEvent</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>event_type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>severity</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>details</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Log security event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Security event type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>severity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Security severity level </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event details </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metadata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional metadata </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="277" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="294" bodyend="322"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a5c5b3713a3a50c218c8777997d41af4aa5963e9e09d4377b30d30799d150a1da8" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="48">satox::core::AUTHENTICATE</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aca548b65a2b0cb03e6194853b0c5ae24" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="128">satox::core::CloudLogEntry::context</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a29cac840a20cb547c328945a64c536ed" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="126">satox::core::CloudLogEntry::duration</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" compoundref="df/d5d/cloud__monitoring_8cpp" startline="125" endline="140">logOperation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6d9988d4f5ace5aa1c80614dcd489094" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="127">satox::core::CloudLogEntry::metadata</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1abc39df12fdb55be8cac61ad064bfa083" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="117">satox::core::CloudLogEntry::operation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6a9225f5c257a74109884545ab1ddec0" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="115">satox::core::CloudLogEntry::operation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ad005090b1316750cc4b5ae7c4b69d394" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="116">satox::core::CloudLogEntry::provider</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac2077c7db36b184710ccfa3129a235d9" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="118">satox::core::CloudLogEntry::status</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ad0749aaba8b833466dfcbb0428e4f89c" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="60">satox::core::SUCCESS</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a76607fa26283d51106501c4092e9f8ce" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="131">satox::core::CloudLogEntry::thread_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a49435a3829439fbef76e6c7219d6788f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="125">satox::core::CloudLogEntry::timestamp</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a523b8f8f2f3bca8a447a7a05e19fafc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::logAuditEvent</definition>
+        <argsstring>(CloudProvider provider, const std::string &amp;user_id, const std::string &amp;action, const std::string &amp;resource, const std::string &amp;result, const nlohmann::json &amp;metadata={})</argsstring>
+        <name>logAuditEvent</name>
+        <qualifiedname>satox::core::CloudMonitoring::logAuditEvent</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>user_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>resource</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Log audit event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action performed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>resource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Resource accessed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Result of action </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metadata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional metadata </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="292" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="324" bodyend="354"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a5c5b3713a3a50c218c8777997d41af4aa5963e9e09d4377b30d30799d150a1da8" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="48">satox::core::AUTHENTICATE</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aca548b65a2b0cb03e6194853b0c5ae24" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="128">satox::core::CloudLogEntry::context</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a29cac840a20cb547c328945a64c536ed" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="126">satox::core::CloudLogEntry::duration</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" compoundref="df/d5d/cloud__monitoring_8cpp" startline="125" endline="140">logOperation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6d9988d4f5ace5aa1c80614dcd489094" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="127">satox::core::CloudLogEntry::metadata</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1abc39df12fdb55be8cac61ad064bfa083" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="117">satox::core::CloudLogEntry::operation</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a6a9225f5c257a74109884545ab1ddec0" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="115">satox::core::CloudLogEntry::operation_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ad005090b1316750cc4b5ae7c4b69d394" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="116">satox::core::CloudLogEntry::provider</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1ac2077c7db36b184710ccfa3129a235d9" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="118">satox::core::CloudLogEntry::status</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ad0749aaba8b833466dfcbb0428e4f89c" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="60">satox::core::SUCCESS</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a76607fa26283d51106501c4092e9f8ce" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="131">satox::core::CloudLogEntry::thread_id</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1a49435a3829439fbef76e6c7219d6788f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="125">satox::core::CloudLogEntry::timestamp</references>
+        <references refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry_1aeda3a7be2d9d1cd9618c6c5e22909610" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="120">satox::core::CloudLogEntry::user_id</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aad6346f35d3144596f03a5916ebd59c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/dee/structsatox_1_1core_1_1CloudMetrics" kindref="compound">CloudMetrics</ref></type>
+        <definition>CloudMetrics satox::core::CloudMonitoring::getMetrics</definition>
+        <argsstring>(CloudProvider provider) const</argsstring>
+        <name>getMetrics</name>
+        <qualifiedname>satox::core::CloudMonitoring::getMetrics</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+<para>Get metrics for provider. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Metrics for the provider </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="304" column="18" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="356" bodyend="363"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aae75c6528d066af8dec3e6b2aa178767" compoundref="df/d5d/cloud__monitoring_8cpp" startline="418" endline="454">getHealthStatus</referencedby>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a3be1d8196374254c5fbc4566deb9be22" compoundref="df/d5d/cloud__monitoring_8cpp" startline="507" endline="542">getMonitoringSummary</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/dee/structsatox_1_1core_1_1CloudMetrics" kindref="compound">CloudMetrics</ref></type>
+        <definition>CloudMetrics satox::core::CloudMonitoring::getAggregatedMetrics</definition>
+        <argsstring>() const</argsstring>
+        <name>getAggregatedMetrics</name>
+        <qualifiedname>satox::core::CloudMonitoring::getAggregatedMetrics</qualifiedname>
+        <briefdescription>
+<para>Get aggregated metrics for all providers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Aggregated metrics </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="310" column="18" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="365" bodyend="401"/>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a13f5e43b1e2c70ff7caabc5beb968775" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="85" endline="85">satox::core::CloudMetrics::active_connections</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ac02ddf32a19cd168db1bdf05b780c904" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="89" endline="89">satox::core::CloudMetrics::active_subscriptions</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a0d5ccd56c8040674551c028bd07e241f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="100" endline="100">satox::core::CloudMetrics::authentication_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1aec905217125502362f150a16243b0caf" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="86" endline="86">satox::core::CloudMetrics::connection_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a232015c299ff976bf1521ffa7c5e0998" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="73" endline="73">satox::core::CloudMetrics::failed_operations</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab1a8a932137e4088cd6ed962d143c100" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="79" endline="79">satox::core::CloudMetrics::failed_queries</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1af004b070d5deff9c102abe6b8e8b7857" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="94" endline="94">satox::core::CloudMetrics::failed_requests</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3916fc762ae471f6ba6f77b2e8485247" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="101" endline="101">satox::core::CloudMetrics::network_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3ff66f7625ef71791ac0a6289efd3524" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="104" endline="104">satox::core::CloudMetrics::quota_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1adc0149190f1910365e7b935967116e6a" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="103" endline="103">satox::core::CloudMetrics::rate_limit_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a25597ad1cee414edcba9090d513cb737" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="75" endline="75">satox::core::CloudMetrics::retry_operations</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a9bca75b784b35433fe8fb1d2cab2690f" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="90" endline="90">satox::core::CloudMetrics::subscription_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a39ffffc76534be36acdb16175dfe405a" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="72" endline="72">satox::core::CloudMetrics::successful_operations</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1acdf0754906b84277f225abbb6c3ff12b" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="78" endline="78">satox::core::CloudMetrics::successful_queries</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a1dd2bd112609c313cd78b30a3ea11dc3" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="93" endline="93">satox::core::CloudMetrics::successful_requests</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ae892858c458a417e47195e1e1170c81a" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="102" endline="102">satox::core::CloudMetrics::timeout_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ae4d41fe41ce4a19cfccd58d6a46c6cb8" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="74" endline="74">satox::core::CloudMetrics::timeout_operations</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a0f556e1b8355976c076853bc07d40fab" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="84" endline="84">satox::core::CloudMetrics::total_connections</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a8814fcc6b794ebf2747be6d1b469a892" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="99" endline="99">satox::core::CloudMetrics::total_errors</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a4bf25b11e5012226079c83b9241c1e55" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="71" endline="71">satox::core::CloudMetrics::total_operations</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a80b358c0fb04cfd8bd492413acbdb3c5" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="77" endline="77">satox::core::CloudMetrics::total_queries</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1af4eb48a138f9ab2b6f934532e4bfefb5" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="92" endline="92">satox::core::CloudMetrics::total_requests</references>
+        <references refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a8c4c278a32c58cd759f8c5f9c294a4ea" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="88" endline="88">satox::core::CloudMetrics::total_subscriptions</references>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a3be1d8196374254c5fbc4566deb9be22" compoundref="df/d5d/cloud__monitoring_8cpp" startline="507" endline="542">getMonitoringSummary</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a7a5920e015429b48053291e86fa21b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::resetMetrics</definition>
+        <argsstring>(CloudProvider provider)</argsstring>
+        <name>resetMetrics</name>
+        <qualifiedname>satox::core::CloudMonitoring::resetMetrics</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+<para>Reset metrics for provider. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="316" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="403" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1acfda9889c328ccb60469c30d26a876e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::resetAllMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>resetAllMetrics</name>
+        <qualifiedname>satox::core::CloudMonitoring::resetAllMetrics</qualifiedname>
+        <briefdescription>
+<para>Reset all metrics. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="321" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="411" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aae75c6528d066af8dec3e6b2aa178767" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CloudMonitoring::getHealthStatus</definition>
+        <argsstring>(CloudProvider provider) const</argsstring>
+        <name>getHealthStatus</name>
+        <qualifiedname>satox::core::CloudMonitoring::getHealthStatus</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+<para>Get health status for provider. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Health status JSON </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="328" column="20" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="418" bodyend="454"/>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aad6346f35d3144596f03a5916ebd59c4" compoundref="df/d5d/cloud__monitoring_8cpp" startline="356" endline="363">getMetrics</references>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aec3d75df592b7727af2bbb4e3a642997" compoundref="df/d5d/cloud__monitoring_8cpp" startline="456" endline="476">getAllHealthStatus</referencedby>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a6717f513fcd147046e765c04754e6534" compoundref="df/d5d/cloud__monitoring_8cpp" startline="478" endline="505">performHealthCheck</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aec3d75df592b7727af2bbb4e3a642997" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CloudMonitoring::getAllHealthStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getAllHealthStatus</name>
+        <qualifiedname>satox::core::CloudMonitoring::getAllHealthStatus</qualifiedname>
+        <briefdescription>
+<para>Get health status for all providers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Health status JSON for all providers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="334" column="20" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="456" bodyend="476"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a4847e034bb0a55fcbc8a3380d6a3ab80" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="33">satox::core::AWS</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a71335a48a021ae2aeb7df636ba3d2483" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="34">satox::core::AZURE</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a696adc79a202a5ebdfd0d16aea732893" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="32">satox::core::FIREBASE</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aae75c6528d066af8dec3e6b2aa178767" compoundref="df/d5d/cloud__monitoring_8cpp" startline="418" endline="454">getHealthStatus</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a43a097161c73d6bec57d78ce9a44fb2d" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="35">satox::core::GOOGLE_CLOUD</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a6d832e11bf487bb87d0d438663b26d36" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="31">satox::core::SUPABASE</references>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9c0bfb5061e3aa5cc8713e8aac6d72c0" compoundref="df/d5d/cloud__monitoring_8cpp" startline="598" endline="615">getStatus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a6717f513fcd147046e765c04754e6534" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CloudMonitoring::performHealthCheck</definition>
+        <argsstring>(CloudProvider provider)</argsstring>
+        <name>performHealthCheck</name>
+        <qualifiedname>satox::core::CloudMonitoring::performHealthCheck</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+<para>Perform health check for provider. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cloud provider </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if healthy, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="341" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="478" bodyend="505"/>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aae75c6528d066af8dec3e6b2aa178767" compoundref="df/d5d/cloud__monitoring_8cpp" startline="418" endline="454">getHealthStatus</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a3be1d8196374254c5fbc4566deb9be22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CloudMonitoring::getMonitoringSummary</definition>
+        <argsstring>(int hours=24) const</argsstring>
+        <name>getMonitoringSummary</name>
+        <qualifiedname>satox::core::CloudMonitoring::getMonitoringSummary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>hours</declname>
+          <defval>24</defval>
+        </param>
+        <briefdescription>
+<para>Get monitoring summary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hours</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of hours to include in summary </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Monitoring summary JSON </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="348" column="20" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="507" bodyend="542"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a4847e034bb0a55fcbc8a3380d6a3ab80" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="33">satox::core::AWS</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a71335a48a021ae2aeb7df636ba3d2483" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="34">satox::core::AZURE</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a696adc79a202a5ebdfd0d16aea732893" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="32">satox::core::FIREBASE</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">getAggregatedMetrics</references>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aad6346f35d3144596f03a5916ebd59c4" compoundref="df/d5d/cloud__monitoring_8cpp" startline="356" endline="363">getMetrics</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a43a097161c73d6bec57d78ce9a44fb2d" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="35">satox::core::GOOGLE_CLOUD</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526a6d832e11bf487bb87d0d438663b26d36" compoundref="d3/d7b/cloud__monitoring_8hpp" startline="31">satox::core::SUPABASE</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4715a90fec08be2b08b51c9b1b07db39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::setContext</definition>
+        <argsstring>(const std::string &amp;correlation_id=&quot;&quot;, const std::string &amp;user_id=&quot;&quot;, const std::string &amp;session_id=&quot;&quot;, const std::string &amp;ip_address=&quot;&quot;, const std::string &amp;user_agent=&quot;&quot;)</argsstring>
+        <name>setContext</name>
+        <qualifiedname>satox::core::CloudMonitoring::setContext</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>correlation_id</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>user_id</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>session_id</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ip_address</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>user_agent</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Set context information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>correlation_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Correlation ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>session_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Session ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ip_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IP address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_agent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User agent </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="358" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="544" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a280dafe96dcf0cade9e0c53b7f86ba7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::clearContext</definition>
+        <argsstring>()</argsstring>
+        <name>clearContext</name>
+        <qualifiedname>satox::core::CloudMonitoring::clearContext</qualifiedname>
+        <briefdescription>
+<para>Clear context information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="367" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="556" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9f71fbf01e82a01d41886f6f42a2af97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::registerLogCallback</definition>
+        <argsstring>(CloudLogCallback callback)</argsstring>
+        <name>registerLogCallback</name>
+        <qualifiedname>satox::core::CloudMonitoring::registerLogCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a131c9cfd8f0ae4a52ef873afb6aa42cb" kindref="member">CloudLogCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register log callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="373" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="564" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2da347b9f996fa8a816556dedc9f3721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::registerAlertCallback</definition>
+        <argsstring>(CloudAlertCallback callback)</argsstring>
+        <name>registerAlertCallback</name>
+        <qualifiedname>satox::core::CloudMonitoring::registerAlertCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a2bc3e1594f45134c831226c69dc487de" kindref="member">CloudAlertCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register alert callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alert callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="379" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="569" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1abbf15e3d303956d07fd88bef24f4c701" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::registerHealthCallback</definition>
+        <argsstring>(CloudHealthCallback callback)</argsstring>
+        <name>registerHealthCallback</name>
+        <qualifiedname>satox::core::CloudMonitoring::registerHealthCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1affe807e65ea2b1f2bb17013421bd26a6" kindref="member">CloudHealthCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register health callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Health callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="385" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="574" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9b2494b982aa501134e5c113815a2986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::registerMetricsCallback</definition>
+        <argsstring>(CloudMetricsCallback callback)</argsstring>
+        <name>registerMetricsCallback</name>
+        <qualifiedname>satox::core::CloudMonitoring::registerMetricsCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a494860b0e33aad15f89c555f1b9df4ba" kindref="member">CloudMetricsCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register metrics callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Metrics callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="391" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="579" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a158334bc8c67c7dec8f7bda2e993ac30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig" kindref="compound">CloudMonitoringConfig</ref></type>
+        <definition>CloudMonitoringConfig satox::core::CloudMonitoring::getConfig</definition>
+        <argsstring>() const</argsstring>
+        <name>getConfig</name>
+        <qualifiedname>satox::core::CloudMonitoring::getConfig</qualifiedname>
+        <briefdescription>
+<para>Get configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current configuration </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="397" column="27" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="584" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1acedb49f88d6c4b94903cf7c8c15052bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CloudMonitoring::updateConfig</definition>
+        <argsstring>(const CloudMonitoringConfig &amp;config)</argsstring>
+        <name>updateConfig</name>
+        <qualifiedname>satox::core::CloudMonitoring::updateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d88/structsatox_1_1core_1_1CloudMonitoringConfig" kindref="compound">CloudMonitoringConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Update configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New configuration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if update successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="404" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="588" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1afad563b767c1aed3e8bf6b6ade927eeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CloudMonitoring::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::core::CloudMonitoring::isInitialized</qualifiedname>
+        <briefdescription>
+<para>Check if monitoring is initialized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if initialized, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="410" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="594" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9c0bfb5061e3aa5cc8713e8aac6d72c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CloudMonitoring::getStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatus</name>
+        <qualifiedname>satox::core::CloudMonitoring::getStatus</qualifiedname>
+        <briefdescription>
+<para>Get monitoring status. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d9/dd3/namespacesatox_1_1core_1a0314d644435466cc53bafcfcf0d85e62" kindref="member">Status</ref> JSON </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="416" column="20" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="598" bodyend="615"/>
+        <references refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aec3d75df592b7727af2bbb4e3a642997" compoundref="df/d5d/cloud__monitoring_8cpp" startline="456" endline="476">getAllHealthStatus</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa2551efdf093eb3fc9ff839973a81899" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CloudMonitoring::CloudMonitoring</definition>
+        <argsstring>(const CloudMonitoring &amp;)=delete</argsstring>
+        <name>CloudMonitoring</name>
+        <qualifiedname>satox::core::CloudMonitoring::CloudMonitoring</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring" kindref="compound">CloudMonitoring</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="420" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1af998fb103b3ad635f25e2b2fcc306590" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring" kindref="compound">CloudMonitoring</ref> &amp;</type>
+        <definition>CloudMonitoring &amp; satox::core::CloudMonitoring::operator=</definition>
+        <argsstring>(const CloudMonitoring &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::CloudMonitoring::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring" kindref="compound">CloudMonitoring</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="421" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a07cf72dda6cafcfa9caa5aa766d82859" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::initializeLogging</definition>
+        <argsstring>()</argsstring>
+        <name>initializeLogging</name>
+        <qualifiedname>satox::core::CloudMonitoring::initializeLogging</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="424" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="619" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa6417eb763062796a3c94394292026f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::initializeMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>initializeMetrics</name>
+        <qualifiedname>satox::core::CloudMonitoring::initializeMetrics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="425" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="700" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0fe53fb3e06b0e7f77c7deb69ebb2ab6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::initializeHealthChecks</definition>
+        <argsstring>()</argsstring>
+        <name>initializeHealthChecks</name>
+        <qualifiedname>satox::core::CloudMonitoring::initializeHealthChecks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="426" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="705" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a64c301e3f30cdef008d6ec665e29b3f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::processLogEntry</definition>
+        <argsstring>(const CloudLogEntry &amp;entry)</argsstring>
+        <name>processLogEntry</name>
+        <qualifiedname>satox::core::CloudMonitoring::processLogEntry</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry" kindref="compound">CloudLogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="427" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="712" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ab5da6247fee8bfc745448dafd184db04" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::updateMetrics</definition>
+        <argsstring>(const CloudLogEntry &amp;entry)</argsstring>
+        <name>updateMetrics</name>
+        <qualifiedname>satox::core::CloudMonitoring::updateMetrics</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry" kindref="compound">CloudLogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="428" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="725" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a555f6c33b9f35192602bfeaabda17c8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::checkAlerts</definition>
+        <argsstring>(const CloudLogEntry &amp;entry)</argsstring>
+        <name>checkAlerts</name>
+        <qualifiedname>satox::core::CloudMonitoring::checkAlerts</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry" kindref="compound">CloudLogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="429" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="861" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ad726f4472591f195a8055bd1c753f476" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::notifyCallbacks</definition>
+        <argsstring>(const CloudLogEntry &amp;entry)</argsstring>
+        <name>notifyCallbacks</name>
+        <qualifiedname>satox::core::CloudMonitoring::notifyCallbacks</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/da5/structsatox_1_1core_1_1CloudLogEntry" kindref="compound">CloudLogEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="430" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="891" bodyend="923"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2c35da9d314ea5588ecef01606e90603" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::healthCheckWorker</definition>
+        <argsstring>()</argsstring>
+        <name>healthCheckWorker</name>
+        <qualifiedname>satox::core::CloudMonitoring::healthCheckWorker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="431" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="925" bodyend="944"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a970d9b116402a115c0353e98d4c8a65c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CloudMonitoring::metricsWorker</definition>
+        <argsstring>()</argsstring>
+        <name>metricsWorker</name>
+        <qualifiedname>satox::core::CloudMonitoring::metricsWorker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="432" column="10" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="946" bodyend="965"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0250cc5b30c29dc3282f47fa471c2abe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::generateOperationId</definition>
+        <argsstring>()</argsstring>
+        <name>generateOperationId</name>
+        <qualifiedname>satox::core::CloudMonitoring::generateOperationId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="433" column="17" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="967" bodyend="978"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1af3b25bc3d5b7c8ec21e9de2b05da06c3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::providerToString</definition>
+        <argsstring>(CloudProvider provider) const</argsstring>
+        <name>providerToString</name>
+        <qualifiedname>satox::core::CloudMonitoring::providerToString</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1aa04635de796a51678078f049e46c6526" kindref="member">CloudProvider</ref></type>
+          <declname>provider</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="434" column="17" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="980" bodyend="989"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a602f9ed88ca385705743eb881269948c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::operationToString</definition>
+        <argsstring>(CloudOperation operation) const</argsstring>
+        <name>operationToString</name>
+        <qualifiedname>satox::core::CloudMonitoring::operationToString</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a5c5b3713a3a50c218c8777997d41af4a" kindref="member">CloudOperation</ref></type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="435" column="17" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="991" bodyend="1007"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2b36b8f14a24997eeaa417b83273a5e0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CloudMonitoring::statusToString</definition>
+        <argsstring>(CloudOperationStatus status) const</argsstring>
+        <name>statusToString</name>
+        <qualifiedname>satox::core::CloudMonitoring::statusToString</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018" kindref="member">CloudOperationStatus</ref></type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="436" column="17" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="1009" bodyend="1018"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa7cfcd10049af3c05d65822f9ddc33ed" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CloudMonitoring::metricsToJson</definition>
+        <argsstring>(const CloudMetrics &amp;metrics) const</argsstring>
+        <name>metricsToJson</name>
+        <qualifiedname>satox::core::CloudMonitoring::metricsToJson</qualifiedname>
+        <param>
+          <type>const <ref refid="dd/dee/structsatox_1_1core_1_1CloudMetrics" kindref="compound">CloudMetrics</ref> &amp;</type>
+          <declname>metrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="437" column="20" bodyfile="src/core/src/cloud/cloud_monitoring.cpp" bodystart="1020" bodyend="1072"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Cloud monitoring and logging manager. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides comprehensive monitoring, logging, metrics collection, and alerting for all cloud database providers in the Satox SDK. </para>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="178" column="1" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="178" bodyend="487"/>
+    <listofallmembers>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1142bac5f16998a6ab3709a870d2cf7c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>active_operations_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1abfb207640c088e9a77974281f0b453b1" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>alert_callbacks_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1adb7c06c8bf982f2fcb0f094a10f33cc6" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>audit_logger_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1afd7b601f62b2a4cd79ae28b308d2d4f0" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>callbacks_mutex_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a555f6c33b9f35192602bfeaabda17c8c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>checkAlerts</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a280dafe96dcf0cade9e0c53b7f86ba7e" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>clearContext</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a671c48800cfab7180d6dd1fd24c5a385" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>CloudMonitoring</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa2551efdf093eb3fc9ff839973a81899" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>CloudMonitoring</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa0f43cf3d8b6747aede302d1877f74cf" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>completeOperation</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a314e81e0a86150756d3f1da108a25a75" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>config_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a224d3b37d345c05bd4cd41ecba082b4d" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>correlation_id_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a7da1188296719a797b9076c1c050ab4c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>error_logger_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0250cc5b30c29dc3282f47fa471c2abe" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>generateOperationId</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getAggregatedMetrics</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aec3d75df592b7727af2bbb4e3a642997" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getAllHealthStatus</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a158334bc8c67c7dec8f7bda2e993ac30" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getConfig</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aae75c6528d066af8dec3e6b2aa178767" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getHealthStatus</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9db382c0baae037de4dacc864476179e" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getInstance</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aad6346f35d3144596f03a5916ebd59c4" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getMetrics</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a3be1d8196374254c5fbc4566deb9be22" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getMonitoringSummary</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9c0bfb5061e3aa5cc8713e8aac6d72c0" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>getStatus</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a895df3eb674d3c2158e9a13eb8dd4a7c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>health_callbacks_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a83edba274172e76d62bdf4d82bb4b21f" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>health_check_cv_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aeb92f59012cd71e478403524c58f6c9a" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>health_check_thread_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2c35da9d314ea5588ecef01606e90603" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>healthCheckWorker</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a865a3c54f407261ef446267b0de7fc74" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>initialize</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a5f5a0e9782ff7744aed544f8762e63c0" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>initialized_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0fe53fb3e06b0e7f77c7deb69ebb2ab6" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>initializeHealthChecks</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a07cf72dda6cafcfa9caa5aa766d82859" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>initializeLogging</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa6417eb763062796a3c94394292026f7" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>initializeMetrics</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1d4cb0977c8d15af00a9cc38d9524e63" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>ip_address_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1afad563b767c1aed3e8bf6b6ade927eeb" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>isInitialized</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a642a8065f34eb2ad0937530a7c92fc86" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>last_health_check_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ad35509a3fc5a17d03a4e621b2931f0c2" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>last_metrics_update_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0f21143ebd01f36d1f08f6c54e28950f" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>log_callbacks_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a523b8f8f2f3bca8a447a7a05e19fafc8" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>logAuditEvent</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aaa03e289c29c72ccc127b299d0c7f534" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>logError</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4622846453f1dbc150ec23e82df836e5" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>logger_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa920a965ba3f84823cd61a9dd5780ae0" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>logOperation</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4142c97134493e8515104d64fd5ae86d" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>logPerformance</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2b44b2cd2a51bfc235a9e3b6d17a7db6" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>logSecurityEvent</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ae09f6c39b84339840c8769e1f8da67a1" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metrics_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1ccca61eac3fe9df29c012e44847b8ab" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metrics_callbacks_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a499853256c1fc9de2fdfb8cd73afce6a" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metrics_cv_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a33b2ff94a27b84b79e02ac543687dc60" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metrics_mutex_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a41b9d50e04e59cd613649f4fba81567c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metrics_thread_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa7cfcd10049af3c05d65822f9ddc33ed" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metricsToJson</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a970d9b116402a115c0353e98d4c8a65c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>metricsWorker</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa0d29034220a40eaed3b8f891845168c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>mutex_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ad726f4472591f195a8055bd1c753f476" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>notifyCallbacks</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a53a3a05aac8941557563f59eb3649468" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>operation_cache_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4aa94a8603d414977c121c1b59a023eb" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>operations_mutex_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a602f9ed88ca385705743eb881269948c" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>operationToString</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1af998fb103b3ad635f25e2b2fcc306590" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>operator=</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a79528894c92e6a0282380c5dad8a18c4" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>performance_logger_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a6717f513fcd147046e765c04754e6534" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>performHealthCheck</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a64c301e3f30cdef008d6ec665e29b3f8" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>processLogEntry</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1af3b25bc3d5b7c8ec21e9de2b05da06c3" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>providerToString</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2da347b9f996fa8a816556dedc9f3721" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>registerAlertCallback</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1abbf15e3d303956d07fd88bef24f4c701" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>registerHealthCallback</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9f71fbf01e82a01d41886f6f42a2af97" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>registerLogCallback</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9b2494b982aa501134e5c113815a2986" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>registerMetricsCallback</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1acfda9889c328ccb60469c30d26a876e1" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>resetAllMetrics</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a7a5920e015429b48053291e86fa21b33" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>resetMetrics</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa7776a5b64b681a3c4c8fb2768ab2d6a" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>security_logger_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a5fc5381fcfff8c770cd55ce45e1944c8" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>session_id_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a4715a90fec08be2b08b51c9b1b07db39" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>setContext</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a480204e09ce1274fdd2f0b87439f4f02" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>shutdown</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a1a1cb1424fded36a8cf73c51cc20459a" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>shutdown_requested_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a7cb8bd43b2d28ee42d21803c5e3dbc0b" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>startOperation</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a2b36b8f14a24997eeaa417b83273a5e0" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>statusToString</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a9ead1d69bc5103c6708746d1d26ad8b3" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>total_alerts_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a66baee8ae1be4d435d004be71c174ae1" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>total_health_checks_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1af9c6ee773860a7296bb670ae27a10def" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>total_log_entries_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1acedb49f88d6c4b94903cf7c8c15052bf" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>updateConfig</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1ab5da6247fee8bfc745448dafd184db04" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>updateMetrics</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a5930e5119eff1197b2919743a0476621" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>user_agent_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a06578245a264e7b7155a80b5b0e2e887" prot="private" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>user_id_</name></member>
+      <member refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1a0f4920c62ab258ea036fbec2ad2246f3" prot="public" virt="non-virtual"><scope>satox::core::CloudMonitoring</scope><name>~CloudMonitoring</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

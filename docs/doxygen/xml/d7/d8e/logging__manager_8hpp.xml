@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d7/d8e/logging__manager_8hpp" kind="file" language="C++">
+    <compoundname>logging_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="da/da6/core_2include_2satox_2core_2blockchain__manager_8hpp" local="yes">src/core/include/satox/core/blockchain_manager.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/logging_manager.hpp</label>
+        <link refid="d7/d8e/logging__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>atomic</label>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="7">
+        <label>fstream</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>mutex</label>
+      </node>
+      <node id="14">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="11">
+        <label>queue</label>
+      </node>
+      <node id="8">
+        <label>sstream</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>thread</label>
+      </node>
+      <node id="9">
+        <label>unordered_map</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/core/include/satox/core/blockchain_manager.hpp</label>
+        <link refid="da/da6/core_2include_2satox_2core_2blockchain__manager_8hpp"/>
+      </node>
+      <node id="1">
+        <label>src/core/include/satox/core/logging_manager.hpp</label>
+        <link refid="d7/d8e/logging__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="de/d20/classsatox_1_1core_1_1LoggingManager" prot="public">satox::core::LoggingManager</innerclass>
+    <innerclass refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" prot="public">satox::core::LoggingManager::LogEntry</innerclass>
+    <innerclass refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" prot="public">satox::core::LoggingManager::LogConfig</innerclass>
+    <innerclass refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" prot="public">satox::core::LoggingManager::LogStats</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">satox::core</ref><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="de/d20/classsatox_1_1core_1_1LoggingManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" kindref="member">LoggingManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>level<sp/>enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a2d3e4144aa384b18849ab9a8abad74d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a2d3e4144aa384b18849ab9a8abad74d6" kindref="member">TRACE</ref>,</highlight></codeline>
+<codeline lineno="49" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6adc30ec20708ef7b0f641ef78b7880a15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6adc30ec20708ef7b0f641ef78b7880a15" kindref="member">DEBUG</ref>,</highlight></codeline>
+<codeline lineno="50" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a551b723eafd6a31d444fcb2f5920fbd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a551b723eafd6a31d444fcb2f5920fbd3" kindref="member">INFO</ref>,</highlight></codeline>
+<codeline lineno="51" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a059e9861e0400dfbe05c98a841f3f96b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a059e9861e0400dfbe05c98a841f3f96b" kindref="member">WARNING</ref>,</highlight></codeline>
+<codeline lineno="52" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6abb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="53" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a19da7170bea36556dde582519795f3fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6a19da7170bea36556dde582519795f3fc" kindref="member">FATAL</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>entry<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref><sp/>{</highlight></codeline>
+<codeline lineno="58" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1aa1f0775f3de16dc4e04cc43d0b49766d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1aa1f0775f3de16dc4e04cc43d0b49766d" kindref="member">level</ref>;</highlight></codeline>
+<codeline lineno="59" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1abc5faa5939ef8c1da25a2ccb073da59f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1abc5faa5939ef8c1da25a2ccb073da59f" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="60" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1ad0100c13a7fbee8a40c6cf7bf8ef42b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1ad0100c13a7fbee8a40c6cf7bf8ef42b0" kindref="member">source</ref>;</highlight></codeline>
+<codeline lineno="61" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1aa6a2d1848fa5d176ec9e17d7406416b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1aa6a2d1848fa5d176ec9e17d7406416b5" kindref="member">threadId</ref>;</highlight></codeline>
+<codeline lineno="62" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1af53e6cbb30f54e4e9f636ec1414be8d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1af53e6cbb30f54e4e9f636ec1414be8d2" kindref="member">timestamp</ref>;</highlight></codeline>
+<codeline lineno="63" refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1af9177f2f0d5567e1dd784377adf7e16f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry_1af9177f2f0d5567e1dd784377adf7e16f" kindref="member">metadata</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>configuration<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a177fe2410ed2ef3495ca62bcb8a040cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a177fe2410ed2ef3495ca62bcb8a040cf" kindref="member">logDir</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a658f42c756cd99c5cd2b7f8c593d49fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a658f42c756cd99c5cd2b7f8c593d49fb" kindref="member">logFile</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>file<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ab06ee8a8517ac5e9fc82fe95d6265ebf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ab06ee8a8517ac5e9fc82fe95d6265ebf" kindref="member">maxFileSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>log<sp/>file<sp/>size<sp/>in<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1aa8641b1aae0fbc3d16be01e15a17954f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1aa8641b1aae0fbc3d16be01e15a17954f" kindref="member">maxFiles</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>number<sp/>of<sp/>log<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a536a83864795cdedbb78d8b9c71b5706" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a536a83864795cdedbb78d8b9c71b5706" kindref="member">minLevel</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Minimum<sp/>log<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a62139ffef9201a5b2b8778db3777f7a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a62139ffef9201a5b2b8778db3777f7a0" kindref="member">consoleOutput</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>console<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1af659665cdd95c622531e6399c30f0c70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1af659665cdd95c622531e6399c30f0c70" kindref="member">fileOutput</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>file<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ab94dd4def77e5b3db5a69ce2efe60f4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ab94dd4def77e5b3db5a69ce2efe60f4c" kindref="member">asyncLogging</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>asynchronous<sp/>logging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a7b0048b688a28a2e81522e7b3f5f34fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a7b0048b688a28a2e81522e7b3f5f34fe" kindref="member">queueSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>queue<sp/>size<sp/>for<sp/>async<sp/>logging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ac37f492fd06fd7125e5aac86453af0c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ac37f492fd06fd7125e5aac86453af0c8" kindref="member">flushInterval</ref>;<sp/></highlight><highlight class="comment">//<sp/>Flush<sp/>interval<sp/>for<sp/>async<sp/>logging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a9b47f9ccd49506cc576a4aa1e2ed73cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a9b47f9ccd49506cc576a4aa1e2ed73cf" kindref="member">includeTimestamp</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Include<sp/>timestamp<sp/>in<sp/>log<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a90d797a5087d6949092d4359403a0608" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a90d797a5087d6949092d4359403a0608" kindref="member">includeThreadId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Include<sp/>thread<sp/>ID<sp/>in<sp/>log<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a612fa4b8fd81be267542e77c9865e288" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1a612fa4b8fd81be267542e77c9865e288" kindref="member">includeSource</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Include<sp/>source<sp/>in<sp/>log<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ae171dbdf23d311765b5fba52d77c25ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig_1ae171dbdf23d311765b5fba52d77c25ed" kindref="member">logFormat</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>format<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>callback<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" kindref="member">LogCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>static<sp/>LoggingManager&amp;<sp/>getInstance();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" kindref="member">LoggingManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" kindref="member">LoggingManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92" refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ac47c1c5fb9fa3f2d428b1f8ce0167db8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" kindref="member">LoggingManager</ref>&amp;<sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ac47c1c5fb9fa3f2d428b1f8ce0167db8" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa5f76b2e6c642c6e955f2ebb351fc0e1" kindref="member">LoggingManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a64b1344f6662cfc7770ccd76d00409e3" kindref="member">LoggingManager</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a26ff378eaa0f7c05c965b49045f900ed" kindref="member">~LoggingManager</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a7f7059eb63639dd3b9a380100e701624" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a6e141bd715f2662dc56330cc6fd1b5a6" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Logging<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a4e4fdfcf9214939212937ade23b205b6" kindref="member">log</ref>(<ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/>level,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae9ef9ae2a6636831a40fd90f6cb16297" kindref="member">trace</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aaff148860237a894f2f166e2eca8441d" kindref="member">debug</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ab09bef73a872beac5e5e1b6a3d2ae608" kindref="member">info</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a78e6eb72676677c7d7efaa495e3b498c" kindref="member">warning</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a7b48a11b120e0d68779127afbf215d21" kindref="member">error</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a2785cf8d1ba1e773023d6ed27a7d3553" kindref="member">fatal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata<sp/>=<sp/>nlohmann::json());</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a0531c705e99cb83f1c9eb78cb1cf3cfb" kindref="member">setLogLevel</ref>(<ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/>level);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1acb879e3b90cc959e905adb2cd6fbc0d7" kindref="member">getLogLevel</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a69c61031886b08ed0e37344d174a677d" kindref="member">setLogFormat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>format);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ab15aa66eb7918ce8d6d6706ed2d7bbdc" kindref="member">getLogFormat</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a98443cef16b63778b08cdad7c90c5a75" kindref="member">flush</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a803583b9fd08c4847e705c3e567e7d34" kindref="member">rotate</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae8a820df53a0591a37e611dec49a433b" kindref="member">registerCallback</ref>(<ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a769bf1bcdbd15c0fb2c7b332c783345a" kindref="member">LogCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1aa12a2b73380fe18d6dc5a325003ef68c" kindref="member">unregisterCallback</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log<sp/>statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" kindref="compound">LogStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="131" refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1ad315c024fe1c6732ec8354c2724a52bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1ad315c024fe1c6732ec8354c2724a52bb" kindref="member">totalEntries</ref>;</highlight></codeline>
+<codeline lineno="132" refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1a781da98e7fb886a34e9765dc4592d7a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1a781da98e7fb886a34e9765dc4592d7a6" kindref="member">entriesByLevel</ref>[6];<sp/><sp/></highlight><highlight class="comment">//<sp/>One<sp/>for<sp/>each<sp/>log<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1a83d009b4c510917addfe5fff2b9fb7d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1a83d009b4c510917addfe5fff2b9fb7d0" kindref="member">droppedEntries</ref>;</highlight></codeline>
+<codeline lineno="134" refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1ac7d8a3c18fc68fa397e9a61d9ba497d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1ac7d8a3c18fc68fa397e9a61d9ba497d7" kindref="member">queueSize</ref>;</highlight></codeline>
+<codeline lineno="135" refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1af9db0b2c63ebfcbcf7e4d2acc6024364" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats_1af9db0b2c63ebfcbcf7e4d2acc6024364" kindref="member">lastFlush</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" kindref="compound">LogStats</ref><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a9b9ce266537db81b033558d4a36a40d3" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a439ac12b0056274529e30a3475aaecbf" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1a50f0c63f66ec88c518c496ff4355680e" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processLogEntry(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>writeToFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>writeToConsole(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>formatLogEntry(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>checkRotation();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>asyncLoggingWorker();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyCallbacks(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>getThreadId();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>levelToString(<ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/>level)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d20/classsatox_1_1core_1_1LoggingManager_1ae730d6634badaf14c55b0bd2222a12d6" kindref="member">Level</ref><sp/>stringToLevel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>level)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateConfig(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStats(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d6e/structsatox_1_1core_1_1LoggingManager_1_1LogEntry" kindref="compound">LogEntry</ref>&amp;<sp/>entry);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/d1a/structsatox_1_1core_1_1LoggingManager_1_1LogConfig" kindref="compound">LogConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>logFile_;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>std::queue&lt;LogEntry&gt;<sp/>logQueue_;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>std::thread<sp/>workerThread_;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>running_;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;LogCallback&gt;<sp/>callbacks_;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d61/structsatox_1_1core_1_1LoggingManager_1_1LogStats" kindref="compound">LogStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>lastError_;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::thread::id,<sp/>std::string&gt;<sp/>threadIds_;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::core<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/logging_manager.hpp"/>
+  </compounddef>
+</doxygen>

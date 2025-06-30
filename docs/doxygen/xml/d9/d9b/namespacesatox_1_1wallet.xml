@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d9/d9b/namespacesatox_1_1wallet" kind="namespace" language="C++">
+    <compoundname>satox::wallet</compoundname>
+    <innerclass refid="d9/d23/structsatox_1_1wallet_1_1AddressInfo" prot="public">satox::wallet::AddressInfo</innerclass>
+    <innerclass refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" prot="public">satox::wallet::AddressManager</innerclass>
+    <innerclass refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager" prot="public">satox::wallet::KeyManager</innerclass>
+    <innerclass refid="d8/d1b/structsatox_1_1wallet_1_1TransactionInfo" prot="public">satox::wallet::TransactionInfo</innerclass>
+    <innerclass refid="d1/d54/structsatox_1_1wallet_1_1Version" prot="public">satox::wallet::Version</innerclass>
+    <innerclass refid="dc/dc6/structsatox_1_1wallet_1_1WalletConfig" prot="public">satox::wallet::WalletConfig</innerclass>
+    <innerclass refid="d3/de5/classsatox_1_1wallet_1_1WalletException" prot="public">satox::wallet::WalletException</innerclass>
+    <innerclass refid="d1/df7/structsatox_1_1wallet_1_1WalletHealth" prot="public">satox::wallet::WalletHealth</innerclass>
+    <innerclass refid="d7/d8b/structsatox_1_1wallet_1_1WalletInfo" prot="public">satox::wallet::WalletInfo</innerclass>
+    <innerclass refid="d6/da2/classsatox_1_1wallet_1_1WalletInitializationException" prot="public">satox::wallet::WalletInitializationException</innerclass>
+    <innerclass refid="d0/d87/classsatox_1_1wallet_1_1WalletManager" prot="public">satox::wallet::WalletManager</innerclass>
+    <innerclass refid="dc/d95/classsatox_1_1wallet_1_1WalletOperationException" prot="public">satox::wallet::WalletOperationException</innerclass>
+    <innerclass refid="d4/d78/structsatox_1_1wallet_1_1WalletResult" prot="public">satox::wallet::WalletResult</innerclass>
+    <innerclass refid="de/da3/structsatox_1_1wallet_1_1WalletStatistics" prot="public">satox::wallet::WalletStatistics</innerclass>
+    <innerclass refid="dd/dcf/structsatox_1_1wallet_1_1WalletStats" prot="public">satox::wallet::WalletStats</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WalletErrorCode</name>
+        <qualifiedname>satox::wallet::WalletErrorCode</qualifiedname>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3ad0749aaba8b833466dfcbb0428e4f89c" prot="public">
+          <name>SUCCESS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a9a10f345b0f755d461a8673a5e9ef6b4" prot="public">
+          <name>UNKNOWN_ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3af295a0c3e37c94f078e1c5476479132d" prot="public">
+          <name>INVALID_ARGUMENT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a02de9649e258d1dd94056e676061e969" prot="public">
+          <name>NOT_INITIALIZED</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a1940a630a2a25829533b90f9be04f184" prot="public">
+          <name>ALREADY_INITIALIZED</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a0d30777007362ccc9e8b2d0d22e4db13" prot="public">
+          <name>NOT_RUNNING</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3ae72544c6de918198c7e098d9c9152b1e" prot="public">
+          <name>ALREADY_RUNNING</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a8f8d49d3d0842358e0fe8f43601d8537" prot="public">
+          <name>OPERATION_FAILED</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a2fa475b43d744661c4c9e1dbd9840278" prot="public">
+          <name>VALIDATION_ERROR</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3ace94bad90093a6a2538689ddfbb5462f" prot="public">
+          <name>TIMEOUT_ERROR</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a4a739fa42dcdbdb8dfe5a5e4d9c5a627" prot="public">
+          <name>RESOURCE_EXHAUSTED</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a255df50c140519133f1489ab44a389d9" prot="public">
+          <name>PERMISSION_DENIED</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a99054bf6d0f6899018b9569015b313b3a5e6a8de74c8f7d4b04d91a3dc3bf7659" prot="public">
+          <name>INVALID_STATE</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/error.hpp" line="35" column="1" bodyfile="src/wallet/include/satox/wallet/error.hpp" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WalletStatus</name>
+        <qualifiedname>satox::wallet::WalletStatus</qualifiedname>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69a696b031073e74bf2cb98e5ef201d4aa3" prot="public">
+          <name>UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69a86bf8c89d85949f8f45cde2f73fce113" prot="public">
+          <name>INITIALIZING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69adee5f03c2c4e73657824e028494b18c0" prot="public">
+          <name>INITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69a43491564ebcfd38568918efbd6e840fd" prot="public">
+          <name>RUNNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69a09d4d696b4e935115b9313e3c412509a" prot="public">
+          <name>STOPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d9b/namespacesatox_1_1wallet_1a578106df68b0f033264accfde98c2c69a055c1a591abb0e8cd86dc969727bcc0b" prot="public">
+          <name>DISABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/types.hpp" line="76" column="1" bodyfile="src/wallet/include/satox/wallet/types.hpp" bodystart="76" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1a5648e0d58f480978e746842a4da3daae" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::SATOX_COIN_TYPE</definition>
+        <argsstring></argsstring>
+        <name>SATOX_COIN_TYPE</name>
+        <qualifiedname>satox::wallet::SATOX_COIN_TYPE</qualifiedname>
+        <initializer>= 9007</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="41" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1a8129c4ac8d6170d2eeb1c1ca38ba4024" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::PURPOSE</definition>
+        <argsstring></argsstring>
+        <name>PURPOSE</name>
+        <qualifiedname>satox::wallet::PURPOSE</qualifiedname>
+        <initializer>= 44</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="42" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1aa209e00684e879a5098e3429d6b06a1e" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::ACCOUNT_INDEX</definition>
+        <argsstring></argsstring>
+        <name>ACCOUNT_INDEX</name>
+        <qualifiedname>satox::wallet::ACCOUNT_INDEX</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="43" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="43" bodyend="-1"/>
+        <referencedby refid="d0/d87/classsatox_1_1wallet_1_1WalletManager_1afda677acb03535b54ab7abfe6b0e76b1">satox::wallet::WalletManager::getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1a26f18b2ff662985364aaad62a49dcec9" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::KAWPOW_EPOCH_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_EPOCH_LENGTH</name>
+        <qualifiedname>satox::wallet::KAWPOW_EPOCH_LENGTH</qualifiedname>
+        <initializer>= 7500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="46" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1a9c8bff6118150ab704af224c73116dcd" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::KAWPOW_PERIOD_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_PERIOD_LENGTH</name>
+        <qualifiedname>satox::wallet::KAWPOW_PERIOD_LENGTH</qualifiedname>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="47" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1a592073d0855597d39cd1eb6358d9113d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::KAWPOW_CACHE_ROUNDS</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_CACHE_ROUNDS</name>
+        <qualifiedname>satox::wallet::KAWPOW_CACHE_ROUNDS</qualifiedname>
+        <initializer>= 2048</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="48" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1afb0a13fc957ecab4318e49cd7da4153d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::MAX_SIGNERS</definition>
+        <argsstring></argsstring>
+        <name>MAX_SIGNERS</name>
+        <qualifiedname>satox::wallet::MAX_SIGNERS</qualifiedname>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="51" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d9b/namespacesatox_1_1wallet_1a2106eee1e2f8b8dd3662c9ade53a666e" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::wallet::MIN_SIGNERS</definition>
+        <argsstring></argsstring>
+        <name>MIN_SIGNERS</name>
+        <qualifiedname>satox::wallet::MIN_SIGNERS</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/wallet_manager.hpp" line="52" column="20" bodyfile="src/wallet/include/satox/wallet/wallet_manager.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/wallet/wallet_manager.hpp" line="38" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/d52/cloud_2aws__manager_8cpp" kind="file" language="C++">
+    <compoundname>aws_manager.cpp</compoundname>
+    <includes local="yes">satox/core/cloud/aws_config.hpp</includes>
+    <includes local="no">spdlog/spdlog.h</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">atomic</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/cloud/aws_manager.cpp</label>
+        <link refid="db/d52/cloud_2aws__manager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>atomic</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>mutex</label>
+      </node>
+      <node id="4">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>satox/core/cloud/aws_config.hpp</label>
+      </node>
+      <node id="3">
+        <label>spdlog/spdlog.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl" prot="public">satox::core::cloud::AWSManager::Impl</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <innernamespace refid="dd/dc3/namespacesatox_1_1core_1_1cloud">satox::core::cloud</innernamespace>
+    <briefdescription>
+<para>AWS manager implementation (stub) </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Satox SDK Team </para>
+</simplesect>
+<simplesect kind="date"><para>$(date &apos;+Y-m-d&apos;) </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0 @license MIT </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;satox/core/cloud/aws_config.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;spdlog/spdlog.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dd/dc3/namespacesatox_1_1core_1_1cloud" kindref="compound">cloud</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl" kindref="compound">AWSManager::Impl</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa95977d8e6729a3ac0a6fc67dbd9bab6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa95977d8e6729a3ac0a6fc67dbd9bab6" kindref="member">Impl</ref>()<sp/>:<sp/>connected_(false)<sp/>{}</highlight></codeline>
+<codeline lineno="24" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1abf074ea960936ff65e1f141345e5d3a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1abf074ea960936ff65e1f141345e5d3a6" kindref="member">~Impl</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ae33c970a9f90aa5ad3077888a07b8049" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ae33c970a9f90aa5ad3077888a07b8049" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AWSConfig&amp;<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>config_<sp/>=<sp/>config;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connected_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>Initialized<sp/>with<sp/>region:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>config.region);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a54a5116f94bf9a653157370caee19724" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a54a5116f94bf9a653157370caee19724" kindref="member">isConnected</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connected_.load();<sp/>}</highlight></codeline>
+<codeline lineno="32" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a252523299b9db4308bae675f1880c9e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a252523299b9db4308bae675f1880c9e6" kindref="member">executeQuery</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>service,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>executeQuery<sp/>called<sp/>for<sp/>service:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>service);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;not_implemented&quot;</highlight><highlight class="normal">}<sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af187100fd7d1d87ba313bafcb4ac497b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af187100fd7d1d87ba313bafcb4ac497b" kindref="member">executeTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>service,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;nlohmann::json&gt;&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>executeTransaction<sp/>called<sp/>for<sp/>service:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>service);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;not_implemented&quot;</highlight><highlight class="normal">}<sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a395375e3e7a46e2c5671b3f1c54397ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a395375e3e7a46e2c5671b3f1c54397ea" kindref="member">uploadFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>bucket,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>uploadFile<sp/>called<sp/>for<sp/>bucket:<sp/>{},<sp/>path:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>bucket,<sp/>path);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;not_implemented&quot;</highlight><highlight class="normal">}<sp/>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a8b5d511a3ef7918b17e68f810f324a75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a8b5d511a3ef7918b17e68f810f324a75" kindref="member">downloadFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>bucket,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>downloadFile<sp/>called<sp/>for<sp/>bucket:<sp/>{},<sp/>path:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>bucket,<sp/>path);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;not_implemented&quot;</highlight><highlight class="normal">}<sp/>};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ab59cc36b78fdd541fb32d2b594b460e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ab59cc36b78fdd541fb32d2b594b460e3" kindref="member">invokeFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>function_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>invokeFunction<sp/>called<sp/>for<sp/>function:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>function_name);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;not_implemented&quot;</highlight><highlight class="normal">}<sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa20c372ba6aba35978e6697906d29329" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa20c372ba6aba35978e6697906d29329" kindref="member">getStatus</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;connected&quot;</highlight><highlight class="normal">,<sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a54a5116f94bf9a653157370caee19724" kindref="member">isConnected</ref>()},<sp/>{</highlight><highlight class="stringliteral">&quot;region&quot;</highlight><highlight class="normal">,<sp/>config_.region}<sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55" refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af7fab25232da4ca975e33c6428986b71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af7fab25232da4ca975e33c6428986b71" kindref="member">disconnect</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connected_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spdlog::info(</highlight><highlight class="stringliteral">&quot;[AWS]<sp/>Disconnected&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>AWSConfig<sp/>config_;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>connected_;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">AWSManager&amp;<sp/>AWSManager::getInstance()<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>AWSManager<sp/>instance;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instance;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AWSManager::initialize(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AWSConfig&amp;<sp/>config)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;initialize(config);<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AWSManager::isConnected()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;isConnected();<sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">nlohmann::json<sp/>AWSManager::executeQuery(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>service,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>params)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;executeQuery(service,<sp/>params);<sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">nlohmann::json<sp/>AWSManager::executeTransaction(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>service,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;nlohmann::json&gt;&amp;<sp/>actions)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;executeTransaction(service,<sp/>actions);<sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">nlohmann::json<sp/>AWSManager::uploadFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>bucket,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>file_path)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;uploadFile(bucket,<sp/>path,<sp/>file_path);<sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">nlohmann::json<sp/>AWSManager::downloadFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>bucket,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>local_path)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;downloadFile(bucket,<sp/>path,<sp/>local_path);<sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">nlohmann::json<sp/>AWSManager::invokeFunction(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>function_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>payload)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;invokeFunction(function_name,<sp/>payload);<sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">nlohmann::json<sp/>AWSManager::getStatus()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pImpl-&gt;getStatus();<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AWSManager::disconnect()<sp/>{<sp/>pImpl-&gt;disconnect();<sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">AWSManager::AWSManager()<sp/>:<sp/>pImpl(std::make_unique&lt;Impl&gt;())<sp/>{}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">AWSManager::~AWSManager()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>cloud</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/cloud/aws_manager.cpp"/>
+  </compounddef>
+</doxygen>

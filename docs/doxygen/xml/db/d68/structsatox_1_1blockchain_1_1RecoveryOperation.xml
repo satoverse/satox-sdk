@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation" kind="struct" language="C++" prot="public">
+    <compoundname>satox::blockchain::RecoveryOperation</compoundname>
+    <includes refid="dc/d77/core_2include_2satox_2blockchain_2blockchain__manager_8hpp" local="no">blockchain_manager.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Type</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::Type</qualifiedname>
+        <enumvalue id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4a37bb7846ea0b9dfc10d6ee157c15700e" prot="public">
+          <name>BLOCK_VALIDATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4a1fd6dbfa430112d65cf0d73ea80993a1" prot="public">
+          <name>TRANSACTION_VALIDATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4a855310b50ba23d3ce197107e1befe1d3" prot="public">
+          <name>NETWORK_CONNECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4aa140096b48b56c125a41de239d4d10c6" prot="public">
+          <name>STATE_SYNC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4acbab97e2fe4b87efe5dd2c800fe8f163" prot="public">
+          <name>MINING_OPERATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="138" column="5" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="138" bodyend="144"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1ab9a9ca733805fd6110ecd5bffce32a96" prot="public" static="no" mutable="no">
+        <type><ref refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4" kindref="member">Type</ref></type>
+        <definition>Type satox::blockchain::RecoveryOperation::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="146" column="10" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1ac2f8de3a30875ac52d08bc053fd8bebd" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::RecoveryOperation::operation_id</definition>
+        <argsstring></argsstring>
+        <name>operation_id</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::operation_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="147" column="17" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a1218886a67d43eeb5941028064a5085b" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::blockchain::RecoveryOperation::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="148" column="43" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a0309295da81fe609ed36f4cf1e4b3d8c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::RecoveryOperation::error_message</definition>
+        <argsstring></argsstring>
+        <name>error_message</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::error_message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="149" column="17" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a6bd46813e7e06205f0f036031675abc1" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::blockchain::RecoveryOperation::attempt_count</definition>
+        <argsstring></argsstring>
+        <name>attempt_count</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::attempt_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="150" column="12" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1aa755cf8fe5cef3df6a6b5da288255718" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; satox::blockchain::RecoveryOperation::context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <qualifiedname>satox::blockchain::RecoveryOperation::context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="151" column="24" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>K</label>
+      </node>
+      <node id="7">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::blockchain::RecoveryOperation</label>
+        <link refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error_message</edgelabel>
+          <edgelabel>operation_id</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>context</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::unordered_map&lt; K, T &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_map&lt; std::string, std::string &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>elements</edgelabel>
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="template-instance">
+          <edgelabel>&lt; std::string, std::string &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="137" column="1" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="137" bodyend="152"/>
+    <listofallmembers>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a6bd46813e7e06205f0f036031675abc1" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>attempt_count</name></member>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1aa755cf8fe5cef3df6a6b5da288255718" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>context</name></member>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a0309295da81fe609ed36f4cf1e4b3d8c" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>error_message</name></member>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1ac2f8de3a30875ac52d08bc053fd8bebd" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>operation_id</name></member>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a1218886a67d43eeb5941028064a5085b" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>timestamp</name></member>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1a5afa5bde8c54cf9e8fc913b34215abf4" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>Type</name></member>
+      <member refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation_1ab9a9ca733805fd6110ecd5bffce32a96" prot="public" virt="non-virtual"><scope>satox::blockchain::RecoveryOperation</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

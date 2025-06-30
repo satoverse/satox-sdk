@@ -1,0 +1,604 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::pqc::MLKEM</compoundname>
+    <includes refid="df/d78/satox_2security_2pqc_2pqc_2ml__kem_8hpp" local="no">ml_kem.hpp</includes>
+    <innerclass refid="d7/d59/classsatox_1_1security_1_1pqc_1_1MLKEM_1_1Impl" prot="public">satox::security::pqc::MLKEM::Impl</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SecurityLevel</name>
+        <qualifiedname>satox::security::pqc::MLKEM::SecurityLevel</qualifiedname>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca63664aa8bee7544118de87bf48d529ee" prot="public">
+          <name>Level1</name>
+          <initializer>= 512</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" prot="public">
+          <name>Level3</name>
+          <initializer>= 768</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca69d39c12009d5b7d336c5e87ca922392" prot="public">
+          <name>Level5</name>
+          <initializer>= 1024</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca63664aa8bee7544118de87bf48d529ee" prot="public">
+          <name>Level1</name>
+          <initializer>= 512</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" prot="public">
+          <name>Level3</name>
+          <initializer>= 768</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca69d39c12009d5b7d336c5e87ca922392" prot="public">
+          <name>Level5</name>
+          <initializer>= 1024</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="40" column="5" bodyfile="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="enum" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SecurityLevel</name>
+        <qualifiedname>satox::security::pqc::MLKEM::SecurityLevel</qualifiedname>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca63664aa8bee7544118de87bf48d529ee" prot="public">
+          <name>Level1</name>
+          <initializer>= 512</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" prot="public">
+          <name>Level3</name>
+          <initializer>= 768</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca69d39c12009d5b7d336c5e87ca922392" prot="public">
+          <name>Level5</name>
+          <initializer>= 1024</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca63664aa8bee7544118de87bf48d529ee" prot="public">
+          <name>Level1</name>
+          <initializer>= 512</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" prot="public">
+          <name>Level3</name>
+          <initializer>= 768</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca69d39c12009d5b7d336c5e87ca922392" prot="public">
+          <name>Level5</name>
+          <initializer>= 1024</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="40" column="5" bodyfile="src/security/include/security/pqc/ml_kem.hpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1af74237180cfdaea57fb146a089ae781c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="d7/d59/classsatox_1_1security_1_1pqc_1_1MLKEM_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; Impl &gt; satox::security::pqc::MLKEM::pImpl</definition>
+        <argsstring></argsstring>
+        <name>pImpl</name>
+        <qualifiedname>satox::security::pqc::MLKEM::pImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="77" column="21" bodyfile="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a52c73657cc41364c1e715fd59854405a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::MLKEM::MLKEM</definition>
+        <argsstring>(SecurityLevel level=SecurityLevel::Level3)</argsstring>
+        <name>MLKEM</name>
+        <qualifiedname>satox::security::pqc::MLKEM::MLKEM</qualifiedname>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">SecurityLevel</ref></type>
+          <declname>level</declname>
+          <defval><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" kindref="member">SecurityLevel::Level3</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="47" column="14" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="204" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a5a597bc5a575d13340b81defa6fd1b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::MLKEM::~MLKEM</definition>
+        <argsstring>()</argsstring>
+        <name>~MLKEM</name>
+        <qualifiedname>satox::security::pqc::MLKEM::~MLKEM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="48" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::MLKEM::generateKeyPair</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>satox::security::pqc::MLKEM::generateKeyPair</qualifiedname>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="51" column="10" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="209" bodyend="212"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="49" endline="77">satox::security::pqc::HybridCrypto::Impl::generateHybridKeyPair</referencedby>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="79" endline="124">satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a47e8c22640047421b8f55e4e9a348b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::MLKEM::encapsulate</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;ciphertext, std::vector&lt; uint8_t &gt; &amp;sharedSecret)</argsstring>
+        <name>encapsulate</name>
+        <qualifiedname>satox::security::pqc::MLKEM::encapsulate</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>sharedSecret</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="55" column="10" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="214" bodyend="218"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="79" endline="124">satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a40501c583b4c09c63de7c54aadbb7bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::MLKEM::decapsulate</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::vector&lt; uint8_t &gt; &amp;ciphertext, std::vector&lt; uint8_t &gt; &amp;sharedSecret)</argsstring>
+        <name>decapsulate</name>
+        <qualifiedname>satox::security::pqc::MLKEM::decapsulate</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>sharedSecret</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="60" column="10" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="220" bodyend="224"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a52dc7111b594ae6b1aa6fbd7fd0e546a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="126" endline="162">satox::security::pqc::HybridCrypto::Impl::hybridDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getPublicKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPublicKeySize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getPublicKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="65" column="12" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="226" bodyend="228"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a6b3f809c13716a649b8abb18931ef789" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="236" endline="241">satox::security::pqc::HybridCrypto::Impl::getCiphertextSize</referencedby>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2052efaa5f3c9143fb752517495fc88a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="224" endline="228">satox::security::pqc::HybridCrypto::Impl::getPublicKeySize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a7dc4257db86a5b1b4cd7fb6db1791d8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getPrivateKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrivateKeySize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getPrivateKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="66" column="12" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="230" bodyend="232"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a8ea1d16b78d995fb6c760723425242ae" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="230" endline="234">satox::security::pqc::HybridCrypto::Impl::getPrivateKeySize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a17f5a99d44527e760cc1769be24bedd3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getCiphertextSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getCiphertextSize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getCiphertextSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="67" column="12" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="234" bodyend="236"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a6b3f809c13716a649b8abb18931ef789" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="236" endline="241">satox::security::pqc::HybridCrypto::Impl::getCiphertextSize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a223f61018531cd27da5897f8125ce109" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getSharedSecretSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSharedSecretSize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getSharedSecretSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="68" column="12" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="238" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aa7aec49ef9298922e736f206aa45cad6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">SecurityLevel</ref></type>
+        <definition>MLKEM::SecurityLevel satox::security::pqc::MLKEM::getSecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getSecurityLevel</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getSecurityLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="69" column="19" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="242" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::MLKEM::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="72" column="17" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="246" bodyend="248"/>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="49" endline="77">satox::security::pqc::HybridCrypto::Impl::generateHybridKeyPair</referencedby>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a52dc7111b594ae6b1aa6fbd7fd0e546a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="126" endline="162">satox::security::pqc::HybridCrypto::Impl::hybridDecrypt</referencedby>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="79" endline="124">satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1add5f8a91323363d50800f4409a7c3c9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::pqc::MLKEM::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::security::pqc::MLKEM::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="73" column="10" bodyfile="src/security/pqc/ml_kem.cpp" bodystart="250" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a52c73657cc41364c1e715fd59854405a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::MLKEM::MLKEM</definition>
+        <argsstring>(SecurityLevel level=SecurityLevel::Level3)</argsstring>
+        <name>MLKEM</name>
+        <qualifiedname>satox::security::pqc::MLKEM::MLKEM</qualifiedname>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">SecurityLevel</ref></type>
+          <declname>level</declname>
+          <defval><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" kindref="member">SecurityLevel::Level3</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="47" column="14"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6eca68290d8bb76fe3ceb98d34e8b068f6be" compoundref="df/d78/satox_2security_2pqc_2pqc_2ml__kem_8hpp" startline="42">Level3</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a5a597bc5a575d13340b81defa6fd1b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::MLKEM::~MLKEM</definition>
+        <argsstring>()</argsstring>
+        <name>~MLKEM</name>
+        <qualifiedname>satox::security::pqc::MLKEM::~MLKEM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="48" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::MLKEM::generateKeyPair</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>satox::security::pqc::MLKEM::generateKeyPair</qualifiedname>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="51" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a47e8c22640047421b8f55e4e9a348b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::MLKEM::encapsulate</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;ciphertext, std::vector&lt; uint8_t &gt; &amp;sharedSecret)</argsstring>
+        <name>encapsulate</name>
+        <qualifiedname>satox::security::pqc::MLKEM::encapsulate</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>sharedSecret</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="55" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a40501c583b4c09c63de7c54aadbb7bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::MLKEM::decapsulate</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::vector&lt; uint8_t &gt; &amp;ciphertext, std::vector&lt; uint8_t &gt; &amp;sharedSecret)</argsstring>
+        <name>decapsulate</name>
+        <qualifiedname>satox::security::pqc::MLKEM::decapsulate</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>sharedSecret</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="60" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getPublicKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPublicKeySize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getPublicKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="65" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a7dc4257db86a5b1b4cd7fb6db1791d8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getPrivateKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrivateKeySize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getPrivateKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="66" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a17f5a99d44527e760cc1769be24bedd3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getCiphertextSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getCiphertextSize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getCiphertextSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="67" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a223f61018531cd27da5897f8125ce109" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::MLKEM::getSharedSecretSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSharedSecretSize</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getSharedSecretSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="68" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ae2eafe26b805bd1f6f3fa5d1756008ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">SecurityLevel</ref></type>
+        <definition>SecurityLevel satox::security::pqc::MLKEM::getSecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getSecurityLevel</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getSecurityLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="69" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::MLKEM::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::security::pqc::MLKEM::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="72" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1add5f8a91323363d50800f4409a7c3c9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::pqc::MLKEM::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::security::pqc::MLKEM::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/security/pqc/ml_kem.hpp" line="73" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" line="37" column="1" bodyfile="src/security/include/satox/security/pqc/pqc/ml_kem.hpp" bodystart="37" bodyend="78"/>
+    <listofallmembers>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1add5f8a91323363d50800f4409a7c3c9f" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>clearLastError</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1add5f8a91323363d50800f4409a7c3c9f" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>clearLastError</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a40501c583b4c09c63de7c54aadbb7bd7" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>decapsulate</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a40501c583b4c09c63de7c54aadbb7bd7" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>decapsulate</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a47e8c22640047421b8f55e4e9a348b03" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>encapsulate</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a47e8c22640047421b8f55e4e9a348b03" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>encapsulate</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>generateKeyPair</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>generateKeyPair</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a17f5a99d44527e760cc1769be24bedd3" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getCiphertextSize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a17f5a99d44527e760cc1769be24bedd3" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getCiphertextSize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getLastError</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getLastError</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a7dc4257db86a5b1b4cd7fb6db1791d8a" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getPrivateKeySize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a7dc4257db86a5b1b4cd7fb6db1791d8a" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getPrivateKeySize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getPublicKeySize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getPublicKeySize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aa7aec49ef9298922e736f206aa45cad6" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getSecurityLevel</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ae2eafe26b805bd1f6f3fa5d1756008ba" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getSecurityLevel</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a223f61018531cd27da5897f8125ce109" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getSharedSecretSize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a223f61018531cd27da5897f8125ce109" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>getSharedSecretSize</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a52c73657cc41364c1e715fd59854405a" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>MLKEM</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a52c73657cc41364c1e715fd59854405a" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>MLKEM</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1af74237180cfdaea57fb146a089ae781c" prot="private" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>pImpl</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>SecurityLevel</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>SecurityLevel</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a5a597bc5a575d13340b81defa6fd1b43" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>~MLKEM</name></member>
+      <member refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a5a597bc5a575d13340b81defa6fd1b43" prot="public" virt="non-virtual"><scope>satox::security::pqc::MLKEM</scope><name>~MLKEM</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

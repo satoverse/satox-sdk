@@ -1,0 +1,1011 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::pqc::HybridCrypto::Impl</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1aef89c61d465bfefbc658fb94d0d82d39" prot="private" static="no" mutable="no">
+        <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+        <definition>MLKEM::SecurityLevel satox::security::pqc::HybridCrypto::Impl::kemLevel</definition>
+        <argsstring></argsstring>
+        <name>kemLevel</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::kemLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="265" column="26" bodyfile="src/security/pqc/hybrid.cpp" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abbcd7523857f195c7cd411e0402fabd5" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+        <definition>MLDSA::SecurityLevel satox::security::pqc::HybridCrypto::Impl::dsaLevel</definition>
+        <argsstring></argsstring>
+        <name>dsaLevel</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::dsaLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="266" column="26" bodyfile="src/security/pqc/hybrid.cpp" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abe4693bc1ce5cd0ff3d8706936152411" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::HybridCrypto::Impl::lastError</definition>
+        <argsstring></argsstring>
+        <name>lastError</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::lastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="267" column="17" bodyfile="src/security/pqc/hybrid.cpp" bodystart="267" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abd151c1ec6a2d261c550d203cd9a6760" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::HybridCrypto::Impl::Impl</definition>
+        <argsstring>(MLKEM::SecurityLevel kemLevel, MLDSA::SecurityLevel dsaLevel)</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::Impl</qualifiedname>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+          <declname>kemLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+          <declname>dsaLevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="42" column="5" bodyfile="src/security/pqc/hybrid.cpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::generateHybridKeyPair</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>generateHybridKeyPair</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::generateHybridKeyPair</qualifiedname>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="49" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="49" bodyend="77"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1ac748f656dbdbbcdaf652ab7f3ab190ae" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="197" endline="200">satox::security::pqc::MLDSA::generateKeyPair</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="209" endline="212">satox::security::pqc::MLKEM::generateKeyPair</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="246" endline="248">satox::security::pqc::MLKEM::getLastError</references>
+        <referencedby refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a50468081cac58fd1c863246cef64ac7d" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="206" endline="221">rotateKeys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, const std::vector&lt; uint8_t &gt; &amp;message, std::vector&lt; uint8_t &gt; &amp;ciphertext)</argsstring>
+        <name>hybridEncrypt</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="79" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="79" bodyend="124"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a47e8c22640047421b8f55e4e9a348b03" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="214" endline="218">satox::security::pqc::MLKEM::encapsulate</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="209" endline="212">satox::security::pqc::MLKEM::generateKeyPair</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="246" endline="248">satox::security::pqc::MLKEM::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a8465cc26cae1015d1b5c0d8aa3ef5295" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="202" endline="206">satox::security::pqc::MLDSA::sign</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a52dc7111b594ae6b1aa6fbd7fd0e546a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridDecrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::vector&lt; uint8_t &gt; &amp;ciphertext, std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>hybridDecrypt</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridDecrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="126" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="126" bodyend="162"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a40501c583b4c09c63de7c54aadbb7bd7" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="220" endline="224">satox::security::pqc::MLKEM::decapsulate</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="246" endline="248">satox::security::pqc::MLKEM::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a518b043b5c997f96e76750d69125efa1" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="208" endline="212">satox::security::pqc::MLDSA::verify</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a58c8108eb8f1b2a8a2660f5e0a5052bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridSign</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::vector&lt; uint8_t &gt; &amp;message, std::vector&lt; uint8_t &gt; &amp;signature)</argsstring>
+        <name>hybridSign</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridSign</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="164" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="164" bodyend="183"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a8465cc26cae1015d1b5c0d8aa3ef5295" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="202" endline="206">satox::security::pqc::MLDSA::sign</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a19179504ef87578eccfe07e4923332da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridVerify</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, const std::vector&lt; uint8_t &gt; &amp;message, const std::vector&lt; uint8_t &gt; &amp;signature)</argsstring>
+        <name>hybridVerify</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridVerify</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="185" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="185" bodyend="204"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a518b043b5c997f96e76750d69125efa1" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="208" endline="212">satox::security::pqc::MLDSA::verify</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a50468081cac58fd1c863246cef64ac7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::rotateKeys</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;oldPrivateKey, std::vector&lt; uint8_t &gt; &amp;newPublicKey, std::vector&lt; uint8_t &gt; &amp;newPrivateKey)</argsstring>
+        <name>rotateKeys</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::rotateKeys</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>oldPrivateKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>newPublicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>newPrivateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="206" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="206" bodyend="221"/>
+        <references refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="49" endline="77">generateHybridKeyPair</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2052efaa5f3c9143fb752517495fc88a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getPublicKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPublicKeySize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getPublicKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="224" column="12" bodyfile="src/security/pqc/hybrid.cpp" bodystart="224" bodyend="228"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1acaa83b6f9418f27804a15769f2e239ab" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="214" endline="216">satox::security::pqc::MLDSA::getPublicKeySize</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="226" endline="228">satox::security::pqc::MLKEM::getPublicKeySize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a8ea1d16b78d995fb6c760723425242ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getPrivateKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrivateKeySize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getPrivateKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="230" column="12" bodyfile="src/security/pqc/hybrid.cpp" bodystart="230" bodyend="234"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a30a78eceebfda8789eae4ec74999bd5f" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="218" endline="220">satox::security::pqc::MLDSA::getPrivateKeySize</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a7dc4257db86a5b1b4cd7fb6db1791d8a" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="230" endline="232">satox::security::pqc::MLKEM::getPrivateKeySize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a6b3f809c13716a649b8abb18931ef789" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getCiphertextSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getCiphertextSize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getCiphertextSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="236" column="12" bodyfile="src/security/pqc/hybrid.cpp" bodystart="236" bodyend="241"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a17f5a99d44527e760cc1769be24bedd3" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="234" endline="236">satox::security::pqc::MLKEM::getCiphertextSize</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="226" endline="228">satox::security::pqc::MLKEM::getPublicKeySize</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a96298ba6b7cf59702565747655e40423" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="222" endline="224">satox::security::pqc::MLDSA::getSignatureSize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a44f6c5b8aa4cc7dab85d64ede093b375" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getSignatureSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSignatureSize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getSignatureSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="243" column="12" bodyfile="src/security/pqc/hybrid.cpp" bodystart="243" bodyend="246"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a96298ba6b7cf59702565747655e40423" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="222" endline="224">satox::security::pqc::MLDSA::getSignatureSize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1afb52761779fdedc8761c90ebdf5e2f07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+        <definition>MLKEM::SecurityLevel satox::security::pqc::HybridCrypto::Impl::getKEMSecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getKEMSecurityLevel</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getKEMSecurityLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="248" column="26" bodyfile="src/security/pqc/hybrid.cpp" bodystart="248" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a70f33404c0610760b5716eabe796be4a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+        <definition>MLDSA::SecurityLevel satox::security::pqc::HybridCrypto::Impl::getDSASecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getDSASecurityLevel</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getDSASecurityLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="252" column="26" bodyfile="src/security/pqc/hybrid.cpp" bodystart="252" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a37f552cbccd7bae2cfd0b111333a8c01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::HybridCrypto::Impl::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="256" column="17" bodyfile="src/security/pqc/hybrid.cpp" bodystart="256" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a56ca453921ad9aedcebac4eaccbb5d31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::pqc::HybridCrypto::Impl::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="260" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="260" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abd151c1ec6a2d261c550d203cd9a6760" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::HybridCrypto::Impl::Impl</definition>
+        <argsstring>(MLKEM::SecurityLevel kemLevel, MLDSA::SecurityLevel dsaLevel)</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::Impl</qualifiedname>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+          <declname>kemLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+          <declname>dsaLevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="42" column="5" bodyfile="src/security/src/hybrid.cpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::generateHybridKeyPair</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>generateHybridKeyPair</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::generateHybridKeyPair</qualifiedname>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="49" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="49" bodyend="77"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1ac748f656dbdbbcdaf652ab7f3ab190ae" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="197" endline="200">satox::security::pqc::MLDSA::generateKeyPair</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="209" endline="212">satox::security::pqc::MLKEM::generateKeyPair</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="246" endline="248">satox::security::pqc::MLKEM::getLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, const std::vector&lt; uint8_t &gt; &amp;message, std::vector&lt; uint8_t &gt; &amp;ciphertext)</argsstring>
+        <name>hybridEncrypt</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridEncrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="79" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="79" bodyend="124"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a47e8c22640047421b8f55e4e9a348b03" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="214" endline="218">satox::security::pqc::MLKEM::encapsulate</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1aafec756d46a235a04d198cc5ded7e5ba" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="209" endline="212">satox::security::pqc::MLKEM::generateKeyPair</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="246" endline="248">satox::security::pqc::MLKEM::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a8465cc26cae1015d1b5c0d8aa3ef5295" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="202" endline="206">satox::security::pqc::MLDSA::sign</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a52dc7111b594ae6b1aa6fbd7fd0e546a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridDecrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::vector&lt; uint8_t &gt; &amp;ciphertext, std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>hybridDecrypt</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridDecrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="126" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="126" bodyend="162"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a40501c583b4c09c63de7c54aadbb7bd7" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="220" endline="224">satox::security::pqc::MLKEM::decapsulate</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a4dfcef989693f185272924797a6c7850" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="246" endline="248">satox::security::pqc::MLKEM::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a518b043b5c997f96e76750d69125efa1" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="208" endline="212">satox::security::pqc::MLDSA::verify</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a58c8108eb8f1b2a8a2660f5e0a5052bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridSign</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::vector&lt; uint8_t &gt; &amp;message, std::vector&lt; uint8_t &gt; &amp;signature)</argsstring>
+        <name>hybridSign</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridSign</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="164" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="164" bodyend="183"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a8465cc26cae1015d1b5c0d8aa3ef5295" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="202" endline="206">satox::security::pqc::MLDSA::sign</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a19179504ef87578eccfe07e4923332da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::hybridVerify</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, const std::vector&lt; uint8_t &gt; &amp;message, const std::vector&lt; uint8_t &gt; &amp;signature)</argsstring>
+        <name>hybridVerify</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::hybridVerify</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="185" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="185" bodyend="204"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a3af097b6a9e77778071759f303431c71" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="230" endline="232">satox::security::pqc::MLDSA::getLastError</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a518b043b5c997f96e76750d69125efa1" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="208" endline="212">satox::security::pqc::MLDSA::verify</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a50468081cac58fd1c863246cef64ac7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::rotateKeys</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;oldPrivateKey, std::vector&lt; uint8_t &gt; &amp;newPublicKey, std::vector&lt; uint8_t &gt; &amp;newPrivateKey)</argsstring>
+        <name>rotateKeys</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::rotateKeys</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>oldPrivateKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>newPublicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>newPrivateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="206" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="206" bodyend="221"/>
+        <references refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="49" endline="77">generateHybridKeyPair</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2052efaa5f3c9143fb752517495fc88a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getPublicKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPublicKeySize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getPublicKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="224" column="12" bodyfile="src/security/src/hybrid.cpp" bodystart="224" bodyend="228"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1acaa83b6f9418f27804a15769f2e239ab" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="214" endline="216">satox::security::pqc::MLDSA::getPublicKeySize</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="226" endline="228">satox::security::pqc::MLKEM::getPublicKeySize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a8ea1d16b78d995fb6c760723425242ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getPrivateKeySize</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrivateKeySize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getPrivateKeySize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="230" column="12" bodyfile="src/security/src/hybrid.cpp" bodystart="230" bodyend="234"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a30a78eceebfda8789eae4ec74999bd5f" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="218" endline="220">satox::security::pqc::MLDSA::getPrivateKeySize</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a7dc4257db86a5b1b4cd7fb6db1791d8a" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="230" endline="232">satox::security::pqc::MLKEM::getPrivateKeySize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a6b3f809c13716a649b8abb18931ef789" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getCiphertextSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getCiphertextSize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getCiphertextSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="236" column="12" bodyfile="src/security/src/hybrid.cpp" bodystart="236" bodyend="241"/>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a17f5a99d44527e760cc1769be24bedd3" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="234" endline="236">satox::security::pqc::MLKEM::getCiphertextSize</references>
+        <references refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1a1dd4ceeb17a87376368507a30b80ff6a" compoundref="d1/d58/pqc_2ml__kem_8cpp" startline="226" endline="228">satox::security::pqc::MLKEM::getPublicKeySize</references>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a96298ba6b7cf59702565747655e40423" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="222" endline="224">satox::security::pqc::MLDSA::getSignatureSize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a44f6c5b8aa4cc7dab85d64ede093b375" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::security::pqc::HybridCrypto::Impl::getSignatureSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSignatureSize</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getSignatureSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="243" column="12" bodyfile="src/security/src/hybrid.cpp" bodystart="243" bodyend="246"/>
+        <references refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1a96298ba6b7cf59702565747655e40423" compoundref="d5/d2c/pqc_2ml__dsa_8cpp" startline="222" endline="224">satox::security::pqc::MLDSA::getSignatureSize</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1afb52761779fdedc8761c90ebdf5e2f07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+        <definition>MLKEM::SecurityLevel satox::security::pqc::HybridCrypto::Impl::getKEMSecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getKEMSecurityLevel</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getKEMSecurityLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="248" column="26" bodyfile="src/security/src/hybrid.cpp" bodystart="248" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a70f33404c0610760b5716eabe796be4a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+        <definition>MLDSA::SecurityLevel satox::security::pqc::HybridCrypto::Impl::getDSASecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getDSASecurityLevel</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getDSASecurityLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="252" column="26" bodyfile="src/security/src/hybrid.cpp" bodystart="252" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a37f552cbccd7bae2cfd0b111333a8c01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::HybridCrypto::Impl::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="256" column="17" bodyfile="src/security/src/hybrid.cpp" bodystart="256" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a56ca453921ad9aedcebac4eaccbb5d31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::pqc::HybridCrypto::Impl::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="260" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="260" bodyend="262"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ab2eeecd5bae555ec6442be4452336b80" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::pair&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt; satox::security::pqc::HybridCrypto::Impl::splitKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;combinedKey)</argsstring>
+        <name>splitKey</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::splitKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>combinedKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="270" column="5" bodyfile="src/security/pqc/hybrid.cpp" bodystart="270" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1acd97b13751fbec74df8842598c72643a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::security::pqc::HybridCrypto::Impl::combineKeys</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;kemKey, const std::vector&lt; uint8_t &gt; &amp;dsaKey)</argsstring>
+        <name>combineKeys</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::combineKeys</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>kemKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dsaKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="283" column="17" bodyfile="src/security/pqc/hybrid.cpp" bodystart="283" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a475d8677b49b66679f24a976883b9392" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::encryptMessage</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;message, const std::vector&lt; uint8_t &gt; &amp;key, std::vector&lt; uint8_t &gt; &amp;encrypted)</argsstring>
+        <name>encryptMessage</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::encryptMessage</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="292" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="292" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2845f51e62b587ff4dcd824808ddfa67" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::decryptMessage</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;encrypted, const std::vector&lt; uint8_t &gt; &amp;key, std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>decryptMessage</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::decryptMessage</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="299" column="10" bodyfile="src/security/pqc/hybrid.cpp" bodystart="299" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1aee7b6f1818ad0995115a48f29e273586" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::tuple&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::tuple&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt; satox::security::pqc::HybridCrypto::Impl::splitComponents</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;combined)</argsstring>
+        <name>splitComponents</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::splitComponents</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>combined</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="308" column="5" bodyfile="src/security/pqc/hybrid.cpp" bodystart="308" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a63502b38cb3a055e4d323cabe504b32d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::security::pqc::HybridCrypto::Impl::combineComponents</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;kemCiphertext, const std::vector&lt; uint8_t &gt; &amp;encryptedMessage, const std::vector&lt; uint8_t &gt; &amp;ephemeralPublicKey, const std::vector&lt; uint8_t &gt; &amp;signature)</argsstring>
+        <name>combineComponents</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::combineComponents</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>kemCiphertext</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encryptedMessage</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ephemeralPublicKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/hybrid.cpp" line="331" column="17" bodyfile="src/security/pqc/hybrid.cpp" bodystart="331" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ab2eeecd5bae555ec6442be4452336b80" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::pair&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt; satox::security::pqc::HybridCrypto::Impl::splitKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;combinedKey)</argsstring>
+        <name>splitKey</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::splitKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>combinedKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="270" column="5" bodyfile="src/security/src/hybrid.cpp" bodystart="270" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1acd97b13751fbec74df8842598c72643a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::security::pqc::HybridCrypto::Impl::combineKeys</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;kemKey, const std::vector&lt; uint8_t &gt; &amp;dsaKey)</argsstring>
+        <name>combineKeys</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::combineKeys</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>kemKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dsaKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="283" column="17" bodyfile="src/security/src/hybrid.cpp" bodystart="283" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a475d8677b49b66679f24a976883b9392" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::encryptMessage</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;message, const std::vector&lt; uint8_t &gt; &amp;key, std::vector&lt; uint8_t &gt; &amp;encrypted)</argsstring>
+        <name>encryptMessage</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::encryptMessage</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="292" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="292" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2845f51e62b587ff4dcd824808ddfa67" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::HybridCrypto::Impl::decryptMessage</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;encrypted, const std::vector&lt; uint8_t &gt; &amp;key, std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>decryptMessage</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::decryptMessage</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="299" column="10" bodyfile="src/security/src/hybrid.cpp" bodystart="299" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1aee7b6f1818ad0995115a48f29e273586" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::tuple&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt;</type>
+        <definition>std::tuple&lt; std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt;, std::vector&lt; uint8_t &gt; &gt; satox::security::pqc::HybridCrypto::Impl::splitComponents</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;combined)</argsstring>
+        <name>splitComponents</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::splitComponents</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>combined</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="308" column="5" bodyfile="src/security/src/hybrid.cpp" bodystart="308" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a63502b38cb3a055e4d323cabe504b32d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::security::pqc::HybridCrypto::Impl::combineComponents</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;kemCiphertext, const std::vector&lt; uint8_t &gt; &amp;encryptedMessage, const std::vector&lt; uint8_t &gt; &amp;ephemeralPublicKey, const std::vector&lt; uint8_t &gt; &amp;signature)</argsstring>
+        <name>combineComponents</name>
+        <qualifiedname>satox::security::pqc::HybridCrypto::Impl::combineComponents</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>kemCiphertext</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encryptedMessage</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>ephemeralPublicKey</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/hybrid.cpp" line="331" column="17" bodyfile="src/security/src/hybrid.cpp" bodystart="331" bodyend="347"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/security/pqc/hybrid.cpp" line="40" column="1" bodyfile="src/security/pqc/hybrid.cpp" bodystart="40" bodyend="348"/>
+    <listofallmembers>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a56ca453921ad9aedcebac4eaccbb5d31" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>clearLastError</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a56ca453921ad9aedcebac4eaccbb5d31" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>clearLastError</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a63502b38cb3a055e4d323cabe504b32d" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>combineComponents</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a63502b38cb3a055e4d323cabe504b32d" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>combineComponents</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1acd97b13751fbec74df8842598c72643a" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>combineKeys</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1acd97b13751fbec74df8842598c72643a" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>combineKeys</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2845f51e62b587ff4dcd824808ddfa67" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>decryptMessage</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2845f51e62b587ff4dcd824808ddfa67" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>decryptMessage</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abbcd7523857f195c7cd411e0402fabd5" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>dsaLevel</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a475d8677b49b66679f24a976883b9392" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>encryptMessage</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a475d8677b49b66679f24a976883b9392" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>encryptMessage</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>generateHybridKeyPair</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ac9889e7caec2d5f3f8e8ac2c9e2d558a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>generateHybridKeyPair</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a6b3f809c13716a649b8abb18931ef789" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getCiphertextSize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a6b3f809c13716a649b8abb18931ef789" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getCiphertextSize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a70f33404c0610760b5716eabe796be4a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getDSASecurityLevel</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a70f33404c0610760b5716eabe796be4a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getDSASecurityLevel</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1afb52761779fdedc8761c90ebdf5e2f07" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getKEMSecurityLevel</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1afb52761779fdedc8761c90ebdf5e2f07" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getKEMSecurityLevel</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a37f552cbccd7bae2cfd0b111333a8c01" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getLastError</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a37f552cbccd7bae2cfd0b111333a8c01" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getLastError</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a8ea1d16b78d995fb6c760723425242ae" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getPrivateKeySize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a8ea1d16b78d995fb6c760723425242ae" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getPrivateKeySize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2052efaa5f3c9143fb752517495fc88a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getPublicKeySize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a2052efaa5f3c9143fb752517495fc88a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getPublicKeySize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a44f6c5b8aa4cc7dab85d64ede093b375" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getSignatureSize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a44f6c5b8aa4cc7dab85d64ede093b375" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>getSignatureSize</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a52dc7111b594ae6b1aa6fbd7fd0e546a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridDecrypt</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a52dc7111b594ae6b1aa6fbd7fd0e546a" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridDecrypt</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridEncrypt</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ae04adbafcedfd60a7e095f79f3083172" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridEncrypt</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a58c8108eb8f1b2a8a2660f5e0a5052bc" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridSign</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a58c8108eb8f1b2a8a2660f5e0a5052bc" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridSign</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a19179504ef87578eccfe07e4923332da" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridVerify</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a19179504ef87578eccfe07e4923332da" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>hybridVerify</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abd151c1ec6a2d261c550d203cd9a6760" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>Impl</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abd151c1ec6a2d261c550d203cd9a6760" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>Impl</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1aef89c61d465bfefbc658fb94d0d82d39" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>kemLevel</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1abe4693bc1ce5cd0ff3d8706936152411" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>lastError</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a50468081cac58fd1c863246cef64ac7d" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>rotateKeys</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1a50468081cac58fd1c863246cef64ac7d" prot="public" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>rotateKeys</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1aee7b6f1818ad0995115a48f29e273586" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>splitComponents</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1aee7b6f1818ad0995115a48f29e273586" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>splitComponents</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ab2eeecd5bae555ec6442be4452336b80" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>splitKey</name></member>
+      <member refid="dc/d3f/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1_1Impl_1ab2eeecd5bae555ec6442be4452336b80" prot="private" virt="non-virtual"><scope>satox::security::pqc::HybridCrypto::Impl</scope><name>splitKey</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

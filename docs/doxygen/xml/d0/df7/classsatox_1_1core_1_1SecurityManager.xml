@@ -1,0 +1,1126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/df7/classsatox_1_1core_1_1SecurityManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::SecurityManager</compoundname>
+    <includes refid="d2/ddb/core_2include_2satox_2core_2security__manager_8hpp" local="no">security_manager.hpp</includes>
+    <innerclass refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" prot="public">satox::core::SecurityManager::SecurityConfig</innerclass>
+    <innerclass refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" prot="public">satox::core::SecurityManager::SecurityStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SecurityLevel</name>
+        <qualifiedname>satox::core::SecurityManager::SecurityLevel</qualifiedname>
+        <enumvalue id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10a41bc94cbd8eebea13ce0491b2ac11b88" prot="public">
+          <name>LOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ac87f3be66ffc3c0d4249f1c2cc5f3cce" prot="public">
+          <name>MEDIUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ab89de3b4b81c4facfac906edf29aec8c" prot="public">
+          <name>HIGH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Security level enumeration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="55" column="5" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="55" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, <ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref>)&gt;</type>
+        <definition>using satox::core::SecurityManager::SecurityCallback =  std::function&lt;void(const std::string&amp;, SecurityLevel)&gt;</definition>
+        <argsstring></argsstring>
+        <name>SecurityCallback</name>
+        <qualifiedname>satox::core::SecurityManager::SecurityCallback</qualifiedname>
+        <briefdescription>
+<para>Callback types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="72" column="5" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::core::SecurityManager::AuditCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>AuditCallback</name>
+        <qualifiedname>satox::core::SecurityManager::AuditCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="73" column="5" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab1a2d88eabf56ad5cd9d8317f1541f21" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::SecurityManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="139" column="10" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1af68081c07b43a678ff2ba64096586219" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref></type>
+        <definition>SecurityConfig satox::core::SecurityManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::SecurityManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="140" column="20" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a66285e5cad92c41ec8c5144db6aabf2d" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" kindref="compound">SecurityStats</ref></type>
+        <definition>SecurityStats satox::core::SecurityManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::SecurityManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="141" column="19" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a10ea05ba8f8a51f8ad0f18e608941d77" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::last_error_</definition>
+        <argsstring></argsstring>
+        <name>last_error_</name>
+        <qualifiedname>satox::core::SecurityManager::last_error_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="142" column="17" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8850698d76015695f8c9684cd48e28d2" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; satox::core::SecurityManager::keys_</definition>
+        <argsstring></argsstring>
+        <name>keys_</name>
+        <qualifiedname>satox::core::SecurityManager::keys_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="143" column="24" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a836765ce1a629ad0f445c5fbde9522f4" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; satox::core::SecurityManager::sessions_</definition>
+        <argsstring></argsstring>
+        <name>sessions_</name>
+        <qualifiedname>satox::core::SecurityManager::sessions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="144" column="24" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeafcb5e330b73685e6623d6312dd4b61" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::chrono::system_clock::time_point &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::chrono::system_clock::time_point&gt; satox::core::SecurityManager::sessionTimes_</definition>
+        <argsstring></argsstring>
+        <name>sessionTimes_</name>
+        <qualifiedname>satox::core::SecurityManager::sessionTimes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="145" column="24" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1f28ad32be5df03afea68bfdefb9a246" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::SecurityManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::SecurityManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="146" column="24" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a16b5870929387496469259375a06c660" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; satox::core::SecurityManager::auditLog_</definition>
+        <argsstring></argsstring>
+        <name>auditLog_</name>
+        <qualifiedname>satox::core::SecurityManager::auditLog_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="147" column="17" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad2fc45afd00ae2c8c3feca25b8d37e4e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" kindref="member">SecurityCallback</ref> &gt;</type>
+        <definition>std::vector&lt;SecurityCallback&gt; satox::core::SecurityManager::securityCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>securityCallbacks_</name>
+        <qualifiedname>satox::core::SecurityManager::securityCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="148" column="17" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa2629dc34ae11e6a85edf8c94ab6ee1f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" kindref="member">AuditCallback</ref> &gt;</type>
+        <definition>std::vector&lt;AuditCallback&gt; satox::core::SecurityManager::auditCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>auditCallbacks_</name>
+        <qualifiedname>satox::core::SecurityManager::auditCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="149" column="17" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa00d3200d5718c9d826d417f1bb82e55" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref></type>
+        <definition>SecurityLevel satox::core::SecurityManager::security_level_</definition>
+        <argsstring></argsstring>
+        <name>security_level_</name>
+        <qualifiedname>satox::core::SecurityManager::security_level_</qualifiedname>
+        <initializer>= <ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ac87f3be66ffc3c0d4249f1c2cc5f3cce" kindref="member">SecurityLevel::MEDIUM</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="150" column="19" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8c5ad7028d5777f4032d69315d85b6ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::SecurityManager::SecurityManager</definition>
+        <argsstring>()</argsstring>
+        <name>SecurityManager</name>
+        <qualifiedname>satox::core::SecurityManager::SecurityManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="75" column="5" bodyfile="src/core/src/security_manager.cpp" bodystart="42" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1644350b3df120db31db2257f9dbd06e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::SecurityManager::~SecurityManager</definition>
+        <argsstring>()</argsstring>
+        <name>~SecurityManager</name>
+        <qualifiedname>satox::core::SecurityManager::~SecurityManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="76" column="5" bodyfile="src/core/src/security_manager.cpp" bodystart="45" bodyend="47"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae3bfd31a98cc8966da64c3efe397dd15" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="72" endline="88">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab3c6552ea3709879f529e722d184553c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::initialize</definition>
+        <argsstring>(const SecurityConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::SecurityManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the security manager with configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="79" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="49" bodyend="70"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae3bfd31a98cc8966da64c3efe397dd15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::SecurityManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="80" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="72" bodyend="88"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1644350b3df120db31db2257f9dbd06e" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="45" endline="47">~SecurityManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8d30b8b6ae3953abb63aaca506356ed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::generateKeyPair</definition>
+        <argsstring>(const std::string &amp;key_id)</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>satox::core::SecurityManager::generateKeyPair</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key_id</declname>
+        </param>
+        <briefdescription>
+<para>Key management. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="83" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a79118511a5fc0c1fff4e6465b0d1b362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::validateKey</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>validateKey</name>
+        <qualifiedname>satox::core::SecurityManager::validateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="84" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="258" bodyend="260"/>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4507f1109bbadfb38ccfb62cc2e18126" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="262" endline="277">storeKey</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4507f1109bbadfb38ccfb62cc2e18126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::storeKey</definition>
+        <argsstring>(const std::string &amp;keyId, const std::string &amp;key)</argsstring>
+        <name>storeKey</name>
+        <qualifiedname>satox::core::SecurityManager::storeKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="85" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="262" bodyend="277"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a79118511a5fc0c1fff4e6465b0d1b362" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="258" endline="260">validateKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a604340549d66066effd1f46ad17ff349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::getKey</definition>
+        <argsstring>(const std::string &amp;keyId)</argsstring>
+        <name>getKey</name>
+        <qualifiedname>satox::core::SecurityManager::getKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="86" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="279" bodyend="288"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a20d8ec2be8f6d5f18e744868b205b8b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::generateKey</definition>
+        <argsstring>(int length)</argsstring>
+        <name>generateKey</name>
+        <qualifiedname>satox::core::SecurityManager::generateKey</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="87" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="232" bodyend="256"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9f92b94782183a6acda062b7eea128c1" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="325" endline="332">createSession</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4afab2c03c0223691d4cb403793a6eb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>bool satox::security::SecurityManager::sign</definition>
+        <argsstring>(const std::string &amp;key_id, const std::string &amp;data)</argsstring>
+        <name>sign</name>
+        <qualifiedname>satox::core::SecurityManager::sign</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Signing and verification. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="90" column="19" bodyfile="src/security/security_manager.cpp" bodystart="471" bodyend="474"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4afab2c03c0223691d4cb403793a6eb7" compoundref="d2/d58/security_2security__manager_8cpp" startline="471" endline="474">sign</references>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4afab2c03c0223691d4cb403793a6eb7" compoundref="d2/d58/security_2security__manager_8cpp" startline="471" endline="474">sign</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1acbc4791b4176fe5ebae812b22e8b04e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::SecurityManager::verify</definition>
+        <argsstring>(const std::string &amp;key_id, const std::string &amp;data, const std::string &amp;signature)</argsstring>
+        <name>verify</name>
+        <qualifiedname>satox::core::SecurityManager::verify</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="91" column="10" bodyfile="src/security/security_manager.cpp" bodystart="476" bodyend="479"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acbc4791b4176fe5ebae812b22e8b04e3" compoundref="d2/d58/security_2security__manager_8cpp" startline="476" endline="479">verify</references>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acbc4791b4176fe5ebae812b22e8b04e3" compoundref="d2/d58/security_2security__manager_8cpp" startline="476" endline="479">verify</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5cbe9f4f0ccbde74521d80983e33756e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; satox::core::SecurityManager::encrypt</definition>
+        <argsstring>(const std::string &amp;key_id, const std::string &amp;data)</argsstring>
+        <name>encrypt</name>
+        <qualifiedname>satox::core::SecurityManager::encrypt</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Encryption and decryption. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="94" column="19"/>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7d2c728e978ed44e55c3bbfc0edf5fd4" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="205" endline="214">encryptString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a13e9a460296a092269543dfb601d4a23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; satox::core::SecurityManager::decrypt</definition>
+        <argsstring>(const std::string &amp;key_id, const std::string &amp;encrypted_data)</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>satox::core::SecurityManager::decrypt</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>encrypted_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="95" column="19"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ac87f3be66ffc3c0d4249f1c2cc5f3cce" compoundref="d2/ddb/core_2include_2satox_2core_2security__manager_8hpp" startline="57">MEDIUM</references>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeaeab4a379d375d816903965cc117d5f" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="216" endline="230">decryptString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad7b9ebeb63dbeb56570a48e98c1a66fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::SecurityManager::encrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::string &amp;key)</argsstring>
+        <name>encrypt</name>
+        <qualifiedname>satox::core::SecurityManager::encrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="96" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="90" bodyend="146"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1afecb974db80ded20922fbb45c13b8f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::SecurityManager::decrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::string &amp;key)</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>satox::core::SecurityManager::decrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="97" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="148" bodyend="203"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7d2c728e978ed44e55c3bbfc0edf5fd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::encryptString</definition>
+        <argsstring>(const std::string &amp;data, const std::string &amp;key)</argsstring>
+        <name>encryptString</name>
+        <qualifiedname>satox::core::SecurityManager::encryptString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="98" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="205" bodyend="214"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5cbe9f4f0ccbde74521d80983e33756e">encrypt</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeaeab4a379d375d816903965cc117d5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::decryptString</definition>
+        <argsstring>(const std::string &amp;data, const std::string &amp;key)</argsstring>
+        <name>decryptString</name>
+        <qualifiedname>satox::core::SecurityManager::decryptString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="99" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="216" bodyend="230"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a13e9a460296a092269543dfb601d4a23">decrypt</references>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5a547cc445a968171d6f3dd8dea77c36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::authenticate</definition>
+        <argsstring>(const std::string &amp;username, const std::string &amp;password)</argsstring>
+        <name>authenticate</name>
+        <qualifiedname>satox::core::SecurityManager::authenticate</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Authentication and session management. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="102" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="290" bodyend="307"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="441" endline="444">setLastError</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ada14ada74c1f442f4833e44454403ee5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::validateSession</definition>
+        <argsstring>(const std::string &amp;sessionId)</argsstring>
+        <name>validateSession</name>
+        <qualifiedname>satox::core::SecurityManager::validateSession</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="103" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="309" bodyend="323"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9d6155b94f42efbb791d976b013bef83" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="458" endline="467">isSessionExpired</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9f92b94782183a6acda062b7eea128c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::createSession</definition>
+        <argsstring>(const std::string &amp;username)</argsstring>
+        <name>createSession</name>
+        <qualifiedname>satox::core::SecurityManager::createSession</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="104" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="325" bodyend="332"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a20d8ec2be8f6d5f18e744868b205b8b5" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="232" endline="256">generateKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1bdce2f3de6f463486f73b7ad6c3d8d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::invalidateSession</definition>
+        <argsstring>(const std::string &amp;sessionId)</argsstring>
+        <name>invalidateSession</name>
+        <qualifiedname>satox::core::SecurityManager::invalidateSession</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="105" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="334" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9d6155b94f42efbb791d976b013bef83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::isSessionExpired</definition>
+        <argsstring>(const std::string &amp;sessionId)</argsstring>
+        <name>isSessionExpired</name>
+        <qualifiedname>satox::core::SecurityManager::isSessionExpired</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sessionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="106" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="458" bodyend="467"/>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a662efaa06f0bcefd9932d2fe9259ee64" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="469" endline="482">cleanupExpiredSessions</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ada14ada74c1f442f4833e44454403ee5" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="309" endline="323">validateSession</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a662efaa06f0bcefd9932d2fe9259ee64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::cleanupExpiredSessions</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupExpiredSessions</name>
+        <qualifiedname>satox::core::SecurityManager::cleanupExpiredSessions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="107" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="469" bodyend="482"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9d6155b94f42efbb791d976b013bef83" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="458" endline="467">isSessionExpired</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a01a7ffcb363bba42102b8a3963acf554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::validateInput</definition>
+        <argsstring>(const std::string &amp;input)</argsstring>
+        <name>validateInput</name>
+        <qualifiedname>satox::core::SecurityManager::validateInput</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="d3/de8/structsatox_1_1core_1_1Input" kindref="compound">Input</ref> validation and permissions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="110" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="341" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aed0084937eb09ba55ac7b59c4eb9871c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::checkPermission</definition>
+        <argsstring>(const std::string &amp;user, const std::string &amp;resource)</argsstring>
+        <name>checkPermission</name>
+        <qualifiedname>satox::core::SecurityManager::checkPermission</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="111" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="360" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ac7e2cff1b4ee6d073f73df9d019e07c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref></type>
+        <definition>SecurityManager::SecurityLevel satox::core::SecurityManager::getSecurityLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getSecurityLevel</name>
+        <qualifiedname>satox::core::SecurityManager::getSecurityLevel</qualifiedname>
+        <briefdescription>
+<para>Security level management. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="114" column="19" bodyfile="src/core/src/security_manager.cpp" bodystart="365" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab5bb9d772b07507450fbcecc42615f15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::setSecurityLevel</definition>
+        <argsstring>(SecurityLevel level)</argsstring>
+        <name>setSecurityLevel</name>
+        <qualifiedname>satox::core::SecurityManager::setSecurityLevel</qualifiedname>
+        <param>
+          <type><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="115" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="370" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1d43424efce3b0644bf2884250cafa38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::logEvent</definition>
+        <argsstring>(const std::string &amp;event, const std::string &amp;details)</argsstring>
+        <name>logEvent</name>
+        <qualifiedname>satox::core::SecurityManager::logEvent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Event and audit logging. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="118" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="375" bodyend="383"/>
+        <references refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9abf8572d56167deb057cb4b1d8f22ee" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="452" endline="456">notifyAuditEvent</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a82bbeb987fc592143fd9e2f9b68c09d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::SecurityManager::getAuditLog</definition>
+        <argsstring>() const</argsstring>
+        <name>getAuditLog</name>
+        <qualifiedname>satox::core::SecurityManager::getAuditLog</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="119" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="385" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1af09a6e5b65425a3c253775f72411df41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::clearAuditLog</definition>
+        <argsstring>()</argsstring>
+        <name>clearAuditLog</name>
+        <qualifiedname>satox::core::SecurityManager::clearAuditLog</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="120" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="390" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a2306c0c90803cc3500b3ccea24042e9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::registerSecurityCallback</definition>
+        <argsstring>(SecurityCallback callback)</argsstring>
+        <name>registerSecurityCallback</name>
+        <qualifiedname>satox::core::SecurityManager::registerSecurityCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" kindref="member">SecurityCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="121" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="395" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a26d69bab8309b66986e9e4d136f7c4e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::registerAuditCallback</definition>
+        <argsstring>(AuditCallback callback)</argsstring>
+        <name>registerAuditCallback</name>
+        <qualifiedname>satox::core::SecurityManager::registerAuditCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" kindref="member">AuditCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="122" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa6fe174ded06b9130f34abb882c1ed45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::unregisterSecurityCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterSecurityCallback</name>
+        <qualifiedname>satox::core::SecurityManager::unregisterSecurityCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="123" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="405" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a17d788ef0b1a7f1552c57b1cca4d6c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::unregisterAuditCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterAuditCallback</name>
+        <qualifiedname>satox::core::SecurityManager::unregisterAuditCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="124" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="410" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1abd4f6534f5f5b49506545bb86467b8d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::notifySecurityEvent</definition>
+        <argsstring>(const std::string &amp;event, SecurityLevel level)</argsstring>
+        <name>notifySecurityEvent</name>
+        <qualifiedname>satox::core::SecurityManager::notifySecurityEvent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="125" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="446" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9abf8572d56167deb057cb4b1d8f22ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::notifyAuditEvent</definition>
+        <argsstring>(const std::string &amp;event, const std::string &amp;details)</argsstring>
+        <name>notifyAuditEvent</name>
+        <qualifiedname>satox::core::SecurityManager::notifyAuditEvent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="126" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="452" bodyend="456"/>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1d43424efce3b0644bf2884250cafa38" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="375" endline="383">logEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9e40fe4fb087d6df8256747c4478834f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" kindref="compound">SecurityStats</ref></type>
+        <definition>SecurityManager::SecurityStats satox::core::SecurityManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::SecurityManager::getStats</qualifiedname>
+        <briefdescription>
+<para>Statistics and config. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="129" column="19" bodyfile="src/core/src/security_manager.cpp" bodystart="415" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca23da79d31ade1f7068e963b02dccbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::SecurityManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="130" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="420" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a0386bbda7efbf6dda27882ac2fa9a1ed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref></type>
+        <definition>SecurityManager::SecurityConfig satox::core::SecurityManager::getConfig</definition>
+        <argsstring>() const</argsstring>
+        <name>getConfig</name>
+        <qualifiedname>satox::core::SecurityManager::getConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="131" column="20" bodyfile="src/core/src/security_manager.cpp" bodystart="425" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7dde6b6997e20ba50ab3fa88c5a879ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SecurityManager::updateConfig</definition>
+        <argsstring>(const SecurityConfig &amp;config)</argsstring>
+        <name>updateConfig</name>
+        <qualifiedname>satox::core::SecurityManager::updateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="132" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="430" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae43b4f72b842fc58ca50d398302f727f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::SecurityManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::SecurityManager::getLastError</qualifiedname>
+        <briefdescription>
+<para>Error handling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="135" column="17" bodyfile="src/core/src/security_manager.cpp" bodystart="436" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::SecurityManager::setLastError</definition>
+        <argsstring>(const std::string &amp;error)</argsstring>
+        <name>setLastError</name>
+        <qualifiedname>satox::core::SecurityManager::setLastError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/security_manager.hpp" line="136" column="10" bodyfile="src/core/src/security_manager.cpp" bodystart="441" bodyend="444"/>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5a547cc445a968171d6f3dd8dea77c36" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="290" endline="307">authenticate</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1afecb974db80ded20922fbb45c13b8f7c" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="148" endline="203">decrypt</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeaeab4a379d375d816903965cc117d5f" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="216" endline="230">decryptString</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad7b9ebeb63dbeb56570a48e98c1a66fd" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="90" endline="146">encrypt</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a20d8ec2be8f6d5f18e744868b205b8b5" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="232" endline="256">generateKey</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a604340549d66066effd1f46ad17ff349" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="279" endline="288">getKey</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab3c6552ea3709879f529e722d184553c" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="49" endline="70">initialize</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae3bfd31a98cc8966da64c3efe397dd15" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="72" endline="88">shutdown</referencedby>
+        <referencedby refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4507f1109bbadfb38ccfb62cc2e18126" compoundref="d6/d1c/core_2src_2security__manager_8cpp" startline="262" endline="277">storeKey</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager" kindref="compound">SecurityManager</ref> provides cryptographic and security operations for Satox SDK. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/security_manager.hpp" line="44" column="1" bodyfile="src/core/include/satox/core/security_manager.hpp" bodystart="44" bodyend="151"/>
+    <listofallmembers>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>AuditCallback</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa2629dc34ae11e6a85edf8c94ab6ee1f" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>auditCallbacks_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a16b5870929387496469259375a06c660" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>auditLog_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5a547cc445a968171d6f3dd8dea77c36" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>authenticate</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aed0084937eb09ba55ac7b59c4eb9871c" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>checkPermission</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a662efaa06f0bcefd9932d2fe9259ee64" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>cleanupExpiredSessions</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1af09a6e5b65425a3c253775f72411df41" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>clearAuditLog</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1af68081c07b43a678ff2ba64096586219" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>config_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9f92b94782183a6acda062b7eea128c1" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>createSession</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a13e9a460296a092269543dfb601d4a23" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>decrypt</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1afecb974db80ded20922fbb45c13b8f7c" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>decrypt</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeaeab4a379d375d816903965cc117d5f" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>decryptString</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5cbe9f4f0ccbde74521d80983e33756e" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>encrypt</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad7b9ebeb63dbeb56570a48e98c1a66fd" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>encrypt</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7d2c728e978ed44e55c3bbfc0edf5fd4" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>encryptString</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a20d8ec2be8f6d5f18e744868b205b8b5" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>generateKey</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8d30b8b6ae3953abb63aaca506356ed1" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>generateKeyPair</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a82bbeb987fc592143fd9e2f9b68c09d4" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>getAuditLog</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a0386bbda7efbf6dda27882ac2fa9a1ed" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>getConfig</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a604340549d66066effd1f46ad17ff349" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>getKey</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae43b4f72b842fc58ca50d398302f727f" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>getLastError</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ac7e2cff1b4ee6d073f73df9d019e07c8" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>getSecurityLevel</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9e40fe4fb087d6df8256747c4478834f" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>getStats</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab3c6552ea3709879f529e722d184553c" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>initialize</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab1a2d88eabf56ad5cd9d8317f1541f21" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>initialized_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1bdce2f3de6f463486f73b7ad6c3d8d9" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>invalidateSession</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9d6155b94f42efbb791d976b013bef83" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>isSessionExpired</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8850698d76015695f8c9684cd48e28d2" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>keys_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a10ea05ba8f8a51f8ad0f18e608941d77" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>last_error_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1d43424efce3b0644bf2884250cafa38" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>logEvent</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1f28ad32be5df03afea68bfdefb9a246" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>mutex_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9abf8572d56167deb057cb4b1d8f22ee" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>notifyAuditEvent</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1abd4f6534f5f5b49506545bb86467b8d1" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>notifySecurityEvent</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a26d69bab8309b66986e9e4d136f7c4e9" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>registerAuditCallback</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a2306c0c90803cc3500b3ccea24042e9b" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>registerSecurityCallback</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca23da79d31ade1f7068e963b02dccbc" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>resetStats</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa00d3200d5718c9d826d417f1bb82e55" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>security_level_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>SecurityCallback</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad2fc45afd00ae2c8c3feca25b8d37e4e" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>securityCallbacks_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>SecurityLevel</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8c5ad7028d5777f4032d69315d85b6ca" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>SecurityManager</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a836765ce1a629ad0f445c5fbde9522f4" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>sessions_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeafcb5e330b73685e6623d6312dd4b61" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>sessionTimes_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>setLastError</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab5bb9d772b07507450fbcecc42615f15" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>setSecurityLevel</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae3bfd31a98cc8966da64c3efe397dd15" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>shutdown</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4afab2c03c0223691d4cb403793a6eb7" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>sign</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a66285e5cad92c41ec8c5144db6aabf2d" prot="private" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>stats_</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4507f1109bbadfb38ccfb62cc2e18126" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>storeKey</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a17d788ef0b1a7f1552c57b1cca4d6c50" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>unregisterAuditCallback</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa6fe174ded06b9130f34abb882c1ed45" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>unregisterSecurityCallback</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7dde6b6997e20ba50ab3fa88c5a879ac" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>updateConfig</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a01a7ffcb363bba42102b8a3963acf554" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>validateInput</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a79118511a5fc0c1fff4e6465b0d1b362" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>validateKey</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ada14ada74c1f442f4833e44454403ee5" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>validateSession</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acbc4791b4176fe5ebae812b22e8b04e3" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>verify</name></member>
+      <member refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1644350b3df120db31db2257f9dbd06e" prot="public" virt="non-virtual"><scope>satox::core::SecurityManager</scope><name>~SecurityManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

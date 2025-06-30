@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/d2d/structsatox_1_1database_1_1TableData" kind="struct" language="C++" prot="public">
+    <compoundname>satox::database::TableData</compoundname>
+    <includes refid="dc/d57/database_2include_2satox_2database_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d6/d2d/structsatox_1_1database_1_1TableData_1a3b4aab964b6047a4338acccbaeb68a35" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::TableData::schema</definition>
+        <argsstring></argsstring>
+        <name>schema</name>
+        <qualifiedname>satox::database::TableData::schema</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="117" column="20" bodyfile="src/database/include/satox/database/types.hpp" bodystart="117" bodyend="-1"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac3db052ed6860f3513bf658062823ad3" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1362" endline="1406">satox::database::DatabaseManager::createTable</referencedby>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a710a376f3bb057a6b538c7f6d1992949" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1066" endline="1135">satox::database::DatabaseManager::restoreFromBackup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d2d/structsatox_1_1database_1_1TableData_1adb50fbe1712c7e30bd17005ca01d6ac9" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt;nlohmann::json&gt; satox::database::TableData::records</definition>
+        <argsstring></argsstring>
+        <name>records</name>
+        <qualifiedname>satox::database::TableData::records</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="118" column="17" bodyfile="src/database/include/satox/database/types.hpp" bodystart="118" bodyend="-1"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a710a376f3bb057a6b538c7f6d1992949" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1066" endline="1135">satox::database::DatabaseManager::restoreFromBackup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d2d/structsatox_1_1database_1_1TableData_1aaf668d7bc0f602b23adf3d0efc2324cd" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;std::string&gt; &gt; satox::database::TableData::indexes</definition>
+        <argsstring></argsstring>
+        <name>indexes</name>
+        <qualifiedname>satox::database::TableData::indexes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="119" column="14" bodyfile="src/database/include/satox/database/types.hpp" bodystart="119" bodyend="-1"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a710a376f3bb057a6b538c7f6d1992949" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1066" endline="1135">satox::database::DatabaseManager::restoreFromBackup</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="10">
+        <label>K</label>
+      </node>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::database::TableData</label>
+        <link refid="d6/d2d/structsatox_1_1database_1_1TableData"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>records</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>indexes</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="9">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::map&lt; std::string, std::vector&lt; std::string &gt; &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="template-instance">
+          <edgelabel>&lt; std::string, std::vector&lt; std::string &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; nlohmann::json &gt;</label>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; nlohmann::json &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; std::string &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/database/include/satox/database/types.hpp" line="116" column="1" bodyfile="src/database/include/satox/database/types.hpp" bodystart="116" bodyend="120"/>
+    <listofallmembers>
+      <member refid="d6/d2d/structsatox_1_1database_1_1TableData_1aaf668d7bc0f602b23adf3d0efc2324cd" prot="public" virt="non-virtual"><scope>satox::database::TableData</scope><name>indexes</name></member>
+      <member refid="d6/d2d/structsatox_1_1database_1_1TableData_1adb50fbe1712c7e30bd17005ca01d6ac9" prot="public" virt="non-virtual"><scope>satox::database::TableData</scope><name>records</name></member>
+      <member refid="d6/d2d/structsatox_1_1database_1_1TableData_1a3b4aab964b6047a4338acccbaeb68a35" prot="public" virt="non-virtual"><scope>satox::database::TableData</scope><name>schema</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

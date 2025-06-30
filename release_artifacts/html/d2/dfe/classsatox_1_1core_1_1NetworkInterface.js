@@ -1,0 +1,27 @@
+var classsatox_1_1core_1_1NetworkInterface =
+[
+    [ "NetworkInterface", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#aa4153b3164eeb5c540cd6f0db45676e5", null ],
+    [ "~NetworkInterface", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a5d85643e6b44de50a76cfd1104208b7f", null ],
+    [ "NetworkInterface", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#add2288586f872b9ed8c9f5558472fe8a", null ],
+    [ "NetworkInterface", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a7c12e298782717f680d7b1d6ab7836b4", null ],
+    [ "addPeer", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a428738938876b23899b61222f193d68b", null ],
+    [ "broadcastMessage", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#ac280e92dca6bc7faf3de160dc0bede6c", null ],
+    [ "connect", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a79f3ce0481b48306da23b51049059455", null ],
+    [ "disconnect", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a03ee7120c3d8d7cee0b0c2c92e22f2cb", null ],
+    [ "getBalance", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a738678646ce5ef43ae07d13211f4d094", null ],
+    [ "getBlockByHash", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#af4661bc16515675317f2ce1e7a6bab2d", null ],
+    [ "getLatestBlock", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a9c005cce6778916bc964303606ff64e7", null ],
+    [ "getMessages", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#aa43a0f71992e67835290af2abfac074c", null ],
+    [ "getPeers", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#ac5711a797cb2902f3d4aafc7bbd24425", null ],
+    [ "getTransactionByHash", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#ae631e6e658f98a70b8c5726f9264b01a", null ],
+    [ "handleResponse", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#adc28f5f7241ced861feb691be61cb82d", null ],
+    [ "isConnected", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a2d4bda12bda8022cc18b98ce70c9fca2", null ],
+    [ "operator=", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#af180f35436c530496bf659a9c6e7d3d9", null ],
+    [ "operator=", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#ab92de6cb019c819343ec867a9c48b4ea", null ],
+    [ "removePeer", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#ad779a365a1d901d4fc613fc7f3333877", null ],
+    [ "sendMessage", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a99f99ff6e32385c17d7105e68b13453b", null ],
+    [ "sendTransaction", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#aed28092a56c4b98c7a16fe06bd76f6c3", null ],
+    [ "setErrorCallback", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a543be0fa65933723b904dd3e0aba4e20", null ],
+    [ "setMessageCallback", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#a176bb64344072355aa8e706af637a16b", null ],
+    [ "waitForResponse", "d2/dfe/classsatox_1_1core_1_1NetworkInterface.html#ad3543350dc2848be54d1102125ebb7e5", null ]
+];

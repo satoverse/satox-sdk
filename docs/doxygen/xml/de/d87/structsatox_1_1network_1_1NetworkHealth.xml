@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d87/structsatox_1_1network_1_1NetworkHealth" kind="struct" language="C++" prot="public">
+    <compoundname>satox::network::NetworkHealth</compoundname>
+    <includes refid="db/d96/network_2include_2satox_2network_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="de/d87/structsatox_1_1network_1_1NetworkHealth_1a094a3effd668f35bddd0d8dd6c6d00ab" prot="public" static="no" mutable="no">
+        <type><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18" kindref="member">NetworkStatus</ref></type>
+        <definition>NetworkStatus satox::network::NetworkHealth::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>satox::network::NetworkHealth::status</qualifiedname>
+        <initializer>= <ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">NetworkStatus::UNKNOWN</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="88" column="19" bodyfile="src/network/include/satox/network/types.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d87/structsatox_1_1network_1_1NetworkHealth_1a21451598eab7e46acd5ece27e981a9fe" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkHealth::healthy</definition>
+        <argsstring></argsstring>
+        <name>healthy</name>
+        <qualifiedname>satox::network::NetworkHealth::healthy</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="89" column="10" bodyfile="src/network/include/satox/network/types.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d87/structsatox_1_1network_1_1NetworkHealth_1a761cce53a3443f2abe635e79d62d5039" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkHealth::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>satox::network::NetworkHealth::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="90" column="17" bodyfile="src/network/include/satox/network/types.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d87/structsatox_1_1network_1_1NetworkHealth_1a9b7a6f16393bf219090867dcb4e1abae" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::network::NetworkHealth::lastCheck</definition>
+        <argsstring></argsstring>
+        <name>lastCheck</name>
+        <qualifiedname>satox::network::NetworkHealth::lastCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="91" column="43" bodyfile="src/network/include/satox/network/types.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d87/structsatox_1_1network_1_1NetworkHealth_1a20344106f7de46ffe30d202e08563661" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::network::NetworkHealth::consecutiveFailures</definition>
+        <argsstring></argsstring>
+        <name>consecutiveFailures</name>
+        <qualifiedname>satox::network::NetworkHealth::consecutiveFailures</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="92" column="9" bodyfile="src/network/include/satox/network/types.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d87/structsatox_1_1network_1_1NetworkHealth_1a264dd249d4711c3f1276cc681e07e6c1" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::network::NetworkHealth::details</definition>
+        <argsstring></argsstring>
+        <name>details</name>
+        <qualifiedname>satox::network::NetworkHealth::details</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="93" column="20" bodyfile="src/network/include/satox/network/types.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::network::NetworkHealth</label>
+        <link refid="de/d87/structsatox_1_1network_1_1NetworkHealth"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/network/include/satox/network/types.hpp" line="87" column="1" bodyfile="src/network/include/satox/network/types.hpp" bodystart="87" bodyend="94"/>
+    <listofallmembers>
+      <member refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a20344106f7de46ffe30d202e08563661" prot="public" virt="non-virtual"><scope>satox::network::NetworkHealth</scope><name>consecutiveFailures</name></member>
+      <member refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a264dd249d4711c3f1276cc681e07e6c1" prot="public" virt="non-virtual"><scope>satox::network::NetworkHealth</scope><name>details</name></member>
+      <member refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a21451598eab7e46acd5ece27e981a9fe" prot="public" virt="non-virtual"><scope>satox::network::NetworkHealth</scope><name>healthy</name></member>
+      <member refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a9b7a6f16393bf219090867dcb4e1abae" prot="public" virt="non-virtual"><scope>satox::network::NetworkHealth</scope><name>lastCheck</name></member>
+      <member refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a761cce53a3443f2abe635e79d62d5039" prot="public" virt="non-virtual"><scope>satox::network::NetworkHealth</scope><name>message</name></member>
+      <member refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a094a3effd668f35bddd0d8dd6c6d00ab" prot="public" virt="non-virtual"><scope>satox::network::NetworkHealth</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

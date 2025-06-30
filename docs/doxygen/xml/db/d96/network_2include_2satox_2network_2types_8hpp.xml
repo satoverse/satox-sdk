@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/d96/network_2include_2satox_2network_2types_8hpp" kind="file" language="C++">
+    <compoundname>types.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/network/include/satox/network/types.hpp</label>
+        <link refid="db/d96/network_2include_2satox_2network_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="dc/dc7/structsatox_1_1network_1_1Version" prot="public">satox::network::Version</innerclass>
+    <innerclass refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig" prot="public">satox::network::NetworkConfig</innerclass>
+    <innerclass refid="d0/d63/structsatox_1_1network_1_1NetworkStats" prot="public">satox::network::NetworkStats</innerclass>
+    <innerclass refid="d6/da1/structsatox_1_1network_1_1NetworkResult" prot="public">satox::network::NetworkResult</innerclass>
+    <innerclass refid="de/d87/structsatox_1_1network_1_1NetworkHealth" prot="public">satox::network::NetworkHealth</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d6/d65/namespacesatox_1_1network">satox::network</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d6/d65/namespacesatox_1_1network" kindref="compound">satox::network</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Version<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="dc/dc7/structsatox_1_1network_1_1Version" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dc/dc7/structsatox_1_1network_1_1Version" kindref="compound">Version</ref><sp/>{</highlight></codeline>
+<codeline lineno="38" refid="dc/dc7/structsatox_1_1network_1_1Version_1a5e0bd1f7332242052faabf6f1cecfa4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/dc7/structsatox_1_1network_1_1Version_1a5e0bd1f7332242052faabf6f1cecfa4b" kindref="member">major</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39" refid="dc/dc7/structsatox_1_1network_1_1Version_1a229e048f6e7d18726c46b813b5fc5ca4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/dc7/structsatox_1_1network_1_1Version_1a229e048f6e7d18726c46b813b5fc5ca4" kindref="member">minor</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="40" refid="dc/dc7/structsatox_1_1network_1_1Version_1a5a66a8d2210fa2c4db664ce08554c72f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/dc7/structsatox_1_1network_1_1Version_1a5a66a8d2210fa2c4db664ce08554c72f" kindref="member">patch</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41" refid="dc/dc7/structsatox_1_1network_1_1Version_1ae12fc2c76620831f83c36c2804e5f82a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/dc7/structsatox_1_1network_1_1Version_1ae12fc2c76620831f83c36c2804e5f82a" kindref="member">build</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42" refid="dc/dc7/structsatox_1_1network_1_1Version_1adf0f5631b3490da24d6ed1647d953c1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/dc7/structsatox_1_1network_1_1Version_1adf0f5631b3490da24d6ed1647d953c1d" kindref="member">commit</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="dc/dc7/structsatox_1_1network_1_1Version_1aaf0da36536c22c635d5ad26cb24fe8f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/dc7/structsatox_1_1network_1_1Version_1aaf0da36536c22c635d5ad26cb24fe8f1" kindref="member">toString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::to_string(<ref refid="dc/dc7/structsatox_1_1network_1_1Version_1a5e0bd1f7332242052faabf6f1cecfa4b" kindref="member">major</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="dc/dc7/structsatox_1_1network_1_1Version_1a229e048f6e7d18726c46b813b5fc5ca4" kindref="member">minor</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="dc/dc7/structsatox_1_1network_1_1Version_1a5a66a8d2210fa2c4db664ce08554c72f" kindref="member">patch</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configuration<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1ac62d0629e51212bd5808a5fea63790f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1ac62d0629e51212bd5808a5fea63790f1" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;satox_network&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1ac9f4816d3fe43391357cfb75d04c4a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1ac9f4816d3fe43391357cfb75d04c4a73" kindref="member">enableLogging</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53" refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1a7a37f401eb8606ab738c251779397a2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1a7a37f401eb8606ab738c251779397a2c" kindref="member">logPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/components/network/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54" refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1af1aaa7bdf9021c2e4052479ada020f76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="dc/d3a/structsatox_1_1network_1_1NetworkConfig_1af1aaa7bdf9021c2e4052479ada020f76" kindref="member">additionalConfig</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Statistics<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="d0/d63/structsatox_1_1network_1_1NetworkStats" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats" kindref="compound">NetworkStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a2bdd3967398c6af425af24c2fbf2b881" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a2bdd3967398c6af425af24c2fbf2b881" kindref="member">totalOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60" refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a04d0e0a9665dea5daa5697a63d3ad49e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a04d0e0a9665dea5daa5697a63d3ad49e" kindref="member">successfulOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61" refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a31b03834659fcf2d92670be854ee5546" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a31b03834659fcf2d92670be854ee5546" kindref="member">failedOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62" refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a359e69a9b7248c5a9146efcdd130b4da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a359e69a9b7248c5a9146efcdd130b4da" kindref="member">lastOperation</ref>;</highlight></codeline>
+<codeline lineno="63" refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a40adb220dbeffb63bc86142a9a4803d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1a40adb220dbeffb63bc86142a9a4803d9" kindref="member">averageOperationTime</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="64" refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1af6c1961299688d41e74cbca981f15440" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d0/d63/structsatox_1_1network_1_1NetworkStats_1af6c1961299688d41e74cbca981f15440" kindref="member">additionalStats</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Result<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="d6/da1/structsatox_1_1network_1_1NetworkResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d6/da1/structsatox_1_1network_1_1NetworkResult" kindref="compound">NetworkResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="69" refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a349b4aa82cdbe57cc75e2ac824245c10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a349b4aa82cdbe57cc75e2ac824245c10" kindref="member">success</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70" refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a267a39df01883de00b84f0341900602c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a267a39df01883de00b84f0341900602c" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="71" refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a92cfbbc1af122505ed00fad27076f834" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a92cfbbc1af122505ed00fad27076f834" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="72" refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a3809cf70275368229d2381855547d2bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a3809cf70275368229d2381855547d2bb" kindref="member">duration</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18" kindref="member">NetworkStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="77" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a696b031073e74bf2cb98e5ef201d4aa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">UNKNOWN</ref>,</highlight></codeline>
+<codeline lineno="78" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a86bf8c89d85949f8f45cde2f73fce113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a86bf8c89d85949f8f45cde2f73fce113" kindref="member">INITIALIZING</ref>,</highlight></codeline>
+<codeline lineno="79" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18adee5f03c2c4e73657824e028494b18c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18adee5f03c2c4e73657824e028494b18c0" kindref="member">INITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="80" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a43491564ebcfd38568918efbd6e840fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a43491564ebcfd38568918efbd6e840fd" kindref="member">RUNNING</ref>,</highlight></codeline>
+<codeline lineno="81" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a09d4d696b4e935115b9313e3c412509a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a09d4d696b4e935115b9313e3c412509a" kindref="member">STOPPED</ref>,</highlight></codeline>
+<codeline lineno="82" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18abb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="83" refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a055c1a591abb0e8cd86dc969727bcc0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a055c1a591abb0e8cd86dc969727bcc0b" kindref="member">DISABLED</ref></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>health</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="de/d87/structsatox_1_1network_1_1NetworkHealth" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth" kindref="compound">NetworkHealth</ref><sp/>{</highlight></codeline>
+<codeline lineno="88" refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a094a3effd668f35bddd0d8dd6c6d00ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18" kindref="member">NetworkStatus</ref><sp/><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a094a3effd668f35bddd0d8dd6c6d00ab" kindref="member">status</ref><sp/>=<sp/><ref refid="d6/d65/namespacesatox_1_1network_1abe86c8ec3ac6d36771297efca4394c18a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">NetworkStatus::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="89" refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a21451598eab7e46acd5ece27e981a9fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a21451598eab7e46acd5ece27e981a9fe" kindref="member">healthy</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90" refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a761cce53a3443f2abe635e79d62d5039" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a761cce53a3443f2abe635e79d62d5039" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="91" refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a9b7a6f16393bf219090867dcb4e1abae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a9b7a6f16393bf219090867dcb4e1abae" kindref="member">lastCheck</ref>;</highlight></codeline>
+<codeline lineno="92" refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a20344106f7de46ffe30d202e08563661" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a20344106f7de46ffe30d202e08563661" kindref="member">consecutiveFailures</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="93" refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a264dd249d4711c3f1276cc681e07e6c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="de/d87/structsatox_1_1network_1_1NetworkHealth_1a264dd249d4711c3f1276cc681e07e6c1" kindref="member">details</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::network</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/network/include/satox/network/types.hpp"/>
+  </compounddef>
+</doxygen>

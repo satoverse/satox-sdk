@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/d4c/performance__optimization_8hpp" kind="file" language="C++">
+    <compoundname>performance_optimization.hpp</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="d9/d3e/performance__optimization_8cpp" local="yes">src/core/src/performance_optimization.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/performance_optimization.hpp</label>
+        <link refid="dd/d4c/performance__optimization_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>optional</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/performance_optimization.hpp</label>
+        <link refid="dd/d4c/performance__optimization_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/core/src/performance_optimization.cpp</label>
+        <link refid="d9/d3e/performance__optimization_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization" prot="public">satox::core::PerformanceOptimization</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a93679d45b0a31354cdbeb8672b110874" kindref="member">PerformanceOptimization</ref><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a93679d45b0a31354cdbeb8672b110874" kindref="member">PerformanceOptimization</ref>();</highlight></codeline>
+<codeline lineno="48" refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1aa4aeb274d37fd0055bfdbbf601c5590e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1aa4aeb274d37fd0055bfdbbf601c5590e" kindref="member">~PerformanceOptimization</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a7954a2a7294355f32c232174db34c58a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a7954a2a7294355f32c232174db34c58a" kindref="member">PerformanceOptimization</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a93679d45b0a31354cdbeb8672b110874" kindref="member">PerformanceOptimization</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a28fbe2c7270b700c1590477c43ccc858" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a93679d45b0a31354cdbeb8672b110874" kindref="member">PerformanceOptimization</ref>&amp;<sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a28fbe2c7270b700c1590477c43ccc858" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a93679d45b0a31354cdbeb8672b110874" kindref="member">PerformanceOptimization</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1aad99178e8c4cbbd83386492e5b475879" kindref="member">addToCache</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a3648cbdf5e93c9077d25d450f3af358f" kindref="member">getFromCache</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connection<sp/>pooling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a49504d5a3bf2394b70af7a1fc8c0c8ec" kindref="member">addConnection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a62550e91c678e563e07f6b55e93461f1" kindref="member">removeConnection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Batch<sp/>processing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a74dfdd25ee36ef2569756d06f95906df" kindref="member">addToBatch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Memory<sp/>optimization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dd3/classsatox_1_1core_1_1PerformanceOptimization_1a63d5496fc81a26e8a1c4fa6e86c9ce99" kindref="member">optimizeMemory</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl" kindref="compound">Impl</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>pimpl_;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/performance_optimization.hpp"/>
+  </compounddef>
+</doxygen>

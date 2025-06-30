@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_3576ad16fadd089d2a80dd46dbecf669" kind="dir">
+    <compoundname>src/rpc_proxy</compoundname>
+    <innerfile refid="d2/de9/rpc__proxy__manager_8cpp">rpc_proxy_manager.cpp</innerfile>
+    <innerfile refid="de/d06/utils_8cpp">utils.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md109">
+<title>Overview</title><para>The RPC Proxy component provides a thread-safe, configurable, and monitored proxy for forwarding JSON-RPC requests to blockchain nodes or other services. It is implemented as a Satox SDK core component, following all template and quality rules.</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md110">
+<title>Features</title><para><itemizedlist>
+<listitem><para>Singleton pattern (<computeroutput>getInstance()</computeroutput>)</para>
+</listitem><listitem><para>Thread-safe operations</para>
+</listitem><listitem><para>Configurable endpoint, credentials, and timeouts</para>
+</listitem><listitem><para>Structured logging to <computeroutput>logs/components/rpc_proxy/</computeroutput></para>
+</listitem><listitem><para>Health checks and statistics</para>
+</listitem><listitem><para>Callback/event support for errors and health</para>
+</listitem><listitem><para>Full test coverage</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md111">
+<title>Usage</title><para><programlisting><codeline><highlight class="normal">#include<sp/>&quot;satox/rpc_proxy/rpc_proxy_manager.hpp&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">satox::rpc_proxy::RpcProxyConfig<sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.endpoint<sp/>=<sp/>&quot;http://localhost:8545&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.username<sp/>=<sp/>&quot;user&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.password<sp/>=<sp/>&quot;pass&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.timeout_ms<sp/>=<sp/>1000;</highlight></codeline>
+<codeline><highlight class="normal">config.enableLogging<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">config.logPath<sp/>=<sp/>&quot;logs/components/rpc_proxy/&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">auto&amp;<sp/>proxy<sp/>=<sp/>satox::rpc_proxy::RpcProxyManager::getInstance();</highlight></codeline>
+<codeline><highlight class="normal">proxy.initialize(config);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>req<sp/>=<sp/>{{&quot;method&quot;,<sp/>&quot;ping&quot;},<sp/>{&quot;id&quot;,<sp/>&quot;1&quot;}};</highlight></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>resp;</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(proxy.sendRpcRequest(req,<sp/>resp))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>response</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">proxy.shutdown();</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md112">
+<title>Configuration</title><para><itemizedlist>
+<listitem><para><computeroutput>endpoint</computeroutput>: Target RPC server URL</para>
+</listitem><listitem><para><computeroutput>username</computeroutput>, <computeroutput>password</computeroutput>: Optional credentials</para>
+</listitem><listitem><para><computeroutput>timeout_ms</computeroutput>: Request timeout</para>
+</listitem><listitem><para><computeroutput>enableLogging</computeroutput>: Enable/disable logging</para>
+</listitem><listitem><para><computeroutput>logPath</computeroutput>: Log file directory</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md113">
+<title>Compliance</title><para><itemizedlist>
+<listitem><para>Follows Satox SDK <computeroutput>component_templates.md</computeroutput></para>
+</listitem><listitem><para>MIT License</para>
+</listitem><listitem><para>Copyright (c) 2025 Satoxcoin Core Developer</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md114">
+<title>⚠️ Limitations</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md115">
+<title><bold>Blockchain Compatibility</bold></title><para><itemizedlist>
+<listitem><para><bold>No Smart Contract Support:</bold> Satox is based on Ravencoin and does <bold>not</bold> support smart contracts or EVM compatibility</para>
+</listitem><listitem><para><bold>Asset-Based:</bold> Focuses on asset creation, management, and transfer rather than programmable contracts</para>
+</listitem><listitem><para><bold>UTXO Model:</bold> Uses Unspent Transaction Output (UTXO) model like Bitcoin/Ravencoin, not account-based like Ethereum</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md116">
+<title><bold>Platform Support</bold></title><para><itemizedlist>
+<listitem><para><bold>Desktop Focus:</bold> Primarily designed for desktop/server environments</para>
+</listitem><listitem><para><bold>Mobile Limitations:</bold> Mobile SDK provides limited functionality compared to core SDK</para>
+</listitem><listitem><para><bold>Browser Support:</bold> WebAssembly bindings have performance limitations for complex operations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md117">
+<title><bold>Network Requirements</bold></title><para><itemizedlist>
+<listitem><para><bold>Internet Connection:</bold> Requires active internet connection for blockchain operations</para>
+</listitem><listitem><para><bold>Node Synchronization:</bold> Full node operations require significant storage and bandwidth</para>
+</listitem><listitem><para><bold>API Dependencies:</bold> Some features depend on external API services</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/rpc_proxy/README.md_1autotoc_md118">
+<title><bold>Development Considerations</bold></title><para><itemizedlist>
+<listitem><para><bold>Learning Curve:</bold> Ravencoin/UTXO model differs from Ethereum/smart contract development</para>
+</listitem><listitem><para><bold>Testing Environment:</bold> Testnet required for development and testing</para>
+</listitem><listitem><para><bold>Asset Management:</bold> Asset creation and management have specific requirements and limitations </para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="src/rpc_proxy/"/>
+  </compounddef>
+</doxygen>

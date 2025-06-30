@@ -1,0 +1,183 @@
+/**
+ * @file $(basename "$1")
+ * @brief $(basename "$1" | sed 's/\./_/g' | tr '[:lower:]' '[:upper:]')
+ * @copyright Copyright (c) 2025 Satoxcoin Core Developers
+ * @license MIT License
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+#pragma once
+
+#include <string>
+#include <vector>
+#include <map>
+#include <memory>
+#include <mutex>
+#include <functional>
+#include <chrono>
+#include <nlohmann/json.hpp>
+
+namespace satox::core {
+
+class AssetManager {
+public:
+    // Asset types
+    enum class AssetType {
+        TOKEN,
+        NFT,
+        CUSTOM
+    };
+
+    // Asset states
+    enum class AssetState {
+        CREATED,
+        ISSUED,
+        TRANSFERRED,
+        BURNED,
+        ERROR
+    };
+
+    // Asset metadata structure
+    struct AssetMetadata {
+        std::string name;
+        std::string symbol;
+        std::string description;
+        std::string issuer;
+        std::string owner;
+        AssetType type;
+        uint64_t totalSupply;
+        uint8_t decimals;
+        std::string uri;
+        std::string hash;
+        std::chrono::system_clock::time_point creationTime;
+        std::chrono::system_clock::time_point lastModified;
+        nlohmann::json attributes;
+        nlohmann::json additionalData;
+    };
+
+    // Asset structure
+    struct Asset {
+        std::string id;
+        AssetMetadata metadata;
+        AssetState state;
+        std::string transactionId;
+        std::chrono::system_clock::time_point issueTime;
+        std::vector<std::string> history;
+        nlohmann::json additionalData;
+    };
+
+    // Asset stats structure
+    struct AssetStats {
+        size_t totalAssets;
+        size_t issuedAssets;
+        size_t transferredAssets;
+        size_t burnedAssets;
+        size_t errorAssets;
+        std::chrono::milliseconds averageIssueTime;
+        std::chrono::milliseconds averageTransferTime;
+        nlohmann::json typeDistribution;
+        nlohmann::json additionalStats;
+    };
+
+    // Callback types
+    using AssetCallback = std::function<void(const std::string&, AssetState)>;
+    using AssetMetadataCallback = std::function<void(const std::string&, const AssetMetadata&)>;
+    using AssetErrorCallback = std::function<void(const std::string&, const std::string&)>;
+
+    // Singleton instance
+    static AssetManager& getInstance();
+
+    // Initialization and shutdown
+    bool initialize(const nlohmann::json& config);
+    void shutdown();
+
+    // Asset creation and management
+    bool createAsset(const std::string& id, const AssetMetadata& metadata);
+    bool issueAsset(const std::string& id);
+    bool transferAsset(const std::string& id, const std::string& newOwner);
+    bool burnAsset(const std::string& id);
+    bool updateAssetMetadata(const std::string& id, const AssetMetadata& metadata);
+
+    // Asset querying
+    bool isAssetExists(const std::string& id) const;
+    Asset getAsset(const std::string& id) const;
+    std::vector<Asset> getAssetsByType(AssetType type) const;
+    std::vector<Asset> getAssetsByOwner(const std::string& owner) const;
+    std::vector<Asset> getAssetsByState(AssetState state) const;
+
+    // Asset metadata management
+    bool validateMetadata(const AssetMetadata& metadata) const;
+    bool updateAssetURI(const std::string& id, const std::string& uri);
+    bool updateAssetHash(const std::string& id, const std::string& hash);
+    bool addAssetAttribute(const std::string& id, const std::string& key, const nlohmann::json& value);
+    bool removeAssetAttribute(const std::string& id, const std::string& key);
+
+    // Asset history management
+    std::vector<std::string> getAssetHistory(const std::string& id) const;
+    bool addAssetHistoryEntry(const std::string& id, const std::string& entry);
+    bool clearAssetHistory(const std::string& id);
+
+    // Asset statistics
+    AssetStats getStats() const;
+    void resetStats();
+    bool enableStats(bool enable);
+
+    // Callback registration
+    void registerAssetCallback(AssetCallback callback);
+    void registerMetadataCallback(AssetMetadataCallback callback);
+    void registerErrorCallback(AssetErrorCallback callback);
+    void unregisterAssetCallback();
+    void unregisterMetadataCallback();
+    void unregisterErrorCallback();
+
+    // Error handling
+    std::string getLastError() const;
+    void clearLastError();
+
+private:
+    AssetManager() = default;
+    ~AssetManager() = default;
+    AssetManager(const AssetManager&) = delete;
+    AssetManager& operator=(const AssetManager&) = delete;
+
+    // Helper methods
+    bool validateConfig(const nlohmann::json& config) const;
+    bool validateAssetId(const std::string& id) const;
+    bool validateOwner(const std::string& owner) const;
+    bool checkAssetLimit() const;
+    void updateAssetState(const std::string& id, AssetState state);
+    void updateAssetStats(const std::string& id, AssetState state);
+    void notifyAssetChange(const std::string& id, AssetState state);
+    void notifyMetadataChange(const std::string& id, const AssetMetadata& metadata);
+    void notifyError(const std::string& id, const std::string& error);
+
+    // Member variables
+    mutable std::mutex mutex_;
+    bool initialized_ = false;
+    std::map<std::string, Asset> assets_;
+    std::map<std::string, std::vector<AssetCallback>> assetCallbacks_;
+    std::map<std::string, std::vector<AssetMetadataCallback>> metadataCallbacks_;
+    std::vector<AssetErrorCallback> errorCallbacks_;
+    AssetStats stats_;
+    bool statsEnabled_ = false;
+    std::string lastError_;
+};
+
+} // namespace satox::core 

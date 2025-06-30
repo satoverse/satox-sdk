@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d71/structsatox_1_1security_1_1SecurityResult" kind="struct" language="C++" prot="public">
+    <compoundname>satox::security::SecurityResult</compoundname>
+    <includes refid="d0/d9f/security_2include_2satox_2security_2security__manager_8hpp" local="no">security_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/d71/structsatox_1_1security_1_1SecurityResult_1a2976f179947e3972f99a25f3c67f02f9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::security::SecurityResult::success</definition>
+        <argsstring></argsstring>
+        <name>success</name>
+        <qualifiedname>satox::security::SecurityResult::success</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/security_manager.hpp" line="90" column="10" bodyfile="src/security/include/satox/security/security_manager.hpp" bodystart="90" bodyend="-1"/>
+        <referencedby refid="dc/d9e/classsatox_1_1security_1_1SecurityManager_1a9b92726165368812f76386b0e8a1f172" compoundref="d0/d4f/security_2src_2security__manager_8cpp" startline="201" endline="226">satox::security::SecurityManager::executeOperation</referencedby>
+        <referencedby refid="dc/d9e/classsatox_1_1security_1_1SecurityManager_1ac90a0151720d2e6f35ae52121ba4aad2" compoundref="d0/d4f/security_2src_2security__manager_8cpp" startline="166" endline="199">satox::security::SecurityManager::performOperation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d71/structsatox_1_1security_1_1SecurityResult_1ab5f2129b5d150386ccc44e6ab4726c90" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::security::SecurityResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::security::SecurityResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/security_manager.hpp" line="91" column="17" bodyfile="src/security/include/satox/security/security_manager.hpp" bodystart="91" bodyend="-1"/>
+        <referencedby refid="dc/d9e/classsatox_1_1security_1_1SecurityManager_1a9b92726165368812f76386b0e8a1f172" compoundref="d0/d4f/security_2src_2security__manager_8cpp" startline="201" endline="226">satox::security::SecurityManager::executeOperation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d71/structsatox_1_1security_1_1SecurityResult_1ad318d0d5f442ffbd498d3f134f2b8087" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::security::SecurityResult::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>satox::security::SecurityResult::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/security_manager.hpp" line="92" column="20" bodyfile="src/security/include/satox/security/security_manager.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d71/structsatox_1_1security_1_1SecurityResult_1a2bcea8e237de09164d790fcca8c32b8d" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::security::SecurityResult::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>satox::security::SecurityResult::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/security_manager.hpp" line="93" column="31" bodyfile="src/security/include/satox/security/security_manager.hpp" bodystart="93" bodyend="-1"/>
+        <referencedby refid="dc/d9e/classsatox_1_1security_1_1SecurityManager_1a9b92726165368812f76386b0e8a1f172" compoundref="d0/d4f/security_2src_2security__manager_8cpp" startline="201" endline="226">satox::security::SecurityManager::executeOperation</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::security::SecurityResult</label>
+        <link refid="d1/d71/structsatox_1_1security_1_1SecurityResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/security/include/satox/security/security_manager.hpp" line="89" column="1" bodyfile="src/security/include/satox/security/security_manager.hpp" bodystart="89" bodyend="94"/>
+    <listofallmembers>
+      <member refid="d1/d71/structsatox_1_1security_1_1SecurityResult_1ad318d0d5f442ffbd498d3f134f2b8087" prot="public" virt="non-virtual"><scope>satox::security::SecurityResult</scope><name>data</name></member>
+      <member refid="d1/d71/structsatox_1_1security_1_1SecurityResult_1a2bcea8e237de09164d790fcca8c32b8d" prot="public" virt="non-virtual"><scope>satox::security::SecurityResult</scope><name>duration</name></member>
+      <member refid="d1/d71/structsatox_1_1security_1_1SecurityResult_1ab5f2129b5d150386ccc44e6ab4726c90" prot="public" virt="non-virtual"><scope>satox::security::SecurityResult</scope><name>error</name></member>
+      <member refid="d1/d71/structsatox_1_1security_1_1SecurityResult_1a2976f179947e3972f99a25f3c67f02f9" prot="public" virt="non-virtual"><scope>satox::security::SecurityResult</scope><name>success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

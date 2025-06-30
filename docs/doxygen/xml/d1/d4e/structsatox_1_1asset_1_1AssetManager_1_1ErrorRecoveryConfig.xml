@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig" kind="struct" language="C++" prot="public">
+    <compoundname>satox::asset::AssetManager::ErrorRecoveryConfig</compoundname>
+    <includes refid="de/d94/core_2include_2satox_2asset_2asset__manager_8hpp" local="no">asset_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a5e50c7eacf00d17b0244f029280b8c04" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::asset::AssetManager::ErrorRecoveryConfig::max_retry_attempts</definition>
+        <argsstring></argsstring>
+        <name>max_retry_attempts</name>
+        <qualifiedname>satox::asset::AssetManager::ErrorRecoveryConfig::max_retry_attempts</qualifiedname>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/asset/asset_manager.hpp" line="101" column="16" bodyfile="src/core/include/satox/asset/asset_manager.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1abd1b1c4b1566672f52ecd44b55010e6a" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::asset::AssetManager::ErrorRecoveryConfig::retry_delay</definition>
+        <argsstring></argsstring>
+        <name>retry_delay</name>
+        <qualifiedname>satox::asset::AssetManager::ErrorRecoveryConfig::retry_delay</qualifiedname>
+        <initializer>= std::chrono::seconds(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/asset/asset_manager.hpp" line="102" column="35" bodyfile="src/core/include/satox/asset/asset_manager.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a9bc7156ebd8aaa852a8bd2792574f83a" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::asset::AssetManager::ErrorRecoveryConfig::recovery_timeout</definition>
+        <argsstring></argsstring>
+        <name>recovery_timeout</name>
+        <qualifiedname>satox::asset::AssetManager::ErrorRecoveryConfig::recovery_timeout</qualifiedname>
+        <initializer>= std::chrono::seconds(30)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/asset/asset_manager.hpp" line="103" column="35" bodyfile="src/core/include/satox/asset/asset_manager.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a541255ec8744f27b1b5b16495829bd3c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::asset::AssetManager::ErrorRecoveryConfig::enable_auto_recovery</definition>
+        <argsstring></argsstring>
+        <name>enable_auto_recovery</name>
+        <qualifiedname>satox::asset::AssetManager::ErrorRecoveryConfig::enable_auto_recovery</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/asset/asset_manager.hpp" line="104" column="14" bodyfile="src/core/include/satox/asset/asset_manager.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a2613b59a44584b3839654488e97c164a" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::asset::AssetManager::ErrorRecoveryConfig::max_recovery_queue_size</definition>
+        <argsstring></argsstring>
+        <name>max_recovery_queue_size</name>
+        <qualifiedname>satox::asset::AssetManager::ErrorRecoveryConfig::max_recovery_queue_size</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/asset/asset_manager.hpp" line="105" column="16" bodyfile="src/core/include/satox/asset/asset_manager.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/asset/asset_manager.hpp" line="100" column="5" bodyfile="src/core/include/satox/asset/asset_manager.hpp" bodystart="100" bodyend="106"/>
+    <listofallmembers>
+      <member refid="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a541255ec8744f27b1b5b16495829bd3c" prot="public" virt="non-virtual"><scope>satox::asset::AssetManager::ErrorRecoveryConfig</scope><name>enable_auto_recovery</name></member>
+      <member refid="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a2613b59a44584b3839654488e97c164a" prot="public" virt="non-virtual"><scope>satox::asset::AssetManager::ErrorRecoveryConfig</scope><name>max_recovery_queue_size</name></member>
+      <member refid="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a5e50c7eacf00d17b0244f029280b8c04" prot="public" virt="non-virtual"><scope>satox::asset::AssetManager::ErrorRecoveryConfig</scope><name>max_retry_attempts</name></member>
+      <member refid="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1a9bc7156ebd8aaa852a8bd2792574f83a" prot="public" virt="non-virtual"><scope>satox::asset::AssetManager::ErrorRecoveryConfig</scope><name>recovery_timeout</name></member>
+      <member refid="d1/d4e/structsatox_1_1asset_1_1AssetManager_1_1ErrorRecoveryConfig_1abd1b1c4b1566672f52ecd44b55010e6a" prot="public" virt="non-virtual"><scope>satox::asset::AssetManager::ErrorRecoveryConfig</scope><name>retry_delay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

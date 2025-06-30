@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/d34/classsatox_1_1core_1_1CoreException" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::CoreException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="da/d15/classsatox_1_1core_1_1CoreInitializationException" prot="public" virt="non-virtual">satox::core::CoreInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d0/dec/classsatox_1_1core_1_1CoreOperationException" prot="public" virt="non-virtual">satox::core::CoreOperationException</derivedcompoundref>
+    <includes refid="d7/dab/core_2include_2satox_2core_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d34/classsatox_1_1core_1_1CoreException_1a1082702e3a693a86c9f8564ebc376946" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref></type>
+        <definition>CoreErrorCode satox::core::CoreException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::core::CoreException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/error.hpp" line="70" column="19" bodyfile="src/core/include/satox/core/error.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d34/classsatox_1_1core_1_1CoreException_1a9f74640e19921dcbdcac1ec851e2fc4e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CoreException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::core::CoreException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/error.hpp" line="71" column="17" bodyfile="src/core/include/satox/core/error.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CoreException::CoreException</definition>
+        <argsstring>(CoreErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>CoreException</name>
+        <qualifiedname>satox::core::CoreException::CoreException</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/error.hpp" line="54" column="5" bodyfile="src/core/include/satox/core/error.hpp" bodystart="54" bodyend="55"/>
+        <references refid="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="61" endline="63">code</references>
+        <references refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="65" endline="67">message</references>
+        <referencedby refid="da/d15/classsatox_1_1core_1_1CoreInitializationException_1a3a4def9fe1466f7194f59dd73ed74944" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="77" endline="78">satox::core::CoreInitializationException::CoreInitializationException</referencedby>
+        <referencedby refid="d0/dec/classsatox_1_1core_1_1CoreOperationException_1ac88d731c53c50d92723e0dabb171f9fe" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="83" endline="84">satox::core::CoreOperationException::CoreOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d34/classsatox_1_1core_1_1CoreException_1a8bbf6961f50bd65ee70c612d9d57a8de" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::core::CoreException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::core::CoreException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/error.hpp" line="57" column="16" bodyfile="src/core/include/satox/core/error.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref></type>
+        <definition>CoreErrorCode satox::core::CoreException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::core::CoreException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/error.hpp" line="61" column="19" bodyfile="src/core/include/satox/core/error.hpp" bodystart="61" bodyend="63"/>
+        <referencedby refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="54" endline="55">CoreException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::core::CoreException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::core::CoreException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/error.hpp" line="65" column="23" bodyfile="src/core/include/satox/core/error.hpp" bodystart="65" bodyend="67"/>
+        <referencedby refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="54" endline="55">CoreException</referencedby>
+        <referencedby refid="da/d15/classsatox_1_1core_1_1CoreInitializationException_1a3a4def9fe1466f7194f59dd73ed74944" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="77" endline="78">satox::core::CoreInitializationException::CoreInitializationException</referencedby>
+        <referencedby refid="d0/dec/classsatox_1_1core_1_1CoreOperationException_1ac88d731c53c50d92723e0dabb171f9fe" compoundref="d7/dab/core_2include_2satox_2core_2error_8hpp" startline="83" endline="84">satox::core::CoreOperationException::CoreOperationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::core::CoreException</label>
+        <link refid="dd/d34/classsatox_1_1core_1_1CoreException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::core::CoreInitializationException</label>
+        <link refid="da/d15/classsatox_1_1core_1_1CoreInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::core::CoreOperationException</label>
+        <link refid="d0/dec/classsatox_1_1core_1_1CoreOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::core::CoreException</label>
+        <link refid="dd/d34/classsatox_1_1core_1_1CoreException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/error.hpp" line="52" column="1" bodyfile="src/core/include/satox/core/error.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" prot="public" virt="non-virtual"><scope>satox::core::CoreException</scope><name>code</name></member>
+      <member refid="dd/d34/classsatox_1_1core_1_1CoreException_1a1082702e3a693a86c9f8564ebc376946" prot="private" virt="non-virtual"><scope>satox::core::CoreException</scope><name>code_</name></member>
+      <member refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" prot="public" virt="non-virtual"><scope>satox::core::CoreException</scope><name>CoreException</name></member>
+      <member refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" prot="public" virt="non-virtual"><scope>satox::core::CoreException</scope><name>message</name></member>
+      <member refid="dd/d34/classsatox_1_1core_1_1CoreException_1a9f74640e19921dcbdcac1ec851e2fc4e" prot="private" virt="non-virtual"><scope>satox::core::CoreException</scope><name>message_</name></member>
+      <member refid="dd/d34/classsatox_1_1core_1_1CoreException_1a8bbf6961f50bd65ee70c612d9d57a8de" prot="public" virt="non-virtual"><scope>satox::core::CoreException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

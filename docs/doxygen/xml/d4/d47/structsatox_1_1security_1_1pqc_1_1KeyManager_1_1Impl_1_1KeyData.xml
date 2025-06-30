@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData" kind="struct" language="C++" prot="private">
+    <compoundname>satox::security::pqc::KeyManager::Impl::KeyData</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData_1a06e5e4b39bbd6bd749ac69dc06c88340" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::security::pqc::KeyManager::Impl::KeyData::publicKey</definition>
+        <argsstring></argsstring>
+        <name>publicKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::KeyData::publicKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="239" column="21" bodyfile="src/security/pqc/key_manager.cpp" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData_1a252dc19bb3966a7cb8d15040a6566819" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::security::pqc::KeyManager::Impl::KeyData::privateKey</definition>
+        <argsstring></argsstring>
+        <name>privateKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::KeyData::privateKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="240" column="21" bodyfile="src/security/pqc/key_manager.cpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData_1a36f9f03683b6c6be32437015d1f867bb" prot="public" static="no" mutable="no">
+        <type><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref></type>
+        <definition>KeyMetadata satox::security::pqc::KeyManager::Impl::KeyData::metadata</definition>
+        <argsstring></argsstring>
+        <name>metadata</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::KeyData::metadata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="241" column="21" bodyfile="src/security/pqc/key_manager.cpp" bodystart="241" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::security::pqc::KeyManager::Impl::KeyData</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>privateKey</edgelabel>
+          <edgelabel>publicKey</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>metadata</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>satox::security::pqc::KeyMetadata</label>
+        <link refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>algorithm</edgelabel>
+          <edgelabel>keyId</edgelabel>
+          <edgelabel>metadata</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; uint8_t &gt;</label>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; uint8_t &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/security/pqc/key_manager.cpp" line="238" column="5" bodyfile="src/security/pqc/key_manager.cpp" bodystart="238" bodyend="242"/>
+    <listofallmembers>
+      <member refid="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData_1a36f9f03683b6c6be32437015d1f867bb" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl::KeyData</scope><name>metadata</name></member>
+      <member refid="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData_1a252dc19bb3966a7cb8d15040a6566819" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl::KeyData</scope><name>privateKey</name></member>
+      <member refid="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData_1a06e5e4b39bbd6bd749ac69dc06c88340" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl::KeyData</scope><name>publicKey</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

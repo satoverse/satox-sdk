@@ -1,0 +1,46 @@
+/**
+ * @file $(basename "$1")
+ * @brief $(basename "$1" | sed 's/\./_/g' | tr '[:lower:]' '[:upper:]')
+ * @copyright Copyright (c) 2025 Satoxcoin Core Developers
+ * @license MIT License
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+#ifndef PARAMS_H
+#define PARAMS_H
+
+#include "namespace.h"
+
+#define GFBITS 12
+#define SYS_N 3488
+#define SYS_T 64
+
+#define COND_BYTES ((1 << (GFBITS-4))*(2*GFBITS - 1))
+#define IRR_BYTES (SYS_T * 2)
+
+#define PK_NROWS (SYS_T*GFBITS)
+#define PK_NCOLS (SYS_N - PK_NROWS)
+#define PK_ROW_BYTES ((PK_NCOLS + 7)/8)
+
+#define SYND_BYTES ((PK_NROWS + 7)/8)
+
+#define GFMASK ((1 << GFBITS) - 1)
+
+#endif

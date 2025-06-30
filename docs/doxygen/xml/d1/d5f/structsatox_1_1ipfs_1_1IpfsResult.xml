@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult" kind="struct" language="C++" prot="public">
+    <compoundname>satox::ipfs::IpfsResult</compoundname>
+    <includes refid="d8/d5d/ipfs_2include_2satox_2ipfs_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1a34de3a44c6a1d8a36b1da331da26e4e4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IpfsResult::success</definition>
+        <argsstring></argsstring>
+        <name>success</name>
+        <qualifiedname>satox::ipfs::IpfsResult::success</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="69" column="10" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1aaaac96d5f9113c81b890f7ddd04e4878" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IpfsResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::ipfs::IpfsResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="70" column="17" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1a89a7b4b18c27e2e1d6fef7fb8a013a8b" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::ipfs::IpfsResult::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>satox::ipfs::IpfsResult::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="71" column="20" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1a5614cf3a3c46f0ea2855c50a5754f068" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::ipfs::IpfsResult::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>satox::ipfs::IpfsResult::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/types.hpp" line="72" column="31" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::ipfs::IpfsResult</label>
+        <link refid="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/ipfs/include/satox/ipfs/types.hpp" line="68" column="1" bodyfile="src/ipfs/include/satox/ipfs/types.hpp" bodystart="68" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1a89a7b4b18c27e2e1d6fef7fb8a013a8b" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsResult</scope><name>data</name></member>
+      <member refid="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1a5614cf3a3c46f0ea2855c50a5754f068" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsResult</scope><name>duration</name></member>
+      <member refid="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1aaaac96d5f9113c81b890f7ddd04e4878" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsResult</scope><name>error</name></member>
+      <member refid="d1/d5f/structsatox_1_1ipfs_1_1IpfsResult_1a34de3a44c6a1d8a36b1da331da26e4e4" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsResult</scope><name>success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

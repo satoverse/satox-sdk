@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d15/network_2include_2satox_2network_2error_8hpp" kind="file" language="C++">
+    <compoundname>error.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">exception</includes>
+    <includes local="no">system_error</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/network/include/satox/network/error.hpp</label>
+        <link refid="d1/d15/network_2include_2satox_2network_2error_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>exception</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>system_error</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d5/db6/classsatox_1_1network_1_1NetworkException" prot="public">satox::network::NetworkException</innerclass>
+    <innerclass refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException" prot="public">satox::network::NetworkInitializationException</innerclass>
+    <innerclass refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException" prot="public">satox::network::NetworkOperationException</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d6/d65/namespacesatox_1_1network">satox::network</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;system_error&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d6/d65/namespacesatox_1_1network" kindref="compound">satox::network</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Error<sp/>codes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref><sp/>{</highlight></codeline>
+<codeline lineno="36" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2ad0749aaba8b833466dfcbb0428e4f89c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2ad0749aaba8b833466dfcbb0428e4f89c" kindref="member">SUCCESS</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="37" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a9a10f345b0f755d461a8673a5e9ef6b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a9a10f345b0f755d461a8673a5e9ef6b4" kindref="member">UNKNOWN_ERROR</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="38" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2af295a0c3e37c94f078e1c5476479132d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2af295a0c3e37c94f078e1c5476479132d" kindref="member">INVALID_ARGUMENT</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="39" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a02de9649e258d1dd94056e676061e969" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a02de9649e258d1dd94056e676061e969" kindref="member">NOT_INITIALIZED</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="40" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a1940a630a2a25829533b90f9be04f184" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a1940a630a2a25829533b90f9be04f184" kindref="member">ALREADY_INITIALIZED</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="41" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a0d30777007362ccc9e8b2d0d22e4db13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a0d30777007362ccc9e8b2d0d22e4db13" kindref="member">NOT_RUNNING</ref><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="42" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2ae72544c6de918198c7e098d9c9152b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2ae72544c6de918198c7e098d9c9152b1e" kindref="member">ALREADY_RUNNING</ref><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="43" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a8f8d49d3d0842358e0fe8f43601d8537" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a8f8d49d3d0842358e0fe8f43601d8537" kindref="member">OPERATION_FAILED</ref><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="44" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a2fa475b43d744661c4c9e1dbd9840278" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a2fa475b43d744661c4c9e1dbd9840278" kindref="member">VALIDATION_ERROR</ref><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="45" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2ace94bad90093a6a2538689ddfbb5462f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2ace94bad90093a6a2538689ddfbb5462f" kindref="member">TIMEOUT_ERROR</ref><sp/>=<sp/>9,</highlight></codeline>
+<codeline lineno="46" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a4a739fa42dcdbdb8dfe5a5e4d9c5a627" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a4a739fa42dcdbdb8dfe5a5e4d9c5a627" kindref="member">RESOURCE_EXHAUSTED</ref><sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="47" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a255df50c140519133f1489ab44a389d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a255df50c140519133f1489ab44a389d9" kindref="member">PERMISSION_DENIED</ref><sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="48" refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a5e6a8de74c8f7d4b04d91a3dc3bf7659" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a5e6a8de74c8f7d4b04d91a3dc3bf7659" kindref="member">INVALID_STATE</ref><sp/>=<sp/>12</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Main<sp/>exception<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="d5/db6/classsatox_1_1network_1_1NetworkException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" kindref="member">NetworkException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54" refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" kindref="member">NetworkException</ref>(<ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref><sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" kindref="member">code</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>code_(<ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" kindref="member">code</ref>),<sp/>message_(<ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57" refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a40ea8df522df1db371fcdcaea28fc363" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a40ea8df522df1db371fcdcaea28fc363" kindref="member">what</ref>()<sp/>const<sp/>noexcept</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>message_.c_str();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref><sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" kindref="member">code</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>code_;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>message_;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref><sp/>code_;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>message_;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Specific<sp/>exception<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException_1a5266b75f1cf7c1a6edf4024b3dacf572" kindref="member">NetworkInitializationException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" kindref="member">NetworkException</ref><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77" refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException_1a5266b75f1cf7c1a6edf4024b3dacf572" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException_1a5266b75f1cf7c1a6edf4024b3dacf572" kindref="member">NetworkInitializationException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" kindref="member">NetworkException</ref>(<ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref>::<ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a02de9649e258d1dd94056e676061e969" kindref="member">NOT_INITIALIZED</ref>,<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException_1a7318977bf6dabdc20aaceed7d28cd2b3" kindref="member">NetworkOperationException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" kindref="member">NetworkException</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83" refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException_1a7318977bf6dabdc20aaceed7d28cd2b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException_1a7318977bf6dabdc20aaceed7d28cd2b3" kindref="member">NetworkOperationException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" kindref="member">NetworkException</ref>(<ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref>::<ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2a8f8d49d3d0842358e0fe8f43601d8537" kindref="member">OPERATION_FAILED</ref>,<sp/><ref refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::network</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/network/include/satox/network/error.hpp"/>
+  </compounddef>
+</doxygen>

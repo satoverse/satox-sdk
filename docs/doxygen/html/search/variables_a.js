@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['kawpow_5faccesses_0',['KAWPOW_ACCESSES',['../d9/db3/namespacesatox_1_1blockchain.html#afdf94191eede2d19ffed3e866a58729f',1,'satox::blockchain']]],
+  ['kawpow_5fcache_5fbytes_5fgrowth_1',['KAWPOW_CACHE_BYTES_GROWTH',['../d9/db3/namespacesatox_1_1blockchain.html#acd327407a2ebae58367c3b584bc6fe4b',1,'satox::blockchain']]],
+  ['kawpow_5fcache_5fbytes_5finit_2',['KAWPOW_CACHE_BYTES_INIT',['../d9/db3/namespacesatox_1_1blockchain.html#a0f36d5d1271fdf88bf1d53d9c7d6db10',1,'satox::blockchain']]],
+  ['kawpow_5fcache_5frounds_3',['KAWPOW_CACHE_ROUNDS',['../d9/db3/namespacesatox_1_1blockchain.html#a4a297fb2d92fa34eaf0cf1d4e808161c',1,'satox::blockchain::KAWPOW_CACHE_ROUNDS'],['../d9/d9b/namespacesatox_1_1wallet.html#a592073d0855597d39cd1eb6358d9113d',1,'satox::wallet::KAWPOW_CACHE_ROUNDS']]],
+  ['kawpow_5fdataset_5fparents_4',['KAWPOW_DATASET_PARENTS',['../d9/db3/namespacesatox_1_1blockchain.html#a1358ad213d6118f16cbbf3c6e54da9fd',1,'satox::blockchain']]],
+  ['kawpow_5fepoch_5flength_5',['KAWPOW_EPOCH_LENGTH',['../d9/db3/namespacesatox_1_1blockchain.html#adfb125e8990f68403b73826fee41220e',1,'satox::blockchain::KAWPOW_EPOCH_LENGTH'],['../d9/d9b/namespacesatox_1_1wallet.html#a26f18b2ff662985364aaad62a49dcec9',1,'satox::wallet::KAWPOW_EPOCH_LENGTH']]],
+  ['kawpow_5fepoch_5fmix_5fbytes_6',['KAWPOW_EPOCH_MIX_BYTES',['../d9/db3/namespacesatox_1_1blockchain.html#ac3515025f0221c8b9b37afc26e5a75d7',1,'satox::blockchain']]],
+  ['kawpow_5fhash_5fbytes_7',['KAWPOW_HASH_BYTES',['../d9/db3/namespacesatox_1_1blockchain.html#aa9b559827cc484ff11f1bd0ee1e31419',1,'satox::blockchain']]],
+  ['kawpow_5fheader_5fbytes_8',['KAWPOW_HEADER_BYTES',['../d9/db3/namespacesatox_1_1blockchain.html#a553308b8eeed384443ad2ca8552d2b50',1,'satox::blockchain']]],
+  ['kawpow_5fmix_5fbytes_9',['KAWPOW_MIX_BYTES',['../d9/db3/namespacesatox_1_1blockchain.html#aada5dccd80bdc23ae7c601f41ba28250',1,'satox::blockchain']]],
+  ['kawpow_5fnonce_5fbytes_10',['KAWPOW_NONCE_BYTES',['../d9/db3/namespacesatox_1_1blockchain.html#a934f8f9ed4f7fd525c370e1f445aa315',1,'satox::blockchain']]],
+  ['kawpow_5fperiod_5flength_11',['KAWPOW_PERIOD_LENGTH',['../d9/db3/namespacesatox_1_1blockchain.html#a0c1a95070df097a828f9958b8dc8fe13',1,'satox::blockchain::KAWPOW_PERIOD_LENGTH'],['../d9/d9b/namespacesatox_1_1wallet.html#a9c8bff6118150ab704af224c73116dcd',1,'satox::wallet::KAWPOW_PERIOD_LENGTH']]],
+  ['keccakf_5froundconstants_12',['KeccakF_RoundConstants',['../d8/de8/KeccakF-1600-reference_8c.html#a199fa981773d755650ae45cf6f3dd7b3',1,'KeccakF-1600-reference.c']]],
+  ['key_13',['key',['../db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry.html#ac161ae939d85d9d0441c7dcbe9960f95',1,'satox::core::CacheManager::CacheEntry']]],
+  ['key_5flength_14',['key_length',['../d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig.html#aee20ac1fabde0c051198d4666f728f34',1,'satox::core::SecurityManager::SecurityConfig']]],
+  ['key_5fpath_15',['key_path',['../d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate.html#ad006346fabf686cd612f117cf7f52ec5',1,'satox::network::LetsEncryptManager::Certificate']]],
+  ['keyid_16',['keyId',['../db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata.html#a10b350f33b12be1ac27096ae5011c1a1',1,'satox::security::pqc::KeyMetadata']]],
+  ['keysize_17',['keySize',['../d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo.html#a297d4686545a883908b2909a6ae6b623',1,'satox::core::QuantumManager::AlgorithmInfo']]]
+];

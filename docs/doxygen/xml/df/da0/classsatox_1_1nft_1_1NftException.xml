@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/da0/classsatox_1_1nft_1_1NftException" kind="class" language="C++" prot="public">
+    <compoundname>satox::nft::NftException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="d5/d0c/classsatox_1_1nft_1_1NftInitializationException" prot="public" virt="non-virtual">satox::nft::NftInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d3/d26/classsatox_1_1nft_1_1NftOperationException" prot="public" virt="non-virtual">satox::nft::NftOperationException</derivedcompoundref>
+    <includes refid="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/da0/classsatox_1_1nft_1_1NftException_1a80e134dda8c488420569732441235844" prot="private" static="no" mutable="no">
+        <type><ref refid="dc/dd7/namespacesatox_1_1nft_1abd49500ba171c6786b3112eed0fa1771" kindref="member">NftErrorCode</ref></type>
+        <definition>NftErrorCode satox::nft::NftException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::nft::NftException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/error.hpp" line="70" column="18" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/da0/classsatox_1_1nft_1_1NftException_1a904f3393071e2e2e515c1315a444e463" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::nft::NftException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::nft::NftException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/error.hpp" line="71" column="17" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/da0/classsatox_1_1nft_1_1NftException_1aee51f608bdcb656f0d805c2eeef8f22f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::NftException::NftException</definition>
+        <argsstring>(NftErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>NftException</name>
+        <qualifiedname>satox::nft::NftException::NftException</qualifiedname>
+        <param>
+          <type><ref refid="dc/dd7/namespacesatox_1_1nft_1abd49500ba171c6786b3112eed0fa1771" kindref="member">NftErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/error.hpp" line="54" column="5" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="54" bodyend="55"/>
+        <references refid="df/da0/classsatox_1_1nft_1_1NftException_1ac95238d6cb7242a4ea5b16387c0dfc07" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="61" endline="63">code</references>
+        <references refid="df/da0/classsatox_1_1nft_1_1NftException_1a5b25e1fb1ec7d1193614742ccf2708c4" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="65" endline="67">message</references>
+        <referencedby refid="d5/d0c/classsatox_1_1nft_1_1NftInitializationException_1a64a6d464ee255cdea09c4344ddc9d7e9" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="77" endline="78">satox::nft::NftInitializationException::NftInitializationException</referencedby>
+        <referencedby refid="d3/d26/classsatox_1_1nft_1_1NftOperationException_1a985876b53bcdbb78645b0e181d92e9a3" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="83" endline="84">satox::nft::NftOperationException::NftOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/da0/classsatox_1_1nft_1_1NftException_1ac062b505ee9d48dcfb7f22c180c34aa5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::nft::NftException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::nft::NftException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/error.hpp" line="57" column="16" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="df/da0/classsatox_1_1nft_1_1NftException_1ac95238d6cb7242a4ea5b16387c0dfc07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="dc/dd7/namespacesatox_1_1nft_1abd49500ba171c6786b3112eed0fa1771" kindref="member">NftErrorCode</ref></type>
+        <definition>NftErrorCode satox::nft::NftException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::nft::NftException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/error.hpp" line="61" column="18" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="61" bodyend="63"/>
+        <referencedby refid="df/da0/classsatox_1_1nft_1_1NftException_1aee51f608bdcb656f0d805c2eeef8f22f" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="54" endline="55">NftException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/da0/classsatox_1_1nft_1_1NftException_1a5b25e1fb1ec7d1193614742ccf2708c4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::nft::NftException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::nft::NftException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/error.hpp" line="65" column="23" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="65" bodyend="67"/>
+        <referencedby refid="df/da0/classsatox_1_1nft_1_1NftException_1aee51f608bdcb656f0d805c2eeef8f22f" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="54" endline="55">NftException</referencedby>
+        <referencedby refid="d5/d0c/classsatox_1_1nft_1_1NftInitializationException_1a64a6d464ee255cdea09c4344ddc9d7e9" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="77" endline="78">satox::nft::NftInitializationException::NftInitializationException</referencedby>
+        <referencedby refid="d3/d26/classsatox_1_1nft_1_1NftOperationException_1a985876b53bcdbb78645b0e181d92e9a3" compoundref="dd/dd9/nft_2include_2satox_2nft_2error_8hpp" startline="83" endline="84">satox::nft::NftOperationException::NftOperationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::nft::NftException</label>
+        <link refid="df/da0/classsatox_1_1nft_1_1NftException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::nft::NftInitializationException</label>
+        <link refid="d5/d0c/classsatox_1_1nft_1_1NftInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::nft::NftOperationException</label>
+        <link refid="d3/d26/classsatox_1_1nft_1_1NftOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::nft::NftException</label>
+        <link refid="df/da0/classsatox_1_1nft_1_1NftException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/nft/include/satox/nft/error.hpp" line="52" column="1" bodyfile="src/nft/include/satox/nft/error.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="df/da0/classsatox_1_1nft_1_1NftException_1ac95238d6cb7242a4ea5b16387c0dfc07" prot="public" virt="non-virtual"><scope>satox::nft::NftException</scope><name>code</name></member>
+      <member refid="df/da0/classsatox_1_1nft_1_1NftException_1a80e134dda8c488420569732441235844" prot="private" virt="non-virtual"><scope>satox::nft::NftException</scope><name>code_</name></member>
+      <member refid="df/da0/classsatox_1_1nft_1_1NftException_1a5b25e1fb1ec7d1193614742ccf2708c4" prot="public" virt="non-virtual"><scope>satox::nft::NftException</scope><name>message</name></member>
+      <member refid="df/da0/classsatox_1_1nft_1_1NftException_1a904f3393071e2e2e515c1315a444e463" prot="private" virt="non-virtual"><scope>satox::nft::NftException</scope><name>message_</name></member>
+      <member refid="df/da0/classsatox_1_1nft_1_1NftException_1aee51f608bdcb656f0d805c2eeef8f22f" prot="public" virt="non-virtual"><scope>satox::nft::NftException</scope><name>NftException</name></member>
+      <member refid="df/da0/classsatox_1_1nft_1_1NftException_1ac062b505ee9d48dcfb7f22c180c34aa5" prot="public" virt="non-virtual"><scope>satox::nft::NftException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/dea/classsatox_1_1ipfs_1_1IpfsException" kind="class" language="C++" prot="public">
+    <compoundname>satox::ipfs::IpfsException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="da/de9/classsatox_1_1ipfs_1_1IpfsInitializationException" prot="public" virt="non-virtual">satox::ipfs::IpfsInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d7/dbb/classsatox_1_1ipfs_1_1IpfsOperationException" prot="public" virt="non-virtual">satox::ipfs::IpfsOperationException</derivedcompoundref>
+    <includes refid="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a6b504498b5784ae38ef842102fd2811b" prot="private" static="no" mutable="no">
+        <type><ref refid="d2/dc8/namespacesatox_1_1ipfs_1a8c1da3bc908711c54e408fd829debe8c" kindref="member">IpfsErrorCode</ref></type>
+        <definition>IpfsErrorCode satox::ipfs::IpfsException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::ipfs::IpfsException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/error.hpp" line="70" column="19" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a3b13b0bf448c49d6298df6372bb7907b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IpfsException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::ipfs::IpfsException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/error.hpp" line="71" column="17" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1acf74b5ea3aac45db5e9d8179cc0a9d4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IpfsException::IpfsException</definition>
+        <argsstring>(IpfsErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>IpfsException</name>
+        <qualifiedname>satox::ipfs::IpfsException::IpfsException</qualifiedname>
+        <param>
+          <type><ref refid="d2/dc8/namespacesatox_1_1ipfs_1a8c1da3bc908711c54e408fd829debe8c" kindref="member">IpfsErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/error.hpp" line="54" column="5" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="54" bodyend="55"/>
+        <references refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a007542f299227c374014bafe73a645be" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="61" endline="63">code</references>
+        <references refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1aaa771465094886fd1e7b84e5c803b5ad" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="65" endline="67">message</references>
+        <referencedby refid="da/de9/classsatox_1_1ipfs_1_1IpfsInitializationException_1a17e503a4ee3ec474d6cccaced88241d0" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="77" endline="78">satox::ipfs::IpfsInitializationException::IpfsInitializationException</referencedby>
+        <referencedby refid="d7/dbb/classsatox_1_1ipfs_1_1IpfsOperationException_1a6c453fc23b0318599294e35bab458271" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="83" endline="84">satox::ipfs::IpfsOperationException::IpfsOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1ab36baac48f0e16fe1df7b19b473aef26" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::ipfs::IpfsException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::ipfs::IpfsException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/error.hpp" line="57" column="16" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a007542f299227c374014bafe73a645be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d2/dc8/namespacesatox_1_1ipfs_1a8c1da3bc908711c54e408fd829debe8c" kindref="member">IpfsErrorCode</ref></type>
+        <definition>IpfsErrorCode satox::ipfs::IpfsException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::ipfs::IpfsException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/error.hpp" line="61" column="19" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="61" bodyend="63"/>
+        <referencedby refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1acf74b5ea3aac45db5e9d8179cc0a9d4a" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="54" endline="55">IpfsException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1aaa771465094886fd1e7b84e5c803b5ad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::ipfs::IpfsException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::ipfs::IpfsException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/error.hpp" line="65" column="23" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="65" bodyend="67"/>
+        <referencedby refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1acf74b5ea3aac45db5e9d8179cc0a9d4a" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="54" endline="55">IpfsException</referencedby>
+        <referencedby refid="da/de9/classsatox_1_1ipfs_1_1IpfsInitializationException_1a17e503a4ee3ec474d6cccaced88241d0" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="77" endline="78">satox::ipfs::IpfsInitializationException::IpfsInitializationException</referencedby>
+        <referencedby refid="d7/dbb/classsatox_1_1ipfs_1_1IpfsOperationException_1a6c453fc23b0318599294e35bab458271" compoundref="db/de4/ipfs_2include_2satox_2ipfs_2error_8hpp" startline="83" endline="84">satox::ipfs::IpfsOperationException::IpfsOperationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::ipfs::IpfsException</label>
+        <link refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::ipfs::IpfsInitializationException</label>
+        <link refid="da/de9/classsatox_1_1ipfs_1_1IpfsInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::ipfs::IpfsOperationException</label>
+        <link refid="d7/dbb/classsatox_1_1ipfs_1_1IpfsOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::ipfs::IpfsException</label>
+        <link refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/ipfs/include/satox/ipfs/error.hpp" line="52" column="1" bodyfile="src/ipfs/include/satox/ipfs/error.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a007542f299227c374014bafe73a645be" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsException</scope><name>code</name></member>
+      <member refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a6b504498b5784ae38ef842102fd2811b" prot="private" virt="non-virtual"><scope>satox::ipfs::IpfsException</scope><name>code_</name></member>
+      <member refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1acf74b5ea3aac45db5e9d8179cc0a9d4a" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsException</scope><name>IpfsException</name></member>
+      <member refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1aaa771465094886fd1e7b84e5c803b5ad" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsException</scope><name>message</name></member>
+      <member refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1a3b13b0bf448c49d6298df6372bb7907b" prot="private" virt="non-virtual"><scope>satox::ipfs::IpfsException</scope><name>message_</name></member>
+      <member refid="d6/dea/classsatox_1_1ipfs_1_1IpfsException_1ab36baac48f0e16fe1df7b19b473aef26" prot="public" virt="non-virtual"><scope>satox::ipfs::IpfsException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

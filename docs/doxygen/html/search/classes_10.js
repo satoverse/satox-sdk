@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['satoxmanager_0',['SatoxManager',['../d8/def/classsatox_1_1core_1_1SatoxManager.html',1,'satox::core']]],
+  ['securityconfig_1',['SecurityConfig',['../d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig.html',1,'satox::core::SecurityManager::SecurityConfig'],['../d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig.html',1,'satox::network::NetworkManager::SecurityConfig'],['../d2/d1e/structsatox_1_1security_1_1SecurityConfig.html',1,'satox::security::SecurityConfig']]],
+  ['securityevent_2',['SecurityEvent',['../df/d5d/structsatox_1_1security_1_1SecurityEvent.html',1,'satox::security']]],
+  ['securityexception_3',['SecurityException',['../d5/dc0/classsatox_1_1security_1_1SecurityException.html',1,'satox::security']]],
+  ['securityinitializationexception_4',['SecurityInitializationException',['../d3/d4f/classsatox_1_1security_1_1SecurityInitializationException.html',1,'satox::security']]],
+  ['securitymanager_5',['SecurityManager',['../d0/df7/classsatox_1_1core_1_1SecurityManager.html',1,'satox::core::SecurityManager'],['../dc/d9e/classsatox_1_1security_1_1SecurityManager.html',1,'satox::security::SecurityManager']]],
+  ['securitymonitor_6',['SecurityMonitor',['../d0/d48/classsatox_1_1security_1_1monitoring_1_1SecurityMonitor.html',1,'satox::security::monitoring']]],
+  ['securityresult_7',['SecurityResult',['../d1/d71/structsatox_1_1security_1_1SecurityResult.html',1,'satox::security']]],
+  ['securitystats_8',['SecurityStats',['../d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats.html',1,'satox::core::SecurityManager::SecurityStats'],['../db/d75/structsatox_1_1security_1_1SecurityStats.html',1,'satox::security::SecurityStats']]],
+  ['securityviolationexception_9',['SecurityViolationException',['../d9/d6f/classsatox_1_1security_1_1SecurityViolationException.html',1,'satox::security']]],
+  ['simplelogger_10',['SimpleLogger',['../d5/d82/classsatox_1_1asset_1_1SimpleLogger.html',1,'satox::asset']]],
+  ['stats_11',['Stats',['../d7/d42/structsatox_1_1core_1_1BlockchainManager_1_1Stats.html',1,'satox::core::BlockchainManager::Stats'],['../d7/dd2/structsatox_1_1core_1_1ConfigManager_1_1Stats.html',1,'satox::core::ConfigManager::Stats'],['../d7/dcb/structsatox_1_1core_1_1SatoxManager_1_1Stats.html',1,'satox::core::SatoxManager::Stats'],['../df/d9b/structsatox_1_1core_1_1TransactionManager_1_1Stats.html',1,'satox::core::TransactionManager::Stats']]],
+  ['subscription_12',['Subscription',['../da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription.html',1,'satox::core::EventManager']]],
+  ['supabaseconfig_13',['SupabaseConfig',['../d9/d9c/structsatox_1_1core_1_1SupabaseConfig.html',1,'satox::core']]],
+  ['supabaseconnection_14',['SupabaseConnection',['../d2/d6d/structsatox_1_1core_1_1SupabaseConnection.html',1,'satox::core']]],
+  ['supabasemanager_15',['SupabaseManager',['../d4/d3f/classsatox_1_1core_1_1SupabaseManager.html',1,'satox::core']]],
+  ['systeminfo_16',['SystemInfo',['../d4/d68/structsatox_1_1core_1_1SatoxManager_1_1SystemInfo.html',1,'satox::core::SatoxManager::SystemInfo'],['../d4/df5/structsatox_1_1core_1_1SystemInfo.html',1,'satox::core::SystemInfo']]],
+  ['systemstats_17',['SystemStats',['../d6/d88/structsatox_1_1core_1_1SatoxManager_1_1SystemStats.html',1,'satox::core::SatoxManager']]]
+];

@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::pqc::KeyManager::Impl</compoundname>
+    <innerclass refid="d4/d47/structsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1_1KeyData" prot="private">satox::security::pqc::KeyManager::Impl::KeyData</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a771bdafa3592d44ea99bee921116e242" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::security::pqc::KeyManager::Impl::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::mutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="244" column="24" bodyfile="src/security/pqc/key_manager.cpp" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a6332e4b9d85c426546641afc5b262ed8" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, KeyData &gt;</type>
+        <definition>std::unordered_map&lt; std::string, KeyData &gt; satox::security::pqc::KeyManager::Impl::keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::keys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="245" column="24" bodyfile="src/security/pqc/key_manager.cpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a0d68acc85df8c2789321c1ee60b48994" prot="private" static="no" mutable="yes">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::KeyManager::Impl::lastError</definition>
+        <argsstring></argsstring>
+        <name>lastError</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::lastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="246" column="25" bodyfile="src/security/pqc/key_manager.cpp" bodystart="246" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a5d7f41946c233f1af838e6765b282af2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::KeyManager::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="44" column="5" bodyfile="src/security/pqc/key_manager.cpp" bodystart="44" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a31f512c9ccbc94e42d305486564a7886" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::generateAndStoreKey</definition>
+        <argsstring>(const std::string &amp;keyId, MLKEM::SecurityLevel kemLevel, MLDSA::SecurityLevel dsaLevel, const std::chrono::seconds &amp;expirationTime)</argsstring>
+        <name>generateAndStoreKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::generateAndStoreKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+          <declname>kemLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+          <declname>dsaLevel</declname>
+        </param>
+        <param>
+          <type>const std::chrono::seconds &amp;</type>
+          <declname>expirationTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="50" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="50" bodyend="89"/>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1aeb565f11379a369e8319c76eaeafcc4d" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="45">satox::security::pqc::KeyMetadata::algorithm</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a95097cfd3ea604793e5a8f86eebec051" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="43">satox::security::pqc::KeyMetadata::creationTime</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ae12974c5cc2e80c6abb0a5e67e4638a3" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="44">satox::security::pqc::KeyMetadata::expirationTime</references>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1ae41c32e671e7b09ef78dd1728fc4d697" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="357" endline="360">satox::security::pqc::HybridCrypto::generateHybridKeyPair</references>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1a07b73548a004c0a7c6e5bb4abfdf5748" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="416" endline="418">satox::security::pqc::HybridCrypto::getLastError</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a934191ff11497d2a7b22f2778fe18941" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="47">satox::security::pqc::KeyMetadata::isActive</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a10b350f33b12be1ac27096ae5011c1a1" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="42">satox::security::pqc::KeyMetadata::keyId</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ac3196260e1bb974159b7baec2cb2241d" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="46">satox::security::pqc::KeyMetadata::securityLevel</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a7e5f182b3b7662d2ae9ead3726e22414" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::retrieveKey</definition>
+        <argsstring>(const std::string &amp;keyId, std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;privateKey, KeyMetadata &amp;metadata)</argsstring>
+        <name>retrieveKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::retrieveKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="91" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="91" bodyend="122"/>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1af7f8ae7644adbe4218ed09842e4bbd07" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="48">satox::security::pqc::KeyMetadata::metadata</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a19b0f569708f4b8a495ec6051d944450" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::rotateKey</definition>
+        <argsstring>(const std::string &amp;keyId, MLKEM::SecurityLevel newKemLevel, MLDSA::SecurityLevel newDsaLevel, const std::chrono::seconds &amp;newExpirationTime)</argsstring>
+        <name>rotateKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::rotateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+          <declname>newKemLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+          <declname>newDsaLevel</declname>
+        </param>
+        <param>
+          <type>const std::chrono::seconds &amp;</type>
+          <declname>newExpirationTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="124" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="124" bodyend="162"/>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1a07b73548a004c0a7c6e5bb4abfdf5748" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="416" endline="418">satox::security::pqc::HybridCrypto::getLastError</references>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1a5a1f29cdde44d36bc5b6e343276089d5" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="386" endline="390">satox::security::pqc::HybridCrypto::rotateKeys</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a2794b0e6405df2ac365f386586caee9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::deleteKey</definition>
+        <argsstring>(const std::string &amp;keyId)</argsstring>
+        <name>deleteKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::deleteKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="164" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="164" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a78c1d41e5b010ee5435b61ba7b77bc41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref> &gt;</type>
+        <definition>std::vector&lt; KeyMetadata &gt; satox::security::pqc::KeyManager::Impl::listKeys</definition>
+        <argsstring>() const</argsstring>
+        <name>listKeys</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::listKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="181" column="17" bodyfile="src/security/pqc/key_manager.cpp" bodystart="181" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1ab0ac42fd9cf9e4afb8b2aab41b6c3033" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::isKeyActive</definition>
+        <argsstring>(const std::string &amp;keyId) const</argsstring>
+        <name>isKeyActive</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::isKeyActive</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="193" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="193" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa8440335ab22070e7be0df6f183ec683" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::updateKeyMetadata</definition>
+        <argsstring>(const std::string &amp;keyId, const std::unordered_map&lt; std::string, std::string &gt; &amp;metadata)</argsstring>
+        <name>updateKeyMetadata</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::updateKeyMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="211" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="211" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a3a3fc866d8a9f64ff21a211900e7d52f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::KeyManager::Impl::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="229" column="17" bodyfile="src/security/pqc/key_manager.cpp" bodystart="229" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa49586d14eae262c63e346396d97e370" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::pqc::KeyManager::Impl::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/pqc/key_manager.cpp" line="233" column="10" bodyfile="src/security/pqc/key_manager.cpp" bodystart="233" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a5d7f41946c233f1af838e6765b282af2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::pqc::KeyManager::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="44" column="5" bodyfile="src/security/src/key_manager.cpp" bodystart="44" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a31f512c9ccbc94e42d305486564a7886" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::generateAndStoreKey</definition>
+        <argsstring>(const std::string &amp;keyId, MLKEM::SecurityLevel kemLevel, MLDSA::SecurityLevel dsaLevel, const std::chrono::seconds &amp;expirationTime)</argsstring>
+        <name>generateAndStoreKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::generateAndStoreKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+          <declname>kemLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+          <declname>dsaLevel</declname>
+        </param>
+        <param>
+          <type>const std::chrono::seconds &amp;</type>
+          <declname>expirationTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="50" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="50" bodyend="89"/>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1aeb565f11379a369e8319c76eaeafcc4d" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="45">satox::security::pqc::KeyMetadata::algorithm</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a95097cfd3ea604793e5a8f86eebec051" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="43">satox::security::pqc::KeyMetadata::creationTime</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ae12974c5cc2e80c6abb0a5e67e4638a3" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="44">satox::security::pqc::KeyMetadata::expirationTime</references>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1ae41c32e671e7b09ef78dd1728fc4d697" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="357" endline="360">satox::security::pqc::HybridCrypto::generateHybridKeyPair</references>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1a07b73548a004c0a7c6e5bb4abfdf5748" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="416" endline="418">satox::security::pqc::HybridCrypto::getLastError</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a934191ff11497d2a7b22f2778fe18941" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="47">satox::security::pqc::KeyMetadata::isActive</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a10b350f33b12be1ac27096ae5011c1a1" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="42">satox::security::pqc::KeyMetadata::keyId</references>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ac3196260e1bb974159b7baec2cb2241d" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="46">satox::security::pqc::KeyMetadata::securityLevel</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a7e5f182b3b7662d2ae9ead3726e22414" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::retrieveKey</definition>
+        <argsstring>(const std::string &amp;keyId, std::vector&lt; uint8_t &gt; &amp;publicKey, std::vector&lt; uint8_t &gt; &amp;privateKey, KeyMetadata &amp;metadata)</argsstring>
+        <name>retrieveKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::retrieveKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="91" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="91" bodyend="122"/>
+        <references refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1af7f8ae7644adbe4218ed09842e4bbd07" compoundref="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" startline="48">satox::security::pqc::KeyMetadata::metadata</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a19b0f569708f4b8a495ec6051d944450" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::rotateKey</definition>
+        <argsstring>(const std::string &amp;keyId, MLKEM::SecurityLevel newKemLevel, MLDSA::SecurityLevel newDsaLevel, const std::chrono::seconds &amp;newExpirationTime)</argsstring>
+        <name>rotateKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::rotateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d57/classsatox_1_1security_1_1pqc_1_1MLKEM_1ad4b148c35e9eae7df4ac85231487f6ec" kindref="member">MLKEM::SecurityLevel</ref></type>
+          <declname>newKemLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dc9/classsatox_1_1security_1_1pqc_1_1MLDSA_1aeed164fbe548fc220ca287c432eae9cc" kindref="member">MLDSA::SecurityLevel</ref></type>
+          <declname>newDsaLevel</declname>
+        </param>
+        <param>
+          <type>const std::chrono::seconds &amp;</type>
+          <declname>newExpirationTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="124" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="124" bodyend="162"/>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1a07b73548a004c0a7c6e5bb4abfdf5748" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="416" endline="418">satox::security::pqc::HybridCrypto::getLastError</references>
+        <references refid="df/d13/classsatox_1_1security_1_1pqc_1_1HybridCrypto_1a5a1f29cdde44d36bc5b6e343276089d5" compoundref="d9/dcc/pqc_2hybrid_8cpp" startline="386" endline="390">satox::security::pqc::HybridCrypto::rotateKeys</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a2794b0e6405df2ac365f386586caee9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::deleteKey</definition>
+        <argsstring>(const std::string &amp;keyId)</argsstring>
+        <name>deleteKey</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::deleteKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="164" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="164" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a78c1d41e5b010ee5435b61ba7b77bc41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref> &gt;</type>
+        <definition>std::vector&lt; KeyMetadata &gt; satox::security::pqc::KeyManager::Impl::listKeys</definition>
+        <argsstring>() const</argsstring>
+        <name>listKeys</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::listKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="181" column="17" bodyfile="src/security/src/key_manager.cpp" bodystart="181" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1ab0ac42fd9cf9e4afb8b2aab41b6c3033" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::isKeyActive</definition>
+        <argsstring>(const std::string &amp;keyId) const</argsstring>
+        <name>isKeyActive</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::isKeyActive</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="193" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="193" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa8440335ab22070e7be0df6f183ec683" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::pqc::KeyManager::Impl::updateKeyMetadata</definition>
+        <argsstring>(const std::string &amp;keyId, const std::unordered_map&lt; std::string, std::string &gt; &amp;metadata)</argsstring>
+        <name>updateKeyMetadata</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::updateKeyMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="211" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="211" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a3a3fc866d8a9f64ff21a211900e7d52f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::security::pqc::KeyManager::Impl::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="229" column="17" bodyfile="src/security/src/key_manager.cpp" bodystart="229" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa49586d14eae262c63e346396d97e370" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::pqc::KeyManager::Impl::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::security::pqc::KeyManager::Impl::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/src/key_manager.cpp" line="233" column="10" bodyfile="src/security/src/key_manager.cpp" bodystart="233" bodyend="235"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/security/pqc/key_manager.cpp" line="42" column="1" bodyfile="src/security/pqc/key_manager.cpp" bodystart="42" bodyend="247"/>
+    <listofallmembers>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa49586d14eae262c63e346396d97e370" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>clearLastError</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa49586d14eae262c63e346396d97e370" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>clearLastError</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a2794b0e6405df2ac365f386586caee9f" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>deleteKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a2794b0e6405df2ac365f386586caee9f" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>deleteKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a31f512c9ccbc94e42d305486564a7886" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>generateAndStoreKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a31f512c9ccbc94e42d305486564a7886" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>generateAndStoreKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a3a3fc866d8a9f64ff21a211900e7d52f" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>getLastError</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a3a3fc866d8a9f64ff21a211900e7d52f" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>getLastError</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a5d7f41946c233f1af838e6765b282af2" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>Impl</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a5d7f41946c233f1af838e6765b282af2" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>Impl</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1ab0ac42fd9cf9e4afb8b2aab41b6c3033" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>isKeyActive</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1ab0ac42fd9cf9e4afb8b2aab41b6c3033" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>isKeyActive</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a6332e4b9d85c426546641afc5b262ed8" prot="private" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>keys</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a0d68acc85df8c2789321c1ee60b48994" prot="private" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>lastError</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a78c1d41e5b010ee5435b61ba7b77bc41" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>listKeys</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a78c1d41e5b010ee5435b61ba7b77bc41" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>listKeys</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a771bdafa3592d44ea99bee921116e242" prot="private" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>mutex</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a7e5f182b3b7662d2ae9ead3726e22414" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>retrieveKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a7e5f182b3b7662d2ae9ead3726e22414" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>retrieveKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a19b0f569708f4b8a495ec6051d944450" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>rotateKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1a19b0f569708f4b8a495ec6051d944450" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>rotateKey</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa8440335ab22070e7be0df6f183ec683" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>updateKeyMetadata</name></member>
+      <member refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl_1aa8440335ab22070e7be0df6f183ec683" prot="public" virt="non-virtual"><scope>satox::security::pqc::KeyManager::Impl</scope><name>updateKeyMetadata</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

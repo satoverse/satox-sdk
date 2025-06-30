@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/de5/network_2include_2satox_2network_2network__manager_8hpp" kind="file" language="C++">
+    <compoundname>network_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="d8/d1a/letsencrypt__manager_8hpp" local="yes">letsencrypt_manager.hpp</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>letsencrypt_manager.hpp</label>
+        <link refid="d8/d1a/letsencrypt__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/network/include/satox/network/network_manager.hpp</label>
+        <link refid="d8/de5/network_2include_2satox_2network_2network__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>atomic</label>
+      </node>
+      <node id="6">
+        <label>chrono</label>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>mutex</label>
+      </node>
+      <node id="11">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>thread</label>
+      </node>
+      <node id="10">
+        <label>unordered_map</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d0/da4/classsatox_1_1network_1_1NetworkManager" prot="public">satox::network::NetworkManager</innerclass>
+    <innerclass refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" prot="public">satox::network::NetworkManager::SecurityConfig</innerclass>
+    <innerclass refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" prot="public">satox::network::NetworkManager::NetworkConfig</innerclass>
+    <innerclass refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" prot="public">satox::network::NetworkManager::NetworkStats</innerclass>
+    <innerclass refid="df/d59/structsatox_1_1network_1_1NetworkManager_1_1Peer" prot="private">satox::network::NetworkManager::Peer</innerclass>
+    <innerclass refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" prot="public">satox::network::NetworkManager::RPCRequest</innerclass>
+    <innerclass refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" prot="public">satox::network::NetworkManager::RPCResponse</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d6/d65/namespacesatox_1_1network">satox::network</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d8/d1a/letsencrypt__manager_8hpp" kindref="compound">letsencrypt_manager.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d6/d65/namespacesatox_1_1network" kindref="compound">satox::network</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager" kindref="compound">NetworkManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>&amp;<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac22a0eebf8c41d1468bb123136dfdd27" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="49" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1aea4a319962db0fa2c25364b4d9422c0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1aea4a319962db0fa2c25364b4d9422c0a" kindref="member">enable_encryption</ref>;</highlight></codeline>
+<codeline lineno="50" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1aa83f17dd58edecba8003d028c12276b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1aa83f17dd58edecba8003d028c12276b4" kindref="member">ssl_cert_path</ref>;</highlight></codeline>
+<codeline lineno="51" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a8ca6188096e0e4cd5cf9ba7ac1d35a42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a8ca6188096e0e4cd5cf9ba7ac1d35a42" kindref="member">ssl_key_path</ref>;</highlight></codeline>
+<codeline lineno="52" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1aa1399c9250f2d3a64aabc9f2c92600a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1aa1399c9250f2d3a64aabc9f2c92600a8" kindref="member">ssl_ca_path</ref>;</highlight></codeline>
+<codeline lineno="53" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a25745f769b04da901571cbebfef04821" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a25745f769b04da901571cbebfef04821" kindref="member">verify_hostname</ref>;</highlight></codeline>
+<codeline lineno="54" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a2c8ac701ce7050b20a5ab175077a9c71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a2c8ac701ce7050b20a5ab175077a9c71" kindref="member">min_protocol_version</ref>;</highlight></codeline>
+<codeline lineno="55" refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a13bec1f480b6d0cee5cd11ed85b9f7d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig_1a13bec1f480b6d0cee5cd11ed85b9f7d4" kindref="member">allowed_ciphers</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1abb3fb7860b7a7fbac4d0377eaa223270" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1abb3fb7860b7a7fbac4d0377eaa223270" kindref="member">host</ref>;</highlight></codeline>
+<codeline lineno="60" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1ac04ca9131b192b6a6067c8fe0f2c26c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1ac04ca9131b192b6a6067c8fe0f2c26c4" kindref="member">p2p_port</ref>;</highlight></codeline>
+<codeline lineno="61" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1acf0d8fd8fe695e0b9bbc057e3b58f9d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1acf0d8fd8fe695e0b9bbc057e3b58f9d0" kindref="member">rpc_port</ref>;</highlight></codeline>
+<codeline lineno="62" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a2fa942d0b0f078425788dae6af063a40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a2fa942d0b0f078425788dae6af063a40" kindref="member">max_connections</ref>;</highlight></codeline>
+<codeline lineno="63" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a4e8f5a810f1a988e84a1750216eaafb2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a4e8f5a810f1a988e84a1750216eaafb2" kindref="member">enable_ssl</ref>;</highlight></codeline>
+<codeline lineno="64" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a924091bee5ab0410b631d93379f405b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a924091bee5ab0410b631d93379f405b6" kindref="member">ssl_cert_path</ref>;</highlight></codeline>
+<codeline lineno="65" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a5ebf25790410bf78188b34d30294654f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a5ebf25790410bf78188b34d30294654f" kindref="member">ssl_key_path</ref>;</highlight></codeline>
+<codeline lineno="66" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a739fd76d8c639aa9f49a047d39af7b86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" kindref="compound">LetsEncryptManager::Config</ref><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a739fd76d8c639aa9f49a047d39af7b86" kindref="member">letsencrypt_config</ref>;</highlight></codeline>
+<codeline lineno="67" refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a57e878c8784ede761bcb98bfe7b51f40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig_1a57e878c8784ede761bcb98bfe7b51f40" kindref="member">security</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="71" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a676efa4a379e66244684031dbeeb805d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a676efa4a379e66244684031dbeeb805d" kindref="member">active_connections</ref>;</highlight></codeline>
+<codeline lineno="72" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a6910f74a91b22a443e7873f9589dc4c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a6910f74a91b22a443e7873f9589dc4c7" kindref="member">total_connections</ref>;</highlight></codeline>
+<codeline lineno="73" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1abb3ee68f520fc00c0330fb76fd2b9a0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1abb3ee68f520fc00c0330fb76fd2b9a0c" kindref="member">bytes_sent</ref>;</highlight></codeline>
+<codeline lineno="74" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1aa3217ab27d8841863306a70ccf4effe9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1aa3217ab27d8841863306a70ccf4effe9" kindref="member">bytes_received</ref>;</highlight></codeline>
+<codeline lineno="75" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a8137b2137de35a6ea5f969a6d1ba0042" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a8137b2137de35a6ea5f969a6d1ba0042" kindref="member">errors</ref>;</highlight></codeline>
+<codeline lineno="76" refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a8a861d7ed1453bc36ff0e4c6151e433c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats_1a8a861d7ed1453bc36ff0e4c6151e433c" kindref="member">uptime_seconds</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Peer<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>address;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>port;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int64_t<sp/>last_seen;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inbound;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>whitelisted;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>bytes_sent;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>bytes_received;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref><sp/>{</highlight></codeline>
+<codeline lineno="90" refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a9de35782f6d7a14b5117e8071858f1aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a9de35782f6d7a14b5117e8071858f1aa" kindref="member">method</ref>;</highlight></codeline>
+<codeline lineno="91" refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a6a0e68eef1cd573080ec8f7b4889d316" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a6a0e68eef1cd573080ec8f7b4889d316" kindref="member">params</ref>;</highlight></codeline>
+<codeline lineno="92" refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a0ffe168e446b08313ca12ee4703e8ac1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest_1a0ffe168e446b08313ca12ee4703e8ac1" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref><sp/>{</highlight></codeline>
+<codeline lineno="96" refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse_1aabbfab50d020521fac5c2d069360b7e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse_1aabbfab50d020521fac5c2d069360b7e7" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="97" refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse_1a2412dc8ed87239e1f21abb514ddde7b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse_1a2412dc8ed87239e1f21abb514ddde7b2" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="98" refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse_1aee749a18cd8865714d4dfda8afaca702" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse_1aee749a18cd8865714d4dfda8afaca702" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>{</highlight></codeline>
+<codeline lineno="102" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8caba0f80fd6dc71eb760cb83b97b8d3035" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8caba0f80fd6dc71eb760cb83b97b8d3035" kindref="member">P2P_MESSAGE</ref>,</highlight></codeline>
+<codeline lineno="103" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca1f2b7d58390dd9ed323d33e211bb09b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca1f2b7d58390dd9ed323d33e211bb09b6" kindref="member">RPC_REQUEST</ref>,</highlight></codeline>
+<codeline lineno="104" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca9a325d5a48aef8c80e4c212d68924eb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca9a325d5a48aef8c80e4c212d68924eb8" kindref="member">RPC_RESPONSE</ref>,</highlight></codeline>
+<codeline lineno="105" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca0d895a0a05a7cce9b2c0c8bb252f78cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca0d895a0a05a7cce9b2c0c8bb252f78cc" kindref="member">HEARTBEAT</ref>,</highlight></codeline>
+<codeline lineno="106" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8cafcfc11b740f8aad4ccf8f5e733f3a4e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8cafcfc11b740f8aad4ccf8f5e733f3a4e9" kindref="member">PEER_DISCOVERY</ref></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callback<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" kindref="member">RPCCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="111" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a55e4d3ad1fcfcd3bc97859be527fe7ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref><sp/>=<sp/>std::function&lt;void(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;)&gt;;</highlight></codeline>
+<codeline lineno="112" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)&gt;;</highlight></codeline>
+<codeline lineno="113" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;;</highlight></codeline>
+<codeline lineno="114" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref><sp/>=<sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" kindref="member">LetsEncryptManager::CertificateUpdateCallback</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config<sp/>=<sp/><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>{});</highlight></codeline>
+<codeline lineno="118" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9d1515ad852f2f2fbc82925cec61fe9f" kindref="member">isInitialized</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a32e9e41b455b2da9753e48fe0e9f7de6" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Core<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a45c5bce667450a3cc15b5baeb0e55ee7" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0f53c40765516fd288cd7dfe377b8eae" kindref="member">isP2PRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1acc3a11eefe463db6184565867518d076" kindref="member">isRPCRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>P2P<sp/>network<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aea2316b0381413f4fc7c76444f35ccf7" kindref="member">startP2P</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1db68300569b25205ad413ed550b83a8" kindref="member">stopP2P</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3bd1e14fca9953461ea3f501df24f7" kindref="member">connectToPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/>uint16_t<sp/>port);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1abfb9e0633c18a16fc972a1d9c0d409ce" kindref="member">disconnectPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="132" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" kindref="member">isPeerConnected</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a297e4876d10872975b333924b588b85b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Peer&gt;<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a297e4876d10872975b333924b588b85b" kindref="member">getConnectedPeers</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" kindref="member">getPeerCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>RPC<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a52d35cc9b3411614d850fd16454ef06f" kindref="member">startRPC</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a577b14e32e0cb39b9348be7a2ac64822" kindref="member">stopRPC</ref>();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac47d4c2bf60b0b7f131ed350ca4cfb43" kindref="member">registerRPCMethod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>method,<sp/>std::function&lt;<ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;)&gt;<sp/>handler);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a835c255045db787f429de83cd5d66fbe" kindref="member">callRPC</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref>&amp;<sp/>request,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" kindref="member">RPCCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Message<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a386383c2347d0bfb94b61f5ab359489d" kindref="member">sendP2PMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>peer_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aff092c3045f529e4ba6b46c45efa426d" kindref="member">sendRPCMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>client_address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7ab137d83a02921ed48515e1a98bed75" kindref="member">registerMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type,<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19224836d039a8329fd589229693f0e6" kindref="member">unregisterMessageCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callback<sp/>registration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" kindref="member">registerPeerCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1adce4d53d623845faa17659dbc78ae11c" kindref="member">unregisterPeerCallback</ref>();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac306afebb77c6b57f69e8578e796dd37" kindref="member">registerErrorCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a853ddd2e2f41ce7430354ab9ec00f873" kindref="member">unregisterErrorCallback</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Security<sp/>and<sp/>SSL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5514868aab271932db2852e38751afda" kindref="member">enableEncryption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b5e235a3e76498913920b5ae7bd070b" kindref="member">enableSSL</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a873a2fa3e7fbe4f8dba63d4869ee045c" kindref="member">disableSSL</ref>();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">LetsEncryptManager::Certificate</ref><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa6be25b5659470fad7c93255d056ac3c" kindref="member">getCurrentCertificate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a73407d67c9b8812885f0c280732d1f3c" kindref="member">renewCertificate</ref>();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a3d2762652371a04455b0563e12d72a83" kindref="member">registerCertificateUpdateCallback</ref>(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>and<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a014af406f3e29fd3ba59740b3a354b28" kindref="member">getNetworkStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8addda877f2a249f8d75f00f1bf133ec" kindref="member">enableStats</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae967e67c5ccef0cfc6a868ec99c5c6c7" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ab5b0b228aa8c8993beae7816c03ed963" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa01ba3d876f0dfd0742dbc402f40fadf" kindref="member">healthCheck</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a243b2bb2a7bd8496dcf8795a05b4911c" kindref="member">~NetworkManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" kindref="member">NetworkManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" kindref="compound">Impl</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>pimpl_;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::network<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/network/include/satox/network/network_manager.hpp"/>
+  </compounddef>
+</doxygen>

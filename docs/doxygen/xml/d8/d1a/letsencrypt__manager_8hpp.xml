@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/d1a/letsencrypt__manager_8hpp" kind="file" language="C++">
+    <compoundname>letsencrypt_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="d8/de5/network_2include_2satox_2network_2network__manager_8hpp" local="yes">src/network/include/satox/network/network_manager.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/network/include/satox/network/letsencrypt_manager.hpp</label>
+        <link refid="d8/d1a/letsencrypt__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>atomic</label>
+      </node>
+      <node id="6">
+        <label>chrono</label>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>mutex</label>
+      </node>
+      <node id="10">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>thread</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/network/include/satox/network/letsencrypt_manager.hpp</label>
+        <link refid="d8/d1a/letsencrypt__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/network/include/satox/network/network_manager.hpp</label>
+        <link refid="d8/de5/network_2include_2satox_2network_2network__manager_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager" prot="public">satox::network::LetsEncryptManager</innerclass>
+    <innerclass refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" prot="public">satox::network::LetsEncryptManager::Config</innerclass>
+    <innerclass refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" prot="public">satox::network::LetsEncryptManager::Certificate</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d6/d65/namespacesatox_1_1network">satox::network</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d6/d65/namespacesatox_1_1network" kindref="compound">satox::network</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab677520bdc05be2911259ea06962b06f" kindref="member">LetsEncryptManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" kindref="compound">Config</ref><sp/>{</highlight></codeline>
+<codeline lineno="43" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ae15c8d59dc436749d0365478fd2a74c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ae15c8d59dc436749d0365478fd2a74c7" kindref="member">domain</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Domain<sp/>name<sp/>for<sp/>the<sp/>certificate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ac39a6ebbf8be8871bc2b15a75e0cc1ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ac39a6ebbf8be8871bc2b15a75e0cc1ee" kindref="member">email</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Email<sp/>for<sp/>Let&apos;s<sp/>Encrypt<sp/>notifications</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a21654f277ee7061c9b6dabb7e26eae5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a21654f277ee7061c9b6dabb7e26eae5f" kindref="member">webroot_path</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>for<sp/>webroot<sp/>challenge</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a8f0742fe448c72b9bc10bebba58bda9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a8f0742fe448c72b9bc10bebba58bda9e" kindref="member">cert_path</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>to<sp/>store<sp/>certificates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a52ca09493ec4846829614c1e569f1fa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a52ca09493ec4846829614c1e569f1fa7" kindref="member">staging</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>Let&apos;s<sp/>Encrypt<sp/>staging<sp/>server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ab64690ed49f00773f0b9d09c7a6477f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::hours<sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1ab64690ed49f00773f0b9d09c7a6477f2" kindref="member">renewal_threshold</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>to<sp/>renew<sp/>before<sp/>expiry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a3b4b75ba1ab855fbc623454874d425ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config_1a3b4b75ba1ab855fbc623454874d425ea" kindref="member">auto_renew</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>automatic<sp/>renewal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">Certificate</ref><sp/>{</highlight></codeline>
+<codeline lineno="53" refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1a1f23de482c013be0f4571c0c9fee2595" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1a1f23de482c013be0f4571c0c9fee2595" kindref="member">cert_path</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>to<sp/>certificate<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1ad006346fabf686cd612f117cf7f52ec5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1ad006346fabf686cd612f117cf7f52ec5" kindref="member">key_path</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>to<sp/>private<sp/>key<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1a9b76a83e9831938265b17757a45b8424" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1a9b76a83e9831938265b17757a45b8424" kindref="member">chain_path</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>to<sp/>certificate<sp/>chain<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1a6481715709338c76d170c07d5e0fd0e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1a6481715709338c76d170c07d5e0fd0e1" kindref="member">expiry</ref>;</highlight></codeline>
+<codeline lineno="57" refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1aa2fa878286dc95daf4e5e4c0427f4df1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate_1aa2fa878286dc95daf4e5e4c0427f4df1" kindref="member">domain</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab677520bdc05be2911259ea06962b06f" kindref="member">LetsEncryptManager</ref>();</highlight></codeline>
+<codeline lineno="61" refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4edfd108c6d8cfdfb3d09b560600c2ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4edfd108c6d8cfdfb3d09b560600c2ee" kindref="member">~LetsEncryptManager</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>Let&apos;s<sp/>Encrypt<sp/>manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a6851112d73dbcb5188490d98397c9ec6" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/d1c/structsatox_1_1network_1_1LetsEncryptManager_1_1Config" kindref="compound">Config</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Shutdown<sp/>the<sp/>manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a733618cb2d1fd3a0787085dba1ad0387" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>certificate<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">Certificate</ref><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a0d845247599766f96fadfb8da6cad216" kindref="member">getCurrentCertificate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Force<sp/>certificate<sp/>renewal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4b41147d17721eb131365d2b20e72e52" kindref="member">renewCertificate</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>callback<sp/>for<sp/>certificate<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" kindref="member">CertificateUpdateCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">Certificate</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1a4b6923c0d6ec0c2db895b420e2d136ad" kindref="member">registerUpdateCallback</ref>(<ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" kindref="member">CertificateUpdateCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>Let&apos;s<sp/>Encrypt<sp/>is<sp/>properly<sp/>configured</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1ab76df24a726d357b88ce98f9b3c08d1b" kindref="member">isConfigured</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>last<sp/>error<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1acf6d7608bbc688f911c14d960242fe7c" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/d7a/classsatox_1_1network_1_1LetsEncryptManager_1_1Impl" kindref="compound">Impl</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>pimpl;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::network<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/network/include/satox/network/letsencrypt_manager.hpp"/>
+  </compounddef>
+</doxygen>

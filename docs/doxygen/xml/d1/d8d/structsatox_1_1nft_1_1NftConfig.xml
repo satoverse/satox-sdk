@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d8d/structsatox_1_1nft_1_1NftConfig" kind="struct" language="C++" prot="public">
+    <compoundname>satox::nft::NftConfig</compoundname>
+    <includes refid="d5/de2/nft_2include_2satox_2nft_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a9864ad8d2f47b6ccebdab5e1d892cb26" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::nft::NftConfig::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>satox::nft::NftConfig::name</qualifiedname>
+        <initializer>= &quot;satox_nft&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="51" column="17" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a8227a2e5564c110b589dde6fc19e954d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::nft::NftConfig::enableLogging</definition>
+        <argsstring></argsstring>
+        <name>enableLogging</name>
+        <qualifiedname>satox::nft::NftConfig::enableLogging</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="52" column="10" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d8d/structsatox_1_1nft_1_1NftConfig_1abdd612bb9c001c17c5a9c4e6587a4af8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::nft::NftConfig::logPath</definition>
+        <argsstring></argsstring>
+        <name>logPath</name>
+        <qualifiedname>satox::nft::NftConfig::logPath</qualifiedname>
+        <initializer>= &quot;logs/components/nft/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="53" column="17" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d8d/structsatox_1_1nft_1_1NftConfig_1acf51c7972abac25295491f84871ba8db" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::nft::NftConfig::additionalConfig</definition>
+        <argsstring></argsstring>
+        <name>additionalConfig</name>
+        <qualifiedname>satox::nft::NftConfig::additionalConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="54" column="20" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::nft::NftConfig</label>
+        <link refid="d1/d8d/structsatox_1_1nft_1_1NftConfig"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>logPath</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/nft/include/satox/nft/types.hpp" line="50" column="1" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="50" bodyend="55"/>
+    <listofallmembers>
+      <member refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1acf51c7972abac25295491f84871ba8db" prot="public" virt="non-virtual"><scope>satox::nft::NftConfig</scope><name>additionalConfig</name></member>
+      <member refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a8227a2e5564c110b589dde6fc19e954d" prot="public" virt="non-virtual"><scope>satox::nft::NftConfig</scope><name>enableLogging</name></member>
+      <member refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1abdd612bb9c001c17c5a9c4e6587a4af8" prot="public" virt="non-virtual"><scope>satox::nft::NftConfig</scope><name>logPath</name></member>
+      <member refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a9864ad8d2f47b6ccebdab5e1d892cb26" prot="public" virt="non-virtual"><scope>satox::nft::NftConfig</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

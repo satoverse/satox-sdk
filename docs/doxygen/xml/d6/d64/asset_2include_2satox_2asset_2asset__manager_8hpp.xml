@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/d64/asset_2include_2satox_2asset_2asset__manager_8hpp" kind="file" language="C++">
+    <compoundname>asset_manager.hpp</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="d1/d2e/asset_2include_2satox_2asset_2types_8hpp" local="yes">satox/asset/types.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/asset/include/satox/asset/asset_manager.hpp</label>
+        <link refid="d6/d64/asset_2include_2satox_2asset_2asset__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>satox/asset/types.hpp</label>
+        <link refid="d1/d2e/asset_2include_2satox_2asset_2types_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>chrono</label>
+      </node>
+      <node id="7">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>mutex</label>
+      </node>
+      <node id="9">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d8/d13/classsatox_1_1asset_1_1AssetManager" prot="public">satox::asset::AssetManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d5/d84/namespacesatox_1_1asset">satox::asset</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d1/d2e/asset_2include_2satox_2asset_2types_8hpp" kindref="compound">satox/asset/types.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="df/daa/namespacesatox" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d5/d84/namespacesatox_1_1asset" kindref="compound">satox::asset</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Main<sp/>manager<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d8/d13/classsatox_1_1asset_1_1AssetManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Singleton<sp/>pattern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref>&amp;<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a16c138da27f1d66ba124a1c44a5b8808" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor/Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ad51f1a7f60d3660a8ff4af292021f2af" kindref="member">~AssetManager</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a8d9f0cc1e3012bc9aa17a64898f3cb05" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig" kindref="compound">AssetConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a9b1eb94ad2739d81529ae13b4141bd12" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Core<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a2a54c37c151dfaeeb9eec7f50a24ea11" kindref="member">createAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest" kindref="compound">AssetCreationRequest</ref>&amp;<sp/>request);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ad95c0ec540a1dc9cce084d67a9e46c9b" kindref="member">transferAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest" kindref="compound">AssetTransferRequest</ref>&amp;<sp/>request);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a5968767e0f5ad7d568ea8a75a1e3b84b" kindref="member">reissueAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest" kindref="compound">AssetReissueRequest</ref>&amp;<sp/>request);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ad399ca99d8cc84268b30ac3a1f0b5cde" kindref="member">burnAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest" kindref="compound">AssetBurnRequest</ref>&amp;<sp/>request);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a25d908ac9e63955b444c1398a04cd579" kindref="member">freezeAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>owner_address);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ab56602e2506677c26880a61293984219" kindref="member">unfreezeAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>owner_address);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ad8cfe84260fe2201e5abbfce17c9e66e" kindref="member">destroyAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>owner_address);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Asset<sp/>queries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a4b0c42b88a95f24558a8fbcbddea4c68" kindref="member">getAssetMetadata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/><ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata" kindref="compound">AssetMetadata</ref>&amp;<sp/>metadata)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a91706abdc9aaf8e9548f1f892a3812cc" kindref="member">getAssetBalance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/>uint64_t&amp;<sp/>balance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a3aab2f79b644399fdda3176c50205cc7" kindref="member">getAssetOwners</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/>std::vector&lt;std::string&gt;&amp;<sp/>owners)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a19f71573618b6fcd257f0812361f82d2" kindref="member">getAssetStatus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/><ref refid="d5/d84/namespacesatox_1_1asset_1a16ed6f3af7681a878181b0efed4a289e" kindref="member">AssetStatus</ref>&amp;<sp/>status)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a1dc998c0c9bce46d5ec5db6ce9f96cc5" kindref="member">getAssetType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/><ref refid="d5/d84/namespacesatox_1_1asset_1aa4c5068043f9c46eb2120944b33b2a2c" kindref="member">AssetType</ref>&amp;<sp/>type)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Asset<sp/>validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1aea0f0214f59cc8c85ca3fd2d9ac595b9" kindref="member">verifyAsset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name,<sp/><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">AssetVerificationResult</ref>&amp;<sp/>result)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a14ace1d11be0b5b6182ef2da5981e611" kindref="member">validateAssetMetadata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata" kindref="compound">AssetMetadata</ref>&amp;<sp/>metadata,<sp/><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">AssetVerificationResult</ref>&amp;<sp/>result)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1af85c5ee5e782983545fb460c0c5fea4d" kindref="member">validateAssetTransfer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest" kindref="compound">AssetTransferRequest</ref>&amp;<sp/>request,<sp/><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">AssetVerificationResult</ref>&amp;<sp/>result)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a49fff1be6cffa366c1eefba0bcd5d850" kindref="member">validateAssetReissue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest" kindref="compound">AssetReissueRequest</ref>&amp;<sp/>request,<sp/><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">AssetVerificationResult</ref>&amp;<sp/>result)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a6288741789a79f007d3d0562cee601bd" kindref="member">validateAssetBurn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest" kindref="compound">AssetBurnRequest</ref>&amp;<sp/>request,<sp/><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">AssetVerificationResult</ref>&amp;<sp/>result)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>State<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d84/namespacesatox_1_1asset_1af34bec9dc2938390418760627d80aeea" kindref="member">AssetState</ref><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a1e4402bd0e3b8bdab0da50191b3c8318" kindref="member">getState</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a2a67c17d67518e2eb72f4bebaa049e48" kindref="member">isInitialized</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1af552b2f014c57c0bfb08f2411ca6d976" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig" kindref="compound">AssetConfig</ref><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a8d1f379e8bb54b19467a7df947d0746b" kindref="member">getConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ac07e42ad7a4aa3d0b95ec22acc5cd678" kindref="member">updateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig" kindref="compound">AssetConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a8cf00ad6cdb99e779eb246dcddd47d44" kindref="member">validateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig" kindref="compound">AssetConfig</ref>&amp;<sp/>config)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>and<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d72/structsatox_1_1asset_1_1AssetStats" kindref="compound">AssetStats</ref><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ae033207fcc14daea8227befc55e8ef83" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a686f9db186338f3393339ef0707d5a92" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a50c9724b5cfcbffbe9fbfb8d69e4d403" kindref="member">enableStats</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callback<sp/>registration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a374974caee3692db6fcf0a72db3d5733" kindref="member">registerAssetCallback</ref>(<ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a6b993cb26df317e9777ffaaf730c4a9a" kindref="member">AssetCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a55385f1778ad632ba78cd738385c311a" kindref="member">registerOperationCallback</ref>(<ref refid="d5/d84/namespacesatox_1_1asset_1a12005847b6201d1a7e2d723b0e242abf" kindref="member">OperationCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1aebe86bfa3816b6205f8fd12e4a612967" kindref="member">registerErrorCallback</ref>(<ref refid="d5/d84/namespacesatox_1_1asset_1a270927fb7a302c662b317dcb2eb7467e" kindref="member">ErrorCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a55f28a0547859948c53462b54b2ed024" kindref="member">unregisterAssetCallback</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ab13e5df57eda77848370dcc1868bd29f" kindref="member">unregisterOperationCallback</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a2509cf8efb83f21afd38f2265af74fed" kindref="member">unregisterErrorCallback</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a06f4d96ab122326ae3538b2ba5db863b" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ac6953177654bac3715ec37043d5014d6" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a5c68268c280bfa48480cadb7a0e1bb03" kindref="member">healthCheck</ref>();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a273fb354e5c1049afb6399405a843f4f" kindref="member">getHealthStatus</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Additional<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1adb396d160596f68905afe68938bbf11f" kindref="member">getAssetInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;nlohmann::json&gt;<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a8810d5507bd29e669bc7e317ffed4d71" kindref="member">listAssets</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;nlohmann::json&gt;<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1ad2d0629f69a65e66f8dcda56c3f249fd" kindref="member">getAssetHistory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;nlohmann::json&gt;<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a130cca06ddc0fe0e8cd65e24bc3f44fc" kindref="member">getAssetBalances</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;nlohmann::json&gt;<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1af9c1ed53d0c1e462af2f61b3a141033b" kindref="member">getAssetTransactions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>asset_name);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>copy<sp/>and<sp/>assignment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a65eb2d46efa850b60e9f24254cd36923" kindref="member">AssetManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Private<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setLastError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyAssetEvent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>event,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyOperationEvent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dcb/structsatox_1_1asset_1_1AssetResult" kindref="compound">AssetResult</ref>&amp;<sp/>result);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyErrorEvent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStats(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>operationTime);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateState()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>logOperation(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>duration);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateAssetCreationRequest(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest" kindref="compound">AssetCreationRequest</ref>&amp;<sp/>request,<sp/><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">AssetVerificationResult</ref>&amp;<sp/>result)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d84/namespacesatox_1_1asset_1af34bec9dc2938390418760627d80aeea" kindref="member">AssetState</ref><sp/>state_<sp/>=<sp/><ref refid="d5/d84/namespacesatox_1_1asset_1af34bec9dc2938390418760627d80aeeaadd652546039b18970b8dcf2cff824268" kindref="member">AssetState::UNINITIALIZED</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig" kindref="compound">AssetConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d72/structsatox_1_1asset_1_1AssetStats" kindref="compound">AssetStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>statsEnabled_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>lastError_;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>consecutiveFailures_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/>lastHealthCheck_;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Asset<sp/>storage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>AssetMetadata&gt;<sp/>assets_;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::unordered_map&lt;std::string,<sp/>uint64_t&gt;&gt;<sp/>balances_;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>AssetStatus&gt;<sp/>assetStatuses_;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AssetCallback&gt;<sp/>assetCallbacks_;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;OperationCallback&gt;<sp/>operationCallbacks_;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ErrorCallback&gt;<sp/>errorCallbacks_;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::asset<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/asset/include/satox/asset/asset_manager.hpp"/>
+  </compounddef>
+</doxygen>

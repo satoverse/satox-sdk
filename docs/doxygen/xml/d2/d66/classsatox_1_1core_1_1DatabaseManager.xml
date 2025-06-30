@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/d66/classsatox_1_1core_1_1DatabaseManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::DatabaseManager</compoundname>
+    <includes refid="d6/dc5/core_2include_2satox_2core_2database__manager_8hpp" local="no">database_manager.hpp</includes>
+    <innerclass refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" prot="public">satox::core::DatabaseManager::DatabaseConfig</innerclass>
+    <innerclass refid="d3/deb/classsatox_1_1core_1_1DatabaseManager_1_1Impl" prot="public">satox::core::DatabaseManager::Impl</innerclass>
+    <innerclass refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult" prot="public">satox::core::DatabaseManager::QueryResult</innerclass>
+    <innerclass refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" prot="public">satox::core::DatabaseManager::Transaction</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ab9e708424495d7b4fb14de3b8f26f937" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="d3/deb/classsatox_1_1core_1_1DatabaseManager_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; satox::core::DatabaseManager::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <qualifiedname>satox::core::DatabaseManager::impl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="118" column="21" bodyfile="src/core/include/satox/core/database_manager.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a3c10eaff361a111d0471f089fcd34b4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::DatabaseManager::DatabaseManager</definition>
+        <argsstring>()</argsstring>
+        <name>DatabaseManager</name>
+        <qualifiedname>satox::core::DatabaseManager::DatabaseManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="79" column="5" bodyfile="src/core/src/database_manager.cpp" bodystart="2083" bodyend="2084"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ae489e2937e49302a92600cabb00d219f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::DatabaseManager::~DatabaseManager</definition>
+        <argsstring>()</argsstring>
+        <name>~DatabaseManager</name>
+        <qualifiedname>satox::core::DatabaseManager::~DatabaseManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="80" column="5" bodyfile="src/core/src/database_manager.cpp" bodystart="2086" bodyend="2090"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a86843c5c1a1baabd9e966eabc30218a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::initialize</definition>
+        <argsstring>(const DatabaseConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::DatabaseManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="82" column="10" bodyfile="src/core/src/database_manager.cpp" bodystart="2092" bodyend="2094"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a60a2434e0e1b9779e5e9e4d40b0dcda7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::DatabaseManager::connect</definition>
+        <argsstring>(DatabaseType type, const nlohmann::json &amp;config)</argsstring>
+        <name>connect</name>
+        <qualifiedname>satox::core::DatabaseManager::connect</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51d" kindref="member">DatabaseType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="87" column="17" bodyfile="src/core/src/database_manager.cpp" bodystart="2100" bodyend="2102"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a33aac7f15e4fe4f28f2228903ee8db24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::disconnect</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::core::DatabaseManager::disconnect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="88" column="10" bodyfile="src/core/src/database_manager.cpp" bodystart="2104" bodyend="2106"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a94cb9d365f2a7a9b47d6ed852df8e74b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::executeQuery</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;query, nlohmann::json &amp;result)</argsstring>
+        <name>executeQuery</name>
+        <qualifiedname>satox::core::DatabaseManager::executeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="93" column="10" bodyfile="src/core/src/database_manager.cpp" bodystart="2108" bodyend="2110"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ae04c87f7b10e69e1bda942b0d92c9007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::executeTransaction</definition>
+        <argsstring>(const std::string &amp;id, const std::vector&lt; std::string &gt; &amp;queries, nlohmann::json &amp;result)</argsstring>
+        <name>executeTransaction</name>
+        <qualifiedname>satox::core::DatabaseManager::executeTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>queries</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="94" column="10" bodyfile="src/core/src/database_manager.cpp" bodystart="2112" bodyend="2114"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af2ba1af3af66e68ad292ce06dba64091" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" kindref="compound">Transaction</ref></type>
+        <definition>Transaction satox::core::DatabaseManager::beginTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>beginTransaction</name>
+        <qualifiedname>satox::core::DatabaseManager::beginTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="97" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1aacfa4b9ac6bb597b7a797cf0a440d8cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::commitTransaction</definition>
+        <argsstring>(const std::string &amp;transaction_id)</argsstring>
+        <name>commitTransaction</name>
+        <qualifiedname>satox::core::DatabaseManager::commitTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>transaction_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="98" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a39e2ab83e69a9d01674aaddc945e0696" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::rollbackTransaction</definition>
+        <argsstring>(const std::string &amp;transaction_id)</argsstring>
+        <name>rollbackTransaction</name>
+        <qualifiedname>satox::core::DatabaseManager::rollbackTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>transaction_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="99" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a4832b194696e8c2cde92efebfd2917f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::setMaxConnections</definition>
+        <argsstring>(int max_connections)</argsstring>
+        <name>setMaxConnections</name>
+        <qualifiedname>satox::core::DatabaseManager::setMaxConnections</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>max_connections</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="102" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a70b1a658304ece0a3d03fd285e7f4b19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::core::DatabaseManager::getActiveConnections</definition>
+        <argsstring>() const</argsstring>
+        <name>getActiveConnections</name>
+        <qualifiedname>satox::core::DatabaseManager::getActiveConnections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="103" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a22b6290616c6e34adc17fe8edf73521e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::core::DatabaseManager::getAvailableConnections</definition>
+        <argsstring>() const</argsstring>
+        <name>getAvailableConnections</name>
+        <qualifiedname>satox::core::DatabaseManager::getAvailableConnections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="104" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a45e56fa0db8666fef7b6881b1075af2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::backup</definition>
+        <argsstring>(const std::string &amp;backup_path)</argsstring>
+        <name>backup</name>
+        <qualifiedname>satox::core::DatabaseManager::backup</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backup_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="107" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1affd9508377f013d6f88b2efce3d64c26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::DatabaseManager::restore</definition>
+        <argsstring>(const std::string &amp;backup_path)</argsstring>
+        <name>restore</name>
+        <qualifiedname>satox::core::DatabaseManager::restore</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backup_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="108" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ab1c34b04ef2585c4e3b7e23d7a596c37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::DatabaseManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::DatabaseManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="111" column="17" bodyfile="src/core/src/database_manager.cpp" bodystart="2116" bodyend="2118"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a763542811d3e571db287687c19bd4062" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::DatabaseManager::clearError</definition>
+        <argsstring>()</argsstring>
+        <name>clearError</name>
+        <qualifiedname>satox::core::DatabaseManager::clearError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="112" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af6d7b7a63d0fba186d355da8aa1ca090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::DatabaseManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::DatabaseManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/database_manager.hpp" line="114" column="10" bodyfile="src/core/src/database_manager.cpp" bodystart="2096" bodyend="2098"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/database_manager.hpp" line="51" column="1" bodyfile="src/core/include/satox/core/database_manager.hpp" bodystart="51" bodyend="119"/>
+    <listofallmembers>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a45e56fa0db8666fef7b6881b1075af2b" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>backup</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af2ba1af3af66e68ad292ce06dba64091" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>beginTransaction</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a763542811d3e571db287687c19bd4062" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>clearError</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1aacfa4b9ac6bb597b7a797cf0a440d8cb" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>commitTransaction</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a60a2434e0e1b9779e5e9e4d40b0dcda7" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>connect</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a3c10eaff361a111d0471f089fcd34b4c" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>DatabaseManager</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a33aac7f15e4fe4f28f2228903ee8db24" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>disconnect</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a94cb9d365f2a7a9b47d6ed852df8e74b" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>executeQuery</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ae04c87f7b10e69e1bda942b0d92c9007" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>executeTransaction</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a70b1a658304ece0a3d03fd285e7f4b19" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>getActiveConnections</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a22b6290616c6e34adc17fe8edf73521e" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>getAvailableConnections</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ab1c34b04ef2585c4e3b7e23d7a596c37" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>getLastError</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ab9e708424495d7b4fb14de3b8f26f937" prot="private" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>impl_</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a86843c5c1a1baabd9e966eabc30218a0" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>initialize</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1affd9508377f013d6f88b2efce3d64c26" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>restore</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a39e2ab83e69a9d01674aaddc945e0696" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>rollbackTransaction</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a4832b194696e8c2cde92efebfd2917f1" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>setMaxConnections</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af6d7b7a63d0fba186d355da8aa1ca090" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>shutdown</name></member>
+      <member refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ae489e2937e49302a92600cabb00d219f" prot="public" virt="non-virtual"><scope>satox::core::DatabaseManager</scope><name>~DatabaseManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/d38/KeccakSponge_8h" kind="file" language="C++">
+    <compoundname>KeccakSponge.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="dd/d5f/KeccakF-1600-reference_8h" local="yes">KeccakF-1600-reference.h</includes>
+    <includedby refid="dd/dfe/kawpow_8cpp" local="yes">src/blockchain/src/kawpow.cpp</includedby>
+    <includedby refid="d9/db3/KeccakSponge_8c" local="yes">src/blockchain/third_party/keccak/src/KeccakSponge.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>KeccakF-1600-reference.h</label>
+        <link refid="dd/d5f/KeccakF-1600-reference_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/blockchain/third_party/keccak/include/KeccakSponge.h</label>
+        <link refid="d3/d38/KeccakSponge_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/blockchain/src/kawpow.cpp</label>
+        <link refid="dd/dfe/kawpow_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/blockchain/third_party/keccak/include/KeccakSponge.h</label>
+        <link refid="d3/d38/KeccakSponge_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/blockchain/third_party/keccak/src/KeccakSponge.c</label>
+        <link refid="d9/db3/KeccakSponge_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d5/d44/structKeccakSponge" prot="public">KeccakSponge</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="d3/d38/KeccakSponge_8h_1a9453260c58289abc77246d18c12fa59a" prot="public" static="no">
+        <name>KECCAK_SPONGE_BITRATE</name>
+        <initializer>1088</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="7" column="9" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/d38/KeccakSponge_8h_1a48e5b08283b1fb9d77c8be2915bba6d7" prot="public" static="no">
+        <name>KECCAK_SPONGE_CAPACITY</name>
+        <initializer>512</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="8" column="9" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/d38/KeccakSponge_8h_1a2f4007db3cbf9465e51a2b66261f7603" prot="public" static="no">
+        <name>KECCAK_SPONGE_BLOCKSIZE</name>
+        <initializer>(<ref refid="d3/d38/KeccakSponge_8h_1a9453260c58289abc77246d18c12fa59a" kindref="member">KECCAK_SPONGE_BITRATE</ref> / 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="9" column="9" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakSponge_Initialize</definition>
+        <argsstring>(KeccakSponge *sponge, unsigned int rate, unsigned int capacity)</argsstring>
+        <name>KeccakSponge_Initialize</name>
+        <param>
+          <type><ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref> *</type>
+          <declname>sponge</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>rate</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="24" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakSponge.c" bodystart="4" bodyend="10" declfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" declline="24" declcolumn="6"/>
+        <references refid="d5/d44/structKeccakSponge_1aec5d296778b4ab46170db4524e2a99d0" compoundref="d3/d38/KeccakSponge_8h" startline="16">KeccakSponge::bitsAvailableForSqueezing</references>
+        <references refid="d5/d44/structKeccakSponge_1a574b4bf5fe89c609b31897e212435a8d" compoundref="d3/d38/KeccakSponge_8h" startline="15">KeccakSponge::bitsInQueue</references>
+        <references refid="d5/d44/structKeccakSponge_1a446652b9b6512721fe445fdd07529ab7" compoundref="d3/d38/KeccakSponge_8h" startline="14">KeccakSponge::capacity</references>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a1e3d2ba7d471ef2885905c4d7169e36d" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="17" endline="19">KeccakF_1600_Initialize</references>
+        <references refid="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" compoundref="d3/d38/KeccakSponge_8h" startline="13">KeccakSponge::rate</references>
+        <references refid="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" compoundref="d3/d38/KeccakSponge_8h" startline="12">KeccakSponge::state</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/KeccakSponge_8h_1a0dea0ec27e252be914996a10848e9d10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakSponge_Absorb</definition>
+        <argsstring>(KeccakSponge *sponge, const unsigned char *data, unsigned int dataByteLen)</argsstring>
+        <name>KeccakSponge_Absorb</name>
+        <param>
+          <type><ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref> *</type>
+          <declname>sponge</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>dataByteLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="25" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakSponge.c" bodystart="12" bodyend="29" declfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" declline="25" declcolumn="6"/>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a9579edfff1790be29cfb33c55d0026f4" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="32" endline="68">KeccakF_1600_StatePermute</references>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a96070b6810568d955671ccc769c72c71" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="21" endline="26">KeccakF_1600_StateXORBytes</references>
+        <references refid="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" compoundref="d3/d38/KeccakSponge_8h" startline="13">KeccakSponge::rate</references>
+        <references refid="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" compoundref="d3/d38/KeccakSponge_8h" startline="12">KeccakSponge::state</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/KeccakSponge_8h_1affa225cf50299bad7641318082b78500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakSponge_Squeeze</definition>
+        <argsstring>(KeccakSponge *sponge, unsigned char *data, unsigned int dataByteLen)</argsstring>
+        <name>KeccakSponge_Squeeze</name>
+        <param>
+          <type><ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref> *</type>
+          <declname>sponge</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>dataByteLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="26" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakSponge.c" bodystart="31" bodyend="48" declfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" declline="26" declcolumn="6"/>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a2501119969421f4a9f0ee78cd55445b8" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="28" endline="30">KeccakF_1600_StateExtractBytes</references>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a9579edfff1790be29cfb33c55d0026f4" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="32" endline="68">KeccakF_1600_StatePermute</references>
+        <references refid="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" compoundref="d3/d38/KeccakSponge_8h" startline="13">KeccakSponge::rate</references>
+        <references refid="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" compoundref="d3/d38/KeccakSponge_8h" startline="12">KeccakSponge::state</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>KECCAKSPONGE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KECCAKSPONGE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/d5f/KeccakF-1600-reference_8h" kindref="compound">KeccakF-1600-reference.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="d3/d38/KeccakSponge_8h_1a9453260c58289abc77246d18c12fa59a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KECCAK_SPONGE_BITRATE<sp/>1088</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="d3/d38/KeccakSponge_8h_1a48e5b08283b1fb9d77c8be2915bba6d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KECCAK_SPONGE_CAPACITY<sp/>512</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="d3/d38/KeccakSponge_8h_1a2f4007db3cbf9465e51a2b66261f7603" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KECCAK_SPONGE_BLOCKSIZE<sp/>(KECCAK_SPONGE_BITRATE<sp/>/<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="d5/d44/structKeccakSponge" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12" refid="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref><sp/><ref refid="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="13" refid="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" kindref="member">rate</ref>;</highlight></codeline>
+<codeline lineno="14" refid="d5/d44/structKeccakSponge_1a446652b9b6512721fe445fdd07529ab7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d44/structKeccakSponge_1a446652b9b6512721fe445fdd07529ab7" kindref="member">capacity</ref>;</highlight></codeline>
+<codeline lineno="15" refid="d5/d44/structKeccakSponge_1a574b4bf5fe89c609b31897e212435a8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d44/structKeccakSponge_1a574b4bf5fe89c609b31897e212435a8d" kindref="member">bitsInQueue</ref>;</highlight></codeline>
+<codeline lineno="16" refid="d5/d44/structKeccakSponge_1aec5d296778b4ab46170db4524e2a99d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d44/structKeccakSponge_1aec5d296778b4ab46170db4524e2a99d0" kindref="member">bitsAvailableForSqueezing</ref>;</highlight></codeline>
+<codeline lineno="17" refid="d5/d44/structKeccakSponge_1a6a8426de53638383c816912e4d85f5fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="d5/d44/structKeccakSponge_1a6a8426de53638383c816912e4d85f5fe" kindref="member">queue</ref>[<ref refid="d3/d38/KeccakSponge_8h_1a2f4007db3cbf9465e51a2b66261f7603" kindref="member">KECCAK_SPONGE_BLOCKSIZE</ref>];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}<sp/><ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" kindref="member">KeccakSponge_Initialize</ref>(<ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref><sp/>*sponge,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rate,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>capacity);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d38/KeccakSponge_8h_1a0dea0ec27e252be914996a10848e9d10" kindref="member">KeccakSponge_Absorb</ref>(<ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref><sp/>*sponge,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dataByteLen);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d38/KeccakSponge_8h_1affa225cf50299bad7641318082b78500" kindref="member">KeccakSponge_Squeeze</ref>(<ref refid="d5/d44/structKeccakSponge" kindref="compound">KeccakSponge</ref><sp/>*sponge,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dataByteLen);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>KECCAKSPONGE_H<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h"/>
+  </compounddef>
+</doxygen>

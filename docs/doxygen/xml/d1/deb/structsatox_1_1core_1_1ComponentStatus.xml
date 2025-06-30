@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/deb/structsatox_1_1core_1_1ComponentStatus" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::ComponentStatus</compoundname>
+    <includes refid="d6/dcd/core__manager_8hpp" local="no">core_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a0e4d1ae88bd0e7cdead51400051d8c0f" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::ComponentStatus::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>satox::core::ComponentStatus::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="93" column="17" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="93" bodyend="-1"/>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1af2fc7e66fd8dd9afd97e23b8de8885c9" compoundref="da/d8f/satox__manager_8cpp" startline="267" endline="276">satox::core::SatoxManager::getComponentStatus</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">satox::core::CoreManager::restartComponent</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a64026a035a4f44c3f4cecb5bfce8e6b5" compoundref="d2/d5f/core__manager_8cpp" startline="347" endline="405">satox::core::CoreManager::updateComponent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ac3047cf286170ce772503fedfe8cdb2c" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" kindref="member">ComponentState</ref></type>
+        <definition>ComponentState satox::core::ComponentStatus::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>satox::core::ComponentStatus::state</qualifiedname>
+        <initializer>= <ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecadd652546039b18970b8dcf2cff824268" kindref="member">ComponentState::UNINITIALIZED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="94" column="20" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="94" bodyend="-1"/>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1af2fc7e66fd8dd9afd97e23b8de8885c9" compoundref="da/d8f/satox__manager_8cpp" startline="267" endline="276">satox::core::SatoxManager::getComponentStatus</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">satox::core::CoreManager::restartComponent</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a64026a035a4f44c3f4cecb5bfce8e6b5" compoundref="d2/d5f/core__manager_8cpp" startline="347" endline="405">satox::core::CoreManager::updateComponent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/deb/structsatox_1_1core_1_1ComponentStatus_1aace1b0cc18759adcc6c541d8da7e8eed" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::ComponentStatus::last_update</definition>
+        <argsstring></argsstring>
+        <name>last_update</name>
+        <qualifiedname>satox::core::ComponentStatus::last_update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="95" column="43" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="95" bodyend="-1"/>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">satox::core::CoreManager::restartComponent</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a64026a035a4f44c3f4cecb5bfce8e6b5" compoundref="d2/d5f/core__manager_8cpp" startline="347" endline="405">satox::core::CoreManager::updateComponent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ae3c0ae28ca4c2f1eb53f4e8b88cc8b42" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::core::ComponentStatus::error_count</definition>
+        <argsstring></argsstring>
+        <name>error_count</name>
+        <qualifiedname>satox::core::ComponentStatus::error_count</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="96" column="14" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="96" bodyend="-1"/>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">satox::core::CoreManager::restartComponent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a20dfaec49bc4790ed8a2e4124d3c1b7f" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::ComponentStatus::last_error</definition>
+        <argsstring></argsstring>
+        <name>last_error</name>
+        <qualifiedname>satox::core::ComponentStatus::last_error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="97" column="17" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/deb/structsatox_1_1core_1_1ComponentStatus_1addcd97c4d49a829b19b324f8302ae6a2" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::ComponentStatus::additional_info</definition>
+        <argsstring></argsstring>
+        <name>additional_info</name>
+        <qualifiedname>satox::core::ComponentStatus::additional_info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="98" column="20" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::core::ComponentStatus</label>
+        <link refid="d1/deb/structsatox_1_1core_1_1ComponentStatus"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>last_error</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/core_manager.hpp" line="92" column="1" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="92" bodyend="99"/>
+    <listofallmembers>
+      <member refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1addcd97c4d49a829b19b324f8302ae6a2" prot="public" virt="non-virtual"><scope>satox::core::ComponentStatus</scope><name>additional_info</name></member>
+      <member refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ae3c0ae28ca4c2f1eb53f4e8b88cc8b42" prot="public" virt="non-virtual"><scope>satox::core::ComponentStatus</scope><name>error_count</name></member>
+      <member refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a20dfaec49bc4790ed8a2e4124d3c1b7f" prot="public" virt="non-virtual"><scope>satox::core::ComponentStatus</scope><name>last_error</name></member>
+      <member refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1aace1b0cc18759adcc6c541d8da7e8eed" prot="public" virt="non-virtual"><scope>satox::core::ComponentStatus</scope><name>last_update</name></member>
+      <member refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a0e4d1ae88bd0e7cdead51400051d8c0f" prot="public" virt="non-virtual"><scope>satox::core::ComponentStatus</scope><name>name</name></member>
+      <member refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ac3047cf286170ce772503fedfe8cdb2c" prot="public" virt="non-virtual"><scope>satox::core::ComponentStatus</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

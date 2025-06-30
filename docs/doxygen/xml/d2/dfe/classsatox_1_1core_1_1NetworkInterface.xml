@@ -1,0 +1,876 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::NetworkInterface</compoundname>
+    <includes refid="d1/da1/network__interface_8h" local="no">network_interface.h</includes>
+    <innerclass refid="d0/d99/structsatox_1_1core_1_1NetworkInterface_1_1Peer" prot="private">satox::core::NetworkInterface::Peer</innerclass>
+    <innerclass refid="d5/dba/structsatox_1_1core_1_1NetworkInterface_1_1PendingResponse" prot="private">satox::core::NetworkInterface::PendingResponse</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a1be785f222f3087ccd3e94f0b25eecf1" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::address_</definition>
+        <argsstring></argsstring>
+        <name>address_</name>
+        <qualifiedname>satox::core::NetworkInterface::address_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="135" column="17" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad78a46bfd668087849ff1b0003cdcf23" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t satox::core::NetworkInterface::port_</definition>
+        <argsstring></argsstring>
+        <name>port_</name>
+        <qualifiedname>satox::core::NetworkInterface::port_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="136" column="14" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa59b0af83d0a4036120fed9228c79ec8" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::NetworkInterface::connected_</definition>
+        <argsstring></argsstring>
+        <name>connected_</name>
+        <qualifiedname>satox::core::NetworkInterface::connected_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="137" column="17" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a4f8eb2bf240f9590172ad6c6256e8cc7" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::NetworkInterface::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::core::NetworkInterface::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="138" column="17" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa7b53e8c841c1f0d3152f37825de7f87" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread satox::core::NetworkInterface::messageThread_</definition>
+        <argsstring></argsstring>
+        <name>messageThread_</name>
+        <qualifiedname>satox::core::NetworkInterface::messageThread_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="139" column="17" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a09775a9a3ae886d95a854f0e46f8bbdc" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::NetworkInterface::peersMutex_</definition>
+        <argsstring></argsstring>
+        <name>peersMutex_</name>
+        <qualifiedname>satox::core::NetworkInterface::peersMutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="140" column="16" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a3e5ec2c298c9b2a3ab5d42510f698f7a" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::NetworkInterface::queueMutex_</definition>
+        <argsstring></argsstring>
+        <name>queueMutex_</name>
+        <qualifiedname>satox::core::NetworkInterface::queueMutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="141" column="16" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a60fd2d5e30f65836f979a87bf6e7006c" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::NetworkInterface::responseMutex_</definition>
+        <argsstring></argsstring>
+        <name>responseMutex_</name>
+        <qualifiedname>satox::core::NetworkInterface::responseMutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="142" column="16" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a3eb6795553b84888d0d78ca13cf7d482" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::core::NetworkInterface::queueCondition_</definition>
+        <argsstring></argsstring>
+        <name>queueCondition_</name>
+        <qualifiedname>satox::core::NetworkInterface::queueCondition_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="143" column="29" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa6f36df373472d389584c1d5b2b39ee7" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &gt;</type>
+        <definition>std::queue&lt;NetworkMessage&gt; satox::core::NetworkInterface::messageQueue_</definition>
+        <argsstring></argsstring>
+        <name>messageQueue_</name>
+        <qualifiedname>satox::core::NetworkInterface::messageQueue_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="144" column="16" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a6bfcd15bfba3b9b187d1b7f3084f27e3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Peer &gt;</type>
+        <definition>std::vector&lt;Peer&gt; satox::core::NetworkInterface::peers_</definition>
+        <argsstring></argsstring>
+        <name>peers_</name>
+        <qualifiedname>satox::core::NetworkInterface::peers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="145" column="17" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a905942180f94bd2872ed932b8cf07a4e" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;void(const NetworkMessage&amp;)&gt; satox::core::NetworkInterface::messageCallback_</definition>
+        <argsstring></argsstring>
+        <name>messageCallback_</name>
+        <qualifiedname>satox::core::NetworkInterface::messageCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="146" column="19" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a2532d581441ee63b92ad945ea2835015" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, PendingResponse &gt;</type>
+        <definition>std::unordered_map&lt;std::string, PendingResponse&gt; satox::core::NetworkInterface::pendingResponses_</definition>
+        <argsstring></argsstring>
+        <name>pendingResponses_</name>
+        <qualifiedname>satox::core::NetworkInterface::pendingResponses_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="147" column="24" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a6cab260a77a71993b898aa00d4e8f1f8" prot="private" static="no" mutable="no">
+        <type>std::random_device</type>
+        <definition>std::random_device satox::core::NetworkInterface::rd_</definition>
+        <argsstring></argsstring>
+        <name>rd_</name>
+        <qualifiedname>satox::core::NetworkInterface::rd_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="148" column="24" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1adcf596e4ad86493b990a49361a3e5eb9" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 satox::core::NetworkInterface::gen_</definition>
+        <argsstring></argsstring>
+        <name>gen_</name>
+        <qualifiedname>satox::core::NetworkInterface::gen_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="149" column="18" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af8a85c7e1145b9e783ffa14f30e09eb5" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>std::function&lt;void(const std::string&amp;)&gt; satox::core::NetworkInterface::errorCallback_</definition>
+        <argsstring></argsstring>
+        <name>errorCallback_</name>
+        <qualifiedname>satox::core::NetworkInterface::errorCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="150" column="19" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa4153b3164eeb5c540cd6f0db45676e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NetworkInterface::NetworkInterface</definition>
+        <argsstring>()</argsstring>
+        <name>NetworkInterface</name>
+        <qualifiedname>satox::core::NetworkInterface::NetworkInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="72" column="5" bodyfile="src/core/src/network_interface.cpp" bodystart="46" bodyend="51"/>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1add2288586f872b9ed8c9f5558472fe8a">NetworkInterface</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a7c12e298782717f680d7b1d6ab7836b4">NetworkInterface</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af180f35436c530496bf659a9c6e7d3d9">operator=</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a5d85643e6b44de50a76cfd1104208b7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NetworkInterface::~NetworkInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~NetworkInterface</name>
+        <qualifiedname>satox::core::NetworkInterface::~NetworkInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="73" column="5" bodyfile="src/core/src/network_interface.cpp" bodystart="53" bodyend="55"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a03ee7120c3d8d7cee0b0c2c92e22f2cb" compoundref="df/d85/network__interface_8cpp" startline="207" endline="223">disconnect</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1add2288586f872b9ed8c9f5558472fe8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NetworkInterface::NetworkInterface</definition>
+        <argsstring>(const NetworkInterface &amp;)=delete</argsstring>
+        <name>NetworkInterface</name>
+        <qualifiedname>satox::core::NetworkInterface::NetworkInterface</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="76" column="5"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa4153b3164eeb5c540cd6f0db45676e5" compoundref="df/d85/network__interface_8cpp" startline="46" endline="51">NetworkInterface</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af180f35436c530496bf659a9c6e7d3d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref> &amp;</type>
+        <definition>NetworkInterface &amp; satox::core::NetworkInterface::operator=</definition>
+        <argsstring>(const NetworkInterface &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::NetworkInterface::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="77" column="22"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa4153b3164eeb5c540cd6f0db45676e5" compoundref="df/d85/network__interface_8cpp" startline="46" endline="51">NetworkInterface</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a7c12e298782717f680d7b1d6ab7836b4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NetworkInterface::NetworkInterface</definition>
+        <argsstring>(NetworkInterface &amp;&amp;) noexcept=default</argsstring>
+        <name>NetworkInterface</name>
+        <qualifiedname>satox::core::NetworkInterface::NetworkInterface</qualifiedname>
+        <param>
+          <type><ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="80" column="5"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa4153b3164eeb5c540cd6f0db45676e5" compoundref="df/d85/network__interface_8cpp" startline="46" endline="51">NetworkInterface</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref> &amp;</type>
+        <definition>NetworkInterface &amp; satox::core::NetworkInterface::operator=</definition>
+        <argsstring>(NetworkInterface &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::NetworkInterface::operator=</qualifiedname>
+        <param>
+          <type><ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="81" column="22"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a79f3ce0481b48306da23b51049059455" compoundref="df/d85/network__interface_8cpp" startline="199" endline="205">connect</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a03ee7120c3d8d7cee0b0c2c92e22f2cb" compoundref="df/d85/network__interface_8cpp" startline="207" endline="223">disconnect</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1adc28f5f7241ced861feb691be61cb82d" compoundref="df/d85/network__interface_8cpp" startline="108" endline="135">handleResponse</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a2d4bda12bda8022cc18b98ce70c9fca2" compoundref="df/d85/network__interface_8cpp" startline="225" endline="227">isConnected</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa4153b3164eeb5c540cd6f0db45676e5" compoundref="df/d85/network__interface_8cpp" startline="46" endline="51">NetworkInterface</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" compoundref="df/d85/network__interface_8cpp" startline="229" endline="259">sendMessage</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a176bb64344072355aa8e706af637a16b" compoundref="df/d85/network__interface_8cpp" startline="191" endline="193">setMessageCallback</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" compoundref="df/d85/network__interface_8cpp" startline="137" endline="172">waitForResponse</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a79f3ce0481b48306da23b51049059455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NetworkInterface::connect</definition>
+        <argsstring>(const std::string &amp;address, uint16_t port)</argsstring>
+        <name>connect</name>
+        <qualifiedname>satox::core::NetworkInterface::connect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="84" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="199" bodyend="205"/>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a03ee7120c3d8d7cee0b0c2c92e22f2cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::core::NetworkInterface::disconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="85" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="207" bodyend="223"/>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a6c4a10dd6560c3486dde41a3b9a581e4" compoundref="d1/da1/network__interface_8h" startline="66">satox::core::NetworkResponse::error</references>
+        <references refid="d8/d93/structsatox_1_1core_1_1NetworkResponse_1a6b4a4352ba67329cce32632b896ac410" compoundref="d1/da1/network__interface_8h" startline="64">satox::core::NetworkResponse::success</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a5d85643e6b44de50a76cfd1104208b7f" compoundref="df/d85/network__interface_8cpp" startline="53" endline="55">~NetworkInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a2d4bda12bda8022cc18b98ce70c9fca2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NetworkInterface::isConnected</definition>
+        <argsstring>() const</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>satox::core::NetworkInterface::isConnected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="86" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="225" bodyend="227"/>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::sendMessage</definition>
+        <argsstring>(const NetworkMessage &amp;message)</argsstring>
+        <name>sendMessage</name>
+        <qualifiedname>satox::core::NetworkInterface::sendMessage</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="89" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="229" bodyend="259"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2ba6a01b26840f250bc60df5edeace07458" compoundref="d1/da1/network__interface_8h" startline="49">satox::core::NetworkMessage::SYNC_REQUEST</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a738678646ce5ef43ae07d13211f4d094" compoundref="df/d85/network__interface_8cpp" startline="354" endline="364">getBalance</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af4661bc16515675317f2ce1e7a6bab2d" compoundref="df/d85/network__interface_8cpp" startline="330" endline="340">getBlockByHash</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a9c005cce6778916bc964303606ff64e7" compoundref="df/d85/network__interface_8cpp" startline="318" endline="328">getLatestBlock</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae631e6e658f98a70b8c5726f9264b01a" compoundref="df/d85/network__interface_8cpp" startline="342" endline="352">getTransactionByHash</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aed28092a56c4b98c7a16fe06bd76f6c3" compoundref="df/d85/network__interface_8cpp" startline="366" endline="376">sendTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a176bb64344072355aa8e706af637a16b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::setMessageCallback</definition>
+        <argsstring>(std::function&lt; void(const NetworkMessage &amp;)&gt; callback)</argsstring>
+        <name>setMessageCallback</name>
+        <qualifiedname>satox::core::NetworkInterface::setMessageCallback</qualifiedname>
+        <param>
+          <type>std::function&lt; void(const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="90" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="191" bodyend="193"/>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d93/structsatox_1_1core_1_1NetworkResponse" kindref="compound">NetworkResponse</ref></type>
+        <definition>std::future&lt; NetworkMessage &gt; satox::core::NetworkInterface::waitForResponse</definition>
+        <argsstring>(const std::string &amp;requestId, std::chrono::milliseconds timeout=std::chrono::seconds(30))</argsstring>
+        <name>waitForResponse</name>
+        <qualifiedname>satox::core::NetworkInterface::waitForResponse</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>requestId</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+          <defval>std::chrono::seconds(30)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="93" column="21" bodyfile="src/core/src/network_interface.cpp" bodystart="137" bodyend="172"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2babb1ca97ec761fc37101737ba0aa2e7c5" compoundref="d1/da1/network__interface_8h" startline="53">satox::core::NetworkMessage::ERROR</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a738678646ce5ef43ae07d13211f4d094" compoundref="df/d85/network__interface_8cpp" startline="354" endline="364">getBalance</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af4661bc16515675317f2ce1e7a6bab2d" compoundref="df/d85/network__interface_8cpp" startline="330" endline="340">getBlockByHash</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a9c005cce6778916bc964303606ff64e7" compoundref="df/d85/network__interface_8cpp" startline="318" endline="328">getLatestBlock</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae631e6e658f98a70b8c5726f9264b01a" compoundref="df/d85/network__interface_8cpp" startline="342" endline="352">getTransactionByHash</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aed28092a56c4b98c7a16fe06bd76f6c3" compoundref="df/d85/network__interface_8cpp" startline="366" endline="376">sendTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1adc28f5f7241ced861feb691be61cb82d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::handleResponse</definition>
+        <argsstring>(const NetworkMessage &amp;response)</argsstring>
+        <name>handleResponse</name>
+        <qualifiedname>satox::core::NetworkInterface::handleResponse</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="95" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="108" bodyend="135"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac5711a797cb2902f3d4aafc7bbd24425" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::NetworkInterface::getPeers</definition>
+        <argsstring>() const</argsstring>
+        <name>getPeers</name>
+        <qualifiedname>satox::core::NetworkInterface::getPeers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="98" column="17"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac5711a797cb2902f3d4aafc7bbd24425">getPeers</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac5711a797cb2902f3d4aafc7bbd24425">getPeers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a428738938876b23899b61222f193d68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::addPeer</definition>
+        <argsstring>(const std::string &amp;address, uint16_t port)</argsstring>
+        <name>addPeer</name>
+        <qualifiedname>satox::core::NetworkInterface::addPeer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="99" column="10"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a428738938876b23899b61222f193d68b">addPeer</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a428738938876b23899b61222f193d68b">addPeer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad779a365a1d901d4fc613fc7f3333877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::removePeer</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>removePeer</name>
+        <qualifiedname>satox::core::NetworkInterface::removePeer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="100" column="10"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad779a365a1d901d4fc613fc7f3333877">removePeer</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad779a365a1d901d4fc613fc7f3333877">removePeer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::broadcastMessage</definition>
+        <argsstring>(const NetworkMessage &amp;message)</argsstring>
+        <name>broadcastMessage</name>
+        <qualifiedname>satox::core::NetworkInterface::broadcastMessage</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="101" column="10"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a738678646ce5ef43ae07d13211f4d094" compoundref="df/d85/network__interface_8cpp" startline="354" endline="364">getBalance</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af4661bc16515675317f2ce1e7a6bab2d" compoundref="df/d85/network__interface_8cpp" startline="330" endline="340">getBlockByHash</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a9c005cce6778916bc964303606ff64e7" compoundref="df/d85/network__interface_8cpp" startline="318" endline="328">getLatestBlock</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae631e6e658f98a70b8c5726f9264b01a" compoundref="df/d85/network__interface_8cpp" startline="342" endline="352">getTransactionByHash</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aed28092a56c4b98c7a16fe06bd76f6c3" compoundref="df/d85/network__interface_8cpp" startline="366" endline="376">sendTransaction</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a9c005cce6778916bc964303606ff64e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::getLatestBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getLatestBlock</name>
+        <qualifiedname>satox::core::NetworkInterface::getLatestBlock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="104" column="17" bodyfile="src/core/src/network_interface.cpp" bodystart="318" bodyend="328"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" compoundref="df/d85/network__interface_8cpp" startline="229" endline="259">sendMessage</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2ba6a01b26840f250bc60df5edeace07458" compoundref="d1/da1/network__interface_8h" startline="49">satox::core::NetworkMessage::SYNC_REQUEST</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a25fb2c45ee954e6b62de9c5102666a31" compoundref="d1/da1/network__interface_8h" startline="59">satox::core::NetworkMessage::timestamp</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" compoundref="df/d85/network__interface_8cpp" startline="137" endline="172">waitForResponse</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af4661bc16515675317f2ce1e7a6bab2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::getBlockByHash</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>getBlockByHash</name>
+        <qualifiedname>satox::core::NetworkInterface::getBlockByHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="105" column="17" bodyfile="src/core/src/network_interface.cpp" bodystart="330" bodyend="340"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" compoundref="df/d85/network__interface_8cpp" startline="229" endline="259">sendMessage</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2ba6a01b26840f250bc60df5edeace07458" compoundref="d1/da1/network__interface_8h" startline="49">satox::core::NetworkMessage::SYNC_REQUEST</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a25fb2c45ee954e6b62de9c5102666a31" compoundref="d1/da1/network__interface_8h" startline="59">satox::core::NetworkMessage::timestamp</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" compoundref="df/d85/network__interface_8cpp" startline="137" endline="172">waitForResponse</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae631e6e658f98a70b8c5726f9264b01a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::getTransactionByHash</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>getTransactionByHash</name>
+        <qualifiedname>satox::core::NetworkInterface::getTransactionByHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="106" column="17" bodyfile="src/core/src/network_interface.cpp" bodystart="342" bodyend="352"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" compoundref="df/d85/network__interface_8cpp" startline="229" endline="259">sendMessage</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2ba6a01b26840f250bc60df5edeace07458" compoundref="d1/da1/network__interface_8h" startline="49">satox::core::NetworkMessage::SYNC_REQUEST</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a25fb2c45ee954e6b62de9c5102666a31" compoundref="d1/da1/network__interface_8h" startline="59">satox::core::NetworkMessage::timestamp</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" compoundref="df/d85/network__interface_8cpp" startline="137" endline="172">waitForResponse</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a738678646ce5ef43ae07d13211f4d094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::getBalance</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>getBalance</name>
+        <qualifiedname>satox::core::NetworkInterface::getBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="107" column="17" bodyfile="src/core/src/network_interface.cpp" bodystart="354" bodyend="364"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" compoundref="df/d85/network__interface_8cpp" startline="229" endline="259">sendMessage</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2ba6a01b26840f250bc60df5edeace07458" compoundref="d1/da1/network__interface_8h" startline="49">satox::core::NetworkMessage::SYNC_REQUEST</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a25fb2c45ee954e6b62de9c5102666a31" compoundref="d1/da1/network__interface_8h" startline="59">satox::core::NetworkMessage::timestamp</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" compoundref="df/d85/network__interface_8cpp" startline="137" endline="172">waitForResponse</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aed28092a56c4b98c7a16fe06bd76f6c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::sendTransaction</definition>
+        <argsstring>(const std::string &amp;transaction)</argsstring>
+        <name>sendTransaction</name>
+        <qualifiedname>satox::core::NetworkInterface::sendTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>transaction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="108" column="17" bodyfile="src/core/src/network_interface.cpp" bodystart="366" bodyend="376"/>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1aa6e3478dfb0e87889c1bb9c364a4c79d" compoundref="d1/da1/network__interface_8h" startline="57">satox::core::NetworkMessage::payload</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1ae1d1bbb0b2a8f387b05500e2d0cc03eb" compoundref="d1/da1/network__interface_8h" startline="60">satox::core::NetworkMessage::requestId</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" compoundref="df/d85/network__interface_8cpp" startline="229" endline="259">sendMessage</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a25fb2c45ee954e6b62de9c5102666a31" compoundref="d1/da1/network__interface_8h" startline="59">satox::core::NetworkMessage::timestamp</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a68c1c73db8a63ebb135d9d0abac5df2bae6bed345f53943469741d7295552fcd4" compoundref="d1/da1/network__interface_8h" startline="48">satox::core::NetworkMessage::TRANSACTION</references>
+        <references refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage_1a6017d1a112a7cf3694b99516fc6a2e0f" compoundref="d1/da1/network__interface_8h" startline="56">satox::core::NetworkMessage::type</references>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" compoundref="df/d85/network__interface_8cpp" startline="137" endline="172">waitForResponse</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c">broadcastMessage</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa43a0f71992e67835290af2abfac074c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &gt;</type>
+        <definition>std::vector&lt; NetworkMessage &gt; satox::core::NetworkInterface::getMessages</definition>
+        <argsstring>()</argsstring>
+        <name>getMessages</name>
+        <qualifiedname>satox::core::NetworkInterface::getMessages</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="111" column="17" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="111" bodyend="111"/>
+        <references refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa43a0f71992e67835290af2abfac074c" compoundref="d1/da1/network__interface_8h" startline="111" endline="111">getMessages</references>
+        <referencedby refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa43a0f71992e67835290af2abfac074c" compoundref="d1/da1/network__interface_8h" startline="111" endline="111">getMessages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a543be0fa65933723b904dd3e0aba4e20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::setErrorCallback</definition>
+        <argsstring>(std::function&lt; void(const std::string &amp;)&gt; callback)</argsstring>
+        <name>setErrorCallback</name>
+        <qualifiedname>satox::core::NetworkInterface::setErrorCallback</qualifiedname>
+        <param>
+          <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="114" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="195" bodyend="197"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1abb30b714c4155fc7831ea93e52622111" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::messageLoop</definition>
+        <argsstring>()</argsstring>
+        <name>messageLoop</name>
+        <qualifiedname>satox::core::NetworkInterface::messageLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="117" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="303" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af69a6cea5d2be093a3eefcd18374a994" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::handleIncomingMessage</definition>
+        <argsstring>(const NetworkMessage &amp;message)</argsstring>
+        <name>handleIncomingMessage</name>
+        <qualifiedname>satox::core::NetworkInterface::handleIncomingMessage</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="118" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="83" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1acf2d68cdefad8b3cee1f756c6e71373d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::processMessageQueue</definition>
+        <argsstring>()</argsstring>
+        <name>processMessageQueue</name>
+        <qualifiedname>satox::core::NetworkInterface::processMessageQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="119" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="261" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae0e27ea1e9c1619113bbd41b079dbeed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NetworkInterface::reconnect</definition>
+        <argsstring>()</argsstring>
+        <name>reconnect</name>
+        <qualifiedname>satox::core::NetworkInterface::reconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="120" column="10" bodyfile="src/core/src/network_interface.cpp" bodystart="310" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a0e9f0fa1cb07852968b6495726112ef0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NetworkInterface::generateRequestId</definition>
+        <argsstring>()</argsstring>
+        <name>generateRequestId</name>
+        <qualifiedname>satox::core::NetworkInterface::generateRequestId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/network_interface.h" line="121" column="17" bodyfile="src/core/src/network_interface.cpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/network_interface.h" line="70" column="1" bodyfile="src/core/include/satox/core/network_interface.h" bodystart="70" bodyend="151"/>
+    <listofallmembers>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a428738938876b23899b61222f193d68b" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>addPeer</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a1be785f222f3087ccd3e94f0b25eecf1" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>address_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac280e92dca6bc7faf3de160dc0bede6c" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>broadcastMessage</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a79f3ce0481b48306da23b51049059455" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>connect</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa59b0af83d0a4036120fed9228c79ec8" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>connected_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a03ee7120c3d8d7cee0b0c2c92e22f2cb" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>disconnect</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af8a85c7e1145b9e783ffa14f30e09eb5" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>errorCallback_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1adcf596e4ad86493b990a49361a3e5eb9" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>gen_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a0e9f0fa1cb07852968b6495726112ef0" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>generateRequestId</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a738678646ce5ef43ae07d13211f4d094" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>getBalance</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af4661bc16515675317f2ce1e7a6bab2d" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>getBlockByHash</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a9c005cce6778916bc964303606ff64e7" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>getLatestBlock</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa43a0f71992e67835290af2abfac074c" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>getMessages</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ac5711a797cb2902f3d4aafc7bbd24425" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>getPeers</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae631e6e658f98a70b8c5726f9264b01a" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>getTransactionByHash</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af69a6cea5d2be093a3eefcd18374a994" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>handleIncomingMessage</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1adc28f5f7241ced861feb691be61cb82d" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>handleResponse</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a2d4bda12bda8022cc18b98ce70c9fca2" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>isConnected</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a905942180f94bd2872ed932b8cf07a4e" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>messageCallback_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1abb30b714c4155fc7831ea93e52622111" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>messageLoop</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa6f36df373472d389584c1d5b2b39ee7" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>messageQueue_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa7b53e8c841c1f0d3152f37825de7f87" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>messageThread_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aa4153b3164eeb5c540cd6f0db45676e5" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>NetworkInterface</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1add2288586f872b9ed8c9f5558472fe8a" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>NetworkInterface</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a7c12e298782717f680d7b1d6ab7836b4" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>NetworkInterface</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1af180f35436c530496bf659a9c6e7d3d9" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>operator=</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ab92de6cb019c819343ec867a9c48b4ea" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>operator=</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a6bfcd15bfba3b9b187d1b7f3084f27e3" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>peers_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a09775a9a3ae886d95a854f0e46f8bbdc" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>peersMutex_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a2532d581441ee63b92ad945ea2835015" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>pendingResponses_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad78a46bfd668087849ff1b0003cdcf23" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>port_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1acf2d68cdefad8b3cee1f756c6e71373d" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>processMessageQueue</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a3eb6795553b84888d0d78ca13cf7d482" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>queueCondition_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a3e5ec2c298c9b2a3ab5d42510f698f7a" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>queueMutex_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a6cab260a77a71993b898aa00d4e8f1f8" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>rd_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ae0e27ea1e9c1619113bbd41b079dbeed" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>reconnect</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad779a365a1d901d4fc613fc7f3333877" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>removePeer</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a60fd2d5e30f65836f979a87bf6e7006c" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>responseMutex_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a4f8eb2bf240f9590172ad6c6256e8cc7" prot="private" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>running_</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a99f99ff6e32385c17d7105e68b13453b" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>sendMessage</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1aed28092a56c4b98c7a16fe06bd76f6c3" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>sendTransaction</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a543be0fa65933723b904dd3e0aba4e20" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>setErrorCallback</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a176bb64344072355aa8e706af637a16b" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>setMessageCallback</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1ad3543350dc2848be54d1102125ebb7e5" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>waitForResponse</name></member>
+      <member refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface_1a5d85643e6b44de50a76cfd1104208b7f" prot="public" virt="non-virtual"><scope>satox::core::NetworkInterface</scope><name>~NetworkInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

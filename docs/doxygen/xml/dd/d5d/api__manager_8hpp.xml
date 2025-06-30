@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/d5d/api__manager_8hpp" kind="file" language="C++">
+    <compoundname>api_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">condition_variable</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/api_manager.hpp</label>
+        <link refid="dd/d5d/api__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>atomic</label>
+      </node>
+      <node id="12">
+        <label>condition_variable</label>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>mutex</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="11">
+        <label>queue</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>thread</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="da/dba/classsatox_1_1core_1_1APIManager" prot="public">satox::core::APIManager</innerclass>
+    <innerclass refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config" prot="public">satox::core::APIManager::Config</innerclass>
+    <innerclass refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" prot="public">satox::core::APIManager::Request</innerclass>
+    <innerclass refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" prot="public">satox::core::APIManager::Response</innerclass>
+    <innerclass refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" prot="public">satox::core::APIManager::WebSocketMessage</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="da/dba/classsatox_1_1core_1_1APIManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1aac92e68ce13433ace119754cb1ef53b8" kindref="member">APIManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config" kindref="compound">Config</ref><sp/>{</highlight></codeline>
+<codeline lineno="46" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a2ec25be813bf6b060e8e66f655c25079" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a2ec25be813bf6b060e8e66f655c25079" kindref="member">host</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1ae908c19cbb19a6bf3cd752c827a32f14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1ae908c19cbb19a6bf3cd752c827a32f14" kindref="member">port</ref><sp/>=<sp/>7777;<sp/><sp/></highlight><highlight class="comment">//<sp/>Satoxcoin<sp/>RPC<sp/>port</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a3a19cc55433732c17fc6ba503cf67373" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a3a19cc55433732c17fc6ba503cf67373" kindref="member">max_connections</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="49" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a7e03b40e0d141aaf1dd55fc0134be9f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a7e03b40e0d141aaf1dd55fc0134be9f5" kindref="member">connection_timeout</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="50" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a6b2c673aed0e58b4d9215536abbbb472" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a6b2c673aed0e58b4d9215536abbbb472" kindref="member">enable_ssl</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1aba16049ad8be92812d7b9c0525466996" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1aba16049ad8be92812d7b9c0525466996" kindref="member">ssl_cert</ref>;</highlight></codeline>
+<codeline lineno="52" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a337d32e92ad462c5e18789806fa29459" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a337d32e92ad462c5e18789806fa29459" kindref="member">ssl_key</ref>;</highlight></codeline>
+<codeline lineno="53" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a4f2add95c4051224eddeb75967142674" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a4f2add95c4051224eddeb75967142674" kindref="member">ssl_ca</ref>;</highlight></codeline>
+<codeline lineno="54" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1acac9e1e349b351cb7c2259277660c617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1acac9e1e349b351cb7c2259277660c617" kindref="member">max_request_size</ref><sp/>=<sp/>1024<sp/>*<sp/>1024;<sp/><sp/></highlight><highlight class="comment">//<sp/>1MB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a25219f117cd48b5fe48518f734ab5d5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a25219f117cd48b5fe48518f734ab5d5d" kindref="member">max_websocket_message_size</ref><sp/>=<sp/>1024<sp/>*<sp/>1024;<sp/><sp/></highlight><highlight class="comment">//<sp/>1MB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1ab92ab712893c3b1c318ede485ae8eeb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1ab92ab712893c3b1c318ede485ae8eeb5" kindref="member">enable_rate_limiting</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1ad2fa83e08fcf0ee60e933e5ab9fe9e4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1ad2fa83e08fcf0ee60e933e5ab9fe9e4f" kindref="member">rate_limit_requests</ref><sp/>=<sp/>100;<sp/><sp/></highlight><highlight class="comment">//<sp/>requests<sp/>per<sp/>minute</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a6b96b5f28a6ee9619b7150b153d05f11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config_1a6b96b5f28a6ee9619b7150b153d05f11" kindref="member">rate_limit_window</ref><sp/>=<sp/>60;<sp/><sp/></highlight><highlight class="comment">//<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" kindref="compound">Request</ref><sp/>{</highlight></codeline>
+<codeline lineno="62" refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1a0dba091a3f1d7e83b64bd3cc8697709f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1a0dba091a3f1d7e83b64bd3cc8697709f" kindref="member">method</ref>;</highlight></codeline>
+<codeline lineno="63" refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1a6b4f4029315ad1268539b37555e28601" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1a6b4f4029315ad1268539b37555e28601" kindref="member">path</ref>;</highlight></codeline>
+<codeline lineno="64" refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1aa4ef6247773a208449695b5d629640db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1aa4ef6247773a208449695b5d629640db" kindref="member">headers</ref>;</highlight></codeline>
+<codeline lineno="65" refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1af76383ddf6225227b932f29af25a96c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1af76383ddf6225227b932f29af25a96c2" kindref="member">body</ref>;</highlight></codeline>
+<codeline lineno="66" refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1ab125e0ffb8adc78b8c9d85c0d3594763" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request_1ab125e0ffb8adc78b8c9d85c0d3594763" kindref="member">client_ip</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" kindref="compound">Response</ref><sp/>{</highlight></codeline>
+<codeline lineno="70" refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response_1a364a7a882d6516264c1239e77e807853" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response_1a364a7a882d6516264c1239e77e807853" kindref="member">status_code</ref>;</highlight></codeline>
+<codeline lineno="71" refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response_1afdd80aa7eae36e5da794edb211a1f04d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response_1afdd80aa7eae36e5da794edb211a1f04d" kindref="member">headers</ref>;</highlight></codeline>
+<codeline lineno="72" refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response_1a580cb8085d6e7b8d1b59f5addaa270ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response_1a580cb8085d6e7b8d1b59f5addaa270ee" kindref="member">body</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref><sp/>{</highlight></codeline>
+<codeline lineno="76" refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage_1a502672359af09757a1a94d41e6bc19b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage_1a502672359af09757a1a94d41e6bc19b6" kindref="member">type</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;text&quot;,<sp/>&quot;binary&quot;,<sp/>&quot;ping&quot;,<sp/>&quot;pong&quot;,<sp/>&quot;close&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage_1a395144de742c5a5085c4caa6ac54b6ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage_1a395144de742c5a5085c4caa6ac54b6ea" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="78" refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage_1a3737e50f764fe00b8d3e14e64fd76719" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage_1a3737e50f764fe00b8d3e14e64fd76719" kindref="member">is_final</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="da/dba/classsatox_1_1core_1_1APIManager_1ae89ce1da5895f3ad0931edd970745b32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ae89ce1da5895f3ad0931edd970745b32" kindref="member">RequestHandler</ref><sp/>=<sp/>std::function&lt;<ref refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" kindref="compound">Response</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" kindref="compound">Request</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="82" refid="da/dba/classsatox_1_1core_1_1APIManager_1ad6a98d6f969b5844053a1745503f0e9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ad6a98d6f969b5844053a1745503f0e9a" kindref="member">WebSocketHandler</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1aac92e68ce13433ace119754cb1ef53b8" kindref="member">APIManager</ref>();</highlight></codeline>
+<codeline lineno="85" refid="da/dba/classsatox_1_1core_1_1APIManager_1a7d14741a5bb5de5317e71e192c61fee1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a7d14741a5bb5de5317e71e192c61fee1" kindref="member">~APIManager</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a9cf3f704e5bc9c8052d52d9e0477b311" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config" kindref="compound">Config</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a3f453d69e81ba5ca8ce5bc495d27391b" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a7771c2bc51c97f93999d308accb002be" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a1f0b6de0c6b40b14262da58ff1d30dc2" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>REST<sp/>API<sp/>endpoints</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ad97596e43b10939de7b812028d6b5bcc" kindref="member">registerEndpoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>method,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ae89ce1da5895f3ad0931edd970745b32" kindref="member">RequestHandler</ref><sp/>handler);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a04f2be0c60ae3e94927b898605ace946" kindref="member">unregisterEndpoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>method,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>WebSocket<sp/>support</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ad7d14947fe009de49a3ccf5e596b90b1" kindref="member">registerWebSocketHandler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ad6a98d6f969b5844053a1745503f0e9a" kindref="member">WebSocketHandler</ref><sp/>handler);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a3840f9634b79ed1432410712788197e4" kindref="member">unregisterWebSocketHandler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a6144b146b98388621e95b981150b5898" kindref="member">sendWebSocketMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>client_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a13c4f7c34d6309d7dfcd9fe3e55d7ca5" kindref="member">broadcastWebSocketMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rate<sp/>limiting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a53750530907f9b286cd7cd0dc8891215" kindref="member">setRateLimit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requests_per_minute);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ac6a40e4aed20922374e57e7d7302efa1" kindref="member">isRateLimited</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>client_ip)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1a2573c67a52b58f2cb082d365cd20ea02" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1af7833f5f06a42f7553ef07f618ca6a42" kindref="member">clearError</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dd/d93/classsatox_1_1core_1_1APIManager_1_1Impl" kindref="compound">Impl</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>impl_;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/api_manager.hpp"/>
+  </compounddef>
+</doxygen>

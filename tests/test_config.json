@@ -1,0 +1,44 @@
+{
+    "test_settings": {
+        "max_concurrent_tests": 5,
+        "timeout_seconds": 300,
+        "retry_count": 3,
+        "retry_delay_seconds": 5
+    },
+    "coverage_thresholds": {
+        "minimum_coverage": 80.0,
+        "critical_components": {
+            "satox-core": 90.0,
+            "satox-nft": 85.0,
+            "satox-ipfs": 85.0,
+            "bindings": 80.0
+        }
+    },
+    "performance_thresholds": {
+        "max_test_duration_seconds": 60,
+        "max_memory_mb": 1024,
+        "max_cpu_percent": 80
+    },
+    "test_categories": {
+        "unit_tests": true,
+        "integration_tests": true,
+        "performance_tests": true,
+        "security_tests": true
+    },
+    "reporting": {
+        "generate_html_report": true,
+        "generate_junit_report": true,
+        "generate_coverage_report": true,
+        "save_test_artifacts": true
+    },
+    "notifications": {
+        "email_notifications": false,
+        "slack_notifications": false,
+        "github_status_updates": true
+    },
+    "environment": {
+        "require_clean_environment": true,
+        "setup_script": "setup_test_env.sh",
+        "teardown_script": "teardown_test_env.sh"
+    }
+} 

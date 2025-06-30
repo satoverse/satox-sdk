@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d7/dab/core_2include_2satox_2core_2error_8hpp" kind="file" language="C++">
+    <compoundname>error.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">exception</includes>
+    <includes local="no">system_error</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/error.hpp</label>
+        <link refid="d7/dab/core_2include_2satox_2core_2error_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>exception</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>system_error</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="dd/d34/classsatox_1_1core_1_1CoreException" prot="public">satox::core::CoreException</innerclass>
+    <innerclass refid="da/d15/classsatox_1_1core_1_1CoreInitializationException" prot="public">satox::core::CoreInitializationException</innerclass>
+    <innerclass refid="d0/dec/classsatox_1_1core_1_1CoreOperationException" prot="public">satox::core::CoreOperationException</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;system_error&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">satox::core</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Error<sp/>codes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref><sp/>{</highlight></codeline>
+<codeline lineno="36" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adad0749aaba8b833466dfcbb0428e4f89c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a012b45b27d5238ebb49f10cd8ea3c018ad0749aaba8b833466dfcbb0428e4f89c" kindref="member">SUCCESS</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="37" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada9a10f345b0f755d461a8673a5e9ef6b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada9a10f345b0f755d461a8673a5e9ef6b4" kindref="member">UNKNOWN_ERROR</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="38" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adaf295a0c3e37c94f078e1c5476479132d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adaf295a0c3e37c94f078e1c5476479132d" kindref="member">INVALID_ARGUMENT</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="39" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada02de9649e258d1dd94056e676061e969" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada02de9649e258d1dd94056e676061e969" kindref="member">NOT_INITIALIZED</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="40" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada1940a630a2a25829533b90f9be04f184" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada1940a630a2a25829533b90f9be04f184" kindref="member">ALREADY_INITIALIZED</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="41" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada0d30777007362ccc9e8b2d0d22e4db13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada0d30777007362ccc9e8b2d0d22e4db13" kindref="member">NOT_RUNNING</ref><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="42" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adae72544c6de918198c7e098d9c9152b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adae72544c6de918198c7e098d9c9152b1e" kindref="member">ALREADY_RUNNING</ref><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="43" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada8f8d49d3d0842358e0fe8f43601d8537" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada8f8d49d3d0842358e0fe8f43601d8537" kindref="member">OPERATION_FAILED</ref><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="44" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada2fa475b43d744661c4c9e1dbd9840278" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada2fa475b43d744661c4c9e1dbd9840278" kindref="member">VALIDATION_ERROR</ref><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="45" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adace94bad90093a6a2538689ddfbb5462f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312adace94bad90093a6a2538689ddfbb5462f" kindref="member">TIMEOUT_ERROR</ref><sp/>=<sp/>9,</highlight></codeline>
+<codeline lineno="46" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada4a739fa42dcdbdb8dfe5a5e4d9c5a627" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada4a739fa42dcdbdb8dfe5a5e4d9c5a627" kindref="member">RESOURCE_EXHAUSTED</ref><sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="47" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada255df50c140519133f1489ab44a389d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada255df50c140519133f1489ab44a389d9" kindref="member">PERMISSION_DENIED</ref><sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="48" refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada5e6a8de74c8f7d4b04d91a3dc3bf7659" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada5e6a8de74c8f7d4b04d91a3dc3bf7659" kindref="member">INVALID_STATE</ref><sp/>=<sp/>12</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Main<sp/>exception<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="dd/d34/classsatox_1_1core_1_1CoreException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" kindref="member">CoreException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54" refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" kindref="member">CoreException</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref><sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" kindref="member">code</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>code_(<ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" kindref="member">code</ref>),<sp/>message_(<ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57" refid="dd/d34/classsatox_1_1core_1_1CoreException_1a8bbf6961f50bd65ee70c612d9d57a8de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a8bbf6961f50bd65ee70c612d9d57a8de" kindref="member">what</ref>()<sp/>const<sp/>noexcept</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>message_.c_str();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref><sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1ab2138a56dcc6383b24d6061caccc7861" kindref="member">code</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>code_;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>message_;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref><sp/>code_;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>message_;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Specific<sp/>exception<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="da/d15/classsatox_1_1core_1_1CoreInitializationException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/d15/classsatox_1_1core_1_1CoreInitializationException_1a3a4def9fe1466f7194f59dd73ed74944" kindref="member">CoreInitializationException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" kindref="member">CoreException</ref><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77" refid="da/d15/classsatox_1_1core_1_1CoreInitializationException_1a3a4def9fe1466f7194f59dd73ed74944" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d15/classsatox_1_1core_1_1CoreInitializationException_1a3a4def9fe1466f7194f59dd73ed74944" kindref="member">CoreInitializationException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" kindref="member">CoreException</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref>::<ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada02de9649e258d1dd94056e676061e969" kindref="member">NOT_INITIALIZED</ref>,<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="d0/dec/classsatox_1_1core_1_1CoreOperationException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d0/dec/classsatox_1_1core_1_1CoreOperationException_1ac88d731c53c50d92723e0dabb171f9fe" kindref="member">CoreOperationException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" kindref="member">CoreException</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83" refid="d0/dec/classsatox_1_1core_1_1CoreOperationException_1ac88d731c53c50d92723e0dabb171f9fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/dec/classsatox_1_1core_1_1CoreOperationException_1ac88d731c53c50d92723e0dabb171f9fe" kindref="member">CoreOperationException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a6681a89aab05c42bf09bc9ee4a1b1d91" kindref="member">CoreException</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ad" kindref="member">CoreErrorCode</ref>::<ref refid="d9/dd3/namespacesatox_1_1core_1a70c767c421c102d9481f4a13a2d312ada8f8d49d3d0842358e0fe8f43601d8537" kindref="member">OPERATION_FAILED</ref>,<sp/><ref refid="dd/d34/classsatox_1_1core_1_1CoreException_1a7d4215b415b89d07079b2cd3bdac2508" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::core</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/error.hpp"/>
+  </compounddef>
+</doxygen>

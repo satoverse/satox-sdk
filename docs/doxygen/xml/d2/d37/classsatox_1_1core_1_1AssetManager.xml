@@ -1,0 +1,1563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/d37/classsatox_1_1core_1_1AssetManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::AssetManager</compoundname>
+    <includes refid="d3/d3e/asset_8h" local="no">asset.h</includes>
+    <innerclass refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" prot="public">satox::core::AssetManager::Asset</innerclass>
+    <innerclass refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata" prot="public">satox::core::AssetManager::AssetMetadata</innerclass>
+    <innerclass refid="d7/d07/structsatox_1_1core_1_1AssetManager_1_1AssetStats" prot="public">satox::core::AssetManager::AssetStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a7f19c0a582656f617052a6acd9bf3650" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AssetType</name>
+        <qualifiedname>satox::core::AssetManager::AssetType</qualifiedname>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a7f19c0a582656f617052a6acd9bf3650a94c8aa2452bccd82ee129b46f7c4be79" prot="public">
+          <name>TOKEN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a7f19c0a582656f617052a6acd9bf3650aa692c529f241845ae00b47284e09e76a" prot="public">
+          <name>NFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a7f19c0a582656f617052a6acd9bf3650a72baef04098f035e8a320b03ad197818" prot="public">
+          <name>CUSTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="42" column="5" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="enum" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AssetState</name>
+        <qualifiedname>satox::core::AssetManager::AssetState</qualifiedname>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3a98690bf632c29c17c9e4c5a64069903c" prot="public">
+          <name>CREATED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3ac650bbb4908b9f3b9d265ccb79c16ef9" prot="public">
+          <name>ISSUED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3a19ee3f1c15c13e4a5c484ff48a8b4c8d" prot="public">
+          <name>TRANSFERRED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3aad9f8dea088d688cb5a70d7d24ea1c2b" prot="public">
+          <name>BURNED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="49" column="5" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="49" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aab290304a99d60eb2ffe59d85ce1f095" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" kindref="member">AssetState</ref>)&gt;</type>
+        <definition>using satox::core::AssetManager::AssetCallback =  std::function&lt;void(const std::string&amp;, AssetState)&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssetCallback</name>
+        <qualifiedname>satox::core::AssetManager::AssetCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="100" column="5" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aaecc1c6a28e6b8b36e9f931cbff7edcf" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const <ref refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata" kindref="compound">AssetMetadata</ref> &amp;)&gt;</type>
+        <definition>using satox::core::AssetManager::AssetMetadataCallback =  std::function&lt;void(const std::string&amp;, const AssetMetadata&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssetMetadataCallback</name>
+        <qualifiedname>satox::core::AssetManager::AssetMetadataCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="101" column="5" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a285f460be4df048ff9ca9c84cb8305f9" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::core::AssetManager::AssetErrorCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>AssetErrorCallback</name>
+        <qualifiedname>satox::core::AssetManager::AssetErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="102" column="5" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1af073d56fd82dff2500759e75917f3481" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::AssetManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="82" column="10" bodyfile="src/core/include/satox/core/asset.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a9fd8abfa0a61772dd0af89128c452cff" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &gt;</type>
+        <definition>std::map&lt; std::string, Asset &gt; satox::core::AssetManager::assets_</definition>
+        <argsstring></argsstring>
+        <name>assets_</name>
+        <qualifiedname>satox::core::AssetManager::assets_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="83" column="14" bodyfile="src/core/include/satox/core/asset.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ac4246e5cce879c3eb24d685daf85ff47" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::map&lt; std::string, std::string &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::map&lt;std::string, std::string&gt; &gt; satox::core::AssetManager::balances_</definition>
+        <argsstring></argsstring>
+        <name>balances_</name>
+        <qualifiedname>satox::core::AssetManager::balances_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="84" column="14" bodyfile="src/core/include/satox/core/asset.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ad524e83ee786d08d2fbc44de5b88705d" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::AssetManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::AssetManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="172" column="24" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aa99e986fff00f9e7d9c2ab260eb589bd" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aab290304a99d60eb2ffe59d85ce1f095" kindref="member">AssetCallback</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;AssetCallback&gt; &gt; satox::core::AssetManager::assetCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>assetCallbacks_</name>
+        <qualifiedname>satox::core::AssetManager::assetCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="175" column="14" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ad5b43b2b24961ce37bc1e9fa18e24f24" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aaecc1c6a28e6b8b36e9f931cbff7edcf" kindref="member">AssetMetadataCallback</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;AssetMetadataCallback&gt; &gt; satox::core::AssetManager::metadataCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>metadataCallbacks_</name>
+        <qualifiedname>satox::core::AssetManager::metadataCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="176" column="14" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aaac6c282ae60f742687efe461d46e48a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a285f460be4df048ff9ca9c84cb8305f9" kindref="member">AssetErrorCallback</ref> &gt;</type>
+        <definition>std::vector&lt;AssetErrorCallback&gt; satox::core::AssetManager::errorCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>errorCallbacks_</name>
+        <qualifiedname>satox::core::AssetManager::errorCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="177" column="17" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a8db879b9bfe1a86841a0b23a80d46600" prot="private" static="no" mutable="no">
+        <type><ref refid="d7/d07/structsatox_1_1core_1_1AssetManager_1_1AssetStats" kindref="compound">AssetStats</ref></type>
+        <definition>AssetStats satox::core::AssetManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::AssetManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="178" column="16" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ae50840dfd3af5ace2703ef482b079465" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::statsEnabled_</definition>
+        <argsstring></argsstring>
+        <name>statsEnabled_</name>
+        <qualifiedname>satox::core::AssetManager::statsEnabled_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="179" column="10" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aefeccf2a2703d6b24320164726e9e87d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::AssetManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::AssetManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="180" column="17" bodyfile="src/core/include/satox/core/asset_manager.hpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::AssetManager</definition>
+        <argsstring>()</argsstring>
+        <name>AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::AssetManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="52" column="5" bodyfile="src/core/src/asset.cpp" bodystart="35" bodyend="35"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a3a78026e5c271a034c1d6392c95287d2">AssetManager</referencedby>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05">AssetManager</referencedby>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a274b07e3ea293b76e6fe20b63343f233" compoundref="d5/dae/core_2src_2asset__manager_8cpp" startline="34" endline="37">getInstance</referencedby>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a0adf32b540e1af6e138572073a2030ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::~AssetManager</definition>
+        <argsstring>()</argsstring>
+        <name>~AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::~AssetManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="53" column="5" bodyfile="src/core/src/asset.cpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::AssetManager</definition>
+        <argsstring>(const AssetManager &amp;)=delete</argsstring>
+        <name>AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::AssetManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="56" column="5"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" compoundref="d9/d61/asset_8cpp" startline="35" endline="35">AssetManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        <definition>AssetManager &amp; satox::core::AssetManager::operator=</definition>
+        <argsstring>(const AssetManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::AssetManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="57" column="18"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" compoundref="d9/d61/asset_8cpp" startline="35" endline="35">AssetManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a3a78026e5c271a034c1d6392c95287d2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::AssetManager</definition>
+        <argsstring>(AssetManager &amp;&amp;) noexcept=default</argsstring>
+        <name>AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::AssetManager</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="60" column="5"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" compoundref="d9/d61/asset_8cpp" startline="35" endline="35">AssetManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        <definition>AssetManager &amp; satox::core::AssetManager::operator=</definition>
+        <argsstring>(AssetManager &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::AssetManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="61" column="18"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" compoundref="d9/d61/asset_8cpp" startline="35" endline="35">AssetManager</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9e0451ed01dcbf92cbe455d901fda28d" compoundref="d9/d61/asset_8cpp" startline="50" endline="84">createAsset</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a8c1ec969f130df0537c0fe0d3c931a89" compoundref="d9/d61/asset_8cpp" startline="103" endline="119">deleteAsset</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4df61469ff0ee9da0e977df23cb25fb9" compoundref="d9/d61/asset_8cpp" startline="156" endline="167">getAllAssets</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9013533b663455aa917da5a64976cbdd" compoundref="d9/d61/asset_8cpp" startline="121" endline="135">getAsset</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1acd764cb8a42eaaa849a93f07f738e9da" compoundref="d9/d61/asset_8cpp" startline="204" endline="223">getAssetBalance</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1acab5070fdd2201ae81997d1b8f3a88a5" compoundref="d9/d61/asset_8cpp" startline="137" endline="154">getAssetsByOwner</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4be91f88a4877b0e977f3c95a2a62ecf" compoundref="d9/d61/asset_8cpp" startline="43" endline="48">initialize</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9ca7890ad7f617c6f26f2866b5068286" compoundref="d9/d61/asset_8cpp" startline="169" endline="202">transferAsset</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aae3ad8c333353d362c93e55412ee397e" compoundref="d9/d61/asset_8cpp" startline="86" endline="101">updateAsset</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4be91f88a4877b0e977f3c95a2a62ecf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::AssetManager::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="64" column="10" bodyfile="src/core/src/asset.cpp" bodystart="43" bodyend="48"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a9e0451ed01dcbf92cbe455d901fda28d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref></type>
+        <definition>Asset satox::core::AssetManager::createAsset</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;symbol, const std::string &amp;owner, const std::string &amp;totalSupply, const std::string &amp;decimals=&quot;18&quot;)</argsstring>
+        <name>createAsset</name>
+        <qualifiedname>satox::core::AssetManager::createAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>symbol</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>totalSupply</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>decimals</declname>
+          <defval>&quot;18&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="65" column="11" bodyfile="src/core/src/asset.cpp" bodystart="50" bodyend="84"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aae3ad8c333353d362c93e55412ee397e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::updateAsset</definition>
+        <argsstring>(const Asset &amp;asset)</argsstring>
+        <name>updateAsset</name>
+        <qualifiedname>satox::core::AssetManager::updateAsset</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &amp;</type>
+          <declname>asset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="68" column="10" bodyfile="src/core/src/asset.cpp" bodystart="86" bodyend="101"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a8c1ec969f130df0537c0fe0d3c931a89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::deleteAsset</definition>
+        <argsstring>(const std::string &amp;assetId)</argsstring>
+        <name>deleteAsset</name>
+        <qualifiedname>satox::core::AssetManager::deleteAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="69" column="10" bodyfile="src/core/src/asset.cpp" bodystart="103" bodyend="119"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a9013533b663455aa917da5a64976cbdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref></type>
+        <definition>Asset satox::core::AssetManager::getAsset</definition>
+        <argsstring>(const std::string &amp;assetId)</argsstring>
+        <name>getAsset</name>
+        <qualifiedname>satox::core::AssetManager::getAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="70" column="11" bodyfile="src/core/src/asset.cpp" bodystart="121" bodyend="135"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1acab5070fdd2201ae81997d1b8f3a88a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &gt;</type>
+        <definition>std::vector&lt; Asset &gt; satox::core::AssetManager::getAssetsByOwner</definition>
+        <argsstring>(const std::string &amp;owner)</argsstring>
+        <name>getAssetsByOwner</name>
+        <qualifiedname>satox::core::AssetManager::getAssetsByOwner</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="71" column="17" bodyfile="src/core/src/asset.cpp" bodystart="137" bodyend="154"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a4df61469ff0ee9da0e977df23cb25fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &gt;</type>
+        <definition>std::vector&lt; Asset &gt; satox::core::AssetManager::getAllAssets</definition>
+        <argsstring>()</argsstring>
+        <name>getAllAssets</name>
+        <qualifiedname>satox::core::AssetManager::getAllAssets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="72" column="17" bodyfile="src/core/src/asset.cpp" bodystart="156" bodyend="167"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a9ca7890ad7f617c6f26f2866b5068286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::transferAsset</definition>
+        <argsstring>(const std::string &amp;assetId, const std::string &amp;from, const std::string &amp;to, const std::string &amp;amount)</argsstring>
+        <name>transferAsset</name>
+        <qualifiedname>satox::core::AssetManager::transferAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="73" column="10" bodyfile="src/core/src/asset.cpp" bodystart="169" bodyend="202"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1acd764cb8a42eaaa849a93f07f738e9da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::AssetManager::getAssetBalance</definition>
+        <argsstring>(const std::string &amp;assetId, const std::string &amp;address)</argsstring>
+        <name>getAssetBalance</name>
+        <qualifiedname>satox::core::AssetManager::getAssetBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="75" column="17" bodyfile="src/core/src/asset.cpp" bodystart="204" bodyend="223"/>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1af6852782b0643efa3f0b15e65621180d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::initialize</definition>
+        <argsstring>(const nlohmann::json &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::AssetManager::initialize</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="108" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="39" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a12e2cb7151636cb90f047bfa965ed812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::AssetManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="109" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="57" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a0ec1b9c77b05ce925b02b7679e2411b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::createAsset</definition>
+        <argsstring>(const std::string &amp;id, const AssetMetadata &amp;metadata)</argsstring>
+        <name>createAsset</name>
+        <qualifiedname>satox::core::AssetManager::createAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata" kindref="compound">AssetMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="112" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="71" bodyend="108"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3a98690bf632c29c17c9e4c5a64069903c" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="50">CREATED</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ade429905edea301463d413b096b73ed4" compoundref="d5/dae/core_2src_2asset__manager_8cpp" startline="277" endline="282">validateMetadata</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1abdf7bcfd1a763ea37d65c821a62c51e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::issueAsset</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>issueAsset</name>
+        <qualifiedname>satox::core::AssetManager::issueAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="113" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="110" bodyend="137"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3a98690bf632c29c17c9e4c5a64069903c" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="50">CREATED</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3ac650bbb4908b9f3b9d265ccb79c16ef9" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="51">ISSUED</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ad7875787742daa78cb311b24c3ae5985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::transferAsset</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;newOwner)</argsstring>
+        <name>transferAsset</name>
+        <qualifiedname>satox::core::AssetManager::transferAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>newOwner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="114" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="139" bodyend="172"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3ac650bbb4908b9f3b9d265ccb79c16ef9" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="51">ISSUED</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3a19ee3f1c15c13e4a5c484ff48a8b4c8d" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="52">TRANSFERRED</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a42d05efbac4f787056f21462fe27477b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::burnAsset</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>burnAsset</name>
+        <qualifiedname>satox::core::AssetManager::burnAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="115" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="174" bodyend="200"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3aad9f8dea088d688cb5a70d7d24ea1c2b" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="53">BURNED</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1af93add324e4b269f6832aaebe30a6b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::updateAssetMetadata</definition>
+        <argsstring>(const std::string &amp;id, const AssetMetadata &amp;metadata)</argsstring>
+        <name>updateAssetMetadata</name>
+        <qualifiedname>satox::core::AssetManager::updateAssetMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata" kindref="compound">AssetMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="116" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="202" bodyend="228"/>
+        <references refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata_1a0f0368c6bf8df698149b82e31465663d" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="70">satox::core::AssetManager::AssetMetadata::lastModified</references>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ade429905edea301463d413b096b73ed4" compoundref="d5/dae/core_2src_2asset__manager_8cpp" startline="277" endline="282">validateMetadata</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a94b3cc11b7534c6f007adfc9be67a381" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::isAssetExists</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>isAssetExists</name>
+        <qualifiedname>satox::core::AssetManager::isAssetExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="119" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ab57f8f0e8965d29a6fa24e1f14b25da8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref></type>
+        <definition>AssetManager::Asset satox::core::AssetManager::getAsset</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>getAsset</name>
+        <qualifiedname>satox::core::AssetManager::getAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="120" column="11" bodyfile="src/core/src/asset_manager.cpp" bodystart="235" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a2cd0db463f87f81d1bddb5489fc65008" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &gt;</type>
+        <definition>std::vector&lt; AssetManager::Asset &gt; satox::core::AssetManager::getAssetsByType</definition>
+        <argsstring>(AssetType type) const</argsstring>
+        <name>getAssetsByType</name>
+        <qualifiedname>satox::core::AssetManager::getAssetsByType</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a7f19c0a582656f617052a6acd9bf3650" kindref="member">AssetType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="121" column="17" bodyfile="src/core/src/asset_manager.cpp" bodystart="244" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ade79f58093daac1f2c99386b3209ef3f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &gt;</type>
+        <definition>std::vector&lt; AssetManager::Asset &gt; satox::core::AssetManager::getAssetsByOwner</definition>
+        <argsstring>(const std::string &amp;owner) const</argsstring>
+        <name>getAssetsByOwner</name>
+        <qualifiedname>satox::core::AssetManager::getAssetsByOwner</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="122" column="17" bodyfile="src/core/src/asset_manager.cpp" bodystart="255" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a93c3dcf270a9d105daf35a64a73729cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &gt;</type>
+        <definition>std::vector&lt; AssetManager::Asset &gt; satox::core::AssetManager::getAssetsByState</definition>
+        <argsstring>(AssetState state) const</argsstring>
+        <name>getAssetsByState</name>
+        <qualifiedname>satox::core::AssetManager::getAssetsByState</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" kindref="member">AssetState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="123" column="17" bodyfile="src/core/src/asset_manager.cpp" bodystart="266" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ade429905edea301463d413b096b73ed4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::validateMetadata</definition>
+        <argsstring>(const AssetMetadata &amp;metadata) const</argsstring>
+        <name>validateMetadata</name>
+        <qualifiedname>satox::core::AssetManager::validateMetadata</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata" kindref="compound">AssetMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="126" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="277" bodyend="282"/>
+        <references refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata_1aad8f172c0370986dd45612e6db888773" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="62">satox::core::AssetManager::AssetMetadata::issuer</references>
+        <references refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata_1afc50548374aa17f0e8386df15e5c1a86" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="59">satox::core::AssetManager::AssetMetadata::name</references>
+        <references refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata_1a6b71a486fd5d818532367beaef6de205" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="63">satox::core::AssetManager::AssetMetadata::owner</references>
+        <references refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata_1aa7c67c073d304ec271263ef03f51e324" compoundref="df/de1/core_2include_2satox_2core_2asset__manager_8hpp" startline="60">satox::core::AssetManager::AssetMetadata::symbol</references>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a0ec1b9c77b05ce925b02b7679e2411b0" compoundref="d5/dae/core_2src_2asset__manager_8cpp" startline="71" endline="108">createAsset</referencedby>
+        <referencedby refid="d2/d37/classsatox_1_1core_1_1AssetManager_1af93add324e4b269f6832aaebe30a6b58" compoundref="d5/dae/core_2src_2asset__manager_8cpp" startline="202" endline="228">updateAssetMetadata</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1af3436367561b2b5be78944bc9734d863" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::updateAssetURI</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;uri)</argsstring>
+        <name>updateAssetURI</name>
+        <qualifiedname>satox::core::AssetManager::updateAssetURI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="127" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="284" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a813272cbbeb31b510bed7249ea5841e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::updateAssetHash</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;hash)</argsstring>
+        <name>updateAssetHash</name>
+        <qualifiedname>satox::core::AssetManager::updateAssetHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="128" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="299" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ac18d2f8ab9f7278013ddda7d52625e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::addAssetAttribute</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;key, const nlohmann::json &amp;value)</argsstring>
+        <name>addAssetAttribute</name>
+        <qualifiedname>satox::core::AssetManager::addAssetAttribute</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="129" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="314" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a248ab0983ed7e485e80db2232aa8ff41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::removeAssetAttribute</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;key)</argsstring>
+        <name>removeAssetAttribute</name>
+        <qualifiedname>satox::core::AssetManager::removeAssetAttribute</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="130" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="329" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a7ccc44e1867815635089aa339104d87a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::AssetManager::getAssetHistory</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>getAssetHistory</name>
+        <qualifiedname>satox::core::AssetManager::getAssetHistory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="133" column="17" bodyfile="src/core/src/asset_manager.cpp" bodystart="344" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a6879f652e2f8f532ac14e147d7a826b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::addAssetHistoryEntry</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;entry)</argsstring>
+        <name>addAssetHistoryEntry</name>
+        <qualifiedname>satox::core::AssetManager::addAssetHistoryEntry</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="134" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="353" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ae76cb9aa0ab6bb564d6dd7920426fd53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::clearAssetHistory</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>clearAssetHistory</name>
+        <qualifiedname>satox::core::AssetManager::clearAssetHistory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="135" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="366" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a2f6e0c80dbaac449c4f9858faa60f50d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d7/d07/structsatox_1_1core_1_1AssetManager_1_1AssetStats" kindref="compound">AssetStats</ref></type>
+        <definition>AssetManager::AssetStats satox::core::AssetManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::AssetManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="138" column="16" bodyfile="src/core/src/asset_manager.cpp" bodystart="379" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1abbad7646a42661cda0349ff53c86f009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::AssetManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="139" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="384" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ad95ed2f09286b60df5d1653163141ffe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::core::AssetManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="140" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="389" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a8f25156cfa131a088fd51d6c54b5a5c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::registerAssetCallback</definition>
+        <argsstring>(AssetCallback callback)</argsstring>
+        <name>registerAssetCallback</name>
+        <qualifiedname>satox::core::AssetManager::registerAssetCallback</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aab290304a99d60eb2ffe59d85ce1f095" kindref="member">AssetCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="143" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="395" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a244fe376cbc6f49d0dc5436253457b3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::registerMetadataCallback</definition>
+        <argsstring>(AssetMetadataCallback callback)</argsstring>
+        <name>registerMetadataCallback</name>
+        <qualifiedname>satox::core::AssetManager::registerMetadataCallback</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aaecc1c6a28e6b8b36e9f931cbff7edcf" kindref="member">AssetMetadataCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="144" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a8ae7fff0b8bd1f99beff2375308dcfff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::registerErrorCallback</definition>
+        <argsstring>(AssetErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::core::AssetManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a285f460be4df048ff9ca9c84cb8305f9" kindref="member">AssetErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="145" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="405" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ac42038277fed4eff01a4e9f191deed9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::unregisterAssetCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterAssetCallback</name>
+        <qualifiedname>satox::core::AssetManager::unregisterAssetCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="146" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="410" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a407d727d19306bb9f4cafe0c8d11f12e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::unregisterMetadataCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterMetadataCallback</name>
+        <qualifiedname>satox::core::AssetManager::unregisterMetadataCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="147" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="415" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1af84c36b8acffdde28b4db205e1099c7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::unregisterErrorCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterErrorCallback</name>
+        <qualifiedname>satox::core::AssetManager::unregisterErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="148" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="420" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aebe482fcdbcf21037ec041e63fcde84f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::AssetManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::AssetManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="151" column="17" bodyfile="src/core/src/asset_manager.cpp" bodystart="425" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ad8802144f4841ee37299621c01fc8a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::AssetManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="152" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="430" bodyend="433"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a5a79212bc822206f469dd8a0f0d834bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>satox::core::AssetManager::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="78" column="10" bodyfile="src/core/src/asset.cpp" bodystart="225" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a0943e4044721d8c411bab380c3bf6d33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::AssetManager::generateAssetId</definition>
+        <argsstring>(const Asset &amp;asset)</argsstring>
+        <name>generateAssetId</name>
+        <qualifiedname>satox::core::AssetManager::generateAssetId</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &amp;</type>
+          <declname>asset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="79" column="17" bodyfile="src/core/src/asset.cpp" bodystart="235" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1aa8d36e71d4b9cb15d7e1246f817a7e1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::validateAsset</definition>
+        <argsstring>(const Asset &amp;asset)</argsstring>
+        <name>validateAsset</name>
+        <qualifiedname>satox::core::AssetManager::validateAsset</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref> &amp;</type>
+          <declname>asset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset.h" line="80" column="10" bodyfile="src/core/src/asset.cpp" bodystart="256" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ab96ede537319b8f837cc8f67b61dbd87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::AssetManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::AssetManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="155" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a83362335fc7fe466b977603c47bd59cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::~AssetManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::~AssetManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="156" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::AssetManager::AssetManager</definition>
+        <argsstring>(const AssetManager &amp;)=delete</argsstring>
+        <name>AssetManager</name>
+        <qualifiedname>satox::core::AssetManager::AssetManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="157" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        <definition>AssetManager &amp; satox::core::AssetManager::operator=</definition>
+        <argsstring>(const AssetManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::AssetManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="158" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a72fbfbd31545f243ea37f207663a4341" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::validateConfig</definition>
+        <argsstring>(const nlohmann::json &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::core::AssetManager::validateConfig</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="161" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="436" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a06e49697f24e38834ef929515946c3d6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::validateAssetId</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>validateAssetId</name>
+        <qualifiedname>satox::core::AssetManager::validateAssetId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="162" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="440" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a07c2b01fa4cfb875852ee6eac62c465f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::validateOwner</definition>
+        <argsstring>(const std::string &amp;owner) const</argsstring>
+        <name>validateOwner</name>
+        <qualifiedname>satox::core::AssetManager::validateOwner</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="163" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="444" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a15e59a099cc98ff5f1422771bbd66f78" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::AssetManager::checkAssetLimit</definition>
+        <argsstring>() const</argsstring>
+        <name>checkAssetLimit</name>
+        <qualifiedname>satox::core::AssetManager::checkAssetLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="164" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="448" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ae8c383dfeb071b984cf829a51822aadc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::updateAssetState</definition>
+        <argsstring>(const std::string &amp;id, AssetState state)</argsstring>
+        <name>updateAssetState</name>
+        <qualifiedname>satox::core::AssetManager::updateAssetState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" kindref="member">AssetState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="165" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="452" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ae70bd89792ad6fd700dda63b6cd92fac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::updateAssetStats</definition>
+        <argsstring>(const std::string &amp;id, AssetState state)</argsstring>
+        <name>updateAssetStats</name>
+        <qualifiedname>satox::core::AssetManager::updateAssetStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" kindref="member">AssetState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="166" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="459" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a24dd69b2e312f91e059c24823aad08ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::notifyAssetChange</definition>
+        <argsstring>(const std::string &amp;id, AssetState state)</argsstring>
+        <name>notifyAssetChange</name>
+        <qualifiedname>satox::core::AssetManager::notifyAssetChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" kindref="member">AssetState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="167" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="482" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a54369301cbab3f3fe8d86bf9720dffa8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::notifyMetadataChange</definition>
+        <argsstring>(const std::string &amp;id, const AssetMetadata &amp;metadata)</argsstring>
+        <name>notifyMetadataChange</name>
+        <qualifiedname>satox::core::AssetManager::notifyMetadataChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/d39/structsatox_1_1core_1_1AssetManager_1_1AssetMetadata" kindref="compound">AssetMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="168" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="492" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1ab35a4096b6933114b93d1cfa3e6e66ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::AssetManager::notifyError</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;error)</argsstring>
+        <name>notifyError</name>
+        <qualifiedname>satox::core::AssetManager::notifyError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="169" column="10" bodyfile="src/core/src/asset_manager.cpp" bodystart="502" bodyend="510"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d2/d37/classsatox_1_1core_1_1AssetManager_1a274b07e3ea293b76e6fe20b63343f233" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        <definition>AssetManager &amp; satox::core::AssetManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::AssetManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/asset_manager.hpp" line="105" column="25" bodyfile="src/core/src/asset_manager.cpp" bodystart="34" bodyend="37"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" compoundref="d9/d61/asset_8cpp" startline="35" endline="35">AssetManager</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab395831966f78b829ccac1f027c0184f" compoundref="d2/d5f/core__manager_8cpp" startline="202" endline="205">satox::core::CoreManager::getAssetManager</referencedby>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1ac6bfccbd08978aec73c542e8f501c4d7" compoundref="da/d8f/satox__manager_8cpp" startline="190" endline="192">satox::core::SatoxManager::getAssetManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/asset.h" line="50" column="1" bodyfile="src/core/include/satox/core/asset.h" bodystart="50" bodyend="85"/>
+    <listofallmembers>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac18d2f8ab9f7278013ddda7d52625e90" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>addAssetAttribute</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a6879f652e2f8f532ac14e147d7a826b0" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>addAssetHistoryEntry</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aab290304a99d60eb2ffe59d85ce1f095" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aa99e986fff00f9e7d9c2ab260eb589bd" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>assetCallbacks_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a285f460be4df048ff9ca9c84cb8305f9" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetErrorCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetManager</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetManager</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a3a78026e5c271a034c1d6392c95287d2" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetManager</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ab96ede537319b8f837cc8f67b61dbd87" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetManager</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetManager</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aaecc1c6a28e6b8b36e9f931cbff7edcf" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetMetadataCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9fd8abfa0a61772dd0af89128c452cff" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>assets_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4fc6183c506cf749d6708c6eab33cae3" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetState</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a7f19c0a582656f617052a6acd9bf3650" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>AssetType</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac4246e5cce879c3eb24d685daf85ff47" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>balances_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a42d05efbac4f787056f21462fe27477b" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>burnAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a15e59a099cc98ff5f1422771bbd66f78" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>checkAssetLimit</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a5a79212bc822206f469dd8a0f0d834bd" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>cleanup</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae76cb9aa0ab6bb564d6dd7920426fd53" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>clearAssetHistory</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad8802144f4841ee37299621c01fc8a62" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>clearLastError</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9e0451ed01dcbf92cbe455d901fda28d" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>createAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a0ec1b9c77b05ce925b02b7679e2411b0" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>createAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a8c1ec969f130df0537c0fe0d3c931a89" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>deleteAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad95ed2f09286b60df5d1653163141ffe" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>enableStats</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aaac6c282ae60f742687efe461d46e48a" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>errorCallbacks_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a0943e4044721d8c411bab380c3bf6d33" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>generateAssetId</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4df61469ff0ee9da0e977df23cb25fb9" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAllAssets</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9013533b663455aa917da5a64976cbdd" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ab57f8f0e8965d29a6fa24e1f14b25da8" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1acd764cb8a42eaaa849a93f07f738e9da" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAssetBalance</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a7ccc44e1867815635089aa339104d87a" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAssetHistory</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1acab5070fdd2201ae81997d1b8f3a88a5" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAssetsByOwner</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ade79f58093daac1f2c99386b3209ef3f" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAssetsByOwner</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a93c3dcf270a9d105daf35a64a73729cf" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAssetsByState</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a2cd0db463f87f81d1bddb5489fc65008" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getAssetsByType</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a274b07e3ea293b76e6fe20b63343f233" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getInstance</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aebe482fcdbcf21037ec041e63fcde84f" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getLastError</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a2f6e0c80dbaac449c4f9858faa60f50d" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>getStats</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4be91f88a4877b0e977f3c95a2a62ecf" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>initialize</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1af6852782b0643efa3f0b15e65621180d" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>initialize</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1af073d56fd82dff2500759e75917f3481" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>initialized_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a94b3cc11b7534c6f007adfc9be67a381" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>isAssetExists</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1abdf7bcfd1a763ea37d65c821a62c51e8" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>issueAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aefeccf2a2703d6b24320164726e9e87d" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>lastError_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad5b43b2b24961ce37bc1e9fa18e24f24" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>metadataCallbacks_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad524e83ee786d08d2fbc44de5b88705d" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>mutex_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a24dd69b2e312f91e059c24823aad08ce" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>notifyAssetChange</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ab35a4096b6933114b93d1cfa3e6e66ae" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>notifyError</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a54369301cbab3f3fe8d86bf9720dffa8" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>notifyMetadataChange</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>operator=</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>operator=</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>operator=</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a8f25156cfa131a088fd51d6c54b5a5c7" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>registerAssetCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a8ae7fff0b8bd1f99beff2375308dcfff" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>registerErrorCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a244fe376cbc6f49d0dc5436253457b3a" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>registerMetadataCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a248ab0983ed7e485e80db2232aa8ff41" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>removeAssetAttribute</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1abbad7646a42661cda0349ff53c86f009" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>resetStats</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a12e2cb7151636cb90f047bfa965ed812" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>shutdown</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a8db879b9bfe1a86841a0b23a80d46600" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>stats_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae50840dfd3af5ace2703ef482b079465" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>statsEnabled_</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9ca7890ad7f617c6f26f2866b5068286" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>transferAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad7875787742daa78cb311b24c3ae5985" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>transferAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac42038277fed4eff01a4e9f191deed9a" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>unregisterAssetCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1af84c36b8acffdde28b4db205e1099c7e" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>unregisterErrorCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a407d727d19306bb9f4cafe0c8d11f12e" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>unregisterMetadataCallback</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aae3ad8c333353d362c93e55412ee397e" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>updateAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a813272cbbeb31b510bed7249ea5841e2" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>updateAssetHash</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1af93add324e4b269f6832aaebe30a6b58" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>updateAssetMetadata</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae8c383dfeb071b984cf829a51822aadc" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>updateAssetState</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae70bd89792ad6fd700dda63b6cd92fac" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>updateAssetStats</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1af3436367561b2b5be78944bc9734d863" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>updateAssetURI</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aa8d36e71d4b9cb15d7e1246f817a7e1d" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>validateAsset</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a06e49697f24e38834ef929515946c3d6" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>validateAssetId</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a72fbfbd31545f243ea37f207663a4341" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>validateConfig</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ade429905edea301463d413b096b73ed4" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>validateMetadata</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a07c2b01fa4cfb875852ee6eac62c465f" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>validateOwner</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a0adf32b540e1af6e138572073a2030ac" prot="public" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>~AssetManager</name></member>
+      <member refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a83362335fc7fe466b977603c47bd59cd" prot="private" virt="non-virtual"><scope>satox::core::AssetManager</scope><name>~AssetManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

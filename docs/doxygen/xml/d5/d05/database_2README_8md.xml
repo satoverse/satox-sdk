@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/d05/database_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Satox<sp/>Database<sp/>Component</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>Satox<sp/>Database<sp/>Component<sp/>provides<sp/>a<sp/>unified<sp/>database<sp/>interface<sp/>for<sp/>the<sp/>Satox<sp/>SDK,<sp/>supporting<sp/>multiple<sp/>database<sp/>backends<sp/>with<sp/>a<sp/>consistent<sp/>API.<sp/>This<sp/>component<sp/>follows<sp/>the<sp/>Satox<sp/>SDK<sp/>development<sp/>templates<sp/>and<sp/>provides<sp/>comprehensive<sp/>database<sp/>management<sp/>capabilities.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Multi-Database<sp/>Support**:<sp/>In-memory<sp/>database<sp/>with<sp/>extensible<sp/>backend<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Transaction<sp/>Management**:<sp/>ACID-compliant<sp/>transaction<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Connection<sp/>Pooling**:<sp/>Efficient<sp/>connection<sp/>management</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Health<sp/>Monitoring**:<sp/>Comprehensive<sp/>health<sp/>checks<sp/>and<sp/>status<sp/>reporting</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Structured<sp/>Logging**:<sp/>Detailed<sp/>logging<sp/>with<sp/>spdlog<sp/>integration</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Error<sp/>Handling**:<sp/>Standardized<sp/>error<sp/>codes<sp/>and<sp/>exception<sp/>handling</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Statistics**:<sp/>Performance<sp/>metrics<sp/>and<sp/>operation<sp/>tracking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Backup<sp/>&amp;<sp/>Restore**:<sp/>Database<sp/>backup<sp/>and<sp/>restoration<sp/>capabilities</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Index<sp/>Management**:<sp/>Automatic<sp/>and<sp/>manual<sp/>index<sp/>creation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Callback<sp/>System**:<sp/>Event-driven<sp/>architecture<sp/>with<sp/>callback<sp/>support</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Architecture</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>Database<sp/>Component<sp/>follows<sp/>the<sp/>unified<sp/>architecture<sp/>principle:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**C++<sp/>Core**:<sp/>All<sp/>database<sp/>logic<sp/>implemented<sp/>in<sp/>C++</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Singleton<sp/>Pattern**:<sp/>Single<sp/>instance<sp/>per<sp/>application</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Thread-Safe**:<sp/>All<sp/>operations<sp/>are<sp/>thread-safe<sp/>with<sp/>proper<sp/>mutex<sp/>protection</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Template<sp/>Compliance**:<sp/>Follows<sp/>all<sp/>established<sp/>development<sp/>templates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Basic<sp/>Initialization</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;satox/database/database_manager.hpp&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>the<sp/>singleton<sp/>instance</highlight></codeline>
+<codeline><highlight class="normal">auto&amp;<sp/>manager<sp/>=<sp/>satox::database::DatabaseManager::getInstance();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Configure<sp/>the<sp/>database</highlight></codeline>
+<codeline><highlight class="normal">satox::database::DatabaseConfig<sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.name<sp/>=<sp/>&quot;my_database&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.enableLogging<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">config.logPath<sp/>=<sp/>&quot;logs/components/database/&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.maxConnections<sp/>=<sp/>10;</highlight></codeline>
+<codeline><highlight class="normal">config.connectionTimeout<sp/>=<sp/>5000;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>the<sp/>manager</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(!manager.initialize(config))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>&quot;Failed<sp/>to<sp/>initialize:<sp/>&quot;<sp/>&lt;&lt;<sp/>manager.getLastError()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Database<sp/>Operations</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Create<sp/>a<sp/>database</highlight></codeline>
+<codeline><highlight class="normal">manager.createDatabase(&quot;my_db&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Use<sp/>a<sp/>database</highlight></codeline>
+<codeline><highlight class="normal">manager.useDatabase(&quot;my_db&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>List<sp/>databases</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>databases<sp/>=<sp/>manager.listDatabases();</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Table<sp/>Operations</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Create<sp/>a<sp/>table<sp/>with<sp/>schema</highlight></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>schema<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;id&quot;,<sp/>&quot;string&quot;},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;name&quot;,<sp/>&quot;string&quot;},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;age&quot;,<sp/>&quot;integer&quot;},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;active&quot;,<sp/>&quot;boolean&quot;}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">manager.createTable(&quot;users&quot;,<sp/>schema);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Insert<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>user<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;id&quot;,<sp/>&quot;user1&quot;},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;name&quot;,<sp/>&quot;John<sp/>Doe&quot;},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;age&quot;,<sp/>30},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{&quot;active&quot;,<sp/>true}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">manager.insert(&quot;users&quot;,<sp/>user);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Transaction<sp/>Management</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Begin<sp/>transaction</highlight></codeline>
+<codeline><highlight class="normal">manager.beginTransaction();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">try<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Perform<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.insert(&quot;users&quot;,<sp/>user1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.insert(&quot;users&quot;,<sp/>user2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Commit<sp/>transaction</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.commitTransaction();</highlight></codeline>
+<codeline><highlight class="normal">}<sp/>catch<sp/>(...)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Rollback<sp/>on<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.rollbackTransaction();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Health<sp/>Monitoring</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Perform<sp/>health<sp/>check</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.performHealthCheck())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Database<sp/>is<sp/>healthy&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/>else<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Database<sp/>health<sp/>check<sp/>failed&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>health<sp/>status</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>health<sp/>=<sp/>manager.getHealth();</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>&quot;Health:<sp/>&quot;<sp/>&lt;&lt;<sp/>health.message<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Callback<sp/>Registration</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Register<sp/>database<sp/>operation<sp/>callback</highlight></codeline>
+<codeline><highlight class="normal">manager.setDatabaseCallback([](const<sp/>std::string&amp;<sp/>operation,<sp/>bool<sp/>success,<sp/>const<sp/>std::string&amp;<sp/>error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Operation<sp/>&quot;<sp/>&lt;&lt;<sp/>operation<sp/>&lt;&lt;<sp/>&quot;<sp/>succeeded&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>&quot;Operation<sp/>&quot;<sp/>&lt;&lt;<sp/>operation<sp/>&lt;&lt;<sp/>&quot;<sp/>failed:<sp/>&quot;<sp/>&lt;&lt;<sp/>error<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Register<sp/>health<sp/>callback</highlight></codeline>
+<codeline><highlight class="normal">manager.setHealthCallback([](const<sp/>satox::database::DatabaseHealth&amp;<sp/>health)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Health<sp/>status:<sp/>&quot;<sp/>&lt;&lt;<sp/>health.message<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Prerequisites</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>C++17<sp/>compatible<sp/>compiler</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CMake<sp/>3.14<sp/>or<sp/>higher</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>nlohmann/json<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>spdlog<sp/>library</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build<sp/>Instructions</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Create<sp/>build<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Configure<sp/>with<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Build<sp/>the<sp/>component</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Install<sp/>(optional)</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Dependencies</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Ubuntu/Debian</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>nlohmann-json3-dev<sp/>libspdlog-dev</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>macOS</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>nlohmann-json<sp/>spdlog</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>CentOS/RHEL</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>yum<sp/>install<sp/>nlohmann-json-devel<sp/>spdlog-devel</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Testing</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>component<sp/>includes<sp/>comprehensive<sp/>test<sp/>coverage:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unit<sp/>tests<sp/>for<sp/>all<sp/>public<sp/>APIs</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Integration<sp/>tests<sp/>for<sp/>database<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Performance<sp/>tests<sp/>for<sp/>benchmarking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Concurrency<sp/>tests<sp/>for<sp/>thread<sp/>safety</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>specific<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">./tests/database_manager_test</highlight></codeline>
+<codeline><highlight class="normal">./tests/database_manager_comprehensive_test</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Logging</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>component<sp/>uses<sp/>structured<sp/>logging<sp/>with<sp/>spdlog:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Log<sp/>Location**:<sp/>`logs/components/database/`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Log<sp/>Files**:<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`database.log`<sp/>-<sp/>Main<sp/>application<sp/>log</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`database_operations.log`<sp/>-<sp/>Operation<sp/>audit<sp/>trail</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Log<sp/>Levels**:<sp/>DEBUG,<sp/>INFO,<sp/>WARN,<sp/>ERROR</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Log<sp/>Format**:<sp/>`[timestamp]<sp/>[level]<sp/>[thread]<sp/>[component]<sp/>message`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Error<sp/>Handling</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>component<sp/>uses<sp/>standardized<sp/>error<sp/>codes:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`SUCCESS`<sp/>-<sp/>Operation<sp/>completed<sp/>successfully</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`INVALID_ARGUMENT`<sp/>-<sp/>Invalid<sp/>input<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`NOT_INITIALIZED`<sp/>-<sp/>Component<sp/>not<sp/>initialized</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`OPERATION_FAILED`<sp/>-<sp/>General<sp/>operation<sp/>failure</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`VALIDATION_ERROR`<sp/>-<sp/>Data<sp/>validation<sp/>failed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`TIMEOUT_ERROR`<sp/>-<sp/>Operation<sp/>timed<sp/>out</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Performance</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>component<sp/>includes<sp/>performance<sp/>monitoring:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Operation<sp/>timing<sp/>statistics</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Average<sp/>operation<sp/>time<sp/>tracking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Slow<sp/>operation<sp/>detection<sp/>(&gt;1<sp/>second)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Memory<sp/>usage<sp/>monitoring</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Connection<sp/>pool<sp/>statistics</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Security</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Input<sp/>validation<sp/>for<sp/>all<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SQL<sp/>injection<sp/>prevention<sp/>(when<sp/>SQL<sp/>backends<sp/>are<sp/>implemented)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Secure<sp/>connection<sp/>handling</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Audit<sp/>logging<sp/>for<sp/>all<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>⚠️<sp/>Limitations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Blockchain<sp/>Compatibility**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**No<sp/>Smart<sp/>Contract<sp/>Support:**<sp/>Satox<sp/>is<sp/>based<sp/>on<sp/>Ravencoin<sp/>and<sp/>does<sp/>**not**<sp/>support<sp/>smart<sp/>contracts<sp/>or<sp/>EVM<sp/>compatibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset-Based:**<sp/>Focuses<sp/>on<sp/>asset<sp/>creation,<sp/>management,<sp/>and<sp/>transfer<sp/>rather<sp/>than<sp/>programmable<sp/>contracts</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**UTXO<sp/>Model:**<sp/>Uses<sp/>Unspent<sp/>Transaction<sp/>Output<sp/>(UTXO)<sp/>model<sp/>like<sp/>Bitcoin/Ravencoin,<sp/>not<sp/>account-based<sp/>like<sp/>Ethereum</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Platform<sp/>Support**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Desktop<sp/>Focus:**<sp/>Primarily<sp/>designed<sp/>for<sp/>desktop/server<sp/>environments</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mobile<sp/>Limitations:**<sp/>Mobile<sp/>SDK<sp/>provides<sp/>limited<sp/>functionality<sp/>compared<sp/>to<sp/>core<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Browser<sp/>Support:**<sp/>WebAssembly<sp/>bindings<sp/>have<sp/>performance<sp/>limitations<sp/>for<sp/>complex<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Network<sp/>Requirements**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Internet<sp/>Connection:**<sp/>Requires<sp/>active<sp/>internet<sp/>connection<sp/>for<sp/>blockchain<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Node<sp/>Synchronization:**<sp/>Full<sp/>node<sp/>operations<sp/>require<sp/>significant<sp/>storage<sp/>and<sp/>bandwidth</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**API<sp/>Dependencies:**<sp/>Some<sp/>features<sp/>depend<sp/>on<sp/>external<sp/>API<sp/>services</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Development<sp/>Considerations**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Learning<sp/>Curve:**<sp/>Ravencoin/UTXO<sp/>model<sp/>differs<sp/>from<sp/>Ethereum/smart<sp/>contract<sp/>development</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Testing<sp/>Environment:**<sp/>Testnet<sp/>required<sp/>for<sp/>development<sp/>and<sp/>testing</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset<sp/>Management:**<sp/>Asset<sp/>creation<sp/>and<sp/>management<sp/>have<sp/>specific<sp/>requirements<sp/>and<sp/>limitations</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
+<codeline><highlight class="normal">When<sp/>contributing<sp/>to<sp/>this<sp/>component:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Follow<sp/>the<sp/>established<sp/>development<sp/>templates</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Ensure<sp/>all<sp/>tests<sp/>pass</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Add<sp/>appropriate<sp/>logging</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Update<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Follow<sp/>the<sp/>error<sp/>handling<sp/>patterns</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>Maintain<sp/>thread<sp/>safety</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline><highlight class="normal">MIT<sp/>License<sp/>-<sp/>Copyright(c)<sp/>2025<sp/>Satoxcoin<sp/>Core<sp/>Developer</highlight></codeline>
+    </programlisting>
+    <location file="src/database/README.md"/>
+  </compounddef>
+</doxygen>

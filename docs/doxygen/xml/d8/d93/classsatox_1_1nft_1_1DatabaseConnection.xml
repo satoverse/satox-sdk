@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>satox::nft::DatabaseConnection</compoundname>
+    <includes refid="d0/d63/database__connection_8hpp" local="no">database_connection.hpp</includes>
+    <innerclass refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" prot="public">satox::nft::DatabaseConnection::Config</innerclass>
+    <innerclass refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult" prot="public">satox::nft::DatabaseConnection::QueryResult</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d3/dd4/structsatox_1_1nft_1_1DatabaseConnection_1_1QueryResult" kindref="compound">QueryResult</ref> &amp;)&gt;</type>
+        <definition>using satox::nft::DatabaseConnection::QueryCallback =  std::function&lt;void(const QueryResult&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>QueryCallback</name>
+        <qualifiedname>satox::nft::DatabaseConnection::QueryCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="57" column="5" bodyfile="src/nft/include/satox/nft/database_connection.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a4be25ffbdfce6214eb59d67eac36a6db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" kindref="compound">DatabaseConnection</ref> &gt;</type>
+        <definition>static std::shared_ptr&lt; DatabaseConnection &gt; satox::nft::DatabaseConnection::create</definition>
+        <argsstring>(const Config &amp;config)</argsstring>
+        <name>create</name>
+        <qualifiedname>satox::nft::DatabaseConnection::create</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="59" column="28"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aaa3fd2149abb7884c729d3abe39ed94f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual satox::nft::DatabaseConnection::~DatabaseConnection</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DatabaseConnection</name>
+        <qualifiedname>satox::nft::DatabaseConnection::~DatabaseConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="60" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a9d449432bb001519749eeb6c32a31f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool satox::nft::DatabaseConnection::connect</definition>
+        <argsstring>()=0</argsstring>
+        <name>connect</name>
+        <qualifiedname>satox::nft::DatabaseConnection::connect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="62" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab45c65f357f8f874ed9dd588bf7f9dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void satox::nft::DatabaseConnection::disconnect</definition>
+        <argsstring>()=0</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::nft::DatabaseConnection::disconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="63" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a30acc3653a019cb3d7b011fb425dc121" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool satox::nft::DatabaseConnection::isConnected</definition>
+        <argsstring>() const =0</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>satox::nft::DatabaseConnection::isConnected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="64" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8163e21b7d5a7ba169e864b2ac2ede84" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool satox::nft::DatabaseConnection::executeQuery</definition>
+        <argsstring>(const std::string &amp;query, QueryCallback callback)=0</argsstring>
+        <name>executeQuery</name>
+        <qualifiedname>satox::nft::DatabaseConnection::executeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" kindref="member">QueryCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="65" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1af4881399a90f98062b3093ebc1945315" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool satox::nft::DatabaseConnection::executeTransaction</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;queries, QueryCallback callback)=0</argsstring>
+        <name>executeTransaction</name>
+        <qualifiedname>satox::nft::DatabaseConnection::executeTransaction</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>queries</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" kindref="member">QueryCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="66" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a5f0f41e3cd13d8cdad070f7fbd775f57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string satox::nft::DatabaseConnection::getLastError</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::nft::DatabaseConnection::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="67" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8f065179d5790c23582b499f691525c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool satox::nft::DatabaseConnection::ping</definition>
+        <argsstring>()=0</argsstring>
+        <name>ping</name>
+        <qualifiedname>satox::nft::DatabaseConnection::ping</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="68" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ae3b7fef02a0ef6aac3a4810ad3af5fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void satox::nft::DatabaseConnection::setConfig</definition>
+        <argsstring>(const Config &amp;config)=0</argsstring>
+        <name>setConfig</name>
+        <qualifiedname>satox::nft::DatabaseConnection::setConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="69" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab5c8049be52b0538e91c90b640861aa8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/dcd/structsatox_1_1nft_1_1DatabaseConnection_1_1Config" kindref="compound">Config</ref></type>
+        <definition>virtual Config satox::nft::DatabaseConnection::getConfig</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getConfig</name>
+        <qualifiedname>satox::nft::DatabaseConnection::getConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="70" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::DatabaseConnection::DatabaseConnection</definition>
+        <argsstring>()=default</argsstring>
+        <name>DatabaseConnection</name>
+        <qualifiedname>satox::nft::DatabaseConnection::DatabaseConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="73" column="5"/>
+        <referencedby refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a6eba5d379394c179588f4d2bda91f725">DatabaseConnection</referencedby>
+        <referencedby refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aa1a21c97332cee522f0cfa8d2dbc1bbe">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a6eba5d379394c179588f4d2bda91f725" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::DatabaseConnection::DatabaseConnection</definition>
+        <argsstring>(const DatabaseConnection &amp;)=delete</argsstring>
+        <name>DatabaseConnection</name>
+        <qualifiedname>satox::nft::DatabaseConnection::DatabaseConnection</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" kindref="compound">DatabaseConnection</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="74" column="5"/>
+        <references refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20">DatabaseConnection</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aa1a21c97332cee522f0cfa8d2dbc1bbe" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" kindref="compound">DatabaseConnection</ref> &amp;</type>
+        <definition>DatabaseConnection &amp; satox::nft::DatabaseConnection::operator=</definition>
+        <argsstring>(const DatabaseConnection &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::nft::DatabaseConnection::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection" kindref="compound">DatabaseConnection</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/database_connection.hpp" line="75" column="24"/>
+        <references refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20">DatabaseConnection</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/nft/include/satox/nft/database_connection.hpp" line="38" column="1" bodyfile="src/nft/include/satox/nft/database_connection.hpp" bodystart="38" bodyend="76"/>
+    <listofallmembers>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a9d449432bb001519749eeb6c32a31f7c" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>connect</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a4be25ffbdfce6214eb59d67eac36a6db" prot="public" virt="non-virtual"><scope>satox::nft::DatabaseConnection</scope><name>create</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a094d1e1cc8c5816d8135ac26987baf20" prot="protected" virt="non-virtual"><scope>satox::nft::DatabaseConnection</scope><name>DatabaseConnection</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a6eba5d379394c179588f4d2bda91f725" prot="protected" virt="non-virtual"><scope>satox::nft::DatabaseConnection</scope><name>DatabaseConnection</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab45c65f357f8f874ed9dd588bf7f9dd9" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>disconnect</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8163e21b7d5a7ba169e864b2ac2ede84" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>executeQuery</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1af4881399a90f98062b3093ebc1945315" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>executeTransaction</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ab5c8049be52b0538e91c90b640861aa8" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>getConfig</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a5f0f41e3cd13d8cdad070f7fbd775f57" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>getLastError</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a30acc3653a019cb3d7b011fb425dc121" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>isConnected</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aa1a21c97332cee522f0cfa8d2dbc1bbe" prot="protected" virt="non-virtual"><scope>satox::nft::DatabaseConnection</scope><name>operator=</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a8f065179d5790c23582b499f691525c0" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>ping</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1a1de823b7fcb1792dd0617dd3debc554b" prot="public" virt="non-virtual"><scope>satox::nft::DatabaseConnection</scope><name>QueryCallback</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1ae3b7fef02a0ef6aac3a4810ad3af5fae" prot="public" virt="pure-virtual"><scope>satox::nft::DatabaseConnection</scope><name>setConfig</name></member>
+      <member refid="d8/d93/classsatox_1_1nft_1_1DatabaseConnection_1aaa3fd2149abb7884c729d3abe39ed94f" prot="public" virt="virtual"><scope>satox::nft::DatabaseConnection</scope><name>~DatabaseConnection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

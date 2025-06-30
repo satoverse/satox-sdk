@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/d44/structKeccakSponge" kind="struct" language="C++" prot="public">
+    <compoundname>KeccakSponge</compoundname>
+    <includes refid="d3/d38/KeccakSponge_8h" local="no">KeccakSponge.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" prot="public" static="no" mutable="no">
+        <type><ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref></type>
+        <definition>KeccakF_1600_State KeccakSponge::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>KeccakSponge::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="12" column="24" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="12" bodyend="-1"/>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1a0dea0ec27e252be914996a10848e9d10" compoundref="d9/db3/KeccakSponge_8c" startline="12" endline="29">KeccakSponge_Absorb</referencedby>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" compoundref="d9/db3/KeccakSponge_8c" startline="4" endline="10">KeccakSponge_Initialize</referencedby>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1affa225cf50299bad7641318082b78500" compoundref="d9/db3/KeccakSponge_8c" startline="31" endline="48">KeccakSponge_Squeeze</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int KeccakSponge::rate</definition>
+        <argsstring></argsstring>
+        <name>rate</name>
+        <qualifiedname>KeccakSponge::rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="13" column="18" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="13" bodyend="-1"/>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1a0dea0ec27e252be914996a10848e9d10" compoundref="d9/db3/KeccakSponge_8c" startline="12" endline="29">KeccakSponge_Absorb</referencedby>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" compoundref="d9/db3/KeccakSponge_8c" startline="4" endline="10">KeccakSponge_Initialize</referencedby>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1affa225cf50299bad7641318082b78500" compoundref="d9/db3/KeccakSponge_8c" startline="31" endline="48">KeccakSponge_Squeeze</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d44/structKeccakSponge_1a446652b9b6512721fe445fdd07529ab7" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int KeccakSponge::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <qualifiedname>KeccakSponge::capacity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="14" column="18" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="14" bodyend="-1"/>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" compoundref="d9/db3/KeccakSponge_8c" startline="4" endline="10">KeccakSponge_Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d44/structKeccakSponge_1a574b4bf5fe89c609b31897e212435a8d" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int KeccakSponge::bitsInQueue</definition>
+        <argsstring></argsstring>
+        <name>bitsInQueue</name>
+        <qualifiedname>KeccakSponge::bitsInQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="15" column="18" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" compoundref="d9/db3/KeccakSponge_8c" startline="4" endline="10">KeccakSponge_Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d44/structKeccakSponge_1aec5d296778b4ab46170db4524e2a99d0" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int KeccakSponge::bitsAvailableForSqueezing</definition>
+        <argsstring></argsstring>
+        <name>bitsAvailableForSqueezing</name>
+        <qualifiedname>KeccakSponge::bitsAvailableForSqueezing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="16" column="18" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" compoundref="d9/db3/KeccakSponge_8c" startline="4" endline="10">KeccakSponge_Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d44/structKeccakSponge_1a6a8426de53638383c816912e4d85f5fe" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char KeccakSponge::queue[KECCAK_SPONGE_BLOCKSIZE]</definition>
+        <argsstring>[KECCAK_SPONGE_BLOCKSIZE]</argsstring>
+        <name>queue</name>
+        <qualifiedname>KeccakSponge::queue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="17" column="19" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>KeccakF_1600_State</label>
+        <link refid="d2/d53/structKeccakF__1600__State"/>
+      </node>
+      <node id="1">
+        <label>KeccakSponge</label>
+        <link refid="d5/d44/structKeccakSponge"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/blockchain/third_party/keccak/include/KeccakSponge.h" line="11" column="1" bodyfile="src/blockchain/third_party/keccak/include/KeccakSponge.h" bodystart="11" bodyend="18"/>
+    <listofallmembers>
+      <member refid="d5/d44/structKeccakSponge_1aec5d296778b4ab46170db4524e2a99d0" prot="public" virt="non-virtual"><scope>KeccakSponge</scope><name>bitsAvailableForSqueezing</name></member>
+      <member refid="d5/d44/structKeccakSponge_1a574b4bf5fe89c609b31897e212435a8d" prot="public" virt="non-virtual"><scope>KeccakSponge</scope><name>bitsInQueue</name></member>
+      <member refid="d5/d44/structKeccakSponge_1a446652b9b6512721fe445fdd07529ab7" prot="public" virt="non-virtual"><scope>KeccakSponge</scope><name>capacity</name></member>
+      <member refid="d5/d44/structKeccakSponge_1a6a8426de53638383c816912e4d85f5fe" prot="public" virt="non-virtual"><scope>KeccakSponge</scope><name>queue</name></member>
+      <member refid="d5/d44/structKeccakSponge_1acc0dce0c65cb081a56b7a0d00d252095" prot="public" virt="non-virtual"><scope>KeccakSponge</scope><name>rate</name></member>
+      <member refid="d5/d44/structKeccakSponge_1a75ef43dcced885c993dc23dc7ca4f7d6" prot="public" virt="non-virtual"><scope>KeccakSponge</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

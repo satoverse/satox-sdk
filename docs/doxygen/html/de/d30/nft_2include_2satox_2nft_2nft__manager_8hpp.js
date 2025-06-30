@@ -1,0 +1,35 @@
+var nft_2include_2satox_2nft_2nft__manager_8hpp =
+[
+    [ "satox::nft::NFTError", "db/d41/structsatox_1_1nft_1_1NFTError.html", "db/d41/structsatox_1_1nft_1_1NFTError" ],
+    [ "satox::nft::NFTManager", "dc/d55/classsatox_1_1nft_1_1NFTManager.html", "dc/d55/classsatox_1_1nft_1_1NFTManager" ],
+    [ "satox::nft::NFTManager::NFTMetadata", "d0/d3f/structsatox_1_1nft_1_1NFTManager_1_1NFTMetadata.html", "d0/d3f/structsatox_1_1nft_1_1NFTManager_1_1NFTMetadata" ],
+    [ "satox::nft::NFTManager::NFT", "d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT.html", "d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" ],
+    [ "satox::nft::NFTManager::OwnershipRecord", "d6/d96/structsatox_1_1nft_1_1NFTManager_1_1OwnershipRecord.html", "d6/d96/structsatox_1_1nft_1_1NFTManager_1_1OwnershipRecord" ],
+    [ "satox::nft::NFTManager::CacheEntry", "d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry.html", "d4/d14/structsatox_1_1nft_1_1NFTManager_1_1CacheEntry" ],
+    [ "satox::nft::NFTManager::NFTEvent", "d4/d86/structsatox_1_1nft_1_1NFTManager_1_1NFTEvent.html", "d4/d86/structsatox_1_1nft_1_1NFTManager_1_1NFTEvent" ],
+    [ "satox::nft::NFTManager::Error", "de/d5f/structsatox_1_1nft_1_1NFTManager_1_1Error.html", "de/d5f/structsatox_1_1nft_1_1NFTManager_1_1Error" ],
+    [ "satox::nft::NFTManager::NFTEventListener", "da/d4f/classsatox_1_1nft_1_1NFTManager_1_1NFTEventListener.html", "da/d4f/classsatox_1_1nft_1_1NFTManager_1_1NFTEventListener" ],
+    [ "satox::nft::NFTManager::ErrorHandler", "d2/df1/classsatox_1_1nft_1_1NFTManager_1_1ErrorHandler.html", "d2/df1/classsatox_1_1nft_1_1NFTManager_1_1ErrorHandler" ],
+    [ "satox::nft::NFTManager::ErrorHandler::ErrorRecord", "db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord.html", "db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord" ],
+    [ "satox::nft::NFTErrorCode", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98c", [
+      [ "satox::nft::NFTErrorCode::NONE", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "satox::nft::NFTErrorCode::INVALID_METADATA", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cac50e1bb2806faace54c1514ec9f933d2", null ],
+      [ "satox::nft::NFTErrorCode::INVALID_OWNER", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca6178c5843fc8cda2e3c01c1ebe9e601d", null ],
+      [ "satox::nft::NFTErrorCode::TRANSFER_FAILED", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca25c5b26be4eebc0ac7ce0fa56dd199ce", null ],
+      [ "satox::nft::NFTErrorCode::BURN_FAILED", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cadddbe23a31bc89dfe27a46e2d3c59dd5", null ],
+      [ "satox::nft::NFTErrorCode::DUPLICATE_ID", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca98e363f8592d43e1190b78538452e411", null ],
+      [ "satox::nft::NFTErrorCode::INVALID_ID", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca9acfdae2d16e2592e0c192805f9427d8", null ],
+      [ "satox::nft::NFTErrorCode::INVALID_AMOUNT", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca8dc6b7594690d74c61525515f5a9d9c1", null ],
+      [ "satox::nft::NFTErrorCode::INSUFFICIENT_BALANCE", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cacbebbe9896611e1fec95ca0770236ebe", null ],
+      [ "satox::nft::NFTErrorCode::INVALID_OPERATION", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cade918d7abaea4c856c3c64720f3cbb7c", null ],
+      [ "satox::nft::NFTErrorCode::STORAGE_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca7ae7f2a13f0d5a18b0db91af9c5aef34", null ],
+      [ "satox::nft::NFTErrorCode::NETWORK_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca547ba52b62f9302ee1b6950111c36f9f", null ],
+      [ "satox::nft::NFTErrorCode::VALIDATION_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca2fa475b43d744661c4c9e1dbd9840278", null ],
+      [ "satox::nft::NFTErrorCode::UNKNOWN_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca9a10f345b0f755d461a8673a5e9ef6b4", null ],
+      [ "satox::nft::NFTErrorCode::NOT_INITIALIZED", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca02de9649e258d1dd94056e676061e969", null ],
+      [ "satox::nft::NFTErrorCode::CACHE_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cac8266f377ce60529634ea1c362fa9115", null ],
+      [ "satox::nft::NFTErrorCode::CONFIG_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca9c2fce0daadbfe925304024814096609", null ],
+      [ "satox::nft::NFTErrorCode::QUERY_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98ca8b2cecb29d944210158570cef3b498c3", null ],
+      [ "satox::nft::NFTErrorCode::CLEAR_ERROR", "dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cabd5afe2bb84e771da655084ba65ec880", null ]
+    ] ]
+];

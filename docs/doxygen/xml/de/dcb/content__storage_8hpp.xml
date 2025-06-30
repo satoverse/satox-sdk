@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/dcb/content__storage_8hpp" kind="file" language="C++">
+    <compoundname>content_storage.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">map</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">future</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="d7/d19/content__storage_8cpp" local="yes">src/ipfs/src/content_storage.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/ipfs/include/satox/ipfs/content_storage.hpp</label>
+        <link refid="de/dcb/content__storage_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="9">
+        <label>future</label>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="10">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/ipfs/include/satox/ipfs/content_storage.hpp</label>
+        <link refid="de/dcb/content__storage_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/ipfs/src/content_storage.cpp</label>
+        <link refid="d7/d19/content__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" prot="public">satox::ipfs::ContentStorage</innerclass>
+    <innerclass refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" prot="public">satox::ipfs::ContentStorage::ContentInfo</innerclass>
+    <innerclass refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" prot="public">satox::ipfs::ContentStorage::Error</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d2/dc8/namespacesatox_1_1ipfs">satox::ipfs</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;future&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d2/dc8/namespacesatox_1_1ipfs" kindref="compound">ipfs</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref>&amp;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1eef2b7ee58f49abee2a103390b477af" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47" refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27ce91a9f23d81a5e52b9d3f824ec3f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref>&amp;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27ce91a9f23d81a5e52b9d3f824ec3f7" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>cleanup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a79b7b5493c5ab99a8194befe91ac8bfd" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>storagePath);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a17cd4c3f87741542639011c3420ebf2d" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Content<sp/>Operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="55" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a0272c8812a1b7a110f551c7461538473" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a0272c8812a1b7a110f551c7461538473" kindref="member">hash</ref>;</highlight></codeline>
+<codeline lineno="56" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a444ae13424e5534039d9e126e085aa1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a444ae13424e5534039d9e126e085aa1d" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="57" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a570446b8d60258c8c8c1fa28fd71a9ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a570446b8d60258c8c8c1fa28fd71a9ff" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="58" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1ac23943728492145845712293fd7baf47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1ac23943728492145845712293fd7baf47" kindref="member">mimeType</ref>;</highlight></codeline>
+<codeline lineno="59" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a90699be6b4d05f18ef1353ad7b8b0e3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a90699be6b4d05f18ef1353ad7b8b0e3a" kindref="member">createdAt</ref>;</highlight></codeline>
+<codeline lineno="60" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1aeb3095e725854a2a2217850ab27925d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1aeb3095e725854a2a2217850ab27925d4" kindref="member">updatedAt</ref>;</highlight></codeline>
+<codeline lineno="61" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a73a89a6f9dc8e777499bf9e5b1f84276" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a73a89a6f9dc8e777499bf9e5b1f84276" kindref="member">isPinned</ref>;</highlight></codeline>
+<codeline lineno="62" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1aa132781d48089abaaffe4ef1b4efbfb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1aa132781d48089abaaffe4ef1b4efbfb9" kindref="member">tags</ref>;</highlight></codeline>
+<codeline lineno="63" refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a4f24195f90a1149199f83591f4a05021" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a4f24195f90a1149199f83591f4a05021" kindref="member">metadata</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Store<sp/>content</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;ContentInfo&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27c54e16992d1883f4c99e5b6c85120d" kindref="member">storeContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>content,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;ContentInfo&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a9878aa55dae5de88c0c66ffc87790548" kindref="member">storeFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filePath);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;std::vector&lt;ContentInfo&gt;&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa153ed83aa89f3f6d4e71c57612fc755" kindref="member">storeDirectory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>directoryPath);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Retrieve<sp/>content</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;std::string&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5321ab248980c9293555d7d95a540709" kindref="member">getContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;bool&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6ba4231e6692ee49937583b22ad75f88" kindref="member">getFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>outputPath);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>std::future&lt;bool&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a034f45549ba3f6b114d845a3c5737d58" kindref="member">getDirectory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>outputPath);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Content<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a8ca34bcc0797c8152154fab4125e5061" kindref="member">updateContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>newContent);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5b1990e241fd2c65aa84aa29b937c363" kindref="member">updateMetadata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a84c0ab1cb68659e3563bccfc28c8c570" kindref="member">deleteContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a95c837c4057b1e8a87fba9903de31594" kindref="member">pinContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a4bdbd3973daab092d8addd7bba4e2e47" kindref="member">unpinContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Content<sp/>queries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1acb3227881ca02db0b32eb37171c9aaa6" kindref="member">getContentInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ContentInfo&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a20c1278cbe2d817dc367ce6634dcc28c" kindref="member">getContentByTag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>tag)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ContentInfo&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a257e0a167b83acb994ef01e06ad5bfb6" kindref="member">getContentByMimeType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>mimeType)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ContentInfo&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1acb7493ba2ad89c8b30e321fba420c697" kindref="member">searchContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>query)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;ContentInfo&gt;<sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a940589093105f154655880e2bbe0b27c" kindref="member">getPinnedContent</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cache<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ae973f5d91fc6e264466eca07d73b013f" kindref="member">enableCache</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a194d2c0504fa58f959b600b99fa2c1eb" kindref="member">clearCache</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a302ce5e7cdcab2f8f46499bcdd3212ff" kindref="member">setCacheSize</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxSize);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2a8a9011aa91c628fcebaefe170e316b" kindref="member">getCacheSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a215c1c4acc5ab7a39c8fe3cc04b8c930" kindref="member">getCacheUsage</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Backup<sp/>and<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a48d811bee9f8bf73b320d78202c57e85" kindref="member">createBackup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>backupPath);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1adb6298bf108144b78d458cfb7fb603ce" kindref="member">restoreFromBackup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>backupPath);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" kindref="compound">Error</ref><sp/>{</highlight></codeline>
+<codeline lineno="103" refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error_1a6dbf62349189d3f9b03033b84a0d7b7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error_1a6dbf62349189d3f9b03033b84a0d7b7e" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="104" refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error_1aed49ed67cac0cca8a0228840e558c337" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error_1aed49ed67cac0cca8a0228840e558c337" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" kindref="compound">Error</ref><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3dfdb4b6975ca0557b54eaf33caa788a" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1a888657087810018451fd079daafad0" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">ContentStorage</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" kindref="member">~ContentStorage</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateStoragePath(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createStorageDirectory();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateContentHash(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateContentInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref>&amp;<sp/>info);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>removeContentInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateCache(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>content);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removeFromCache(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>handleError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>storagePath_;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>ContentInfo&gt;<sp/>contentInfo_;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>contentCache_;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::vector&lt;std::string&gt;&gt;<sp/>tagIndex_;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::vector&lt;std::string&gt;&gt;<sp/>mimeTypeIndex_;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxCacheSize_;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cacheEnabled_;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" kindref="compound">Error</ref><sp/>lastError_;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ipfs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/ipfs/include/satox/ipfs/content_storage.hpp"/>
+  </compounddef>
+</doxygen>

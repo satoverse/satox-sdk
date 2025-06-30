@@ -1,0 +1,229 @@
+services:
+  # Satox SDK Service
+  satox-sdk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: satox-sdk
+    ports:
+      - "4000:4000"  # API and metrics port (following port allocation template)
+      - "4001:4001"  # Health check port
+    volumes:
+      - ./logs:/home/satox/logs
+      - ./data:/home/satox/data
+      - ./config:/home/satox/config
+      - ./bindings:/home/satox/bindings  # Bindings directory
+    environment:
+      # SDK-specific configuration
+      - SDK_TYPE=satox-sdk
+      - SDK_NAME=Satox Core SDK
+      - SDK_VERSION=1.0.0
+      
+      # Port configuration (following port allocation template)
+      - SATOX_SDK_ROOT=/usr/local/satox-sdk
+      - SATOX_LOG_LEVEL=INFO
+      - SATOX_ENVIRONMENT=production
+      - SATOX_API_PORT=4000
+      - SATOX_HEALTH_PORT=4001
+      - SATOX_METRICS_PORT=4002
+      
+      # Database configuration with project isolation
+      - DATABASE_URL=postgresql://satox_user:password@satox-postgres:5432/satox_sdk_db
+      - MONGODB_URL=mongodb://satox_admin:password@satox-mongodb:27017/satox_sdk_db
+      - REDIS_URL=redis://:password@satox-redis:6379
+      - REDIS_KEY_PREFIX=satox-sdk:
+      - ROCKSDB_PATH=./rocksdb_data_satox_sdk
+      
+      # Centralized monitoring and logging
+      - PROMETHEUS_URL=http://satox-prometheus:9090
+      - GRAFANA_URL=http://satox-grafana:3000
+      - LOKI_URL=http://satox-loki:3100
+      - ALERTMANAGER_URL=http://satox-alertmanager:9093
+      
+      # Quantum security services
+      - QUANTUM_KMS_URL=http://satox-quantum-kms:8086
+      - QUANTUM_ENCRYPTION_URL=http://satox-quantum-encryption:8087
+      - QUANTUM_AUTH_URL=http://satox-quantum-auth:8088
+      - QUANTUM_CA_URL=http://satox-quantum-ca:8083
+      
+      # Logging configuration
+      - LOG_LEVEL=INFO
+      - LOG_FORMAT=json
+      - LOG_OUTPUT=loki
+      - LOG_TAGS=service:satox-sdk,project=satox-sdk
+      
+      # Monitoring configuration
+      - METRICS_ENABLED=true
+      - METRICS_PORT=4002
+      - METRICS_PATH=/metrics
+      - HEALTH_CHECK_ENABLED=true
+      - HEALTH_CHECK_PORT=4001
+      - HEALTH_CHECK_PATH=/health
+      
+      # Security configuration
+      - SECURITY_ENABLED=true
+      - SSL_ENABLED=false
+      - CORS_ENABLED=true
+      - RATE_LIMITING_ENABLED=true
+      
+      # Performance configuration
+      - CACHE_ENABLED=true
+      - CACHE_TTL=3600
+      - CONNECTION_POOL_SIZE=10
+      - MAX_CONCURRENT_REQUESTS=100
+      
+      # Bindings configuration
+      - PYTHONPATH=/usr/local/satox-sdk/lib/python3.10/site-packages:/home/satox/bindings/python
+      - NODE_PATH=/usr/local/satox-sdk/bindings/typescript/lib:/usr/local/satox-sdk/bindings/javascript/lib
+      - GOPATH=/usr/local/satox-sdk/bindings/go
+      - RUST_BACKTRACE=1
+      - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+      - DOTNET_ROOT=/usr/share/dotnet
+      
+      # Language-specific paths
+      - PYTHON_BINDINGS_PATH=/home/satox/bindings/python
+      - TYPESCRIPT_BINDINGS_PATH=/home/satox/bindings/typescript
+      - JAVASCRIPT_BINDINGS_PATH=/home/satox/bindings/javascript
+      - GO_BINDINGS_PATH=/home/satox/bindings/go
+      - RUST_BINDINGS_PATH=/home/satox/bindings/rust
+      - JAVA_BINDINGS_PATH=/home/satox/bindings/java
+      - CSHARP_BINDINGS_PATH=/home/satox/bindings/csharp
+      - LUA_BINDINGS_PATH=/home/satox/bindings/lua
+      - WASM_BINDINGS_PATH=/home/satox/bindings/wasm
+    networks:
+      - satoxcoin.docker-network
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+      - mongodb
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.service=satox-sdk"
+      - "com.satox.network=satoxcoin.docker-network"
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: satox-postgres
+    ports:
+      - "5433:5432"  # Use host port 5433 to avoid conflicts
+    environment:
+      POSTGRES_DB: satox_sdk_db
+      POSTGRES_USER: satox_admin
+      POSTGRES_PASSWORD: satox_postgres_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - satoxcoin.docker-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U satox_admin -d satox_sdk_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.service=postgres"
+      - "com.satox.network=satoxcoin.docker-network"
+
+  # Redis Cache
+  redis:
+    image: redis:7.0-alpine
+    container_name: satox-redis
+    ports:
+      - "4440:6379"  # Use host port 16379 to avoid conflicts
+    volumes:
+      - redis_data:/data
+    networks:
+      - satoxcoin.docker-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.service=redis"
+      - "com.satox.network=satoxcoin.docker-network"
+
+  # MongoDB Document Store
+  mongodb:
+    image: mongo:6.0
+    container_name: satox-mongodb
+    ports:
+      - "4440:27017"  # Use host port 27018 to avoid conflicts
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: satox_admin
+      MONGO_INITDB_ROOT_PASSWORD: satox_mongodb_password
+      MONGO_INITDB_DATABASE: satox_sdk_db
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - satoxcoin.docker-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.service=mongodb"
+      - "com.satox.network=satoxcoin.docker-network"
+
+  # RocksDB Storage
+  rocksdb:
+    build:
+      context: .
+      dockerfile: Dockerfile.rocksdb
+    container_name: satox-rocksdb
+    volumes:
+      - rocksdb_data:/data
+      - ./docker/rocksdb/config:/config
+    networks:
+      - satoxcoin.docker-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "test", "-f", "/data/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.service=rocksdb"
+      - "com.satox.network=satoxcoin.docker-network"
+
+volumes:
+  postgres_data:
+    driver: local
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.volume=data"
+  redis_data:
+    driver: local
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.volume=data"
+  mongodb_data:
+    driver: local
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.volume=data"
+  rocksdb_data:
+    driver: local
+    labels:
+      - "com.satox.project=satox-sdk"
+      - "com.satox.volume=data"
+
+networks:
+  satoxcoin.docker-network:
+    external: true

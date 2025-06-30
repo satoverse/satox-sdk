@@ -1,0 +1,1677 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d3a/classsatox_1_1core_1_1NFTManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::NFTManager</compoundname>
+    <includes refid="df/d9a/nft_8h" local="no">nft.h</includes>
+    <innerclass refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" prot="public">satox::core::NFTManager::NFT</innerclass>
+    <innerclass refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" prot="public">satox::core::NFTManager::NFTMetadata</innerclass>
+    <innerclass refid="de/d71/structsatox_1_1core_1_1NFTManager_1_1NFTStats" prot="public">satox::core::NFTManager::NFTStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcd" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>NFTType</name>
+        <qualifiedname>satox::core::NFTManager::NFTType</qualifiedname>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcda23a12f67f614b5518c7f1c2465bf95e3" prot="public">
+          <name>IMAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcdae60ae31f67ab883c746bb71c7a145c18" prot="public">
+          <name>VIDEO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcdae423b8bde9bfbfd7e9409b23b23aed91" prot="public">
+          <name>AUDIO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcdac231fa48df3ee393c92dccac4dba5e7d" prot="public">
+          <name>DOCUMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcda13f68f9aa70a6cce923c8f292fc2d3d1" prot="public">
+          <name>COLLECTIBLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcda5905c764b71b1cc658bbc4d680f78e3a" prot="public">
+          <name>GAME_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcda72baef04098f035e8a320b03ad197818" prot="public">
+          <name>CUSTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="42" column="5" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="42" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="enum" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>NFTState</name>
+        <qualifiedname>satox::core::NFTManager::NFTState</qualifiedname>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a98690bf632c29c17c9e4c5a64069903c" prot="public">
+          <name>CREATED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a09bf52455b4257160d628f30fac1e202" prot="public">
+          <name>MINTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a19ee3f1c15c13e4a5c484ff48a8b4c8d" prot="public">
+          <name>TRANSFERRED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07aad9f8dea088d688cb5a70d7d24ea1c2b" prot="public">
+          <name>BURNED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="53" column="5" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6abf1a36212c5937d7c28af4585edf41" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" kindref="member">NFTState</ref>)&gt;</type>
+        <definition>using satox::core::NFTManager::NFTCallback =  std::function&lt;void(const std::string&amp;, NFTState)&gt;</definition>
+        <argsstring></argsstring>
+        <name>NFTCallback</name>
+        <qualifiedname>satox::core::NFTManager::NFTCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="102" column="5" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a85e2f0210dc1e54173acfe1cda17f2f8" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;)&gt;</type>
+        <definition>using satox::core::NFTManager::NFTMetadataCallback =  std::function&lt;void(const std::string&amp;, const NFTMetadata&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>NFTMetadataCallback</name>
+        <qualifiedname>satox::core::NFTManager::NFTMetadataCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="103" column="5" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad509290626dff52c92ca981c4bcc032a" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::core::NFTManager::NFTErrorCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>NFTErrorCallback</name>
+        <qualifiedname>satox::core::NFTManager::NFTErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="104" column="5" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0f428902d7dbd3622f0493bac65276a8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::NFTManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="91" column="10" bodyfile="src/core/include/satox/core/nft.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a52cbc699f3bad8a0df53173dbf3ccbb9" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::map&lt; std::string, NFT &gt; satox::core::NFTManager::nfts_</definition>
+        <argsstring></argsstring>
+        <name>nfts_</name>
+        <qualifiedname>satox::core::NFTManager::nfts_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="92" column="14" bodyfile="src/core/include/satox/core/nft.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8139a83c84fe53cb0836323cc63ad0b6" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::map&lt; std::string, std::string &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::map&lt;std::string, std::string&gt; &gt; satox::core::NFTManager::balances_</definition>
+        <argsstring></argsstring>
+        <name>balances_</name>
+        <qualifiedname>satox::core::NFTManager::balances_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="93" column="14" bodyfile="src/core/include/satox/core/nft.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a40d0461b8f5af90e049924aa6a117aaf" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, uint64_t &gt;</type>
+        <definition>std::map&lt;std::string, uint64_t&gt; satox::core::NFTManager::tokenIdCounters_</definition>
+        <argsstring></argsstring>
+        <name>tokenIdCounters_</name>
+        <qualifiedname>satox::core::NFTManager::tokenIdCounters_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="94" column="14" bodyfile="src/core/include/satox/core/nft.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a98e9cd7575e0ec76b3b9c8caea8ef575" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::NFTManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::NFTManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="176" column="24" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa7328b2069cef54c398746ce5afa4cfc" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6abf1a36212c5937d7c28af4585edf41" kindref="member">NFTCallback</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;NFTCallback&gt; &gt; satox::core::NFTManager::nftCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>nftCallbacks_</name>
+        <qualifiedname>satox::core::NFTManager::nftCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="179" column="14" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a36fe827e0a72e9674e3c8a377a59c8ce" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a85e2f0210dc1e54173acfe1cda17f2f8" kindref="member">NFTMetadataCallback</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;NFTMetadataCallback&gt; &gt; satox::core::NFTManager::metadataCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>metadataCallbacks_</name>
+        <qualifiedname>satox::core::NFTManager::metadataCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="180" column="14" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a810861a7366ec291481d2c8c23284e57" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad509290626dff52c92ca981c4bcc032a" kindref="member">NFTErrorCallback</ref> &gt;</type>
+        <definition>std::vector&lt;NFTErrorCallback&gt; satox::core::NFTManager::errorCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>errorCallbacks_</name>
+        <qualifiedname>satox::core::NFTManager::errorCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="181" column="17" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aba0db466b267b7757e8b5d420d8dfb7e" prot="private" static="no" mutable="no">
+        <type><ref refid="de/d71/structsatox_1_1core_1_1NFTManager_1_1NFTStats" kindref="compound">NFTStats</ref></type>
+        <definition>NFTStats satox::core::NFTManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::NFTManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="182" column="14" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0c2e7af93022ace46c655cd40efe6b1a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::statsEnabled_</definition>
+        <argsstring></argsstring>
+        <name>statsEnabled_</name>
+        <qualifiedname>satox::core::NFTManager::statsEnabled_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="183" column="10" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa67b8484bd5652661db8e74d0e6b31bf" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::NFTManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::NFTManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="184" column="17" bodyfile="src/core/include/satox/core/nft_manager.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::NFTManager</definition>
+        <argsstring>()</argsstring>
+        <name>NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::NFTManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="60" column="5" bodyfile="src/core/src/nft.cpp" bodystart="35" bodyend="35"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2b8736f58b59b9c5ae78806512082b61" compoundref="dd/d1d/core_2src_2nft__manager_8cpp" startline="34" endline="37">getInstance</referencedby>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1e7f79ccffdab8ac44541a81d61f690">NFTManager</referencedby>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a74e89bbf35d5fdb3e56cb02e619dcfaf">NFTManager</referencedby>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8d712dacc19bc3caa76e017a150ef809">operator=</referencedby>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae49777fcc72d39b2b118aa832350e8cb">updateNFTMetadata</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a3476022883c9b8a45a493c76d7b72492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::~NFTManager</definition>
+        <argsstring>()</argsstring>
+        <name>~NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::~NFTManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="61" column="5" bodyfile="src/core/src/nft.cpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1e7f79ccffdab8ac44541a81d61f690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::NFTManager</definition>
+        <argsstring>(const NFTManager &amp;)=delete</argsstring>
+        <name>NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::NFTManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="64" column="5"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" compoundref="de/d4f/nft_8cpp" startline="35" endline="35">NFTManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8d712dacc19bc3caa76e017a150ef809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        <definition>NFTManager &amp; satox::core::NFTManager::operator=</definition>
+        <argsstring>(const NFTManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::NFTManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="65" column="16"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" compoundref="de/d4f/nft_8cpp" startline="35" endline="35">NFTManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a74e89bbf35d5fdb3e56cb02e619dcfaf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::NFTManager</definition>
+        <argsstring>(NFTManager &amp;&amp;) noexcept=default</argsstring>
+        <name>NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::NFTManager</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="68" column="5"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" compoundref="de/d4f/nft_8cpp" startline="35" endline="35">NFTManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        <definition>NFTManager &amp; satox::core::NFTManager::operator=</definition>
+        <argsstring>(NFTManager &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::NFTManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="69" column="16"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa52d50256e28e0e5ab99d76203edeb14" compoundref="de/d4f/nft_8cpp" startline="203" endline="225">burnNFT</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aca14787a2fe74183d5b3ef6b2f8e873a" compoundref="de/d4f/nft_8cpp" startline="190" endline="201">getAllNFTs</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a1c4aa27897d5243fa7e513c78c219b28" compoundref="de/d4f/nft_8cpp" startline="136" endline="150">getNFT</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5b1498202090c8e154d4812248c4cac1" compoundref="de/d4f/nft_8cpp" startline="227" endline="242">getNFTBalance</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a83b5616e93b6c7fb7941daa64d3818a9" compoundref="de/d4f/nft_8cpp" startline="171" endline="188">getNFTsByContract</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0f14dd4a68c0607ceae89c0c82bea933" compoundref="de/d4f/nft_8cpp" startline="152" endline="169">getNFTsByOwner</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae039bf4fac54d4189153a986f7e4a307" compoundref="de/d4f/nft_8cpp" startline="43" endline="48">initialize</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a31f6dd0b1e6cdf49963dc39d69d823f1" compoundref="de/d4f/nft_8cpp" startline="50" endline="84">mintNFT</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" compoundref="de/d4f/nft_8cpp" startline="35" endline="35">NFTManager</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a31e0f7fb907953c990b39f240016466b" compoundref="de/d4f/nft_8cpp" startline="86" endline="117">transferNFT</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae49777fcc72d39b2b118aa832350e8cb" compoundref="de/d4f/nft_8cpp" startline="119" endline="134">updateNFTMetadata</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae039bf4fac54d4189153a986f7e4a307" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::NFTManager::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="72" column="10" bodyfile="src/core/src/nft.cpp" bodystart="43" bodyend="48"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a31f6dd0b1e6cdf49963dc39d69d823f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref></type>
+        <definition>NFT satox::core::NFTManager::mintNFT</definition>
+        <argsstring>(const std::string &amp;contractAddress, const std::string &amp;creator, const NFTMetadata &amp;metadata, const std::string &amp;uri=&quot;&quot;)</argsstring>
+        <name>mintNFT</name>
+        <qualifiedname>satox::core::NFTManager::mintNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contractAddress</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>creator</declname>
+        </param>
+        <param>
+          <type>const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uri</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="73" column="9" bodyfile="src/core/src/nft.cpp" bodystart="50" bodyend="84"/>
+        <references refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata_1a266c184631b09cafa8cd67a12ffc2f68" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="63">satox::core::NFTManager::NFTMetadata::name</references>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a31e0f7fb907953c990b39f240016466b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::transferNFT</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;from, const std::string &amp;to)</argsstring>
+        <name>transferNFT</name>
+        <qualifiedname>satox::core::NFTManager::transferNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="75" column="10" bodyfile="src/core/src/nft.cpp" bodystart="86" bodyend="117"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae49777fcc72d39b2b118aa832350e8cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::updateNFTMetadata</definition>
+        <argsstring>(const std::string &amp;nftId, const NFTMetadata &amp;metadata)</argsstring>
+        <name>updateNFTMetadata</name>
+        <qualifiedname>satox::core::NFTManager::updateNFTMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="77" column="10" bodyfile="src/core/src/nft.cpp" bodystart="119" bodyend="134"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a1c4aa27897d5243fa7e513c78c219b28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref></type>
+        <definition>NFT satox::core::NFTManager::getNFT</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>getNFT</name>
+        <qualifiedname>satox::core::NFTManager::getNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="78" column="9" bodyfile="src/core/src/nft.cpp" bodystart="136" bodyend="150"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0f14dd4a68c0607ceae89c0c82bea933" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFT &gt; satox::core::NFTManager::getNFTsByOwner</definition>
+        <argsstring>(const std::string &amp;owner)</argsstring>
+        <name>getNFTsByOwner</name>
+        <qualifiedname>satox::core::NFTManager::getNFTsByOwner</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="79" column="17" bodyfile="src/core/src/nft.cpp" bodystart="152" bodyend="169"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a83b5616e93b6c7fb7941daa64d3818a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFT &gt; satox::core::NFTManager::getNFTsByContract</definition>
+        <argsstring>(const std::string &amp;contractAddress)</argsstring>
+        <name>getNFTsByContract</name>
+        <qualifiedname>satox::core::NFTManager::getNFTsByContract</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contractAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="80" column="17" bodyfile="src/core/src/nft.cpp" bodystart="171" bodyend="188"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aca14787a2fe74183d5b3ef6b2f8e873a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFT &gt; satox::core::NFTManager::getAllNFTs</definition>
+        <argsstring>()</argsstring>
+        <name>getAllNFTs</name>
+        <qualifiedname>satox::core::NFTManager::getAllNFTs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="81" column="17" bodyfile="src/core/src/nft.cpp" bodystart="190" bodyend="201"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa52d50256e28e0e5ab99d76203edeb14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::burnNFT</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>burnNFT</name>
+        <qualifiedname>satox::core::NFTManager::burnNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="82" column="10" bodyfile="src/core/src/nft.cpp" bodystart="203" bodyend="225"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5b1498202090c8e154d4812248c4cac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NFTManager::getNFTBalance</definition>
+        <argsstring>(const std::string &amp;contractAddress, const std::string &amp;address)</argsstring>
+        <name>getNFTBalance</name>
+        <qualifiedname>satox::core::NFTManager::getNFTBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contractAddress</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="83" column="17" bodyfile="src/core/src/nft.cpp" bodystart="227" bodyend="242"/>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a287fc911c3cf757d5f27f75b6d9eab27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::initialize</definition>
+        <argsstring>(const nlohmann::json &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::NFTManager::initialize</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="110" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="39" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a4cc61fe8b17b188e2b7fb0d04b57b5b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::NFTManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="111" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="57" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a93f4c966b994a139cf881fff1dee46f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::createNFT</definition>
+        <argsstring>(const std::string &amp;assetId, const NFTMetadata &amp;metadata)</argsstring>
+        <name>createNFT</name>
+        <qualifiedname>satox::core::NFTManager::createNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="114" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="71" bodyend="110"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a98690bf632c29c17c9e4c5a64069903c" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="54">CREATED</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a195dad6abbd0e3e7e47f45cb9efc8cb4" compoundref="dd/d1d/core_2src_2nft__manager_8cpp" startline="298" endline="303">validateMetadata</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0c784c752f98e9e1a95fa584a25dbe89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::mintNFT</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>mintNFT</name>
+        <qualifiedname>satox::core::NFTManager::mintNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="115" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="112" bodyend="139"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a98690bf632c29c17c9e4c5a64069903c" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="54">CREATED</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a09bf52455b4257160d628f30fac1e202" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="55">MINTED</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a10536721e17dcba856d2801177c6617a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::transferNFT</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;newOwner)</argsstring>
+        <name>transferNFT</name>
+        <qualifiedname>satox::core::NFTManager::transferNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>newOwner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="116" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="141" bodyend="174"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a09bf52455b4257160d628f30fac1e202" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="55">MINTED</references>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07a19ee3f1c15c13e4a5c484ff48a8b4c8d" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="56">TRANSFERRED</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa52d50256e28e0e5ab99d76203edeb14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::burnNFT</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>burnNFT</name>
+        <qualifiedname>satox::core::NFTManager::burnNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="117" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae49777fcc72d39b2b118aa832350e8cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::updateNFTMetadata</definition>
+        <argsstring>(const std::string &amp;nftId, const NFTMetadata &amp;metadata)</argsstring>
+        <name>updateNFTMetadata</name>
+        <qualifiedname>satox::core::NFTManager::updateNFTMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="118" column="10"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" compoundref="de/d4f/nft_8cpp" startline="35" endline="35">NFTManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a30b01963e83f08ba82a9a44555327b3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::isNFTExists</definition>
+        <argsstring>(const std::string &amp;nftId) const</argsstring>
+        <name>isNFTExists</name>
+        <qualifiedname>satox::core::NFTManager::isNFTExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="121" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="232" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a942d765f8ff8a6c0957e88d5ca72091e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref></type>
+        <definition>NFTManager::NFT satox::core::NFTManager::getNFT</definition>
+        <argsstring>(const std::string &amp;nftId) const</argsstring>
+        <name>getNFT</name>
+        <qualifiedname>satox::core::NFTManager::getNFT</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="122" column="9" bodyfile="src/core/src/nft_manager.cpp" bodystart="237" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a78466a11d83b4a3cf994e690dc830ad1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFTManager::NFT &gt; satox::core::NFTManager::getNFTsByAsset</definition>
+        <argsstring>(const std::string &amp;assetId) const</argsstring>
+        <name>getNFTsByAsset</name>
+        <qualifiedname>satox::core::NFTManager::getNFTsByAsset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="123" column="17" bodyfile="src/core/src/nft_manager.cpp" bodystart="246" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a9b1ac328d5ff2a26b5e67806a4e24ebc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFTManager::NFT &gt; satox::core::NFTManager::getNFTsByOwner</definition>
+        <argsstring>(const std::string &amp;owner) const</argsstring>
+        <name>getNFTsByOwner</name>
+        <qualifiedname>satox::core::NFTManager::getNFTsByOwner</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="124" column="17" bodyfile="src/core/src/nft_manager.cpp" bodystart="259" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab3742acbb01dcdda5ebd4a64f1124097" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFTManager::NFT &gt; satox::core::NFTManager::getNFTsByType</definition>
+        <argsstring>(NFTType type) const</argsstring>
+        <name>getNFTsByType</name>
+        <qualifiedname>satox::core::NFTManager::getNFTsByType</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcd" kindref="member">NFTType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="125" column="17" bodyfile="src/core/src/nft_manager.cpp" bodystart="272" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad3e7697d0213f6ac234f90c7ce6a39c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &gt;</type>
+        <definition>std::vector&lt; NFTManager::NFT &gt; satox::core::NFTManager::getNFTsByState</definition>
+        <argsstring>(NFTState state) const</argsstring>
+        <name>getNFTsByState</name>
+        <qualifiedname>satox::core::NFTManager::getNFTsByState</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" kindref="member">NFTState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="126" column="17" bodyfile="src/core/src/nft_manager.cpp" bodystart="285" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a195dad6abbd0e3e7e47f45cb9efc8cb4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::validateMetadata</definition>
+        <argsstring>(const NFTMetadata &amp;metadata) const</argsstring>
+        <name>validateMetadata</name>
+        <qualifiedname>satox::core::NFTManager::validateMetadata</qualifiedname>
+        <param>
+          <type>const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="129" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="298" bodyend="303"/>
+        <references refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata_1a7c2017247c12675ac0134f6f40d0225e" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="65">satox::core::NFTManager::NFTMetadata::creator</references>
+        <references refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata_1a266c184631b09cafa8cd67a12ffc2f68" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="63">satox::core::NFTManager::NFTMetadata::name</references>
+        <references refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata_1a9e65041c67e891f5e75c278743bc2d4f" compoundref="d8/d02/core_2include_2satox_2core_2nft__manager_8hpp" startline="66">satox::core::NFTManager::NFTMetadata::owner</references>
+        <referencedby refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a93f4c966b994a139cf881fff1dee46f6" compoundref="dd/d1d/core_2src_2nft__manager_8cpp" startline="71" endline="110">createNFT</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a4065a96b2c769ca86f1cd5e1af15ed5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::updateNFTURI</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;uri)</argsstring>
+        <name>updateNFTURI</name>
+        <qualifiedname>satox::core::NFTManager::updateNFTURI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="130" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="305" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1802441f7c42859a91a9029e57b3abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::updateNFTHash</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;hash)</argsstring>
+        <name>updateNFTHash</name>
+        <qualifiedname>satox::core::NFTManager::updateNFTHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="131" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="320" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab60995fe78d99d52319131671f234110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::addNFTAttribute</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;key, const nlohmann::json &amp;value)</argsstring>
+        <name>addNFTAttribute</name>
+        <qualifiedname>satox::core::NFTManager::addNFTAttribute</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="132" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="335" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8dda6162e175eb3072a1fa80b0687bbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::removeNFTAttribute</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;key)</argsstring>
+        <name>removeNFTAttribute</name>
+        <qualifiedname>satox::core::NFTManager::removeNFTAttribute</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="133" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="350" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1afbe05f8099ef42ef4f0ec4d00b482d8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::NFTManager::getNFTHistory</definition>
+        <argsstring>(const std::string &amp;nftId) const</argsstring>
+        <name>getNFTHistory</name>
+        <qualifiedname>satox::core::NFTManager::getNFTHistory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="136" column="17" bodyfile="src/core/src/nft_manager.cpp" bodystart="365" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a50a3df7697c6e5a12995f78df4c0a7f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::addNFTHistoryEntry</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;entry)</argsstring>
+        <name>addNFTHistoryEntry</name>
+        <qualifiedname>satox::core::NFTManager::addNFTHistoryEntry</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="137" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="374" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5b01d760c1f4ae247cfa6bb328488d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::clearNFTHistory</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>clearNFTHistory</name>
+        <qualifiedname>satox::core::NFTManager::clearNFTHistory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="138" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="387" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a4e0941fccaf656622cd2798354c69450" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d71/structsatox_1_1core_1_1NFTManager_1_1NFTStats" kindref="compound">NFTStats</ref></type>
+        <definition>NFTManager::NFTStats satox::core::NFTManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::NFTManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="141" column="14" bodyfile="src/core/src/nft_manager.cpp" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aabdf9c3b71a8359e39a4f85b402672ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::NFTManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="142" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="405" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6769dd787bbb928ab8043838b2574fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::core::NFTManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="143" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="410" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad3ad3e12652d4ed517be596784b0c97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::registerNFTCallback</definition>
+        <argsstring>(NFTCallback callback)</argsstring>
+        <name>registerNFTCallback</name>
+        <qualifiedname>satox::core::NFTManager::registerNFTCallback</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6abf1a36212c5937d7c28af4585edf41" kindref="member">NFTCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="146" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="416" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a600fecae5ff0b69766b86cd1ea3327a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::registerMetadataCallback</definition>
+        <argsstring>(NFTMetadataCallback callback)</argsstring>
+        <name>registerMetadataCallback</name>
+        <qualifiedname>satox::core::NFTManager::registerMetadataCallback</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a85e2f0210dc1e54173acfe1cda17f2f8" kindref="member">NFTMetadataCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="147" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="421" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aff83c64dc6c5d751ca229e2eaef9d48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::registerErrorCallback</definition>
+        <argsstring>(NFTErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::core::NFTManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad509290626dff52c92ca981c4bcc032a" kindref="member">NFTErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="148" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="426" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2219abb18aea39dc525e452ddb8332db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::unregisterNFTCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterNFTCallback</name>
+        <qualifiedname>satox::core::NFTManager::unregisterNFTCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="149" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="431" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac510befa00de4799b070b38c8f3a0843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::unregisterMetadataCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterMetadataCallback</name>
+        <qualifiedname>satox::core::NFTManager::unregisterMetadataCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="150" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="436" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6e9f3ff06e075e2a96c5ccb32e962bac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::unregisterErrorCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterErrorCallback</name>
+        <qualifiedname>satox::core::NFTManager::unregisterErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="151" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="441" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab0c04e86dca5ca1215d82fc30a2902cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NFTManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::NFTManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="154" column="17" bodyfile="src/core/src/nft_manager.cpp" bodystart="446" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5027ec54fd842407103c90e454fcafdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::NFTManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="155" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="451" bodyend="454"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab834cf85ee857de974dc148bfd46e934" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>satox::core::NFTManager::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="86" column="10" bodyfile="src/core/src/nft.cpp" bodystart="244" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac94809133ef41c6de9bcfcd7c08f006f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NFTManager::generateNFTId</definition>
+        <argsstring>(const NFT &amp;nft)</argsstring>
+        <name>generateNFTId</name>
+        <qualifiedname>satox::core::NFTManager::generateNFTId</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &amp;</type>
+          <declname>nft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="87" column="17" bodyfile="src/core/src/nft.cpp" bodystart="255" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2302dfc824e45a51097b830128f7f95b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::validateNFT</definition>
+        <argsstring>(const NFT &amp;nft)</argsstring>
+        <name>validateNFT</name>
+        <qualifiedname>satox::core::NFTManager::validateNFT</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d40/structsatox_1_1core_1_1NFTManager_1_1NFT" kindref="compound">NFT</ref> &amp;</type>
+          <declname>nft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="88" column="10" bodyfile="src/core/src/nft.cpp" bodystart="276" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a79939cf0b7f1d32b463e4bd1f4b73b12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::NFTManager::generateTokenId</definition>
+        <argsstring>(const std::string &amp;contractAddress)</argsstring>
+        <name>generateTokenId</name>
+        <qualifiedname>satox::core::NFTManager::generateTokenId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contractAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft.h" line="89" column="17" bodyfile="src/core/src/nft.cpp" bodystart="286" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1abb169eb3260db0f5c9f5e111d97ba45a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::NFTManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::NFTManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="158" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a57e4c59170046330d56494e7bc7d0440" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::~NFTManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::~NFTManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="159" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1e7f79ccffdab8ac44541a81d61f690" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::NFTManager::NFTManager</definition>
+        <argsstring>(const NFTManager &amp;)=delete</argsstring>
+        <name>NFTManager</name>
+        <qualifiedname>satox::core::NFTManager::NFTManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="160" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8d712dacc19bc3caa76e017a150ef809" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        <definition>NFTManager &amp; satox::core::NFTManager::operator=</definition>
+        <argsstring>(const NFTManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::NFTManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="161" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1afc7eaec4c013a5fa5161f2990dd74fc8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::validateConfig</definition>
+        <argsstring>(const nlohmann::json &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::core::NFTManager::validateConfig</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="164" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="457" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aed6ffc42731f90cded7bb214d85fd4e8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::validateNFTId</definition>
+        <argsstring>(const std::string &amp;nftId) const</argsstring>
+        <name>validateNFTId</name>
+        <qualifiedname>satox::core::NFTManager::validateNFTId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="165" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="461" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0cfa5e13c107560c7fa82d0ef3074974" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::validateAssetId</definition>
+        <argsstring>(const std::string &amp;assetId) const</argsstring>
+        <name>validateAssetId</name>
+        <qualifiedname>satox::core::NFTManager::validateAssetId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="166" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="465" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8e9e2b362f1d6e89f7c4c2afdca8e495" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::validateOwner</definition>
+        <argsstring>(const std::string &amp;owner) const</argsstring>
+        <name>validateOwner</name>
+        <qualifiedname>satox::core::NFTManager::validateOwner</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="167" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="469" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a9c4abb57bca8e3142fa8d601d106b17d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::NFTManager::checkNFTLimit</definition>
+        <argsstring>() const</argsstring>
+        <name>checkNFTLimit</name>
+        <qualifiedname>satox::core::NFTManager::checkNFTLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="168" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="473" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a3e4cf3168a61ed75885f54d6ed35dd16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::updateNFTState</definition>
+        <argsstring>(const std::string &amp;nftId, NFTState state)</argsstring>
+        <name>updateNFTState</name>
+        <qualifiedname>satox::core::NFTManager::updateNFTState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" kindref="member">NFTState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="169" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="477" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a291d7d25936de66c83d1747fdc343d12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::updateNFTStats</definition>
+        <argsstring>(const std::string &amp;nftId, NFTState state)</argsstring>
+        <name>updateNFTStats</name>
+        <qualifiedname>satox::core::NFTManager::updateNFTStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" kindref="member">NFTState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="170" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="484" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a72f9a40b7c8759d717f30c3400494ca6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::notifyNFTChange</definition>
+        <argsstring>(const std::string &amp;nftId, NFTState state)</argsstring>
+        <name>notifyNFTChange</name>
+        <qualifiedname>satox::core::NFTManager::notifyNFTChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" kindref="member">NFTState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="171" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="507" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6bb7934e979629f95f579bd67057c14f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::notifyMetadataChange</definition>
+        <argsstring>(const std::string &amp;nftId, const NFTMetadata &amp;metadata)</argsstring>
+        <name>notifyMetadataChange</name>
+        <qualifiedname>satox::core::NFTManager::notifyMetadataChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="db/df4/structsatox_1_1core_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="172" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="517" bodyend="525"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa409857e30d87b9ae51f671b9886d266" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::NFTManager::notifyError</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;error)</argsstring>
+        <name>notifyError</name>
+        <qualifiedname>satox::core::NFTManager::notifyError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="173" column="10" bodyfile="src/core/src/nft_manager.cpp" bodystart="527" bodyend="535"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2b8736f58b59b9c5ae78806512082b61" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/d3a/classsatox_1_1core_1_1NFTManager" kindref="compound">NFTManager</ref> &amp;</type>
+        <definition>NFTManager &amp; satox::core::NFTManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::NFTManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/nft_manager.hpp" line="107" column="23" bodyfile="src/core/src/nft_manager.cpp" bodystart="34" bodyend="37"/>
+        <references refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" compoundref="de/d4f/nft_8cpp" startline="35" endline="35">NFTManager</references>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1ab28dc972f3ffcff275e4778ef761d8ca" compoundref="da/d8f/satox__manager_8cpp" startline="213" endline="215">satox::core::SatoxManager::getNFTManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/nft.h" line="58" column="1" bodyfile="src/core/include/satox/core/nft.h" bodystart="58" bodyend="95"/>
+    <listofallmembers>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab60995fe78d99d52319131671f234110" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>addNFTAttribute</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a50a3df7697c6e5a12995f78df4c0a7f9" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>addNFTHistoryEntry</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8139a83c84fe53cb0836323cc63ad0b6" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>balances_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa52d50256e28e0e5ab99d76203edeb14" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>burnNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa52d50256e28e0e5ab99d76203edeb14" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>burnNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a9c4abb57bca8e3142fa8d601d106b17d" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>checkNFTLimit</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab834cf85ee857de974dc148bfd46e934" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>cleanup</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5027ec54fd842407103c90e454fcafdb" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>clearLastError</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5b01d760c1f4ae247cfa6bb328488d26" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>clearNFTHistory</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a93f4c966b994a139cf881fff1dee46f6" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>createNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6769dd787bbb928ab8043838b2574fb9" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>enableStats</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a810861a7366ec291481d2c8c23284e57" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>errorCallbacks_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac94809133ef41c6de9bcfcd7c08f006f" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>generateNFTId</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a79939cf0b7f1d32b463e4bd1f4b73b12" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>generateTokenId</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aca14787a2fe74183d5b3ef6b2f8e873a" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getAllNFTs</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2b8736f58b59b9c5ae78806512082b61" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getInstance</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab0c04e86dca5ca1215d82fc30a2902cb" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getLastError</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a1c4aa27897d5243fa7e513c78c219b28" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a942d765f8ff8a6c0957e88d5ca72091e" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a5b1498202090c8e154d4812248c4cac1" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTBalance</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1afbe05f8099ef42ef4f0ec4d00b482d8c" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTHistory</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a78466a11d83b4a3cf994e690dc830ad1" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTsByAsset</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a83b5616e93b6c7fb7941daa64d3818a9" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTsByContract</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0f14dd4a68c0607ceae89c0c82bea933" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTsByOwner</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a9b1ac328d5ff2a26b5e67806a4e24ebc" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTsByOwner</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad3e7697d0213f6ac234f90c7ce6a39c6" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTsByState</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ab3742acbb01dcdda5ebd4a64f1124097" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getNFTsByType</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a4e0941fccaf656622cd2798354c69450" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>getStats</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae039bf4fac54d4189153a986f7e4a307" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>initialize</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a287fc911c3cf757d5f27f75b6d9eab27" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>initialize</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0f428902d7dbd3622f0493bac65276a8" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>initialized_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a30b01963e83f08ba82a9a44555327b3c" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>isNFTExists</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa67b8484bd5652661db8e74d0e6b31bf" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>lastError_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a36fe827e0a72e9674e3c8a377a59c8ce" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>metadataCallbacks_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a31f6dd0b1e6cdf49963dc39d69d823f1" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>mintNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0c784c752f98e9e1a95fa584a25dbe89" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>mintNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a98e9cd7575e0ec76b3b9c8caea8ef575" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>mutex_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6abf1a36212c5937d7c28af4585edf41" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa7328b2069cef54c398746ce5afa4cfc" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>nftCallbacks_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad509290626dff52c92ca981c4bcc032a" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTErrorCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a76d7fe61a8627c15c3bf744aec1fe27e" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTManager</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1e7f79ccffdab8ac44541a81d61f690" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTManager</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a74e89bbf35d5fdb3e56cb02e619dcfaf" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTManager</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1abb169eb3260db0f5c9f5e111d97ba45a" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTManager</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1e7f79ccffdab8ac44541a81d61f690" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTManager</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a85e2f0210dc1e54173acfe1cda17f2f8" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTMetadataCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a52cbc699f3bad8a0df53173dbf3ccbb9" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>nfts_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a395a9683074d1e699dd87074bafa7c07" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTState</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1af4be7a0be4168eb881ead4bf28ad8bcd" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>NFTType</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aa409857e30d87b9ae51f671b9886d266" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>notifyError</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6bb7934e979629f95f579bd67057c14f" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>notifyMetadataChange</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a72f9a40b7c8759d717f30c3400494ca6" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>notifyNFTChange</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8d712dacc19bc3caa76e017a150ef809" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>operator=</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1adaebbfd5850a0d48abfc5f1e29a1dee7" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>operator=</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8d712dacc19bc3caa76e017a150ef809" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>operator=</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aff83c64dc6c5d751ca229e2eaef9d48b" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>registerErrorCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a600fecae5ff0b69766b86cd1ea3327a9" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>registerMetadataCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ad3ad3e12652d4ed517be596784b0c97e" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>registerNFTCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8dda6162e175eb3072a1fa80b0687bbe" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>removeNFTAttribute</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aabdf9c3b71a8359e39a4f85b402672ed" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>resetStats</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a4cc61fe8b17b188e2b7fb0d04b57b5b6" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>shutdown</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aba0db466b267b7757e8b5d420d8dfb7e" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>stats_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0c2e7af93022ace46c655cd40efe6b1a" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>statsEnabled_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a40d0461b8f5af90e049924aa6a117aaf" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>tokenIdCounters_</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a31e0f7fb907953c990b39f240016466b" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>transferNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a10536721e17dcba856d2801177c6617a" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>transferNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a6e9f3ff06e075e2a96c5ccb32e962bac" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>unregisterErrorCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac510befa00de4799b070b38c8f3a0843" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>unregisterMetadataCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2219abb18aea39dc525e452ddb8332db" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>unregisterNFTCallback</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ac1802441f7c42859a91a9029e57b3abf" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>updateNFTHash</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae49777fcc72d39b2b118aa832350e8cb" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>updateNFTMetadata</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1ae49777fcc72d39b2b118aa832350e8cb" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>updateNFTMetadata</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a3e4cf3168a61ed75885f54d6ed35dd16" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>updateNFTState</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a291d7d25936de66c83d1747fdc343d12" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>updateNFTStats</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a4065a96b2c769ca86f1cd5e1af15ed5c" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>updateNFTURI</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a0cfa5e13c107560c7fa82d0ef3074974" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>validateAssetId</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1afc7eaec4c013a5fa5161f2990dd74fc8" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>validateConfig</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a195dad6abbd0e3e7e47f45cb9efc8cb4" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>validateMetadata</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a2302dfc824e45a51097b830128f7f95b" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>validateNFT</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1aed6ffc42731f90cded7bb214d85fd4e8" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>validateNFTId</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a8e9e2b362f1d6e89f7c4c2afdca8e495" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>validateOwner</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a3476022883c9b8a45a493c76d7b72492" prot="public" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>~NFTManager</name></member>
+      <member refid="d4/d3a/classsatox_1_1core_1_1NFTManager_1a57e4c59170046330d56494e7bc7d0440" prot="private" virt="non-virtual"><scope>satox::core::NFTManager</scope><name>~NFTManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

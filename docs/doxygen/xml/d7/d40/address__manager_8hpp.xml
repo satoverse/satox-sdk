@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d7/d40/address__manager_8hpp" kind="file" language="C++">
+    <compoundname>address_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">map</includes>
+    <includes local="no">openssl/evp.h</includes>
+    <includes local="no">openssl/ec.h</includes>
+    <includes local="no">openssl/bn.h</includes>
+    <includes local="no">openssl/obj_mac.h</includes>
+    <includes local="no">openssl/ripemd.h</includes>
+    <includes local="no">openssl/sha.h</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="df/d17/address__manager_8cpp" local="yes">src/wallet/src/address_manager.cpp</includedby>
+    <includedby refid="d7/d67/wallet_2src_2key__manager_8cpp" local="yes">src/wallet/src/key_manager.cpp</includedby>
+    <includedby refid="db/d1c/wallet_2src_2wallet__manager_8cpp" local="yes">src/wallet/src/wallet_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/wallet/include/satox/wallet/address_manager.hpp</label>
+        <link refid="d7/d40/address__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="13">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="9">
+        <label>openssl/bn.h</label>
+      </node>
+      <node id="8">
+        <label>openssl/ec.h</label>
+      </node>
+      <node id="7">
+        <label>openssl/evp.h</label>
+      </node>
+      <node id="10">
+        <label>openssl/obj_mac.h</label>
+      </node>
+      <node id="11">
+        <label>openssl/ripemd.h</label>
+      </node>
+      <node id="12">
+        <label>openssl/sha.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/wallet/include/satox/wallet/address_manager.hpp</label>
+        <link refid="d7/d40/address__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/wallet/src/address_manager.cpp</label>
+        <link refid="df/d17/address__manager_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/wallet/src/key_manager.cpp</label>
+        <link refid="d7/d67/wallet_2src_2key__manager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/wallet/src/wallet_manager.cpp</label>
+        <link refid="db/d1c/wallet_2src_2wallet__manager_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" prot="public">satox::wallet::AddressManager</innerclass>
+    <innerclass refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" prot="public">satox::wallet::AddressManager::AddressInfo</innerclass>
+    <innerclass refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" prot="public">satox::wallet::AddressManager::Error</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/d9b/namespacesatox_1_1wallet">satox::wallet</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/evp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/ec.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/bn.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/obj_mac.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/ripemd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/sha.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/d9b/namespacesatox_1_1wallet" kindref="compound">wallet</ref><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref>&amp;<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a681e210c5c6d08f0dec78c46643e1a94" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50" refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a34ddf06bf02153bafec808ff4411d275" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref>&amp;<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a34ddf06bf02153bafec808ff4411d275" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>cleanup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a38c37caaeefabbb1d58775fc8de3036b" kindref="member">initialize</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a57183aba72a98962dc6aa086c4b05d16" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Address<sp/>generation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1acd115c67bda6f3f62bc5973f69a82371" kindref="member">generateAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9f92aa4a563eb97ceccc505868b9a236" kindref="member">generateSegWitAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af44caa2e1af67c77cf857cfdac0094b5" kindref="member">generateMultiSigAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::vector&lt;uint8_t&gt;&gt;&amp;<sp/>publicKeys,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requiredSignatures);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Address<sp/>validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ae437b493304002d39bb0dcad15c76870" kindref="member">validateAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a30ef9bb8fbac62191502f971119f1c28" kindref="member">validateSegWitAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a8e4afa551b1d5bb3156201d5adf78b6a" kindref="member">validateMultiSigAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Address<sp/>conversion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad36932ff8a1c43ab834958509303b01a" kindref="member">toLegacyAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a18cace5500e4030b17731f6eb19abaa8" kindref="member">toSegWitAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aa2f3d8b5b1ddeca65fa6cdb5afc6796e" kindref="member">toMultiSigAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Address<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="73" refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a2c616d6cb4ccb8949b241f2aa944bdde" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a2c616d6cb4ccb8949b241f2aa944bdde" kindref="member">address</ref>;</highlight></codeline>
+<codeline lineno="74" refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a2239d4eed26c51c5390f538deb02f325" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a2239d4eed26c51c5390f538deb02f325" kindref="member">type</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;legacy&quot;,<sp/>&quot;segwit&quot;,<sp/>&quot;multisig&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a52813a3a3ff2b421a74748b2d7011a59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a52813a3a3ff2b421a74748b2d7011a59" kindref="member">scriptHash</ref>;</highlight></codeline>
+<codeline lineno="76" refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a030c20b7aa488978f01fb330000fa352" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a030c20b7aa488978f01fb330000fa352" kindref="member">redeemScript</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>multi-sig</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a687c3717ee84b58e9bff58b37603cecf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a687c3717ee84b58e9bff58b37603cecf" kindref="member">requiredSignatures</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>multi-sig</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7945d0c1dcacecd7fcb5a7237166b308" kindref="member">getAddressInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Address<sp/>derivation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5f949fe5aefb9271c4ef876eee1c4294" kindref="member">deriveAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey,<sp/>uint32_t<sp/>purpose,<sp/>uint32_t<sp/>coinType,<sp/>uint32_t<sp/>account,<sp/>uint32_t<sp/>change,<sp/>uint32_t<sp/>addressIndex);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aee2bfc13bcd7c3293213737a2cae0ce4" kindref="member">deriveSegWitAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey,<sp/>uint32_t<sp/>purpose,<sp/>uint32_t<sp/>coinType,<sp/>uint32_t<sp/>account,<sp/>uint32_t<sp/>change,<sp/>uint32_t<sp/>addressIndex);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a520663432e613f3d02e3bbf4810639c1" kindref="member">deriveMultiSigAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::vector&lt;uint8_t&gt;&gt;&amp;<sp/>publicKeys,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requiredSignatures,<sp/>uint32_t<sp/>purpose,<sp/>uint32_t<sp/>coinType,<sp/>uint32_t<sp/>account,<sp/>uint32_t<sp/>change,<sp/>uint32_t<sp/>addressIndex);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Address<sp/>caching</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad1cee81eb1030446b895cc7644540c71" kindref="member">cacheAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref>&amp;<sp/>info);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac8c173d76eebc338093fa8b1d2703529" kindref="member">removeCachedAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9de108d28c93ab8ad101a721adee45ff" kindref="member">getCachedAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af5b094b7d70cb7dc307b4306ea5e4121" kindref="member">clearAddressCache</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" kindref="compound">Error</ref><sp/>{</highlight></codeline>
+<codeline lineno="94" refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error_1a233c2238711ec711b0f5a5043830442c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error_1a233c2238711ec711b0f5a5043830442c" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="95" refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error_1ae0148989232e0c3d403d990da5c2ee3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error_1ae0148989232e0c3d403d990da5c2ee3e" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" kindref="compound">Error</ref><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7d91149aaa07a44b68003a601e8336a9" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7c5f3a0785fa71caa0730739553796c5" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">AddressManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" kindref="member">~AddressManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>hash160(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>sha256(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>ripemd160(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>doubleSha256(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>base58Encode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>base58Decode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>str);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>bech32Encode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hrp);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>bech32Decode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>str,<sp/>std::string&amp;<sp/>hrp);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>createRedeemScript(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::vector&lt;uint8_t&gt;&gt;&amp;<sp/>publicKeys,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requiredSignatures);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>AddressInfo&gt;<sp/>addressCache_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" kindref="compound">Error</ref><sp/>lastError_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>wallet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/wallet/include/satox/wallet/address_manager.hpp"/>
+  </compounddef>
+</doxygen>

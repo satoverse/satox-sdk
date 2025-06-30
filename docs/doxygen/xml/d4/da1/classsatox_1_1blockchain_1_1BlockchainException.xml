@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException" kind="class" language="C++" prot="public">
+    <compoundname>satox::blockchain::BlockchainException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <derivedcompoundref refid="d5/dcc/classsatox_1_1blockchain_1_1BlockchainInitializationException" prot="public" virt="non-virtual">satox::blockchain::BlockchainInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d5/dd7/classsatox_1_1blockchain_1_1BlockchainOperationException" prot="public" virt="non-virtual">satox::blockchain::BlockchainOperationException</derivedcompoundref>
+    <includes refid="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1aca31e70773284d3518d802bfdf0af225" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570" kindref="member">BlockchainErrorCode</ref></type>
+        <definition>BlockchainErrorCode satox::blockchain::BlockchainException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::blockchain::BlockchainException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="70" column="25" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a46307a68cf757d997c32d1188b959ae4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::BlockchainException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::blockchain::BlockchainException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="71" column="17" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a162c796694088b554868b68933c9334e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::BlockchainException::BlockchainException</definition>
+        <argsstring>(BlockchainErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>BlockchainException</name>
+        <qualifiedname>satox::blockchain::BlockchainException::BlockchainException</qualifiedname>
+        <param>
+          <type><ref refid="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570" kindref="member">BlockchainErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="54" column="5" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="54" bodyend="55"/>
+        <references refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a462bad1086f8da80efeeeada908cf251" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="61" endline="63">code</references>
+        <references refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1ace440897abb51f482646b2c14322c379" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="65" endline="67">message</references>
+        <referencedby refid="d5/dcc/classsatox_1_1blockchain_1_1BlockchainInitializationException_1ab160d18a5532e5367fa4ea13028e249f" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="77" endline="78">satox::blockchain::BlockchainInitializationException::BlockchainInitializationException</referencedby>
+        <referencedby refid="d5/dd7/classsatox_1_1blockchain_1_1BlockchainOperationException_1a5dc1f20bf8529d212d52fcaf3bad7156" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="83" endline="84">satox::blockchain::BlockchainOperationException::BlockchainOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1acd121d0a79c4274f8b53abb714df7d32" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::blockchain::BlockchainException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::blockchain::BlockchainException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="57" column="16" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a462bad1086f8da80efeeeada908cf251" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570" kindref="member">BlockchainErrorCode</ref></type>
+        <definition>BlockchainErrorCode satox::blockchain::BlockchainException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::blockchain::BlockchainException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="61" column="25" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="61" bodyend="63"/>
+        <referencedby refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a162c796694088b554868b68933c9334e" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="54" endline="55">BlockchainException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1ace440897abb51f482646b2c14322c379" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::BlockchainException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::blockchain::BlockchainException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="65" column="23" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="65" bodyend="67"/>
+        <referencedby refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a162c796694088b554868b68933c9334e" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="54" endline="55">BlockchainException</referencedby>
+        <referencedby refid="d5/dcc/classsatox_1_1blockchain_1_1BlockchainInitializationException_1ab160d18a5532e5367fa4ea13028e249f" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="77" endline="78">satox::blockchain::BlockchainInitializationException::BlockchainInitializationException</referencedby>
+        <referencedby refid="d5/dd7/classsatox_1_1blockchain_1_1BlockchainOperationException_1a5dc1f20bf8529d212d52fcaf3bad7156" compoundref="df/d27/blockchain_2include_2satox_2blockchain_2error_8hpp" startline="83" endline="84">satox::blockchain::BlockchainOperationException::BlockchainOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a3f067b22d10beba58861bedfcbd8b94d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::BlockchainException::BlockchainException</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>BlockchainException</name>
+        <qualifiedname>satox::blockchain::BlockchainException::BlockchainException</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/exceptions.hpp" line="35" column="14" bodyfile="src/blockchain/include/satox/blockchain/exceptions.hpp" bodystart="35" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::blockchain::BlockchainException</label>
+        <link refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::blockchain::BlockchainInitializationException</label>
+        <link refid="d5/dcc/classsatox_1_1blockchain_1_1BlockchainInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>satox::blockchain::BlockchainOperationException</label>
+        <link refid="d5/dd7/classsatox_1_1blockchain_1_1BlockchainOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+      <node id="3">
+        <label>std::runtime_error</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::blockchain::BlockchainException</label>
+        <link refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+      <node id="3">
+        <label>std::runtime_error</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/blockchain/include/satox/blockchain/error.hpp" line="52" column="1" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a162c796694088b554868b68933c9334e" prot="public" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>BlockchainException</name></member>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a3f067b22d10beba58861bedfcbd8b94d" prot="public" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>BlockchainException</name></member>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a462bad1086f8da80efeeeada908cf251" prot="public" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>code</name></member>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1aca31e70773284d3518d802bfdf0af225" prot="private" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>code_</name></member>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1ace440897abb51f482646b2c14322c379" prot="public" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>message</name></member>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1a46307a68cf757d997c32d1188b959ae4" prot="private" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>message_</name></member>
+      <member refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException_1acd121d0a79c4274f8b53abb714df7d32" prot="public" virt="non-virtual"><scope>satox::blockchain::BlockchainException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

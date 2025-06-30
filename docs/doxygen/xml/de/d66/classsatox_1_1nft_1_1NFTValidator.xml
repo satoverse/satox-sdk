@@ -1,0 +1,726 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d66/classsatox_1_1nft_1_1NFTValidator" kind="class" language="C++" prot="public">
+    <compoundname>satox::nft::NFTValidator</compoundname>
+    <includes refid="d6/dc5/nft__validator_8hpp" local="no">nft_validator.hpp</includes>
+    <innerclass refid="de/d1b/structsatox_1_1nft_1_1NFTValidator_1_1Error" prot="public">satox::nft::NFTValidator::Error</innerclass>
+    <innerclass refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" prot="public">satox::nft::NFTValidator::ValidationResult</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1abbf4b86fa2c4adcbd96a45ff0d1e9b41" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::nft::NFTValidator::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::nft::NFTValidator::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="105" column="16" bodyfile="src/nft/include/satox/nft/nft_validator.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1ae9ed42d3325a7a83196af5f30adcd59b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; bool(const <ref refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" kindref="compound">NFTManager::NFT</ref> &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;bool(const NFTManager::NFT&amp;)&gt; &gt; satox::nft::NFTValidator::validationRules_</definition>
+        <argsstring></argsstring>
+        <name>validationRules_</name>
+        <qualifiedname>satox::nft::NFTValidator::validationRules_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="106" column="24" bodyfile="src/nft/include/satox/nft/nft_validator.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a09ac853a1769e8a08a71d27ff3c3c4e7" prot="private" static="no" mutable="no">
+        <type><ref refid="de/d1b/structsatox_1_1nft_1_1NFTValidator_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error satox::nft::NFTValidator::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::nft::NFTValidator::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="107" column="11" bodyfile="src/nft/include/satox/nft/nft_validator.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a8336bbe20ee427974aa15e6c4e2d36b2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::nft::NFTValidator::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="108" column="10" bodyfile="src/nft/include/satox/nft/nft_validator.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a018c9d4f00f271fac79d5998c62872fd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d66/classsatox_1_1nft_1_1NFTValidator" kindref="compound">NFTValidator</ref> &amp;</type>
+        <definition>NFTValidator &amp; satox::nft::NFTValidator::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::nft::NFTValidator::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="42" column="25" bodyfile="src/nft/src/nft_validator.cpp" bodystart="34" bodyend="37"/>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a47b233c582720a9b071bb25b773c7c4e">NFTValidator</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a47b233c582720a9b071bb25b773c7c4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::NFTValidator::NFTValidator</definition>
+        <argsstring>(const NFTValidator &amp;)=delete</argsstring>
+        <name>NFTValidator</name>
+        <qualifiedname>satox::nft::NFTValidator::NFTValidator</qualifiedname>
+        <param>
+          <type>const <ref refid="de/d66/classsatox_1_1nft_1_1NFTValidator" kindref="compound">NFTValidator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="45" column="5"/>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a47b233c582720a9b071bb25b773c7c4e">NFTValidator</references>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a018c9d4f00f271fac79d5998c62872fd" compoundref="d5/dd9/nft__validator_8cpp" startline="34" endline="37">getInstance</referencedby>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a47b233c582720a9b071bb25b773c7c4e">NFTValidator</referencedby>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1ac1458f66560ac3a8c39092a9e765ee23">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1ac1458f66560ac3a8c39092a9e765ee23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d66/classsatox_1_1nft_1_1NFTValidator" kindref="compound">NFTValidator</ref> &amp;</type>
+        <definition>NFTValidator &amp; satox::nft::NFTValidator::operator=</definition>
+        <argsstring>(const NFTValidator &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::nft::NFTValidator::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="de/d66/classsatox_1_1nft_1_1NFTValidator" kindref="compound">NFTValidator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="46" column="18"/>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a47b233c582720a9b071bb25b773c7c4e">NFTValidator</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a899fe2fa840b45ad7b1419aa46e25c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::nft::NFTValidator::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="49" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="39" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1abc1ccfe13fe80494728f2f6b33e6b8f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::nft::NFTValidator::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::nft::NFTValidator::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="50" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="70" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a6ee0a5f8b8a39717aafdd2e8c16cba72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateNFT</definition>
+        <argsstring>(const NFTManager::NFT &amp;nft)</argsstring>
+        <name>validateNFT</name>
+        <qualifiedname>satox::nft::NFTValidator::validateNFT</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" kindref="compound">NFTManager::NFT</ref> &amp;</type>
+          <declname>nft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="61" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="76" bodyend="94"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1abcfe7f9187a9663f15f315e223c58a9b" compoundref="d5/dd9/nft__validator_8cpp" startline="182" endline="200">validateBatchNFTs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a4617ed707b666e925a5be22d5367482c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateNFTMetadata</definition>
+        <argsstring>(const NFTManager::NFTMetadata &amp;metadata)</argsstring>
+        <name>validateNFTMetadata</name>
+        <qualifiedname>satox::nft::NFTValidator::validateNFTMetadata</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/d3f/structsatox_1_1nft_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTManager::NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="62" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="96" bodyend="108"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1adb1c1cc56fc361acd89538ab9a919068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateNFTTransfer</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;from, const std::string &amp;to)</argsstring>
+        <name>validateNFTTransfer</name>
+        <qualifiedname>satox::nft::NFTValidator::validateNFTTransfer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="63" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="110" bodyend="132"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a8eabb3871c52a6b85bc9a78166ac9847" compoundref="d5/dd9/nft__validator_8cpp" startline="202" endline="220">validateBatchTransfers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a4a9f82157ffb421a9eb9457f2b419d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateNFTBurn</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;owner)</argsstring>
+        <name>validateNFTBurn</name>
+        <qualifiedname>satox::nft::NFTValidator::validateNFTBurn</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="64" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="134" bodyend="156"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a208b11673c980bf8e7c74e4522c82104" compoundref="d5/dd9/nft__validator_8cpp" startline="222" endline="240">validateBatchBurns</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a861f78b02136c839181af76ebba4ff4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateNFTRoyalty</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;recipient, uint32_t basisPoints)</argsstring>
+        <name>validateNFTRoyalty</name>
+        <qualifiedname>satox::nft::NFTValidator::validateNFTRoyalty</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>recipient</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>basisPoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="65" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="158" bodyend="180"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1abcfe7f9187a9663f15f315e223c58a9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateBatchNFTs</definition>
+        <argsstring>(const std::vector&lt; NFTManager::NFT &gt; &amp;nfts)</argsstring>
+        <name>validateBatchNFTs</name>
+        <qualifiedname>satox::nft::NFTValidator::validateBatchNFTs</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" kindref="compound">NFTManager::NFT</ref> &gt; &amp;</type>
+          <declname>nfts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="68" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="182" bodyend="200"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a6ee0a5f8b8a39717aafdd2e8c16cba72" compoundref="d5/dd9/nft__validator_8cpp" startline="76" endline="94">validateNFT</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a8eabb3871c52a6b85bc9a78166ac9847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateBatchTransfers</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;nftIds, const std::string &amp;from, const std::string &amp;to)</argsstring>
+        <name>validateBatchTransfers</name>
+        <qualifiedname>satox::nft::NFTValidator::validateBatchTransfers</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>nftIds</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="69" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="202" bodyend="220"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1adb1c1cc56fc361acd89538ab9a919068" compoundref="d5/dd9/nft__validator_8cpp" startline="110" endline="132">validateNFTTransfer</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a208b11673c980bf8e7c74e4522c82104" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>NFTValidator::ValidationResult satox::nft::NFTValidator::validateBatchBurns</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;nftIds, const std::string &amp;owner)</argsstring>
+        <name>validateBatchBurns</name>
+        <qualifiedname>satox::nft::NFTValidator::validateBatchBurns</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>nftIds</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="70" column="22" bodyfile="src/nft/src/nft_validator.cpp" bodystart="222" bodyend="240"/>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a23b82a2968bc869517e727d775093991" compoundref="d6/dc5/nft__validator_8hpp" startline="56">satox::nft::NFTValidator::ValidationResult::errors</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1acdf32edc9899aac09730f6e167441f61" compoundref="d6/dc5/nft__validator_8hpp" startline="54">satox::nft::NFTValidator::ValidationResult::isValid</references>
+        <references refid="db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult_1a2f5307f166c19d37223bac96c99a68ac" compoundref="d6/dc5/nft__validator_8hpp" startline="55">satox::nft::NFTValidator::ValidationResult::message</references>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a4a9f82157ffb421a9eb9457f2b419d0d" compoundref="d5/dd9/nft__validator_8cpp" startline="134" endline="156">validateNFTBurn</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1aae1688c5f7c5e3f5b6a5c3c7b58973bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateSchema</definition>
+        <argsstring>(const nlohmann::json &amp;schema, const nlohmann::json &amp;data)</argsstring>
+        <name>validateSchema</name>
+        <qualifiedname>satox::nft::NFTValidator::validateSchema</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="73" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="242" bodyend="279"/>
+        <referencedby refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a81b8a34eeb1ae7ac38ebcb99aad8ba3f" compoundref="d5/dd9/nft__validator_8cpp" startline="281" endline="295">validateMetadataSchema</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a81b8a34eeb1ae7ac38ebcb99aad8ba3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateMetadataSchema</definition>
+        <argsstring>(const nlohmann::json &amp;metadata)</argsstring>
+        <name>validateMetadataSchema</name>
+        <qualifiedname>satox::nft::NFTValidator::validateMetadataSchema</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="74" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="281" bodyend="295"/>
+        <references refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1aae1688c5f7c5e3f5b6a5c3c7b58973bc" compoundref="d5/dd9/nft__validator_8cpp" startline="242" endline="279">validateSchema</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a34d99333e7bee62ac2a316e2ac0e6d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::nft::NFTValidator::addValidationRule</definition>
+        <argsstring>(const std::string &amp;ruleName, std::function&lt; bool(const NFTManager::NFT &amp;)&gt; rule)</argsstring>
+        <name>addValidationRule</name>
+        <qualifiedname>satox::nft::NFTValidator::addValidationRule</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ruleName</declname>
+        </param>
+        <param>
+          <type>std::function&lt; bool(const <ref refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" kindref="compound">NFTManager::NFT</ref> &amp;)&gt;</type>
+          <declname>rule</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="77" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="297" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a2dd7d6f8aa27ff099549a8ca6cd4dee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::nft::NFTValidator::removeValidationRule</definition>
+        <argsstring>(const std::string &amp;ruleName)</argsstring>
+        <name>removeValidationRule</name>
+        <qualifiedname>satox::nft::NFTValidator::removeValidationRule</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ruleName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="78" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="302" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1ac9de7e9f3e9dfa4f408c34c17f815eb0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::hasValidationRule</definition>
+        <argsstring>(const std::string &amp;ruleName) const</argsstring>
+        <name>hasValidationRule</name>
+        <qualifiedname>satox::nft::NFTValidator::hasValidationRule</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ruleName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="79" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="307" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a2a6a1bac85b504e71a1bddf276a3c35a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d1b/structsatox_1_1nft_1_1NFTValidator_1_1Error" kindref="compound">Error</ref></type>
+        <definition>NFTValidator::Error satox::nft::NFTValidator::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::nft::NFTValidator::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="86" column="11" bodyfile="src/nft/src/nft_validator.cpp" bodystart="312" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a167a0e7e8a52f8353985eb7db4d10bef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::nft::NFTValidator::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::nft::NFTValidator::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="87" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="316" bodyend="318"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1aad37b3236235413aba4970ba1787f48c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::NFTValidator::NFTValidator</definition>
+        <argsstring>()=default</argsstring>
+        <name>NFTValidator</name>
+        <qualifiedname>satox::nft::NFTValidator::NFTValidator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="90" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a281225e52b8b3c6cd944f0e648459de6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::NFTValidator::~NFTValidator</definition>
+        <argsstring>()=default</argsstring>
+        <name>~NFTValidator</name>
+        <qualifiedname>satox::nft::NFTValidator::~NFTValidator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="91" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a7be6413337dafb2453a2afb802730d00" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateRequiredFields</definition>
+        <argsstring>(const NFTManager::NFT &amp;nft)</argsstring>
+        <name>validateRequiredFields</name>
+        <qualifiedname>satox::nft::NFTValidator::validateRequiredFields</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/dde/structsatox_1_1nft_1_1NFTManager_1_1NFT" kindref="compound">NFTManager::NFT</ref> &amp;</type>
+          <declname>nft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="94" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="321" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a487e23a80efa22bdf1e509dc0db8625a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateMetadataFields</definition>
+        <argsstring>(const NFTManager::NFTMetadata &amp;metadata)</argsstring>
+        <name>validateMetadataFields</name>
+        <qualifiedname>satox::nft::NFTValidator::validateMetadataFields</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/d3f/structsatox_1_1nft_1_1NFTManager_1_1NFTMetadata" kindref="compound">NFTManager::NFTMetadata</ref> &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="95" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="330" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a0118c3883a6ebbe2072c1c66e29f5191" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateOwnership</definition>
+        <argsstring>(const std::string &amp;nftId, const std::string &amp;owner)</argsstring>
+        <name>validateOwnership</name>
+        <qualifiedname>satox::nft::NFTValidator::validateOwnership</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="96" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="336" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1ae6f89a7f991f1660403ae60846383ab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateTransferability</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>validateTransferability</name>
+        <qualifiedname>satox::nft::NFTValidator::validateTransferability</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="97" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="342" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1ae8515dbdab0867d9fa765ead17accf08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateBurnability</definition>
+        <argsstring>(const std::string &amp;nftId)</argsstring>
+        <name>validateBurnability</name>
+        <qualifiedname>satox::nft::NFTValidator::validateBurnability</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nftId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="98" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="348" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1acd84a08801c476bada60406dd4782055" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateRoyaltyBasisPoints</definition>
+        <argsstring>(uint32_t basisPoints)</argsstring>
+        <name>validateRoyaltyBasisPoints</name>
+        <qualifiedname>satox::nft::NFTValidator::validateRoyaltyBasisPoints</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>basisPoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="99" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="354" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1aedd1f012b23836606d09cb1735d46278" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateContractAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>validateContractAddress</name>
+        <qualifiedname>satox::nft::NFTValidator::validateContractAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="100" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="358" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1a82f57f4d012dd7152256c145752569df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateTokenURI</definition>
+        <argsstring>(const std::string &amp;uri)</argsstring>
+        <name>validateTokenURI</name>
+        <qualifiedname>satox::nft::NFTValidator::validateTokenURI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="101" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="364" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d66/classsatox_1_1nft_1_1NFTValidator_1adfb60fdb41010570c8d0fbe001a51eec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTValidator::validateTimestamp</definition>
+        <argsstring>(uint64_t timestamp)</argsstring>
+        <name>validateTimestamp</name>
+        <qualifiedname>satox::nft::NFTValidator::validateTimestamp</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_validator.hpp" line="102" column="10" bodyfile="src/nft/src/nft_validator.cpp" bodystart="369" bodyend="373"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/nft/include/satox/nft/nft_validator.hpp" line="40" column="1" bodyfile="src/nft/include/satox/nft/nft_validator.hpp" bodystart="40" bodyend="109"/>
+    <listofallmembers>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a34d99333e7bee62ac2a316e2ac0e6d30" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>addValidationRule</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a167a0e7e8a52f8353985eb7db4d10bef" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>clearLastError</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a018c9d4f00f271fac79d5998c62872fd" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>getInstance</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a2a6a1bac85b504e71a1bddf276a3c35a" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>getLastError</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1ac9de7e9f3e9dfa4f408c34c17f815eb0" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>hasValidationRule</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a899fe2fa840b45ad7b1419aa46e25c65" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>initialize</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a8336bbe20ee427974aa15e6c4e2d36b2" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>initialized_</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a09ac853a1769e8a08a71d27ff3c3c4e7" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>lastError_</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1abbf4b86fa2c4adcbd96a45ff0d1e9b41" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>mutex_</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a47b233c582720a9b071bb25b773c7c4e" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>NFTValidator</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1aad37b3236235413aba4970ba1787f48c" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>NFTValidator</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1ac1458f66560ac3a8c39092a9e765ee23" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>operator=</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a2dd7d6f8aa27ff099549a8ca6cd4dee3" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>removeValidationRule</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1abc1ccfe13fe80494728f2f6b33e6b8f6" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>shutdown</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a208b11673c980bf8e7c74e4522c82104" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateBatchBurns</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1abcfe7f9187a9663f15f315e223c58a9b" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateBatchNFTs</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a8eabb3871c52a6b85bc9a78166ac9847" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateBatchTransfers</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1ae8515dbdab0867d9fa765ead17accf08" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateBurnability</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1aedd1f012b23836606d09cb1735d46278" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateContractAddress</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a487e23a80efa22bdf1e509dc0db8625a" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateMetadataFields</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a81b8a34eeb1ae7ac38ebcb99aad8ba3f" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateMetadataSchema</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a6ee0a5f8b8a39717aafdd2e8c16cba72" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateNFT</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a4a9f82157ffb421a9eb9457f2b419d0d" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateNFTBurn</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a4617ed707b666e925a5be22d5367482c" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateNFTMetadata</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a861f78b02136c839181af76ebba4ff4e" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateNFTRoyalty</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1adb1c1cc56fc361acd89538ab9a919068" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateNFTTransfer</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a0118c3883a6ebbe2072c1c66e29f5191" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateOwnership</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a7be6413337dafb2453a2afb802730d00" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateRequiredFields</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1acd84a08801c476bada60406dd4782055" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateRoyaltyBasisPoints</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1aae1688c5f7c5e3f5b6a5c3c7b58973bc" prot="public" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateSchema</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1adfb60fdb41010570c8d0fbe001a51eec" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateTimestamp</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a82f57f4d012dd7152256c145752569df" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateTokenURI</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1ae6f89a7f991f1660403ae60846383ab0" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validateTransferability</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1ae9ed42d3325a7a83196af5f30adcd59b" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>validationRules_</name></member>
+      <member refid="de/d66/classsatox_1_1nft_1_1NFTValidator_1a281225e52b8b3c6cd944f0e648459de6" prot="private" virt="non-virtual"><scope>satox::nft::NFTValidator</scope><name>~NFTValidator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

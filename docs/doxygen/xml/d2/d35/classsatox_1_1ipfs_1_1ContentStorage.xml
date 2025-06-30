@@ -1,0 +1,951 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" kind="class" language="C++" prot="public">
+    <compoundname>satox::ipfs::ContentStorage</compoundname>
+    <includes refid="de/dcb/content__storage_8hpp" local="no">content_storage.hpp</includes>
+    <innerclass refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" prot="public">satox::ipfs::ContentStorage::ContentInfo</innerclass>
+    <innerclass refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" prot="public">satox::ipfs::ContentStorage::Error</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a597b7d428e817af885c7ab41dbc88c5a" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::ipfs::ContentStorage::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="124" column="16" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa46652aa864e462157bead5d65c69786" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::ContentStorage::storagePath_</definition>
+        <argsstring></argsstring>
+        <name>storagePath_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::storagePath_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="125" column="17" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2b567d56f920a32074dc471bc323703f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, ContentInfo&gt; satox::ipfs::ContentStorage::contentInfo_</definition>
+        <argsstring></argsstring>
+        <name>contentInfo_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::contentInfo_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="126" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a51f34706a06a8c58d43ac15bd09c5daf" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; satox::ipfs::ContentStorage::contentCache_</definition>
+        <argsstring></argsstring>
+        <name>contentCache_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::contentCache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="127" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3a52f6117a2d1ad6a18e98c2185b0f0e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; satox::ipfs::ContentStorage::tagIndex_</definition>
+        <argsstring></argsstring>
+        <name>tagIndex_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::tagIndex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="128" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a011889c6e80d052153c86ef686fb8c9f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; satox::ipfs::ContentStorage::mimeTypeIndex_</definition>
+        <argsstring></argsstring>
+        <name>mimeTypeIndex_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::mimeTypeIndex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="129" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa0768a3183074d9915f96a0c295cc685" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::ipfs::ContentStorage::maxCacheSize_</definition>
+        <argsstring></argsstring>
+        <name>maxCacheSize_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::maxCacheSize_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="130" column="12" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6db6ae9ff6fe4a59fcdcc6535164254f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::cacheEnabled_</definition>
+        <argsstring></argsstring>
+        <name>cacheEnabled_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::cacheEnabled_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="131" column="10" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ab40e6e176f7ed849b4b32554096af4bb" prot="private" static="no" mutable="no">
+        <type><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error satox::ipfs::ContentStorage::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="132" column="11" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a13276de390e393d874e8b15fae0d2494" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::ipfs::ContentStorage::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="133" column="10" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1eef2b7ee58f49abee2a103390b477af" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" kindref="compound">ContentStorage</ref> &amp;</type>
+        <definition>ContentStorage &amp; satox::ipfs::ContentStorage::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="43" column="27" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="94" bodyend="97"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd">ContentStorage</references>
+        <references refid="d2/dc8/namespacesatox_1_1ipfs_1a3294d1aa3cd3d04a1d7705d82673117c" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="39">satox::ipfs::instance</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::ContentStorage::ContentStorage</definition>
+        <argsstring>(const ContentStorage &amp;)=delete</argsstring>
+        <name>ContentStorage</name>
+        <qualifiedname>satox::ipfs::ContentStorage::ContentStorage</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" kindref="compound">ContentStorage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="46" column="5"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd">ContentStorage</references>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd">ContentStorage</referencedby>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1eef2b7ee58f49abee2a103390b477af" compoundref="d7/d19/content__storage_8cpp" startline="94" endline="97">getInstance</referencedby>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27ce91a9f23d81a5e52b9d3f824ec3f7">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27ce91a9f23d81a5e52b9d3f824ec3f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" kindref="compound">ContentStorage</ref> &amp;</type>
+        <definition>ContentStorage &amp; satox::ipfs::ContentStorage::operator=</definition>
+        <argsstring>(const ContentStorage &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::ipfs::ContentStorage::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage" kindref="compound">ContentStorage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="47" column="20"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd">ContentStorage</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a79b7b5493c5ab99a8194befe91ac8bfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::initialize</definition>
+        <argsstring>(const std::string &amp;storagePath)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::ipfs::ContentStorage::initialize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>storagePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="50" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="99" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a17cd4c3f87741542639011c3420ebf2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::ipfs::ContentStorage::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="51" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="118" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27c54e16992d1883f4c99e5b6c85120d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::future&lt; ContentStorage::ContentInfo &gt; satox::ipfs::ContentStorage::storeContent</definition>
+        <argsstring>(const std::string &amp;content, const std::string &amp;name=&quot;&quot;)</argsstring>
+        <name>storeContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::storeContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="67" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="127" bodyend="157"/>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a90699be6b4d05f18ef1353ad7b8b0e3a" compoundref="de/dcb/content__storage_8hpp" startline="59">satox::ipfs::ContentStorage::ContentInfo::createdAt</references>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a0272c8812a1b7a110f551c7461538473" compoundref="de/dcb/content__storage_8hpp" startline="55">satox::ipfs::ContentStorage::ContentInfo::hash</references>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a73a89a6f9dc8e777499bf9e5b1f84276" compoundref="de/dcb/content__storage_8hpp" startline="61">satox::ipfs::ContentStorage::ContentInfo::isPinned</references>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1ac23943728492145845712293fd7baf47" compoundref="de/dcb/content__storage_8hpp" startline="58">satox::ipfs::ContentStorage::ContentInfo::mimeType</references>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a444ae13424e5534039d9e126e085aa1d" compoundref="de/dcb/content__storage_8hpp" startline="56">satox::ipfs::ContentStorage::ContentInfo::name</references>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1a570446b8d60258c8c8c1fa28fd71a9ff" compoundref="de/dcb/content__storage_8hpp" startline="57">satox::ipfs::ContentStorage::ContentInfo::size</references>
+        <references refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo_1aeb3095e725854a2a2217850ab27925d4" compoundref="de/dcb/content__storage_8hpp" startline="60">satox::ipfs::ContentStorage::ContentInfo::updatedAt</references>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a9878aa55dae5de88c0c66ffc87790548" compoundref="d7/d19/content__storage_8cpp" startline="159" endline="175">storeFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a9878aa55dae5de88c0c66ffc87790548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::future&lt; ContentStorage::ContentInfo &gt; satox::ipfs::ContentStorage::storeFile</definition>
+        <argsstring>(const std::string &amp;filePath)</argsstring>
+        <name>storeFile</name>
+        <qualifiedname>satox::ipfs::ContentStorage::storeFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="68" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="159" bodyend="175"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27c54e16992d1883f4c99e5b6c85120d" compoundref="d7/d19/content__storage_8cpp" startline="127" endline="157">storeContent</references>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa153ed83aa89f3f6d4e71c57612fc755" compoundref="d7/d19/content__storage_8cpp" startline="177" endline="194">storeDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa153ed83aa89f3f6d4e71c57612fc755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; std::vector&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt; &gt;</type>
+        <definition>std::future&lt; std::vector&lt; ContentStorage::ContentInfo &gt; &gt; satox::ipfs::ContentStorage::storeDirectory</definition>
+        <argsstring>(const std::string &amp;directoryPath)</argsstring>
+        <name>storeDirectory</name>
+        <qualifiedname>satox::ipfs::ContentStorage::storeDirectory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>directoryPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="69" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="177" bodyend="194"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a9878aa55dae5de88c0c66ffc87790548" compoundref="d7/d19/content__storage_8cpp" startline="159" endline="175">storeFile</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5321ab248980c9293555d7d95a540709" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; std::string &gt;</type>
+        <definition>std::future&lt; std::string &gt; satox::ipfs::ContentStorage::getContent</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>getContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="72" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="196" bodyend="227"/>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a034f45549ba3f6b114d845a3c5737d58" compoundref="d7/d19/content__storage_8cpp" startline="245" endline="272">getDirectory</referencedby>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6ba4231e6692ee49937583b22ad75f88" compoundref="d7/d19/content__storage_8cpp" startline="229" endline="243">getFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6ba4231e6692ee49937583b22ad75f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; bool &gt;</type>
+        <definition>std::future&lt; bool &gt; satox::ipfs::ContentStorage::getFile</definition>
+        <argsstring>(const std::string &amp;hash, const std::string &amp;outputPath)</argsstring>
+        <name>getFile</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="73" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="229" bodyend="243"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5321ab248980c9293555d7d95a540709" compoundref="d7/d19/content__storage_8cpp" startline="196" endline="227">getContent</references>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a034f45549ba3f6b114d845a3c5737d58" compoundref="d7/d19/content__storage_8cpp" startline="245" endline="272">getDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a034f45549ba3f6b114d845a3c5737d58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; bool &gt;</type>
+        <definition>std::future&lt; bool &gt; satox::ipfs::ContentStorage::getDirectory</definition>
+        <argsstring>(const std::string &amp;hash, const std::string &amp;outputPath)</argsstring>
+        <name>getDirectory</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getDirectory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="74" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="245" bodyend="272"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5321ab248980c9293555d7d95a540709" compoundref="d7/d19/content__storage_8cpp" startline="196" endline="227">getContent</references>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6ba4231e6692ee49937583b22ad75f88" compoundref="d7/d19/content__storage_8cpp" startline="229" endline="243">getFile</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a8ca34bcc0797c8152154fab4125e5061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::updateContent</definition>
+        <argsstring>(const std::string &amp;hash, const std::string &amp;newContent)</argsstring>
+        <name>updateContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::updateContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>newContent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="77" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="274" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5b1990e241fd2c65aa84aa29b937c363" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::updateMetadata</definition>
+        <argsstring>(const std::string &amp;hash, const nlohmann::json &amp;metadata)</argsstring>
+        <name>updateMetadata</name>
+        <qualifiedname>satox::ipfs::ContentStorage::updateMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="78" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="310" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a84c0ab1cb68659e3563bccfc28c8c570" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::deleteContent</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>deleteContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::deleteContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="79" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="328" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a95c837c4057b1e8a87fba9903de31594" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::pinContent</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>pinContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::pinContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="80" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="357" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a4bdbd3973daab092d8addd7bba4e2e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::unpinContent</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>unpinContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::unpinContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="81" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="375" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1acb3227881ca02db0b32eb37171c9aaa6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref></type>
+        <definition>ContentStorage::ContentInfo satox::ipfs::ContentStorage::getContentInfo</definition>
+        <argsstring>(const std::string &amp;hash) const</argsstring>
+        <name>getContentInfo</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getContentInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="84" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="393" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a20c1278cbe2d817dc367ce6634dcc28c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::vector&lt; ContentStorage::ContentInfo &gt; satox::ipfs::ContentStorage::getContentByTag</definition>
+        <argsstring>(const std::string &amp;tag) const</argsstring>
+        <name>getContentByTag</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getContentByTag</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="85" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="402" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a257e0a167b83acb994ef01e06ad5bfb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::vector&lt; ContentStorage::ContentInfo &gt; satox::ipfs::ContentStorage::getContentByMimeType</definition>
+        <argsstring>(const std::string &amp;mimeType) const</argsstring>
+        <name>getContentByMimeType</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getContentByMimeType</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>mimeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="86" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="417" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1acb7493ba2ad89c8b30e321fba420c697" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::vector&lt; ContentStorage::ContentInfo &gt; satox::ipfs::ContentStorage::searchContent</definition>
+        <argsstring>(const std::string &amp;query) const</argsstring>
+        <name>searchContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::searchContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="87" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="432" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a940589093105f154655880e2bbe0b27c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &gt;</type>
+        <definition>std::vector&lt; ContentStorage::ContentInfo &gt; satox::ipfs::ContentStorage::getPinnedContent</definition>
+        <argsstring>() const</argsstring>
+        <name>getPinnedContent</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getPinnedContent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="88" column="17" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="460" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ae973f5d91fc6e264466eca07d73b013f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::enableCache</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableCache</name>
+        <qualifiedname>satox::ipfs::ContentStorage::enableCache</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="91" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="471" bodyend="477"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a194d2c0504fa58f959b600b99fa2c1eb" compoundref="d7/d19/content__storage_8cpp" startline="479" endline="482">clearCache</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a194d2c0504fa58f959b600b99fa2c1eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::clearCache</definition>
+        <argsstring>()</argsstring>
+        <name>clearCache</name>
+        <qualifiedname>satox::ipfs::ContentStorage::clearCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="92" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="479" bodyend="482"/>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ae973f5d91fc6e264466eca07d73b013f" compoundref="d7/d19/content__storage_8cpp" startline="471" endline="477">enableCache</referencedby>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a302ce5e7cdcab2f8f46499bcdd3212ff" compoundref="d7/d19/content__storage_8cpp" startline="484" endline="490">setCacheSize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a302ce5e7cdcab2f8f46499bcdd3212ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::setCacheSize</definition>
+        <argsstring>(size_t maxSize)</argsstring>
+        <name>setCacheSize</name>
+        <qualifiedname>satox::ipfs::ContentStorage::setCacheSize</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>maxSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="93" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="484" bodyend="490"/>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a194d2c0504fa58f959b600b99fa2c1eb" compoundref="d7/d19/content__storage_8cpp" startline="479" endline="482">clearCache</references>
+        <references refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a215c1c4acc5ab7a39c8fe3cc04b8c930" compoundref="d7/d19/content__storage_8cpp" startline="496" endline="503">getCacheUsage</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2a8a9011aa91c628fcebaefe170e316b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::ipfs::ContentStorage::getCacheSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getCacheSize</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getCacheSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="94" column="12" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="492" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a215c1c4acc5ab7a39c8fe3cc04b8c930" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::ipfs::ContentStorage::getCacheUsage</definition>
+        <argsstring>() const</argsstring>
+        <name>getCacheUsage</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getCacheUsage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="95" column="12" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="496" bodyend="503"/>
+        <referencedby refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a302ce5e7cdcab2f8f46499bcdd3212ff" compoundref="d7/d19/content__storage_8cpp" startline="484" endline="490">setCacheSize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a48d811bee9f8bf73b320d78202c57e85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::createBackup</definition>
+        <argsstring>(const std::string &amp;backupPath)</argsstring>
+        <name>createBackup</name>
+        <qualifiedname>satox::ipfs::ContentStorage::createBackup</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backupPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="98" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="505" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1adb6298bf108144b78d458cfb7fb603ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::restoreFromBackup</definition>
+        <argsstring>(const std::string &amp;backupPath)</argsstring>
+        <name>restoreFromBackup</name>
+        <qualifiedname>satox::ipfs::ContentStorage::restoreFromBackup</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backupPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="99" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="538" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3dfdb4b6975ca0557b54eaf33caa788a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d70/structsatox_1_1ipfs_1_1ContentStorage_1_1Error" kindref="compound">Error</ref></type>
+        <definition>ContentStorage::Error satox::ipfs::ContentStorage::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::ipfs::ContentStorage::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="106" column="11" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="575" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1a888657087810018451fd079daafad0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::ipfs::ContentStorage::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="107" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="579" bodyend="581"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ad8fc27bcf9ee10020a20bb37b2123b6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::ContentStorage::ContentStorage</definition>
+        <argsstring>()=default</argsstring>
+        <name>ContentStorage</name>
+        <qualifiedname>satox::ipfs::ContentStorage::ContentStorage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="110" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a68fd2b5223fec0862e57117aec2278f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::ContentStorage::~ContentStorage</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ContentStorage</name>
+        <qualifiedname>satox::ipfs::ContentStorage::~ContentStorage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="111" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6a2c3f3d02efe4c92f035745742a0a6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::validateStoragePath</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>validateStoragePath</name>
+        <qualifiedname>satox::ipfs::ContentStorage::validateStoragePath</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="114" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="584" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a4e8dfa36905c4e8e37e36893f8734f79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::createStorageDirectory</definition>
+        <argsstring>()</argsstring>
+        <name>createStorageDirectory</name>
+        <qualifiedname>satox::ipfs::ContentStorage::createStorageDirectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="115" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="588" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ae2f754aeaa6399d30ff95e1ede78d4a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::validateContentHash</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>validateContentHash</name>
+        <qualifiedname>satox::ipfs::ContentStorage::validateContentHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="116" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="598" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3e43891a200723cf8feb9b94b92c3efd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::updateContentInfo</definition>
+        <argsstring>(const std::string &amp;hash, const ContentInfo &amp;info)</argsstring>
+        <name>updateContentInfo</name>
+        <qualifiedname>satox::ipfs::ContentStorage::updateContentInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d7/d1c/structsatox_1_1ipfs_1_1ContentStorage_1_1ContentInfo" kindref="compound">ContentInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="117" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="602" bodyend="605"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a06d87c1478270023ce614d95f9cb0adb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::removeContentInfo</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>removeContentInfo</name>
+        <qualifiedname>satox::ipfs::ContentStorage::removeContentInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="118" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="607" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a8306495dd825136ef39732a034ce63e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::updateCache</definition>
+        <argsstring>(const std::string &amp;hash, const std::string &amp;content)</argsstring>
+        <name>updateCache</name>
+        <qualifiedname>satox::ipfs::ContentStorage::updateCache</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="119" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="612" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2f6f2e8c917b39b0d47ecfa85344b9be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentStorage::removeFromCache</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>removeFromCache</name>
+        <qualifiedname>satox::ipfs::ContentStorage::removeFromCache</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="120" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="626" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a7880557a5683a318dcc7b0abfba4cb55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentStorage::handleError</definition>
+        <argsstring>(const std::string &amp;operation, const std::string &amp;error)</argsstring>
+        <name>handleError</name>
+        <qualifiedname>satox::ipfs::ContentStorage::handleError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="121" column="10" bodyfile="src/ipfs/src/content_storage.cpp" bodystart="630" bodyend="633"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ipfs/include/satox/ipfs/content_storage.hpp" line="41" column="1" bodyfile="src/ipfs/include/satox/ipfs/content_storage.hpp" bodystart="41" bodyend="134"/>
+    <listofallmembers>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6db6ae9ff6fe4a59fcdcc6535164254f" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>cacheEnabled_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a194d2c0504fa58f959b600b99fa2c1eb" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>clearCache</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1a888657087810018451fd079daafad0" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>clearLastError</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a51f34706a06a8c58d43ac15bd09c5daf" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>contentCache_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2b567d56f920a32074dc471bc323703f" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>contentInfo_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aba70eff6d8e2360a9c32d9882eb74efd" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>ContentStorage</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ad8fc27bcf9ee10020a20bb37b2123b6c" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>ContentStorage</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a48d811bee9f8bf73b320d78202c57e85" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>createBackup</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a4e8dfa36905c4e8e37e36893f8734f79" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>createStorageDirectory</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a84c0ab1cb68659e3563bccfc28c8c570" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>deleteContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ae973f5d91fc6e264466eca07d73b013f" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>enableCache</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2a8a9011aa91c628fcebaefe170e316b" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getCacheSize</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a215c1c4acc5ab7a39c8fe3cc04b8c930" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getCacheUsage</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5321ab248980c9293555d7d95a540709" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a257e0a167b83acb994ef01e06ad5bfb6" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getContentByMimeType</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a20c1278cbe2d817dc367ce6634dcc28c" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getContentByTag</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1acb3227881ca02db0b32eb37171c9aaa6" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getContentInfo</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a034f45549ba3f6b114d845a3c5737d58" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getDirectory</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6ba4231e6692ee49937583b22ad75f88" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getFile</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a1eef2b7ee58f49abee2a103390b477af" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getInstance</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3dfdb4b6975ca0557b54eaf33caa788a" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getLastError</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a940589093105f154655880e2bbe0b27c" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>getPinnedContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a7880557a5683a318dcc7b0abfba4cb55" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>handleError</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a79b7b5493c5ab99a8194befe91ac8bfd" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>initialize</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a13276de390e393d874e8b15fae0d2494" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>initialized_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ab40e6e176f7ed849b4b32554096af4bb" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>lastError_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa0768a3183074d9915f96a0c295cc685" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>maxCacheSize_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a011889c6e80d052153c86ef686fb8c9f" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>mimeTypeIndex_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a597b7d428e817af885c7ab41dbc88c5a" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>mutex_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27ce91a9f23d81a5e52b9d3f824ec3f7" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>operator=</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a95c837c4057b1e8a87fba9903de31594" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>pinContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a06d87c1478270023ce614d95f9cb0adb" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>removeContentInfo</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a2f6f2e8c917b39b0d47ecfa85344b9be" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>removeFromCache</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1adb6298bf108144b78d458cfb7fb603ce" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>restoreFromBackup</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1acb7493ba2ad89c8b30e321fba420c697" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>searchContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a302ce5e7cdcab2f8f46499bcdd3212ff" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>setCacheSize</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a17cd4c3f87741542639011c3420ebf2d" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>shutdown</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa46652aa864e462157bead5d65c69786" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>storagePath_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a27c54e16992d1883f4c99e5b6c85120d" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>storeContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1aa153ed83aa89f3f6d4e71c57612fc755" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>storeDirectory</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a9878aa55dae5de88c0c66ffc87790548" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>storeFile</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3a52f6117a2d1ad6a18e98c2185b0f0e" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>tagIndex_</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a4bdbd3973daab092d8addd7bba4e2e47" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>unpinContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a8306495dd825136ef39732a034ce63e8" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>updateCache</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a8ca34bcc0797c8152154fab4125e5061" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>updateContent</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a3e43891a200723cf8feb9b94b92c3efd" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>updateContentInfo</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a5b1990e241fd2c65aa84aa29b937c363" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>updateMetadata</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1ae2f754aeaa6399d30ff95e1ede78d4a8" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>validateContentHash</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a6a2c3f3d02efe4c92f035745742a0a6a" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>validateStoragePath</name></member>
+      <member refid="d2/d35/classsatox_1_1ipfs_1_1ContentStorage_1a68fd2b5223fec0862e57117aec2278f1" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentStorage</scope><name>~ContentStorage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

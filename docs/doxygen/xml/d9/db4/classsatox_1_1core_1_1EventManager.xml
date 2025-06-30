@@ -1,0 +1,1402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d9/db4/classsatox_1_1core_1_1EventManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::EventManager</compoundname>
+    <includes refid="df/d3c/event__manager_8hpp" local="no">event_manager.hpp</includes>
+    <innerclass refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" prot="public">satox::core::EventManager::Event</innerclass>
+    <innerclass refid="dc/d34/structsatox_1_1core_1_1EventManager_1_1EventStats" prot="public">satox::core::EventManager::EventStats</innerclass>
+    <innerclass refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" prot="public">satox::core::EventManager::Subscription</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>EventType</name>
+        <qualifiedname>satox::core::EventManager::EventType</qualifiedname>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36afa177138f94a7ea01f549b1aa7893d03" prot="public">
+          <name>SYSTEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a25835188a2355e9530d3a10fcbe4c65b" prot="public">
+          <name>NETWORK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36ae4b25d8c911628d527b2c97039a9f593" prot="public">
+          <name>BLOCKCHAIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a5dfbfc491808ab7c150714aa58105474" prot="public">
+          <name>WALLET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36ae6bed345f53943469741d7295552fcd4" prot="public">
+          <name>TRANSACTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a5a3a9300fec880f9634e271a66bde419" prot="public">
+          <name>ASSET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36aa692c529f241845ae00b47284e09e76a" prot="public">
+          <name>NFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a6abe0c37d965e4a8bd11571378674642" prot="public">
+          <name>IPFS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36ab1379b4ce097a8afd5d99abab0875a8e" prot="public">
+          <name>DATABASE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a08e1be4b785493d9fc2ae52c5ba9ab2e" prot="public">
+          <name>CACHE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a73e99d350a4aa6f1a5af04ec29173f73" prot="public">
+          <name>CONFIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a219ce424cc367fba8a5a0210792d4dc0" prot="public">
+          <name>SECURITY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36a72baef04098f035e8a320b03ad197818" prot="public">
+          <name>CUSTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="46" column="5" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="46" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Priority</name>
+        <qualifiedname>satox::core::EventManager::Priority</qualifiedname>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420ba41bc94cbd8eebea13ce0491b2ac11b88" prot="public">
+          <name>LOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420ba1e23852820b9154316c7c06e2b7ba051" prot="public">
+          <name>NORMAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420bab89de3b4b81c4facfac906edf29aec8c" prot="public">
+          <name>HIGH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420ba99cd1c61610c76a57cb8d10d6df6b870" prot="public">
+          <name>CRITICAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="63" column="5" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;)&gt;</type>
+        <definition>using satox::core::EventManager::EventHandler =  std::function&lt;void(const Event&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>EventHandler</name>
+        <qualifiedname>satox::core::EventManager::EventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="83" column="5" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" prot="public" static="no">
+        <type>std::function&lt; bool(const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;)&gt;</type>
+        <definition>using satox::core::EventManager::EventFilter =  std::function&lt;bool(const Event&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>EventFilter</name>
+        <qualifiedname>satox::core::EventManager::EventFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="86" column="5" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" prot="public" static="no">
+        <type>size_t</type>
+        <definition>using satox::core::EventManager::SubscriptionToken =  size_t</definition>
+        <argsstring></argsstring>
+        <name>SubscriptionToken</name>
+        <qualifiedname>satox::core::EventManager::SubscriptionToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="89" column="5" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1abf926c02d7271fd54b5a0247d33aea76" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::EventManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="199" column="10" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a6b9e14749fb0ebfcd5acb21c61b4a23f" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::EventManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::EventManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="200" column="24" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a7728f0262af201767daf855ced7e80c3" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::core::EventManager::condition_</definition>
+        <argsstring></argsstring>
+        <name>condition_</name>
+        <qualifiedname>satox::core::EventManager::condition_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="201" column="29" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1ab0aae7a4608cd1a2e9d24e46a470cd6f" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &gt;</type>
+        <definition>std::queue&lt;Event&gt; satox::core::EventManager::eventQueue_</definition>
+        <argsstring></argsstring>
+        <name>eventQueue_</name>
+        <qualifiedname>satox::core::EventManager::eventQueue_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="202" column="16" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a4c8fb1f3b15fefd7b6f780aa51bd017f" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::core::EventManager::maxQueueSize_</definition>
+        <argsstring></argsstring>
+        <name>maxQueueSize_</name>
+        <qualifiedname>satox::core::EventManager::maxQueueSize_</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="203" column="12" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a47f23df2a06e31d7cf3eaa1ac2abc4f4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::thread &gt;</type>
+        <definition>std::vector&lt;std::thread&gt; satox::core::EventManager::workers_</definition>
+        <argsstring></argsstring>
+        <name>workers_</name>
+        <qualifiedname>satox::core::EventManager::workers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="204" column="17" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1aeefe76b61256a0ebf2ceeced6b1deb63" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::EventManager::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::core::EventManager::running_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="205" column="17" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1ac1f7453ce9789e645ded232119c3b37d" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref>, std::vector&lt; <ref refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" kindref="compound">Subscription</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;EventType, std::vector&lt;Subscription&gt; &gt; satox::core::EventManager::typeSubscriptions_</definition>
+        <argsstring></argsstring>
+        <name>typeSubscriptions_</name>
+        <qualifiedname>satox::core::EventManager::typeSubscriptions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="206" column="24" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a4971147967abbaa576d01f3d3cf29351" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; <ref refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" kindref="compound">Subscription</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;Subscription&gt; &gt; satox::core::EventManager::nameSubscriptions_</definition>
+        <argsstring></argsstring>
+        <name>nameSubscriptions_</name>
+        <qualifiedname>satox::core::EventManager::nameSubscriptions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="207" column="24" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a489b59ba4beb88a1c32f7203e1005bcf" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" kindref="compound">Subscription</ref> &gt;</type>
+        <definition>std::vector&lt;Subscription&gt; satox::core::EventManager::filterSubscriptions_</definition>
+        <argsstring></argsstring>
+        <name>filterSubscriptions_</name>
+        <qualifiedname>satox::core::EventManager::filterSubscriptions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="208" column="17" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1abe097097caf85772795b8f3c7b51faae" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref>, std::vector&lt; <ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;EventType, std::vector&lt;EventFilter&gt; &gt; satox::core::EventManager::typeFilters_</definition>
+        <argsstring></argsstring>
+        <name>typeFilters_</name>
+        <qualifiedname>satox::core::EventManager::typeFilters_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="209" column="24" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1ae7ef35c3c39e62b1a789ff8fdba85521" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; <ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;EventFilter&gt; &gt; satox::core::EventManager::nameFilters_</definition>
+        <argsstring></argsstring>
+        <name>nameFilters_</name>
+        <qualifiedname>satox::core::EventManager::nameFilters_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="210" column="24" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a18722461a7983ac1a17201381e763d82" prot="private" static="no" mutable="no">
+        <type><ref refid="dc/d34/structsatox_1_1core_1_1EventManager_1_1EventStats" kindref="compound">EventStats</ref></type>
+        <definition>EventStats satox::core::EventManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::EventManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="211" column="16" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1ac5bccf1bbf10fb695da6e2db3a47eae2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::statsEnabled_</definition>
+        <argsstring></argsstring>
+        <name>statsEnabled_</name>
+        <qualifiedname>satox::core::EventManager::statsEnabled_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="212" column="10" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a76320952a2026bfba912ba09c784ade8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::EventManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::EventManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="213" column="17" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db4/classsatox_1_1core_1_1EventManager_1a23d3ec9680e38987d056b74f301c0810" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" kindref="member">SubscriptionToken</ref> &gt;</type>
+        <definition>std::atomic&lt;SubscriptionToken&gt; satox::core::EventManager::nextToken_</definition>
+        <argsstring></argsstring>
+        <name>nextToken_</name>
+        <qualifiedname>satox::core::EventManager::nextToken_</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="214" column="17" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="214" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ae3ad14452c46f2aaa65cc18f2309d762" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager" kindref="compound">EventManager</ref> &amp;</type>
+        <definition>EventManager &amp; satox::core::EventManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::EventManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="112" column="25" bodyfile="src/core/src/event_manager.cpp" bodystart="37" bodyend="40"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1abc317f95fa5fdf2af2a774295a628fe8">EventManager</references>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1a22823ce23bcf55f1f6499a33678db555" compoundref="da/d8f/satox__manager_8cpp" startline="221" endline="223">satox::core::SatoxManager::getEventManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1abc317f95fa5fdf2af2a774295a628fe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::EventManager::EventManager</definition>
+        <argsstring>(const EventManager &amp;)=delete</argsstring>
+        <name>EventManager</name>
+        <qualifiedname>satox::core::EventManager::EventManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/db4/classsatox_1_1core_1_1EventManager" kindref="compound">EventManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="115" column="5"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1abc317f95fa5fdf2af2a774295a628fe8">EventManager</references>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1abc317f95fa5fdf2af2a774295a628fe8">EventManager</referencedby>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae3ad14452c46f2aaa65cc18f2309d762" compoundref="d0/d5d/event__manager_8cpp" startline="37" endline="40">getInstance</referencedby>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1ab0bc027867ac26ee54b6b18d435e22f0">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ab0bc027867ac26ee54b6b18d435e22f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager" kindref="compound">EventManager</ref> &amp;</type>
+        <definition>EventManager &amp; satox::core::EventManager::operator=</definition>
+        <argsstring>(const EventManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::EventManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/db4/classsatox_1_1core_1_1EventManager" kindref="compound">EventManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="116" column="18"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1abc317f95fa5fdf2af2a774295a628fe8">EventManager</references>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420ba1e23852820b9154316c7c06e2b7ba051" compoundref="df/d3c/event__manager_8hpp" startline="65">NORMAL</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a0ef916c7b65815631d962245b3ce4456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::initialize</definition>
+        <argsstring>(size_t maxQueueSize=1000, size_t numWorkers=4)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::EventManager::initialize</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>maxQueueSize</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>numWorkers</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="119" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="42" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a3425c586fe03b38714ba15426ea6640d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::EventManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="120" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="63" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a3e312d83321dd544e18be1534798ba29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::publishEvent</definition>
+        <argsstring>(const Event &amp;event)</argsstring>
+        <name>publishEvent</name>
+        <qualifiedname>satox::core::EventManager::publishEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="123" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="214" bodyend="242"/>
+        <references refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event_1a475fe2e6362b0c31a53d49d5055ebec8" compoundref="df/d3c/event__manager_8hpp" startline="73">satox::core::EventManager::Event::name</references>
+        <references refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event_1acc9850bf963cb0434d53a35c77ea71bd" compoundref="df/d3c/event__manager_8hpp" startline="74">satox::core::EventManager::Event::source</references>
+        <references refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event_1ac4438886f8ade0a3117585c6fa65f290" compoundref="df/d3c/event__manager_8hpp" startline="72">satox::core::EventManager::Event::type</references>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1a48ef383bfbde9daca1abda67923b49dc" compoundref="d0/d5d/event__manager_8cpp" startline="244" endline="255">publishEvent</referencedby>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1a8f0de1f2b65a56a3ef9f90c4d3760e9c" compoundref="d0/d5d/event__manager_8cpp" startline="257" endline="259">publishEventAsync</referencedby>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1af67a40b1972ace4eb51d40183b119648" compoundref="d0/d5d/event__manager_8cpp" startline="261" endline="264">publishEventAsync</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a48ef383bfbde9daca1abda67923b49dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::publishEvent</definition>
+        <argsstring>(EventType type, const std::string &amp;name, const nlohmann::json &amp;data=nlohmann::json::object(), Priority priority=Priority::NORMAL)</argsstring>
+        <name>publishEvent</name>
+        <qualifiedname>satox::core::EventManager::publishEvent</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+          <defval>nlohmann::json::object()</defval>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420b" kindref="member">Priority</ref></type>
+          <declname>priority</declname>
+          <defval><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420ba1e23852820b9154316c7c06e2b7ba051" kindref="member">Priority::NORMAL</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="124" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="244" bodyend="255"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1a3e312d83321dd544e18be1534798ba29" compoundref="d0/d5d/event__manager_8cpp" startline="214" endline="242">publishEvent</references>
+        <references refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event_1ac4438886f8ade0a3117585c6fa65f290" compoundref="df/d3c/event__manager_8hpp" startline="72">satox::core::EventManager::Event::type</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a8f0de1f2b65a56a3ef9f90c4d3760e9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::publishEventAsync</definition>
+        <argsstring>(const Event &amp;event)</argsstring>
+        <name>publishEventAsync</name>
+        <qualifiedname>satox::core::EventManager::publishEventAsync</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="127" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="257" bodyend="259"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1a3e312d83321dd544e18be1534798ba29" compoundref="d0/d5d/event__manager_8cpp" startline="214" endline="242">publishEvent</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1af67a40b1972ace4eb51d40183b119648" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::publishEventAsync</definition>
+        <argsstring>(EventType type, const std::string &amp;name, const nlohmann::json &amp;data=nlohmann::json::object(), Priority priority=Priority::NORMAL)</argsstring>
+        <name>publishEventAsync</name>
+        <qualifiedname>satox::core::EventManager::publishEventAsync</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+          <defval>nlohmann::json::object()</defval>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420b" kindref="member">Priority</ref></type>
+          <declname>priority</declname>
+          <defval><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420ba1e23852820b9154316c7c06e2b7ba051" kindref="member">Priority::NORMAL</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="128" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="261" bodyend="264"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1a3e312d83321dd544e18be1534798ba29" compoundref="d0/d5d/event__manager_8cpp" startline="214" endline="242">publishEvent</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a4e401072628211bda0baac046e53939b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" kindref="member">SubscriptionToken</ref></type>
+        <definition>EventManager::SubscriptionToken satox::core::EventManager::subscribe</definition>
+        <argsstring>(EventType type, EventHandler handler, bool async=false, std::chrono::milliseconds timeout=std::chrono::milliseconds(0))</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>satox::core::EventManager::subscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" kindref="member">EventHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>async</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+          <defval>std::chrono::milliseconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="133" column="23" bodyfile="src/core/src/event_manager.cpp" bodystart="89" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a9a36ec81fb50aa8a49bb914a2ed7edd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" kindref="member">SubscriptionToken</ref></type>
+        <definition>EventManager::SubscriptionToken satox::core::EventManager::subscribe</definition>
+        <argsstring>(EventType type, const std::string &amp;name, EventHandler handler, bool async=false, std::chrono::milliseconds timeout=std::chrono::milliseconds(0))</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>satox::core::EventManager::subscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" kindref="member">EventHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>async</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+          <defval>std::chrono::milliseconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="136" column="23" bodyfile="src/core/src/event_manager.cpp" bodystart="107" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a7e9ec824165e52570849f77cc0156d56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" kindref="member">SubscriptionToken</ref></type>
+        <definition>EventManager::SubscriptionToken satox::core::EventManager::subscribe</definition>
+        <argsstring>(EventFilter filter, EventHandler handler, bool async=false, std::chrono::milliseconds timeout=std::chrono::milliseconds(0))</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>satox::core::EventManager::subscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" kindref="member">EventHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>async</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+          <defval>std::chrono::milliseconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="139" column="23" bodyfile="src/core/src/event_manager.cpp" bodystart="125" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a5822ceafff5a61d101229ae0d05fd76a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::unsubscribe</definition>
+        <argsstring>(SubscriptionToken token)</argsstring>
+        <name>unsubscribe</name>
+        <qualifiedname>satox::core::EventManager::unsubscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" kindref="member">SubscriptionToken</ref></type>
+          <declname>token</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="144" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="142" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a2f1971e31dfea4d569e1cd74cba87807" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::unsubscribe</definition>
+        <argsstring>(EventType type, EventHandler handler)</argsstring>
+        <name>unsubscribe</name>
+        <qualifiedname>satox::core::EventManager::unsubscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" kindref="member">EventHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="147" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="183" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aba6acad9afca2f7b08948b7ade59d8b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::unsubscribe</definition>
+        <argsstring>(EventType type, const std::string &amp;name, EventHandler handler)</argsstring>
+        <name>unsubscribe</name>
+        <qualifiedname>satox::core::EventManager::unsubscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" kindref="member">EventHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="148" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="195" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aecbad94818964dd2fe3c3b2aee296b63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::unsubscribe</definition>
+        <argsstring>(EventFilter filter, EventHandler handler)</argsstring>
+        <name>unsubscribe</name>
+        <qualifiedname>satox::core::EventManager::unsubscribe</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" kindref="member">EventHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="149" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="206" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ac036df45166e5c1399e5f9af3c2f14d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::processEvent</definition>
+        <argsstring>(const Event &amp;event)</argsstring>
+        <name>processEvent</name>
+        <qualifiedname>satox::core::EventManager::processEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="152" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="266" bodyend="314"/>
+        <references refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event_1a475fe2e6362b0c31a53d49d5055ebec8" compoundref="df/d3c/event__manager_8hpp" startline="73">satox::core::EventManager::Event::name</references>
+        <references refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event_1ac4438886f8ade0a3117585c6fa65f290" compoundref="df/d3c/event__manager_8hpp" startline="72">satox::core::EventManager::Event::type</references>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1aa1e4b21c84e91a0b84e3c2f63fec984f" compoundref="d0/d5d/event__manager_8cpp" startline="316" endline="318">processEventAsync</referencedby>
+        <referencedby refid="d9/db4/classsatox_1_1core_1_1EventManager_1a7731b2845cf553b44de0e2df0930d829" compoundref="d0/d5d/event__manager_8cpp" startline="320" endline="345">processEvents</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aa1e4b21c84e91a0b84e3c2f63fec984f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::processEventAsync</definition>
+        <argsstring>(const Event &amp;event)</argsstring>
+        <name>processEventAsync</name>
+        <qualifiedname>satox::core::EventManager::processEventAsync</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="153" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="316" bodyend="318"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac036df45166e5c1399e5f9af3c2f14d3" compoundref="d0/d5d/event__manager_8cpp" startline="266" endline="314">processEvent</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a7731b2845cf553b44de0e2df0930d829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::processEvents</definition>
+        <argsstring>()</argsstring>
+        <name>processEvents</name>
+        <qualifiedname>satox::core::EventManager::processEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="154" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="320" bodyend="345"/>
+        <references refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac036df45166e5c1399e5f9af3c2f14d3" compoundref="d0/d5d/event__manager_8cpp" startline="266" endline="314">processEvent</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a48d629fbc39bfded5a7591f5fe1b74a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::waitForEvents</definition>
+        <argsstring>(std::chrono::milliseconds timeout=std::chrono::milliseconds(0))</argsstring>
+        <name>waitForEvents</name>
+        <qualifiedname>satox::core::EventManager::waitForEvents</qualifiedname>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+          <defval>std::chrono::milliseconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="155" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="351" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a94e0ccacf2011702a60245edaacdf2a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &gt;</type>
+        <definition>std::vector&lt; EventManager::Event &gt; satox::core::EventManager::getEvents</definition>
+        <argsstring>(EventType type, std::chrono::system_clock::time_point start, std::chrono::system_clock::time_point end)</argsstring>
+        <name>getEvents</name>
+        <qualifiedname>satox::core::EventManager::getEvents</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="158" column="17" bodyfile="src/core/src/event_manager.cpp" bodystart="360" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a562dbfa20e092411c66d7c8ff1cf6a43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &gt;</type>
+        <definition>std::vector&lt; EventManager::Event &gt; satox::core::EventManager::getEvents</definition>
+        <argsstring>(const std::string &amp;name, std::chrono::system_clock::time_point start, std::chrono::system_clock::time_point end)</argsstring>
+        <name>getEvents</name>
+        <qualifiedname>satox::core::EventManager::getEvents</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="161" column="17" bodyfile="src/core/src/event_manager.cpp" bodystart="368" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aed66f46ac1e83f9aa2df1a1d4b6b995e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &gt;</type>
+        <definition>std::vector&lt; EventManager::Event &gt; satox::core::EventManager::getEvents</definition>
+        <argsstring>(EventFilter filter, std::chrono::system_clock::time_point start, std::chrono::system_clock::time_point end)</argsstring>
+        <name>getEvents</name>
+        <qualifiedname>satox::core::EventManager::getEvents</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="164" column="17" bodyfile="src/core/src/event_manager.cpp" bodystart="375" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a4dbdd6c5f2270ac1ec668a801019b39c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d34/structsatox_1_1core_1_1EventManager_1_1EventStats" kindref="compound">EventStats</ref></type>
+        <definition>EventManager::EventStats satox::core::EventManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::EventManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="169" column="16" bodyfile="src/core/src/event_manager.cpp" bodystart="382" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a832a07b95a07a75fe89014269317ceb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::EventManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="170" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="387" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aab685d68b95fcdb725b786d934813a94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::core::EventManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="171" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="392" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aeea413d3a636b59fc4f931a708168418" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::addFilter</definition>
+        <argsstring>(EventType type, EventFilter filter)</argsstring>
+        <name>addFilter</name>
+        <qualifiedname>satox::core::EventManager::addFilter</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="174" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="397" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a0177ef7dd0e9ba7c483583732fd91c06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::addFilter</definition>
+        <argsstring>(const std::string &amp;name, EventFilter filter)</argsstring>
+        <name>addFilter</name>
+        <qualifiedname>satox::core::EventManager::addFilter</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="175" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="403" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a24c27547a7c7a73e89d943891704a9c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::removeFilter</definition>
+        <argsstring>(EventType type, EventFilter filter)</argsstring>
+        <name>removeFilter</name>
+        <qualifiedname>satox::core::EventManager::removeFilter</qualifiedname>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" kindref="member">EventType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="176" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="409" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a2c69e73d06988a6ed50ca49352b1b387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::removeFilter</definition>
+        <argsstring>(const std::string &amp;name, EventFilter filter)</argsstring>
+        <name>removeFilter</name>
+        <qualifiedname>satox::core::EventManager::removeFilter</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" kindref="member">EventFilter</ref></type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="177" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="417" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ac933f049b80fd15269c996752618e16f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::EventManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::EventManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="180" column="17" bodyfile="src/core/src/event_manager.cpp" bodystart="425" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a54342ebfbdc2ea24d3c07e0fcff8b518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::EventManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="181" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="430" bodyend="433"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a956709b29f99c9f6bd5e5ec42d5e841b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::EventManager::EventManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>EventManager</name>
+        <qualifiedname>satox::core::EventManager::EventManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="184" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ac27a3ac4337f19e894592231fcd9e97f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::EventManager::~EventManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~EventManager</name>
+        <qualifiedname>satox::core::EventManager::~EventManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="185" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a6a6a77fe6a6a84a2d0418bf74e5713e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::workerThread</definition>
+        <argsstring>()</argsstring>
+        <name>workerThread</name>
+        <qualifiedname>satox::core::EventManager::workerThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="188" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="347" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a69be8e5a1575c93dbae3e12f2b9a5bce" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::validateEvent</definition>
+        <argsstring>(const Event &amp;event) const</argsstring>
+        <name>validateEvent</name>
+        <qualifiedname>satox::core::EventManager::validateEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="189" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="435" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a5e13ab33e186c306ea796163b4454771" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::updateStats</definition>
+        <argsstring>(const Event &amp;event, std::chrono::milliseconds processingTime)</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::core::EventManager::updateStats</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>processingTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="190" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="442" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a10447d49396ab3b06f118a075cd4fa6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::handleEvent</definition>
+        <argsstring>(const Event &amp;event, const Subscription &amp;subscription)</argsstring>
+        <name>handleEvent</name>
+        <qualifiedname>satox::core::EventManager::handleEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" kindref="compound">Subscription</ref> &amp;</type>
+          <declname>subscription</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="191" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="460" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ab26fed720893a1e66c560753d85e51cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::handleEventAsync</definition>
+        <argsstring>(const Event &amp;event, const Subscription &amp;subscription)</argsstring>
+        <name>handleEventAsync</name>
+        <qualifiedname>satox::core::EventManager::handleEventAsync</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" kindref="compound">Subscription</ref> &amp;</type>
+          <declname>subscription</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="192" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="476" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1ab56c97c7319c5c22d3325296095e236f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::EventManager::matchEvent</definition>
+        <argsstring>(const Event &amp;event, const Subscription &amp;subscription) const</argsstring>
+        <name>matchEvent</name>
+        <qualifiedname>satox::core::EventManager::matchEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="d2/da2/structsatox_1_1core_1_1EventManager_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d0d/structsatox_1_1core_1_1EventManager_1_1Subscription" kindref="compound">Subscription</ref> &amp;</type>
+          <declname>subscription</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="193" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="482" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a05c709e3ac4d0a47593632918502571d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::cleanupSubscriptions</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupSubscriptions</name>
+        <qualifiedname>satox::core::EventManager::cleanupSubscriptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="194" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="495" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1a3ea21c3d7e39738345637e86ee7c0046" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::EventManager::cleanupFilters</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupFilters</name>
+        <qualifiedname>satox::core::EventManager::cleanupFilters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="195" column="10" bodyfile="src/core/src/event_manager.cpp" bodystart="500" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/db4/classsatox_1_1core_1_1EventManager_1aa0b51f5c29644bdf07d9d8a2adc80798" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" kindref="member">SubscriptionToken</ref></type>
+        <definition>EventManager::SubscriptionToken satox::core::EventManager::generateToken</definition>
+        <argsstring>()</argsstring>
+        <name>generateToken</name>
+        <qualifiedname>satox::core::EventManager::generateToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/event_manager.hpp" line="196" column="23" bodyfile="src/core/src/event_manager.cpp" bodystart="85" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/event_manager.hpp" line="43" column="1" bodyfile="src/core/include/satox/core/event_manager.hpp" bodystart="43" bodyend="215"/>
+    <listofallmembers>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aeea413d3a636b59fc4f931a708168418" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>addFilter</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a0177ef7dd0e9ba7c483583732fd91c06" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>addFilter</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a3ea21c3d7e39738345637e86ee7c0046" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>cleanupFilters</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a05c709e3ac4d0a47593632918502571d" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>cleanupSubscriptions</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a54342ebfbdc2ea24d3c07e0fcff8b518" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>clearLastError</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a7728f0262af201767daf855ced7e80c3" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>condition_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aab685d68b95fcdb725b786d934813a94" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>enableStats</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae30d46bc4e7b3e1ed8c18b192fc13a02" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>EventFilter</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae15014e9e678c00c51cb161def1560cb" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>EventHandler</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1abc317f95fa5fdf2af2a774295a628fe8" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>EventManager</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a956709b29f99c9f6bd5e5ec42d5e841b" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>EventManager</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ab0aae7a4608cd1a2e9d24e46a470cd6f" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>eventQueue_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1af82bd1614e01d42b0bb9a1a96f45dd36" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>EventType</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a489b59ba4beb88a1c32f7203e1005bcf" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>filterSubscriptions_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aa0b51f5c29644bdf07d9d8a2adc80798" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>generateToken</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a94e0ccacf2011702a60245edaacdf2a0" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>getEvents</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a562dbfa20e092411c66d7c8ff1cf6a43" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>getEvents</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aed66f46ac1e83f9aa2df1a1d4b6b995e" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>getEvents</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae3ad14452c46f2aaa65cc18f2309d762" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>getInstance</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac933f049b80fd15269c996752618e16f" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>getLastError</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a4dbdd6c5f2270ac1ec668a801019b39c" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>getStats</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a10447d49396ab3b06f118a075cd4fa6f" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>handleEvent</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ab26fed720893a1e66c560753d85e51cd" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>handleEventAsync</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a0ef916c7b65815631d962245b3ce4456" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>initialize</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1abf926c02d7271fd54b5a0247d33aea76" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>initialized_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a76320952a2026bfba912ba09c784ade8" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>lastError_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ab56c97c7319c5c22d3325296095e236f" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>matchEvent</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a4c8fb1f3b15fefd7b6f780aa51bd017f" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>maxQueueSize_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a6b9e14749fb0ebfcd5acb21c61b4a23f" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>mutex_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ae7ef35c3c39e62b1a789ff8fdba85521" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>nameFilters_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a4971147967abbaa576d01f3d3cf29351" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>nameSubscriptions_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a23d3ec9680e38987d056b74f301c0810" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>nextToken_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ab0bc027867ac26ee54b6b18d435e22f0" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>operator=</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a52d1c1d55a7f4ecafef5bc82503d420b" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>Priority</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac036df45166e5c1399e5f9af3c2f14d3" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>processEvent</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aa1e4b21c84e91a0b84e3c2f63fec984f" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>processEventAsync</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a7731b2845cf553b44de0e2df0930d829" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>processEvents</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a3e312d83321dd544e18be1534798ba29" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>publishEvent</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a48ef383bfbde9daca1abda67923b49dc" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>publishEvent</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a8f0de1f2b65a56a3ef9f90c4d3760e9c" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>publishEventAsync</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1af67a40b1972ace4eb51d40183b119648" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>publishEventAsync</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a24c27547a7c7a73e89d943891704a9c4" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>removeFilter</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a2c69e73d06988a6ed50ca49352b1b387" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>removeFilter</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a832a07b95a07a75fe89014269317ceb3" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>resetStats</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aeefe76b61256a0ebf2ceeced6b1deb63" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>running_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a3425c586fe03b38714ba15426ea6640d" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>shutdown</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a18722461a7983ac1a17201381e763d82" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>stats_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac5bccf1bbf10fb695da6e2db3a47eae2" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>statsEnabled_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a4e401072628211bda0baac046e53939b" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>subscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a9a36ec81fb50aa8a49bb914a2ed7edd3" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>subscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a7e9ec824165e52570849f77cc0156d56" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>subscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a587e320ac08536202944ea2675518f17" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>SubscriptionToken</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1abe097097caf85772795b8f3c7b51faae" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>typeFilters_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac1f7453ce9789e645ded232119c3b37d" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>typeSubscriptions_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a5822ceafff5a61d101229ae0d05fd76a" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>unsubscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a2f1971e31dfea4d569e1cd74cba87807" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>unsubscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aba6acad9afca2f7b08948b7ade59d8b8" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>unsubscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1aecbad94818964dd2fe3c3b2aee296b63" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>unsubscribe</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a5e13ab33e186c306ea796163b4454771" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>updateStats</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a69be8e5a1575c93dbae3e12f2b9a5bce" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>validateEvent</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a48d629fbc39bfded5a7591f5fe1b74a7" prot="public" virt="non-virtual"><scope>satox::core::EventManager</scope><name>waitForEvents</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a47f23df2a06e31d7cf3eaa1ac2abc4f4" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>workers_</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1a6a6a77fe6a6a84a2d0418bf74e5713e6" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>workerThread</name></member>
+      <member refid="d9/db4/classsatox_1_1core_1_1EventManager_1ac27a3ac4337f19e894592231fcd9e97f" prot="private" virt="non-virtual"><scope>satox::core::EventManager</scope><name>~EventManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

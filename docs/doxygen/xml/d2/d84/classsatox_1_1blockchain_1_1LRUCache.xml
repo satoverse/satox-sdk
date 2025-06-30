@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/d84/classsatox_1_1blockchain_1_1LRUCache" kind="class" language="C++" prot="public">
+    <compoundname>satox::blockchain::LRUCache</compoundname>
+    <includes refid="dc/d77/core_2include_2satox_2blockchain_2blockchain__manager_8hpp" local="no">blockchain_manager.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a0662245c86c6f3b6a9c23454ae07f0dc" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::blockchain::LRUCache&lt; T &gt;::capacity_</definition>
+        <argsstring></argsstring>
+        <name>capacity_</name>
+        <qualifiedname>satox::blockchain::LRUCache::capacity_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="198" column="12" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a51433c4afa41eed0c0470a21f320f072" prot="private" static="no" mutable="no">
+        <type>std::list&lt; std::string &gt;</type>
+        <definition>std::list&lt;std::string&gt; satox::blockchain::LRUCache&lt; T &gt;::list_</definition>
+        <argsstring></argsstring>
+        <name>list_</name>
+        <qualifiedname>satox::blockchain::LRUCache::list_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="199" column="15" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1acb51848a8053cfbf98ff80a93cab06ac" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::pair&lt; T, std::list&lt; std::string &gt;::iterator &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::pair&lt;T, std::list&lt;std::string&gt;::iterator&gt; &gt; satox::blockchain::LRUCache&lt; T &gt;::cache_</definition>
+        <argsstring></argsstring>
+        <name>cache_</name>
+        <qualifiedname>satox::blockchain::LRUCache::cache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="200" column="25" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1ac28345a2925020d5d9947cf40e9ca001" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::blockchain::LRUCache&lt; T &gt;::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::blockchain::LRUCache::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="201" column="24" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a671bbbecaf1011ae0ec518c789b4e55e" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::LRUCache&lt; T &gt;::LRUCache</definition>
+        <argsstring>(size_t capacity)</argsstring>
+        <name>LRUCache</name>
+        <qualifiedname>satox::blockchain::LRUCache::LRUCache</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="157" column="14" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a170c01139fd7942d3c3184e78ef26d93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::LRUCache&lt; T &gt;::put</definition>
+        <argsstring>(const std::string &amp;key, const T &amp;value)</argsstring>
+        <name>put</name>
+        <qualifiedname>satox::blockchain::LRUCache::put</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="159" column="10" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="159" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a4d5a3345ecfeaa0ea5c315e815c5147b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; T &gt;</type>
+        <definition>std::optional&lt; T &gt; satox::blockchain::LRUCache&lt; T &gt;::get</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>get</name>
+        <qualifiedname>satox::blockchain::LRUCache::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="172" column="19" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="172" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1aa855e793665a2a6968dc0897be72e70a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; T &gt;</type>
+        <definition>std::optional&lt; T &gt; satox::blockchain::LRUCache&lt; T &gt;::get</definition>
+        <argsstring>(const std::string &amp;key) const</argsstring>
+        <name>get</name>
+        <qualifiedname>satox::blockchain::LRUCache::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="182" column="19" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="182" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1ada0d8047ff0698e29c911fc7f4751029" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::LRUCache&lt; T &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>satox::blockchain::LRUCache::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="191" column="10" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="191" bodyend="195"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::blockchain::LRUCache&lt; T &gt;</label>
+        <link refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache"/>
+      </node>
+      <node id="2">
+        <label>satox::blockchain::LRUCache&lt; satox::blockchain::BlockInfo &gt;</label>
+        <link refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; satox::blockchain::BlockInfo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::blockchain::LRUCache&lt; satox::blockchain::TransactionInfo &gt;</label>
+        <link refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; satox::blockchain::TransactionInfo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::blockchain::LRUCache&lt; uint64_t &gt;</label>
+        <link refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; uint64_t &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/core/include/satox/blockchain/blockchain_manager.hpp" line="155" column="1" bodyfile="src/core/include/satox/blockchain/blockchain_manager.hpp" bodystart="155" bodyend="202"/>
+    <listofallmembers>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1acb51848a8053cfbf98ff80a93cab06ac" prot="private" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>cache_</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a0662245c86c6f3b6a9c23454ae07f0dc" prot="private" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>capacity_</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1ada0d8047ff0698e29c911fc7f4751029" prot="public" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>clear</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a4d5a3345ecfeaa0ea5c315e815c5147b" prot="public" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>get</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1aa855e793665a2a6968dc0897be72e70a" prot="public" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>get</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a51433c4afa41eed0c0470a21f320f072" prot="private" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>list_</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a671bbbecaf1011ae0ec518c789b4e55e" prot="public" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>LRUCache</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1ac28345a2925020d5d9947cf40e9ca001" prot="private" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>mutex_</name></member>
+      <member refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache_1a170c01139fd7942d3c3184e78ef26d93" prot="public" virt="non-virtual"><scope>satox::blockchain::LRUCache</scope><name>put</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

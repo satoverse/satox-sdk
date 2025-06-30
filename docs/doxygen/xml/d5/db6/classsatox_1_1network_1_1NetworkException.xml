@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/db6/classsatox_1_1network_1_1NetworkException" kind="class" language="C++" prot="public">
+    <compoundname>satox::network::NetworkException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException" prot="public" virt="non-virtual">satox::network::NetworkInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException" prot="public" virt="non-virtual">satox::network::NetworkOperationException</derivedcompoundref>
+    <includes refid="d1/d15/network_2include_2satox_2network_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/db6/classsatox_1_1network_1_1NetworkException_1a75cef0d3ed2ef4c6b5b9c38fbabd5f1e" prot="private" static="no" mutable="no">
+        <type><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref></type>
+        <definition>NetworkErrorCode satox::network::NetworkException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::network::NetworkException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/error.hpp" line="70" column="22" bodyfile="src/network/include/satox/network/error.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/db6/classsatox_1_1network_1_1NetworkException_1ae7df35709dd85a69b48c09cd3f1652ea" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::network::NetworkException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/error.hpp" line="71" column="17" bodyfile="src/network/include/satox/network/error.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::NetworkException::NetworkException</definition>
+        <argsstring>(NetworkErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>NetworkException</name>
+        <qualifiedname>satox::network::NetworkException::NetworkException</qualifiedname>
+        <param>
+          <type><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/error.hpp" line="54" column="5" bodyfile="src/network/include/satox/network/error.hpp" bodystart="54" bodyend="55"/>
+        <references refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="61" endline="63">code</references>
+        <references refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="65" endline="67">message</references>
+        <referencedby refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException_1a5266b75f1cf7c1a6edf4024b3dacf572" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="77" endline="78">satox::network::NetworkInitializationException::NetworkInitializationException</referencedby>
+        <referencedby refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException_1a7318977bf6dabdc20aaceed7d28cd2b3" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="83" endline="84">satox::network::NetworkOperationException::NetworkOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/db6/classsatox_1_1network_1_1NetworkException_1a40ea8df522df1db371fcdcaea28fc363" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::network::NetworkException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::network::NetworkException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/error.hpp" line="57" column="16" bodyfile="src/network/include/satox/network/error.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/d65/namespacesatox_1_1network_1ab8ae92094cdbeb5d1dc946ae4085b9f2" kindref="member">NetworkErrorCode</ref></type>
+        <definition>NetworkErrorCode satox::network::NetworkException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::network::NetworkException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/error.hpp" line="61" column="22" bodyfile="src/network/include/satox/network/error.hpp" bodystart="61" bodyend="63"/>
+        <referencedby refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="54" endline="55">NetworkException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::network::NetworkException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::network::NetworkException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/error.hpp" line="65" column="23" bodyfile="src/network/include/satox/network/error.hpp" bodystart="65" bodyend="67"/>
+        <referencedby refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="54" endline="55">NetworkException</referencedby>
+        <referencedby refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException_1a5266b75f1cf7c1a6edf4024b3dacf572" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="77" endline="78">satox::network::NetworkInitializationException::NetworkInitializationException</referencedby>
+        <referencedby refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException_1a7318977bf6dabdc20aaceed7d28cd2b3" compoundref="d1/d15/network_2include_2satox_2network_2error_8hpp" startline="83" endline="84">satox::network::NetworkOperationException::NetworkOperationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::network::NetworkException</label>
+        <link refid="d5/db6/classsatox_1_1network_1_1NetworkException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::network::NetworkInitializationException</label>
+        <link refid="d9/dfa/classsatox_1_1network_1_1NetworkInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::network::NetworkOperationException</label>
+        <link refid="d7/d97/classsatox_1_1network_1_1NetworkOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::network::NetworkException</label>
+        <link refid="d5/db6/classsatox_1_1network_1_1NetworkException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/network/include/satox/network/error.hpp" line="52" column="1" bodyfile="src/network/include/satox/network/error.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a49114341a365bf79ea92584218dc72f3" prot="public" virt="non-virtual"><scope>satox::network::NetworkException</scope><name>code</name></member>
+      <member refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a75cef0d3ed2ef4c6b5b9c38fbabd5f1e" prot="private" virt="non-virtual"><scope>satox::network::NetworkException</scope><name>code_</name></member>
+      <member refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a867dad6f054bd6b59c823770db4ddaa0" prot="public" virt="non-virtual"><scope>satox::network::NetworkException</scope><name>message</name></member>
+      <member refid="d5/db6/classsatox_1_1network_1_1NetworkException_1ae7df35709dd85a69b48c09cd3f1652ea" prot="private" virt="non-virtual"><scope>satox::network::NetworkException</scope><name>message_</name></member>
+      <member refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a25b11c15f1f151967b8d06ff2e326bee" prot="public" virt="non-virtual"><scope>satox::network::NetworkException</scope><name>NetworkException</name></member>
+      <member refid="d5/db6/classsatox_1_1network_1_1NetworkException_1a40ea8df522df1db371fcdcaea28fc363" prot="public" virt="non-virtual"><scope>satox::network::NetworkException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

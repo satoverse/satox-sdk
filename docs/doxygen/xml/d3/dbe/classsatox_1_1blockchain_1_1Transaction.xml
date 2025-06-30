@@ -1,0 +1,658 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kind="class" language="C++" prot="public">
+    <compoundname>satox::blockchain::Transaction</compoundname>
+    <includes refid="d5/d61/transaction_8hpp" local="no">transaction.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a68ff4a48638b86d75aafb1dcfeaa1a07" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Transaction::hash_</definition>
+        <argsstring></argsstring>
+        <name>hash_</name>
+        <qualifiedname>satox::blockchain::Transaction::hash_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="75" column="17" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a04e2ac457dba6383ddc5f6b82a9736d2" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Transaction::from_</definition>
+        <argsstring></argsstring>
+        <name>from_</name>
+        <qualifiedname>satox::blockchain::Transaction::from_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="76" column="17" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a01fc87fc12cb4cb813a377cce2f08fe1" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Transaction::to_</definition>
+        <argsstring></argsstring>
+        <name>to_</name>
+        <qualifiedname>satox::blockchain::Transaction::to_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="77" column="17" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a0288903f787111eaac215086fd3bf3db" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double satox::blockchain::Transaction::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>satox::blockchain::Transaction::value_</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="78" column="12" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ab442584a18208134a8d6b39d4c77e922" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; satox::blockchain::Transaction::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <qualifiedname>satox::blockchain::Transaction::data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="79" column="17" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aee3625297dc128d16d4683ed909a7b18" prot="private" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::blockchain::Transaction::timestamp_</definition>
+        <argsstring></argsstring>
+        <name>timestamp_</name>
+        <qualifiedname>satox::blockchain::Transaction::timestamp_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="80" column="43" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aecec05259616cba8bb7229ea698bb613" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::blockchain::Transaction::status_</definition>
+        <argsstring></argsstring>
+        <name>status_</name>
+        <qualifiedname>satox::blockchain::Transaction::status_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="81" column="17" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1acba96c952ab20b25da7f063fe2d09da4" prot="private" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::blockchain::Transaction::metadata_</definition>
+        <argsstring></argsstring>
+        <name>metadata_</name>
+        <qualifiedname>satox::blockchain::Transaction::metadata_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="82" column="20" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a8a2d33f04906ef56bcd6547bf5a75f16" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Transaction::nonce_</definition>
+        <argsstring></argsstring>
+        <name>nonce_</name>
+        <qualifiedname>satox::blockchain::Transaction::nonce_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="83" column="14" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ade266c6faf5798cd4d9565ce2907f714" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double satox::blockchain::Transaction::gas_price_</definition>
+        <argsstring></argsstring>
+        <name>gas_price_</name>
+        <qualifiedname>satox::blockchain::Transaction::gas_price_</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="84" column="12" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a3576bd0d452f2fa1c44deb895fbc98a3" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Transaction::gas_limit_</definition>
+        <argsstring></argsstring>
+        <name>gas_limit_</name>
+        <qualifiedname>satox::blockchain::Transaction::gas_limit_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="85" column="14" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="85" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1abc01088a7d67f8b1f464cdd9874f4718" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::Transaction::Transaction</definition>
+        <argsstring>()=default</argsstring>
+        <name>Transaction</name>
+        <qualifiedname>satox::blockchain::Transaction::Transaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="39" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac7b904e759c24e677c5873ef9d60ec8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::blockchain::Transaction::~Transaction</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Transaction</name>
+        <qualifiedname>satox::blockchain::Transaction::~Transaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="40" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac9f8b3a4e866d8fe306d9f2820ac6a43" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Transaction::getHash</definition>
+        <argsstring>() const</argsstring>
+        <name>getHash</name>
+        <qualifiedname>satox::blockchain::Transaction::getHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="43" column="23" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a9e1f246d1752ffc1f13dfd634dc58098" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Transaction::getFrom</definition>
+        <argsstring>() const</argsstring>
+        <name>getFrom</name>
+        <qualifiedname>satox::blockchain::Transaction::getFrom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="44" column="23" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a322f2e66347fbeff43f5829d4b38be27" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Transaction::getTo</definition>
+        <argsstring>() const</argsstring>
+        <name>getTo</name>
+        <qualifiedname>satox::blockchain::Transaction::getTo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="45" column="23" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a07fba23c0358b257abe18dfb320cc1d9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::blockchain::Transaction::getValue</definition>
+        <argsstring>() const</argsstring>
+        <name>getValue</name>
+        <qualifiedname>satox::blockchain::Transaction::getValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="46" column="12" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa8a14837fc742d0be6cb06c7b8c922a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+        <definition>const std::vector&lt; uint8_t &gt; &amp; satox::blockchain::Transaction::getData</definition>
+        <argsstring>() const</argsstring>
+        <name>getData</name>
+        <qualifiedname>satox::blockchain::Transaction::getData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="47" column="23" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a91de2e3979fe2e83d1d39ecf580ed9b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::blockchain::Transaction::getTimestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>getTimestamp</name>
+        <qualifiedname>satox::blockchain::Transaction::getTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="48" column="43" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af1bbd35b9ca6b45eac872941add1f140" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::blockchain::Transaction::getStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatus</name>
+        <qualifiedname>satox::blockchain::Transaction::getStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="49" column="23" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa03b816b1634258bad55800d4a7c60cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const nlohmann::json &amp;</type>
+        <definition>const nlohmann::json &amp; satox::blockchain::Transaction::getMetadata</definition>
+        <argsstring>() const</argsstring>
+        <name>getMetadata</name>
+        <qualifiedname>satox::blockchain::Transaction::getMetadata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="50" column="26" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a08eb2042e7f9832034e447cbc29a109f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Transaction::getNonce</definition>
+        <argsstring>() const</argsstring>
+        <name>getNonce</name>
+        <qualifiedname>satox::blockchain::Transaction::getNonce</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="51" column="14" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa54d85032b893d54ee4c7bc5e7f0a5f2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::blockchain::Transaction::getGasPrice</definition>
+        <argsstring>() const</argsstring>
+        <name>getGasPrice</name>
+        <qualifiedname>satox::blockchain::Transaction::getGasPrice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="52" column="12" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2f8321cd0a27018ee12132ed5bb41eb9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::blockchain::Transaction::getGasLimit</definition>
+        <argsstring>() const</argsstring>
+        <name>getGasLimit</name>
+        <qualifiedname>satox::blockchain::Transaction::getGasLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="53" column="14" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a1d4786a5de1e3dedd5fb77f14a4aa4ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::blockchain::Transaction::getRaw</definition>
+        <argsstring>() const</argsstring>
+        <name>getRaw</name>
+        <qualifiedname>satox::blockchain::Transaction::getRaw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="54" column="17" bodyfile="src/blockchain/src/transaction.cpp" bodystart="97" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a34d712f5791686e10454950d93a050fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setHash</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>setHash</name>
+        <qualifiedname>satox::blockchain::Transaction::setHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="57" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af001945b459576f386764e5b1437419d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setFrom</definition>
+        <argsstring>(const std::string &amp;from)</argsstring>
+        <name>setFrom</name>
+        <qualifiedname>satox::blockchain::Transaction::setFrom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="58" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ab159a5d0fdb1e76b302aa0a5ff74979d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setTo</definition>
+        <argsstring>(const std::string &amp;to)</argsstring>
+        <name>setTo</name>
+        <qualifiedname>satox::blockchain::Transaction::setTo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="59" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ade612c6f958dfc50e00eede85cf6cc79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setValue</definition>
+        <argsstring>(double value)</argsstring>
+        <name>setValue</name>
+        <qualifiedname>satox::blockchain::Transaction::setValue</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="60" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a0708aebba442597e948c068070b2e3a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setData</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>setData</name>
+        <qualifiedname>satox::blockchain::Transaction::setData</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="61" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a15f52847f9ab1281e2ff82509c73a377" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setTimestamp</definition>
+        <argsstring>(std::chrono::system_clock::time_point timestamp)</argsstring>
+        <name>setTimestamp</name>
+        <qualifiedname>satox::blockchain::Transaction::setTimestamp</qualifiedname>
+        <param>
+          <type>std::chrono::system_clock::time_point</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="62" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a760906f77a3130ba35b290a66195dc05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setStatus</definition>
+        <argsstring>(const std::string &amp;status)</argsstring>
+        <name>setStatus</name>
+        <qualifiedname>satox::blockchain::Transaction::setStatus</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="63" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aaba9e9bad6d4aa055ffeff51ef3fcc70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setMetadata</definition>
+        <argsstring>(const nlohmann::json &amp;metadata)</argsstring>
+        <name>setMetadata</name>
+        <qualifiedname>satox::blockchain::Transaction::setMetadata</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="64" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aab6612b92d4bd461c9554798a37ea836" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setNonce</definition>
+        <argsstring>(uint64_t nonce)</argsstring>
+        <name>setNonce</name>
+        <qualifiedname>satox::blockchain::Transaction::setNonce</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>nonce</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="65" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a350d051323bac3f6d7928cb7b657e7e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setGasPrice</definition>
+        <argsstring>(double gas_price)</argsstring>
+        <name>setGasPrice</name>
+        <qualifiedname>satox::blockchain::Transaction::setGasPrice</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>gas_price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="66" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aff71b640b2a68d0efccffed218ee9f8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::blockchain::Transaction::setGasLimit</definition>
+        <argsstring>(uint64_t gas_limit)</argsstring>
+        <name>setGasLimit</name>
+        <qualifiedname>satox::blockchain::Transaction::setGasLimit</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>gas_limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="67" column="10" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2cc233599e78650019b4e20515b9b06e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::blockchain::Transaction::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>satox::blockchain::Transaction::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="70" column="10" bodyfile="src/blockchain/src/transaction.cpp" bodystart="34" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a514576e582906405fee23526ac9df49e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::blockchain::Transaction::toJson</definition>
+        <argsstring>() const</argsstring>
+        <name>toJson</name>
+        <qualifiedname>satox::blockchain::Transaction::toJson</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="71" column="20" bodyfile="src/blockchain/src/transaction.cpp" bodystart="53" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a3eae15625b7c238c2eed809a8185df73" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kindref="compound">Transaction</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Transaction &gt; satox::blockchain::Transaction::fromJson</definition>
+        <argsstring>(const nlohmann::json &amp;json)</argsstring>
+        <name>fromJson</name>
+        <qualifiedname>satox::blockchain::Transaction::fromJson</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="72" column="28" bodyfile="src/blockchain/src/transaction.cpp" bodystart="73" bodyend="95"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ad2d583164682bf904ce8be6d9172d5b1" compoundref="d9/d4d/block_8cpp" startline="253" endline="280">satox::blockchain::Block::fromJson</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/blockchain/include/satox/blockchain/transaction.hpp" line="37" column="1" bodyfile="src/blockchain/include/satox/blockchain/transaction.hpp" bodystart="37" bodyend="86"/>
+    <listofallmembers>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ab442584a18208134a8d6b39d4c77e922" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>data_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a04e2ac457dba6383ddc5f6b82a9736d2" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>from_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a3eae15625b7c238c2eed809a8185df73" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>fromJson</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a3576bd0d452f2fa1c44deb895fbc98a3" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>gas_limit_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ade266c6faf5798cd4d9565ce2907f714" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>gas_price_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa8a14837fc742d0be6cb06c7b8c922a8" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getData</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a9e1f246d1752ffc1f13dfd634dc58098" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getFrom</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2f8321cd0a27018ee12132ed5bb41eb9" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getGasLimit</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa54d85032b893d54ee4c7bc5e7f0a5f2" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getGasPrice</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac9f8b3a4e866d8fe306d9f2820ac6a43" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getHash</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa03b816b1634258bad55800d4a7c60cd" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getMetadata</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a08eb2042e7f9832034e447cbc29a109f" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getNonce</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a1d4786a5de1e3dedd5fb77f14a4aa4ae" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getRaw</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af1bbd35b9ca6b45eac872941add1f140" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getStatus</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a91de2e3979fe2e83d1d39ecf580ed9b4" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getTimestamp</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a322f2e66347fbeff43f5829d4b38be27" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getTo</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a07fba23c0358b257abe18dfb320cc1d9" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>getValue</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a68ff4a48638b86d75aafb1dcfeaa1a07" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>hash_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2cc233599e78650019b4e20515b9b06e" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>isValid</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1acba96c952ab20b25da7f063fe2d09da4" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>metadata_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a8a2d33f04906ef56bcd6547bf5a75f16" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>nonce_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a0708aebba442597e948c068070b2e3a9" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setData</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af001945b459576f386764e5b1437419d" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setFrom</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aff71b640b2a68d0efccffed218ee9f8d" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setGasLimit</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a350d051323bac3f6d7928cb7b657e7e3" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setGasPrice</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a34d712f5791686e10454950d93a050fa" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setHash</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aaba9e9bad6d4aa055ffeff51ef3fcc70" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setMetadata</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aab6612b92d4bd461c9554798a37ea836" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setNonce</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a760906f77a3130ba35b290a66195dc05" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setStatus</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a15f52847f9ab1281e2ff82509c73a377" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setTimestamp</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ab159a5d0fdb1e76b302aa0a5ff74979d" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setTo</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ade612c6f958dfc50e00eede85cf6cc79" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>setValue</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aecec05259616cba8bb7229ea698bb613" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>status_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aee3625297dc128d16d4683ed909a7b18" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>timestamp_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a01fc87fc12cb4cb813a377cce2f08fe1" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>to_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a514576e582906405fee23526ac9df49e" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>toJson</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1abc01088a7d67f8b1f464cdd9874f4718" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>Transaction</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a0288903f787111eaac215086fd3bf3db" prot="private" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>value_</name></member>
+      <member refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac7b904e759c24e677c5873ef9d60ec8d" prot="public" virt="non-virtual"><scope>satox::blockchain::Transaction</scope><name>~Transaction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

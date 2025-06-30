@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/dc3/namespacesatox_1_1core_1_1cloud" kind="namespace" language="C++">
+    <compoundname>satox::core::cloud</compoundname>
+    <innernamespace refid="df/d45/namespacesatox_1_1core_1_1cloud_1_1AWSManager">satox::core::cloud::AWSManager</innernamespace>
+    <innernamespace refid="d6/df7/namespacesatox_1_1core_1_1cloud_1_1FirebaseManager">satox::core::cloud::FirebaseManager</innernamespace>
+    <innernamespace refid="d2/d44/namespacesatox_1_1core_1_1cloud_1_1SupabaseManager">satox::core::cloud::SupabaseManager</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a04f55b113e6ed5c85e963a726d603d21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::to_json</definition>
+        <argsstring>(nlohmann::json &amp;j, const AWSConfig &amp;config)</argsstring>
+        <name>to_json</name>
+        <qualifiedname>satox::core::cloud::to_json</qualifiedname>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const AWSConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_config.cpp" line="17" column="6" bodyfile="src/core/cloud/aws_config.cpp" bodystart="17" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1ac0a95ceb2f4bec369993a611d026f257" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;j, AWSConfig &amp;config)</argsstring>
+        <name>from_json</name>
+        <qualifiedname>satox::core::cloud::from_json</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>AWSConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_config.cpp" line="35" column="6" bodyfile="src/core/cloud/aws_config.cpp" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1aff23fba0ad4e61aa0bd76007d3f84ee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::to_json</definition>
+        <argsstring>(nlohmann::json &amp;j, const AzureConfig &amp;config)</argsstring>
+        <name>to_json</name>
+        <qualifiedname>satox::core::cloud::to_json</qualifiedname>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const AzureConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/azure_config.cpp" line="17" column="6" bodyfile="src/core/cloud/azure_config.cpp" bodystart="17" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a6a736ecc060f7457b7fbb28521de48b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;j, AzureConfig &amp;config)</argsstring>
+        <name>from_json</name>
+        <qualifiedname>satox::core::cloud::from_json</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>AzureConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/azure_config.cpp" line="35" column="6" bodyfile="src/core/cloud/azure_config.cpp" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a532bd43bdd068dd318d9944ffb331191" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t satox::core::cloud::WriteCallback</definition>
+        <argsstring>(void *contents, size_t size, size_t nmemb, std::string *userp)</argsstring>
+        <name>WriteCallback</name>
+        <qualifiedname>satox::core::cloud::WriteCallback</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nmemb</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>userp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/azure_manager.cpp" line="32" column="15" bodyfile="src/core/cloud/azure_manager.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1ad4fd8fe7d2dfe2fa1817b55f7a8be532" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t satox::core::cloud::ReadCallback</definition>
+        <argsstring>(void *ptr, size_t size, size_t nmemb, std::string *userp)</argsstring>
+        <name>ReadCallback</name>
+        <qualifiedname>satox::core::cloud::ReadCallback</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nmemb</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>userp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/azure_manager.cpp" line="37" column="15" bodyfile="src/core/cloud/azure_manager.cpp" bodystart="37" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1ad02ec3b943ae78c780f97f08b76f4381" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::cloud::base64_encode</definition>
+        <argsstring>(const std::string &amp;input)</argsstring>
+        <name>base64_encode</name>
+        <qualifiedname>satox::core::cloud::base64_encode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/azure_manager.cpp" line="46" column="13" bodyfile="src/core/cloud/azure_manager.cpp" bodystart="46" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a48a5299e9b02a0bb1d3eea1424e8d75f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::cloud::url_encode</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>url_encode</name>
+        <qualifiedname>satox::core::cloud::url_encode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/azure_manager.cpp" line="66" column="13" bodyfile="src/core/cloud/azure_manager.cpp" bodystart="66" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a65a994da171f611ce184dcafba9544ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::to_json</definition>
+        <argsstring>(nlohmann::json &amp;j, const FirebaseConfig &amp;config)</argsstring>
+        <name>to_json</name>
+        <qualifiedname>satox::core::cloud::to_json</qualifiedname>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig" kindref="compound">FirebaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_config.cpp" line="17" column="6" bodyfile="src/core/cloud/firebase_config.cpp" bodystart="17" bodyend="32"/>
+        <references refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig_1ae439fbf702f24e3df12410165361fb8c" compoundref="d3/d4b/firebase__config_8hpp" startline="29">satox::core::FirebaseConfig::database_url</references>
+        <references refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig_1a476359f349f774a7f60d2c7c027b1d24" compoundref="d3/d4b/firebase__config_8hpp" startline="20">satox::core::FirebaseConfig::project_id</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a162eb9395ee8b1ed0d80df51b4bffad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;j, FirebaseConfig &amp;config)</argsstring>
+        <name>from_json</name>
+        <qualifiedname>satox::core::cloud::from_json</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig" kindref="compound">FirebaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_config.cpp" line="34" column="6" bodyfile="src/core/cloud/firebase_config.cpp" bodystart="34" bodyend="47"/>
+        <references refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig_1ae439fbf702f24e3df12410165361fb8c" compoundref="d3/d4b/firebase__config_8hpp" startline="29">satox::core::FirebaseConfig::database_url</references>
+        <references refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig_1a476359f349f774a7f60d2c7c027b1d24" compoundref="d3/d4b/firebase__config_8hpp" startline="20">satox::core::FirebaseConfig::project_id</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1ae6e9a9e0a17cb940c47c3b57b12eff68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::to_json</definition>
+        <argsstring>(nlohmann::json &amp;j, const GoogleCloudConfig &amp;config)</argsstring>
+        <name>to_json</name>
+        <qualifiedname>satox::core::cloud::to_json</qualifiedname>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const GoogleCloudConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/google_cloud_config.cpp" line="17" column="6" bodyfile="src/core/cloud/google_cloud_config.cpp" bodystart="17" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a7d7378a31e21eea876f6f27f6df48136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;j, GoogleCloudConfig &amp;config)</argsstring>
+        <name>from_json</name>
+        <qualifiedname>satox::core::cloud::from_json</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>GoogleCloudConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/google_cloud_config.cpp" line="31" column="6" bodyfile="src/core/cloud/google_cloud_config.cpp" bodystart="31" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a532bd43bdd068dd318d9944ffb331191" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t satox::core::cloud::WriteCallback</definition>
+        <argsstring>(void *contents, size_t size, size_t nmemb, std::string *userp)</argsstring>
+        <name>WriteCallback</name>
+        <qualifiedname>satox::core::cloud::WriteCallback</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nmemb</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>userp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/google_cloud_manager.cpp" line="32" column="15" bodyfile="src/core/cloud/google_cloud_manager.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1a15ec664842089f3005525908cfecc6a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::to_json</definition>
+        <argsstring>(nlohmann::json &amp;j, const SupabaseConfig &amp;config)</argsstring>
+        <name>to_json</name>
+        <qualifiedname>satox::core::cloud::to_json</qualifiedname>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig" kindref="compound">SupabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_config.cpp" line="17" column="6" bodyfile="src/core/cloud/supabase_config.cpp" bodystart="17" bodyend="30"/>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1a9bf473a41d187ce6a7414fc9d85d7240" compoundref="d5/d9c/supabase__config_8hpp" startline="21">satox::core::SupabaseConfig::anon_key</references>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1a3604303d7c2f12e72b0f2ce4f1cdf3a0" compoundref="d5/d9c/supabase__config_8hpp" startline="23">satox::core::SupabaseConfig::database_url</references>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1a2770524c9dc3981a5aeac2d355548350" compoundref="d5/d9c/supabase__config_8hpp" startline="22">satox::core::SupabaseConfig::service_role_key</references>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1ab261f16b4c72d999cab54140a3aeecc1" compoundref="d5/d9c/supabase__config_8hpp" startline="20">satox::core::SupabaseConfig::url</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc3/namespacesatox_1_1core_1_1cloud_1aab6bd12f59b4737cb7702f9504f64e42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::from_json</definition>
+        <argsstring>(const nlohmann::json &amp;j, SupabaseConfig &amp;config)</argsstring>
+        <name>from_json</name>
+        <qualifiedname>satox::core::cloud::from_json</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig" kindref="compound">SupabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_config.cpp" line="32" column="6" bodyfile="src/core/cloud/supabase_config.cpp" bodystart="32" bodyend="43"/>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1a9bf473a41d187ce6a7414fc9d85d7240" compoundref="d5/d9c/supabase__config_8hpp" startline="21">satox::core::SupabaseConfig::anon_key</references>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1a3604303d7c2f12e72b0f2ce4f1cdf3a0" compoundref="d5/d9c/supabase__config_8hpp" startline="23">satox::core::SupabaseConfig::database_url</references>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1a2770524c9dc3981a5aeac2d355548350" compoundref="d5/d9c/supabase__config_8hpp" startline="22">satox::core::SupabaseConfig::service_role_key</references>
+        <references refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig_1ab261f16b4c72d999cab54140a3aeecc1" compoundref="d5/d9c/supabase__config_8hpp" startline="20">satox::core::SupabaseConfig::url</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/cloud/aws_config.cpp" line="15" column="1"/>
+  </compounddef>
+</doxygen>

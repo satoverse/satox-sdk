@@ -1,0 +1,242 @@
+# Security Manager Test Template
+# This template should be adapted for each language while maintaining the same test structure
+
+# Test Suite: Security Manager
+# Language: {LANGUAGE}
+# Description: Tests the security functionality of the Satox SDK
+
+# Test Cases:
+# 1. Initialization
+#    - Test manager creation
+#    - Test initialization
+#    - Test double initialization error
+#    - Test uninitialized operations error
+
+# 2. Key Management
+#    - Test key generation
+#    - Test key import/export
+#    - Test key validation
+#    - Test key rotation
+
+# 3. Encryption/Decryption
+#    - Test data encryption
+#    - Test data decryption
+#    - Test invalid key handling
+#    - Test large data handling
+
+# 4. Signing/Verification
+#    - Test message signing
+#    - Test signature verification
+#    - Test invalid signature handling
+#    - Test signature format
+
+# 5. Hash Functions
+#    - Test SHA-256
+#    - Test RIPEMD-160
+#    - Test double SHA-256
+#    - Test hash format
+
+# 6. Address Management
+#    - Test address generation
+#    - Test address validation
+#    - Test address format
+#    - Test address conversion
+
+# 7. Seed Management
+#    - Test seed generation
+#    - Test seed validation
+#    - Test seed format
+#    - Test seed backup
+
+# 8. Security Policies
+#    - Test policy enforcement
+#    - Test policy validation
+#    - Test policy updates
+#    - Test policy inheritance
+
+# Implementation Notes:
+# - Each test should verify both success and failure cases
+# - All operations should check for proper initialization
+# - Error messages should be consistent across languages
+# - Mock data should be used for external dependencies
+# - Tests should be independent and not rely on execution order
+
+# Example Test Structure (Python):
+"""
+def test_initialization():
+    manager = SecurityManager()
+    assert not manager.is_initialized()
+    manager.initialize()
+    assert manager.is_initialized()
+    with pytest.raises(RuntimeError):
+        manager.initialize()  # Double initialization should fail
+
+def test_key_generation():
+    manager = SecurityManager()
+    manager.initialize()
+    key = manager.generate_key()
+    assert isinstance(key, bytes)
+    assert len(key) == 32  # 256 bits
+
+def test_encryption():
+    manager = SecurityManager()
+    manager.initialize()
+    key = manager.generate_key()
+    data = b"test data"
+    encrypted = manager.encrypt(data, key)
+    decrypted = manager.decrypt(encrypted, key)
+    assert decrypted == data
+"""
+
+# Example Test Structure (JavaScript):
+"""
+describe('SecurityManager', () => {
+    let manager;
+
+    beforeEach(() => {
+        manager = new SecurityManager();
+    });
+
+    test('initialization', () => {
+        expect(manager.isInitialized()).toBe(false);
+        manager.initialize();
+        expect(manager.isInitialized()).toBe(true);
+        expect(() => manager.initialize()).toThrow();
+    });
+
+    test('key generation', () => {
+        manager.initialize();
+        const key = manager.generateKey();
+        expect(key).toBeInstanceOf(Uint8Array);
+        expect(key.length).toBe(32);
+    });
+
+    test('encryption', () => {
+        manager.initialize();
+        const key = manager.generateKey();
+        const data = new TextEncoder().encode('test data');
+        const encrypted = manager.encrypt(data, key);
+        const decrypted = manager.decrypt(encrypted, key);
+        expect(decrypted).toEqual(data);
+    });
+});
+"""
+
+# Example Test Structure (Go):
+"""
+func TestSecurityManager(t *testing.T) {
+    manager := NewSecurityManager()
+    
+    t.Run("initialization", func(t *testing.T) {
+        if manager.IsInitialized() {
+            t.Error("Manager should not be initialized")
+        }
+        err := manager.Initialize()
+        if err != nil {
+            t.Errorf("Initialization failed: %v", err)
+        }
+        if !manager.IsInitialized() {
+            t.Error("Manager should be initialized")
+        }
+        err = manager.Initialize()
+        if err == nil {
+            t.Error("Double initialization should fail")
+        }
+    })
+
+    t.Run("key generation", func(t *testing.T) {
+        key, err := manager.GenerateKey()
+        if err != nil {
+            t.Errorf("Key generation failed: %v", err)
+        }
+        if len(key) != 32 {
+            t.Error("Key should be 32 bytes")
+        }
+    })
+}
+"""
+
+# Example Test Structure (Lua):
+"""
+describe("SecurityManager", function()
+    local manager
+
+    setup(function()
+        manager = SecurityManager.new()
+    end)
+
+    it("should handle initialization", function()
+        assert.is_false(manager:isInitialized())
+        manager:initialize()
+        assert.is_true(manager:isInitialized())
+        assert.has_error(function()
+            manager:initialize()
+        end, "SecurityManager already initialized")
+    end)
+
+    it("should generate keys", function()
+        manager:initialize()
+        local key = manager:generateKey()
+        assert.is_string(key)
+        assert.is_true(#key == 32)
+    end)
+end)
+"""
+
+# Example Test Structure (C#):
+"""
+[TestClass]
+public class SecurityManagerTests
+{
+    private SecurityManager _manager;
+
+    [TestInitialize]
+    public void Setup()
+    {
+        _manager = new SecurityManager();
+    }
+
+    [TestMethod]
+    public void TestInitialization()
+    {
+        Assert.IsFalse(_manager.IsInitialized);
+        _manager.Initialize();
+        Assert.IsTrue(_manager.IsInitialized);
+        Assert.ThrowsException<InvalidOperationException>(() => _manager.Initialize());
+    }
+
+    [TestMethod]
+    public void TestKeyGeneration()
+    {
+        _manager.Initialize();
+        var key = _manager.GenerateKey();
+        Assert.IsNotNull(key);
+        Assert.AreEqual(32, key.Length);
+    }
+}
+"""
+
+# Example Test Structure (WASM):
+"""
+describe('SecurityManager', () => {
+    let manager;
+
+    beforeEach(() => {
+        manager = new SecurityManager();
+    });
+
+    test('initialization', () => {
+        expect(manager.isInitialized()).toBe(false);
+        manager.initialize();
+        expect(manager.isInitialized()).toBe(true);
+        expect(() => manager.initialize()).toThrow();
+    });
+
+    test('key generation', () => {
+        manager.initialize();
+        const key = manager.generateKey();
+        expect(key).toBeInstanceOf(Uint8Array);
+        expect(key.length).toBe(32);
+    });
+});
+""" 

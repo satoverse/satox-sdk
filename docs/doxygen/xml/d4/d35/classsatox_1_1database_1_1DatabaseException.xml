@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d35/classsatox_1_1database_1_1DatabaseException" kind="class" language="C++" prot="public">
+    <compoundname>satox::database::DatabaseException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="d2/dc2/classsatox_1_1database_1_1DatabaseInitializationException" prot="public" virt="non-virtual">satox::database::DatabaseInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d2/d82/classsatox_1_1database_1_1DatabaseOperationException" prot="public" virt="non-virtual">satox::database::DatabaseOperationException</derivedcompoundref>
+    <includes refid="d9/dba/database_2include_2satox_2database_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d35/classsatox_1_1database_1_1DatabaseException_1a9dae8853545a72457e628615de2d59b6" prot="private" static="no" mutable="no">
+        <type><ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198" kindref="member">DatabaseErrorCode</ref></type>
+        <definition>DatabaseErrorCode satox::database::DatabaseException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::database::DatabaseException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/error.hpp" line="51" column="23" bodyfile="src/database/include/satox/database/error.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d35/classsatox_1_1database_1_1DatabaseException_1a8afb046ee45e0d37d7866307d29da741" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::database::DatabaseException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/error.hpp" line="52" column="17" bodyfile="src/database/include/satox/database/error.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d35/classsatox_1_1database_1_1DatabaseException_1ad07f1221f1ac70dcf918e0dc3ac009ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::DatabaseException::DatabaseException</definition>
+        <argsstring>(DatabaseErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>DatabaseException</name>
+        <qualifiedname>satox::database::DatabaseException::DatabaseException</qualifiedname>
+        <param>
+          <type><ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198" kindref="member">DatabaseErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/error.hpp" line="35" column="5" bodyfile="src/database/include/satox/database/error.hpp" bodystart="35" bodyend="36"/>
+        <references refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1ac4b03e2d9ce1c676a728d3d06475bdc8" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="42" endline="44">code</references>
+        <references refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1a88813c28bec819804de644f1a11b49a9" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="46" endline="48">message</references>
+        <referencedby refid="d2/dc2/classsatox_1_1database_1_1DatabaseInitializationException_1a31ebfef1b12f6a6f5911f867ae8f9d49" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="58" endline="59">satox::database::DatabaseInitializationException::DatabaseInitializationException</referencedby>
+        <referencedby refid="d2/d82/classsatox_1_1database_1_1DatabaseOperationException_1a5867e7ad0f3abdb3802519c6df78ec6a" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="64" endline="65">satox::database::DatabaseOperationException::DatabaseOperationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d35/classsatox_1_1database_1_1DatabaseException_1a86a99a4206d19745d7cda6e4bc9190a5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::database::DatabaseException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::database::DatabaseException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/error.hpp" line="38" column="16" bodyfile="src/database/include/satox/database/error.hpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d35/classsatox_1_1database_1_1DatabaseException_1ac4b03e2d9ce1c676a728d3d06475bdc8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198" kindref="member">DatabaseErrorCode</ref></type>
+        <definition>DatabaseErrorCode satox::database::DatabaseException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::database::DatabaseException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/error.hpp" line="42" column="23" bodyfile="src/database/include/satox/database/error.hpp" bodystart="42" bodyend="44"/>
+        <referencedby refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1ad07f1221f1ac70dcf918e0dc3ac009ee" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="35" endline="36">DatabaseException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d35/classsatox_1_1database_1_1DatabaseException_1a88813c28bec819804de644f1a11b49a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::database::DatabaseException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::database::DatabaseException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/error.hpp" line="46" column="23" bodyfile="src/database/include/satox/database/error.hpp" bodystart="46" bodyend="48"/>
+        <referencedby refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1ad07f1221f1ac70dcf918e0dc3ac009ee" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="35" endline="36">DatabaseException</referencedby>
+        <referencedby refid="d2/dc2/classsatox_1_1database_1_1DatabaseInitializationException_1a31ebfef1b12f6a6f5911f867ae8f9d49" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="58" endline="59">satox::database::DatabaseInitializationException::DatabaseInitializationException</referencedby>
+        <referencedby refid="d2/d82/classsatox_1_1database_1_1DatabaseOperationException_1a5867e7ad0f3abdb3802519c6df78ec6a" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="64" endline="65">satox::database::DatabaseOperationException::DatabaseOperationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>satox::database::DatabaseException</label>
+        <link refid="d4/d35/classsatox_1_1database_1_1DatabaseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::database::DatabaseInitializationException</label>
+        <link refid="d2/dc2/classsatox_1_1database_1_1DatabaseInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::database::DatabaseOperationException</label>
+        <link refid="d2/d82/classsatox_1_1database_1_1DatabaseOperationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::database::DatabaseException</label>
+        <link refid="d4/d35/classsatox_1_1database_1_1DatabaseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/database/include/satox/database/error.hpp" line="33" column="1" bodyfile="src/database/include/satox/database/error.hpp" bodystart="33" bodyend="53"/>
+    <listofallmembers>
+      <member refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1ac4b03e2d9ce1c676a728d3d06475bdc8" prot="public" virt="non-virtual"><scope>satox::database::DatabaseException</scope><name>code</name></member>
+      <member refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1a9dae8853545a72457e628615de2d59b6" prot="private" virt="non-virtual"><scope>satox::database::DatabaseException</scope><name>code_</name></member>
+      <member refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1ad07f1221f1ac70dcf918e0dc3ac009ee" prot="public" virt="non-virtual"><scope>satox::database::DatabaseException</scope><name>DatabaseException</name></member>
+      <member refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1a88813c28bec819804de644f1a11b49a9" prot="public" virt="non-virtual"><scope>satox::database::DatabaseException</scope><name>message</name></member>
+      <member refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1a8afb046ee45e0d37d7866307d29da741" prot="private" virt="non-virtual"><scope>satox::database::DatabaseException</scope><name>message_</name></member>
+      <member refid="d4/d35/classsatox_1_1database_1_1DatabaseException_1a86a99a4206d19745d7cda6e4bc9190a5" prot="public" virt="non-virtual"><scope>satox::database::DatabaseException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

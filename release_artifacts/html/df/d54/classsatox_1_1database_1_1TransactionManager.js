@@ -1,0 +1,26 @@
+var classsatox_1_1database_1_1TransactionManager =
+[
+    [ "TransactionConfig", "db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig.html", "db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" ],
+    [ "TransactionStats", "da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats.html", "da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" ],
+    [ "beginTransaction", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a6100a11b7966437ecf14eb7420edff31", null ],
+    [ "commitTransaction", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a678715d838e9fc27f3a07a46e4436beb", null ],
+    [ "createSavepoint", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a53c5fd2c5b9b5ebd373be02085d572eb", null ],
+    [ "executeBatch", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a85283a51677d14239d22f3d23dad9f7d", null ],
+    [ "executeQuery", "df/d54/classsatox_1_1database_1_1TransactionManager.html#aa8054078ae163df3831d36c14a4978a5", null ],
+    [ "executeQueryWithResult", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a68d43e041cb04be8b7e966d9d367ec2d", null ],
+    [ "getInstance", "df/d54/classsatox_1_1database_1_1TransactionManager.html#ae9a60f71e6d148590a616b3e38636fe9", null ],
+    [ "getLastError", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a9a55fbfacf915a68c6cf5131ada42c6b", null ],
+    [ "getStats", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a4b102d9d9e9c60821d7fa2048abda7ce", null ],
+    [ "initialize", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a47b7ab916762896307d2b435157f022b", null ],
+    [ "isHealthy", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a96a038e87988447f3ec0596868a57bec", null ],
+    [ "isInTransaction", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a9c59024e12328ce167b6f9a069b3a522", null ],
+    [ "releaseSavepoint", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a9302e4e99ad38486f1081a4bfcd438be", null ],
+    [ "resetStats", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a064e749f64e7b9db4912d42561e78561", null ],
+    [ "rollbackToSavepoint", "df/d54/classsatox_1_1database_1_1TransactionManager.html#ac04761d7543e361aba123d1bce1e61cb", null ],
+    [ "rollbackTransaction", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a1f9c6aced98ff21f205d01949a4d4eea", null ],
+    [ "setAutoCommit", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a0cb1916e0568048c6f3ff0ef03ed1857", null ],
+    [ "setIsolationLevel", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a60a874f9ef37aa3a926e98ce13ea9bea", null ],
+    [ "setReadOnly", "df/d54/classsatox_1_1database_1_1TransactionManager.html#ac5709cc0579a6ea0e71569def7c1973d", null ],
+    [ "setTimeout", "df/d54/classsatox_1_1database_1_1TransactionManager.html#adf50fd0d231def18c290037d989b68ff", null ],
+    [ "shutdown", "df/d54/classsatox_1_1database_1_1TransactionManager.html#a56af232398d76bca3dd24308f11c5b33", null ]
+];

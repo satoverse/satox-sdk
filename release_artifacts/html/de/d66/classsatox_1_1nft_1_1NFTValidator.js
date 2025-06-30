@@ -1,0 +1,25 @@
+var classsatox_1_1nft_1_1NFTValidator =
+[
+    [ "Error", "de/d1b/structsatox_1_1nft_1_1NFTValidator_1_1Error.html", "de/d1b/structsatox_1_1nft_1_1NFTValidator_1_1Error" ],
+    [ "ValidationResult", "db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult.html", "db/d6d/structsatox_1_1nft_1_1NFTValidator_1_1ValidationResult" ],
+    [ "NFTValidator", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a47b233c582720a9b071bb25b773c7c4e", null ],
+    [ "addValidationRule", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a34d99333e7bee62ac2a316e2ac0e6d30", null ],
+    [ "clearLastError", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a167a0e7e8a52f8353985eb7db4d10bef", null ],
+    [ "getInstance", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a018c9d4f00f271fac79d5998c62872fd", null ],
+    [ "getLastError", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a2a6a1bac85b504e71a1bddf276a3c35a", null ],
+    [ "hasValidationRule", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#ac9de7e9f3e9dfa4f408c34c17f815eb0", null ],
+    [ "initialize", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a899fe2fa840b45ad7b1419aa46e25c65", null ],
+    [ "operator=", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#ac1458f66560ac3a8c39092a9e765ee23", null ],
+    [ "removeValidationRule", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a2dd7d6f8aa27ff099549a8ca6cd4dee3", null ],
+    [ "shutdown", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#abc1ccfe13fe80494728f2f6b33e6b8f6", null ],
+    [ "validateBatchBurns", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a208b11673c980bf8e7c74e4522c82104", null ],
+    [ "validateBatchNFTs", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#abcfe7f9187a9663f15f315e223c58a9b", null ],
+    [ "validateBatchTransfers", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a8eabb3871c52a6b85bc9a78166ac9847", null ],
+    [ "validateMetadataSchema", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a81b8a34eeb1ae7ac38ebcb99aad8ba3f", null ],
+    [ "validateNFT", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a6ee0a5f8b8a39717aafdd2e8c16cba72", null ],
+    [ "validateNFTBurn", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a4a9f82157ffb421a9eb9457f2b419d0d", null ],
+    [ "validateNFTMetadata", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a4617ed707b666e925a5be22d5367482c", null ],
+    [ "validateNFTRoyalty", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#a861f78b02136c839181af76ebba4ff4e", null ],
+    [ "validateNFTTransfer", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#adb1c1cc56fc361acd89538ab9a919068", null ],
+    [ "validateSchema", "de/d66/classsatox_1_1nft_1_1NFTValidator.html#aae1688c5f7c5e3f5b6a5c3c7b58973bc", null ]
+];

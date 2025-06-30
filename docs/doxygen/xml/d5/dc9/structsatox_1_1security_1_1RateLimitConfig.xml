@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/dc9/structsatox_1_1security_1_1RateLimitConfig" kind="struct" language="C++" prot="public">
+    <compoundname>satox::security::RateLimitConfig</compoundname>
+    <includes refid="db/df6/security_2include_2satox_2security_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1ad3c6a5d681191b3b504ca8a9fc9280c1" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::security::RateLimitConfig::identifier</definition>
+        <argsstring></argsstring>
+        <name>identifier</name>
+        <qualifiedname>satox::security::RateLimitConfig::identifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="77" column="17" bodyfile="src/security/include/satox/security/types.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1a150b26c924737882011036b41419b641" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::security::RateLimitConfig::maxRequests</definition>
+        <argsstring></argsstring>
+        <name>maxRequests</name>
+        <qualifiedname>satox::security::RateLimitConfig::maxRequests</qualifiedname>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="78" column="9" bodyfile="src/security/include/satox/security/types.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1abf33355b57d7551757ca22c09738ae83" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::security::RateLimitConfig::timeWindow</definition>
+        <argsstring></argsstring>
+        <name>timeWindow</name>
+        <qualifiedname>satox::security::RateLimitConfig::timeWindow</qualifiedname>
+        <initializer>= 3600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="79" column="9" bodyfile="src/security/include/satox/security/types.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1acf16eefdc6ac99b8666bd8bb7eb357c5" prot="public" static="no" mutable="no">
+        <type><ref refid="d3/d71/namespacesatox_1_1security_1a5619ee4876526d89fa32fe3dc035f604" kindref="member">SecurityLevel</ref></type>
+        <definition>SecurityLevel satox::security::RateLimitConfig::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <qualifiedname>satox::security::RateLimitConfig::level</qualifiedname>
+        <initializer>= <ref refid="d3/d71/namespacesatox_1_1security_1a5619ee4876526d89fa32fe3dc035f604ac87f3be66ffc3c0d4249f1c2cc5f3cce" kindref="member">SecurityLevel::MEDIUM</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="80" column="19" bodyfile="src/security/include/satox/security/types.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::security::RateLimitConfig</label>
+        <link refid="d5/dc9/structsatox_1_1security_1_1RateLimitConfig"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>identifier</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/security/include/satox/security/types.hpp" line="76" column="1" bodyfile="src/security/include/satox/security/types.hpp" bodystart="76" bodyend="81"/>
+    <listofallmembers>
+      <member refid="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1ad3c6a5d681191b3b504ca8a9fc9280c1" prot="public" virt="non-virtual"><scope>satox::security::RateLimitConfig</scope><name>identifier</name></member>
+      <member refid="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1acf16eefdc6ac99b8666bd8bb7eb357c5" prot="public" virt="non-virtual"><scope>satox::security::RateLimitConfig</scope><name>level</name></member>
+      <member refid="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1a150b26c924737882011036b41419b641" prot="public" virt="non-virtual"><scope>satox::security::RateLimitConfig</scope><name>maxRequests</name></member>
+      <member refid="d5/dc9/structsatox_1_1security_1_1RateLimitConfig_1abf33355b57d7551757ca22c09738ae83" prot="public" virt="non-virtual"><scope>satox::security::RateLimitConfig</scope><name>timeWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

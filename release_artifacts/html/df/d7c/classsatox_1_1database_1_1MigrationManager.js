@@ -1,0 +1,27 @@
+var classsatox_1_1database_1_1MigrationManager =
+[
+    [ "MigrationConfig", "d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig.html", "d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" ],
+    [ "MigrationInfo", "d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo.html", "d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" ],
+    [ "MigrationStats", "d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats.html", "d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" ],
+    [ "applyMigration", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a2d5bbdc4d7733cdad9a03cad2bfd851a", null ],
+    [ "createMigration", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#ab94e397c95f27ab0ea5f769c0eec2b3c", null ],
+    [ "getCurrentVersion", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a85422acb43fa781848c6c7673f0bb485", null ],
+    [ "getInstance", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#adfcf2d7aa34ddb67b71da5695c9f7c81", null ],
+    [ "getLastError", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#ae605c3dbfcdb3872bbe533b2d80da170", null ],
+    [ "getMigrationHistory", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a88b35b9e1b72331e7e72d6d2c822a06f", null ],
+    [ "getPendingMigrations", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#ae49edaf95cc2ddb68f9c203a260b9974", null ],
+    [ "getStats", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a772737329ba6ba80f5ccf05938e98992", null ],
+    [ "initialize", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a3dd19ee5ac7e22f8d6b5f6207677e204", null ],
+    [ "isHealthy", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a8227489bab5e6cfba3afba94ead35f9f", null ],
+    [ "isUpToDate", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#ad9601a19d754acf930ef93c9eec7cb6e", null ],
+    [ "migrateDown", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#aaf757e4f7ab989c3e104eb08c9e229c9", null ],
+    [ "migrateToLatest", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a822f5b03f50324854c846af8d0261bf0", null ],
+    [ "migrateToVersion", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#aff94538fd758922cd045a462943ee294", null ],
+    [ "migrateUp", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a2497e610a78430783ecbe7e4321c375a", null ],
+    [ "rollbackMigration", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a860ffb5d147a7f424f0cd7eed8556e67", null ],
+    [ "setAutoMigrate", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a255190b955c53643ffc77bced758c8dd", null ],
+    [ "setTimeout", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a5c6c35ac20edac4c6bff4e5b71c5cb3a", null ],
+    [ "setValidateMigrations", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a2b7436754923b05aa6fa5b233013e005", null ],
+    [ "shutdown", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a4848c6a53030352da074401e24913c13", null ],
+    [ "validateMigrations", "df/d7c/classsatox_1_1database_1_1MigrationManager.html#a206b94237d2500f30eaf814de8ea84e7", null ]
+];

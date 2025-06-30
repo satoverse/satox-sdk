@@ -1,0 +1,1433 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/dce/classsatox_1_1core_1_1PluginManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::PluginManager</compoundname>
+    <includes refid="d4/db8/plugin__manager_8hpp" local="no">plugin_manager.hpp</includes>
+    <innerclass refid="d4/d0c/classsatox_1_1core_1_1PluginManager_1_1IPlugin" prot="public">satox::core::PluginManager::IPlugin</innerclass>
+    <innerclass refid="d9/d38/classsatox_1_1core_1_1PluginManager_1_1IPluginFactory" prot="public">satox::core::PluginManager::IPluginFactory</innerclass>
+    <innerclass refid="d9/d3d/structsatox_1_1core_1_1PluginManager_1_1PluginConfig" prot="public">satox::core::PluginManager::PluginConfig</innerclass>
+    <innerclass refid="d8/d1c/structsatox_1_1core_1_1PluginManager_1_1PluginInfo" prot="public">satox::core::PluginManager::PluginInfo</innerclass>
+    <innerclass refid="d9/df0/structsatox_1_1core_1_1PluginManager_1_1PluginStats" prot="public">satox::core::PluginManager::PluginStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840fa" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PluginState</name>
+        <qualifiedname>satox::core::PluginManager::PluginState</qualifiedname>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa795b8a51556d0b2cf4fbc11a896f6269" prot="public">
+          <name>UNLOADED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faab638272ceeff54912f043465e9a28c9b" prot="public">
+          <name>LOADED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faadee5f03c2c4e73657824e028494b18c0" prot="public">
+          <name>INITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" prot="public">
+          <name>RUNNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa99b2439e63f73ad515f7ab2447a80673" prot="public">
+          <name>PAUSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faabb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="43" column="5" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="enum" id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789af" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PluginType</name>
+        <qualifiedname>satox::core::PluginManager::PluginType</qualifiedname>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afac5d5df976f196200d1900b2b51827dbb" prot="public">
+          <name>CORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa25835188a2355e9530d3a10fcbe4c65b" prot="public">
+          <name>NETWORK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afae4b25d8c911628d527b2c97039a9f593" prot="public">
+          <name>BLOCKCHAIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa5dfbfc491808ab7c150714aa58105474" prot="public">
+          <name>WALLET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afae6bed345f53943469741d7295552fcd4" prot="public">
+          <name>TRANSACTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa5a3a9300fec880f9634e271a66bde419" prot="public">
+          <name>ASSET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afaa692c529f241845ae00b47284e09e76a" prot="public">
+          <name>NFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa6abe0c37d965e4a8bd11571378674642" prot="public">
+          <name>IPFS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afab1379b4ce097a8afd5d99abab0875a8e" prot="public">
+          <name>DATABASE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa08e1be4b785493d9fc2ae52c5ba9ab2e" prot="public">
+          <name>CACHE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa73e99d350a4aa6f1a5af04ec29173f73" prot="public">
+          <name>CONFIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa219ce424cc367fba8a5a0210792d4dc0" prot="public">
+          <name>SECURITY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789afa72baef04098f035e8a320b03ad197818" prot="public">
+          <name>CUSTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="53" column="5" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="53" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a655d753cd39aee6cf3084642009e077e" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, <ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840fa" kindref="member">PluginState</ref>)&gt;</type>
+        <definition>using satox::core::PluginManager::PluginStateCallback =  std::function&lt;void(const std::string&amp;, PluginState)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PluginStateCallback</name>
+        <qualifiedname>satox::core::PluginManager::PluginStateCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="117" column="5" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aeb55c0e34d44ba56d6f4a2042c5a29ef" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::core::PluginManager::PluginErrorCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PluginErrorCallback</name>
+        <qualifiedname>satox::core::PluginManager::PluginErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="118" column="5" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a925f8fa2343b41f08a409e5192a22d33" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const nlohmann::json &amp;)&gt;</type>
+        <definition>using satox::core::PluginManager::PluginConfigCallback =  std::function&lt;void(const std::string&amp;, const nlohmann::json&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PluginConfigCallback</name>
+        <qualifiedname>satox::core::PluginManager::PluginConfigCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="119" column="5" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a85440f4cc8f1778698c9010477c2d996" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::PluginManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="213" column="10" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aa5d42b21bda1f86b4ade2c9f63d752c5" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::PluginManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::PluginManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="214" column="24" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a1d4a7de22b06dd6bd2bb52f32dc36b53" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/d3d/structsatox_1_1core_1_1PluginManager_1_1PluginConfig" kindref="compound">PluginConfig</ref></type>
+        <definition>PluginConfig satox::core::PluginManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::PluginManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="215" column="18" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a37230f84a37556d38d47dc5b54388438" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; <ref refid="d4/d0c/classsatox_1_1core_1_1PluginManager_1_1IPlugin" kindref="compound">IPlugin</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;IPlugin&gt; &gt; satox::core::PluginManager::plugins_</definition>
+        <argsstring></argsstring>
+        <name>plugins_</name>
+        <qualifiedname>satox::core::PluginManager::plugins_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="216" column="24" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a67b5affa2247c9ade732e8b29531987c" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; <ref refid="d9/d38/classsatox_1_1core_1_1PluginManager_1_1IPluginFactory" kindref="compound">IPluginFactory</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;IPluginFactory&gt; &gt; satox::core::PluginManager::factories_</definition>
+        <argsstring></argsstring>
+        <name>factories_</name>
+        <qualifiedname>satox::core::PluginManager::factories_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="217" column="24" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a6948e6648a0bea1caafc1387586eed14" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a655d753cd39aee6cf3084642009e077e" kindref="member">PluginStateCallback</ref> &gt;</type>
+        <definition>std::vector&lt;PluginStateCallback&gt; satox::core::PluginManager::stateCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>stateCallbacks_</name>
+        <qualifiedname>satox::core::PluginManager::stateCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="218" column="17" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1afbd7cb0e4be8e6050a0ffa2ce1ce533b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aeb55c0e34d44ba56d6f4a2042c5a29ef" kindref="member">PluginErrorCallback</ref> &gt;</type>
+        <definition>std::vector&lt;PluginErrorCallback&gt; satox::core::PluginManager::errorCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>errorCallbacks_</name>
+        <qualifiedname>satox::core::PluginManager::errorCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="219" column="17" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a72241b5f1f2cde95c6e6e8ee7dd221c7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a925f8fa2343b41f08a409e5192a22d33" kindref="member">PluginConfigCallback</ref> &gt;</type>
+        <definition>std::vector&lt;PluginConfigCallback&gt; satox::core::PluginManager::configCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>configCallbacks_</name>
+        <qualifiedname>satox::core::PluginManager::configCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="220" column="17" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a8371af0a449220fa78a3791bb514d585" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/df0/structsatox_1_1core_1_1PluginManager_1_1PluginStats" kindref="compound">PluginStats</ref></type>
+        <definition>PluginStats satox::core::PluginManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::PluginManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="221" column="17" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a8963f8ce8c43e5dabf8207f5350215cb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::statsEnabled_</definition>
+        <argsstring></argsstring>
+        <name>statsEnabled_</name>
+        <qualifiedname>satox::core::PluginManager::statsEnabled_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="222" column="10" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a62aa2edf9875a13a4261ff9a3384da0f" prot="private" static="no" mutable="yes">
+        <type>std::string</type>
+        <definition>std::string satox::core::PluginManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::PluginManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="223" column="25" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="223" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aafcf2e83f35ac5f9e90f17989a7885d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager" kindref="compound">PluginManager</ref> &amp;</type>
+        <definition>PluginManager &amp; satox::core::PluginManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::PluginManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="122" column="26" bodyfile="src/core/src/plugin_manager.cpp" bodystart="34" bodyend="37"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a453a1c440f2471d49d4da98adb0390f7">PluginManager</references>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1a25c63f6b5f5b90c36624b9f913a1568e" compoundref="da/d8f/satox__manager_8cpp" startline="217" endline="219">satox::core::SatoxManager::getPluginManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a453a1c440f2471d49d4da98adb0390f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::PluginManager::PluginManager</definition>
+        <argsstring>(const PluginManager &amp;)=delete</argsstring>
+        <name>PluginManager</name>
+        <qualifiedname>satox::core::PluginManager::PluginManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d3/dce/classsatox_1_1core_1_1PluginManager" kindref="compound">PluginManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="125" column="5"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a453a1c440f2471d49d4da98adb0390f7">PluginManager</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aafcf2e83f35ac5f9e90f17989a7885d1" compoundref="df/d0a/plugin__manager_8cpp" startline="34" endline="37">getInstance</referencedby>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a039c4a10c70484d42f5228c4cf3ea4aa">operator=</referencedby>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a453a1c440f2471d49d4da98adb0390f7">PluginManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a039c4a10c70484d42f5228c4cf3ea4aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager" kindref="compound">PluginManager</ref> &amp;</type>
+        <definition>PluginManager &amp; satox::core::PluginManager::operator=</definition>
+        <argsstring>(const PluginManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::PluginManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d3/dce/classsatox_1_1core_1_1PluginManager" kindref="compound">PluginManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="126" column="19"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a453a1c440f2471d49d4da98adb0390f7">PluginManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aa7f314c043d4bf6882f144896efbc223" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::initialize</definition>
+        <argsstring>(const PluginConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::PluginManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d3d/structsatox_1_1core_1_1PluginManager_1_1PluginConfig" kindref="compound">PluginConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="129" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="39" bodyend="61"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a35361c4bae3e65599f198a2cd666123a" compoundref="df/d0a/plugin__manager_8cpp" startline="407" endline="423">scanPluginDirectory</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1abef6cc5a168301c8440d708c1a39c3ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::PluginManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="130" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="63" bodyend="84"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a961a5bf43bdf8428d2c0a8304206905b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::loadPlugin</definition>
+        <argsstring>(const std::string &amp;pluginPath)</argsstring>
+        <name>loadPlugin</name>
+        <qualifiedname>satox::core::PluginManager::loadPlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="133" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="86" bodyend="116"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a45ad6216bbd9905f5ea5f055eb549d1c" compoundref="df/d0a/plugin__manager_8cpp" startline="425" endline="462">validatePlugin</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a205ac36425685bae95f3879ad6ea7722" compoundref="df/d0a/plugin__manager_8cpp" startline="147" endline="167">reloadPlugin</referencedby>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a35361c4bae3e65599f198a2cd666123a" compoundref="df/d0a/plugin__manager_8cpp" startline="407" endline="423">scanPluginDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ada247a81c965dc67d1b1b709af8025e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::unloadPlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>unloadPlugin</name>
+        <qualifiedname>satox::core::PluginManager::unloadPlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="134" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="118" bodyend="145"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a205ac36425685bae95f3879ad6ea7722" compoundref="df/d0a/plugin__manager_8cpp" startline="147" endline="167">reloadPlugin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a205ac36425685bae95f3879ad6ea7722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::reloadPlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>reloadPlugin</name>
+        <qualifiedname>satox::core::PluginManager::reloadPlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="135" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="147" bodyend="167"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a961a5bf43bdf8428d2c0a8304206905b" compoundref="df/d0a/plugin__manager_8cpp" startline="86" endline="116">loadPlugin</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ada247a81c965dc67d1b1b709af8025e1" compoundref="df/d0a/plugin__manager_8cpp" startline="118" endline="145">unloadPlugin</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a33c0c1868ffb3ebf3f212c9c565ba512" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::isPluginLoaded</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>isPluginLoaded</name>
+        <qualifiedname>satox::core::PluginManager::isPluginLoaded</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="136" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="169" bodyend="172"/>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8c8a094a312f291ae97766f78983366a" compoundref="df/d0a/plugin__manager_8cpp" startline="490" endline="516">resolveDependencies</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a3a2f53d88e32460d2a17c91ee1f9c1ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::initializePlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>initializePlugin</name>
+        <qualifiedname>satox::core::PluginManager::initializePlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="139" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="174" bodyend="207"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a81ea9cb9d14d98938e4c155360e35a29" compoundref="df/d0a/plugin__manager_8cpp" startline="464" endline="488">checkDependencies</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0d95221c1ca603a66d732aca7c5b33b" compoundref="df/d0a/plugin__manager_8cpp" startline="566" endline="576">getPluginConfig</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faadee5f03c2c4e73657824e028494b18c0" compoundref="d4/db8/plugin__manager_8hpp" startline="46">INITIALIZED</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8c8a094a312f291ae97766f78983366a" compoundref="df/d0a/plugin__manager_8cpp" startline="490" endline="516">resolveDependencies</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a016fb76c8098a5c64c973e0e0a8cd75f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::startPlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>startPlugin</name>
+        <qualifiedname>satox::core::PluginManager::startPlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="140" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="209" bodyend="243"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faadee5f03c2c4e73657824e028494b18c0" compoundref="d4/db8/plugin__manager_8hpp" startline="46">INITIALIZED</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8c8a094a312f291ae97766f78983366a" compoundref="df/d0a/plugin__manager_8cpp" startline="490" endline="516">resolveDependencies</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ac9fcf7796b9e228accdc61180cfad27c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::stopPlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>stopPlugin</name>
+        <qualifiedname>satox::core::PluginManager::stopPlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="141" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="245" bodyend="271"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faadee5f03c2c4e73657824e028494b18c0" compoundref="d4/db8/plugin__manager_8hpp" startline="46">INITIALIZED</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1abd1eefe12539148e359613dd50661438" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::pausePlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>pausePlugin</name>
+        <qualifiedname>satox::core::PluginManager::pausePlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="142" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="273" bodyend="299"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa99b2439e63f73ad515f7ab2447a80673" compoundref="d4/db8/plugin__manager_8hpp" startline="48">PAUSED</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a555c3283cb7bc3d9801e73436bf80fb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::resumePlugin</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>resumePlugin</name>
+        <qualifiedname>satox::core::PluginManager::resumePlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="143" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="301" bodyend="327"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa99b2439e63f73ad515f7ab2447a80673" compoundref="d4/db8/plugin__manager_8hpp" startline="48">PAUSED</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a3d960e60f78bff15af960dca9f8c9284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::updatePlugin</definition>
+        <argsstring>(const std::string &amp;pluginName, const nlohmann::json &amp;config)</argsstring>
+        <name>updatePlugin</name>
+        <qualifiedname>satox::core::PluginManager::updatePlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="144" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="329" bodyend="355"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ab76b2ae97660c32b2ac77cc72b983b78" compoundref="df/d0a/plugin__manager_8cpp" startline="578" endline="591">validatePluginConfig</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0ae41474e19b4fef472f4739c579f4a" compoundref="df/d0a/plugin__manager_8cpp" startline="544" endline="564">setPluginConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a12453272ec7db48f1d307a6ebe62206d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d8/d1c/structsatox_1_1core_1_1PluginManager_1_1PluginInfo" kindref="compound">PluginInfo</ref> &gt;</type>
+        <definition>std::vector&lt; PluginManager::PluginInfo &gt; satox::core::PluginManager::getPluginInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getPluginInfo</name>
+        <qualifiedname>satox::core::PluginManager::getPluginInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="147" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="357" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a6477b29fe932ed66fa9cca3c56ec03e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d1c/structsatox_1_1core_1_1PluginManager_1_1PluginInfo" kindref="compound">PluginInfo</ref></type>
+        <definition>PluginManager::PluginInfo satox::core::PluginManager::getPluginInfo</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>getPluginInfo</name>
+        <qualifiedname>satox::core::PluginManager::getPluginInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="148" column="16" bodyfile="src/core/src/plugin_manager.cpp" bodystart="367" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0989dfc30941693a7faa060513db065" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840fa" kindref="member">PluginState</ref></type>
+        <definition>PluginManager::PluginState satox::core::PluginManager::getPluginState</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>getPluginState</name>
+        <qualifiedname>satox::core::PluginManager::getPluginState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="149" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="377" bodyend="385"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa795b8a51556d0b2cf4fbc11a896f6269" compoundref="d4/db8/plugin__manager_8hpp" startline="44">UNLOADED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a5106b282aeffb5e6ea4b4801fed3e63b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::PluginManager::getPluginError</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>getPluginError</name>
+        <qualifiedname>satox::core::PluginManager::getPluginError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="150" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="387" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ab1e5d7235bf0b8674f6864c5996ed710" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::PluginManager::discoverPlugins</definition>
+        <argsstring>() const</argsstring>
+        <name>discoverPlugins</name>
+        <qualifiedname>satox::core::PluginManager::discoverPlugins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="153" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="396" bodyend="405"/>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a35361c4bae3e65599f198a2cd666123a" compoundref="df/d0a/plugin__manager_8cpp" startline="407" endline="423">scanPluginDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a35361c4bae3e65599f198a2cd666123a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::scanPluginDirectory</definition>
+        <argsstring>()</argsstring>
+        <name>scanPluginDirectory</name>
+        <qualifiedname>satox::core::PluginManager::scanPluginDirectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="154" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="407" bodyend="423"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ab1e5d7235bf0b8674f6864c5996ed710" compoundref="df/d0a/plugin__manager_8cpp" startline="396" endline="405">discoverPlugins</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a961a5bf43bdf8428d2c0a8304206905b" compoundref="df/d0a/plugin__manager_8cpp" startline="86" endline="116">loadPlugin</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aa7f314c043d4bf6882f144896efbc223" compoundref="df/d0a/plugin__manager_8cpp" startline="39" endline="61">initialize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a45ad6216bbd9905f5ea5f055eb549d1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::validatePlugin</definition>
+        <argsstring>(const std::string &amp;pluginPath) const</argsstring>
+        <name>validatePlugin</name>
+        <qualifiedname>satox::core::PluginManager::validatePlugin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="155" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="425" bodyend="462"/>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a961a5bf43bdf8428d2c0a8304206905b" compoundref="df/d0a/plugin__manager_8cpp" startline="86" endline="116">loadPlugin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a81ea9cb9d14d98938e4c155360e35a29" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::checkDependencies</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>checkDependencies</name>
+        <qualifiedname>satox::core::PluginManager::checkDependencies</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="158" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="464" bodyend="488"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840faa43491564ebcfd38568918efbd6e840fd" compoundref="d4/db8/plugin__manager_8hpp" startline="47">RUNNING</references>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3a2f53d88e32460d2a17c91ee1f9c1ab" compoundref="df/d0a/plugin__manager_8cpp" startline="174" endline="207">initializePlugin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a8c8a094a312f291ae97766f78983366a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::resolveDependencies</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>resolveDependencies</name>
+        <qualifiedname>satox::core::PluginManager::resolveDependencies</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="159" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="490" bodyend="516"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3a2f53d88e32460d2a17c91ee1f9c1ab" compoundref="df/d0a/plugin__manager_8cpp" startline="174" endline="207">initializePlugin</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a33c0c1868ffb3ebf3f212c9c565ba512" compoundref="df/d0a/plugin__manager_8cpp" startline="169" endline="172">isPluginLoaded</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a016fb76c8098a5c64c973e0e0a8cd75f" compoundref="df/d0a/plugin__manager_8cpp" startline="209" endline="243">startPlugin</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1abc322f67371b6f8ef8a07a76ca81c1e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::PluginManager::getDependencies</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>getDependencies</name>
+        <qualifiedname>satox::core::PluginManager::getDependencies</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="160" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="518" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1abecf620a5214111b3212dc3c3794c9aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::core::PluginManager::getDependents</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>getDependents</name>
+        <qualifiedname>satox::core::PluginManager::getDependents</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="161" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="529" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0ae41474e19b4fef472f4739c579f4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::setPluginConfig</definition>
+        <argsstring>(const std::string &amp;pluginName, const nlohmann::json &amp;config)</argsstring>
+        <name>setPluginConfig</name>
+        <qualifiedname>satox::core::PluginManager::setPluginConfig</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="164" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="544" bodyend="564"/>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3d960e60f78bff15af960dca9f8c9284" compoundref="df/d0a/plugin__manager_8cpp" startline="329" endline="355">updatePlugin</references>
+        <references refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ab76b2ae97660c32b2ac77cc72b983b78" compoundref="df/d0a/plugin__manager_8cpp" startline="578" endline="591">validatePluginConfig</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0d95221c1ca603a66d732aca7c5b33b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::PluginManager::getPluginConfig</definition>
+        <argsstring>(const std::string &amp;pluginName) const</argsstring>
+        <name>getPluginConfig</name>
+        <qualifiedname>satox::core::PluginManager::getPluginConfig</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="165" column="20" bodyfile="src/core/src/plugin_manager.cpp" bodystart="566" bodyend="576"/>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3a2f53d88e32460d2a17c91ee1f9c1ab" compoundref="df/d0a/plugin__manager_8cpp" startline="174" endline="207">initializePlugin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ab76b2ae97660c32b2ac77cc72b983b78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::validatePluginConfig</definition>
+        <argsstring>(const std::string &amp;pluginName, const nlohmann::json &amp;config) const</argsstring>
+        <name>validatePluginConfig</name>
+        <qualifiedname>satox::core::PluginManager::validatePluginConfig</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="166" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="578" bodyend="591"/>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0ae41474e19b4fef472f4739c579f4a" compoundref="df/d0a/plugin__manager_8cpp" startline="544" endline="564">setPluginConfig</referencedby>
+        <referencedby refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3d960e60f78bff15af960dca9f8c9284" compoundref="df/d0a/plugin__manager_8cpp" startline="329" endline="355">updatePlugin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a6d4671751d673ae5ef6018c9ac5eeffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::registerStateCallback</definition>
+        <argsstring>(PluginStateCallback callback)</argsstring>
+        <name>registerStateCallback</name>
+        <qualifiedname>satox::core::PluginManager::registerStateCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a655d753cd39aee6cf3084642009e077e" kindref="member">PluginStateCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="169" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="593" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a0e43b68be83f2bd79e452c4bcf8d4ecb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::registerErrorCallback</definition>
+        <argsstring>(PluginErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::core::PluginManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aeb55c0e34d44ba56d6f4a2042c5a29ef" kindref="member">PluginErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="170" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="598" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1af932b53340e1abda9222e063ae6084bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::registerConfigCallback</definition>
+        <argsstring>(PluginConfigCallback callback)</argsstring>
+        <name>registerConfigCallback</name>
+        <qualifiedname>satox::core::PluginManager::registerConfigCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a925f8fa2343b41f08a409e5192a22d33" kindref="member">PluginConfigCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="171" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="603" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a86ce295efde3bd8ed4a4fa2bdecc0ff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::unregisterStateCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterStateCallback</name>
+        <qualifiedname>satox::core::PluginManager::unregisterStateCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="172" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="608" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a877bf7b60127b27229ba8c3e180507f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::unregisterErrorCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterErrorCallback</name>
+        <qualifiedname>satox::core::PluginManager::unregisterErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="173" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="613" bodyend="616"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1affbf1e6d6078ae3267da1966bcafa089" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::unregisterConfigCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterConfigCallback</name>
+        <qualifiedname>satox::core::PluginManager::unregisterConfigCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="174" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="618" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a0257a7d890e9111db9b6b0277a08316d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/df0/structsatox_1_1core_1_1PluginManager_1_1PluginStats" kindref="compound">PluginStats</ref></type>
+        <definition>PluginManager::PluginStats satox::core::PluginManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::PluginManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="186" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="623" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a49cf294bb8d074a7256600f393c79499" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::PluginManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="187" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="628" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aed86f9e3bfc57c68b21916cb22285e62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::core::PluginManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="188" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="633" bodyend="636"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a6a7c100f11d3c7941dd12b81bc1fcaca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::PluginManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::PluginManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="191" column="17" bodyfile="src/core/src/plugin_manager.cpp" bodystart="638" bodyend="641"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1afe24f34a40a57b5fea868f3764e2ae0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::PluginManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="192" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="643" bodyend="646"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aadfa1fdf8246d429888ba0678882fae9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::PluginManager::PluginManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>PluginManager</name>
+        <qualifiedname>satox::core::PluginManager::PluginManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="195" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a752338a4ca367840e307b3ba28e0c72d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::PluginManager::~PluginManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~PluginManager</name>
+        <qualifiedname>satox::core::PluginManager::~PluginManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="196" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a3163784bddd702451e7fdd2f5f9fee0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::loadPluginLibrary</definition>
+        <argsstring>(const std::string &amp;pluginPath)</argsstring>
+        <name>loadPluginLibrary</name>
+        <qualifiedname>satox::core::PluginManager::loadPluginLibrary</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="199" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="648" bodyend="686"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a2fa79b6b298cd766c3f4104ea1612aa4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::unloadPluginLibrary</definition>
+        <argsstring>(const std::string &amp;pluginName)</argsstring>
+        <name>unloadPluginLibrary</name>
+        <qualifiedname>satox::core::PluginManager::unloadPluginLibrary</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="200" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="688" bodyend="704"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1ae43da1cd044f8fe8869fb353339ad805" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::validatePluginInfo</definition>
+        <argsstring>(const PluginInfo &amp;info) const</argsstring>
+        <name>validatePluginInfo</name>
+        <qualifiedname>satox::core::PluginManager::validatePluginInfo</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/d1c/structsatox_1_1core_1_1PluginManager_1_1PluginInfo" kindref="compound">PluginInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="201" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="706" bodyend="733"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a04392e78638b2dab8f6f4f6fd9c0fcbc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::PluginManager::checkPluginCompatibility</definition>
+        <argsstring>(const PluginInfo &amp;info) const</argsstring>
+        <name>checkPluginCompatibility</name>
+        <qualifiedname>satox::core::PluginManager::checkPluginCompatibility</qualifiedname>
+        <param>
+          <type>const <ref refid="d8/d1c/structsatox_1_1core_1_1PluginManager_1_1PluginInfo" kindref="compound">PluginInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="202" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="735" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a8101beb35ff3282511d7d463154ad0b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::updatePluginState</definition>
+        <argsstring>(const std::string &amp;pluginName, PluginState state)</argsstring>
+        <name>updatePluginState</name>
+        <qualifiedname>satox::core::PluginManager::updatePluginState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840fa" kindref="member">PluginState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="203" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="741" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a2f0585e00f64ed72d16563024d0e7ef0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::handlePluginError</definition>
+        <argsstring>(const std::string &amp;pluginName, const std::string &amp;error)</argsstring>
+        <name>handlePluginError</name>
+        <qualifiedname>satox::core::PluginManager::handlePluginError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="204" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="749" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1aaa93a2f296fe41b4bf9d53fe1de920bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::updateStats</definition>
+        <argsstring>(const std::string &amp;pluginName, const std::chrono::milliseconds &amp;time, const std::string &amp;operation)</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::core::PluginManager::updateStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const std::chrono::milliseconds &amp;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="205" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="758" bodyend="794"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a3fc8b32bd13f1f2f287fd9997d232265" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::cleanupPlugins</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupPlugins</name>
+        <qualifiedname>satox::core::PluginManager::cleanupPlugins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="207" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="796" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a72b7a989e043cbcf12af4139ceeda8cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::notifyStateChange</definition>
+        <argsstring>(const std::string &amp;pluginName, PluginState state)</argsstring>
+        <name>notifyStateChange</name>
+        <qualifiedname>satox::core::PluginManager::notifyStateChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840fa" kindref="member">PluginState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="208" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="807" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1af3fa4c4624b145e3cfb5634fd13b6df8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::notifyError</definition>
+        <argsstring>(const std::string &amp;pluginName, const std::string &amp;error)</argsstring>
+        <name>notifyError</name>
+        <qualifiedname>satox::core::PluginManager::notifyError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="209" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="814" bodyend="819"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dce/classsatox_1_1core_1_1PluginManager_1a1a6c60b730f4c64cd91e89ae185f1c09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PluginManager::notifyConfigChange</definition>
+        <argsstring>(const std::string &amp;pluginName, const nlohmann::json &amp;config)</argsstring>
+        <name>notifyConfigChange</name>
+        <qualifiedname>satox::core::PluginManager::notifyConfigChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/plugin_manager.hpp" line="210" column="10" bodyfile="src/core/src/plugin_manager.cpp" bodystart="821" bodyend="826"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/plugin_manager.hpp" line="40" column="1" bodyfile="src/core/include/satox/core/plugin_manager.hpp" bodystart="40" bodyend="224"/>
+    <listofallmembers>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a81ea9cb9d14d98938e4c155360e35a29" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>checkDependencies</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a04392e78638b2dab8f6f4f6fd9c0fcbc" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>checkPluginCompatibility</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3fc8b32bd13f1f2f287fd9997d232265" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>cleanupPlugins</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1afe24f34a40a57b5fea868f3764e2ae0b" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>clearLastError</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a1d4a7de22b06dd6bd2bb52f32dc36b53" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>config_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a72241b5f1f2cde95c6e6e8ee7dd221c7" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>configCallbacks_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ab1e5d7235bf0b8674f6864c5996ed710" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>discoverPlugins</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aed86f9e3bfc57c68b21916cb22285e62" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>enableStats</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1afbd7cb0e4be8e6050a0ffa2ce1ce533b" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>errorCallbacks_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a67b5affa2247c9ade732e8b29531987c" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>factories_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1abc322f67371b6f8ef8a07a76ca81c1e0" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getDependencies</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1abecf620a5214111b3212dc3c3794c9aa" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getDependents</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aafcf2e83f35ac5f9e90f17989a7885d1" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getInstance</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a6a7c100f11d3c7941dd12b81bc1fcaca" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getLastError</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0d95221c1ca603a66d732aca7c5b33b" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getPluginConfig</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a5106b282aeffb5e6ea4b4801fed3e63b" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getPluginError</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a12453272ec7db48f1d307a6ebe62206d" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getPluginInfo</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a6477b29fe932ed66fa9cca3c56ec03e6" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getPluginInfo</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0989dfc30941693a7faa060513db065" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getPluginState</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a0257a7d890e9111db9b6b0277a08316d" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>getStats</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a2f0585e00f64ed72d16563024d0e7ef0" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>handlePluginError</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aa7f314c043d4bf6882f144896efbc223" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>initialize</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a85440f4cc8f1778698c9010477c2d996" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>initialized_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3a2f53d88e32460d2a17c91ee1f9c1ab" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>initializePlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a33c0c1868ffb3ebf3f212c9c565ba512" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>isPluginLoaded</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a62aa2edf9875a13a4261ff9a3384da0f" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>lastError_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a961a5bf43bdf8428d2c0a8304206905b" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>loadPlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3163784bddd702451e7fdd2f5f9fee0f" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>loadPluginLibrary</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aa5d42b21bda1f86b4ade2c9f63d752c5" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>mutex_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a1a6c60b730f4c64cd91e89ae185f1c09" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>notifyConfigChange</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1af3fa4c4624b145e3cfb5634fd13b6df8" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>notifyError</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a72b7a989e043cbcf12af4139ceeda8cb" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>notifyStateChange</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a039c4a10c70484d42f5228c4cf3ea4aa" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>operator=</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1abd1eefe12539148e359613dd50661438" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>pausePlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a925f8fa2343b41f08a409e5192a22d33" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginConfigCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aeb55c0e34d44ba56d6f4a2042c5a29ef" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginErrorCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a453a1c440f2471d49d4da98adb0390f7" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginManager</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aadfa1fdf8246d429888ba0678882fae9" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginManager</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a37230f84a37556d38d47dc5b54388438" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>plugins_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a9f65b9ce0035321a595d8b6f9fe840fa" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginState</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a655d753cd39aee6cf3084642009e077e" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginStateCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1afdcdd7fbe9ec149b1f199a8fcfb789af" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>PluginType</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1af932b53340e1abda9222e063ae6084bc" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>registerConfigCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a0e43b68be83f2bd79e452c4bcf8d4ecb" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>registerErrorCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a6d4671751d673ae5ef6018c9ac5eeffa" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>registerStateCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a205ac36425685bae95f3879ad6ea7722" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>reloadPlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a49cf294bb8d074a7256600f393c79499" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>resetStats</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8c8a094a312f291ae97766f78983366a" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>resolveDependencies</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a555c3283cb7bc3d9801e73436bf80fb2" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>resumePlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a35361c4bae3e65599f198a2cd666123a" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>scanPluginDirectory</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae0ae41474e19b4fef472f4739c579f4a" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>setPluginConfig</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1abef6cc5a168301c8440d708c1a39c3ef" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>shutdown</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a016fb76c8098a5c64c973e0e0a8cd75f" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>startPlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a6948e6648a0bea1caafc1387586eed14" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>stateCallbacks_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8371af0a449220fa78a3791bb514d585" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>stats_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8963f8ce8c43e5dabf8207f5350215cb" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>statsEnabled_</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ac9fcf7796b9e228accdc61180cfad27c" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>stopPlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ada247a81c965dc67d1b1b709af8025e1" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>unloadPlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a2fa79b6b298cd766c3f4104ea1612aa4" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>unloadPluginLibrary</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1affbf1e6d6078ae3267da1966bcafa089" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>unregisterConfigCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a877bf7b60127b27229ba8c3e180507f3" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>unregisterErrorCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a86ce295efde3bd8ed4a4fa2bdecc0ff3" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>unregisterStateCallback</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a3d960e60f78bff15af960dca9f8c9284" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>updatePlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a8101beb35ff3282511d7d463154ad0b6" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>updatePluginState</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1aaa93a2f296fe41b4bf9d53fe1de920bd" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>updateStats</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a45ad6216bbd9905f5ea5f055eb549d1c" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>validatePlugin</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ab76b2ae97660c32b2ac77cc72b983b78" prot="public" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>validatePluginConfig</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1ae43da1cd044f8fe8869fb353339ad805" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>validatePluginInfo</name></member>
+      <member refid="d3/dce/classsatox_1_1core_1_1PluginManager_1a752338a4ca367840e307b3ba28e0c72d" prot="private" virt="non-virtual"><scope>satox::core::PluginManager</scope><name>~PluginManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

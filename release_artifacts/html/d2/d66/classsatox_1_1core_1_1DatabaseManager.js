@@ -1,0 +1,25 @@
+var classsatox_1_1core_1_1DatabaseManager =
+[
+    [ "DatabaseConfig", "dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig.html", "dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" ],
+    [ "Impl", "d3/deb/classsatox_1_1core_1_1DatabaseManager_1_1Impl.html", "d3/deb/classsatox_1_1core_1_1DatabaseManager_1_1Impl" ],
+    [ "QueryResult", "d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult.html", "d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult" ],
+    [ "Transaction", "d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction.html", "d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" ],
+    [ "DatabaseManager", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a3c10eaff361a111d0471f089fcd34b4c", null ],
+    [ "~DatabaseManager", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#ae489e2937e49302a92600cabb00d219f", null ],
+    [ "backup", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a45e56fa0db8666fef7b6881b1075af2b", null ],
+    [ "beginTransaction", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#af2ba1af3af66e68ad292ce06dba64091", null ],
+    [ "clearError", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a763542811d3e571db287687c19bd4062", null ],
+    [ "commitTransaction", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#aacfa4b9ac6bb597b7a797cf0a440d8cb", null ],
+    [ "connect", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a60a2434e0e1b9779e5e9e4d40b0dcda7", null ],
+    [ "disconnect", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a33aac7f15e4fe4f28f2228903ee8db24", null ],
+    [ "executeQuery", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a94cb9d365f2a7a9b47d6ed852df8e74b", null ],
+    [ "executeTransaction", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#ae04c87f7b10e69e1bda942b0d92c9007", null ],
+    [ "getActiveConnections", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a70b1a658304ece0a3d03fd285e7f4b19", null ],
+    [ "getAvailableConnections", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a22b6290616c6e34adc17fe8edf73521e", null ],
+    [ "getLastError", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#ab1c34b04ef2585c4e3b7e23d7a596c37", null ],
+    [ "initialize", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a86843c5c1a1baabd9e966eabc30218a0", null ],
+    [ "restore", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#affd9508377f013d6f88b2efce3d64c26", null ],
+    [ "rollbackTransaction", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a39e2ab83e69a9d01674aaddc945e0696", null ],
+    [ "setMaxConnections", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#a4832b194696e8c2cde92efebfd2917f1", null ],
+    [ "shutdown", "d2/d66/classsatox_1_1core_1_1DatabaseManager.html#af6d7b7a63d0fba186d355da8aa1ca090", null ]
+];

@@ -1,0 +1,172 @@
+/**
+ * @file $(basename "$1")
+ * @brief $(basename "$1" | sed 's/\./_/g' | tr '[:lower:]' '[:upper:]')
+ * @copyright Copyright (c) 2025 Satoxcoin Core Developers
+ * @license MIT License
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+#pragma once
+
+#include <string>
+#include <memory>
+#include <mutex>
+#include <chrono>
+#include <functional>
+#include <fstream>
+#include <sstream>
+#include <unordered_map>
+#include <vector>
+#include <queue>
+#include <thread>
+#include <atomic>
+#include <nlohmann/json.hpp>
+
+namespace satox::core {
+
+class LoggingManager {
+public:
+    // Log level enum
+    enum class Level {
+        TRACE,
+        DEBUG,
+        INFO,
+        WARNING,
+        ERROR,
+        FATAL
+    };
+
+    // Log entry structure
+    struct LogEntry {
+        Level level;
+        std::string message;
+        std::string source;
+        std::string threadId;
+        std::chrono::system_clock::time_point timestamp;
+        nlohmann::json metadata;
+    };
+
+    // Log configuration structure
+    struct LogConfig {
+        std::string logDir;                    // Log directory
+        std::string logFile;                   // Log file name
+        size_t maxFileSize;                    // Maximum log file size in bytes
+        size_t maxFiles;                       // Maximum number of log files
+        Level minLevel;                        // Minimum log level
+        bool consoleOutput;                    // Enable console output
+        bool fileOutput;                       // Enable file output
+        bool asyncLogging;                     // Enable asynchronous logging
+        size_t queueSize;                      // Maximum queue size for async logging
+        std::chrono::milliseconds flushInterval; // Flush interval for async logging
+        bool includeTimestamp;                 // Include timestamp in log entries
+        bool includeThreadId;                  // Include thread ID in log entries
+        bool includeSource;                    // Include source in log entries
+        std::string logFormat;                 // Log format string
+    };
+
+    // Log callback type
+    using LogCallback = std::function<void(const LogEntry&)>;
+
+    // Remove singleton instance
+    // static LoggingManager& getInstance();
+
+    // Prevent copying
+    LoggingManager(const LoggingManager&) = delete;
+    LoggingManager& operator=(const LoggingManager&) = delete;
+
+    LoggingManager();
+    ~LoggingManager();
+
+    // Initialization and shutdown
+    bool initialize(const LogConfig& config);
+    void shutdown();
+
+    // Logging methods
+    void log(Level level, const std::string& message, const std::string& source = "",
+             const nlohmann::json& metadata = nlohmann::json());
+    void trace(const std::string& message, const std::string& source = "",
+               const nlohmann::json& metadata = nlohmann::json());
+    void debug(const std::string& message, const std::string& source = "",
+               const nlohmann::json& metadata = nlohmann::json());
+    void info(const std::string& message, const std::string& source = "",
+              const nlohmann::json& metadata = nlohmann::json());
+    void warning(const std::string& message, const std::string& source = "",
+                 const nlohmann::json& metadata = nlohmann::json());
+    void error(const std::string& message, const std::string& source = "",
+               const nlohmann::json& metadata = nlohmann::json());
+    void fatal(const std::string& message, const std::string& source = "",
+               const nlohmann::json& metadata = nlohmann::json());
+
+    // Log management
+    void setLogLevel(Level level);
+    Level getLogLevel() const;
+    void setLogFormat(const std::string& format);
+    std::string getLogFormat() const;
+    void flush();
+    void rotate();
+
+    // Log callbacks
+    void registerCallback(LogCallback callback);
+    void unregisterCallback();
+
+    // Log statistics
+    struct LogStats {
+        size_t totalEntries;
+        size_t entriesByLevel[6];  // One for each log level
+        size_t droppedEntries;
+        size_t queueSize;
+        std::chrono::system_clock::time_point lastFlush;
+    };
+    LogStats getStats() const;
+
+    // Error handling
+    std::string getLastError() const;
+    void clearLastError();
+
+private:
+    // Helper methods
+    void processLogEntry(const LogEntry& entry);
+    void writeToFile(const LogEntry& entry);
+    void writeToConsole(const LogEntry& entry);
+    std::string formatLogEntry(const LogEntry& entry);
+    void checkRotation();
+    void asyncLoggingWorker();
+    void notifyCallbacks(const LogEntry& entry);
+    std::string getThreadId();
+    std::string levelToString(Level level) const;
+    Level stringToLevel(const std::string& level) const;
+    bool validateConfig(const LogConfig& config);
+    void updateStats(const LogEntry& entry);
+
+    // Member variables
+    bool initialized_ = false;
+    mutable std::mutex mutex_;
+    LogConfig config_;
+    std::ofstream logFile_;
+    std::queue<LogEntry> logQueue_;
+    std::thread workerThread_;
+    std::atomic<bool> running_;
+    std::vector<LogCallback> callbacks_;
+    LogStats stats_;
+    std::string lastError_;
+    std::unordered_map<std::thread::id, std::string> threadIds_;
+};
+
+} // namespace satox::core 

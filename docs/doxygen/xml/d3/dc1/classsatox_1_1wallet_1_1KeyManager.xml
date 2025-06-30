@@ -1,0 +1,727 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/dc1/classsatox_1_1wallet_1_1KeyManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::wallet::KeyManager</compoundname>
+    <includes refid="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" local="no">key_manager.hpp</includes>
+    <innerclass refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" prot="public">satox::wallet::KeyManager::KeyPair</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ab911ba3354bd610d8ef6735d9aadc355" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::wallet::KeyManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::wallet::KeyManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="95" column="24" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a419a2ef3f221ccb1602894b6176d8b0b" prot="private" static="no" mutable="yes">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::KeyManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::wallet::KeyManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="96" column="25" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a3694a29e89fd957f4018a3d6f1b95d83" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::wallet::KeyManager::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="97" column="10" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a8ee6a2dbb701b0732e4e34e3cdd771a5" prot="private" static="no" mutable="no">
+        <type>EC_KEY *</type>
+        <definition>EC_KEY* satox::wallet::KeyManager::key_</definition>
+        <argsstring></argsstring>
+        <name>key_</name>
+        <qualifiedname>satox::wallet::KeyManager::key_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="98" column="12" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ab12452110d963cbc564193cdf5755f2b" prot="private" static="no" mutable="no">
+        <type>const EC_GROUP *</type>
+        <definition>const EC_GROUP* satox::wallet::KeyManager::group_</definition>
+        <argsstring></argsstring>
+        <name>group_</name>
+        <qualifiedname>satox::wallet::KeyManager::group_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="99" column="20" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a4c85411d03e93689a36a0b9c27719877" prot="private" static="no" mutable="no">
+        <type>BIGNUM *</type>
+        <definition>BIGNUM* satox::wallet::KeyManager::order_</definition>
+        <argsstring></argsstring>
+        <name>order_</name>
+        <qualifiedname>satox::wallet::KeyManager::order_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="100" column="12" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1abde755e82446b4ea45250bd971a56c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::wallet::KeyManager::KeyManager</definition>
+        <argsstring>()</argsstring>
+        <name>KeyManager</name>
+        <qualifiedname>satox::wallet::KeyManager::KeyManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="50" column="5" bodyfile="src/wallet/src/key_manager.cpp" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a80eae26fdc3eed6d231ec45f1b928fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::wallet::KeyManager::~KeyManager</definition>
+        <argsstring>()</argsstring>
+        <name>~KeyManager</name>
+        <qualifiedname>satox::wallet::KeyManager::~KeyManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="51" column="5" bodyfile="src/wallet/src/key_manager.cpp" bodystart="42" bodyend="44"/>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a85b5608659960d122c8b829bd99d4f8e" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="60" endline="68">cleanup</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a78304d3036d313ddba88e1501e34ae6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::wallet::KeyManager::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="54" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="46" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a85b5608659960d122c8b829bd99d4f8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::KeyManager::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>satox::wallet::KeyManager::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="55" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="60" bodyend="68"/>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a80eae26fdc3eed6d231ec45f1b928fb4" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="42" endline="44">~KeyManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac1216cb4dd6d1b086ae86e0ef8d3ebdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::generateKeyPair</definition>
+        <argsstring>(KeyPair &amp;keyPair)</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>satox::wallet::KeyManager::generateKeyPair</qualifiedname>
+        <param>
+          <type><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref> &amp;</type>
+          <declname>keyPair</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="58" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="70" bodyend="92"/>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="46">satox::wallet::KeyManager::KeyPair::address</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="43">satox::wallet::KeyManager::KeyPair::privateKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="261" endline="282">privateKeyToPublicKey</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="44">satox::wallet::KeyManager::KeyPair::publicKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a66aa9b759bdb3847610f37492de4cf9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::deriveKeyPairFromSeed</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;seed, KeyPair &amp;keyPair)</argsstring>
+        <name>deriveKeyPairFromSeed</name>
+        <qualifiedname>satox::wallet::KeyManager::deriveKeyPairFromSeed</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>seed</declname>
+        </param>
+        <param>
+          <type><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref> &amp;</type>
+          <declname>keyPair</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="59" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="94" bodyend="109"/>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="46">satox::wallet::KeyManager::KeyPair::address</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="43">satox::wallet::KeyManager::KeyPair::privateKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="261" endline="282">privateKeyToPublicKey</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="44">satox::wallet::KeyManager::KeyPair::publicKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aefdec54b2aeef392c395f6e898ed558c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::deriveKeyPairFromPrivateKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, KeyPair &amp;keyPair)</argsstring>
+        <name>deriveKeyPairFromPrivateKey</name>
+        <qualifiedname>satox::wallet::KeyManager::deriveKeyPairFromPrivateKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref> &amp;</type>
+          <declname>keyPair</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="60" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="111" bodyend="129"/>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="46">satox::wallet::KeyManager::KeyPair::address</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="43">satox::wallet::KeyManager::KeyPair::privateKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="261" endline="282">privateKeyToPublicKey</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="44">satox::wallet::KeyManager::KeyPair::publicKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="229" endline="243">validatePrivateKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a805ba62946ba100ebca3935417493d7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::deriveChildKeyPair</definition>
+        <argsstring>(const KeyPair &amp;parent, uint32_t index, KeyPair &amp;child)</argsstring>
+        <name>deriveChildKeyPair</name>
+        <qualifiedname>satox::wallet::KeyManager::deriveChildKeyPair</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref> &amp;</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="61" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="131" bodyend="227"/>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="46">satox::wallet::KeyManager::KeyPair::address</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a83860d4fa5cb0881301287e793449007" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="45">satox::wallet::KeyManager::KeyPair::chainCode</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="43">satox::wallet::KeyManager::KeyPair::privateKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="261" endline="282">privateKeyToPublicKey</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="44">satox::wallet::KeyManager::KeyPair::publicKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::validatePrivateKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey) const</argsstring>
+        <name>validatePrivateKey</name>
+        <qualifiedname>satox::wallet::KeyManager::validatePrivateKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="64" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="229" bodyend="243"/>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad6aad10b97bcb5f8b08ffac982a596c8" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="389" endline="439">decryptPrivateKey</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aefdec54b2aeef392c395f6e898ed558c" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="111" endline="129">deriveKeyPairFromPrivateKey</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad2f64a157e89862c05aa6e9d526e0827" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="322" endline="387">encryptPrivateKey</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="261" endline="282">privateKeyToPublicKey</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a91b7f573d808522f6378ca33de44c4d5" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="255" endline="259">validateKeyPair</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a2f892259d850a4174b3b1ef8586cf924" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::validatePublicKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey) const</argsstring>
+        <name>validatePublicKey</name>
+        <qualifiedname>satox::wallet::KeyManager::validatePublicKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="65" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="245" bodyend="253"/>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1acb53b9f93bdbd383f86cdee3a9eca21f" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="284" endline="320">publicKeyToAddress</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a91b7f573d808522f6378ca33de44c4d5" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="255" endline="259">validateKeyPair</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a91b7f573d808522f6378ca33de44c4d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::validateKeyPair</definition>
+        <argsstring>(const KeyPair &amp;keyPair) const</argsstring>
+        <name>validateKeyPair</name>
+        <qualifiedname>satox::wallet::KeyManager::validateKeyPair</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref> &amp;</type>
+          <declname>keyPair</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="66" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="255" bodyend="259"/>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="46">satox::wallet::KeyManager::KeyPair::address</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="43">satox::wallet::KeyManager::KeyPair::privateKey</references>
+        <references refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" compoundref="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" startline="44">satox::wallet::KeyManager::KeyPair::publicKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="229" endline="243">validatePrivateKey</references>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a2f892259d850a4174b3b1ef8586cf924" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="245" endline="253">validatePublicKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::privateKeyToPublicKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, std::vector&lt; uint8_t &gt; &amp;publicKey) const</argsstring>
+        <name>privateKeyToPublicKey</name>
+        <qualifiedname>satox::wallet::KeyManager::privateKeyToPublicKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="69" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="261" bodyend="282"/>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="229" endline="243">validatePrivateKey</references>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a805ba62946ba100ebca3935417493d7d" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="131" endline="227">deriveChildKeyPair</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aefdec54b2aeef392c395f6e898ed558c" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="111" endline="129">deriveKeyPairFromPrivateKey</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a66aa9b759bdb3847610f37492de4cf9e" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="94" endline="109">deriveKeyPairFromSeed</referencedby>
+        <referencedby refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac1216cb4dd6d1b086ae86e0ef8d3ebdf" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="70" endline="92">generateKeyPair</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1acb53b9f93bdbd383f86cdee3a9eca21f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::publicKeyToAddress</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, std::string &amp;address) const</argsstring>
+        <name>publicKeyToAddress</name>
+        <qualifiedname>satox::wallet::KeyManager::publicKeyToAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="70" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="284" bodyend="320"/>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a2f892259d850a4174b3b1ef8586cf924" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="245" endline="253">validatePublicKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad2f64a157e89862c05aa6e9d526e0827" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::encryptPrivateKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;privateKey, const std::string &amp;password, std::vector&lt; uint8_t &gt; &amp;encrypted) const</argsstring>
+        <name>encryptPrivateKey</name>
+        <qualifiedname>satox::wallet::KeyManager::encryptPrivateKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="73" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="322" bodyend="387"/>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="229" endline="243">validatePrivateKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad6aad10b97bcb5f8b08ffac982a596c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::decryptPrivateKey</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;encrypted, const std::string &amp;password, std::vector&lt; uint8_t &gt; &amp;privateKey) const</argsstring>
+        <name>decryptPrivateKey</name>
+        <qualifiedname>satox::wallet::KeyManager::decryptPrivateKey</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="74" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="389" bodyend="439"/>
+        <references refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" compoundref="d7/d67/wallet_2src_2key__manager_8cpp" startline="229" endline="243">validatePrivateKey</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a0ce935549c4f5d2a7649c8fbe1cc3f9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::KeyManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::wallet::KeyManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="77" column="17" bodyfile="src/wallet/src/key_manager.cpp" bodystart="476" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aebeeeddc2f7f64aba5057d5a451dbcbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::KeyManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::wallet::KeyManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="78" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="481" bodyend="484"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ae2b424af2368a17098a334e2a1fca991" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::initializeOpenSSL</definition>
+        <argsstring>()</argsstring>
+        <name>initializeOpenSSL</name>
+        <qualifiedname>satox::wallet::KeyManager::initializeOpenSSL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="82" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="488" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aacd6589b45de3d1896b4f8a5e9a4b510" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::KeyManager::cleanupOpenSSL</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupOpenSSL</name>
+        <qualifiedname>satox::wallet::KeyManager::cleanupOpenSSL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="83" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="508" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1abe89fb651038f82e07ac56e0e658f43a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::generateRandomBytes</definition>
+        <argsstring>(std::vector&lt; uint8_t &gt; &amp;bytes, size_t length) const</argsstring>
+        <name>generateRandomBytes</name>
+        <qualifiedname>satox::wallet::KeyManager::generateRandomBytes</qualifiedname>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="84" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="515" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a8a4e1d7a3abcb085db4abd25c27aeeda" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::computeSHA256</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, std::vector&lt; uint8_t &gt; &amp;hash) const</argsstring>
+        <name>computeSHA256</name>
+        <qualifiedname>satox::wallet::KeyManager::computeSHA256</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="85" column="10" bodyfile="src/key_manager.cpp" bodystart="26" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a54080fc5b643611ad420500bffb388ad" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::computeRIPEMD160</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, std::vector&lt; uint8_t &gt; &amp;hash) const</argsstring>
+        <name>computeRIPEMD160</name>
+        <qualifiedname>satox::wallet::KeyManager::computeRIPEMD160</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="86" column="10" bodyfile="src/key_manager.cpp" bodystart="41" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad51bce2379d88e132594d99d20c2ee91" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::computeDoubleSHA256</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, std::vector&lt; uint8_t &gt; &amp;hash) const</argsstring>
+        <name>computeDoubleSHA256</name>
+        <qualifiedname>satox::wallet::KeyManager::computeDoubleSHA256</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="87" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="552" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a18d65ea07b683c4e2fb75dfb2741773f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::deriveKeyFromPassword</definition>
+        <argsstring>(const std::string &amp;password, const std::vector&lt; uint8_t &gt; &amp;salt, std::vector&lt; uint8_t &gt; &amp;key) const</argsstring>
+        <name>deriveKeyFromPassword</name>
+        <qualifiedname>satox::wallet::KeyManager::deriveKeyFromPassword</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>salt</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="88" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="441" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aa70f87c05c2ea4daa1e33a966e437501" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::computeHMACSHA512</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;key, std::vector&lt; uint8_t &gt; &amp;hmac) const</argsstring>
+        <name>computeHMACSHA512</name>
+        <qualifiedname>satox::wallet::KeyManager::computeHMACSHA512</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>hmac</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="89" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="449" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a0e2de301cd4363e570aafaf0de08af6a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::KeyManager::bytesToHex</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;bytes) const</argsstring>
+        <name>bytesToHex</name>
+        <qualifiedname>satox::wallet::KeyManager::bytesToHex</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="90" column="17" bodyfile="src/wallet/src/key_manager.cpp" bodystart="560" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ab221e377603a1ed2a5e1c855db2a091b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::KeyManager::hexToBytes</definition>
+        <argsstring>(const std::string &amp;hex, std::vector&lt; uint8_t &gt; &amp;bytes) const</argsstring>
+        <name>hexToBytes</name>
+        <qualifiedname>satox::wallet::KeyManager::hexToBytes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hex</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="91" column="10" bodyfile="src/wallet/src/key_manager.cpp" bodystart="568" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a7357b3f21050d0b99d411c2bb54df4e6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::KeyManager::deriveAddress</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey) const</argsstring>
+        <name>deriveAddress</name>
+        <qualifiedname>satox::wallet::KeyManager::deriveAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="92" column="17" bodyfile="src/wallet/src/key_manager.cpp" bodystart="585" bodyend="587"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/wallet/include/satox/wallet/key_manager.hpp" line="39" column="1" bodyfile="src/wallet/include/satox/wallet/key_manager.hpp" bodystart="39" bodyend="101"/>
+    <listofallmembers>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a0e2de301cd4363e570aafaf0de08af6a" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>bytesToHex</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a85b5608659960d122c8b829bd99d4f8e" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>cleanup</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aacd6589b45de3d1896b4f8a5e9a4b510" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>cleanupOpenSSL</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aebeeeddc2f7f64aba5057d5a451dbcbe" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>clearLastError</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad51bce2379d88e132594d99d20c2ee91" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>computeDoubleSHA256</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aa70f87c05c2ea4daa1e33a966e437501" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>computeHMACSHA512</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a54080fc5b643611ad420500bffb388ad" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>computeRIPEMD160</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a8a4e1d7a3abcb085db4abd25c27aeeda" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>computeSHA256</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad6aad10b97bcb5f8b08ffac982a596c8" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>decryptPrivateKey</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a7357b3f21050d0b99d411c2bb54df4e6" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>deriveAddress</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a805ba62946ba100ebca3935417493d7d" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>deriveChildKeyPair</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a18d65ea07b683c4e2fb75dfb2741773f" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>deriveKeyFromPassword</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aefdec54b2aeef392c395f6e898ed558c" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>deriveKeyPairFromPrivateKey</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a66aa9b759bdb3847610f37492de4cf9e" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>deriveKeyPairFromSeed</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad2f64a157e89862c05aa6e9d526e0827" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>encryptPrivateKey</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac1216cb4dd6d1b086ae86e0ef8d3ebdf" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>generateKeyPair</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1abe89fb651038f82e07ac56e0e658f43a" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>generateRandomBytes</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a0ce935549c4f5d2a7649c8fbe1cc3f9d" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>getLastError</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ab12452110d963cbc564193cdf5755f2b" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>group_</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ab221e377603a1ed2a5e1c855db2a091b" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>hexToBytes</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a78304d3036d313ddba88e1501e34ae6c" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>initialize</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a3694a29e89fd957f4018a3d6f1b95d83" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>initialized_</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ae2b424af2368a17098a334e2a1fca991" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>initializeOpenSSL</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a8ee6a2dbb701b0732e4e34e3cdd771a5" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>key_</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1abde755e82446b4ea45250bd971a56c65" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>KeyManager</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a419a2ef3f221ccb1602894b6176d8b0b" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>lastError_</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ab911ba3354bd610d8ef6735d9aadc355" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>mutex_</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a4c85411d03e93689a36a0b9c27719877" prot="private" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>order_</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>privateKeyToPublicKey</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1acb53b9f93bdbd383f86cdee3a9eca21f" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>publicKeyToAddress</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a91b7f573d808522f6378ca33de44c4d5" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>validateKeyPair</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>validatePrivateKey</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a2f892259d850a4174b3b1ef8586cf924" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>validatePublicKey</name></member>
+      <member refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a80eae26fdc3eed6d231ec45f1b928fb4" prot="public" virt="non-virtual"><scope>satox::wallet::KeyManager</scope><name>~KeyManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

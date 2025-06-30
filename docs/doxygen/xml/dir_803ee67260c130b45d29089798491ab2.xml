@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_803ee67260c130b45d29089798491ab2" kind="dir">
+    <compoundname>src/database</compoundname>
+    <innerdir refid="dir_ece97e06dd8dd297efa34cdf2fce1823">src/database/include</innerdir>
+    <innerdir refid="dir_39defd39c5909e939920306f308fdb06">src/database/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md49">
+<title>Overview</title><para>The Satox Database Component provides a unified database interface for the Satox SDK, supporting multiple database backends with a consistent API. This component follows the Satox SDK development templates and provides comprehensive database management capabilities.</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md50">
+<title>Features</title><para><itemizedlist>
+<listitem><para><bold>Multi-Database Support</bold>: In-memory database with extensible backend support</para>
+</listitem><listitem><para><bold>Transaction Management</bold>: ACID-compliant transaction support</para>
+</listitem><listitem><para><bold>Connection Pooling</bold>: Efficient connection management</para>
+</listitem><listitem><para><bold>Health Monitoring</bold>: Comprehensive health checks and status reporting</para>
+</listitem><listitem><para><bold>Structured Logging</bold>: Detailed logging with spdlog integration</para>
+</listitem><listitem><para><bold>Error Handling</bold>: Standardized error codes and exception handling</para>
+</listitem><listitem><para><bold>Statistics</bold>: Performance metrics and operation tracking</para>
+</listitem><listitem><para><bold>Backup &amp; Restore</bold>: Database backup and restoration capabilities</para>
+</listitem><listitem><para><bold>Index Management</bold>: Automatic and manual index creation</para>
+</listitem><listitem><para><bold>Callback System</bold>: Event-driven architecture with callback support</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md51">
+<title>Architecture</title><para>The Database Component follows the unified architecture principle:<itemizedlist>
+<listitem><para><bold>C++ Core</bold>: All database logic implemented in C++</para>
+</listitem><listitem><para><bold>Singleton Pattern</bold>: Single instance per application</para>
+</listitem><listitem><para><bold>Thread-Safe</bold>: All operations are thread-safe with proper mutex protection</para>
+</listitem><listitem><para><bold>Template Compliance</bold>: Follows all established development templates</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md52">
+<title>Usage</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md53">
+<title>Basic Initialization</title><para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dc/d21/database_2include_2satox_2database_2database__manager_8hpp" kindref="compound">satox/database/database_manager.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>manager<sp/>=<sp/><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ab3e8f0d2dfff4e964c87b6a7277ef731" kindref="member">satox::database::DatabaseManager::getInstance</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configure<sp/>the<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">satox::database::DatabaseConfig</ref><sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a2b628c7dbd95742a5850efcf202e89e3" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;my_database&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1ac2a6acec1a314217fa9112fa453a7aaf" kindref="member">enableLogging</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a22f19d5de470facb43ab5dc85e2f030a" kindref="member">logPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/components/database/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a9c3a5d0de3446ee27388acfcbb3eeb07" kindref="member">maxConnections</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a126d0f6d00000ab9365c7c30bc4d0eeb" kindref="member">connectionTimeout</ref><sp/>=<sp/>5000;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!manager.initialize(config))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>manager.getLastError()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md54">
+<title>Database Operations</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Create<sp/>a<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.createDatabase(</highlight><highlight class="stringliteral">&quot;my_db&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>a<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.useDatabase(</highlight><highlight class="stringliteral">&quot;my_db&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>List<sp/>databases</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>databases<sp/>=<sp/>manager.listDatabases();</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md55">
+<title>Table Operations</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Create<sp/>a<sp/>table<sp/>with<sp/>schema</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>schema<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;age&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;integer&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;active&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;boolean&quot;</highlight><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.createTable(</highlight><highlight class="stringliteral">&quot;users&quot;</highlight><highlight class="normal">,<sp/>schema);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Insert<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">nlohmann::json<sp/>user<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;user1&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;John<sp/>Doe&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;age&quot;</highlight><highlight class="normal">,<sp/>30},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;active&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.insert(</highlight><highlight class="stringliteral">&quot;users&quot;</highlight><highlight class="normal">,<sp/>user);</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md56">
+<title>Transaction Management</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Begin<sp/>transaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.beginTransaction();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Perform<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.insert(</highlight><highlight class="stringliteral">&quot;users&quot;</highlight><highlight class="normal">,<sp/>user1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.insert(</highlight><highlight class="stringliteral">&quot;users&quot;</highlight><highlight class="normal">,<sp/>user2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Commit<sp/>transaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.commitTransaction();</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(...)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rollback<sp/>on<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manager.rollbackTransaction();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md57">
+<title>Health Monitoring</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Perform<sp/>health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.performHealthCheck())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Database<sp/>is<sp/>healthy&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Database<sp/>health<sp/>check<sp/>failed&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>health<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>health<sp/>=<sp/>manager.getHealth();</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Health:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>health.message<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md58">
+<title>Callback Registration</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Register<sp/>database<sp/>operation<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.setDatabaseCallback([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Operation<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>operation<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>succeeded&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Operation<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>operation<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>error<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Register<sp/>health<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.setHealthCallback([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" kindref="compound">satox::database::DatabaseHealth</ref>&amp;<sp/>health)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Health<sp/>status:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>health.<ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8eb1cc3f6438bc51e4b461487c9b5111" kindref="member">message</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md59">
+<title>Building</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md60">
+<title>Prerequisites</title><para><itemizedlist>
+<listitem><para>C++17 compatible compiler</para>
+</listitem><listitem><para>CMake 3.14 or higher</para>
+</listitem><listitem><para>nlohmann/json library</para>
+</listitem><listitem><para>spdlog library</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md61">
+<title>Build Instructions</title><para><programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>Create<sp/>build<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Configure<sp/>with<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Build<sp/>the<sp/>component</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Install<sp/>(optional)</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>install</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md62">
+<title>Dependencies</title><para><programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>Ubuntu/Debian</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>nlohmann-json3-dev<sp/>libspdlog-dev</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>macOS</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>nlohmann-json<sp/>spdlog</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>CentOS/RHEL</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>yum<sp/>install<sp/>nlohmann-json-devel<sp/>spdlog-devel</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md63">
+<title>Testing</title><para>The component includes comprehensive test coverage:<itemizedlist>
+<listitem><para>Unit tests for all public APIs</para>
+</listitem><listitem><para>Integration tests for database operations</para>
+</listitem><listitem><para>Performance tests for benchmarking</para>
+</listitem><listitem><para>Concurrency tests for thread safety</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>specific<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">./tests/database_manager_test</highlight></codeline>
+<codeline><highlight class="normal">./tests/database_manager_comprehensive_test</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md64">
+<title>Logging</title><para>The component uses structured logging with spdlog:<itemizedlist>
+<listitem><para><bold>Log Location</bold>: <computeroutput>logs/components/database/</computeroutput></para>
+</listitem><listitem><para><bold>Log Files</bold>:<itemizedlist>
+<listitem><para><computeroutput>database.log</computeroutput> - Main application log</para>
+</listitem><listitem><para><computeroutput>database_operations.log</computeroutput> - Operation audit trail</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Log Levels</bold>: DEBUG, INFO, WARN, ERROR</para>
+</listitem><listitem><para><bold>Log Format</bold>: <computeroutput>[timestamp] [level] [thread] [component] message</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md65">
+<title>Error Handling</title><para>The component uses standardized error codes:<itemizedlist>
+<listitem><para><computeroutput>SUCCESS</computeroutput> - Operation completed successfully</para>
+</listitem><listitem><para><computeroutput>INVALID_ARGUMENT</computeroutput> - Invalid input parameters</para>
+</listitem><listitem><para><computeroutput>NOT_INITIALIZED</computeroutput> - Component not initialized</para>
+</listitem><listitem><para><computeroutput>OPERATION_FAILED</computeroutput> - General operation failure</para>
+</listitem><listitem><para><computeroutput>VALIDATION_ERROR</computeroutput> - Data validation failed</para>
+</listitem><listitem><para><computeroutput>TIMEOUT_ERROR</computeroutput> - Operation timed out</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md66">
+<title>Performance</title><para>The component includes performance monitoring:<itemizedlist>
+<listitem><para>Operation timing statistics</para>
+</listitem><listitem><para>Average operation time tracking</para>
+</listitem><listitem><para>Slow operation detection (&gt;1 second)</para>
+</listitem><listitem><para>Memory usage monitoring</para>
+</listitem><listitem><para>Connection pool statistics</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md67">
+<title>Security</title><para><itemizedlist>
+<listitem><para>Input validation for all operations</para>
+</listitem><listitem><para>SQL injection prevention (when SQL backends are implemented)</para>
+</listitem><listitem><para>Secure connection handling</para>
+</listitem><listitem><para>Audit logging for all operations</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md68">
+<title>⚠️ Limitations</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md69">
+<title><bold>Blockchain Compatibility</bold></title><para><itemizedlist>
+<listitem><para><bold>No Smart Contract Support:</bold> Satox is based on Ravencoin and does <bold>not</bold> support smart contracts or EVM compatibility</para>
+</listitem><listitem><para><bold>Asset-Based:</bold> Focuses on asset creation, management, and transfer rather than programmable contracts</para>
+</listitem><listitem><para><bold>UTXO Model:</bold> Uses Unspent Transaction Output (UTXO) model like Bitcoin/Ravencoin, not account-based like Ethereum</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md70">
+<title><bold>Platform Support</bold></title><para><itemizedlist>
+<listitem><para><bold>Desktop Focus:</bold> Primarily designed for desktop/server environments</para>
+</listitem><listitem><para><bold>Mobile Limitations:</bold> Mobile SDK provides limited functionality compared to core SDK</para>
+</listitem><listitem><para><bold>Browser Support:</bold> WebAssembly bindings have performance limitations for complex operations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md71">
+<title><bold>Network Requirements</bold></title><para><itemizedlist>
+<listitem><para><bold>Internet Connection:</bold> Requires active internet connection for blockchain operations</para>
+</listitem><listitem><para><bold>Node Synchronization:</bold> Full node operations require significant storage and bandwidth</para>
+</listitem><listitem><para><bold>API Dependencies:</bold> Some features depend on external API services</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md72">
+<title><bold>Development Considerations</bold></title><para><itemizedlist>
+<listitem><para><bold>Learning Curve:</bold> Ravencoin/UTXO model differs from Ethereum/smart contract development</para>
+</listitem><listitem><para><bold>Testing Environment:</bold> Testnet required for development and testing</para>
+</listitem><listitem><para><bold>Asset Management:</bold> Asset creation and management have specific requirements and limitations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md73">
+<title>Contributing</title><para>When contributing to this component:<orderedlist>
+<listitem><para>Follow the established development templates</para>
+</listitem><listitem><para>Ensure all tests pass</para>
+</listitem><listitem><para>Add appropriate logging</para>
+</listitem><listitem><para>Update documentation</para>
+</listitem><listitem><para>Follow the error handling patterns</para>
+</listitem><listitem><para>Maintain thread safety</para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/database/README.md_1autotoc_md74">
+<title>License</title><para>MIT License - Copyright(c) 2025 Satoxcoin Core Developer </para>
+</sect1>
+    </detaileddescription>
+    <location file="src/database/"/>
+  </compounddef>
+</doxygen>

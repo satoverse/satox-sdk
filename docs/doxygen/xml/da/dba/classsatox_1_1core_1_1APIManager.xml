@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="da/dba/classsatox_1_1core_1_1APIManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::APIManager</compoundname>
+    <includes refid="dd/d5d/api__manager_8hpp" local="no">api_manager.hpp</includes>
+    <innerclass refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config" prot="public">satox::core::APIManager::Config</innerclass>
+    <innerclass refid="dd/d93/classsatox_1_1core_1_1APIManager_1_1Impl" prot="public">satox::core::APIManager::Impl</innerclass>
+    <innerclass refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" prot="public">satox::core::APIManager::Request</innerclass>
+    <innerclass refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" prot="public">satox::core::APIManager::Response</innerclass>
+    <innerclass refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" prot="public">satox::core::APIManager::WebSocketMessage</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="da/dba/classsatox_1_1core_1_1APIManager_1ae89ce1da5895f3ad0931edd970745b32" prot="public" static="no">
+        <type>std::function&lt; <ref refid="d4/d03/structsatox_1_1core_1_1APIManager_1_1Response" kindref="compound">Response</ref>(const <ref refid="d1/d9e/structsatox_1_1core_1_1APIManager_1_1Request" kindref="compound">Request</ref> &amp;)&gt;</type>
+        <definition>using satox::core::APIManager::RequestHandler =  std::function&lt;Response(const Request&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>RequestHandler</name>
+        <qualifiedname>satox::core::APIManager::RequestHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="81" column="5" bodyfile="src/core/include/satox/core/api_manager.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="da/dba/classsatox_1_1core_1_1APIManager_1ad6a98d6f969b5844053a1745503f0e9a" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref> &amp;)&gt;</type>
+        <definition>using satox::core::APIManager::WebSocketHandler =  std::function&lt;void(const WebSocketMessage&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebSocketHandler</name>
+        <qualifiedname>satox::core::APIManager::WebSocketHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="82" column="5" bodyfile="src/core/include/satox/core/api_manager.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/dba/classsatox_1_1core_1_1APIManager_1ac0e80eb7992423ec4d43a3e09a00cf5b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="dd/d93/classsatox_1_1core_1_1APIManager_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; satox::core::APIManager::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <qualifiedname>satox::core::APIManager::impl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="112" column="21" bodyfile="src/core/include/satox/core/api_manager.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1aac92e68ce13433ace119754cb1ef53b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::APIManager::APIManager</definition>
+        <argsstring>()</argsstring>
+        <name>APIManager</name>
+        <qualifiedname>satox::core::APIManager::APIManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="84" column="5" bodyfile="src/core/src/api_manager.cpp" bodystart="825" bodyend="825"/>
+        <references refid="da/dba/classsatox_1_1core_1_1APIManager_1aac92e68ce13433ace119754cb1ef53b8" compoundref="db/d08/api__manager_8cpp" startline="825" endline="825">APIManager</references>
+        <referencedby refid="da/dba/classsatox_1_1core_1_1APIManager_1aac92e68ce13433ace119754cb1ef53b8" compoundref="db/d08/api__manager_8cpp" startline="825" endline="825">APIManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a7d14741a5bb5de5317e71e192c61fee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::APIManager::~APIManager</definition>
+        <argsstring>()</argsstring>
+        <name>~APIManager</name>
+        <qualifiedname>satox::core::APIManager::~APIManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="85" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a9cf3f704e5bc9c8052d52d9e0477b311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::initialize</definition>
+        <argsstring>(const Config &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::APIManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="db/d17/structsatox_1_1core_1_1APIManager_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="87" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="828" bodyend="830"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a3f453d69e81ba5ca8ce5bc495d27391b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>satox::core::APIManager::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="88" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="832" bodyend="834"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a7771c2bc51c97f93999d308accb002be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::APIManager::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <qualifiedname>satox::core::APIManager::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="89" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="836" bodyend="838"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a1f0b6de0c6b40b14262da58ff1d30dc2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>satox::core::APIManager::isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="90" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="840" bodyend="842"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1ad97596e43b10939de7b812028d6b5bcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::registerEndpoint</definition>
+        <argsstring>(const std::string &amp;method, const std::string &amp;path, RequestHandler handler)</argsstring>
+        <name>registerEndpoint</name>
+        <qualifiedname>satox::core::APIManager::registerEndpoint</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ae89ce1da5895f3ad0931edd970745b32" kindref="member">RequestHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="93" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="844" bodyend="846"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a04f2be0c60ae3e94927b898605ace946" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::unregisterEndpoint</definition>
+        <argsstring>(const std::string &amp;method, const std::string &amp;path)</argsstring>
+        <name>unregisterEndpoint</name>
+        <qualifiedname>satox::core::APIManager::unregisterEndpoint</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="94" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="848" bodyend="850"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1ad7d14947fe009de49a3ccf5e596b90b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::registerWebSocketHandler</definition>
+        <argsstring>(const std::string &amp;path, WebSocketHandler handler)</argsstring>
+        <name>registerWebSocketHandler</name>
+        <qualifiedname>satox::core::APIManager::registerWebSocketHandler</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="da/dba/classsatox_1_1core_1_1APIManager_1ad6a98d6f969b5844053a1745503f0e9a" kindref="member">WebSocketHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="97" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="852" bodyend="854"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a3840f9634b79ed1432410712788197e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::unregisterWebSocketHandler</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>unregisterWebSocketHandler</name>
+        <qualifiedname>satox::core::APIManager::unregisterWebSocketHandler</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="98" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="856" bodyend="858"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a6144b146b98388621e95b981150b5898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::sendWebSocketMessage</definition>
+        <argsstring>(const std::string &amp;client_id, const WebSocketMessage &amp;message)</argsstring>
+        <name>sendWebSocketMessage</name>
+        <qualifiedname>satox::core::APIManager::sendWebSocketMessage</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>client_id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="99" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="860" bodyend="862"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a13c4f7c34d6309d7dfcd9fe3e55d7ca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::broadcastWebSocketMessage</definition>
+        <argsstring>(const WebSocketMessage &amp;message)</argsstring>
+        <name>broadcastWebSocketMessage</name>
+        <qualifiedname>satox::core::APIManager::broadcastWebSocketMessage</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/dd0/structsatox_1_1core_1_1APIManager_1_1WebSocketMessage" kindref="compound">WebSocketMessage</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="100" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="864" bodyend="866"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a53750530907f9b286cd7cd0dc8891215" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::setRateLimit</definition>
+        <argsstring>(int requests_per_minute)</argsstring>
+        <name>setRateLimit</name>
+        <qualifiedname>satox::core::APIManager::setRateLimit</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>requests_per_minute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="103" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="868" bodyend="870"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1ac6a40e4aed20922374e57e7d7302efa1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::APIManager::isRateLimited</definition>
+        <argsstring>(const std::string &amp;client_ip) const</argsstring>
+        <name>isRateLimited</name>
+        <qualifiedname>satox::core::APIManager::isRateLimited</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>client_ip</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="104" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="872" bodyend="874"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1a2573c67a52b58f2cb082d365cd20ea02" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::APIManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::APIManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="107" column="17" bodyfile="src/core/src/api_manager.cpp" bodystart="876" bodyend="878"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dba/classsatox_1_1core_1_1APIManager_1af7833f5f06a42f7553ef07f618ca6a42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::APIManager::clearError</definition>
+        <argsstring>()</argsstring>
+        <name>clearError</name>
+        <qualifiedname>satox::core::APIManager::clearError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/api_manager.hpp" line="108" column="10" bodyfile="src/core/src/api_manager.cpp" bodystart="880" bodyend="882"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/api_manager.hpp" line="43" column="1" bodyfile="src/core/include/satox/core/api_manager.hpp" bodystart="43" bodyend="113"/>
+    <listofallmembers>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1aac92e68ce13433ace119754cb1ef53b8" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>APIManager</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a13c4f7c34d6309d7dfcd9fe3e55d7ca5" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>broadcastWebSocketMessage</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1af7833f5f06a42f7553ef07f618ca6a42" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>clearError</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a2573c67a52b58f2cb082d365cd20ea02" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>getLastError</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1ac0e80eb7992423ec4d43a3e09a00cf5b" prot="private" virt="non-virtual"><scope>satox::core::APIManager</scope><name>impl_</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a9cf3f704e5bc9c8052d52d9e0477b311" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>initialize</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1ac6a40e4aed20922374e57e7d7302efa1" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>isRateLimited</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a1f0b6de0c6b40b14262da58ff1d30dc2" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>isRunning</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1ad97596e43b10939de7b812028d6b5bcc" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>registerEndpoint</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1ad7d14947fe009de49a3ccf5e596b90b1" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>registerWebSocketHandler</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1ae89ce1da5895f3ad0931edd970745b32" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>RequestHandler</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a6144b146b98388621e95b981150b5898" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>sendWebSocketMessage</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a53750530907f9b286cd7cd0dc8891215" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>setRateLimit</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a3f453d69e81ba5ca8ce5bc495d27391b" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>start</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a7771c2bc51c97f93999d308accb002be" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>stop</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a04f2be0c60ae3e94927b898605ace946" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>unregisterEndpoint</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a3840f9634b79ed1432410712788197e4" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>unregisterWebSocketHandler</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1ad6a98d6f969b5844053a1745503f0e9a" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>WebSocketHandler</name></member>
+      <member refid="da/dba/classsatox_1_1core_1_1APIManager_1a7d14741a5bb5de5317e71e192c61fee1" prot="public" virt="non-virtual"><scope>satox::core::APIManager</scope><name>~APIManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

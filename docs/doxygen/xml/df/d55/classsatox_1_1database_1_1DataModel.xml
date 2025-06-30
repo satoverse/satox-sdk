@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/d55/classsatox_1_1database_1_1DataModel" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>satox::database::DataModel</compoundname>
+    <derivedcompoundref refid="d8/d74/classsatox_1_1database_1_1Asset" prot="public" virt="non-virtual">satox::database::Asset</derivedcompoundref>
+    <derivedcompoundref refid="d9/d0b/classsatox_1_1database_1_1Block" prot="public" virt="non-virtual">satox::database::Block</derivedcompoundref>
+    <derivedcompoundref refid="d4/de9/classsatox_1_1database_1_1IPFSFile" prot="public" virt="non-virtual">satox::database::IPFSFile</derivedcompoundref>
+    <derivedcompoundref refid="d5/dec/classsatox_1_1database_1_1NFT" prot="public" virt="non-virtual">satox::database::NFT</derivedcompoundref>
+    <derivedcompoundref refid="d0/d68/classsatox_1_1database_1_1Transaction" prot="public" virt="non-virtual">satox::database::Transaction</derivedcompoundref>
+    <derivedcompoundref refid="df/df2/classsatox_1_1database_1_1Wallet" prot="public" virt="non-virtual">satox::database::Wallet</derivedcompoundref>
+    <includes refid="dc/d84/data__models_8hpp" local="no">data_models.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d55/classsatox_1_1database_1_1DataModel_1aeaa74621685e5d8cc29f86147622516c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual satox::database::DataModel::~DataModel</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DataModel</name>
+        <qualifiedname>satox::database::DataModel::~DataModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/data_models.hpp" line="40" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d55/classsatox_1_1database_1_1DataModel_1a83221c4aed1e380a58f0aeaf3b188b72" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>nlohmann::json</type>
+        <definition>virtual nlohmann::json satox::database::DataModel::toJson</definition>
+        <argsstring>() const =0</argsstring>
+        <name>toJson</name>
+        <qualifiedname>satox::database::DataModel::toJson</qualifiedname>
+        <reimplementedby refid="d8/d74/classsatox_1_1database_1_1Asset_1a33fe2526f1ebdfd5797cfe928353de1a">toJson</reimplementedby>
+        <reimplementedby refid="d9/d0b/classsatox_1_1database_1_1Block_1aeaac0c3d6e209f8b52e4b71e020b36b4">toJson</reimplementedby>
+        <reimplementedby refid="d4/de9/classsatox_1_1database_1_1IPFSFile_1ac87137d74e74e9d6bd11696338a9970d">toJson</reimplementedby>
+        <reimplementedby refid="d5/dec/classsatox_1_1database_1_1NFT_1a5d32b12af3292b4b3baf5c07aae51c2c">toJson</reimplementedby>
+        <reimplementedby refid="d0/d68/classsatox_1_1database_1_1Transaction_1a7613004941455b40d66ae91c2f48ff48">toJson</reimplementedby>
+        <reimplementedby refid="df/df2/classsatox_1_1database_1_1Wallet_1a8d220147f12d52048e0bd3b4ccd35c2d">toJson</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/data_models.hpp" line="41" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d55/classsatox_1_1database_1_1DataModel_1adea83b90826e9a979ddfd75107dcf8ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void satox::database::DataModel::fromJson</definition>
+        <argsstring>(const nlohmann::json &amp;json)=0</argsstring>
+        <name>fromJson</name>
+        <qualifiedname>satox::database::DataModel::fromJson</qualifiedname>
+        <reimplementedby refid="d8/d74/classsatox_1_1database_1_1Asset_1a4bb44768d2a6b53088a7518ffccbe100">fromJson</reimplementedby>
+        <reimplementedby refid="d9/d0b/classsatox_1_1database_1_1Block_1a5065a5fa717bec6f9514641f82a53955">fromJson</reimplementedby>
+        <reimplementedby refid="d4/de9/classsatox_1_1database_1_1IPFSFile_1a04558312d35b37e43ea368b0fda44cde">fromJson</reimplementedby>
+        <reimplementedby refid="d5/dec/classsatox_1_1database_1_1NFT_1af889549dbaae6189a78145ea9d07735e">fromJson</reimplementedby>
+        <reimplementedby refid="d0/d68/classsatox_1_1database_1_1Transaction_1ad82e80c7422b5846634583b82875658b">fromJson</reimplementedby>
+        <reimplementedby refid="df/df2/classsatox_1_1database_1_1Wallet_1a2ddc58dd934a7b8d97f50e2a3c8e217d">fromJson</reimplementedby>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>json</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/data_models.hpp" line="42" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d55/classsatox_1_1database_1_1DataModel_1a0a76007ad95a4ca24b0d38bc3c8f08c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string satox::database::DataModel::getTableName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getTableName</name>
+        <qualifiedname>satox::database::DataModel::getTableName</qualifiedname>
+        <reimplementedby refid="d8/d74/classsatox_1_1database_1_1Asset_1ad20486713479bd4f8e77963572ceeff3">getTableName</reimplementedby>
+        <reimplementedby refid="d9/d0b/classsatox_1_1database_1_1Block_1a283c069ef2fea858c45b5b8a7a06946f">getTableName</reimplementedby>
+        <reimplementedby refid="d4/de9/classsatox_1_1database_1_1IPFSFile_1a0a24fc0888003072df25d03962b6e542">getTableName</reimplementedby>
+        <reimplementedby refid="d5/dec/classsatox_1_1database_1_1NFT_1a15803738c70147086703b9b30d228722">getTableName</reimplementedby>
+        <reimplementedby refid="d0/d68/classsatox_1_1database_1_1Transaction_1a89d23c5920672d1107ced3582324a5d7">getTableName</reimplementedby>
+        <reimplementedby refid="df/df2/classsatox_1_1database_1_1Wallet_1aba62a1c0d0ed73e1a0da44d8758c0c84">getTableName</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/data_models.hpp" line="43" column="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>satox::database::Asset</label>
+        <link refid="d8/d74/classsatox_1_1database_1_1Asset"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>satox::database::Block</label>
+        <link refid="d9/d0b/classsatox_1_1database_1_1Block"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>satox::database::DataModel</label>
+        <link refid="df/d55/classsatox_1_1database_1_1DataModel"/>
+      </node>
+      <node id="4">
+        <label>satox::database::IPFSFile</label>
+        <link refid="d4/de9/classsatox_1_1database_1_1IPFSFile"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>satox::database::NFT</label>
+        <link refid="d5/dec/classsatox_1_1database_1_1NFT"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>satox::database::Transaction</label>
+        <link refid="d0/d68/classsatox_1_1database_1_1Transaction"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>satox::database::Wallet</label>
+        <link refid="df/df2/classsatox_1_1database_1_1Wallet"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/database/include/satox/database/data_models.hpp" line="38" column="1" bodyfile="src/database/include/satox/database/data_models.hpp" bodystart="38" bodyend="44"/>
+    <listofallmembers>
+      <member refid="df/d55/classsatox_1_1database_1_1DataModel_1adea83b90826e9a979ddfd75107dcf8ae" prot="public" virt="pure-virtual"><scope>satox::database::DataModel</scope><name>fromJson</name></member>
+      <member refid="df/d55/classsatox_1_1database_1_1DataModel_1a0a76007ad95a4ca24b0d38bc3c8f08c9" prot="public" virt="pure-virtual"><scope>satox::database::DataModel</scope><name>getTableName</name></member>
+      <member refid="df/d55/classsatox_1_1database_1_1DataModel_1a83221c4aed1e380a58f0aeaf3b188b72" prot="public" virt="pure-virtual"><scope>satox::database::DataModel</scope><name>toJson</name></member>
+      <member refid="df/d55/classsatox_1_1database_1_1DataModel_1aeaa74621685e5d8cc29f86147622516c" prot="public" virt="virtual"><scope>satox::database::DataModel</scope><name>~DataModel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

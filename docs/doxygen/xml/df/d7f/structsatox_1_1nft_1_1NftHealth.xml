@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/d7f/structsatox_1_1nft_1_1NftHealth" kind="struct" language="C++" prot="public">
+    <compoundname>satox::nft::NftHealth</compoundname>
+    <includes refid="d5/de2/nft_2include_2satox_2nft_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="df/d7f/structsatox_1_1nft_1_1NftHealth_1ac8099d301073a68af5e0af97975b7394" prot="public" static="no" mutable="no">
+        <type><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485" kindref="member">NftStatus</ref></type>
+        <definition>NftStatus satox::nft::NftHealth::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>satox::nft::NftHealth::status</qualifiedname>
+        <initializer>= <ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">NftStatus::UNKNOWN</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="88" column="15" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7f/structsatox_1_1nft_1_1NftHealth_1a3a7bfa151032ecdfa1bb9478adf2af93" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::nft::NftHealth::healthy</definition>
+        <argsstring></argsstring>
+        <name>healthy</name>
+        <qualifiedname>satox::nft::NftHealth::healthy</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="89" column="10" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7f/structsatox_1_1nft_1_1NftHealth_1a85866e33f32041d019777997c3aa4896" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::nft::NftHealth::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>satox::nft::NftHealth::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="90" column="17" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7f/structsatox_1_1nft_1_1NftHealth_1aa8c545d999b883acde5072780f7a4726" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::nft::NftHealth::lastCheck</definition>
+        <argsstring></argsstring>
+        <name>lastCheck</name>
+        <qualifiedname>satox::nft::NftHealth::lastCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="91" column="43" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7f/structsatox_1_1nft_1_1NftHealth_1a7cf719bf4c41288cfad07e34cbe38522" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::nft::NftHealth::consecutiveFailures</definition>
+        <argsstring></argsstring>
+        <name>consecutiveFailures</name>
+        <qualifiedname>satox::nft::NftHealth::consecutiveFailures</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="92" column="9" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7f/structsatox_1_1nft_1_1NftHealth_1a33513f67e4c8dac0eca978e25665ea05" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::nft::NftHealth::details</definition>
+        <argsstring></argsstring>
+        <name>details</name>
+        <qualifiedname>satox::nft::NftHealth::details</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/types.hpp" line="93" column="20" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::nft::NftHealth</label>
+        <link refid="df/d7f/structsatox_1_1nft_1_1NftHealth"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/nft/include/satox/nft/types.hpp" line="87" column="1" bodyfile="src/nft/include/satox/nft/types.hpp" bodystart="87" bodyend="94"/>
+    <listofallmembers>
+      <member refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a7cf719bf4c41288cfad07e34cbe38522" prot="public" virt="non-virtual"><scope>satox::nft::NftHealth</scope><name>consecutiveFailures</name></member>
+      <member refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a33513f67e4c8dac0eca978e25665ea05" prot="public" virt="non-virtual"><scope>satox::nft::NftHealth</scope><name>details</name></member>
+      <member refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a3a7bfa151032ecdfa1bb9478adf2af93" prot="public" virt="non-virtual"><scope>satox::nft::NftHealth</scope><name>healthy</name></member>
+      <member refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1aa8c545d999b883acde5072780f7a4726" prot="public" virt="non-virtual"><scope>satox::nft::NftHealth</scope><name>lastCheck</name></member>
+      <member refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a85866e33f32041d019777997c3aa4896" prot="public" virt="non-virtual"><scope>satox::nft::NftHealth</scope><name>message</name></member>
+      <member refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1ac8099d301073a68af5e0af97975b7394" prot="public" virt="non-virtual"><scope>satox::nft::NftHealth</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d6b/structsatox_1_1core_1_1FirebaseConnection" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::FirebaseConnection</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a08c6341c05ce54144516dc5c62bc4f1e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::FirebaseConnection::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>satox::core::FirebaseConnection::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="20" column="17" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1ae6212e977505cacf85519d5676876b51" prot="public" static="no" mutable="no">
+        <type><ref refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig" kindref="compound">FirebaseConfig</ref></type>
+        <definition>FirebaseConfig satox::core::FirebaseConnection::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>satox::core::FirebaseConnection::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="21" column="20" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="21" bodyend="-1"/>
+        <referencedby refid="da/d77/structsatox_1_1core_1_1FirebaseManager_1_1Impl_1a9933d306ed2d70a0cf6b813b3ec45ce1" compoundref="d2/d14/src_2cloud_2firebase__manager_8cpp" startline="56" endline="87">satox::core::FirebaseManager::Impl::getAccessToken</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a17046956f91079c2d8be325c02d38eaa" prot="public" static="no" mutable="no">
+        <type>CURL *</type>
+        <definition>CURL* satox::core::FirebaseConnection::curl_handle</definition>
+        <argsstring></argsstring>
+        <name>curl_handle</name>
+        <qualifiedname>satox::core::FirebaseConnection::curl_handle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="22" column="10" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a0601438b7d3dd96f20bdce23fc01236e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::FirebaseConnection::connected</definition>
+        <argsstring></argsstring>
+        <name>connected</name>
+        <qualifiedname>satox::core::FirebaseConnection::connected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="23" column="10" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1af0eee758c031cac5e230abf19a0ca54a" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::FirebaseConnection::last_activity</definition>
+        <argsstring></argsstring>
+        <name>last_activity</name>
+        <qualifiedname>satox::core::FirebaseConnection::last_activity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="24" column="43" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1ae0e7200aed9f70514a1a1c965b3b90ea" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::FirebaseConnection::access_token</definition>
+        <argsstring></argsstring>
+        <name>access_token</name>
+        <qualifiedname>satox::core::FirebaseConnection::access_token</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="25" column="17" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="25" bodyend="-1"/>
+        <referencedby refid="da/d77/structsatox_1_1core_1_1FirebaseManager_1_1Impl_1a9933d306ed2d70a0cf6b813b3ec45ce1" compoundref="d2/d14/src_2cloud_2firebase__manager_8cpp" startline="56" endline="87">satox::core::FirebaseManager::Impl::getAccessToken</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a9e61d4c88dd17c292737328e5d912b08" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::FirebaseConnection::token_expiry</definition>
+        <argsstring></argsstring>
+        <name>token_expiry</name>
+        <qualifiedname>satox::core::FirebaseConnection::token_expiry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="26" column="43" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="26" bodyend="-1"/>
+        <referencedby refid="da/d77/structsatox_1_1core_1_1FirebaseManager_1_1Impl_1a9933d306ed2d70a0cf6b813b3ec45ce1" compoundref="d2/d14/src_2cloud_2firebase__manager_8cpp" startline="56" endline="87">satox::core::FirebaseManager::Impl::getAccessToken</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1aa88ce982eb4f1dfcab1189cb00d10cbc" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;void(const nlohmann::json&amp;)&gt; &gt; satox::core::FirebaseConnection::listeners</definition>
+        <argsstring></argsstring>
+        <name>listeners</name>
+        <qualifiedname>satox::core::FirebaseConnection::listeners</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/firebase_manager.cpp" line="27" column="24" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>K</label>
+      </node>
+      <node id="8">
+        <label>T</label>
+      </node>
+      <node id="4">
+        <label>satox::core::FirebaseConfig</label>
+        <link refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>auth_provider_x509_cert_url</edgelabel>
+          <edgelabel>auth_uri</edgelabel>
+          <edgelabel>client_email</edgelabel>
+          <edgelabel>client_id</edgelabel>
+          <edgelabel>client_x509_cert_url</edgelabel>
+          <edgelabel>database_url</edgelabel>
+          <edgelabel>log_level</edgelabel>
+          <edgelabel>private_key</edgelabel>
+          <edgelabel>private_key_id</edgelabel>
+          <edgelabel>project_id</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>satox::core::FirebaseConnection</label>
+        <link refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>access_token</edgelabel>
+          <edgelabel>id</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::unordered_map&lt; K, T &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::unordered_map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="template-instance">
+          <edgelabel>&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/src/cloud/firebase_manager.cpp" line="19" column="1" bodyfile="src/core/src/cloud/firebase_manager.cpp" bodystart="19" bodyend="28"/>
+    <listofallmembers>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1ae0e7200aed9f70514a1a1c965b3b90ea" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>access_token</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1ae6212e977505cacf85519d5676876b51" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>config</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a0601438b7d3dd96f20bdce23fc01236e" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>connected</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a17046956f91079c2d8be325c02d38eaa" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>curl_handle</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a08c6341c05ce54144516dc5c62bc4f1e" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>id</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1af0eee758c031cac5e230abf19a0ca54a" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>last_activity</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1aa88ce982eb4f1dfcab1189cb00d10cbc" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>listeners</name></member>
+      <member refid="de/d6b/structsatox_1_1core_1_1FirebaseConnection_1a9e61d4c88dd17c292737328e5d912b08" prot="public" virt="non-virtual"><scope>satox::core::FirebaseConnection</scope><name>token_expiry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

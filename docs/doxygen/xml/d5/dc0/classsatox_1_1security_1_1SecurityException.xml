@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/dc0/classsatox_1_1security_1_1SecurityException" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::SecurityException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::exception</basecompoundref>
+    <derivedcompoundref refid="d0/d3b/classsatox_1_1security_1_1PQCException" prot="public" virt="non-virtual">satox::security::PQCException</derivedcompoundref>
+    <derivedcompoundref refid="d8/d9d/classsatox_1_1security_1_1RateLimitException" prot="public" virt="non-virtual">satox::security::RateLimitException</derivedcompoundref>
+    <derivedcompoundref refid="d3/d4f/classsatox_1_1security_1_1SecurityInitializationException" prot="public" virt="non-virtual">satox::security::SecurityInitializationException</derivedcompoundref>
+    <derivedcompoundref refid="d9/d6f/classsatox_1_1security_1_1SecurityViolationException" prot="public" virt="non-virtual">satox::security::SecurityViolationException</derivedcompoundref>
+    <derivedcompoundref refid="d8/de5/classsatox_1_1security_1_1ValidationException" prot="public" virt="non-virtual">satox::security::ValidationException</derivedcompoundref>
+    <includes refid="d3/dda/security_2include_2satox_2security_2error_8hpp" local="no">error.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/dc0/classsatox_1_1security_1_1SecurityException_1a13017f8bd04c452939e25f0d402b6ac3" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/d71/namespacesatox_1_1security_1a2955236067e0895b1d2879a4d2fbd38a" kindref="member">SecurityErrorCode</ref></type>
+        <definition>SecurityErrorCode satox::security::SecurityException::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <qualifiedname>satox::security::SecurityException::code_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/error.hpp" line="77" column="23" bodyfile="src/security/include/satox/security/error.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/dc0/classsatox_1_1security_1_1SecurityException_1a2b8eafcd86c0e469ed4a2f260f36289d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::security::SecurityException::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>satox::security::SecurityException::message_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/error.hpp" line="78" column="17" bodyfile="src/security/include/satox/security/error.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/dc0/classsatox_1_1security_1_1SecurityException_1ad287bdf7ec4c342334b78374379a16f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::SecurityException::SecurityException</definition>
+        <argsstring>(SecurityErrorCode code, const std::string &amp;message=&quot;&quot;)</argsstring>
+        <name>SecurityException</name>
+        <qualifiedname>satox::security::SecurityException::SecurityException</qualifiedname>
+        <param>
+          <type><ref refid="d3/d71/namespacesatox_1_1security_1a2955236067e0895b1d2879a4d2fbd38a" kindref="member">SecurityErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/error.hpp" line="61" column="5" bodyfile="src/security/include/satox/security/error.hpp" bodystart="61" bodyend="62"/>
+        <references refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1ac03a79c916b0fef5280c07a5e7beabe0" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="68" endline="70">code</references>
+        <references refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1a1d135fe272390b4b6b85483a9fd0d738" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="72" endline="74">message</references>
+        <referencedby refid="d0/d3b/classsatox_1_1security_1_1PQCException_1ab06b1b4694d9b20cd3477df32459c8f7" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="90" endline="91">satox::security::PQCException::PQCException</referencedby>
+        <referencedby refid="d8/d9d/classsatox_1_1security_1_1RateLimitException_1af012a301551af89456b1e3c57e0a1e37" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="102" endline="103">satox::security::RateLimitException::RateLimitException</referencedby>
+        <referencedby refid="d3/d4f/classsatox_1_1security_1_1SecurityInitializationException_1acc337ff1f4755eb7d97c9320f4c7b9c4" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="84" endline="85">satox::security::SecurityInitializationException::SecurityInitializationException</referencedby>
+        <referencedby refid="d9/d6f/classsatox_1_1security_1_1SecurityViolationException_1a2166d01b1f9951d069a2329bfe58e88f" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="108" endline="109">satox::security::SecurityViolationException::SecurityViolationException</referencedby>
+        <referencedby refid="d8/de5/classsatox_1_1security_1_1ValidationException_1a9a5e063f5d53cb227fd13deedc13173d" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="96" endline="97">satox::security::ValidationException::ValidationException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/dc0/classsatox_1_1security_1_1SecurityException_1aa423b54596ef33308d7d3208cbb33c3a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * satox::security::SecurityException::what</definition>
+        <argsstring>() const noexcept override</argsstring>
+        <name>what</name>
+        <qualifiedname>satox::security::SecurityException::what</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/error.hpp" line="64" column="16" bodyfile="src/security/include/satox/security/error.hpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dc0/classsatox_1_1security_1_1SecurityException_1ac03a79c916b0fef5280c07a5e7beabe0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d3/d71/namespacesatox_1_1security_1a2955236067e0895b1d2879a4d2fbd38a" kindref="member">SecurityErrorCode</ref></type>
+        <definition>SecurityErrorCode satox::security::SecurityException::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <qualifiedname>satox::security::SecurityException::code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/error.hpp" line="68" column="23" bodyfile="src/security/include/satox/security/error.hpp" bodystart="68" bodyend="70"/>
+        <referencedby refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1ad287bdf7ec4c342334b78374379a16f5" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="61" endline="62">SecurityException</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/dc0/classsatox_1_1security_1_1SecurityException_1a1d135fe272390b4b6b85483a9fd0d738" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; satox::security::SecurityException::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <qualifiedname>satox::security::SecurityException::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/error.hpp" line="72" column="23" bodyfile="src/security/include/satox/security/error.hpp" bodystart="72" bodyend="74"/>
+        <referencedby refid="d0/d3b/classsatox_1_1security_1_1PQCException_1ab06b1b4694d9b20cd3477df32459c8f7" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="90" endline="91">satox::security::PQCException::PQCException</referencedby>
+        <referencedby refid="d8/d9d/classsatox_1_1security_1_1RateLimitException_1af012a301551af89456b1e3c57e0a1e37" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="102" endline="103">satox::security::RateLimitException::RateLimitException</referencedby>
+        <referencedby refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1ad287bdf7ec4c342334b78374379a16f5" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="61" endline="62">SecurityException</referencedby>
+        <referencedby refid="d3/d4f/classsatox_1_1security_1_1SecurityInitializationException_1acc337ff1f4755eb7d97c9320f4c7b9c4" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="84" endline="85">satox::security::SecurityInitializationException::SecurityInitializationException</referencedby>
+        <referencedby refid="d9/d6f/classsatox_1_1security_1_1SecurityViolationException_1a2166d01b1f9951d069a2329bfe58e88f" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="108" endline="109">satox::security::SecurityViolationException::SecurityViolationException</referencedby>
+        <referencedby refid="d8/de5/classsatox_1_1security_1_1ValidationException_1a9a5e063f5d53cb227fd13deedc13173d" compoundref="d3/dda/security_2include_2satox_2security_2error_8hpp" startline="96" endline="97">satox::security::ValidationException::ValidationException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>satox::security::PQCException</label>
+        <link refid="d0/d3b/classsatox_1_1security_1_1PQCException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>satox::security::RateLimitException</label>
+        <link refid="d8/d9d/classsatox_1_1security_1_1RateLimitException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>satox::security::SecurityException</label>
+        <link refid="d5/dc0/classsatox_1_1security_1_1SecurityException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>satox::security::SecurityInitializationException</label>
+        <link refid="d3/d4f/classsatox_1_1security_1_1SecurityInitializationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>satox::security::SecurityViolationException</label>
+        <link refid="d9/d6f/classsatox_1_1security_1_1SecurityViolationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>satox::security::ValidationException</label>
+        <link refid="d8/de5/classsatox_1_1security_1_1ValidationException"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::security::SecurityException</label>
+        <link refid="d5/dc0/classsatox_1_1security_1_1SecurityException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/security/include/satox/security/error.hpp" line="59" column="1" bodyfile="src/security/include/satox/security/error.hpp" bodystart="59" bodyend="79"/>
+    <listofallmembers>
+      <member refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1ac03a79c916b0fef5280c07a5e7beabe0" prot="public" virt="non-virtual"><scope>satox::security::SecurityException</scope><name>code</name></member>
+      <member refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1a13017f8bd04c452939e25f0d402b6ac3" prot="private" virt="non-virtual"><scope>satox::security::SecurityException</scope><name>code_</name></member>
+      <member refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1a1d135fe272390b4b6b85483a9fd0d738" prot="public" virt="non-virtual"><scope>satox::security::SecurityException</scope><name>message</name></member>
+      <member refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1a2b8eafcd86c0e469ed4a2f260f36289d" prot="private" virt="non-virtual"><scope>satox::security::SecurityException</scope><name>message_</name></member>
+      <member refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1ad287bdf7ec4c342334b78374379a16f5" prot="public" virt="non-virtual"><scope>satox::security::SecurityException</scope><name>SecurityException</name></member>
+      <member refid="d5/dc0/classsatox_1_1security_1_1SecurityException_1aa423b54596ef33308d7d3208cbb33c3a" prot="public" virt="non-virtual"><scope>satox::security::SecurityException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

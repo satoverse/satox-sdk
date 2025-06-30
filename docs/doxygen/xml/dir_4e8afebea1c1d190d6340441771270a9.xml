@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_4e8afebea1c1d190d6340441771270a9" kind="dir">
+    <compoundname>src/asset</compoundname>
+    <innerdir refid="dir_11550d3e517f5569461d949761d97999">src/asset/include</innerdir>
+    <innerdir refid="dir_40cfa56296125e7a83a69ae4507b87ec">src/asset/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md1">
+<title>Overview</title><para>This component provides comprehensive asset management functionality for the Satox SDK, following the unified architecture pattern and template compliance requirements.</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md2">
+<title>Features</title><para><itemizedlist>
+<listitem><para>Asset creation and management</para>
+</listitem><listitem><para>Asset transfers and balance tracking</para>
+</listitem><listitem><para>Asset reissuance and burning</para>
+</listitem><listitem><para>Asset freezing and unfreezing</para>
+</listitem><listitem><para>Comprehensive validation and verification</para>
+</listitem><listitem><para>Statistics and monitoring</para>
+</listitem><listitem><para>Health checks and error handling</para>
+</listitem><listitem><para>Callback system for event notifications</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md3">
+<title>Architecture</title><para>The Asset component follows the established template patterns:<itemizedlist>
+<listitem><para><bold>Namespace</bold>: <computeroutput><ref refid="d5/d84/namespacesatox_1_1asset" kindref="compound">satox::asset</ref></computeroutput></para>
+</listitem><listitem><para><bold>Singleton Pattern</bold>: <computeroutput>AssetManager::getInstance()</computeroutput></para>
+</listitem><listitem><para><bold>Thread Safety</bold>: Proper mutex usage for all operations</para>
+</listitem><listitem><para><bold>Error Handling</bold>: Comprehensive error management with context</para>
+</listitem><listitem><para><bold>Logging</bold>: Structured logging to <computeroutput>logs/components/asset/</computeroutput></para>
+</listitem><listitem><para><bold>Statistics</bold>: Performance monitoring and metrics collection</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md4">
+<title>Usage</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md5">
+<title>Basic Initialization</title><para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&quot;satox/asset/asset_manager.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>manager<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>manager<sp/>=<sp/><ref refid="d8/d13/classsatox_1_1asset_1_1AssetManager_1a16c138da27f1d66ba124a1c44a5b8808" kindref="member">satox::asset::AssetManager::getInstance</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialize<sp/>with<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig" kindref="compound">satox::asset::AssetConfig</ref><sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig_1a920509bb616945a30b96fed54c6dc072" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;my_asset_manager&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig_1a0603a2806aafed41d53e27a2012aee29" kindref="member">type</ref><sp/>=<sp/><ref refid="d5/d84/namespacesatox_1_1asset_1aa4c5068043f9c46eb2120944b33b2a2ca94c8aa2452bccd82ee129b46f7c4be79" kindref="member">satox::asset::AssetType::TOKEN</ref>;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig_1ae6cc837108026bcc1d3b141df69f0297" kindref="member">maxAssets</ref><sp/>=<sp/>1000;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig_1ad3094f0f9568a368a6e86f28a46530ad" kindref="member">timeout</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig_1a9bf52117f5749d2e65a68d6d372c54f3" kindref="member">enableLogging</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">config.<ref refid="d4/d2d/structsatox_1_1asset_1_1AssetConfig_1a30b64dfb878772d9a0753fb9004f932e" kindref="member">logPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/components/asset/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!manager.initialize(config))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Initialization<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>manager.getLastError()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md6">
+<title>Asset Creation</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Create<sp/>a<sp/>new<sp/>asset</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest" kindref="compound">satox::asset::AssetCreationRequest</ref><sp/>request;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1a8ca3902f4725bddd3c465787f320b82d" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1abf5f1ece4c6d5abe52aaefd1b59f60c8" kindref="member">symbol</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MTK&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1a10f446954a8ae2df7530c81b50d8ae96" kindref="member">amount</ref><sp/>=<sp/>1000000;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1acec1410d0886a0ce4b63725250379ed8" kindref="member">units</ref><sp/>=<sp/>8;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1a196596cc6afa5ee638dd1fde823bfc73" kindref="member">reissuable</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1ae2bfccd2f2cbd885a5bd380e367d831b" kindref="member">owner_address</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="d6/d19/structsatox_1_1asset_1_1AssetCreationRequest_1a372eda169f4f86ded6abf47fc7b7821b" kindref="member">metadata</ref>[</highlight><highlight class="stringliteral">&quot;description&quot;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;My<sp/>custom<sp/>token&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.createAsset(request))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Asset<sp/>created<sp/>successfully!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md7">
+<title>Asset Transfers</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Transfer<sp/>assets<sp/>between<sp/>addresses</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest" kindref="compound">satox::asset::AssetTransferRequest</ref><sp/>transfer;</highlight></codeline>
+<codeline><highlight class="normal">transfer.<ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest_1ab88e4728c2d5a6b15b5092f69ad153ce" kindref="member">asset_name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">transfer.<ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest_1a04a38cc7e591871d4caf3bfd59fb8c07" kindref="member">from_address</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">transfer.<ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest_1a70a0263d529af325d9db1a18faa426ee" kindref="member">to_address</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;bob@example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">transfer.<ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest_1ab100278db0cfce07aa41fff671117c48" kindref="member">amount</ref><sp/>=<sp/>100000;</highlight></codeline>
+<codeline><highlight class="normal">transfer.<ref refid="d1/dc0/structsatox_1_1asset_1_1AssetTransferRequest_1ac393affac8a06b30ae6ce1c08264b90a" kindref="member">timestamp</ref><sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::now().time_since_epoch()).count();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.transferAsset(transfer))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Transfer<sp/>successful!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md8">
+<title>Asset Operations</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Reissue<sp/>assets<sp/>(if<sp/>reissuable)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest" kindref="compound">satox::asset::AssetReissueRequest</ref><sp/>reissue;</highlight></codeline>
+<codeline><highlight class="normal">reissue.<ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest_1aed23e252156db5afefada068d1638a11" kindref="member">asset_name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">reissue.<ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest_1ac5b83ca60bdf8429a7718f595650d48c" kindref="member">owner_address</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">reissue.<ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest_1ad34327ee57f16622fae08f39c531d08f" kindref="member">amount</ref><sp/>=<sp/>500000;</highlight></codeline>
+<codeline><highlight class="normal">reissue.<ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest_1ab4535ec1a67d18d851f22aeafc1f27ec" kindref="member">reissuable</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">reissue.<ref refid="db/d01/structsatox_1_1asset_1_1AssetReissueRequest_1af6feb223c38a66ff075e812e8bccaeaa" kindref="member">timestamp</ref><sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::now().time_since_epoch()).count();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.reissueAsset(reissue);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Burn<sp/>assets</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest" kindref="compound">satox::asset::AssetBurnRequest</ref><sp/>burn;</highlight></codeline>
+<codeline><highlight class="normal">burn.<ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest_1a07eb9bf6a620100104900c4932f9ba92" kindref="member">asset_name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">burn.<ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest_1a59efdffafe2070289c0e0ff4ee513f8d" kindref="member">owner_address</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">burn.<ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest_1ab959f1c07c96e1c100645a0225b391f6" kindref="member">amount</ref><sp/>=<sp/>100000;</highlight></codeline>
+<codeline><highlight class="normal">burn.<ref refid="da/d67/structsatox_1_1asset_1_1AssetBurnRequest_1a86b719972ddbb1e12964cfa7725e57fe" kindref="member">timestamp</ref><sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::now().time_since_epoch()).count();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.burnAsset(burn);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Freeze/unfreeze<sp/>assets</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.freezeAsset(</highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">manager.unfreezeAsset(</highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md9">
+<title>Asset Queries</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Get<sp/>asset<sp/>metadata</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata" kindref="compound">satox::asset::AssetMetadata</ref><sp/>metadata;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.getAssetMetadata(</highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">,<sp/>metadata))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Asset:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>metadata.<ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata_1a550ac87a7e53fb345097bab92412c455" kindref="member">name</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>metadata.<ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata_1ac44800463ba72924225a38e1d3d72613" kindref="member">symbol</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>supply:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>metadata.<ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata_1a59a69248ea36cf7703bbc5c3e50c9e20" kindref="member">total_supply</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Check<sp/>balances</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">uint64_t<sp/>balance;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.getAssetBalance(</highlight><highlight class="stringliteral">&quot;alice@example.com&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">,<sp/>balance))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Balance:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>balance<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>List<sp/>all<sp/>assets</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>assets<sp/>=<sp/>manager.listAssets();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>asset<sp/>:<sp/>assets)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>asset[</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">].get&lt;std::string&gt;()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md10">
+<title>Validation and Verification</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Validate<sp/>asset<sp/>metadata</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata" kindref="compound">satox::asset::AssetMetadata</ref><sp/>metadata;</highlight></codeline>
+<codeline><highlight class="normal">metadata.<ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata_1a550ac87a7e53fb345097bab92412c455" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TestAsset&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">metadata.<ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata_1ac44800463ba72924225a38e1d3d72613" kindref="member">symbol</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TEST&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">metadata.<ref refid="dc/d26/structsatox_1_1asset_1_1AssetMetadata_1a59a69248ea36cf7703bbc5c3e50c9e20" kindref="member">total_supply</ref><sp/>=<sp/>1000000;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult" kindref="compound">satox::asset::AssetVerificationResult</ref><sp/>result;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.validateAssetMetadata(metadata,<sp/>result))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.<ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult_1afbb9dab2b93f2f473830428b5d1a3d68" kindref="member">valid</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Metadata<sp/>is<sp/>valid&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Validation<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>result.<ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult_1a9133d61743b312d9f6b3482cb32aec4e" kindref="member">error_message</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Verify<sp/>asset</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.verifyAsset(</highlight><highlight class="stringliteral">&quot;MyToken&quot;</highlight><highlight class="normal">,<sp/>result))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.<ref refid="dc/d8b/structsatox_1_1asset_1_1AssetVerificationResult_1afbb9dab2b93f2f473830428b5d1a3d68" kindref="member">valid</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Asset<sp/>is<sp/>valid&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md11">
+<title>Statistics and Monitoring</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Enable<sp/>statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.enableStats(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stats<sp/>=<sp/>manager.getStats();</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>operations:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>stats.totalOperations<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Successful<sp/>operations:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>stats.successfulOperations<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>operations:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>stats.failedOperations<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager.healthCheck())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>health<sp/>=<sp/>manager.getHealthStatus();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Health:<sp/>OK&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>assets:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>health[</highlight><highlight class="stringliteral">&quot;total_assets&quot;</highlight><highlight class="normal">].get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md12">
+<title>Callbacks and Event Handling</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Register<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.registerAssetCallback([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>event,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Asset<sp/>event:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(success<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;SUCCESS&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;FAILED&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">manager.registerErrorCallback([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>in<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>operation<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>error<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md13">
+<title>Building</title><para><programlisting filename=".bash"><codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md14">
+<title>Testing</title><para><programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>specific<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">./satox-asset-tests</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md15">
+<title>Examples</title><para><programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>Run<sp/>the<sp/>basic<sp/>usage<sp/>example</highlight></codeline>
+<codeline><highlight class="normal">./asset-example</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md16">
+<title>Configuration Options</title><para><table rows="7" cols="4"><row>
+<entry thead="yes"><para>Option   </para>
+</entry><entry thead="yes"><para>Type   </para>
+</entry><entry thead="yes"><para>Description   </para>
+</entry><entry thead="yes"><para>Default    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>name   </para>
+</entry><entry thead="no"><para>string   </para>
+</entry><entry thead="no"><para>Manager name   </para>
+</entry><entry thead="no"><para>-    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>type   </para>
+</entry><entry thead="no"><para>AssetType   </para>
+</entry><entry thead="no"><para>Asset type (TOKEN, NFT, etc.)   </para>
+</entry><entry thead="no"><para>TOKEN    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>maxAssets   </para>
+</entry><entry thead="no"><para>int   </para>
+</entry><entry thead="no"><para>Maximum number of assets   </para>
+</entry><entry thead="no"><para>1000    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>timeout   </para>
+</entry><entry thead="no"><para>int   </para>
+</entry><entry thead="no"><para>Operation timeout in seconds   </para>
+</entry><entry thead="no"><para>30    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>enableLogging   </para>
+</entry><entry thead="no"><para>bool   </para>
+</entry><entry thead="no"><para>Enable logging   </para>
+</entry><entry thead="no"><para>true    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>logPath   </para>
+</entry><entry thead="no"><para>string   </para>
+</entry><entry thead="no"><para>Log file path   </para>
+</entry><entry thead="no"><para>-   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md17">
+<title>Error Handling</title><para>The component provides comprehensive error handling:<itemizedlist>
+<listitem><para>All operations return boolean success/failure</para>
+</listitem><listitem><para>Detailed error messages via <computeroutput>getLastError()</computeroutput></para>
+</listitem><listitem><para>Error callbacks for event-driven error handling</para>
+</listitem><listitem><para>Validation results with detailed feedback</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md18">
+<title>Thread Safety</title><para>All operations are thread-safe using proper mutex synchronization:<itemizedlist>
+<listitem><para>Read operations use shared locks where appropriate</para>
+</listitem><listitem><para>Write operations use exclusive locks</para>
+</listitem><listitem><para>Callbacks are executed safely</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md19">
+<title>Logging</title><para>Logs are written to the configured log path with structured format:<itemizedlist>
+<listitem><para>Timestamps and log levels</para>
+</listitem><listitem><para>Operation context and results</para>
+</listitem><listitem><para>Performance metrics</para>
+</listitem><listitem><para>Error details and stack traces</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md20">
+<title>Compliance</title><para>This component follows all SDK template requirements:<itemizedlist>
+<listitem><para>✅ Template-compliant structure</para>
+</listitem><listitem><para>✅ Proper namespace usage (<computeroutput><ref refid="d5/d84/namespacesatox_1_1asset" kindref="compound">satox::asset</ref></computeroutput>)</para>
+</listitem><listitem><para>✅ Singleton pattern implementation</para>
+</listitem><listitem><para>✅ Thread-safe operations</para>
+</listitem><listitem><para>✅ Comprehensive error handling</para>
+</listitem><listitem><para>✅ Statistics and monitoring</para>
+</listitem><listitem><para>✅ Health check functionality</para>
+</listitem><listitem><para>✅ Callback registration system</para>
+</listitem><listitem><para>✅ Configuration validation</para>
+</listitem><listitem><para>✅ Centralized logging structure</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md21">
+<title>⚠️ Limitations</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md22">
+<title><bold>Blockchain Compatibility</bold></title><para><itemizedlist>
+<listitem><para><bold>No Smart Contract Support:</bold> Satox is based on Ravencoin and does <bold>not</bold> support smart contracts or EVM compatibility</para>
+</listitem><listitem><para><bold>Asset-Based:</bold> Focuses on asset creation, management, and transfer rather than programmable contracts</para>
+</listitem><listitem><para><bold>UTXO Model:</bold> Uses Unspent Transaction Output (UTXO) model like Bitcoin/Ravencoin, not account-based like Ethereum</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md23">
+<title><bold>Platform Support</bold></title><para><itemizedlist>
+<listitem><para><bold>Desktop Focus:</bold> Primarily designed for desktop/server environments</para>
+</listitem><listitem><para><bold>Mobile Limitations:</bold> Mobile SDK provides limited functionality compared to core SDK</para>
+</listitem><listitem><para><bold>Browser Support:</bold> WebAssembly bindings have performance limitations for complex operations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md24">
+<title><bold>Network Requirements</bold></title><para><itemizedlist>
+<listitem><para><bold>Internet Connection:</bold> Requires active internet connection for blockchain operations</para>
+</listitem><listitem><para><bold>Node Synchronization:</bold> Full node operations require significant storage and bandwidth</para>
+</listitem><listitem><para><bold>API Dependencies:</bold> Some features depend on external API services</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/asset/README.md_1autotoc_md25">
+<title><bold>Development Considerations</bold></title><para><itemizedlist>
+<listitem><para><bold>Learning Curve:</bold> Ravencoin/UTXO model differs from Ethereum/smart contract development</para>
+</listitem><listitem><para><bold>Testing Environment:</bold> Testnet required for development and testing</para>
+</listitem><listitem><para><bold>Asset Management:</bold> Asset creation and management have specific requirements and limitations </para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="src/asset/"/>
+  </compounddef>
+</doxygen>

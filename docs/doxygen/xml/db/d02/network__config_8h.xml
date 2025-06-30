@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/d02/network__config_8h" kind="file" language="C++">
+    <compoundname>network_config.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/network_config.h</label>
+        <link refid="db/d02/network__config_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="db/ded/structsatox_1_1core_1_1NetworkConfig" prot="public">satox::core::NetworkConfig</innerclass>
+    <innerclass refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager" prot="public">satox::core::NetworkConfigManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47" kindref="member">NetworkType</ref><sp/>{</highlight></codeline>
+<codeline lineno="35" refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47a9ff86ed474dbbbbe88b28ee45ec70994" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47a9ff86ed474dbbbbe88b28ee45ec70994" kindref="member">MAINNET</ref>,</highlight></codeline>
+<codeline lineno="36" refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47ace8400aeb0c47ce5cd8e37a3a54e557b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47ace8400aeb0c47ce5cd8e37a3a54e557b" kindref="member">TESTNET</ref>,</highlight></codeline>
+<codeline lineno="37" refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47ad10d9759c6b71ea71a78e3a55bafc4d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47ad10d9759c6b71ea71a78e3a55bafc4d5" kindref="member">REGTEST</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="db/ded/structsatox_1_1core_1_1NetworkConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="41" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1ad0288a12fe747db473d19c1cc5453638" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47" kindref="member">NetworkType</ref><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1ad0288a12fe747db473d19c1cc5453638" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="42" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a5405625a6a6e08c75308434061b04b30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a5405625a6a6e08c75308434061b04b30" kindref="member">rpcHost</ref>;</highlight></codeline>
+<codeline lineno="43" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a85d2ca91e9193ced99e70cfdea1986a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a85d2ca91e9193ced99e70cfdea1986a4" kindref="member">rpcPort</ref>;</highlight></codeline>
+<codeline lineno="44" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1ad2f2da12adb4fadb4fb3537611623ebb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1ad2f2da12adb4fadb4fb3537611623ebb" kindref="member">rpcUser</ref>;</highlight></codeline>
+<codeline lineno="45" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a912c102edb78475044f926754c77b037" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a912c102edb78475044f926754c77b037" kindref="member">rpcPassword</ref>;</highlight></codeline>
+<codeline lineno="46" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a60a6e0dab105efaa42a069d30bc4b81c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a60a6e0dab105efaa42a069d30bc4b81c" kindref="member">useSSL</ref>;</highlight></codeline>
+<codeline lineno="47" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a43c45e406f45625d7b0f78b36780cc7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1a43c45e406f45625d7b0f78b36780cc7a" kindref="member">timeoutSeconds</ref>;</highlight></codeline>
+<codeline lineno="48" refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1ac52c29bb3fc1a223c5ccf23ec94c7914" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig_1ac52c29bb3fc1a223c5ccf23ec94c7914" kindref="member">retryAttempts</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">NetworkConfigManager<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>NetworkConfigManager&amp;<sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1a35569132badcb19534096805934c806e" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>configuration<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1a5c8557ffe8e69fabdf5fc52373b7e094" kindref="member">loadConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>configPath<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;config/network.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Save<sp/>current<sp/>configuration<sp/>to<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1a18b12b3b7a88862bd0b8620aebe9936d" kindref="member">saveConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>configPath<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;config/network.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>network<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1a43a60a854799bb593415cc3fb90e4d4f" kindref="member">getConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>network<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1a88567d3a7c141dce2619df29a2580b91" kindref="member">updateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>network<sp/>type<sp/>as<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1a40dfe9621e1d80949e36f7d1c960f424" kindref="member">networkTypeToString</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47" kindref="member">NetworkType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>network<sp/>type<sp/>from<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1ad2e5933f3e7d61a462095d066ca7fa47" kindref="member">NetworkType</ref><sp/><ref refid="d0/dd9/classsatox_1_1core_1_1NetworkConfigManager_1afeb22340a32b2e2c962cb6cd828f5412" kindref="member">stringToNetworkType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>type);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>NetworkConfigManager();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>~NetworkConfigManager()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>NetworkConfigManager(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>NetworkConfigManager&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>NetworkConfigManager&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>NetworkConfigManager&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/ded/structsatox_1_1core_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/>currentConfig_;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isInitialized_;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/network_config.h"/>
+  </compounddef>
+</doxygen>

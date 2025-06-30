@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::cloud::SupabaseManager::Impl</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a96bbece2b032993fe552505feffc6e88" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig" kindref="compound">SupabaseConfig</ref></type>
+        <definition>SupabaseConfig satox::core::cloud::SupabaseManager::Impl::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="327" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a35477ef53cf34ea41b2550b1f61e803a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::cloud::SupabaseManager::Impl::connected_</definition>
+        <argsstring></argsstring>
+        <name>connected_</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::connected_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="328" column="17" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a90ee634a3b0900deb8dc150d22369031" prot="private" static="no" mutable="no">
+        <type>CURL *</type>
+        <definition>CURL* satox::core::cloud::SupabaseManager::Impl::curl_handle_</definition>
+        <argsstring></argsstring>
+        <name>curl_handle_</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::curl_handle_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="329" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1afb5ca07725905f5070433a3b78732a48" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::cloud::SupabaseManager::Impl::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="330" column="24" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a08ef2445d448537af7ed1a0a6cd4831b" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::function&lt;void(const nlohmann::json&amp;)&gt; &gt; satox::core::cloud::SupabaseManager::Impl::callbacks_</definition>
+        <argsstring></argsstring>
+        <name>callbacks_</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="331" column="14" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a5aa808911bf03b6212d5f45b6e00ff22" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::thread &gt;</type>
+        <definition>std::map&lt;std::string, std::thread&gt; satox::core::cloud::SupabaseManager::Impl::subscription_threads_</definition>
+        <argsstring></argsstring>
+        <name>subscription_threads_</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::subscription_threads_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="332" column="14" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="332" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1aba93be66c22c65d7a723eaa01e4cfc1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::cloud::SupabaseManager::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="25" column="5" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a6eac1f3c88b70d59b7a7b93cd2b38957" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::cloud::SupabaseManager::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="30" column="5" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a16a5ccce0c33f7493b3b50bee2b60683" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::SupabaseManager::Impl::initialize</definition>
+        <argsstring>(const SupabaseConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig" kindref="compound">SupabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="37" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="37" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::SupabaseManager::Impl::isConnected</definition>
+        <argsstring>() const</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::isConnected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="58" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="58" bodyend="60"/>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a03d8d1ab0042e64dce03e7f8248f5f4f" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="191" endline="208">callFunction</referencedby>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1af94b31ee36b47e7a5fe16a3c5672949e" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="171" endline="189">downloadFile</referencedby>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a41c9fee38fe4221fe310ed4907c74128" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="62" endline="85">executeQuery</referencedby>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1aaa6a6eae36eb85b3ee2e7a7210c692f2" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="87" endline="111">executeTransaction</referencedby>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a253d90c636c78409f1311425d596b64d" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="214" endline="221">getStatus</referencedby>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a49e0e4138b38d808611ccc72202835aa" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="113" endline="134">subscribe</referencedby>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a0fb0e20e2f6427a5ed63b279e74e80ea" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="151" endline="169">uploadFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a41c9fee38fe4221fe310ed4907c74128" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::executeQuery</definition>
+        <argsstring>(const std::string &amp;query, const nlohmann::json &amp;params)</argsstring>
+        <name>executeQuery</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::executeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="62" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="62" bodyend="85"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1aaa6a6eae36eb85b3ee2e7a7210c692f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::executeTransaction</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;queries, const std::vector&lt; nlohmann::json &gt; &amp;params)</argsstring>
+        <name>executeTransaction</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::executeTransaction</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>queries</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; nlohmann::json &gt; &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="87" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="87" bodyend="111"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a49e0e4138b38d808611ccc72202835aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::cloud::SupabaseManager::Impl::subscribe</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;event, std::function&lt; void(const nlohmann::json &amp;)&gt; callback)</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::subscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const nlohmann::json &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="113" column="17" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="113" bodyend="134"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a4bfecbc2cd96b3ed4edad33050fe7671" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::SupabaseManager::Impl::unsubscribe</definition>
+        <argsstring>(const std::string &amp;subscription_id)</argsstring>
+        <name>unsubscribe</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::unsubscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subscription_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="136" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="136" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a0fb0e20e2f6427a5ed63b279e74e80ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::uploadFile</definition>
+        <argsstring>(const std::string &amp;bucket, const std::string &amp;path, const std::string &amp;file_path)</argsstring>
+        <name>uploadFile</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::uploadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="151" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="151" bodyend="169"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1af94b31ee36b47e7a5fe16a3c5672949e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::downloadFile</definition>
+        <argsstring>(const std::string &amp;bucket, const std::string &amp;path, const std::string &amp;local_path)</argsstring>
+        <name>downloadFile</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::downloadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="171" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="171" bodyend="189"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a03d8d1ab0042e64dce03e7f8248f5f4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::callFunction</definition>
+        <argsstring>(const std::string &amp;function_name, const nlohmann::json &amp;payload)</argsstring>
+        <name>callFunction</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::callFunction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>function_name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="191" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="191" bodyend="208"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <referencedby refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1addac678a8643fee6ed964b64baf4a68e" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="210" endline="212">invokeFunction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1addac678a8643fee6ed964b64baf4a68e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::invokeFunction</definition>
+        <argsstring>(const std::string &amp;function_name, const nlohmann::json &amp;payload)</argsstring>
+        <name>invokeFunction</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::invokeFunction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>function_name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="210" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="210" bodyend="212"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a03d8d1ab0042e64dce03e7f8248f5f4f" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="191" endline="208">callFunction</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a253d90c636c78409f1311425d596b64d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::getStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatus</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::getStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="214" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="214" bodyend="221"/>
+        <references refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" compoundref="d7/d7b/cloud_2supabase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a8b7209f6906298b7e4c98e3aea5f7a9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::SupabaseManager::Impl::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::disconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="223" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="223" bodyend="237"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1af0af11a7ec9c8b06886fef969e327106" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::SupabaseManager::Impl::testConnection</definition>
+        <argsstring>()</argsstring>
+        <name>testConnection</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::testConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="240" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="240" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a9c0e2967c9884afedc9ebe5f7163c9f3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::makeHttpRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;method, const std::string &amp;data)</argsstring>
+        <name>makeHttpRequest</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::makeHttpRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="250" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="250" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a498d9c3314384c1edd6efe3e1688c55a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::makeFileUploadRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;file_path)</argsstring>
+        <name>makeFileUploadRequest</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::makeFileUploadRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="301" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="301" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a4326580716fc7711ce7927f67bbb6f07" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::SupabaseManager::Impl::makeFileDownloadRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;local_path)</argsstring>
+        <name>makeFileDownloadRequest</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::makeFileDownloadRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="306" column="20" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="306" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1ace077049da9ac693970f030abd615127" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::SupabaseManager::Impl::handleSubscription</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;event, const std::string &amp;subscription_id)</argsstring>
+        <name>handleSubscription</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::handleSubscription</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subscription_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="311" column="10" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="311" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a9cdaa361eea492dfc19b27c76391cac2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::cloud::SupabaseManager::Impl::generateSubscriptionId</definition>
+        <argsstring>()</argsstring>
+        <name>generateSubscriptionId</name>
+        <qualifiedname>satox::core::cloud::SupabaseManager::Impl::generateSubscriptionId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/supabase_manager.cpp" line="322" column="17" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="322" bodyend="325"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/cloud/supabase_manager.cpp" line="23" column="1" bodyfile="src/core/cloud/supabase_manager.cpp" bodystart="23" bodyend="333"/>
+    <listofallmembers>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a08ef2445d448537af7ed1a0a6cd4831b" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>callbacks_</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a03d8d1ab0042e64dce03e7f8248f5f4f" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>callFunction</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a96bbece2b032993fe552505feffc6e88" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>config_</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a35477ef53cf34ea41b2550b1f61e803a" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>connected_</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a90ee634a3b0900deb8dc150d22369031" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>curl_handle_</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a8b7209f6906298b7e4c98e3aea5f7a9f" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>disconnect</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1af94b31ee36b47e7a5fe16a3c5672949e" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>downloadFile</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a41c9fee38fe4221fe310ed4907c74128" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>executeQuery</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1aaa6a6eae36eb85b3ee2e7a7210c692f2" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>executeTransaction</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a9cdaa361eea492dfc19b27c76391cac2" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>generateSubscriptionId</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a253d90c636c78409f1311425d596b64d" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>getStatus</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1ace077049da9ac693970f030abd615127" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>handleSubscription</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1aba93be66c22c65d7a723eaa01e4cfc1e" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>Impl</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a16a5ccce0c33f7493b3b50bee2b60683" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>initialize</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1addac678a8643fee6ed964b64baf4a68e" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>invokeFunction</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1adbc5693b3b9d9fa2c44dbcc37645a003" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>isConnected</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a4326580716fc7711ce7927f67bbb6f07" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>makeFileDownloadRequest</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a498d9c3314384c1edd6efe3e1688c55a" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>makeFileUploadRequest</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a9c0e2967c9884afedc9ebe5f7163c9f3" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>makeHttpRequest</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1afb5ca07725905f5070433a3b78732a48" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>mutex_</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a49e0e4138b38d808611ccc72202835aa" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>subscribe</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a5aa808911bf03b6212d5f45b6e00ff22" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>subscription_threads_</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1af0af11a7ec9c8b06886fef969e327106" prot="private" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>testConnection</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a4bfecbc2cd96b3ed4edad33050fe7671" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>unsubscribe</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a0fb0e20e2f6427a5ed63b279e74e80ea" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>uploadFile</name></member>
+      <member refid="d8/d2b/classsatox_1_1core_1_1cloud_1_1SupabaseManager_1_1Impl_1a6eac1f3c88b70d59b7a7b93cd2b38957" prot="public" virt="non-virtual"><scope>satox::core::cloud::SupabaseManager::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

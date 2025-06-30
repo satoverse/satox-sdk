@@ -1,0 +1,622 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d2f/classsatox_1_1database_1_1ConnectionPool" kind="class" language="C++" prot="public">
+    <compoundname>satox::database::ConnectionPool</compoundname>
+    <includes refid="d3/d16/connection__pool_8hpp" local="no">connection_pool.hpp</includes>
+    <innerclass refid="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection" prot="private">satox::database::ConnectionPool::Connection</innerclass>
+    <innerclass refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" prot="public">satox::database::ConnectionPool::ConnectionConfig</innerclass>
+    <innerclass refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats" prot="public">satox::database::ConnectionPool::ConnectionStats</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a114a2813c0dccf994efe119035f9ff70" prot="private" static="no" mutable="no">
+        <type><ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" kindref="compound">ConnectionConfig</ref></type>
+        <definition>ConnectionConfig satox::database::ConnectionPool::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::database::ConnectionPool::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="113" column="22" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aa26c33a66f6e27b9e3caf094c1a289d0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Connection &gt;</type>
+        <definition>std::vector&lt;Connection&gt; satox::database::ConnectionPool::connections_</definition>
+        <argsstring></argsstring>
+        <name>connections_</name>
+        <qualifiedname>satox::database::ConnectionPool::connections_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="114" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ad56ec95659b74fd28f28252d28bd6277" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; size_t &gt;</type>
+        <definition>std::queue&lt;size_t&gt; satox::database::ConnectionPool::available_connections_</definition>
+        <argsstring></argsstring>
+        <name>available_connections_</name>
+        <qualifiedname>satox::database::ConnectionPool::available_connections_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="115" column="16" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a0bf891b204b554d630a965bfc35db47e" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::database::ConnectionPool::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::database::ConnectionPool::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="116" column="24" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a50fdb4e1536d7205a06c4a9cb6917e2d" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::database::ConnectionPool::cv_</definition>
+        <argsstring></argsstring>
+        <name>cv_</name>
+        <qualifiedname>satox::database::ConnectionPool::cv_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="117" column="29" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a121fef06166bead1aa28a31eb7079316" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::database::ConnectionPool::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::database::ConnectionPool::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="118" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a9e99d1908e85c21fab3f7c7b74d2b497" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::ConnectionPool::total_connections_</definition>
+        <argsstring></argsstring>
+        <name>total_connections_</name>
+        <qualifiedname>satox::database::ConnectionPool::total_connections_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="119" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a17421800bf29f15e8db6ff5c42d036d5" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::ConnectionPool::active_connections_</definition>
+        <argsstring></argsstring>
+        <name>active_connections_</name>
+        <qualifiedname>satox::database::ConnectionPool::active_connections_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="120" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a0975f5fe5abd0dfeedc936c459a53756" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::ConnectionPool::waiting_requests_</definition>
+        <argsstring></argsstring>
+        <name>waiting_requests_</name>
+        <qualifiedname>satox::database::ConnectionPool::waiting_requests_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="121" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a14c30317773f1dc5a1e63713216596fa" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::ConnectionPool::connection_errors_</definition>
+        <argsstring></argsstring>
+        <name>connection_errors_</name>
+        <qualifiedname>satox::database::ConnectionPool::connection_errors_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="122" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a5b21272de75527e285f73a9b4c48aa39" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::ConnectionPool::timeout_errors_</definition>
+        <argsstring></argsstring>
+        <name>timeout_errors_</name>
+        <qualifiedname>satox::database::ConnectionPool::timeout_errors_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="123" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1af653386c2ea7772d78f0098335e5fb69" prot="private" static="no" mutable="no">
+        <type>std::chrono::steady_clock::time_point</type>
+        <definition>std::chrono::steady_clock::time_point satox::database::ConnectionPool::start_time_</definition>
+        <argsstring></argsstring>
+        <name>start_time_</name>
+        <qualifiedname>satox::database::ConnectionPool::start_time_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="124" column="43" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a3f82e9cd3406d6e9d29b989fc997b981" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::ConnectionPool::last_error_</definition>
+        <argsstring></argsstring>
+        <name>last_error_</name>
+        <qualifiedname>satox::database::ConnectionPool::last_error_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="125" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a969fb60f773ca89aea9d1b6d8f26b680" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread satox::database::ConnectionPool::maintenance_thread_</definition>
+        <argsstring></argsstring>
+        <name>maintenance_thread_</name>
+        <qualifiedname>satox::database::ConnectionPool::maintenance_thread_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="126" column="17" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a30e0698d1b6c80bd394af8b6bab3c113" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool" kindref="compound">ConnectionPool</ref> &amp;</type>
+        <definition>static ConnectionPool &amp; satox::database::ConnectionPool::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::database::ConnectionPool::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="68" column="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ae36ee816c48af45a6cb1c58bc49be7dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::ConnectionPool::initialize</definition>
+        <argsstring>(const ConnectionConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::database::ConnectionPool::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/d03/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionConfig" kindref="compound">ConnectionConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="70" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac5b34964e0996d7d17598114e5e17044" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::database::ConnectionPool::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="71" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a3dd95b5d07b75a1fa55239c79d1d04ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; void &gt;</type>
+        <definition>std::shared_ptr&lt; void &gt; satox::database::ConnectionPool::acquireConnection</definition>
+        <argsstring>()</argsstring>
+        <name>acquireConnection</name>
+        <qualifiedname>satox::database::ConnectionPool::acquireConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="74" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a186440a05c81239b5adb82cc222bcaf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::releaseConnection</definition>
+        <argsstring>(std::shared_ptr&lt; void &gt; connection)</argsstring>
+        <name>releaseConnection</name>
+        <qualifiedname>satox::database::ConnectionPool::releaseConnection</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; void &gt;</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="75" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aaeed3dc77057e678588ad33ef7ced89e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::ConnectionPool::testConnection</definition>
+        <argsstring>(std::shared_ptr&lt; void &gt; connection)</argsstring>
+        <name>testConnection</name>
+        <qualifiedname>satox::database::ConnectionPool::testConnection</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; void &gt;</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="76" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ad1555f01656551efc65348325f26e128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::setMaxConnections</definition>
+        <argsstring>(size_t max)</argsstring>
+        <name>setMaxConnections</name>
+        <qualifiedname>satox::database::ConnectionPool::setMaxConnections</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="79" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a9ed0091d9de1fc070c1a61532e66e1f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::setMinConnections</definition>
+        <argsstring>(size_t min)</argsstring>
+        <name>setMinConnections</name>
+        <qualifiedname>satox::database::ConnectionPool::setMinConnections</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>min</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="80" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aae0cf70e23bd38a8c6897ee6183de372" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::setConnectionTimeout</definition>
+        <argsstring>(std::chrono::seconds timeout)</argsstring>
+        <name>setConnectionTimeout</name>
+        <qualifiedname>satox::database::ConnectionPool::setConnectionTimeout</qualifiedname>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="81" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a5b9452aeed8af468cacc79acc1cb9113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::setIdleTimeout</definition>
+        <argsstring>(std::chrono::seconds timeout)</argsstring>
+        <name>setIdleTimeout</name>
+        <qualifiedname>satox::database::ConnectionPool::setIdleTimeout</qualifiedname>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="82" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a281e332ae903436e08500f913db6c090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::setMaxLifetime</definition>
+        <argsstring>(std::chrono::seconds lifetime)</argsstring>
+        <name>setMaxLifetime</name>
+        <qualifiedname>satox::database::ConnectionPool::setMaxLifetime</qualifiedname>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>lifetime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="83" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac36be68810f349fe3dff050c7d506ebe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/db6/structsatox_1_1database_1_1ConnectionPool_1_1ConnectionStats" kindref="compound">ConnectionStats</ref></type>
+        <definition>ConnectionStats satox::database::ConnectionPool::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::database::ConnectionPool::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="86" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a6a80c1dfa37b0c463cd15e4a9ec7cb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::database::ConnectionPool::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="87" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a68b4a7ac8b6ed5859ee41a7af10d2c13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::ConnectionPool::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::database::ConnectionPool::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="90" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a8472b3aafd0a553d6bc7a2430428137a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::ConnectionPool::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::database::ConnectionPool::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="91" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a8cf7b73823b18f781bbc31c523a67f83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::ConnectionPool::ConnectionPool</definition>
+        <argsstring>()=default</argsstring>
+        <name>ConnectionPool</name>
+        <qualifiedname>satox::database::ConnectionPool::ConnectionPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="94" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a1b3ed6a129b8884cbfad6296bccd7cab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::ConnectionPool::~ConnectionPool</definition>
+        <argsstring>()</argsstring>
+        <name>~ConnectionPool</name>
+        <qualifiedname>satox::database::ConnectionPool::~ConnectionPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="95" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a657d2a5df9ca97f3e2cc84ba92eaa9bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::ConnectionPool::ConnectionPool</definition>
+        <argsstring>(const ConnectionPool &amp;)=delete</argsstring>
+        <name>ConnectionPool</name>
+        <qualifiedname>satox::database::ConnectionPool::ConnectionPool</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool" kindref="compound">ConnectionPool</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="96" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ab516348f932a643bfb5c12793b36a9dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool" kindref="compound">ConnectionPool</ref> &amp;</type>
+        <definition>ConnectionPool &amp; satox::database::ConnectionPool::operator=</definition>
+        <argsstring>(const ConnectionPool &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::database::ConnectionPool::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool" kindref="compound">ConnectionPool</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="97" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a74af7cf5ae7cbdfa7062000a34094201" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; void &gt;</type>
+        <definition>std::shared_ptr&lt; void &gt; satox::database::ConnectionPool::createConnection</definition>
+        <argsstring>()</argsstring>
+        <name>createConnection</name>
+        <qualifiedname>satox::database::ConnectionPool::createConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="100" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a00c1de24dae97e312fff2c56bbb1b9e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::destroyConnection</definition>
+        <argsstring>(std::shared_ptr&lt; void &gt; connection)</argsstring>
+        <name>destroyConnection</name>
+        <qualifiedname>satox::database::ConnectionPool::destroyConnection</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; void &gt;</type>
+          <declname>connection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="101" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a0dd84a1d7323e33f540a84d306442c40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::cleanupIdleConnections</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupIdleConnections</name>
+        <qualifiedname>satox::database::ConnectionPool::cleanupIdleConnections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="102" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a06e411b6d833c856ef04acbd6a2a4e81" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::ConnectionPool::maintainPool</definition>
+        <argsstring>()</argsstring>
+        <name>maintainPool</name>
+        <qualifiedname>satox::database::ConnectionPool::maintainPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="103" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/database/include/satox/database/connection_pool.hpp" line="42" column="1" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="42" bodyend="127"/>
+    <listofallmembers>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a3dd95b5d07b75a1fa55239c79d1d04ee" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>acquireConnection</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a17421800bf29f15e8db6ff5c42d036d5" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>active_connections_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ad56ec95659b74fd28f28252d28bd6277" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>available_connections_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a0dd84a1d7323e33f540a84d306442c40" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>cleanupIdleConnections</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a114a2813c0dccf994efe119035f9ff70" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>config_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a14c30317773f1dc5a1e63713216596fa" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>connection_errors_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a8cf7b73823b18f781bbc31c523a67f83" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>ConnectionPool</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a657d2a5df9ca97f3e2cc84ba92eaa9bb" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>ConnectionPool</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aa26c33a66f6e27b9e3caf094c1a289d0" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>connections_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a74af7cf5ae7cbdfa7062000a34094201" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>createConnection</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a50fdb4e1536d7205a06c4a9cb6917e2d" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>cv_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a00c1de24dae97e312fff2c56bbb1b9e1" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>destroyConnection</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a30e0698d1b6c80bd394af8b6bab3c113" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>getInstance</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a8472b3aafd0a553d6bc7a2430428137a" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>getLastError</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac36be68810f349fe3dff050c7d506ebe" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>getStats</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ae36ee816c48af45a6cb1c58bc49be7dd" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>initialize</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a68b4a7ac8b6ed5859ee41a7af10d2c13" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>isHealthy</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a3f82e9cd3406d6e9d29b989fc997b981" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>last_error_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a06e411b6d833c856ef04acbd6a2a4e81" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>maintainPool</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a969fb60f773ca89aea9d1b6d8f26b680" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>maintenance_thread_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a0bf891b204b554d630a965bfc35db47e" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>mutex_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ab516348f932a643bfb5c12793b36a9dc" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>operator=</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a186440a05c81239b5adb82cc222bcaf8" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>releaseConnection</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a6a80c1dfa37b0c463cd15e4a9ec7cb39" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>resetStats</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a121fef06166bead1aa28a31eb7079316" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>running_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aae0cf70e23bd38a8c6897ee6183de372" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>setConnectionTimeout</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a5b9452aeed8af468cacc79acc1cb9113" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>setIdleTimeout</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ad1555f01656551efc65348325f26e128" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>setMaxConnections</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a281e332ae903436e08500f913db6c090" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>setMaxLifetime</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a9ed0091d9de1fc070c1a61532e66e1f6" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>setMinConnections</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1ac5b34964e0996d7d17598114e5e17044" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>shutdown</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1af653386c2ea7772d78f0098335e5fb69" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>start_time_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1aaeed3dc77057e678588ad33ef7ced89e" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>testConnection</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a5b21272de75527e285f73a9b4c48aa39" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>timeout_errors_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a9e99d1908e85c21fab3f7c7b74d2b497" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>total_connections_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a0975f5fe5abd0dfeedc936c459a53756" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>waiting_requests_</name></member>
+      <member refid="d1/d2f/classsatox_1_1database_1_1ConnectionPool_1a1b3ed6a129b8884cbfad6296bccd7cab" prot="private" virt="non-virtual"><scope>satox::database::ConnectionPool</scope><name>~ConnectionPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

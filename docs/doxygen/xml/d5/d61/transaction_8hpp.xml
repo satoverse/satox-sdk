@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/d61/transaction_8hpp" kind="file" language="C++">
+    <compoundname>transaction.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includedby refid="d9/d4d/block_8cpp" local="yes">src/blockchain/src/block.cpp</includedby>
+    <includedby refid="db/d14/blockchain_2src_2blockchain__manager_8cpp" local="yes">src/blockchain/src/blockchain_manager.cpp</includedby>
+    <includedby refid="db/da9/blockchain_2src_2transaction_8cpp" local="yes">src/blockchain/src/transaction.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/blockchain/include/satox/blockchain/transaction.hpp</label>
+        <link refid="d5/d61/transaction_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>chrono</label>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/blockchain/include/satox/blockchain/transaction.hpp</label>
+        <link refid="d5/d61/transaction_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/blockchain/src/block.cpp</label>
+        <link refid="d9/d4d/block_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/blockchain/src/blockchain_manager.cpp</label>
+        <link refid="db/d14/blockchain_2src_2blockchain__manager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/blockchain/src/transaction.cpp</label>
+        <link refid="db/da9/blockchain_2src_2transaction_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" prot="public">satox::blockchain::Transaction</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/db3/namespacesatox_1_1blockchain">satox::blockchain</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain" kindref="compound">blockchain</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1abc01088a7d67f8b1f464cdd9874f4718" kindref="member">Transaction</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1abc01088a7d67f8b1f464cdd9874f4718" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1abc01088a7d67f8b1f464cdd9874f4718" kindref="member">Transaction</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac7b904e759c24e677c5873ef9d60ec8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac7b904e759c24e677c5873ef9d60ec8d" kindref="member">~Transaction</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Getters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac9f8b3a4e866d8fe306d9f2820ac6a43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ac9f8b3a4e866d8fe306d9f2820ac6a43" kindref="member">getHash</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash_;<sp/>}</highlight></codeline>
+<codeline lineno="44" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a9e1f246d1752ffc1f13dfd634dc58098" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a9e1f246d1752ffc1f13dfd634dc58098" kindref="member">getFrom</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>from_;<sp/>}</highlight></codeline>
+<codeline lineno="45" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a322f2e66347fbeff43f5829d4b38be27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a322f2e66347fbeff43f5829d4b38be27" kindref="member">getTo</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>to_;<sp/>}</highlight></codeline>
+<codeline lineno="46" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a07fba23c0358b257abe18dfb320cc1d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a07fba23c0358b257abe18dfb320cc1d9" kindref="member">getValue</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value_;<sp/>}</highlight></codeline>
+<codeline lineno="47" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa8a14837fc742d0be6cb06c7b8c922a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa8a14837fc742d0be6cb06c7b8c922a8" kindref="member">getData</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data_;<sp/>}</highlight></codeline>
+<codeline lineno="48" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a91de2e3979fe2e83d1d39ecf580ed9b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a91de2e3979fe2e83d1d39ecf580ed9b4" kindref="member">getTimestamp</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>timestamp_;<sp/>}</highlight></codeline>
+<codeline lineno="49" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af1bbd35b9ca6b45eac872941add1f140" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af1bbd35b9ca6b45eac872941add1f140" kindref="member">getStatus</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status_;<sp/>}</highlight></codeline>
+<codeline lineno="50" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa03b816b1634258bad55800d4a7c60cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa03b816b1634258bad55800d4a7c60cd" kindref="member">getMetadata</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>metadata_;<sp/>}</highlight></codeline>
+<codeline lineno="51" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a08eb2042e7f9832034e447cbc29a109f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a08eb2042e7f9832034e447cbc29a109f" kindref="member">getNonce</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nonce_;<sp/>}</highlight></codeline>
+<codeline lineno="52" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa54d85032b893d54ee4c7bc5e7f0a5f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aa54d85032b893d54ee4c7bc5e7f0a5f2" kindref="member">getGasPrice</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gas_price_;<sp/>}</highlight></codeline>
+<codeline lineno="53" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2f8321cd0a27018ee12132ed5bb41eb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2f8321cd0a27018ee12132ed5bb41eb9" kindref="member">getGasLimit</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gas_limit_;<sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a1d4786a5de1e3dedd5fb77f14a4aa4ae" kindref="member">getRaw</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a34d712f5791686e10454950d93a050fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a34d712f5791686e10454950d93a050fa" kindref="member">setHash</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash)<sp/>{<sp/>hash_<sp/>=<sp/>hash;<sp/>}</highlight></codeline>
+<codeline lineno="58" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af001945b459576f386764e5b1437419d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1af001945b459576f386764e5b1437419d" kindref="member">setFrom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>from)<sp/>{<sp/>from_<sp/>=<sp/>from;<sp/>}</highlight></codeline>
+<codeline lineno="59" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ab159a5d0fdb1e76b302aa0a5ff74979d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ab159a5d0fdb1e76b302aa0a5ff74979d" kindref="member">setTo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>to)<sp/>{<sp/>to_<sp/>=<sp/>to;<sp/>}</highlight></codeline>
+<codeline lineno="60" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ade612c6f958dfc50e00eede85cf6cc79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1ade612c6f958dfc50e00eede85cf6cc79" kindref="member">setValue</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value)<sp/>{<sp/>value_<sp/>=<sp/>value;<sp/>}</highlight></codeline>
+<codeline lineno="61" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a0708aebba442597e948c068070b2e3a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a0708aebba442597e948c068070b2e3a9" kindref="member">setData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data)<sp/>{<sp/>data_<sp/>=<sp/>data;<sp/>}</highlight></codeline>
+<codeline lineno="62" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a15f52847f9ab1281e2ff82509c73a377" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a15f52847f9ab1281e2ff82509c73a377" kindref="member">setTimestamp</ref>(std::chrono::system_clock::time_point<sp/>timestamp)<sp/>{<sp/>timestamp_<sp/>=<sp/>timestamp;<sp/>}</highlight></codeline>
+<codeline lineno="63" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a760906f77a3130ba35b290a66195dc05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a760906f77a3130ba35b290a66195dc05" kindref="member">setStatus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>status)<sp/>{<sp/>status_<sp/>=<sp/>status;<sp/>}</highlight></codeline>
+<codeline lineno="64" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aaba9e9bad6d4aa055ffeff51ef3fcc70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aaba9e9bad6d4aa055ffeff51ef3fcc70" kindref="member">setMetadata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>metadata)<sp/>{<sp/>metadata_<sp/>=<sp/>metadata;<sp/>}</highlight></codeline>
+<codeline lineno="65" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aab6612b92d4bd461c9554798a37ea836" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aab6612b92d4bd461c9554798a37ea836" kindref="member">setNonce</ref>(uint64_t<sp/>nonce)<sp/>{<sp/>nonce_<sp/>=<sp/>nonce;<sp/>}</highlight></codeline>
+<codeline lineno="66" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a350d051323bac3f6d7928cb7b657e7e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a350d051323bac3f6d7928cb7b657e7e3" kindref="member">setGasPrice</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gas_price)<sp/>{<sp/>gas_price_<sp/>=<sp/>gas_price;<sp/>}</highlight></codeline>
+<codeline lineno="67" refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aff71b640b2a68d0efccffed218ee9f8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1aff71b640b2a68d0efccffed218ee9f8d" kindref="member">setGasLimit</ref>(uint64_t<sp/>gas_limit)<sp/>{<sp/>gas_limit_<sp/>=<sp/>gas_limit;<sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validation<sp/>and<sp/>serialization<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a2cc233599e78650019b4e20515b9b06e" kindref="member">isValid</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a514576e582906405fee23526ac9df49e" kindref="member">toJson</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Transaction&gt;<sp/><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction_1a3eae15625b7c238c2eed809a8185df73" kindref="member">fromJson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/><ref refid="d0/d1b/asset_2src_2asset__manager_8cpp_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>hash_;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>from_;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>to_;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value_{0.0};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>data_;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/>timestamp_;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>status_;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/>metadata_;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>nonce_{0};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gas_price_{0.0};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>gas_limit_{0};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>blockchain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/blockchain/include/satox/blockchain/transaction.hpp"/>
+  </compounddef>
+</doxygen>

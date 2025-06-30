@@ -1,0 +1,773 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" kind="class" language="C++" prot="public">
+    <compoundname>satox::ipfs::ContentDistribution</compoundname>
+    <includes refid="dc/d18/content__distribution_8hpp" local="no">content_distribution.hpp</includes>
+    <innerclass refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" prot="public">satox::ipfs::ContentDistribution::DistributionStatus</innerclass>
+    <innerclass refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" prot="public">satox::ipfs::ContentDistribution::Error</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref> &amp;)&gt;</type>
+        <definition>using satox::ipfs::ContentDistribution::StatusCallback =  std::function&lt;void(const DistributionStatus&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>StatusCallback</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::StatusCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="87" column="5" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a95ed737605c871e50a53c0a20e9cef1c" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::ipfs::ContentDistribution::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="112" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1adfd834ae99f27f2d325c044385fe4f4a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="113" column="10" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a79fff3c584d9e2cd662c2bf09a6b5e84" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::ContentDistribution::configPath_</definition>
+        <argsstring></argsstring>
+        <name>configPath_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::configPath_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="114" column="17" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a9d328fe993927a9cf96d9dc415864f44" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; satox::ipfs::ContentDistribution::nodes_</definition>
+        <argsstring></argsstring>
+        <name>nodes_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::nodes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="115" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a6976313a29944a65e192086369b905a7" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, DistributionStatus&gt; satox::ipfs::ContentDistribution::activeDistributions_</definition>
+        <argsstring></argsstring>
+        <name>activeDistributions_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::activeDistributions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="116" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac3b7b71899b14eb36b76be7da3716ceb" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, int &gt;</type>
+        <definition>std::unordered_map&lt;std::string, int&gt; satox::ipfs::ContentDistribution::distributionPriorities_</definition>
+        <argsstring></argsstring>
+        <name>distributionPriorities_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::distributionPriorities_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="117" column="24" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1acef5e535e06febb9b761e47792380e20" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::ipfs::ContentDistribution::bandwidthLimit_</definition>
+        <argsstring></argsstring>
+        <name>bandwidthLimit_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::bandwidthLimit_</qualifiedname>
+        <initializer>= 1024 * 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="118" column="12" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a25ceeef3a02c0380733318de79eb9e30" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" kindref="member">StatusCallback</ref></type>
+        <definition>StatusCallback satox::ipfs::ContentDistribution::statusCallback_</definition>
+        <argsstring></argsstring>
+        <name>statusCallback_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::statusCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="119" column="20" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a240ca5a20dacbcfd5f1cfefaccb3b9b8" prot="private" static="no" mutable="no">
+        <type><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error satox::ipfs::ContentDistribution::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="120" column="11" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a710c90ce2e122d1f5bc8db56e5f8439b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" kindref="compound">ContentDistribution</ref> &amp;</type>
+        <definition>ContentDistribution &amp; satox::ipfs::ContentDistribution::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="43" column="32" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="56" bodyend="59"/>
+        <references refid="d2/dc8/namespacesatox_1_1ipfs_1a3294d1aa3cd3d04a1d7705d82673117c" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="39">satox::ipfs::instance</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1acb9f2a45580c5ee60561dab8b0165442" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::initialize</definition>
+        <argsstring>(const std::string &amp;configPath)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::initialize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>configPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="46" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="61" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a178ee5660c9b8f0785aee478a9d66715" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="47" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="97" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5ae95fe27b3927c70d33b7d0fbfd9feb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; bool &gt;</type>
+        <definition>std::future&lt; bool &gt; satox::ipfs::ContentDistribution::distributeContent</definition>
+        <argsstring>(const std::string &amp;contentHash, const std::vector&lt; std::string &gt; &amp;targetNodes)</argsstring>
+        <name>distributeContent</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::distributeContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contentHash</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>targetNodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="50" column="17" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="106" bodyend="172"/>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1af5b7b6ba2993fb0bb5e8816887f85318" compoundref="dc/d18/content__distribution_8hpp" startline="67">satox::ipfs::ContentDistribution::DistributionStatus::completedNodes</references>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1ac6fb1af5d6db863d4b063732f75ddac1" compoundref="dc/d18/content__distribution_8hpp" startline="63">satox::ipfs::ContentDistribution::DistributionStatus::contentHash</references>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a6c3cfc2128983fc160f2fd721a6fdf22" compoundref="dc/d18/content__distribution_8hpp" startline="70">satox::ipfs::ContentDistribution::DistributionStatus::endTime</references>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a79e2a2cb8bd92e0663d16852b3d0fb6b" compoundref="dc/d18/content__distribution_8hpp" startline="66">satox::ipfs::ContentDistribution::DistributionStatus::error</references>
+        <references refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7c470f1340d2181a90024737f3a631cc" compoundref="d4/d94/content__distribution_8cpp" startline="282" endline="291">isNodeAvailable</references>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a38e7c7facc46091c7b4d895c0a3d1ba0" compoundref="dc/d18/content__distribution_8hpp" startline="65">satox::ipfs::ContentDistribution::DistributionStatus::progress</references>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a5b8e2e663f964aea788a8a1fbe2e5437" compoundref="dc/d18/content__distribution_8hpp" startline="69">satox::ipfs::ContentDistribution::DistributionStatus::startTime</references>
+        <references refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus_1a2bbfc92fd334607e3ca3cebee70ec02a" compoundref="dc/d18/content__distribution_8hpp" startline="64">satox::ipfs::ContentDistribution::DistributionStatus::status</references>
+        <referencedby refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5f7d3cdc29466f9cb6bfcc37ca4197b2" compoundref="d4/d94/content__distribution_8cpp" startline="174" endline="195">distributeFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5f7d3cdc29466f9cb6bfcc37ca4197b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; bool &gt;</type>
+        <definition>std::future&lt; bool &gt; satox::ipfs::ContentDistribution::distributeFile</definition>
+        <argsstring>(const std::string &amp;filePath, const std::vector&lt; std::string &gt; &amp;targetNodes)</argsstring>
+        <name>distributeFile</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::distributeFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>targetNodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="51" column="17" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="174" bodyend="195"/>
+        <references refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5ae95fe27b3927c70d33b7d0fbfd9feb" compoundref="d4/d94/content__distribution_8cpp" startline="106" endline="172">distributeContent</references>
+        <referencedby refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae26ef13ff2c4c69f7b3414c1a509acf0" compoundref="d4/d94/content__distribution_8cpp" startline="197" endline="221">distributeDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae26ef13ff2c4c69f7b3414c1a509acf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::future&lt; bool &gt;</type>
+        <definition>std::future&lt; bool &gt; satox::ipfs::ContentDistribution::distributeDirectory</definition>
+        <argsstring>(const std::string &amp;directoryPath, const std::vector&lt; std::string &gt; &amp;targetNodes)</argsstring>
+        <name>distributeDirectory</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::distributeDirectory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>directoryPath</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>targetNodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="52" column="17" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="197" bodyend="221"/>
+        <references refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5f7d3cdc29466f9cb6bfcc37ca4197b2" compoundref="d4/d94/content__distribution_8cpp" startline="174" endline="195">distributeFile</references>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7735088c0efaa2b3f87fa4c25884e1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::addNode</definition>
+        <argsstring>(const std::string &amp;nodeId, const std::string &amp;address)</argsstring>
+        <name>addNode</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::addNode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nodeId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="55" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="223" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a56f9c779a182ba98b5a0863b2d8cdd0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::removeNode</definition>
+        <argsstring>(const std::string &amp;nodeId)</argsstring>
+        <name>removeNode</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::removeNode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="56" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="239" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1afdd52608b12d3915e9ded6cda5935ec0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::updateNode</definition>
+        <argsstring>(const std::string &amp;nodeId, const std::string &amp;newAddress)</argsstring>
+        <name>updateNode</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::updateNode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nodeId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>newAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="57" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="249" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a41d6cd00755408611f321f81e5cb10f0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::ipfs::ContentDistribution::getAvailableNodes</definition>
+        <argsstring>() const</argsstring>
+        <name>getAvailableNodes</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getAvailableNodes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="58" column="17" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="271" bodyend="280"/>
+        <references refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7c470f1340d2181a90024737f3a631cc" compoundref="d4/d94/content__distribution_8cpp" startline="282" endline="291">isNodeAvailable</references>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7c470f1340d2181a90024737f3a631cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::isNodeAvailable</definition>
+        <argsstring>(const std::string &amp;nodeId) const</argsstring>
+        <name>isNodeAvailable</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::isNodeAvailable</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="59" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="282" bodyend="291"/>
+        <referencedby refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5ae95fe27b3927c70d33b7d0fbfd9feb" compoundref="d4/d94/content__distribution_8cpp" startline="106" endline="172">distributeContent</referencedby>
+        <referencedby refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a41d6cd00755408611f321f81e5cb10f0" compoundref="d4/d94/content__distribution_8cpp" startline="271" endline="280">getAvailableNodes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae9e06cbfc8100ce68a2cd765d7b80b8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref></type>
+        <definition>ContentDistribution::DistributionStatus satox::ipfs::ContentDistribution::getDistributionStatus</definition>
+        <argsstring>(const std::string &amp;contentHash) const</argsstring>
+        <name>getDistributionStatus</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getDistributionStatus</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contentHash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="73" column="24" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="293" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7d756b6bc8fea4c7c825702914b8f270" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref> &gt;</type>
+        <definition>std::vector&lt; ContentDistribution::DistributionStatus &gt; satox::ipfs::ContentDistribution::getActiveDistributions</definition>
+        <argsstring>() const</argsstring>
+        <name>getActiveDistributions</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getActiveDistributions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="74" column="17" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="302" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1aed0e16090b33fce61cc6583184be8062" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::cancelDistribution</definition>
+        <argsstring>(const std::string &amp;contentHash)</argsstring>
+        <name>cancelDistribution</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::cancelDistribution</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contentHash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="75" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="313" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a9e4477bfc664e9d2e64f373d599f23b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::setBandwidthLimit</definition>
+        <argsstring>(size_t bytesPerSecond)</argsstring>
+        <name>setBandwidthLimit</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::setBandwidthLimit</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>bytesPerSecond</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="78" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="332" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1adde5a07355f31753c07bc49e8ddc9261" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::ipfs::ContentDistribution::getBandwidthLimit</definition>
+        <argsstring>() const</argsstring>
+        <name>getBandwidthLimit</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getBandwidthLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="79" column="12" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="337" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac278cf19667bfe9112729b5b56a31e75" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::ipfs::ContentDistribution::getCurrentBandwidthUsage</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentBandwidthUsage</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getCurrentBandwidthUsage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="80" column="12" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="341" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ab37336153fb8154edc836602a5f76871" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::setDistributionPriority</definition>
+        <argsstring>(const std::string &amp;contentHash, int priority)</argsstring>
+        <name>setDistributionPriority</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::setDistributionPriority</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contentHash</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="83" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="347" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a24fe6b150bad29f1d3b48a459e94296f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::ipfs::ContentDistribution::getDistributionPriority</definition>
+        <argsstring>(const std::string &amp;contentHash) const</argsstring>
+        <name>getDistributionPriority</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getDistributionPriority</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contentHash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="84" column="9" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="352" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac3c20c734923abb6fa5208e4b5068575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::setStatusCallback</definition>
+        <argsstring>(StatusCallback callback)</argsstring>
+        <name>setStatusCallback</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::setStatusCallback</qualifiedname>
+        <param>
+          <type><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" kindref="member">StatusCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="88" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="358" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7ebaf101f9b43228f17dc1ac7d07b3ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::clearStatusCallback</definition>
+        <argsstring>()</argsstring>
+        <name>clearStatusCallback</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::clearStatusCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="89" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="363" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a98b95062848c7277148d906073a34e5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/dd3/structsatox_1_1ipfs_1_1ContentDistribution_1_1Error" kindref="compound">Error</ref></type>
+        <definition>ContentDistribution::Error satox::ipfs::ContentDistribution::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="96" column="11" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="368" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a32811127fddfa9d701d41f44cc9e536c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="97" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="372" bodyend="374"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a92ac875613ac076670d49844fa4ddf6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::ContentDistribution::ContentDistribution</definition>
+        <argsstring>()=default</argsstring>
+        <name>ContentDistribution</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::ContentDistribution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="100" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a8e932e6564d6c1ca2d5f807cd19c196f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::ContentDistribution::~ContentDistribution</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ContentDistribution</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::~ContentDistribution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="101" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a98d400c75920fe65369ff3aae90c7d91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::ContentDistribution::ContentDistribution</definition>
+        <argsstring>(const ContentDistribution &amp;)=delete</argsstring>
+        <name>ContentDistribution</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::ContentDistribution</qualifiedname>
+        <param>
+          <type>const <ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" kindref="compound">ContentDistribution</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="102" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a810579ffea55b72fc7f09d7c4cc25120" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" kindref="compound">ContentDistribution</ref> &amp;</type>
+        <definition>ContentDistribution &amp; satox::ipfs::ContentDistribution::operator=</definition>
+        <argsstring>(const ContentDistribution &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution" kindref="compound">ContentDistribution</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="103" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4fa471b3008568f0c7db77e5d46ac33b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::validateNode</definition>
+        <argsstring>(const std::string &amp;nodeId, const std::string &amp;address)</argsstring>
+        <name>validateNode</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::validateNode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nodeId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="106" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="377" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a75d0865c285ef760c999107e8919b413" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::updateDistributionStatus</definition>
+        <argsstring>(const std::string &amp;contentHash, const DistributionStatus &amp;status)</argsstring>
+        <name>updateDistributionStatus</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::updateDistributionStatus</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>contentHash</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref> &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="107" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="386" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7a5f54f57596e9f248ef42a0a0a725e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::ContentDistribution::notifyStatusCallback</definition>
+        <argsstring>(const DistributionStatus &amp;status)</argsstring>
+        <name>notifyStatusCallback</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::notifyStatusCallback</qualifiedname>
+        <param>
+          <type>const <ref refid="d5/d46/structsatox_1_1ipfs_1_1ContentDistribution_1_1DistributionStatus" kindref="compound">DistributionStatus</ref> &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="108" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="393" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac01a6185a7d40a610f50f94579ed2ea3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::ContentDistribution::handleError</definition>
+        <argsstring>(const std::string &amp;operation, const std::string &amp;error)</argsstring>
+        <name>handleError</name>
+        <qualifiedname>satox::ipfs::ContentDistribution::handleError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="109" column="10" bodyfile="src/ipfs/src/content_distribution.cpp" bodystart="399" bodyend="402"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ipfs/include/satox/ipfs/content_distribution.hpp" line="40" column="1" bodyfile="src/ipfs/include/satox/ipfs/content_distribution.hpp" bodystart="40" bodyend="121"/>
+    <listofallmembers>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a6976313a29944a65e192086369b905a7" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>activeDistributions_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7735088c0efaa2b3f87fa4c25884e1a4" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>addNode</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1acef5e535e06febb9b761e47792380e20" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>bandwidthLimit_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1aed0e16090b33fce61cc6583184be8062" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>cancelDistribution</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a32811127fddfa9d701d41f44cc9e536c" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>clearLastError</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7ebaf101f9b43228f17dc1ac7d07b3ba" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>clearStatusCallback</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a79fff3c584d9e2cd662c2bf09a6b5e84" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>configPath_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a92ac875613ac076670d49844fa4ddf6f" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>ContentDistribution</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a98d400c75920fe65369ff3aae90c7d91" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>ContentDistribution</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5ae95fe27b3927c70d33b7d0fbfd9feb" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>distributeContent</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae26ef13ff2c4c69f7b3414c1a509acf0" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>distributeDirectory</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a5f7d3cdc29466f9cb6bfcc37ca4197b2" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>distributeFile</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac3b7b71899b14eb36b76be7da3716ceb" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>distributionPriorities_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7d756b6bc8fea4c7c825702914b8f270" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getActiveDistributions</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a41d6cd00755408611f321f81e5cb10f0" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getAvailableNodes</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1adde5a07355f31753c07bc49e8ddc9261" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getBandwidthLimit</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac278cf19667bfe9112729b5b56a31e75" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getCurrentBandwidthUsage</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a24fe6b150bad29f1d3b48a459e94296f" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getDistributionPriority</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ae9e06cbfc8100ce68a2cd765d7b80b8d" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getDistributionStatus</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a710c90ce2e122d1f5bc8db56e5f8439b" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getInstance</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a98b95062848c7277148d906073a34e5b" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>getLastError</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac01a6185a7d40a610f50f94579ed2ea3" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>handleError</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1acb9f2a45580c5ee60561dab8b0165442" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>initialize</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1adfd834ae99f27f2d325c044385fe4f4a" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>initialized_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7c470f1340d2181a90024737f3a631cc" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>isNodeAvailable</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a240ca5a20dacbcfd5f1cfefaccb3b9b8" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>lastError_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a95ed737605c871e50a53c0a20e9cef1c" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>mutex_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a9d328fe993927a9cf96d9dc415864f44" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>nodes_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a7a5f54f57596e9f248ef42a0a0a725e1" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>notifyStatusCallback</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a810579ffea55b72fc7f09d7c4cc25120" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>operator=</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a56f9c779a182ba98b5a0863b2d8cdd0c" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>removeNode</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a9e4477bfc664e9d2e64f373d599f23b7" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>setBandwidthLimit</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ab37336153fb8154edc836602a5f76871" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>setDistributionPriority</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1ac3c20c734923abb6fa5208e4b5068575" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>setStatusCallback</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a178ee5660c9b8f0785aee478a9d66715" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>shutdown</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4451a7006cbbcea73c7c115df4e138a1" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>StatusCallback</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a25ceeef3a02c0380733318de79eb9e30" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>statusCallback_</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a75d0865c285ef760c999107e8919b413" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>updateDistributionStatus</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1afdd52608b12d3915e9ded6cda5935ec0" prot="public" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>updateNode</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a4fa471b3008568f0c7db77e5d46ac33b" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>validateNode</name></member>
+      <member refid="d5/d96/classsatox_1_1ipfs_1_1ContentDistribution_1a8e932e6564d6c1ca2d5f807cd19c196f" prot="private" virt="non-virtual"><scope>satox::ipfs::ContentDistribution</scope><name>~ContentDistribution</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

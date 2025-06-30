@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/da9/structsatox_1_1core_1_1Version" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::Version</compoundname>
+    <includes refid="dd/d27/core_2include_2satox_2core_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/da9/structsatox_1_1core_1_1Version_1a0dbdbfc04f921cbdd160a4db5141f8f4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::core::Version::major</definition>
+        <argsstring></argsstring>
+        <name>major</name>
+        <qualifiedname>satox::core::Version::major</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="18" column="9" bodyfile="src/core/include/satox/core/types.hpp" bodystart="18" bodyend="-1"/>
+        <referencedby refid="d5/da9/structsatox_1_1core_1_1Version_1aa5364d2378f89340038cb11819dbea77" compoundref="dd/d27/core_2include_2satox_2core_2types_8hpp" startline="24" endline="26">toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/structsatox_1_1core_1_1Version_1a572c98f57fd078c51bb945074024df9a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::core::Version::minor</definition>
+        <argsstring></argsstring>
+        <name>minor</name>
+        <qualifiedname>satox::core::Version::minor</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="19" column="9" bodyfile="src/core/include/satox/core/types.hpp" bodystart="19" bodyend="-1"/>
+        <referencedby refid="d5/da9/structsatox_1_1core_1_1Version_1aa5364d2378f89340038cb11819dbea77" compoundref="dd/d27/core_2include_2satox_2core_2types_8hpp" startline="24" endline="26">toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/structsatox_1_1core_1_1Version_1aa7c222cc82d359af3be640a256b177ec" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::core::Version::patch</definition>
+        <argsstring></argsstring>
+        <name>patch</name>
+        <qualifiedname>satox::core::Version::patch</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="20" column="9" bodyfile="src/core/include/satox/core/types.hpp" bodystart="20" bodyend="-1"/>
+        <referencedby refid="d5/da9/structsatox_1_1core_1_1Version_1aa5364d2378f89340038cb11819dbea77" compoundref="dd/d27/core_2include_2satox_2core_2types_8hpp" startline="24" endline="26">toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/structsatox_1_1core_1_1Version_1ab7abd370d201ddf1d477ef0995dcd926" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::Version::build</definition>
+        <argsstring></argsstring>
+        <name>build</name>
+        <qualifiedname>satox::core::Version::build</qualifiedname>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="21" column="17" bodyfile="src/core/include/satox/core/types.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/structsatox_1_1core_1_1Version_1af0f9d762b13a07ce047ca6a37e6105c8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::Version::commit</definition>
+        <argsstring></argsstring>
+        <name>commit</name>
+        <qualifiedname>satox::core::Version::commit</qualifiedname>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="22" column="17" bodyfile="src/core/include/satox/core/types.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/da9/structsatox_1_1core_1_1Version_1aa5364d2378f89340038cb11819dbea77" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::Version::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <qualifiedname>satox::core::Version::toString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="24" column="17" bodyfile="src/core/include/satox/core/types.hpp" bodystart="24" bodyend="26"/>
+        <references refid="d5/da9/structsatox_1_1core_1_1Version_1a0dbdbfc04f921cbdd160a4db5141f8f4" compoundref="dd/d27/core_2include_2satox_2core_2types_8hpp" startline="18">major</references>
+        <references refid="d5/da9/structsatox_1_1core_1_1Version_1a572c98f57fd078c51bb945074024df9a" compoundref="dd/d27/core_2include_2satox_2core_2types_8hpp" startline="19">minor</references>
+        <references refid="d5/da9/structsatox_1_1core_1_1Version_1aa7c222cc82d359af3be640a256b177ec" compoundref="dd/d27/core_2include_2satox_2core_2types_8hpp" startline="20">patch</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::core::Version</label>
+        <link refid="d5/da9/structsatox_1_1core_1_1Version"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>build</edgelabel>
+          <edgelabel>commit</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/types.hpp" line="17" column="1" bodyfile="src/core/include/satox/core/types.hpp" bodystart="17" bodyend="27"/>
+    <listofallmembers>
+      <member refid="d5/da9/structsatox_1_1core_1_1Version_1ab7abd370d201ddf1d477ef0995dcd926" prot="public" virt="non-virtual"><scope>satox::core::Version</scope><name>build</name></member>
+      <member refid="d5/da9/structsatox_1_1core_1_1Version_1af0f9d762b13a07ce047ca6a37e6105c8" prot="public" virt="non-virtual"><scope>satox::core::Version</scope><name>commit</name></member>
+      <member refid="d5/da9/structsatox_1_1core_1_1Version_1a0dbdbfc04f921cbdd160a4db5141f8f4" prot="public" virt="non-virtual"><scope>satox::core::Version</scope><name>major</name></member>
+      <member refid="d5/da9/structsatox_1_1core_1_1Version_1a572c98f57fd078c51bb945074024df9a" prot="public" virt="non-virtual"><scope>satox::core::Version</scope><name>minor</name></member>
+      <member refid="d5/da9/structsatox_1_1core_1_1Version_1aa7c222cc82d359af3be640a256b177ec" prot="public" virt="non-virtual"><scope>satox::core::Version</scope><name>patch</name></member>
+      <member refid="d5/da9/structsatox_1_1core_1_1Version_1aa5364d2378f89340038cb11819dbea77" prot="public" virt="non-virtual"><scope>satox::core::Version</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

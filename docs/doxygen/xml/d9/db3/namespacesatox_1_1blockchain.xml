@@ -1,0 +1,565 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d9/db3/namespacesatox_1_1blockchain" kind="namespace" language="C++">
+    <compoundname>satox::blockchain</compoundname>
+    <innerclass refid="dc/d51/structsatox_1_1blockchain_1_1BatchConfig" prot="public">satox::blockchain::BatchConfig</innerclass>
+    <innerclass refid="d1/d13/classsatox_1_1blockchain_1_1Block" prot="public">satox::blockchain::Block</innerclass>
+    <innerclass refid="d3/d7b/classsatox_1_1blockchain_1_1Blockchain" prot="public">satox::blockchain::Blockchain</innerclass>
+    <innerclass refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" prot="public">satox::blockchain::BlockchainConfig</innerclass>
+    <innerclass refid="d4/da1/classsatox_1_1blockchain_1_1BlockchainException" prot="public">satox::blockchain::BlockchainException</innerclass>
+    <innerclass refid="d4/d6a/structsatox_1_1blockchain_1_1BlockchainHealth" prot="public">satox::blockchain::BlockchainHealth</innerclass>
+    <innerclass refid="d5/dcc/classsatox_1_1blockchain_1_1BlockchainInitializationException" prot="public">satox::blockchain::BlockchainInitializationException</innerclass>
+    <innerclass refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager" prot="public">satox::blockchain::BlockchainManager</innerclass>
+    <innerclass refid="d5/dd7/classsatox_1_1blockchain_1_1BlockchainOperationException" prot="public">satox::blockchain::BlockchainOperationException</innerclass>
+    <innerclass refid="d6/d11/structsatox_1_1blockchain_1_1BlockchainResult" prot="public">satox::blockchain::BlockchainResult</innerclass>
+    <innerclass refid="db/d1e/structsatox_1_1blockchain_1_1BlockchainStatistics" prot="public">satox::blockchain::BlockchainStatistics</innerclass>
+    <innerclass refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats" prot="public">satox::blockchain::BlockchainStats</innerclass>
+    <innerclass refid="d2/d45/structsatox_1_1blockchain_1_1BlockInfo" prot="public">satox::blockchain::BlockInfo</innerclass>
+    <innerclass refid="df/d15/structsatox_1_1blockchain_1_1CacheConfig" prot="public">satox::blockchain::CacheConfig</innerclass>
+    <innerclass refid="d8/d6b/structsatox_1_1blockchain_1_1ConnectionPoolConfig" prot="public">satox::blockchain::ConnectionPoolConfig</innerclass>
+    <innerclass refid="d5/ddb/structsatox_1_1blockchain_1_1ErrorRecoveryConfig" prot="public">satox::blockchain::ErrorRecoveryConfig</innerclass>
+    <innerclass refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow" prot="public">satox::blockchain::Kawpow</innerclass>
+    <innerclass refid="d2/d84/classsatox_1_1blockchain_1_1LRUCache" prot="public">satox::blockchain::LRUCache</innerclass>
+    <innerclass refid="d4/ddc/structsatox_1_1blockchain_1_1MiningInfo" prot="public">satox::blockchain::MiningInfo</innerclass>
+    <innerclass refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" prot="public">satox::blockchain::NetworkConfig</innerclass>
+    <innerclass refid="db/d68/structsatox_1_1blockchain_1_1RecoveryOperation" prot="public">satox::blockchain::RecoveryOperation</innerclass>
+    <innerclass refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" prot="public">satox::blockchain::Transaction</innerclass>
+    <innerclass refid="d4/d65/structsatox_1_1blockchain_1_1TransactionInfo" prot="public">satox::blockchain::TransactionInfo</innerclass>
+    <innerclass refid="d0/de4/structsatox_1_1blockchain_1_1Version" prot="public">satox::blockchain::Version</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BlockchainState</name>
+        <qualifiedname>satox::blockchain::BlockchainState</qualifiedname>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461add652546039b18970b8dcf2cff824268" prot="public">
+          <name>UNINITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a86bf8c89d85949f8f45cde2f73fce113" prot="public">
+          <name>INITIALIZING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461adee5f03c2c4e73657824e028494b18c0" prot="public">
+          <name>INITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a9a14f95e151eec641316e7c784ce832d" prot="public">
+          <name>CONNECTING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461aa5afd6edd5336d91316964e493936858" prot="public">
+          <name>CONNECTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461ab9984206799a7f9fe4bd1b6c18db8112" prot="public">
+          <name>SHUTDOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" line="31" column="1" bodyfile="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" bodystart="31" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BlockchainType</name>
+        <qualifiedname>satox::blockchain::BlockchainType</qualifiedname>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7ca9ff86ed474dbbbbe88b28ee45ec70994" prot="public">
+          <name>MAINNET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7cace8400aeb0c47ce5cd8e37a3a54e557b" prot="public">
+          <name>TESTNET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7cad10d9759c6b71ea71a78e3a55bafc4d5" prot="public">
+          <name>REGTEST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" line="41" column="1" bodyfile="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BlockchainErrorCode</name>
+        <qualifiedname>satox::blockchain::BlockchainErrorCode</qualifiedname>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570ad0749aaba8b833466dfcbb0428e4f89c" prot="public">
+          <name>SUCCESS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a9a10f345b0f755d461a8673a5e9ef6b4" prot="public">
+          <name>UNKNOWN_ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570af295a0c3e37c94f078e1c5476479132d" prot="public">
+          <name>INVALID_ARGUMENT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a02de9649e258d1dd94056e676061e969" prot="public">
+          <name>NOT_INITIALIZED</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a1940a630a2a25829533b90f9be04f184" prot="public">
+          <name>ALREADY_INITIALIZED</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a0d30777007362ccc9e8b2d0d22e4db13" prot="public">
+          <name>NOT_RUNNING</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570ae72544c6de918198c7e098d9c9152b1e" prot="public">
+          <name>ALREADY_RUNNING</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a8f8d49d3d0842358e0fe8f43601d8537" prot="public">
+          <name>OPERATION_FAILED</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a2fa475b43d744661c4c9e1dbd9840278" prot="public">
+          <name>VALIDATION_ERROR</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570ace94bad90093a6a2538689ddfbb5462f" prot="public">
+          <name>TIMEOUT_ERROR</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a4a739fa42dcdbdb8dfe5a5e4d9c5a627" prot="public">
+          <name>RESOURCE_EXHAUSTED</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a255df50c140519133f1489ab44a389d9" prot="public">
+          <name>PERMISSION_DENIED</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1a8fc569c8c46948aa0dd279139402b570a5e6a8de74c8f7d4b04d91a3dc3bf7659" prot="public">
+          <name>INVALID_STATE</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/error.hpp" line="35" column="1" bodyfile="src/blockchain/include/satox/blockchain/error.hpp" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ec" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BlockchainStatus</name>
+        <qualifiedname>satox::blockchain::BlockchainStatus</qualifiedname>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca696b031073e74bf2cb98e5ef201d4aa3" prot="public">
+          <name>UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca86bf8c89d85949f8f45cde2f73fce113" prot="public">
+          <name>INITIALIZING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ecadee5f03c2c4e73657824e028494b18c0" prot="public">
+          <name>INITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca43491564ebcfd38568918efbd6e840fd" prot="public">
+          <name>RUNNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca09d4d696b4e935115b9313e3c412509a" prot="public">
+          <name>STOPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26ecabb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/db3/namespacesatox_1_1blockchain_1aaa366cd5c7e6574a2f8a57cc1eac26eca055c1a591abb0e8cd86dc969727bcc0b" prot="public">
+          <name>DISABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/types.hpp" line="77" column="1" bodyfile="src/blockchain/include/satox/blockchain/types.hpp" bodystart="77" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="d9/db3/namespacesatox_1_1blockchain_1a9f2f52a8555a4323a5b32d1a32711967" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, bool)&gt;</type>
+        <definition>using satox::blockchain::BlockchainCallback =  std::function&lt;void(const std::string&amp;, bool)&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockchainCallback</name>
+        <qualifiedname>satox::blockchain::BlockchainCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" line="48" column="1" bodyfile="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d9/db3/namespacesatox_1_1blockchain_1a57a9f5d2c530de2903f0c3bb26eae6cb" prot="public" static="no">
+        <type>std::function&lt; void(const std::shared_ptr&lt; <ref refid="d1/d13/classsatox_1_1blockchain_1_1Block" kindref="compound">Block</ref> &gt; &amp;)&gt;</type>
+        <definition>using satox::blockchain::BlockCallback =  std::function&lt;void(const std::shared_ptr&lt;Block&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockCallback</name>
+        <qualifiedname>satox::blockchain::BlockCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" line="49" column="1" bodyfile="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d9/db3/namespacesatox_1_1blockchain_1a2ae63ea50736204b1ec76da17acbba96" prot="public" static="no">
+        <type>std::function&lt; void(const std::shared_ptr&lt; <ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kindref="compound">Transaction</ref> &gt; &amp;)&gt;</type>
+        <definition>using satox::blockchain::TransactionCallback =  std::function&lt;void(const std::shared_ptr&lt;Transaction&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>TransactionCallback</name>
+        <qualifiedname>satox::blockchain::TransactionCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" line="50" column="1" bodyfile="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d9/db3/namespacesatox_1_1blockchain_1a56325b0674b90ce933b62eb7a02b27c9" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::blockchain::ErrorCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ErrorCallback</name>
+        <qualifiedname>satox::blockchain::ErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" line="51" column="1" bodyfile="src/blockchain/include/satox/blockchain/blockchain_manager.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1adfb125e8990f68403b73826fee41220e" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_EPOCH_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_EPOCH_LENGTH</name>
+        <qualifiedname>satox::blockchain::KAWPOW_EPOCH_LENGTH</qualifiedname>
+        <initializer>= 7500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="36" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1a0c1a95070df097a828f9958b8dc8fe13" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_PERIOD_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_PERIOD_LENGTH</name>
+        <qualifiedname>satox::blockchain::KAWPOW_PERIOD_LENGTH</qualifiedname>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="37" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1a4a297fb2d92fa34eaf0cf1d4e808161c" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_CACHE_ROUNDS</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_CACHE_ROUNDS</name>
+        <qualifiedname>satox::blockchain::KAWPOW_CACHE_ROUNDS</qualifiedname>
+        <initializer>= 2048</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="38" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1a1358ad213d6118f16cbbf3c6e54da9fd" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_DATASET_PARENTS</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_DATASET_PARENTS</name>
+        <qualifiedname>satox::blockchain::KAWPOW_DATASET_PARENTS</qualifiedname>
+        <initializer>= 256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="39" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1a0f36d5d1271fdf88bf1d53d9c7d6db10" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_CACHE_BYTES_INIT</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_CACHE_BYTES_INIT</name>
+        <qualifiedname>satox::blockchain::KAWPOW_CACHE_BYTES_INIT</qualifiedname>
+        <initializer>= 1073741824</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="40" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1acd327407a2ebae58367c3b584bc6fe4b" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_CACHE_BYTES_GROWTH</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_CACHE_BYTES_GROWTH</name>
+        <qualifiedname>satox::blockchain::KAWPOW_CACHE_BYTES_GROWTH</qualifiedname>
+        <initializer>= 131072</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="41" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1ac3515025f0221c8b9b37afc26e5a75d7" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_EPOCH_MIX_BYTES</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_EPOCH_MIX_BYTES</name>
+        <qualifiedname>satox::blockchain::KAWPOW_EPOCH_MIX_BYTES</qualifiedname>
+        <initializer>= 64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="42" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1aa9b559827cc484ff11f1bd0ee1e31419" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_HASH_BYTES</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_HASH_BYTES</name>
+        <qualifiedname>satox::blockchain::KAWPOW_HASH_BYTES</qualifiedname>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="43" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="43" bodyend="-1"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a6fd73c8dc052521fa1119411ee12e314" compoundref="d9/d4d/block_8cpp" startline="77" endline="106">satox::blockchain::Block::calculateKawpowHeaderHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae891e3f49a9be28772eb0048b193428b" compoundref="d9/d4d/block_8cpp" startline="108" endline="137">satox::blockchain::Block::calculateKawpowMixHash</referencedby>
+        <referencedby refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a478ba815600c918718842f45027ef362" compoundref="dd/dfe/kawpow_8cpp" startline="50" endline="90">satox::blockchain::Kawpow::computeHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aae1c4dda753a453f2599f71b61a50f79" compoundref="d9/d4d/block_8cpp" startline="38" endline="75">satox::blockchain::Block::validateKawpowProof</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a4e0b139e5f83673169c09764c17c7064" compoundref="d9/d4d/block_8cpp" startline="139" endline="169">satox::blockchain::Block::verifyKawpowDifficulty</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1a934f8f9ed4f7fd525c370e1f445aa315" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_NONCE_BYTES</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_NONCE_BYTES</name>
+        <qualifiedname>satox::blockchain::KAWPOW_NONCE_BYTES</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="44" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1a553308b8eeed384443ad2ca8552d2b50" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_HEADER_BYTES</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_HEADER_BYTES</name>
+        <qualifiedname>satox::blockchain::KAWPOW_HEADER_BYTES</qualifiedname>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="45" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="45" bodyend="-1"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a6fd73c8dc052521fa1119411ee12e314" compoundref="d9/d4d/block_8cpp" startline="77" endline="106">satox::blockchain::Block::calculateKawpowHeaderHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae891e3f49a9be28772eb0048b193428b" compoundref="d9/d4d/block_8cpp" startline="108" endline="137">satox::blockchain::Block::calculateKawpowMixHash</referencedby>
+        <referencedby refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a478ba815600c918718842f45027ef362" compoundref="dd/dfe/kawpow_8cpp" startline="50" endline="90">satox::blockchain::Kawpow::computeHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aae1c4dda753a453f2599f71b61a50f79" compoundref="d9/d4d/block_8cpp" startline="38" endline="75">satox::blockchain::Block::validateKawpowProof</referencedby>
+        <referencedby refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a51f46e944a0f264c6d072a1ee74b88f2" compoundref="dd/dfe/kawpow_8cpp" startline="92" endline="114">satox::blockchain::Kawpow::verifyHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a4e0b139e5f83673169c09764c17c7064" compoundref="d9/d4d/block_8cpp" startline="139" endline="169">satox::blockchain::Block::verifyKawpowDifficulty</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1aada5dccd80bdc23ae7c601f41ba28250" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_MIX_BYTES</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_MIX_BYTES</name>
+        <qualifiedname>satox::blockchain::KAWPOW_MIX_BYTES</qualifiedname>
+        <initializer>= 128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="46" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="46" bodyend="-1"/>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a6fd73c8dc052521fa1119411ee12e314" compoundref="d9/d4d/block_8cpp" startline="77" endline="106">satox::blockchain::Block::calculateKawpowHeaderHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1ae891e3f49a9be28772eb0048b193428b" compoundref="d9/d4d/block_8cpp" startline="108" endline="137">satox::blockchain::Block::calculateKawpowMixHash</referencedby>
+        <referencedby refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a478ba815600c918718842f45027ef362" compoundref="dd/dfe/kawpow_8cpp" startline="50" endline="90">satox::blockchain::Kawpow::computeHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1aae1c4dda753a453f2599f71b61a50f79" compoundref="d9/d4d/block_8cpp" startline="38" endline="75">satox::blockchain::Block::validateKawpowProof</referencedby>
+        <referencedby refid="d5/d7c/classsatox_1_1blockchain_1_1Kawpow_1a51f46e944a0f264c6d072a1ee74b88f2" compoundref="dd/dfe/kawpow_8cpp" startline="92" endline="114">satox::blockchain::Kawpow::verifyHash</referencedby>
+        <referencedby refid="d1/d13/classsatox_1_1blockchain_1_1Block_1a4e0b139e5f83673169c09764c17c7064" compoundref="d9/d4d/block_8cpp" startline="139" endline="169">satox::blockchain::Block::verifyKawpowDifficulty</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d9/db3/namespacesatox_1_1blockchain_1afdf94191eede2d19ffed3e866a58729f" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::blockchain::KAWPOW_ACCESSES</definition>
+        <argsstring></argsstring>
+        <name>KAWPOW_ACCESSES</name>
+        <qualifiedname>satox::blockchain::KAWPOW_ACCESSES</qualifiedname>
+        <initializer>= 64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/include/satox/blockchain/kawpow.hpp" line="47" column="20" bodyfile="src/blockchain/include/satox/blockchain/kawpow.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/blockchain/include/satox/blockchain/block.hpp" line="36" column="1"/>
+  </compounddef>
+</doxygen>

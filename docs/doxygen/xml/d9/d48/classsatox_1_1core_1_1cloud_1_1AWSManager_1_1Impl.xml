@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::cloud::AWSManager::Impl</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1abe8c530594e82c8aaf86ffbb2f26d922" prot="private" static="no" mutable="no">
+        <type>AWSConfig</type>
+        <definition>AWSConfig satox::core::cloud::AWSManager::Impl::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="60" column="15" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a9d7bde72598584d1804964987c6343c8" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::cloud::AWSManager::Impl::connected_</definition>
+        <argsstring></argsstring>
+        <name>connected_</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::connected_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="61" column="17" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa95977d8e6729a3ac0a6fc67dbd9bab6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::cloud::AWSManager::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="23" column="5" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1abf074ea960936ff65e1f141345e5d3a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::cloud::AWSManager::Impl::~Impl</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="24" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ae33c970a9f90aa5ad3077888a07b8049" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::AWSManager::Impl::initialize</definition>
+        <argsstring>(const AWSConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::initialize</qualifiedname>
+        <param>
+          <type>const AWSConfig &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="25" column="10" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a54a5116f94bf9a653157370caee19724" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::AWSManager::Impl::isConnected</definition>
+        <argsstring>() const</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::isConnected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="31" column="10" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="31" bodyend="31"/>
+        <referencedby refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa20c372ba6aba35978e6697906d29329" compoundref="db/d52/cloud_2aws__manager_8cpp" startline="52" endline="54">getStatus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a252523299b9db4308bae675f1880c9e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::AWSManager::Impl::executeQuery</definition>
+        <argsstring>(const std::string &amp;service, const nlohmann::json &amp;)</argsstring>
+        <name>executeQuery</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::executeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>service</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="32" column="20" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af187100fd7d1d87ba313bafcb4ac497b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::AWSManager::Impl::executeTransaction</definition>
+        <argsstring>(const std::string &amp;service, const std::vector&lt; nlohmann::json &gt; &amp;)</argsstring>
+        <name>executeTransaction</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::executeTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>service</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; nlohmann::json &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="36" column="20" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a395375e3e7a46e2c5671b3f1c54397ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::AWSManager::Impl::uploadFile</definition>
+        <argsstring>(const std::string &amp;bucket, const std::string &amp;path, const std::string &amp;)</argsstring>
+        <name>uploadFile</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::uploadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="40" column="20" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a8b5d511a3ef7918b17e68f810f324a75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::AWSManager::Impl::downloadFile</definition>
+        <argsstring>(const std::string &amp;bucket, const std::string &amp;path, const std::string &amp;)</argsstring>
+        <name>downloadFile</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::downloadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="44" column="20" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ab59cc36b78fdd541fb32d2b594b460e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::AWSManager::Impl::invokeFunction</definition>
+        <argsstring>(const std::string &amp;function_name, const nlohmann::json &amp;)</argsstring>
+        <name>invokeFunction</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::invokeFunction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>function_name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="48" column="20" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa20c372ba6aba35978e6697906d29329" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::AWSManager::Impl::getStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatus</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::getStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="52" column="20" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="52" bodyend="54"/>
+        <references refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a54a5116f94bf9a653157370caee19724" compoundref="db/d52/cloud_2aws__manager_8cpp" startline="31" endline="31">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af7fab25232da4ca975e33c6428986b71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::AWSManager::Impl::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::core::cloud::AWSManager::Impl::disconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/aws_manager.cpp" line="55" column="10" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/cloud/aws_manager.cpp" line="21" column="1" bodyfile="src/core/cloud/aws_manager.cpp" bodystart="21" bodyend="62"/>
+    <listofallmembers>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1abe8c530594e82c8aaf86ffbb2f26d922" prot="private" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>config_</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a9d7bde72598584d1804964987c6343c8" prot="private" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>connected_</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af7fab25232da4ca975e33c6428986b71" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>disconnect</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a8b5d511a3ef7918b17e68f810f324a75" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>downloadFile</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a252523299b9db4308bae675f1880c9e6" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>executeQuery</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1af187100fd7d1d87ba313bafcb4ac497b" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>executeTransaction</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa20c372ba6aba35978e6697906d29329" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>getStatus</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1aa95977d8e6729a3ac0a6fc67dbd9bab6" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>Impl</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ae33c970a9f90aa5ad3077888a07b8049" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>initialize</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1ab59cc36b78fdd541fb32d2b594b460e3" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>invokeFunction</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a54a5116f94bf9a653157370caee19724" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>isConnected</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1a395375e3e7a46e2c5671b3f1c54397ea" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>uploadFile</name></member>
+      <member refid="d9/d48/classsatox_1_1core_1_1cloud_1_1AWSManager_1_1Impl_1abf074ea960936ff65e1f141345e5d3a6" prot="public" virt="non-virtual"><scope>satox::core::cloud::AWSManager::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,260 @@
+# Network Manager Test Template
+# This template should be adapted for each language while maintaining the same test structure
+
+# Test Suite: Network Manager
+# Language: {LANGUAGE}
+# Description: Tests the network functionality of the Satox SDK
+
+# Test Cases:
+# 1. Initialization
+#    - Test manager creation
+#    - Test initialization
+#    - Test double initialization error
+#    - Test uninitialized operations error
+
+# 2. Connection Management
+#    - Test connection to mainnet
+#    - Test connection to testnet
+#    - Test invalid network handling
+#    - Test connection timeout
+#    - Test disconnection
+
+# 3. Peer Management
+#    - Test peer discovery
+#    - Test peer connection
+#    - Test peer disconnection
+#    - Test peer status
+#    - Test peer list
+
+# 4. Message Handling
+#    - Test message sending
+#    - Test message receiving
+#    - Test message validation
+#    - Test message timeout
+#    - Test message retry
+
+# 5. Network Status
+#    - Test network status
+#    - Test network latency
+#    - Test network bandwidth
+#    - Test network errors
+
+# 6. Port Management
+#    - Test P2P port (60777)
+#    - Test RPC port (7777)
+#    - Test invalid port handling
+#    - Test port availability
+
+# 7. Protocol Handling
+#    - Test protocol version
+#    - Test protocol compatibility
+#    - Test protocol negotiation
+#    - Test protocol errors
+
+# 8. Security
+#    - Test connection encryption
+#    - Test message encryption
+#    - Test authentication
+#    - Test authorization
+
+# Implementation Notes:
+# - Each test should verify both success and failure cases
+# - All operations should check for proper initialization
+# - Error messages should be consistent across languages
+# - Mock data should be used for external dependencies
+# - Tests should be independent and not rely on execution order
+
+# Example Test Structure (Python):
+"""
+def test_initialization():
+    manager = NetworkManager()
+    assert not manager.is_initialized()
+    manager.initialize()
+    assert manager.is_initialized()
+    with pytest.raises(RuntimeError):
+        manager.initialize()  # Double initialization should fail
+
+def test_connection():
+    manager = NetworkManager()
+    manager.initialize()
+    manager.connect("mainnet", 60777)
+    assert manager.is_connected()
+    assert manager.get_port() == 60777
+    manager.disconnect()
+    assert not manager.is_connected()
+
+def test_peer_management():
+    manager = NetworkManager()
+    manager.initialize()
+    manager.connect("mainnet", 60777)
+    peers = manager.get_peers()
+    assert isinstance(peers, list)
+    assert all(isinstance(peer, dict) for peer in peers)
+"""
+
+# Example Test Structure (JavaScript):
+"""
+describe('NetworkManager', () => {
+    let manager;
+
+    beforeEach(() => {
+        manager = new NetworkManager();
+    });
+
+    test('initialization', () => {
+        expect(manager.isInitialized()).toBe(false);
+        manager.initialize();
+        expect(manager.isInitialized()).toBe(true);
+        expect(() => manager.initialize()).toThrow();
+    });
+
+    test('connection', () => {
+        manager.initialize();
+        manager.connect('mainnet', 60777);
+        expect(manager.isConnected()).toBe(true);
+        expect(manager.getPort()).toBe(60777);
+        manager.disconnect();
+        expect(manager.isConnected()).toBe(false);
+    });
+
+    test('peer management', () => {
+        manager.initialize();
+        manager.connect('mainnet', 60777);
+        const peers = manager.getPeers();
+        expect(Array.isArray(peers)).toBe(true);
+        expect(peers.every(peer => typeof peer === 'object')).toBe(true);
+    });
+});
+"""
+
+# Example Test Structure (Go):
+"""
+func TestNetworkManager(t *testing.T) {
+    manager := NewNetworkManager()
+    
+    t.Run("initialization", func(t *testing.T) {
+        if manager.IsInitialized() {
+            t.Error("Manager should not be initialized")
+        }
+        err := manager.Initialize()
+        if err != nil {
+            t.Errorf("Initialization failed: %v", err)
+        }
+        if !manager.IsInitialized() {
+            t.Error("Manager should be initialized")
+        }
+        err = manager.Initialize()
+        if err == nil {
+            t.Error("Double initialization should fail")
+        }
+    })
+
+    t.Run("connection", func(t *testing.T) {
+        err := manager.Connect("mainnet", 60777)
+        if err != nil {
+            t.Errorf("Connection failed: %v", err)
+        }
+        if !manager.IsConnected() {
+            t.Error("Manager should be connected")
+        }
+        if port, _ := manager.GetPort(); port != 60777 {
+            t.Error("Wrong port")
+        }
+        manager.Disconnect()
+        if manager.IsConnected() {
+            t.Error("Manager should be disconnected")
+        }
+    })
+}
+"""
+
+# Example Test Structure (Lua):
+"""
+describe("NetworkManager", function()
+    local manager
+
+    setup(function()
+        manager = NetworkManager.new()
+    end)
+
+    it("should handle initialization", function()
+        assert.is_false(manager:isInitialized())
+        manager:initialize()
+        assert.is_true(manager:isInitialized())
+        assert.has_error(function()
+            manager:initialize()
+        end, "NetworkManager already initialized")
+    end)
+
+    it("should handle connection", function()
+        manager:initialize()
+        manager:connect("mainnet", 60777)
+        assert.is_true(manager:isConnected())
+        assert.is_true(manager:getPort() == 60777)
+        manager:disconnect()
+        assert.is_false(manager:isConnected())
+    end)
+end)
+"""
+
+# Example Test Structure (C#):
+"""
+[TestClass]
+public class NetworkManagerTests
+{
+    private NetworkManager _manager;
+
+    [TestInitialize]
+    public void Setup()
+    {
+        _manager = new NetworkManager();
+    }
+
+    [TestMethod]
+    public void TestInitialization()
+    {
+        Assert.IsFalse(_manager.IsInitialized);
+        _manager.Initialize();
+        Assert.IsTrue(_manager.IsInitialized);
+        Assert.ThrowsException<InvalidOperationException>(() => _manager.Initialize());
+    }
+
+    [TestMethod]
+    public void TestConnection()
+    {
+        _manager.Initialize();
+        _manager.Connect("mainnet", 60777);
+        Assert.IsTrue(_manager.IsConnected);
+        Assert.AreEqual(60777, _manager.GetPort());
+        _manager.Disconnect();
+        Assert.IsFalse(_manager.IsConnected);
+    }
+}
+"""
+
+# Example Test Structure (WASM):
+"""
+describe('NetworkManager', () => {
+    let manager;
+
+    beforeEach(() => {
+        manager = new NetworkManager();
+    });
+
+    test('initialization', () => {
+        expect(manager.isInitialized()).toBe(false);
+        manager.initialize();
+        expect(manager.isInitialized()).toBe(true);
+        expect(() => manager.initialize()).toThrow();
+    });
+
+    test('connection', () => {
+        manager.initialize();
+        manager.connect('mainnet', 60777);
+        expect(manager.isConnected()).toBe(true);
+        expect(manager.getPort()).toBe(60777);
+        manager.disconnect();
+        expect(manager.isConnected()).toBe(false);
+    });
+});
+""" 

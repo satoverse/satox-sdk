@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord" kind="struct" language="C++" prot="public">
+    <compoundname>satox::nft::NFTManager::ErrorHandler::ErrorRecord</compoundname>
+    <includes refid="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" local="no">nft_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1a3389a11680f7001a043659069078b44e" prot="public" static="no" mutable="no">
+        <type><ref refid="db/d41/structsatox_1_1nft_1_1NFTError" kindref="compound">NFTError</ref></type>
+        <definition>NFTError satox::nft::NFTManager::ErrorHandler::ErrorRecord::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::nft::NFTManager::ErrorHandler::ErrorRecord::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_manager.hpp" line="279" column="18" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="279" bodyend="-1"/>
+        <referencedby refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1acf85ce6ba33ecd8d17899bc85e0fd00f" compoundref="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" startline="283" endline="286">ErrorRecord</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1a2b2806e2d80e93393a7b19873fe115ca" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::nft::NFTManager::ErrorHandler::ErrorRecord::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <qualifiedname>satox::nft::NFTManager::ErrorHandler::ErrorRecord::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_manager.hpp" line="280" column="47" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="280" bodyend="-1"/>
+        <referencedby refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1acf85ce6ba33ecd8d17899bc85e0fd00f" compoundref="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" startline="283" endline="286">ErrorRecord</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1ab4f236d131b540d7b777aa075a7ec12e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::nft::NFTManager::ErrorHandler::ErrorRecord::is_active</definition>
+        <argsstring></argsstring>
+        <name>is_active</name>
+        <qualifiedname>satox::nft::NFTManager::ErrorHandler::ErrorRecord::is_active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_manager.hpp" line="281" column="14" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="281" bodyend="-1"/>
+        <referencedby refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1acf85ce6ba33ecd8d17899bc85e0fd00f" compoundref="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" startline="283" endline="286">ErrorRecord</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1acf85ce6ba33ecd8d17899bc85e0fd00f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::nft::NFTManager::ErrorHandler::ErrorRecord::ErrorRecord</definition>
+        <argsstring>(const NFTError &amp;err=NFTError(), const std::chrono::system_clock::time_point &amp;ts=std::chrono::system_clock::now(), bool active=true)</argsstring>
+        <name>ErrorRecord</name>
+        <qualifiedname>satox::nft::NFTManager::ErrorHandler::ErrorRecord::ErrorRecord</qualifiedname>
+        <param>
+          <type>const <ref refid="db/d41/structsatox_1_1nft_1_1NFTError" kindref="compound">NFTError</ref> &amp;</type>
+          <declname>err</declname>
+          <defval><ref refid="db/d41/structsatox_1_1nft_1_1NFTError" kindref="compound">NFTError</ref>()</defval>
+        </param>
+        <param>
+          <type>const std::chrono::system_clock::time_point &amp;</type>
+          <declname>ts</declname>
+          <defval>std::chrono::system_clock::now()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/include/satox/nft/nft_manager.hpp" line="283" column="9" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="283" bodyend="286"/>
+        <references refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1a3389a11680f7001a043659069078b44e" compoundref="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" startline="279">error</references>
+        <references refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1ab4f236d131b540d7b777aa075a7ec12e" compoundref="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" startline="281">is_active</references>
+        <references refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1a2b2806e2d80e93393a7b19873fe115ca" compoundref="de/d30/nft_2include_2satox_2nft_2nft__manager_8hpp" startline="280">timestamp</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>satox::nft::NFTError</label>
+        <link refid="db/d41/structsatox_1_1nft_1_1NFTError"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>details</edgelabel>
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>satox::nft::NFTManager::ErrorHandler::ErrorRecord</label>
+        <link refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/nft/include/satox/nft/nft_manager.hpp" line="278" column="5" bodyfile="src/nft/include/satox/nft/nft_manager.hpp" bodystart="278" bodyend="287"/>
+    <listofallmembers>
+      <member refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1a3389a11680f7001a043659069078b44e" prot="public" virt="non-virtual"><scope>satox::nft::NFTManager::ErrorHandler::ErrorRecord</scope><name>error</name></member>
+      <member refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1acf85ce6ba33ecd8d17899bc85e0fd00f" prot="public" virt="non-virtual"><scope>satox::nft::NFTManager::ErrorHandler::ErrorRecord</scope><name>ErrorRecord</name></member>
+      <member refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1ab4f236d131b540d7b777aa075a7ec12e" prot="public" virt="non-virtual"><scope>satox::nft::NFTManager::ErrorHandler::ErrorRecord</scope><name>is_active</name></member>
+      <member refid="db/d15/structsatox_1_1nft_1_1NFTManager_1_1ErrorHandler_1_1ErrorRecord_1a2b2806e2d80e93393a7b19873fe115ca" prot="public" virt="non-virtual"><scope>satox::nft::NFTManager::ErrorHandler::ErrorRecord</scope><name>timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

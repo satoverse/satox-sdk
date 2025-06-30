@@ -1,0 +1,128 @@
+FROM ubuntu:22.04
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV ROCKSDB_ROOT=/usr/local/rocksdb
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROCKSDB_ROOT/lib
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    pkg-config \
+    libgflags-dev \
+    libsnappy-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libgflags-dev \
+    libzstd-dev \
+    liblz4-dev \
+    libssl-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Clone and build RocksDB
+WORKDIR /tmp
+RUN git clone https://github.com/facebook/rocksdb.git && \
+    cd rocksdb && \
+    git checkout v8.10.0 && \
+    mkdir build && cd build && \
+    cmake .. \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=$ROCKSDB_ROOT \
+        -DWITH_TESTS=OFF \
+        -DWITH_TOOLS=ON \
+        -DWITH_BENCHMARK_TOOLS=OFF \
+        -DWITH_CORE_TOOLS=ON \
+        -DWITH_GFLAGS=ON \
+        -DWITH_SNAPPY=ON \
+        -DWITH_LZ4=ON \
+        -DWITH_ZLIB=ON \
+        -DWITH_ZSTD=ON \
+        -DWITH_BZ2=ON \
+        -DWITH_SSL=ON && \
+    make -j$(nproc) && \
+    make install && \
+    cd / && rm -rf /tmp/rocksdb
+
+# Create data directory
+RUN mkdir -p /data && \
+    chmod 755 /data
+
+# Create RocksDB configuration
+RUN mkdir -p /config
+COPY <<EOF /config/rocksdb.conf
+[rocksdb]
+# Database options
+max_background_jobs=4
+max_write_buffer_number=4
+write_buffer_size=67108864
+max_bytes_for_level_base=268435456
+target_file_size_base=67108864
+level0_file_num_compaction_trigger=4
+level0_slowdown_writes_trigger=8
+level0_stop_writes_trigger=12
+
+# Compression options
+compression_type=lz4
+bottommost_compression_type=zstd
+
+# Cache options
+block_cache_size=1073741824
+block_size=4096
+
+# Logging options
+info_log_level=INFO
+log_file_time_to_roll=86400
+keep_log_file_num=10
+max_log_file_size=67108864
+
+# Statistics
+statistics=1
+stats_dump_period_sec=600
+
+# Backup options
+backup_dir=/data/backup
+backup_interval_seconds=3600
+backup_keep_count=24
+EOF
+
+# Create health check script
+RUN echo '#!/bin/bash\necho "healthy" > /data/health\nexit 0' > /usr/local/bin/health-check.sh && \
+    chmod +x /usr/local/bin/health-check.sh
+
+# Create startup script
+RUN echo '#!/bin/bash\n\
+set -e\n\
+\n\
+# Create data directory if it doesn\'t exist\n\
+mkdir -p /data\n\
+\n\
+# Initialize RocksDB if needed\n\
+if [ ! -f /data/CURRENT ]; then\n\
+    echo "Initializing RocksDB database..."\n\
+    $ROCKSDB_ROOT/bin/rocksdb_ldb --db=/data put --key="init" --value="$(date)"\n\
+    echo "RocksDB initialized successfully"\n\
+fi\n\
+\n\
+# Start health check\n\
+/usr/local/bin/health-check.sh\n\
+\n\
+# Keep container running\n\
+echo "RocksDB service started successfully"\n\
+tail -f /dev/null' > /usr/local/bin/start.sh && \
+    chmod +x /usr/local/bin/start.sh
+
+# Set working directory
+WORKDIR /data
+
+# Expose port (if needed for monitoring)
+EXPOSE 8082
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD test -f /data/health || exit 1
+
+# Start the service
+CMD ["/usr/local/bin/start.sh"] 

@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp" kind="file" language="C++">
+    <compoundname>key_manager.hpp</compoundname>
+    <includes refid="df/d78/satox_2security_2pqc_2pqc_2ml__kem_8hpp" local="yes">ml_kem.hpp</includes>
+    <includes refid="df/d82/satox_2security_2pqc_2pqc_2ml__dsa_8hpp" local="yes">ml_dsa.hpp</includes>
+    <includes refid="d3/dc4/satox_2security_2pqc_2pqc_2hybrid_8hpp" local="yes">hybrid.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">optional</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>hybrid.hpp</label>
+        <link refid="d3/dc4/satox_2security_2pqc_2pqc_2hybrid_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/security/include/satox/security/pqc/pqc/key_manager.hpp</label>
+        <link refid="dc/d66/security_2include_2satox_2security_2pqc_2pqc_2key__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ml_dsa.hpp</label>
+        <link refid="df/d82/satox_2security_2pqc_2pqc_2ml__dsa_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ml_kem.hpp</label>
+        <link refid="df/d78/satox_2security_2pqc_2pqc_2ml__kem_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>chrono</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" prot="public">satox::security::pqc::KeyMetadata</innerclass>
+    <innerclass refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager" prot="public">satox::security::pqc::KeyManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d3/d71/namespacesatox_1_1security">satox::security</innernamespace>
+    <innernamespace refid="db/d68/namespacesatox_1_1security_1_1pqc">satox::security::pqc</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/d78/satox_2security_2pqc_2pqc_2ml__kem_8hpp" kindref="compound">ml_kem.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/d82/satox_2security_2pqc_2pqc_2ml__dsa_8hpp" kindref="compound">ml_dsa.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d3/dc4/satox_2security_2pqc_2pqc_2hybrid_8hpp" kindref="compound">hybrid.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d3/d71/namespacesatox_1_1security" kindref="compound">security</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/d68/namespacesatox_1_1security_1_1pqc" kindref="compound">pqc</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref><sp/>{</highlight></codeline>
+<codeline lineno="42" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a10b350f33b12be1ac27096ae5011c1a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a10b350f33b12be1ac27096ae5011c1a1" kindref="member">keyId</ref>;</highlight></codeline>
+<codeline lineno="43" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a95097cfd3ea604793e5a8f86eebec051" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a95097cfd3ea604793e5a8f86eebec051" kindref="member">creationTime</ref>;</highlight></codeline>
+<codeline lineno="44" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ae12974c5cc2e80c6abb0a5e67e4638a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ae12974c5cc2e80c6abb0a5e67e4638a3" kindref="member">expirationTime</ref>;</highlight></codeline>
+<codeline lineno="45" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1aeb565f11379a369e8319c76eaeafcc4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1aeb565f11379a369e8319c76eaeafcc4d" kindref="member">algorithm</ref>;</highlight></codeline>
+<codeline lineno="46" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ac3196260e1bb974159b7baec2cb2241d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1ac3196260e1bb974159b7baec2cb2241d" kindref="member">securityLevel</ref>;</highlight></codeline>
+<codeline lineno="47" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a934191ff11497d2a7b22f2778fe18941" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1a934191ff11497d2a7b22f2778fe18941" kindref="member">isActive</ref>;</highlight></codeline>
+<codeline lineno="48" refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1af7f8ae7644adbe4218ed09842e4bbd07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata_1af7f8ae7644adbe4218ed09842e4bbd07" kindref="member">metadata</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a7a8b31a3f1bafa65c815223b89610dc8" kindref="member">KeyManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a7a8b31a3f1bafa65c815223b89610dc8" kindref="member">KeyManager</ref>();</highlight></codeline>
+<codeline lineno="54" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1afadecefff8c59a78d6989477b8b94af0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1afadecefff8c59a78d6989477b8b94af0" kindref="member">~KeyManager</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>generation<sp/>and<sp/>storage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a4bd2bc01d877e2819bd66586da1be065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a4bd2bc01d877e2819bd66586da1be065" kindref="member">generateAndStoreKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>algorithm,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>securityLevel,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>metadata<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>retrieval</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a4921768394a10144d0e21b28d47bdceb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a4921768394a10144d0e21b28d47bdceb" kindref="member">getKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="db/dd6/structsatox_1_1security_1_1pqc_1_1KeyMetadata" kindref="compound">KeyMetadata</ref>&amp;<sp/>metadata);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>rotation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a6b676d88a80fceddcbaa1a7533f92d38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a6b676d88a80fceddcbaa1a7533f92d38" kindref="member">rotateKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>newMetadata<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>deletion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a3ba531a928f06963211c985bd3aff4c0" kindref="member">deleteKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>listing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a9ec8265aad35d0714a337e4aae338ced" kindref="member">listKeys</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a5190d2fb1450f515998a117203f1fd45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;KeyMetadata&gt;<sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a5190d2fb1450f515998a117203f1fd45" kindref="member">listKeyMetadata</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a2705b9c30e5d508f2507d0d41ccd2fea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a2705b9c30e5d508f2507d0d41ccd2fea" kindref="member">isKeyValid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a42ff3ec665d1f74809eaedb1d0db6c87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a42ff3ec665d1f74809eaedb1d0db6c87" kindref="member">isKeyExpired</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>metadata<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a75249f23c3a040e25b691bfbeef2da05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a75249f23c3a040e25b691bfbeef2da05" kindref="member">updateKeyMetadata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>metadata);</highlight></codeline>
+<codeline lineno="85" refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1aa2356bd6f556ef61e25f676e292ddec9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1aa2356bd6f556ef61e25f676e292ddec9" kindref="member">setKeyExpiration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::chrono::system_clock::time_point&amp;<sp/>expiration);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a58460498c6dbecca9a0c816d3a967df5" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/d0d/classsatox_1_1security_1_1pqc_1_1KeyManager_1a5190a2764a1ca5061a22da47926d517e" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dc/d64/classsatox_1_1security_1_1pqc_1_1KeyManager_1_1Impl" kindref="compound">Impl</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>pImpl;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>pqc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>security</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/security/include/satox/security/pqc/pqc/key_manager.hpp"/>
+  </compounddef>
+</doxygen>

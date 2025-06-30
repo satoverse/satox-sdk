@@ -1,0 +1,1950 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/df0/classsatox_1_1RPCManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::RPCManager</compoundname>
+    <includes refid="d0/de4/rpc__handlers_8hpp" local="no">rpc_handlers.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/df0/classsatox_1_1RPCManager_1a5019a56b41adca1d93b0d7dc69b172e4" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; nlohmann::json(const nlohmann::json &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;nlohmann::json(const nlohmann::json&amp;)&gt; &gt; satox::RPCManager::method_handlers_</definition>
+        <argsstring></argsstring>
+        <name>method_handlers_</name>
+        <qualifiedname>satox::RPCManager::method_handlers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="154" column="24" bodyfile="src/network/src/rpc_handlers.hpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/df0/classsatox_1_1RPCManager_1acd9b55a40f87e3b7bc8a49ef7d7d4393" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::RPCManager::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::RPCManager::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="155" column="10" bodyfile="src/network/src/rpc_handlers.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::RPCManager::RPCManager</definition>
+        <argsstring>()</argsstring>
+        <name>RPCManager</name>
+        <qualifiedname>satox::RPCManager::RPCManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="37" column="5" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="35" bodyend="122"/>
+        <references refid="d0/df0/classsatox_1_1RPCManager_1a52fd275d21d7d999792b6617c7e0e20b" compoundref="dc/dbf/rpc__handlers_8cpp" startline="150" endline="153">registerMethod</references>
+        <referencedby refid="d0/df0/classsatox_1_1RPCManager_1a06112417fdb757ce38b6a48adb609680">operator=</referencedby>
+        <referencedby refid="d0/df0/classsatox_1_1RPCManager_1a30a2507795bb417e1526bc1a7a4328fa">operator=</referencedby>
+        <referencedby refid="d0/df0/classsatox_1_1RPCManager_1a1dc71f3ddd16f0fb0baa7f4a2428ddea">RPCManager</referencedby>
+        <referencedby refid="d0/df0/classsatox_1_1RPCManager_1a6b2b900150a55173ebb323939198b8b5">RPCManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ae685e8fee518a26a1250000c80ce9d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::RPCManager::~RPCManager</definition>
+        <argsstring>()</argsstring>
+        <name>~RPCManager</name>
+        <qualifiedname>satox::RPCManager::~RPCManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="38" column="5" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="124" bodyend="126"/>
+        <references refid="d0/df0/classsatox_1_1RPCManager_1ac9b59a29c3a5f437c6b6b9e7e0ec49ff" compoundref="dc/dbf/rpc__handlers_8cpp" startline="139" endline="144">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a1dc71f3ddd16f0fb0baa7f4a2428ddea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::RPCManager::RPCManager</definition>
+        <argsstring>(const RPCManager &amp;)=delete</argsstring>
+        <name>RPCManager</name>
+        <qualifiedname>satox::RPCManager::RPCManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/df0/classsatox_1_1RPCManager" kindref="compound">RPCManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="41" column="5"/>
+        <references refid="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" compoundref="dc/dbf/rpc__handlers_8cpp" startline="35" endline="122">RPCManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a06112417fdb757ce38b6a48adb609680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/df0/classsatox_1_1RPCManager" kindref="compound">RPCManager</ref> &amp;</type>
+        <definition>RPCManager &amp; satox::RPCManager::operator=</definition>
+        <argsstring>(const RPCManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::RPCManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/df0/classsatox_1_1RPCManager" kindref="compound">RPCManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="42" column="16"/>
+        <references refid="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" compoundref="dc/dbf/rpc__handlers_8cpp" startline="35" endline="122">RPCManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a6b2b900150a55173ebb323939198b8b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::RPCManager::RPCManager</definition>
+        <argsstring>(RPCManager &amp;&amp;)=default</argsstring>
+        <name>RPCManager</name>
+        <qualifiedname>satox::RPCManager::RPCManager</qualifiedname>
+        <param>
+          <type><ref refid="d0/df0/classsatox_1_1RPCManager" kindref="compound">RPCManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="45" column="5"/>
+        <references refid="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" compoundref="dc/dbf/rpc__handlers_8cpp" startline="35" endline="122">RPCManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a30a2507795bb417e1526bc1a7a4328fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/df0/classsatox_1_1RPCManager" kindref="compound">RPCManager</ref> &amp;</type>
+        <definition>RPCManager &amp; satox::RPCManager::operator=</definition>
+        <argsstring>(RPCManager &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::RPCManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="d0/df0/classsatox_1_1RPCManager" kindref="compound">RPCManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="46" column="16"/>
+        <references refid="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" compoundref="dc/dbf/rpc__handlers_8cpp" startline="35" endline="122">RPCManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5207f497c703f93940fb4a00bba97c69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::RPCManager::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::RPCManager::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="49" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="128" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac9b59a29c3a5f437c6b6b9e7e0ec49ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::RPCManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::RPCManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="50" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="139" bodyend="144"/>
+        <referencedby refid="d0/df0/classsatox_1_1RPCManager_1ae685e8fee518a26a1250000c80ce9d26" compoundref="dc/dbf/rpc__handlers_8cpp" startline="124" endline="126">~RPCManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aa38475044123170eeeb301d1dd8aa823" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::RPCManager::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>satox::RPCManager::isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="51" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5da98867bb82106c055447bfc93eb1e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::handleRequest</definition>
+        <argsstring>(const nlohmann::json &amp;request)</argsstring>
+        <name>handleRequest</name>
+        <qualifiedname>satox::RPCManager::handleRequest</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="54" column="20" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="155" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a52fd275d21d7d999792b6617c7e0e20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::RPCManager::registerMethod</definition>
+        <argsstring>(const std::string &amp;method, std::function&lt; nlohmann::json(const nlohmann::json &amp;)&gt; handler)</argsstring>
+        <name>registerMethod</name>
+        <qualifiedname>satox::RPCManager::registerMethod</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>std::function&lt; nlohmann::json(const nlohmann::json &amp;)&gt;</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="55" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="150" bodyend="153"/>
+        <referencedby refid="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" compoundref="dc/dbf/rpc__handlers_8cpp" startline="35" endline="122">RPCManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1af9fa44169a51a5a69d6c30505694a56c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getInfo</name>
+        <qualifiedname>satox::RPCManager::getInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="60" column="20" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="220" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5a399be5ab308ad565fd442f9e00145b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getBlockchainInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getBlockchainInfo</name>
+        <qualifiedname>satox::RPCManager::getBlockchainInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="61" column="20" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="241" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a7ac4ba5e0e0ac2760fbd84412f5eb664" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNetworkInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNetworkInfo</name>
+        <qualifiedname>satox::RPCManager::getNetworkInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="62" column="20" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="262" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac88ac01da688700089d93647df75d88e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getBlockCount</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getBlockCount</name>
+        <qualifiedname>satox::RPCManager::getBlockCount</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="63" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac7dcf37b3362a61de6bd880632eafe6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getBlockHash</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getBlockHash</name>
+        <qualifiedname>satox::RPCManager::getBlockHash</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="64" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a27a21134906655b88d1a1a22302dcbe8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getBlock</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getBlock</name>
+        <qualifiedname>satox::RPCManager::getBlock</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="65" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a39820299380a6b6cd0346e9f7d15b956" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getRawTransaction</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getRawTransaction</name>
+        <qualifiedname>satox::RPCManager::getRawTransaction</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="66" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a6e9e85a0721636266857dcb57a1c4423" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::sendRawTransaction</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>sendRawTransaction</name>
+        <qualifiedname>satox::RPCManager::sendRawTransaction</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="67" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1abddc1ab02059a2bd090d2af237ae7cb2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getMempoolInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getMempoolInfo</name>
+        <qualifiedname>satox::RPCManager::getMempoolInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="68" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a3b638f1cec13dc4bd86f734a88621979" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getMiningInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getMiningInfo</name>
+        <qualifiedname>satox::RPCManager::getMiningInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="69" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5ccf38aa7054232a7e912b96dd4d7b51" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getDifficulty</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getDifficulty</name>
+        <qualifiedname>satox::RPCManager::getDifficulty</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="70" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aaa8888ad76a2deec9e6705dc59d15119" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getConnectionCount</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getConnectionCount</name>
+        <qualifiedname>satox::RPCManager::getConnectionCount</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="71" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a38468634b0ea516cb513bf95ff31a5fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getPeerInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getPeerInfo</name>
+        <qualifiedname>satox::RPCManager::getPeerInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="72" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ae3ad10e6d24b32628d4764e1cc22a82a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getBalance</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getBalance</name>
+        <qualifiedname>satox::RPCManager::getBalance</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="73" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aba673fa6c1ced529bbf6af6cebd45c47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::listUnspent</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>listUnspent</name>
+        <qualifiedname>satox::RPCManager::listUnspent</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="74" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a7e391fab5f58bd319edff41ee84d5045" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::createRawTransaction</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>createRawTransaction</name>
+        <qualifiedname>satox::RPCManager::createRawTransaction</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="75" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5f30accf14cfd532e805bb83d6c938d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::signRawTransaction</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>signRawTransaction</name>
+        <qualifiedname>satox::RPCManager::signRawTransaction</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="76" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a19df62b7b2a38a1a9255292003cfde6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::validateAddress</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>validateAddress</name>
+        <qualifiedname>satox::RPCManager::validateAddress</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="77" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a407109ff791d787741763226187279d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNewAddress</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNewAddress</name>
+        <qualifiedname>satox::RPCManager::getNewAddress</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="78" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1addfba20049265fb78cd16909a052cddd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getReceivedByAddress</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getReceivedByAddress</name>
+        <qualifiedname>satox::RPCManager::getReceivedByAddress</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="79" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5dac7fc599d00222ae079a4bdee5a409" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getTransaction</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getTransaction</name>
+        <qualifiedname>satox::RPCManager::getTransaction</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="80" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1af94a2918fbfceca6e5a344ed7a0d1ebd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::listTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>listTransactions</name>
+        <qualifiedname>satox::RPCManager::listTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="81" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ae0c03b6ba4de264e3ef486f523f89e4a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::backupWallet</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>backupWallet</name>
+        <qualifiedname>satox::RPCManager::backupWallet</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="82" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a7f710a81090cdd277ea633a3baf0072a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::importWallet</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>importWallet</name>
+        <qualifiedname>satox::RPCManager::importWallet</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="83" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a88ebf138622614c0f4ceebd7a49fe7e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::dumpPrivKey</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>dumpPrivKey</name>
+        <qualifiedname>satox::RPCManager::dumpPrivKey</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="84" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aec86eaaeb188b6de797ba3b2f5ff96c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::importPrivKey</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>importPrivKey</name>
+        <qualifiedname>satox::RPCManager::importPrivKey</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="85" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aa7cb5a72061b82f56ebf23334f093764" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getWalletInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getWalletInfo</name>
+        <qualifiedname>satox::RPCManager::getWalletInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="86" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a050065463d41d3bc4c2158647226a864" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAddressesByAccount</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAddressesByAccount</name>
+        <qualifiedname>satox::RPCManager::getAddressesByAccount</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="87" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac0ad9f6df6ff2213fd18a54a1a4c569b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAccount</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAccount</name>
+        <qualifiedname>satox::RPCManager::getAccount</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="88" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a6d439b21cc11bc72a4cd3ef7a87f09e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAccountAddress</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAccountAddress</name>
+        <qualifiedname>satox::RPCManager::getAccountAddress</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="89" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a40434e13efb9ebdbcff38256655090fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAddressesByLabel</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAddressesByLabel</name>
+        <qualifiedname>satox::RPCManager::getAddressesByLabel</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="90" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5445e3adaa4c60a02de1062553e8591b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getReceivedByLabel</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getReceivedByLabel</name>
+        <qualifiedname>satox::RPCManager::getReceivedByLabel</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="91" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a3580c2b88748f1c863a2610a16247e10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::listLabels</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>listLabels</name>
+        <qualifiedname>satox::RPCManager::listLabels</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="92" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a65b292df3f47647ea12bd087397f4014" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAddressInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAddressInfo</name>
+        <qualifiedname>satox::RPCManager::getAddressInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="93" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ab8eb98b3b543e3e5f52ea85c885d193d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getBlockTemplate</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getBlockTemplate</name>
+        <qualifiedname>satox::RPCManager::getBlockTemplate</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="94" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aa84fe803b600cd6aa2a8a14e9320f69b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::submitBlock</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>submitBlock</name>
+        <qualifiedname>satox::RPCManager::submitBlock</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="95" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a09f18a66f9b37d1a32abf3c455f51bf7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getMempoolEntry</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getMempoolEntry</name>
+        <qualifiedname>satox::RPCManager::getMempoolEntry</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="96" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a164db825e642557ae6ce6ff2e0edb85f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getTxOut</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getTxOut</name>
+        <qualifiedname>satox::RPCManager::getTxOut</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="97" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac44a6a3c40c08834d09e20b8675c4885" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getTxOutSetInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getTxOutSetInfo</name>
+        <qualifiedname>satox::RPCManager::getTxOutSetInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="98" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a85a5da219bb22882961d71c6db2662e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::verifyChain</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>verifyChain</name>
+        <qualifiedname>satox::RPCManager::verifyChain</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="99" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a4b117fdfa8c8692b3bc84f63886afa67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getChainTips</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getChainTips</name>
+        <qualifiedname>satox::RPCManager::getChainTips</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="100" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a4506de1537581f96b620c4bde8359924" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getChainTxStats</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getChainTxStats</name>
+        <qualifiedname>satox::RPCManager::getChainTxStats</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="101" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a83cb2ef8eb1eec50fbc887707e2027c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNetTotals</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNetTotals</name>
+        <qualifiedname>satox::RPCManager::getNetTotals</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="102" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a8e54ccef921a2f6c266ff45ac450bf7c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNetworkHashPS</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNetworkHashPS</name>
+        <qualifiedname>satox::RPCManager::getNetworkHashPS</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="103" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1af3affd97e7e8407865317200bb15fe5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getMemoryInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getMemoryInfo</name>
+        <qualifiedname>satox::RPCManager::getMemoryInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="104" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aa6578f2a2c2720093ba9497695b5a1f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getRPCInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getRPCInfo</name>
+        <qualifiedname>satox::RPCManager::getRPCInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="105" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1af4253d77d9d4b4a11b4b725ee46f8594" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::help</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>help</name>
+        <qualifiedname>satox::RPCManager::help</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="106" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1afe12b36e2fb9c55150e5954efbae60a0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::stop</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>stop</name>
+        <qualifiedname>satox::RPCManager::stop</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="107" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ab61856e545ce0904b4f6a1153a19ff88" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::uptime</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>uptime</name>
+        <qualifiedname>satox::RPCManager::uptime</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="108" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a80f6f388154870b8641355e5b95d1b38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::issueAsset</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>issueAsset</name>
+        <qualifiedname>satox::RPCManager::issueAsset</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="111" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac0dfbc3c2f62b56a7b72cf6354ea4de3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::reissueAsset</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>reissueAsset</name>
+        <qualifiedname>satox::RPCManager::reissueAsset</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="112" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a1d1410cd89c3bfb8bb9f91779e232d39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::transferAsset</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>transferAsset</name>
+        <qualifiedname>satox::RPCManager::transferAsset</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="113" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a2e107e6d96b32c127574249d93e5c74c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::listAssets</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>listAssets</name>
+        <qualifiedname>satox::RPCManager::listAssets</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="114" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5fa7df7a326a392a4fbf3407827f1791" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetInfo</name>
+        <qualifiedname>satox::RPCManager::getAssetInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="115" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a14f7927084640c6308311c33d4d9f442" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAllocation</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAllocation</name>
+        <qualifiedname>satox::RPCManager::getAssetAllocation</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="116" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a14e164d697fb2f37da7479d8d61a7c09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetHistory</name>
+        <qualifiedname>satox::RPCManager::getAssetHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="117" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aede099249a8db5985e7de9e6c69eb782" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetBalances</name>
+        <qualifiedname>satox::RPCManager::getAssetBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="118" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac1e60a636ec23f117ce1a6b7b96fd0c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetTransactions</name>
+        <qualifiedname>satox::RPCManager::getAssetTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="119" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a6118def49617b6ddb33988ba32da917b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddresses</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddresses</name>
+        <qualifiedname>satox::RPCManager::getAssetAddresses</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="120" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a0c8ebe12ca2e4bf993d239bb91360c43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressBalances</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="121" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a76f38bce374bb14b6d75429ff6429986" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressTransactions</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="122" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a58a5c18f35205600810eba293c93994a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressHistory</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="123" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a6b4354367128b90894dbee760ac5b3b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressAllocations</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressAllocations</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressAllocations</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="124" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a773a29a857cd328e66bf3eefc5841e0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressAllocationHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressAllocationHistory</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressAllocationHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="125" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a75bce61c3fde8cb86175f733479fa048" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressAllocationBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressAllocationBalances</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressAllocationBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="126" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a6e74bb992245af3875377f27c48b87ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressAllocationTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressAllocationTransactions</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressAllocationTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="127" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a773a29a857cd328e66bf3eefc5841e0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getAssetAddressAllocationHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getAssetAddressAllocationHistory</name>
+        <qualifiedname>satox::RPCManager::getAssetAddressAllocationHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="128" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a7dec22626d8a20222bc84261afec1354" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSHash</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSHash</name>
+        <qualifiedname>satox::RPCManager::getIPFSHash</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="129" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a9b365a195182eb925d73adf22fff9301" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSData</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSData</name>
+        <qualifiedname>satox::RPCManager::getIPFSData</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="130" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1addd7beac725974416aa0a0677f956468" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSHistory</name>
+        <qualifiedname>satox::RPCManager::getIPFSHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="131" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a05f417cb86f9866ad0924aea7f71d338" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSBalances</name>
+        <qualifiedname>satox::RPCManager::getIPFSBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="132" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5f73b6ac17b4d614968414b2b3232cdb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSTransactions</name>
+        <qualifiedname>satox::RPCManager::getIPFSTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="133" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a7b3554be72b60b2862a2b4bd34293db4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSAddresses</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSAddresses</name>
+        <qualifiedname>satox::RPCManager::getIPFSAddresses</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="134" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a123e9867767b1a0edfb52fdb07e33756" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSAddressBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSAddressBalances</name>
+        <qualifiedname>satox::RPCManager::getIPFSAddressBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="135" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ac81c53c05c9f9a566abeb7afae25ed9f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSAddressTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSAddressTransactions</name>
+        <qualifiedname>satox::RPCManager::getIPFSAddressTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="136" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a095338080a27b4c57812fdad482d532e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getIPFSAddressHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getIPFSAddressHistory</name>
+        <qualifiedname>satox::RPCManager::getIPFSAddressHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="137" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1adef5b853b25fffbb9176706b14cba3ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTInfo</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTInfo</name>
+        <qualifiedname>satox::RPCManager::getNFTInfo</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="138" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a9eb19054f51492a22e86053934e79d55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTHistory</name>
+        <qualifiedname>satox::RPCManager::getNFTHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="139" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aade6a22d209c9ad612e0e78b9b1d0366" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTBalances</name>
+        <qualifiedname>satox::RPCManager::getNFTBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="140" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1ae6495f78fc2639fd9e023f49c8a19c6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTTransactions</name>
+        <qualifiedname>satox::RPCManager::getNFTTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="141" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a08434aa9538a7843567e0a94e2f3df72" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTAddresses</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTAddresses</name>
+        <qualifiedname>satox::RPCManager::getNFTAddresses</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="142" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a836adcb4a02fab5625b9fac012bc1a0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTAddressBalances</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTAddressBalances</name>
+        <qualifiedname>satox::RPCManager::getNFTAddressBalances</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="143" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a0f56afa0f61095b87e0eac9031a7e72b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTAddressTransactions</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTAddressTransactions</name>
+        <qualifiedname>satox::RPCManager::getNFTAddressTransactions</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="144" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a5f358b51237408733b5030c59e83ec16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::getNFTAddressHistory</definition>
+        <argsstring>(const nlohmann::json &amp;params)</argsstring>
+        <name>getNFTAddressHistory</name>
+        <qualifiedname>satox::RPCManager::getNFTAddressHistory</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="145" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a0b1c240c54045d7510f11958c4f2c0d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::createErrorResponse</definition>
+        <argsstring>(int code, const std::string &amp;message)</argsstring>
+        <name>createErrorResponse</name>
+        <qualifiedname>satox::RPCManager::createErrorResponse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="148" column="20" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="176" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a882150a71e460037a7c7c4a45a68dc99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::RPCManager::createSuccessResponse</definition>
+        <argsstring>(const nlohmann::json &amp;result)</argsstring>
+        <name>createSuccessResponse</name>
+        <qualifiedname>satox::RPCManager::createSuccessResponse</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="149" column="20" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="187" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1abf198400dfe750d3e2ed86558f00be1f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::RPCManager::validateParams</definition>
+        <argsstring>(const nlohmann::json &amp;params, const std::vector&lt; std::string &gt; &amp;required)</argsstring>
+        <name>validateParams</name>
+        <qualifiedname>satox::RPCManager::validateParams</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="150" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="195" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1aa234f5fccdb6bb9eeef0d69f34ca04dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::RPCManager::validateAddressFormat</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>validateAddressFormat</name>
+        <qualifiedname>satox::RPCManager::validateAddressFormat</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="151" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/df0/classsatox_1_1RPCManager_1a4703f1af0ae83fb696e936e325770fbd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::RPCManager::validateAmount</definition>
+        <argsstring>(double amount)</argsstring>
+        <name>validateAmount</name>
+        <qualifiedname>satox::RPCManager::validateAmount</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/rpc_handlers.hpp" line="152" column="10" bodyfile="src/network/src/rpc_handlers.cpp" bodystart="215" bodyend="217"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/network/src/rpc_handlers.hpp" line="35" column="1" bodyfile="src/network/src/rpc_handlers.hpp" bodystart="35" bodyend="156"/>
+    <listofallmembers>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ae0c03b6ba4de264e3ef486f523f89e4a" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>backupWallet</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a0b1c240c54045d7510f11958c4f2c0d6" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>createErrorResponse</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a7e391fab5f58bd319edff41ee84d5045" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>createRawTransaction</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a882150a71e460037a7c7c4a45a68dc99" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>createSuccessResponse</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a88ebf138622614c0f4ceebd7a49fe7e4" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>dumpPrivKey</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac0ad9f6df6ff2213fd18a54a1a4c569b" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAccount</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a6d439b21cc11bc72a4cd3ef7a87f09e5" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAccountAddress</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a050065463d41d3bc4c2158647226a864" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAddressesByAccount</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a40434e13efb9ebdbcff38256655090fb" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAddressesByLabel</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a65b292df3f47647ea12bd087397f4014" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAddressInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a75bce61c3fde8cb86175f733479fa048" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressAllocationBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a773a29a857cd328e66bf3eefc5841e0e" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressAllocationHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a773a29a857cd328e66bf3eefc5841e0e" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressAllocationHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a6b4354367128b90894dbee760ac5b3b2" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressAllocations</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a6e74bb992245af3875377f27c48b87ce" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressAllocationTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a0c8ebe12ca2e4bf993d239bb91360c43" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a6118def49617b6ddb33988ba32da917b" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddresses</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a58a5c18f35205600810eba293c93994a" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a76f38bce374bb14b6d75429ff6429986" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAddressTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a14f7927084640c6308311c33d4d9f442" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetAllocation</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aede099249a8db5985e7de9e6c69eb782" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a14e164d697fb2f37da7479d8d61a7c09" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5fa7df7a326a392a4fbf3407827f1791" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac1e60a636ec23f117ce1a6b7b96fd0c9" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getAssetTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ae3ad10e6d24b32628d4764e1cc22a82a" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getBalance</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a27a21134906655b88d1a1a22302dcbe8" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getBlock</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5a399be5ab308ad565fd442f9e00145b" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getBlockchainInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac88ac01da688700089d93647df75d88e" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getBlockCount</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac7dcf37b3362a61de6bd880632eafe6c" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getBlockHash</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ab8eb98b3b543e3e5f52ea85c885d193d" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getBlockTemplate</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a4b117fdfa8c8692b3bc84f63886afa67" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getChainTips</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a4506de1537581f96b620c4bde8359924" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getChainTxStats</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aaa8888ad76a2deec9e6705dc59d15119" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getConnectionCount</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5ccf38aa7054232a7e912b96dd4d7b51" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getDifficulty</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1af9fa44169a51a5a69d6c30505694a56c" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a123e9867767b1a0edfb52fdb07e33756" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSAddressBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a7b3554be72b60b2862a2b4bd34293db4" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSAddresses</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a095338080a27b4c57812fdad482d532e" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSAddressHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac81c53c05c9f9a566abeb7afae25ed9f" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSAddressTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a05f417cb86f9866ad0924aea7f71d338" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a9b365a195182eb925d73adf22fff9301" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSData</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a7dec22626d8a20222bc84261afec1354" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSHash</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1addd7beac725974416aa0a0677f956468" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5f73b6ac17b4d614968414b2b3232cdb" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getIPFSTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1af3affd97e7e8407865317200bb15fe5c" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getMemoryInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a09f18a66f9b37d1a32abf3c455f51bf7" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getMempoolEntry</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1abddc1ab02059a2bd090d2af237ae7cb2" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getMempoolInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a3b638f1cec13dc4bd86f734a88621979" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getMiningInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a83cb2ef8eb1eec50fbc887707e2027c2" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNetTotals</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a8e54ccef921a2f6c266ff45ac450bf7c" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNetworkHashPS</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a7ac4ba5e0e0ac2760fbd84412f5eb664" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNetworkInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a407109ff791d787741763226187279d7" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNewAddress</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a836adcb4a02fab5625b9fac012bc1a0e" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTAddressBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a08434aa9538a7843567e0a94e2f3df72" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTAddresses</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5f358b51237408733b5030c59e83ec16" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTAddressHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a0f56afa0f61095b87e0eac9031a7e72b" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTAddressTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aade6a22d209c9ad612e0e78b9b1d0366" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTBalances</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a9eb19054f51492a22e86053934e79d55" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTHistory</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1adef5b853b25fffbb9176706b14cba3ca" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ae6495f78fc2639fd9e023f49c8a19c6a" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getNFTTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a38468634b0ea516cb513bf95ff31a5fc" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getPeerInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a39820299380a6b6cd0346e9f7d15b956" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getRawTransaction</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1addfba20049265fb78cd16909a052cddd" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getReceivedByAddress</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5445e3adaa4c60a02de1062553e8591b" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getReceivedByLabel</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aa6578f2a2c2720093ba9497695b5a1f7" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getRPCInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5dac7fc599d00222ae079a4bdee5a409" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getTransaction</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a164db825e642557ae6ce6ff2e0edb85f" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getTxOut</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac44a6a3c40c08834d09e20b8675c4885" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getTxOutSetInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aa7cb5a72061b82f56ebf23334f093764" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>getWalletInfo</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5da98867bb82106c055447bfc93eb1e1" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>handleRequest</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1af4253d77d9d4b4a11b4b725ee46f8594" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>help</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aec86eaaeb188b6de797ba3b2f5ff96c2" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>importPrivKey</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a7f710a81090cdd277ea633a3baf0072a" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>importWallet</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5207f497c703f93940fb4a00bba97c69" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>initialize</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aa38475044123170eeeb301d1dd8aa823" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>isRunning</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a80f6f388154870b8641355e5b95d1b38" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>issueAsset</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a2e107e6d96b32c127574249d93e5c74c" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>listAssets</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a3580c2b88748f1c863a2610a16247e10" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>listLabels</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1af94a2918fbfceca6e5a344ed7a0d1ebd" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>listTransactions</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aba673fa6c1ced529bbf6af6cebd45c47" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>listUnspent</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5019a56b41adca1d93b0d7dc69b172e4" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>method_handlers_</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a06112417fdb757ce38b6a48adb609680" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>operator=</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a30a2507795bb417e1526bc1a7a4328fa" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>operator=</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a52fd275d21d7d999792b6617c7e0e20b" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>registerMethod</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac0dfbc3c2f62b56a7b72cf6354ea4de3" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>reissueAsset</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a136b446d38dcc11c78c60de3998a5b7f" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>RPCManager</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a1dc71f3ddd16f0fb0baa7f4a2428ddea" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>RPCManager</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a6b2b900150a55173ebb323939198b8b5" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>RPCManager</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1acd9b55a40f87e3b7bc8a49ef7d7d4393" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>running_</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a6e9e85a0721636266857dcb57a1c4423" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>sendRawTransaction</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ac9b59a29c3a5f437c6b6b9e7e0ec49ff" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>shutdown</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a5f30accf14cfd532e805bb83d6c938d2" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>signRawTransaction</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1afe12b36e2fb9c55150e5954efbae60a0" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>stop</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aa84fe803b600cd6aa2a8a14e9320f69b" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>submitBlock</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a1d1410cd89c3bfb8bb9f91779e232d39" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>transferAsset</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ab61856e545ce0904b4f6a1153a19ff88" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>uptime</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a19df62b7b2a38a1a9255292003cfde6d" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>validateAddress</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1aa234f5fccdb6bb9eeef0d69f34ca04dc" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>validateAddressFormat</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a4703f1af0ae83fb696e936e325770fbd" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>validateAmount</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1abf198400dfe750d3e2ed86558f00be1f" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>validateParams</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1a85a5da219bb22882961d71c6db2662e3" prot="private" virt="non-virtual"><scope>satox::RPCManager</scope><name>verifyChain</name></member>
+      <member refid="d0/df0/classsatox_1_1RPCManager_1ae685e8fee518a26a1250000c80ce9d26" prot="public" virt="non-virtual"><scope>satox::RPCManager</scope><name>~RPCManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

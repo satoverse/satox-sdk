@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/d53/structsatox_1_1core_1_1CoreStats" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::CoreStats</compoundname>
+    <includes refid="d6/dcd/core__manager_8hpp" local="no">core_manager.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d0/d53/structsatox_1_1core_1_1CoreStats_1ad750c4548bd983f884ea1aba1313d809" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CoreStats::start_time</definition>
+        <argsstring></argsstring>
+        <name>start_time</name>
+        <qualifiedname>satox::core::CoreStats::start_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="83" column="43" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d53/structsatox_1_1core_1_1CoreStats_1a2b300480f6ee09b19d12d0fe55e96350" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CoreStats::last_activity</definition>
+        <argsstring></argsstring>
+        <name>last_activity</name>
+        <qualifiedname>satox::core::CoreStats::last_activity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="84" column="43" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="84" bodyend="-1"/>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a39abb62858fa18461e011cf798a3d8a0" compoundref="d2/d5f/core__manager_8cpp" startline="169" endline="174">satox::core::CoreManager::getStats</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d53/structsatox_1_1core_1_1CoreStats_1a602f26f4e916f9bb4681d8d28a52dd7d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::core::CoreStats::total_components</definition>
+        <argsstring></argsstring>
+        <name>total_components</name>
+        <qualifiedname>satox::core::CoreStats::total_components</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="85" column="14" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d53/structsatox_1_1core_1_1CoreStats_1a9772d0a239569769a75740c3e9f797cf" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::core::CoreStats::active_components</definition>
+        <argsstring></argsstring>
+        <name>active_components</name>
+        <qualifiedname>satox::core::CoreStats::active_components</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="86" column="14" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d53/structsatox_1_1core_1_1CoreStats_1a7349a515ca7ccd0d6259f77b34e68a2f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::core::CoreStats::failed_components</definition>
+        <argsstring></argsstring>
+        <name>failed_components</name>
+        <qualifiedname>satox::core::CoreStats::failed_components</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="87" column="14" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d53/structsatox_1_1core_1_1CoreStats_1a5cc0b76eb3443b7517873890e8bd5620" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CoreStats::additional_stats</definition>
+        <argsstring></argsstring>
+        <name>additional_stats</name>
+        <qualifiedname>satox::core::CoreStats::additional_stats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="88" column="20" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/core_manager.hpp" line="82" column="1" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="82" bodyend="89"/>
+    <listofallmembers>
+      <member refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a9772d0a239569769a75740c3e9f797cf" prot="public" virt="non-virtual"><scope>satox::core::CoreStats</scope><name>active_components</name></member>
+      <member refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a5cc0b76eb3443b7517873890e8bd5620" prot="public" virt="non-virtual"><scope>satox::core::CoreStats</scope><name>additional_stats</name></member>
+      <member refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a7349a515ca7ccd0d6259f77b34e68a2f" prot="public" virt="non-virtual"><scope>satox::core::CoreStats</scope><name>failed_components</name></member>
+      <member refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a2b300480f6ee09b19d12d0fe55e96350" prot="public" virt="non-virtual"><scope>satox::core::CoreStats</scope><name>last_activity</name></member>
+      <member refid="d0/d53/structsatox_1_1core_1_1CoreStats_1ad750c4548bd983f884ea1aba1313d809" prot="public" virt="non-virtual"><scope>satox::core::CoreStats</scope><name>start_time</name></member>
+      <member refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a602f26f4e916f9bb4681d8d28a52dd7d" prot="public" virt="non-virtual"><scope>satox::core::CoreStats</scope><name>total_components</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

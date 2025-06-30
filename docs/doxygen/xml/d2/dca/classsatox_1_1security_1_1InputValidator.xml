@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/dca/classsatox_1_1security_1_1InputValidator" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::InputValidator</compoundname>
+    <includes refid="df/ddb/input__validator_8hpp" local="no">input_validator.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a935527b1a606020338f2479b8c009d0b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::security::InputValidator::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="71" column="10" bodyfile="src/security/include/satox/security/input_validator.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dca/classsatox_1_1security_1_1InputValidator_1aa9f39aa3d45331b3770d0baa40eefc0a" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; bool(const std::string &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;bool(const std::string&amp;)&gt; &gt; satox::security::InputValidator::validators_</definition>
+        <argsstring></argsstring>
+        <name>validators_</name>
+        <qualifiedname>satox::security::InputValidator::validators_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="72" column="24" bodyfile="src/security/include/satox/security/input_validator.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a8da8cb2df0c29148d1bd213072de823c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::InputValidator::InputValidator</definition>
+        <argsstring>()</argsstring>
+        <name>InputValidator</name>
+        <qualifiedname>satox::security::InputValidator::InputValidator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="39" column="5" bodyfile="src/security/src/input_validator.cpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a72041eeae490d0556d1ab07fd8a7f721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::InputValidator::~InputValidator</definition>
+        <argsstring>()</argsstring>
+        <name>~InputValidator</name>
+        <qualifiedname>satox::security::InputValidator::~InputValidator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="40" column="5" bodyfile="src/security/src/input_validator.cpp" bodystart="35" bodyend="37"/>
+        <references refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a6e00e69c5883aef73ae0764367c50bf7" compoundref="da/d0a/input__validator_8cpp" startline="49" endline="56">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1ab6e0c314e9a8c71d287ddca6df45e5b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::security::InputValidator::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="43" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a6e00e69c5883aef73ae0764367c50bf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::InputValidator::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::security::InputValidator::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="46" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="49" bodyend="56"/>
+        <referencedby refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a72041eeae490d0556d1ab07fd8a7f721" compoundref="da/d0a/input__validator_8cpp" startline="35" endline="37">~InputValidator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1ae8c50595ec35ea30b7b5c7d9cdde790e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validate</definition>
+        <argsstring>(const std::string &amp;input, const std::string &amp;type)</argsstring>
+        <name>validate</name>
+        <qualifiedname>satox::security::InputValidator::validate</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="49" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="58" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a25d6179c7a414d9f16912b1ba980d151" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::InputValidator::registerValidator</definition>
+        <argsstring>(const std::string &amp;type, std::function&lt; bool(const std::string &amp;)&gt; validator)</argsstring>
+        <name>registerValidator</name>
+        <qualifiedname>satox::security::InputValidator::registerValidator</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>std::function&lt; bool(const std::string &amp;)&gt;</type>
+          <declname>validator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="52" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="71" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a86592cf7bb5775efefd7f02581a3f066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::InputValidator::removeValidator</definition>
+        <argsstring>(const std::string &amp;type)</argsstring>
+        <name>removeValidator</name>
+        <qualifiedname>satox::security::InputValidator::removeValidator</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="56" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="80" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1ac8c2dd1d2b76c9c6f03b23b1472d6f5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateEmail</definition>
+        <argsstring>(const std::string &amp;email)</argsstring>
+        <name>validateEmail</name>
+        <qualifiedname>satox::security::InputValidator::validateEmail</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>email</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="59" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a9ee9ccc42a9f8e90c6b80000dba0d10c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateUrl</definition>
+        <argsstring>(const std::string &amp;url)</argsstring>
+        <name>validateUrl</name>
+        <qualifiedname>satox::security::InputValidator::validateUrl</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="60" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a9425e8ff6124f13158558465841b5b92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateIpAddress</definition>
+        <argsstring>(const std::string &amp;ip)</argsstring>
+        <name>validateIpAddress</name>
+        <qualifiedname>satox::security::InputValidator::validateIpAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="61" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1aa72072541beb6610e2e2bb9dc0e34d95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateJson</definition>
+        <argsstring>(const std::string &amp;json)</argsstring>
+        <name>validateJson</name>
+        <qualifiedname>satox::security::InputValidator::validateJson</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>json</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="62" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="103" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1afe35376ab5bde4f0ac07399ef8908a38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateXml</definition>
+        <argsstring>(const std::string &amp;xml)</argsstring>
+        <name>validateXml</name>
+        <qualifiedname>satox::security::InputValidator::validateXml</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>xml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="63" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="113" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a81c91554ce96d02da652735c4a44f5df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validatePhoneNumber</definition>
+        <argsstring>(const std::string &amp;phone)</argsstring>
+        <name>validatePhoneNumber</name>
+        <qualifiedname>satox::security::InputValidator::validatePhoneNumber</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>phone</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="64" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1ad89e804356d078b6efb69045e9410799" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateUsername</definition>
+        <argsstring>(const std::string &amp;username)</argsstring>
+        <name>validateUsername</name>
+        <qualifiedname>satox::security::InputValidator::validateUsername</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="65" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="127" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a21f8a07f3937428c257adfd4a2f32e5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validatePassword</definition>
+        <argsstring>(const std::string &amp;password)</argsstring>
+        <name>validatePassword</name>
+        <qualifiedname>satox::security::InputValidator::validatePassword</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="66" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="132" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a926435869914efbbb7b27dc8def02d45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateHexString</definition>
+        <argsstring>(const std::string &amp;hex)</argsstring>
+        <name>validateHexString</name>
+        <qualifiedname>satox::security::InputValidator::validateHexString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="67" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a1cd2d1ed3dc223939f1916523cd8b4d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::InputValidator::validateBase64</definition>
+        <argsstring>(const std::string &amp;base64)</argsstring>
+        <name>validateBase64</name>
+        <qualifiedname>satox::security::InputValidator::validateBase64</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base64</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="68" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d2/dca/classsatox_1_1security_1_1InputValidator_1a3b356720f75fa5b2c6bc33545b91a1b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::InputValidator::initializeBuiltInValidators</definition>
+        <argsstring>()</argsstring>
+        <name>initializeBuiltInValidators</name>
+        <qualifiedname>satox::security::InputValidator::initializeBuiltInValidators</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/input_validator.hpp" line="75" column="10" bodyfile="src/security/src/input_validator.cpp" bodystart="148" bodyend="159"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/security/include/satox/security/input_validator.hpp" line="37" column="1" bodyfile="src/security/include/satox/security/input_validator.hpp" bodystart="37" bodyend="76"/>
+    <listofallmembers>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1ab6e0c314e9a8c71d287ddca6df45e5b8" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>initialize</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a3b356720f75fa5b2c6bc33545b91a1b2" prot="private" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>initializeBuiltInValidators</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a935527b1a606020338f2479b8c009d0b" prot="private" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>initialized_</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a8da8cb2df0c29148d1bd213072de823c" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>InputValidator</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a25d6179c7a414d9f16912b1ba980d151" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>registerValidator</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a86592cf7bb5775efefd7f02581a3f066" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>removeValidator</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a6e00e69c5883aef73ae0764367c50bf7" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>shutdown</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1ae8c50595ec35ea30b7b5c7d9cdde790e" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validate</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a1cd2d1ed3dc223939f1916523cd8b4d9" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateBase64</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1ac8c2dd1d2b76c9c6f03b23b1472d6f5a" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateEmail</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a926435869914efbbb7b27dc8def02d45" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateHexString</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a9425e8ff6124f13158558465841b5b92" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateIpAddress</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1aa72072541beb6610e2e2bb9dc0e34d95" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateJson</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a21f8a07f3937428c257adfd4a2f32e5e" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validatePassword</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a81c91554ce96d02da652735c4a44f5df" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validatePhoneNumber</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a9ee9ccc42a9f8e90c6b80000dba0d10c" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateUrl</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1ad89e804356d078b6efb69045e9410799" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateUsername</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1afe35376ab5bde4f0ac07399ef8908a38" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validateXml</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1aa9f39aa3d45331b3770d0baa40eefc0a" prot="private" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>validators_</name></member>
+      <member refid="d2/dca/classsatox_1_1security_1_1InputValidator_1a72041eeae490d0556d1ab07fd8a7f721" prot="public" virt="non-virtual"><scope>satox::security::InputValidator</scope><name>~InputValidator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

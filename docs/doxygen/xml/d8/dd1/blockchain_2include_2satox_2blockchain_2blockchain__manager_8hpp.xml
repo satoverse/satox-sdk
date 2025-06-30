@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/dd1/blockchain_2include_2satox_2blockchain_2blockchain__manager_8hpp" kind="file" language="C++">
+    <compoundname>blockchain_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">variant</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">shared_mutex</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="de/de2/blockchain_2include_2satox_2blockchain_2types_8hpp" local="yes">satox/blockchain/types.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/blockchain/include/satox/blockchain/blockchain_manager.hpp</label>
+        <link refid="d8/dd1/blockchain_2include_2satox_2blockchain_2blockchain__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>satox/blockchain/types.hpp</label>
+        <link refid="de/de2/blockchain_2include_2satox_2blockchain_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>chrono</label>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>mutex</label>
+      </node>
+      <node id="12">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="10">
+        <label>optional</label>
+      </node>
+      <node id="11">
+        <label>shared_mutex</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>variant</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager" prot="public">satox::blockchain::BlockchainManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/db3/namespacesatox_1_1blockchain">satox::blockchain</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>MIT<sp/>License</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright(c)<sp/>2025<sp/>Satoxcoin<sp/>Core<sp/>Developer</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;shared_mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="de/de2/blockchain_2include_2satox_2blockchain_2types_8hpp" kindref="compound">satox/blockchain/types.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain" kindref="compound">satox::blockchain</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d1/d13/classsatox_1_1blockchain_1_1Block" kindref="compound">Block</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/dbe/classsatox_1_1blockchain_1_1Transaction" kindref="compound">Transaction</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager" kindref="compound">BlockchainManager</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain" kindref="compound">satox::blockchain</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Enums</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461" kindref="member">BlockchainState</ref><sp/>{</highlight></codeline>
+<codeline lineno="32" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461add652546039b18970b8dcf2cff824268" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461add652546039b18970b8dcf2cff824268" kindref="member">UNINITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="33" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a86bf8c89d85949f8f45cde2f73fce113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a86bf8c89d85949f8f45cde2f73fce113" kindref="member">INITIALIZING</ref>,</highlight></codeline>
+<codeline lineno="34" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461adee5f03c2c4e73657824e028494b18c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461adee5f03c2c4e73657824e028494b18c0" kindref="member">INITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="35" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a9a14f95e151eec641316e7c784ce832d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461a9a14f95e151eec641316e7c784ce832d" kindref="member">CONNECTING</ref>,</highlight></codeline>
+<codeline lineno="36" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461aa5afd6edd5336d91316964e493936858" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461aa5afd6edd5336d91316964e493936858" kindref="member">CONNECTED</ref>,</highlight></codeline>
+<codeline lineno="37" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461abb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="38" refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461ab9984206799a7f9fe4bd1b6c18db8112" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461ab9984206799a7f9fe4bd1b6c18db8112" kindref="member">SHUTDOWN</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7c" kindref="member">BlockchainType</ref><sp/>{</highlight></codeline>
+<codeline lineno="42" refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7ca9ff86ed474dbbbbe88b28ee45ec70994" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7ca9ff86ed474dbbbbe88b28ee45ec70994" kindref="member">MAINNET</ref>,</highlight></codeline>
+<codeline lineno="43" refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7cace8400aeb0c47ce5cd8e37a3a54e557b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7cace8400aeb0c47ce5cd8e37a3a54e557b" kindref="member">TESTNET</ref>,</highlight></codeline>
+<codeline lineno="44" refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7cad10d9759c6b71ea71a78e3a55bafc4d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1afd0dc108e4a76af0f73d94ebd0f79e7cad10d9759c6b71ea71a78e3a55bafc4d5" kindref="member">REGTEST</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Callback<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d9/db3/namespacesatox_1_1blockchain_1a9f2f52a8555a4323a5b32d1a32711967" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain_1a9f2f52a8555a4323a5b32d1a32711967" kindref="member">BlockchainCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)&gt;;</highlight></codeline>
+<codeline lineno="49" refid="d9/db3/namespacesatox_1_1blockchain_1a57a9f5d2c530de2903f0c3bb26eae6cb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain_1a57a9f5d2c530de2903f0c3bb26eae6cb" kindref="member">BlockCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Block&gt;&amp;)&gt;;</highlight></codeline>
+<codeline lineno="50" refid="d9/db3/namespacesatox_1_1blockchain_1a2ae63ea50736204b1ec76da17acbba96" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain_1a2ae63ea50736204b1ec76da17acbba96" kindref="member">TransactionCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Transaction&gt;&amp;)&gt;;</highlight></codeline>
+<codeline lineno="51" refid="d9/db3/namespacesatox_1_1blockchain_1a56325b0674b90ce933b62eb7a02b27c9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d9/db3/namespacesatox_1_1blockchain_1a56325b0674b90ce933b62eb7a02b27c9" kindref="member">ErrorCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Main<sp/>manager<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Singleton<sp/>pattern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref>&amp;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a2b48cfb229cbc6a92f419674388ef9df" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor/Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref>();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1af7792766ff08e2ff167b91bc02148084" kindref="member">~BlockchainManager</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>shutdown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ac4f535a2da5088a2a6cd507f8e0e58fb" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" kindref="compound">BlockchainConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a70f9089963ded91b406a35bb7d57fbb0" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Core<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a67b0e8626d472e1244585519e3d02c69" kindref="member">connect</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a70c5e84470a6221f81ad8b77fb422bd4" kindref="member">disconnect</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a3872b9049ac1ad397c95f1cb3a02f328" kindref="member">isConnected</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ac8f1f5662757e561f69e4b711e31f7f0" kindref="member">isInitialized</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Block<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Block&gt;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a94142b0ce6aa5a59407e5aaaa99c3d53" kindref="member">getLatestBlock</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Block&gt;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a5e69eb20b1a8b0c7402b771bb2c909b8" kindref="member">getBlockByHash</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Block&gt;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a8cdbfc531b042812a0653dc1052a5b43" kindref="member">getBlockByHeight</ref>(uint64_t<sp/>height);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a7214c6c6a017de92c1660fb561f60a49" kindref="member">validateBlock</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Block&gt;&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a13f6c5967ba77c273a89242924513d49" kindref="member">getBlockCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transaction<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Transaction&gt;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1aab3adf956c739a9aeaa23ef3da40f13e" kindref="member">createTransaction</ref>(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>to,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1aea9e1b8e7dd0d451f2d8e05611ee0f84" kindref="member">broadcastTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Transaction&gt;&amp;<sp/>tx);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Transaction&gt;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ad4e6d5bec15ef94969d2e75141a1f2e9" kindref="member">getTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>tx_hash);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ad39049321df4312bfb1a813a9320f9e7" kindref="member">getTransactionStatus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>tx_hash);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1aa13575ede3dd34090305f95c9aba7f84" kindref="member">validateTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Transaction&gt;&amp;<sp/>tx);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Chain<sp/>state<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1afcd2adeeffb14134c3ece22553359c9c" kindref="member">getChainHeight</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a6e1c9e23c890969b0c17b5ea603a7b1c" kindref="member">getBalance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a0da0121cf8dc2c3fde7dc2e8ac7cf3e4" kindref="member">getNonce</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a11673a27969c4fce4bcb180f05495dbf" kindref="member">getChainState</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a634cdd84546938dc015fb92bac27ba7d" kindref="member">isChainSynced</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Network<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a11554a03729ef47fd7c88a5cc49c2d49" kindref="member">getConnectedPeers</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a2324e9685bed18948eff06b53f7645a0" kindref="member">addPeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>peer_address);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a79489cbb9feb8047c7b2ebfb7b95056e" kindref="member">removePeer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>peer_address);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" kindref="compound">BlockchainConfig</ref><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a4325ef39da38e1a88e3f58014d286bc1" kindref="member">getConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1aa2f48ffe5bb84e92d3a7c47fe0b1b57c" kindref="member">updateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" kindref="compound">BlockchainConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1af918620749530d959d8661f050a0e806" kindref="member">validateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" kindref="compound">BlockchainConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" kindref="compound">NetworkConfig</ref><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1aedc917059f48edf5e935397fccd525b8" kindref="member">getNetworkConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a276f9c672ca1cce19c60c7641073ec2d" kindref="member">updateNetworkConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d5/de8/structsatox_1_1blockchain_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>and<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats" kindref="compound">BlockchainStats</ref><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a7c203ba2e0079cc4ff7f3c662225fa35" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a43981076ad77e8fa952366331cd96def" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1af3e8d782c748ee6f0b3a730ec57760c3" kindref="member">enableStats</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callback<sp/>registration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a5de741ea5fa38e34108ecd84b03cdcca" kindref="member">registerBlockCallback</ref>(<ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1adb29bd27f3fef28ea0064b2cb03e11c8" kindref="member">BlockCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a65c0ccd0415642c540587445dc67d93e" kindref="member">registerTransactionCallback</ref>(<ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a4b477d2ae333be5ecb1b1b158933bb4d" kindref="member">TransactionCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a9b4a9d7351030996af442398dcce5232" kindref="member">registerErrorCallback</ref>(<ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a17b43ce4c0034d12e0d44efe912940f8" kindref="member">ErrorCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a70b815ee32bd7693cf4b3add0430d731" kindref="member">unregisterBlockCallback</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a2977dbff3af8e9ab83d1c3f58910f0f2" kindref="member">unregisterTransactionCallback</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a5eb1d81942b3fca7c0acb1d429128579" kindref="member">unregisterErrorCallback</ref>();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a33424b2893bdf25695ebc06770d2a76e" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a7cfccff25c57f3a0ba8568bca773174c" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a0bd06148e36763e154ae77bb3d0ca4a7" kindref="member">healthCheck</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a9514657601158e1710341a184e66d5de" kindref="member">getHealthStatus</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>State<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461" kindref="member">BlockchainState</ref><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a788115be7483ee88f899c7699b7459cc" kindref="member">getState</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ad0d6e6bd5459998a1768052477df99d3" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>copy<sp/>and<sp/>assignment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1ae924922363d63778d2030b3e9e35cff1" kindref="member">BlockchainManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Private<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setLastError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyBlockEvent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Block&gt;&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyTransactionEvent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Transaction&gt;&amp;<sp/>tx);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>notifyErrorEvent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStats(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>operationTime);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateState();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>logOperation(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>operation,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>duration);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::shared_mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>connected_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461" kindref="member">BlockchainState</ref><sp/>state_<sp/>=<sp/><ref refid="d9/db3/namespacesatox_1_1blockchain_1a11215e89ebd13f25dd875df960a5e461add652546039b18970b8dcf2cff824268" kindref="member">BlockchainState::UNINITIALIZED</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/df0/structsatox_1_1blockchain_1_1BlockchainConfig" kindref="compound">BlockchainConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/d80/structsatox_1_1blockchain_1_1BlockchainStats" kindref="compound">BlockchainStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::string<sp/>lastError_;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>statsEnabled_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1adb29bd27f3fef28ea0064b2cb03e11c8" kindref="member">BlockCallback</ref><sp/>block_callback_;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a4b477d2ae333be5ecb1b1b158933bb4d" kindref="member">TransactionCallback</ref><sp/>transaction_callback_;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d80/classsatox_1_1blockchain_1_1BlockchainManager_1a17b43ce4c0034d12e0d44efe912940f8" kindref="member">ErrorCallback</ref><sp/>error_callback_;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/>lastHealthCheck_;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>consecutiveFailures_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/>internalState_;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::blockchain<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/blockchain/include/satox/blockchain/blockchain_manager.hpp"/>
+  </compounddef>
+</doxygen>

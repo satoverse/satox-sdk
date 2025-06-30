@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d7a/structsatox_1_1security_1_1ValidationResult" kind="struct" language="C++" prot="public">
+    <compoundname>satox::security::ValidationResult</compoundname>
+    <includes refid="db/df6/security_2include_2satox_2security_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="de/d7a/structsatox_1_1security_1_1ValidationResult_1a132493368ad77ed74635ba15eecf0b5e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::security::ValidationResult::isValid</definition>
+        <argsstring></argsstring>
+        <name>isValid</name>
+        <qualifiedname>satox::security::ValidationResult::isValid</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="108" column="10" bodyfile="src/security/include/satox/security/types.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d7a/structsatox_1_1security_1_1ValidationResult_1a174eaf5450acc345aa182b3ef1310984" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::security::ValidationResult::sanitizedValue</definition>
+        <argsstring></argsstring>
+        <name>sanitizedValue</name>
+        <qualifiedname>satox::security::ValidationResult::sanitizedValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="109" column="17" bodyfile="src/security/include/satox/security/types.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d7a/structsatox_1_1security_1_1ValidationResult_1a884c67a5b0e02d4b8a573bd9e731beb7" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::security::ValidationResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::security::ValidationResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="110" column="17" bodyfile="src/security/include/satox/security/types.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d7a/structsatox_1_1security_1_1ValidationResult_1a416e7ce5700e8467ed3aed3857463072" prot="public" static="no" mutable="no">
+        <type><ref refid="d3/d71/namespacesatox_1_1security_1a8b5d25f43e8dae46d459258b0b9c2ffa" kindref="member">ValidationType</ref></type>
+        <definition>ValidationType satox::security::ValidationResult::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>satox::security::ValidationResult::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="111" column="20" bodyfile="src/security/include/satox/security/types.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d7a/structsatox_1_1security_1_1ValidationResult_1a177ed97d18b06950d95dae65b30d2d16" prot="public" static="no" mutable="no">
+        <type><ref refid="d3/d71/namespacesatox_1_1security_1a5619ee4876526d89fa32fe3dc035f604" kindref="member">SecurityLevel</ref></type>
+        <definition>SecurityLevel satox::security::ValidationResult::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <qualifiedname>satox::security::ValidationResult::level</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/types.hpp" line="112" column="19" bodyfile="src/security/include/satox/security/types.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::security::ValidationResult</label>
+        <link refid="de/d7a/structsatox_1_1security_1_1ValidationResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+          <edgelabel>sanitizedValue</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/security/include/satox/security/types.hpp" line="107" column="1" bodyfile="src/security/include/satox/security/types.hpp" bodystart="107" bodyend="113"/>
+    <listofallmembers>
+      <member refid="de/d7a/structsatox_1_1security_1_1ValidationResult_1a884c67a5b0e02d4b8a573bd9e731beb7" prot="public" virt="non-virtual"><scope>satox::security::ValidationResult</scope><name>error</name></member>
+      <member refid="de/d7a/structsatox_1_1security_1_1ValidationResult_1a132493368ad77ed74635ba15eecf0b5e" prot="public" virt="non-virtual"><scope>satox::security::ValidationResult</scope><name>isValid</name></member>
+      <member refid="de/d7a/structsatox_1_1security_1_1ValidationResult_1a177ed97d18b06950d95dae65b30d2d16" prot="public" virt="non-virtual"><scope>satox::security::ValidationResult</scope><name>level</name></member>
+      <member refid="de/d7a/structsatox_1_1security_1_1ValidationResult_1a174eaf5450acc345aa182b3ef1310984" prot="public" virt="non-virtual"><scope>satox::security::ValidationResult</scope><name>sanitizedValue</name></member>
+      <member refid="de/d7a/structsatox_1_1security_1_1ValidationResult_1a416e7ce5700e8467ed3aed3857463072" prot="public" virt="non-virtual"><scope>satox::security::ValidationResult</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

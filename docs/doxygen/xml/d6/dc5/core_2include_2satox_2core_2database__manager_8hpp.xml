@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/dc5/core_2include_2satox_2core_2database__manager_8hpp" kind="file" language="C++">
+    <compoundname>database_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="dd/d27/core_2include_2satox_2core_2types_8hpp" local="yes">types.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/database_manager.hpp</label>
+        <link refid="d6/dc5/core_2include_2satox_2core_2database__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>types.hpp</label>
+        <link refid="dd/d27/core_2include_2satox_2core_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>chrono</label>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>mutex</label>
+      </node>
+      <node id="9">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d2/d66/classsatox_1_1core_1_1DatabaseManager" prot="public">satox::core::DatabaseManager</innerclass>
+    <innerclass refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" prot="public">satox::core::DatabaseManager::DatabaseConfig</innerclass>
+    <innerclass refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult" prot="public">satox::core::DatabaseManager::QueryResult</innerclass>
+    <innerclass refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" prot="public">satox::core::DatabaseManager::Transaction</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/d27/core_2include_2satox_2core_2types_8hpp" kindref="compound">types.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51d" kindref="member">DatabaseType</ref><sp/>{</highlight></codeline>
+<codeline lineno="42" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da624f0d1fb84ced47f6b4d05e8ab82c7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da624f0d1fb84ced47f6b4d05e8ab82c7b" kindref="member">SQLITE</ref>,</highlight></codeline>
+<codeline lineno="43" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da3efccad6e4b6b2044be88d6b86505a5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da3efccad6e4b6b2044be88d6b86505a5b" kindref="member">POSTGRESQL</ref>,</highlight></codeline>
+<codeline lineno="44" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da14498b83dd1667a0c78f4fdaf5afbf4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da14498b83dd1667a0c78f4fdaf5afbf4b" kindref="member">MYSQL</ref>,</highlight></codeline>
+<codeline lineno="45" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da5fae8295948da8c244681d7128882023" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da5fae8295948da8c244681d7128882023" kindref="member">REDIS</ref>,</highlight></codeline>
+<codeline lineno="46" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da941b4882303c4ec4af3922da066b398b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da941b4882303c4ec4af3922da066b398b" kindref="member">MONGODB</ref>,</highlight></codeline>
+<codeline lineno="47" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51dadfdef5cd5ffa240845f810e8d389c576" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51dadfdef5cd5ffa240845f810e8d389c576" kindref="member">ROCKSDB</ref>,</highlight></codeline>
+<codeline lineno="48" refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da7014705458ee3cf0192f6aa52cfddea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51da7014705458ee3cf0192f6aa52cfddea5" kindref="member">MEMORY</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a3c10eaff361a111d0471f089fcd34b4c" kindref="member">DatabaseManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="54" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1ab395cccfbd4708f6a740a36e1c15193f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1ab395cccfbd4708f6a740a36e1c15193f" kindref="member">host</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a8a3238d7fae6ccfeb7bbb2f60f5c5b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a8a3238d7fae6ccfeb7bbb2f60f5c5b1e" kindref="member">port</ref><sp/>=<sp/>5432;</highlight></codeline>
+<codeline lineno="56" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a3d0fbb19cf0b8ffcf93ed1bdd39e2acd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a3d0fbb19cf0b8ffcf93ed1bdd39e2acd" kindref="member">database</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;satox&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1ae2ac230ceee542ca873f45e28a62ff6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1ae2ac230ceee542ca873f45e28a62ff6e" kindref="member">username</ref>;</highlight></codeline>
+<codeline lineno="58" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1aac91b5c8de4f6c5bbc08275eeefeaad3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1aac91b5c8de4f6c5bbc08275eeefeaad3" kindref="member">password</ref>;</highlight></codeline>
+<codeline lineno="59" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1ae645228f328591a00d99ba777d7906d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1ae645228f328591a00d99ba777d7906d3" kindref="member">max_connections</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="60" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a7dbfb6c7979b4142d83b6a76da0fd96e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a7dbfb6c7979b4142d83b6a76da0fd96e" kindref="member">connection_timeout</ref><sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="61" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a322d954e4686e76823347e68574a07c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a322d954e4686e76823347e68574a07c1" kindref="member">enable_ssl</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a0357917c3ed892c5bae423343a69502c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a0357917c3ed892c5bae423343a69502c" kindref="member">ssl_cert</ref>;</highlight></codeline>
+<codeline lineno="63" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1afc459442b7d6c946a582563264c37066" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1afc459442b7d6c946a582563264c37066" kindref="member">ssl_key</ref>;</highlight></codeline>
+<codeline lineno="64" refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a19ae00a1eb4417c9c2dbbefd1947629b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig_1a19ae00a1eb4417c9c2dbbefd1947629b" kindref="member">ssl_ca</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult" kindref="compound">QueryResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult_1ad6b4bdd5f71c43e4774091b85d445496" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult_1ad6b4bdd5f71c43e4774091b85d445496" kindref="member">success</ref>;</highlight></codeline>
+<codeline lineno="69" refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult_1acc224f3e527bbb2dd3b9a6bfa3577713" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult_1acc224f3e527bbb2dd3b9a6bfa3577713" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="70" refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult_1ac68a58deb158702d9f5d5076d64913a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::unordered_map&lt;std::string,<sp/>std::string&gt;&gt;<sp/><ref refid="d1/d9c/structsatox_1_1core_1_1DatabaseManager_1_1QueryResult_1ac68a58deb158702d9f5d5076d64913a7" kindref="member">rows</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" kindref="compound">Transaction</ref><sp/>{</highlight></codeline>
+<codeline lineno="74" refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction_1a52accb182ca7d93c977371215568bf42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction_1a52accb182ca7d93c977371215568bf42" kindref="member">success</ref>;</highlight></codeline>
+<codeline lineno="75" refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction_1a45f93e49a18cdd1645b342492800ac98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction_1a45f93e49a18cdd1645b342492800ac98" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="76" refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction_1a6f693cd8cdc9fb5af0e4a732e28d11f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction_1a6f693cd8cdc9fb5af0e4a732e28d11f2" kindref="member">transaction_id</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a3c10eaff361a111d0471f089fcd34b4c" kindref="member">DatabaseManager</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ae489e2937e49302a92600cabb00d219f" kindref="member">~DatabaseManager</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a86843c5c1a1baabd9e966eabc30218a0" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d69/structsatox_1_1core_1_1DatabaseManager_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connection<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bool<sp/>connect();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>void<sp/>disconnect();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bool<sp/>isConnected()<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a60a2434e0e1b9779e5e9e4d40b0dcda7" kindref="member">connect</ref>(<ref refid="d9/dd3/namespacesatox_1_1core_1a625a69373d4a274ab6ed5a5fd2b0c51d" kindref="member">DatabaseType</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a33aac7f15e4fe4f28f2228903ee8db24" kindref="member">disconnect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Query<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>QueryResult<sp/>executeQuery(const<sp/>std::string&amp;<sp/>query);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>QueryResult<sp/>executePreparedQuery(const<sp/>std::string&amp;<sp/>query,<sp/>const<sp/>std::vector&lt;std::string&gt;&amp;<sp/>params);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a94cb9d365f2a7a9b47d6ed852df8e74b" kindref="member">executeQuery</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>query,<sp/>nlohmann::json&amp;<sp/>result);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ae04c87f7b10e69e1bda942b0d92c9007" kindref="member">executeTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>queries,<sp/>nlohmann::json&amp;<sp/>result);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transaction<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af2ba1af3af66e68ad292ce06dba64091" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d89/structsatox_1_1core_1_1DatabaseManager_1_1Transaction" kindref="compound">Transaction</ref><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af2ba1af3af66e68ad292ce06dba64091" kindref="member">beginTransaction</ref>();</highlight></codeline>
+<codeline lineno="98" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1aacfa4b9ac6bb597b7a797cf0a440d8cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1aacfa4b9ac6bb597b7a797cf0a440d8cb" kindref="member">commitTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>transaction_id);</highlight></codeline>
+<codeline lineno="99" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a39e2ab83e69a9d01674aaddc945e0696" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a39e2ab83e69a9d01674aaddc945e0696" kindref="member">rollbackTransaction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>transaction_id);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connection<sp/>pool<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a4832b194696e8c2cde92efebfd2917f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a4832b194696e8c2cde92efebfd2917f1" kindref="member">setMaxConnections</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_connections);</highlight></codeline>
+<codeline lineno="103" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a70b1a658304ece0a3d03fd285e7f4b19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a70b1a658304ece0a3d03fd285e7f4b19" kindref="member">getActiveConnections</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a22b6290616c6e34adc17fe8edf73521e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a22b6290616c6e34adc17fe8edf73521e" kindref="member">getAvailableConnections</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Backup<sp/>and<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a45e56fa0db8666fef7b6881b1075af2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a45e56fa0db8666fef7b6881b1075af2b" kindref="member">backup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>backup_path);</highlight></codeline>
+<codeline lineno="108" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1affd9508377f013d6f88b2efce3d64c26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1affd9508377f013d6f88b2efce3d64c26" kindref="member">restore</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>backup_path);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1ab1c34b04ef2585c4e3b7e23d7a596c37" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112" refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a763542811d3e571db287687c19bd4062" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1a763542811d3e571db287687c19bd4062" kindref="member">clearError</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d66/classsatox_1_1core_1_1DatabaseManager_1af6d7b7a63d0fba186d355da8aa1ca090" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/deb/classsatox_1_1core_1_1DatabaseManager_1_1Impl" kindref="compound">Impl</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>impl_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/database_manager.hpp"/>
+  </compounddef>
+</doxygen>

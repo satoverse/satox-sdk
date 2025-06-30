@@ -1,0 +1,853 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d4d/classsatox_1_1core_1_1CoreManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::CoreManager</compoundname>
+    <includes refid="d6/dcd/core__manager_8hpp" local="no">core_manager.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a991cf54ea2cf4b8647168fdc825bcda0" prot="private" static="no" mutable="no">
+        <type><ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref></type>
+        <definition>CoreConfig satox::core::CoreManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::CoreManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="187" column="16" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a6f9e946ffbf668c25798ad59bc10a68f" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats" kindref="compound">CoreStats</ref></type>
+        <definition>CoreStats satox::core::CoreManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::CoreManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="188" column="15" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1afff971b7c37afc1be282ed6e5f46198c" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus" kindref="compound">ComponentStatus</ref> &gt;</type>
+        <definition>std::map&lt;std::string, ComponentStatus&gt; satox::core::CoreManager::component_status_</definition>
+        <argsstring></argsstring>
+        <name>component_status_</name>
+        <qualifiedname>satox::core::CoreManager::component_status_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="189" column="14" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ab2808edccc41581ee9b4e033b216e9f5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1a3a4a5137d19f5f5ead5876807b033e8e" kindref="member">ErrorCallback</ref> &gt;</type>
+        <definition>std::vector&lt;ErrorCallback&gt; satox::core::CoreManager::errorCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>errorCallbacks_</name>
+        <qualifiedname>satox::core::CoreManager::errorCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="190" column="17" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a760caf7ba6e490eda92e375eb8b13b97" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1a9b3fa6865dea2c1d869d22e10c4ac898" kindref="member">StatusCallback</ref> &gt;</type>
+        <definition>std::vector&lt;StatusCallback&gt; satox::core::CoreManager::statusCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>statusCallbacks_</name>
+        <qualifiedname>satox::core::CoreManager::statusCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="191" column="17" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a17daba70e9ebe6e8120a97fbbddfd0b2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d9/dd3/namespacesatox_1_1core_1ad21027336d3dfa264649a416848e1d2a" kindref="member">ShutdownCallback</ref> &gt;</type>
+        <definition>std::vector&lt;ShutdownCallback&gt; satox::core::CoreManager::shutdownCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>shutdownCallbacks_</name>
+        <qualifiedname>satox::core::CoreManager::shutdownCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="192" column="17" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1af375e3d0dc0dcb6068b0fa9b9a50ab17" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::CoreManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::CoreManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="193" column="24" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a55b391b8988e8902879abf5b4f8a42e2" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CoreManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::CoreManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="194" column="17" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ae334d9ceb16227592f35e369450336c2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::CoreManager::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="195" column="10" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ae540e68bc368fef58aaf94785bb29f3d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::is_running_</definition>
+        <argsstring></argsstring>
+        <name>is_running_</name>
+        <qualifiedname>satox::core::CoreManager::is_running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="196" column="10" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a649ac2234732b2e90101cbb9170a951b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager" kindref="compound">CoreManager</ref> &amp;</type>
+        <definition>CoreManager &amp; satox::core::CoreManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::CoreManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="119" column="24" bodyfile="src/core/src/core_manager.cpp" bodystart="66" bodyend="69"/>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" compoundref="d2/d5f/core__manager_8cpp" startline="71" endline="77">CoreManager</references>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1a7d74a4ed6ed3ff9bb4a6ab7a43b89023" compoundref="da/d8f/satox__manager_8cpp" startline="174" endline="176">satox::core::SatoxManager::getCoreManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CoreManager::CoreManager</definition>
+        <argsstring>()</argsstring>
+        <name>CoreManager</name>
+        <qualifiedname>satox::core::CoreManager::CoreManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="122" column="5" bodyfile="src/core/src/core_manager.cpp" bodystart="71" bodyend="77"/>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a467271d1f1d64a6607f8ba630abc7fb6">CoreManager</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a649ac2234732b2e90101cbb9170a951b" compoundref="d2/d5f/core__manager_8cpp" startline="66" endline="69">getInstance</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1adbc1f896eab367fa35252ad9fe1fc803">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a515133a2de3e0f211f8a3eb9de2696b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CoreManager::~CoreManager</definition>
+        <argsstring>()</argsstring>
+        <name>~CoreManager</name>
+        <qualifiedname>satox::core::CoreManager::~CoreManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="123" column="5" bodyfile="src/core/src/core_manager.cpp" bodystart="79" bodyend="81"/>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a2e83411ed88d1b1ab5ee236b3598f814" compoundref="d2/d5f/core__manager_8cpp" startline="116" endline="133">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a467271d1f1d64a6607f8ba630abc7fb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CoreManager::CoreManager</definition>
+        <argsstring>(const CoreManager &amp;)=delete</argsstring>
+        <name>CoreManager</name>
+        <qualifiedname>satox::core::CoreManager::CoreManager</qualifiedname>
+        <param>
+          <type>const <ref refid="de/d4d/classsatox_1_1core_1_1CoreManager" kindref="compound">CoreManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="126" column="5"/>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" compoundref="d2/d5f/core__manager_8cpp" startline="71" endline="77">CoreManager</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1adbc1f896eab367fa35252ad9fe1fc803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d4d/classsatox_1_1core_1_1CoreManager" kindref="compound">CoreManager</ref> &amp;</type>
+        <definition>CoreManager &amp; satox::core::CoreManager::operator=</definition>
+        <argsstring>(const CoreManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::CoreManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="de/d4d/classsatox_1_1core_1_1CoreManager" kindref="compound">CoreManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="127" column="17"/>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" compoundref="d2/d5f/core__manager_8cpp" startline="71" endline="77">CoreManager</references>
+        <references refid="df/d0a/main_8cpp_1a7c10027ca174fc9d529796f04aca6bd4" compoundref="df/d0a/main_8cpp" startline="12">running</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a3eeabb592a597f1e01244d9e1328381a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::initialize</definition>
+        <argsstring>(const CoreConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::CoreManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="130" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="83" bodyend="114"/>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a6dafc3fb760a5d13f9b8bb6e8c09a685" compoundref="d2/d5f/core__manager_8cpp" startline="432" endline="440">validateConfig</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a2e83411ed88d1b1ab5ee236b3598f814" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::CoreManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="131" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="116" bodyend="133"/>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a515133a2de3e0f211f8a3eb9de2696b0" compoundref="d2/d5f/core__manager_8cpp" startline="79" endline="81">~CoreManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ab71c685a7f7412d32a798cb62e11c8aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>satox::core::CoreManager::isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="132" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a2fd1ddcb4da92159a8b177e31425903e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::core::CoreManager::isInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="133" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a1d566f47a8f27027599c0ea6302c15d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CoreManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::CoreManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="134" column="17" bodyfile="src/core/src/core_manager.cpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a5eb075cef75cb104af312eb0dbcf5676" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d5/d44/classsatox_1_1core_1_1NetworkManager" kindref="compound">NetworkManager</ref> &amp;</type>
+        <definition>NetworkManager &amp; satox::core::CoreManager::getNetworkManager</definition>
+        <argsstring>() const</argsstring>
+        <name>getNetworkManager</name>
+        <qualifiedname>satox::core::CoreManager::getNetworkManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="137" column="20" bodyfile="src/core/src/core_manager.cpp" bodystart="197" bodyend="200"/>
+        <references refid="d5/d44/classsatox_1_1core_1_1NetworkManager_1a005891a357a019f087dd0fd20d92ad3d" compoundref="db/dd3/core_2src_2network__manager_8cpp" startline="35" endline="38">satox::core::NetworkManager::getInstance</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">restartComponent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ab395831966f78b829ccac1f027c0184f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager" kindref="compound">AssetManager</ref> &amp;</type>
+        <definition>AssetManager &amp; satox::core::CoreManager::getAssetManager</definition>
+        <argsstring>() const</argsstring>
+        <name>getAssetManager</name>
+        <qualifiedname>satox::core::CoreManager::getAssetManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="138" column="18" bodyfile="src/core/src/core_manager.cpp" bodystart="202" bodyend="205"/>
+        <references refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a274b07e3ea293b76e6fe20b63343f233" compoundref="d5/dae/core_2src_2asset__manager_8cpp" startline="34" endline="37">satox::core::AssetManager::getInstance</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">restartComponent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ad656bc6237bd6489ddb5f5ac1aeb1b87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/d68/classsatox_1_1core_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;</type>
+        <definition>IPFSManager &amp; satox::core::CoreManager::getIPFSManager</definition>
+        <argsstring>() const</argsstring>
+        <name>getIPFSManager</name>
+        <qualifiedname>satox::core::CoreManager::getIPFSManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="139" column="17" bodyfile="src/core/src/core_manager.cpp" bodystart="207" bodyend="210"/>
+        <references refid="da/d68/classsatox_1_1core_1_1IPFSManager_1acaa8da9841075249cf584f8efdea738a" compoundref="d7/db7/core_2src_2ipfs__manager_8cpp" startline="69" endline="72">satox::core::IPFSManager::getInstance</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">restartComponent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a095e8ed4004eb1443622eca855d563d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref> &amp;</type>
+        <definition>WalletManager &amp; satox::core::CoreManager::getWalletManager</definition>
+        <argsstring>() const</argsstring>
+        <name>getWalletManager</name>
+        <qualifiedname>satox::core::CoreManager::getWalletManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="140" column="19" bodyfile="src/core/src/core_manager.cpp" bodystart="212" bodyend="215"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1acc98cf7173f9690951680fb0f755a38e" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="37" endline="40">satox::core::WalletManager::getInstance</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">restartComponent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a297f08b07bee7831816bbf84781b06da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager" kindref="compound">BlockchainManager</ref> &amp;</type>
+        <definition>BlockchainManager &amp; satox::core::CoreManager::getBlockchainManager</definition>
+        <argsstring>() const</argsstring>
+        <name>getBlockchainManager</name>
+        <qualifiedname>satox::core::CoreManager::getBlockchainManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="141" column="23" bodyfile="src/core/src/core_manager.cpp" bodystart="217" bodyend="220"/>
+        <references refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a6e7da1dbe56feba80275276fa212883b" compoundref="d7/d20/core_2src_2blockchain__manager_8cpp" startline="50" endline="53">satox::core::BlockchainManager::getInstance</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" compoundref="d2/d5f/core__manager_8cpp" startline="280" endline="345">restartComponent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ad64eb3d538e32cbc886b211c66cf59b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>satox::core::CoreManager::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="144" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="222" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1aeb2e7a002998e4d514e4eda6df42c975" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <qualifiedname>satox::core::CoreManager::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="145" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="239" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::restartComponent</definition>
+        <argsstring>(const std::string &amp;component)</argsstring>
+        <name>restartComponent</name>
+        <qualifiedname>satox::core::CoreManager::restartComponent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>component</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="148" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="280" bodyend="345"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecabb1ca97ec761fc37101737ba0aa2e7c5" compoundref="d6/dcd/core__manager_8hpp" startline="55">satox::core::ERROR</references>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ae3c0ae28ca4c2f1eb53f4e8b88cc8b42" compoundref="d6/dcd/core__manager_8hpp" startline="96">satox::core::ComponentStatus::error_count</references>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab395831966f78b829ccac1f027c0184f" compoundref="d2/d5f/core__manager_8cpp" startline="202" endline="205">getAssetManager</references>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a297f08b07bee7831816bbf84781b06da" compoundref="d2/d5f/core__manager_8cpp" startline="217" endline="220">getBlockchainManager</references>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad656bc6237bd6489ddb5f5ac1aeb1b87" compoundref="d2/d5f/core__manager_8cpp" startline="207" endline="210">getIPFSManager</references>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5eb075cef75cb104af312eb0dbcf5676" compoundref="d2/d5f/core__manager_8cpp" startline="197" endline="200">getNetworkManager</references>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a095e8ed4004eb1443622eca855d563d9" compoundref="d2/d5f/core__manager_8cpp" startline="212" endline="215">getWalletManager</references>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1aace1b0cc18759adcc6c541d8da7e8eed" compoundref="d6/dcd/core__manager_8hpp" startline="95">satox::core::ComponentStatus::last_update</references>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a0e4d1ae88bd0e7cdead51400051d8c0f" compoundref="d6/dcd/core__manager_8hpp" startline="93">satox::core::ComponentStatus::name</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca323facdc30df77817126b699c7cf49f3" compoundref="d6/dcd/core__manager_8hpp" startline="54">satox::core::RESTARTING</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca43491564ebcfd38568918efbd6e840fd" compoundref="d6/dcd/core__manager_8hpp" startline="53">satox::core::RUNNING</references>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ac3047cf286170ce772503fedfe8cdb2c" compoundref="d6/dcd/core__manager_8hpp" startline="94">satox::core::ComponentStatus::state</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a64026a035a4f44c3f4cecb5bfce8e6b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::updateComponent</definition>
+        <argsstring>(const std::string &amp;component, const std::unordered_map&lt; std::string, std::string &gt; &amp;config)</argsstring>
+        <name>updateComponent</name>
+        <qualifiedname>satox::core::CoreManager::updateComponent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>component</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="149" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="347" bodyend="405"/>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1aace1b0cc18759adcc6c541d8da7e8eed" compoundref="d6/dcd/core__manager_8hpp" startline="95">satox::core::ComponentStatus::last_update</references>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1a0e4d1ae88bd0e7cdead51400051d8c0f" compoundref="d6/dcd/core__manager_8hpp" startline="93">satox::core::ComponentStatus::name</references>
+        <references refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11eca43491564ebcfd38568918efbd6e840fd" compoundref="d6/dcd/core__manager_8hpp" startline="53">satox::core::RUNNING</references>
+        <references refid="d1/deb/structsatox_1_1core_1_1ComponentStatus_1ac3047cf286170ce772503fedfe8cdb2c" compoundref="d6/dcd/core__manager_8hpp" startline="94">satox::core::ComponentStatus::state</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a786cd4c62d8a8c26a2ff446e308dfd40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="d1/deb/structsatox_1_1core_1_1ComponentStatus" kindref="compound">ComponentStatus</ref> &gt;</type>
+        <definition>std::optional&lt; ComponentStatus &gt; satox::core::CoreManager::getComponentStatus</definition>
+        <argsstring>(const std::string &amp;component) const</argsstring>
+        <name>getComponentStatus</name>
+        <qualifiedname>satox::core::CoreManager::getComponentStatus</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>component</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="150" column="19" bodyfile="src/core/src/core_manager.cpp" bodystart="271" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a5364408705f0679ae7ce7873120bf995" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::updateConfig</definition>
+        <argsstring>(const CoreConfig &amp;config)</argsstring>
+        <name>updateConfig</name>
+        <qualifiedname>satox::core::CoreManager::updateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="153" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="407" bodyend="422"/>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a6dafc3fb760a5d13f9b8bb6e8c09a685" compoundref="d2/d5f/core__manager_8cpp" startline="432" endline="440">validateConfig</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ab21e6642d060ed6cc25d09256a32b544" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref> &gt;</type>
+        <definition>std::optional&lt; CoreConfig &gt; satox::core::CoreManager::getConfig</definition>
+        <argsstring>() const</argsstring>
+        <name>getConfig</name>
+        <qualifiedname>satox::core::CoreManager::getConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="154" column="19" bodyfile="src/core/src/core_manager.cpp" bodystart="424" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a6dafc3fb760a5d13f9b8bb6e8c09a685" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::validateConfig</definition>
+        <argsstring>(const CoreConfig &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::core::CoreManager::validateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/df9/structsatox_1_1core_1_1CoreConfig" kindref="compound">CoreConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="155" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="432" bodyend="440"/>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ae4124933dcc721345aceb9d2cefafcd5" compoundref="d6/dcd/core__manager_8hpp" startline="61">satox::core::CoreConfig::data_dir</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ace6db773942a3ac6f3def5a8312ce5d9" compoundref="d6/dcd/core__manager_8hpp" startline="66">satox::core::CoreConfig::mining_threads</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a79d7ee99ea3ab92e9b086e7fa89f15a7" compoundref="d6/dcd/core__manager_8hpp" startline="62">satox::core::CoreConfig::network</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ab31aa355b3213e8033fd24b4c96b50a7" compoundref="d6/dcd/core__manager_8hpp" startline="65">satox::core::CoreConfig::sync_interval_ms</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a3b86ffa3b13ee1e3b1a77883d7325290" compoundref="d6/dcd/core__manager_8hpp" startline="70">satox::core::CoreConfig::timeout_ms</references>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a3eeabb592a597f1e01244d9e1328381a" compoundref="d2/d5f/core__manager_8cpp" startline="83" endline="114">initialize</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5e7ba0c8981c0dbe07b43c402a8d5042" compoundref="d2/d5f/core__manager_8cpp" startline="484" endline="543">restoreConfig</referencedby>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5364408705f0679ae7ce7873120bf995" compoundref="d2/d5f/core__manager_8cpp" startline="407" endline="422">updateConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1af7f55b159be1ac25ff0324b1d123ec84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::backupConfig</definition>
+        <argsstring>(const std::string &amp;backup_path) const</argsstring>
+        <name>backupConfig</name>
+        <qualifiedname>satox::core::CoreManager::backupConfig</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backup_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="156" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="442" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a5e7ba0c8981c0dbe07b43c402a8d5042" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::restoreConfig</definition>
+        <argsstring>(const std::string &amp;backup_path)</argsstring>
+        <name>restoreConfig</name>
+        <qualifiedname>satox::core::CoreManager::restoreConfig</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backup_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="157" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="484" bodyend="543"/>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ae4124933dcc721345aceb9d2cefafcd5" compoundref="d6/dcd/core__manager_8hpp" startline="61">satox::core::CoreConfig::data_dir</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a35fd1cc67c4f0a02d8f32456cda97fbe" compoundref="d6/dcd/core__manager_8hpp" startline="63">satox::core::CoreConfig::enable_mining</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1aac337ffc8f70cf5213f9ca030efa9ca8" compoundref="d6/dcd/core__manager_8hpp" startline="64">satox::core::CoreConfig::enable_sync</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ace6db773942a3ac6f3def5a8312ce5d9" compoundref="d6/dcd/core__manager_8hpp" startline="66">satox::core::CoreConfig::mining_threads</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a79d7ee99ea3ab92e9b086e7fa89f15a7" compoundref="d6/dcd/core__manager_8hpp" startline="62">satox::core::CoreConfig::network</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a503977260a3af15c3ff6fdffadbdbca3" compoundref="d6/dcd/core__manager_8hpp" startline="67">satox::core::CoreConfig::rpc_endpoint</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ad3106ae28b2234d4f27668ded3ecd4fd" compoundref="d6/dcd/core__manager_8hpp" startline="69">satox::core::CoreConfig::rpc_password</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ad75f1865cf10d12a809e5261800ddf67" compoundref="d6/dcd/core__manager_8hpp" startline="68">satox::core::CoreConfig::rpc_username</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1ab31aa355b3213e8033fd24b4c96b50a7" compoundref="d6/dcd/core__manager_8hpp" startline="65">satox::core::CoreConfig::sync_interval_ms</references>
+        <references refid="d6/df9/structsatox_1_1core_1_1CoreConfig_1a3b86ffa3b13ee1e3b1a77883d7325290" compoundref="d6/dcd/core__manager_8hpp" startline="70">satox::core::CoreConfig::timeout_ms</references>
+        <references refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a6dafc3fb760a5d13f9b8bb6e8c09a685" compoundref="d2/d5f/core__manager_8cpp" startline="432" endline="440">validateConfig</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ad0c527e403767e3f3e61d949a7336bee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="d4/df5/structsatox_1_1core_1_1SystemInfo" kindref="compound">SystemInfo</ref> &gt;</type>
+        <definition>std::optional&lt; SystemInfo &gt; satox::core::CoreManager::getSystemInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getSystemInfo</name>
+        <qualifiedname>satox::core::CoreManager::getSystemInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="160" column="19" bodyfile="src/core/src/core_manager.cpp" bodystart="252" bodyend="269"/>
+        <references refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1ab5e9726df742aab14316fb3d0f180f48" compoundref="d6/dcd/core__manager_8hpp" startline="107">satox::core::SystemInfo::metadata</references>
+        <references refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1ad2b7bdbf99167e83265b7d7d32e193c8" compoundref="d6/dcd/core__manager_8hpp" startline="104">satox::core::SystemInfo::network</references>
+        <references refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a75b4606f80f6bcbf9513175d002d8b2e" compoundref="d6/dcd/core__manager_8hpp" startline="106">satox::core::SystemInfo::start_time</references>
+        <references refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a813f394c5c05f966aeefcd109b638162" compoundref="d6/dcd/core__manager_8hpp" startline="105">satox::core::SystemInfo::uptime</references>
+        <references refid="d4/df5/structsatox_1_1core_1_1SystemInfo_1a7d77738b0c60f3bf0cb36e7352211e1d" compoundref="d6/dcd/core__manager_8hpp" startline="103">satox::core::SystemInfo::version</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a39abb62858fa18461e011cf798a3d8a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/d53/structsatox_1_1core_1_1CoreStats" kindref="compound">CoreStats</ref></type>
+        <definition>CoreStats satox::core::CoreManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::CoreManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="161" column="15" bodyfile="src/core/src/core_manager.cpp" bodystart="169" bodyend="174"/>
+        <references refid="d0/d53/structsatox_1_1core_1_1CoreStats_1a2b300480f6ee09b19d12d0fe55e96350" compoundref="d6/dcd/core__manager_8hpp" startline="84">satox::core::CoreStats::last_activity</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a7a73b878c3db337b77752bec3cafaf04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::core::CoreManager::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="162" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="176" bodyend="190"/>
+        <references refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ecabb1ca97ec761fc37101737ba0aa2e7c5" compoundref="d6/dcd/core__manager_8hpp" startline="55">satox::core::ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a8ef0701cbed3656cc9ca0ace7dc03a71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::registerErrorCallback</definition>
+        <argsstring>(ErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::core::CoreManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a3a4a5137d19f5f5ead5876807b033e8e" kindref="member">ErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="165" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="545" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ad8555e4ce89f8f0de0bd0ad004719f45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::registerStatusCallback</definition>
+        <argsstring>(StatusCallback callback)</argsstring>
+        <name>registerStatusCallback</name>
+        <qualifiedname>satox::core::CoreManager::registerStatusCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1a9b3fa6865dea2c1d869d22e10c4ac898" kindref="member">StatusCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="166" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="550" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ad550b0e51d02d91e5ec491a84febf4e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::registerShutdownCallback</definition>
+        <argsstring>(ShutdownCallback callback)</argsstring>
+        <name>registerShutdownCallback</name>
+        <qualifiedname>satox::core::CoreManager::registerShutdownCallback</qualifiedname>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1ad21027336d3dfa264649a416848e1d2a" kindref="member">ShutdownCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="167" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="555" bodyend="558"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ab085b4cf7cc86eaeec6306b706ff1d59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CoreManager::initializeComponents</definition>
+        <argsstring>()</argsstring>
+        <name>initializeComponents</name>
+        <qualifiedname>satox::core::CoreManager::initializeComponents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="179" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="560" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1aa793a675e9e2624629d4bf8dbbed5ef0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::shutdownComponents</definition>
+        <argsstring>()</argsstring>
+        <name>shutdownComponents</name>
+        <qualifiedname>satox::core::CoreManager::shutdownComponents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="180" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="626" bodyend="651"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a33c22be472bc76cbe2093d6da253b7b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::updateAllComponents</definition>
+        <argsstring>()</argsstring>
+        <name>updateAllComponents</name>
+        <qualifiedname>satox::core::CoreManager::updateAllComponents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="181" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="653" bodyend="676"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a774b59830b95681749860b8d1e89d020" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::initializeComponentStatus</definition>
+        <argsstring>()</argsstring>
+        <name>initializeComponentStatus</name>
+        <qualifiedname>satox::core::CoreManager::initializeComponentStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="182" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="678" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1ac5491b326ac6f42fb8b8f79fbb29edcb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::notifyStatusChange</definition>
+        <argsstring>(const std::string &amp;component, ComponentState state)</argsstring>
+        <name>notifyStatusChange</name>
+        <qualifiedname>satox::core::CoreManager::notifyStatusChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>component</declname>
+        </param>
+        <param>
+          <type><ref refid="d9/dd3/namespacesatox_1_1core_1ab8ad03431c721ab59a3fb0d0541c11ec" kindref="member">ComponentState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="183" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="694" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d4d/classsatox_1_1core_1_1CoreManager_1a2795fb9f552c9aacc8449dedbbf0aae7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CoreManager::notifyShutdown</definition>
+        <argsstring>()</argsstring>
+        <name>notifyShutdown</name>
+        <qualifiedname>satox::core::CoreManager::notifyShutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/core_manager.hpp" line="184" column="10" bodyfile="src/core/src/core_manager.cpp" bodystart="705" bodyend="714"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/core_manager.hpp" line="116" column="1" bodyfile="src/core/include/satox/core/core_manager.hpp" bodystart="116" bodyend="197"/>
+    <listofallmembers>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1af7f55b159be1ac25ff0324b1d123ec84" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>backupConfig</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1afff971b7c37afc1be282ed6e5f46198c" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>component_status_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a991cf54ea2cf4b8647168fdc825bcda0" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>config_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7d24f4963d39ef60c04f0a3aaace7fdf" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>CoreManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a467271d1f1d64a6607f8ba630abc7fb6" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>CoreManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab2808edccc41581ee9b4e033b216e9f5" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>errorCallbacks_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab395831966f78b829ccac1f027c0184f" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getAssetManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a297f08b07bee7831816bbf84781b06da" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getBlockchainManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a786cd4c62d8a8c26a2ff446e308dfd40" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getComponentStatus</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab21e6642d060ed6cc25d09256a32b544" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getConfig</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a649ac2234732b2e90101cbb9170a951b" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getInstance</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad656bc6237bd6489ddb5f5ac1aeb1b87" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getIPFSManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a1d566f47a8f27027599c0ea6302c15d0" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getLastError</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5eb075cef75cb104af312eb0dbcf5676" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getNetworkManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a39abb62858fa18461e011cf798a3d8a0" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getStats</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad0c527e403767e3f3e61d949a7336bee" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getSystemInfo</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a095e8ed4004eb1443622eca855d563d9" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>getWalletManager</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a3eeabb592a597f1e01244d9e1328381a" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>initialize</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab085b4cf7cc86eaeec6306b706ff1d59" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>initializeComponents</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a774b59830b95681749860b8d1e89d020" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>initializeComponentStatus</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ae334d9ceb16227592f35e369450336c2" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>initialized_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ae540e68bc368fef58aaf94785bb29f3d" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>is_running_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7a73b878c3db337b77752bec3cafaf04" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>isHealthy</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a2fd1ddcb4da92159a8b177e31425903e" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>isInitialized</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ab71c685a7f7412d32a798cb62e11c8aa" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>isRunning</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a55b391b8988e8902879abf5b4f8a42e2" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>lastError_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1af375e3d0dc0dcb6068b0fa9b9a50ab17" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>mutex_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a2795fb9f552c9aacc8449dedbbf0aae7" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>notifyShutdown</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ac5491b326ac6f42fb8b8f79fbb29edcb" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>notifyStatusChange</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1adbc1f896eab367fa35252ad9fe1fc803" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>operator=</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a8ef0701cbed3656cc9ca0ace7dc03a71" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>registerErrorCallback</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad550b0e51d02d91e5ec491a84febf4e4" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>registerShutdownCallback</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad8555e4ce89f8f0de0bd0ad004719f45" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>registerStatusCallback</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a7df2571c88bb7a73c71a861cd6b72329" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>restartComponent</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5e7ba0c8981c0dbe07b43c402a8d5042" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>restoreConfig</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a2e83411ed88d1b1ab5ee236b3598f814" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>shutdown</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a17daba70e9ebe6e8120a97fbbddfd0b2" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>shutdownCallbacks_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1aa793a675e9e2624629d4bf8dbbed5ef0" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>shutdownComponents</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1ad64eb3d538e32cbc886b211c66cf59b9" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>start</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a6f9e946ffbf668c25798ad59bc10a68f" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>stats_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a760caf7ba6e490eda92e375eb8b13b97" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>statusCallbacks_</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1aeb2e7a002998e4d514e4eda6df42c975" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>stop</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a33c22be472bc76cbe2093d6da253b7b2" prot="private" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>updateAllComponents</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a64026a035a4f44c3f4cecb5bfce8e6b5" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>updateComponent</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a5364408705f0679ae7ce7873120bf995" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>updateConfig</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a6dafc3fb760a5d13f9b8bb6e8c09a685" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>validateConfig</name></member>
+      <member refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a515133a2de3e0f211f8a3eb9de2696b0" prot="public" virt="non-virtual"><scope>satox::core::CoreManager</scope><name>~CoreManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

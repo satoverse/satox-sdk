@@ -1,0 +1,694 @@
+#include "satox/core/database_manager.hpp"
+#include <sqlite3.h>
+#include <libpq-fe.h>
+#include <mongoc.h>
+#include <hiredis/hiredis.h>
+#include <spdlog/spdlog.h>
+#include <nlohmann/json.hpp>
+#include <filesystem>
+#include <chrono>
+#include <thread>
+#include <queue>
+#include <condition_variable>
+#include <atomic>
+#include <sstream>
+#include <iomanip>
+
+using json = nlohmann::json;
+
+namespace satox::core {
+
+DatabaseManager& DatabaseManager::getInstance() {
+    static DatabaseManager instance;
+    return instance;
+}
+
+bool DatabaseManager::initialize(const nlohmann::json& config) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (initialized_) {
+        setLastError("Database Manager already initialized");
+        return false;
+    }
+
+    try {
+        // Initialize database drivers
+        sqlite3_initialize();
+        mongoc_init();
+        
+        // Store configuration
+        config_ = config;
+        initialized_ = true;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to initialize Database Manager: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::shutdown() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        return true;
+    }
+
+    try {
+        // Close all connections
+        for (auto& [id, conn] : connections_) {
+            disconnect(id);
+        }
+        connections_.clear();
+        
+        // Cleanup database drivers
+        sqlite3_shutdown();
+        mongoc_cleanup();
+        
+        initialized_ = false;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to shutdown Database Manager: " + std::string(e.what()));
+        return false;
+    }
+}
+
+std::string DatabaseManager::connect(DatabaseType type, const nlohmann::json& config) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Database Manager not initialized");
+        return "";
+    }
+
+    try {
+        std::string id = generateConnectionId();
+        DatabaseConnection conn;
+        conn.type = type;
+        conn.config = config;
+        conn.state = ConnectionState::CONNECTING;
+
+        bool success = false;
+        switch (type) {
+            case DatabaseType::SQLITE:
+                success = connectSQLite(conn);
+                break;
+            case DatabaseType::POSTGRESQL:
+                success = connectPostgreSQL(conn);
+                break;
+            case DatabaseType::MONGODB:
+                success = connectMongoDB(conn);
+                break;
+            case DatabaseType::REDIS:
+                success = connectRedis(conn);
+                break;
+            default:
+                setLastError("Unsupported database type");
+                return "";
+        }
+
+        if (success) {
+            conn.state = ConnectionState::CONNECTED;
+            connections_[id] = conn;
+            return id;
+        }
+        return "";
+    } catch (const std::exception& e) {
+        setLastError("Failed to connect to database: " + std::string(e.what()));
+        return "";
+    }
+}
+
+bool DatabaseManager::disconnect(const std::string& id) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it == connections_.end()) {
+        setLastError("Connection not found");
+        return false;
+    }
+
+    try {
+        bool success = false;
+        switch (it->second.type) {
+            case DatabaseType::SQLITE:
+                success = disconnectSQLite(it->second);
+                break;
+            case DatabaseType::POSTGRESQL:
+                success = disconnectPostgreSQL(it->second);
+                break;
+            case DatabaseType::MONGODB:
+                success = disconnectMongoDB(it->second);
+                break;
+            case DatabaseType::REDIS:
+                success = disconnectRedis(it->second);
+                break;
+        }
+
+        if (success) {
+            connections_.erase(it);
+            return true;
+        }
+        return false;
+    } catch (const std::exception& e) {
+        setLastError("Failed to disconnect from database: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::executeQuery(const std::string& id, const std::string& query,
+                                 nlohmann::json& result) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it == connections_.end()) {
+        setLastError("Connection not found");
+        return false;
+    }
+
+    try {
+        bool success = false;
+        switch (it->second.type) {
+            case DatabaseType::SQLITE:
+                success = executeSQLiteQuery(it->second, query, result);
+                break;
+            case DatabaseType::POSTGRESQL:
+                success = executePostgreSQLQuery(it->second, query, result);
+                break;
+            case DatabaseType::MONGODB:
+                success = executeMongoDBQuery(it->second, query, result);
+                break;
+            case DatabaseType::REDIS:
+                success = executeRedisQuery(it->second, query, result);
+                break;
+        }
+
+        if (success) {
+            updateStats(it->second, true);
+            return true;
+        }
+        updateStats(it->second, false);
+        return false;
+    } catch (const std::exception& e) {
+        setLastError("Failed to execute query: " + std::string(e.what()));
+        updateStats(it->second, false);
+        return false;
+    }
+}
+
+bool DatabaseManager::executeTransaction(const std::string& id,
+                                       const std::vector<std::string>& queries,
+                                       nlohmann::json& result) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it == connections_.end()) {
+        setLastError("Connection not found");
+        return false;
+    }
+
+    try {
+        bool success = false;
+        switch (it->second.type) {
+            case DatabaseType::SQLITE:
+                success = executeSQLiteTransaction(it->second, queries, result);
+                break;
+            case DatabaseType::POSTGRESQL:
+                success = executePostgreSQLTransaction(it->second, queries, result);
+                break;
+            case DatabaseType::MONGODB:
+                success = executeMongoDBTransaction(it->second, queries, result);
+                break;
+            case DatabaseType::REDIS:
+                success = executeRedisTransaction(it->second, queries, result);
+                break;
+        }
+
+        if (success) {
+            updateStats(it->second, true);
+            return true;
+        }
+        updateStats(it->second, false);
+        return false;
+    } catch (const std::exception& e) {
+        setLastError("Failed to execute transaction: " + std::string(e.what()));
+        updateStats(it->second, false);
+        return false;
+    }
+}
+
+bool DatabaseManager::backup(const std::string& id, const std::string& path) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it == connections_.end()) {
+        setLastError("Connection not found");
+        return false;
+    }
+
+    try {
+        bool success = false;
+        switch (it->second.type) {
+            case DatabaseType::SQLITE:
+                success = backupSQLite(it->second, path);
+                break;
+            case DatabaseType::POSTGRESQL:
+                success = backupPostgreSQL(it->second, path);
+                break;
+            case DatabaseType::MONGODB:
+                success = backupMongoDB(it->second, path);
+                break;
+            case DatabaseType::REDIS:
+                success = backupRedis(it->second, path);
+                break;
+        }
+
+        if (success) {
+            updateStats(it->second, true);
+            return true;
+        }
+        updateStats(it->second, false);
+        return false;
+    } catch (const std::exception& e) {
+        setLastError("Failed to backup database: " + std::string(e.what()));
+        updateStats(it->second, false);
+        return false;
+    }
+}
+
+bool DatabaseManager::restore(const std::string& id, const std::string& path) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it == connections_.end()) {
+        setLastError("Connection not found");
+        return false;
+    }
+
+    try {
+        bool success = false;
+        switch (it->second.type) {
+            case DatabaseType::SQLITE:
+                success = restoreSQLite(it->second, path);
+                break;
+            case DatabaseType::POSTGRESQL:
+                success = restorePostgreSQL(it->second, path);
+                break;
+            case DatabaseType::MONGODB:
+                success = restoreMongoDB(it->second, path);
+                break;
+            case DatabaseType::REDIS:
+                success = restoreRedis(it->second, path);
+                break;
+        }
+
+        if (success) {
+            updateStats(it->second, true);
+            return true;
+        }
+        updateStats(it->second, false);
+        return false;
+    } catch (const std::exception& e) {
+        setLastError("Failed to restore database: " + std::string(e.what()));
+        updateStats(it->second, false);
+        return false;
+    }
+}
+
+DatabaseStats DatabaseManager::getStats(const std::string& id) const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it == connections_.end()) {
+        return DatabaseStats();
+    }
+    return it->second.stats;
+}
+
+void DatabaseManager::resetStats(const std::string& id) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it != connections_.end()) {
+        it->second.stats = DatabaseStats();
+    }
+}
+
+void DatabaseManager::enableStats(const std::string& id, bool enable) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it != connections_.end()) {
+        it->second.statsEnabled = enable;
+    }
+}
+
+void DatabaseManager::registerCallback(const std::string& id, DatabaseCallback callback) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it != connections_.end()) {
+        it->second.callback = callback;
+    }
+}
+
+void DatabaseManager::unregisterCallback(const std::string& id) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    auto it = connections_.find(id);
+    if (it != connections_.end()) {
+        it->second.callback = nullptr;
+    }
+}
+
+// Private helper methods
+
+std::string DatabaseManager::generateConnectionId() const {
+    static std::atomic<uint64_t> counter{0};
+    return "db_" + std::to_string(counter++);
+}
+
+void DatabaseManager::setLastError(const std::string& error) const {
+    lastError_ = error;
+}
+
+void DatabaseManager::updateStats(DatabaseConnection& conn, bool success) {
+    if (!conn.statsEnabled) return;
+
+    auto now = std::chrono::steady_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(
+        now - conn.stats.lastOperationTime).count();
+
+    conn.stats.totalOperations++;
+    if (success) {
+        conn.stats.successfulOperations++;
+    } else {
+        conn.stats.failedOperations++;
+    }
+
+    conn.stats.totalOperationTime += duration;
+    conn.stats.lastOperationTime = now;
+    conn.stats.averageOperationTime = conn.stats.totalOperationTime / 
+                                    conn.stats.totalOperations;
+}
+
+// SQLite specific methods
+
+bool DatabaseManager::connectSQLite(DatabaseConnection& conn) {
+    try {
+        std::string path = conn.config["path"].get<std::string>();
+        sqlite3* db;
+        int rc = sqlite3_open(path.c_str(), &db);
+        if (rc != SQLITE_OK) {
+            setLastError("Failed to open SQLite database: " + std::string(sqlite3_errmsg(db)));
+            sqlite3_close(db);
+            return false;
+        }
+        conn.handle = db;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to connect to SQLite: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::disconnectSQLite(DatabaseConnection& conn) {
+    try {
+        sqlite3* db = static_cast<sqlite3*>(conn.handle);
+        int rc = sqlite3_close(db);
+        if (rc != SQLITE_OK) {
+            setLastError("Failed to close SQLite database: " + std::string(sqlite3_errmsg(db)));
+            return false;
+        }
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to disconnect from SQLite: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::executeSQLiteQuery(DatabaseConnection& conn,
+                                       const std::string& query,
+                                       nlohmann::json& result) {
+    try {
+        sqlite3* db = static_cast<sqlite3*>(conn.handle);
+        sqlite3_stmt* stmt;
+        int rc = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, nullptr);
+        if (rc != SQLITE_OK) {
+            setLastError("Failed to prepare SQLite query: " + std::string(sqlite3_errmsg(db)));
+            return false;
+        }
+
+        result = nlohmann::json::array();
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            nlohmann::json row;
+            int columns = sqlite3_column_count(stmt);
+            for (int i = 0; i < columns; i++) {
+                std::string name = sqlite3_column_name(stmt, i);
+                switch (sqlite3_column_type(stmt, i)) {
+                    case SQLITE_INTEGER:
+                        row[name] = sqlite3_column_int64(stmt, i);
+                        break;
+                    case SQLITE_FLOAT:
+                        row[name] = sqlite3_column_double(stmt, i);
+                        break;
+                    case SQLITE_TEXT:
+                        row[name] = reinterpret_cast<const char*>(sqlite3_column_text(stmt, i));
+                        break;
+                    case SQLITE_BLOB:
+                        row[name] = "BLOB"; // Handle BLOB data appropriately
+                        break;
+                    case SQLITE_NULL:
+                        row[name] = nullptr;
+                        break;
+                }
+            }
+            result.push_back(row);
+        }
+
+        sqlite3_finalize(stmt);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to execute SQLite query: " + std::string(e.what()));
+        return false;
+    }
+}
+
+// PostgreSQL specific methods
+
+bool DatabaseManager::connectPostgreSQL(DatabaseConnection& conn) {
+    try {
+        std::string conninfo = "host=" + conn.config["host"].get<std::string>() +
+                             " port=" + std::to_string(conn.config["port"].get<int>()) +
+                             " dbname=" + conn.config["database"].get<std::string>() +
+                             " user=" + conn.config["username"].get<std::string>() +
+                             " password=" + conn.config["password"].get<std::string>();
+
+        PGconn* pgconn = PQconnectdb(conninfo.c_str());
+        if (PQstatus(pgconn) != CONNECTION_OK) {
+            setLastError("Failed to connect to PostgreSQL: " + std::string(PQerrorMessage(pgconn)));
+            PQfinish(pgconn);
+            return false;
+        }
+        conn.handle = pgconn;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to connect to PostgreSQL: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::disconnectPostgreSQL(DatabaseConnection& conn) {
+    try {
+        PGconn* pgconn = static_cast<PGconn*>(conn.handle);
+        PQfinish(pgconn);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to disconnect from PostgreSQL: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::executePostgreSQLQuery(DatabaseConnection& conn,
+                                           const std::string& query,
+                                           nlohmann::json& result) {
+    try {
+        PGconn* pgconn = static_cast<PGconn*>(conn.handle);
+        PGresult* res = PQexec(pgconn, query.c_str());
+        if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+            setLastError("Failed to execute PostgreSQL query: " + std::string(PQerrorMessage(pgconn)));
+            PQclear(res);
+            return false;
+        }
+
+        result = nlohmann::json::array();
+        int rows = PQntuples(res);
+        int cols = PQnfields(res);
+        for (int i = 0; i < rows; i++) {
+            nlohmann::json row;
+            for (int j = 0; j < cols; j++) {
+                std::string name = PQfname(res, j);
+                if (PQgetisnull(res, i, j)) {
+                    row[name] = nullptr;
+                } else {
+                    row[name] = PQgetvalue(res, i, j);
+                }
+            }
+            result.push_back(row);
+        }
+
+        PQclear(res);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to execute PostgreSQL query: " + std::string(e.what()));
+        return false;
+    }
+}
+
+// MongoDB specific methods
+
+bool DatabaseManager::connectMongoDB(DatabaseConnection& conn) {
+    try {
+        std::string uri = "mongodb://" + conn.config["host"].get<std::string>() + ":" +
+                         std::to_string(conn.config["port"].get<int>());
+        mongoc_client_t* client = mongoc_client_new(uri.c_str());
+        if (!client) {
+            setLastError("Failed to create MongoDB client");
+            return false;
+        }
+        conn.handle = client;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to connect to MongoDB: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::disconnectMongoDB(DatabaseConnection& conn) {
+    try {
+        mongoc_client_t* client = static_cast<mongoc_client_t*>(conn.handle);
+        mongoc_client_destroy(client);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to disconnect from MongoDB: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::executeMongoDBQuery(DatabaseConnection& conn,
+                                        const std::string& query,
+                                        nlohmann::json& result) {
+    try {
+        mongoc_client_t* client = static_cast<mongoc_client_t*>(conn.handle);
+        std::string dbName = conn.config["database"].get<std::string>();
+        std::string collectionName = conn.config["collection"].get<std::string>();
+
+        mongoc_collection_t* collection = mongoc_client_get_collection(
+            client, dbName.c_str(), collectionName.c_str());
+
+        bson_t* bson_query = bson_new_from_json(
+            reinterpret_cast<const uint8_t*>(query.c_str()), -1, nullptr);
+        if (!bson_query) {
+            setLastError("Invalid MongoDB query format");
+            mongoc_collection_destroy(collection);
+            return false;
+        }
+
+        mongoc_cursor_t* cursor = mongoc_collection_find_with_opts(
+            collection, bson_query, nullptr, nullptr);
+
+        result = nlohmann::json::array();
+        const bson_t* doc;
+        while (mongoc_cursor_next(cursor, &doc)) {
+            char* str = bson_as_json(doc, nullptr);
+            result.push_back(nlohmann::json::parse(str));
+            bson_free(str);
+        }
+
+        bson_destroy(bson_query);
+        mongoc_cursor_destroy(cursor);
+        mongoc_collection_destroy(collection);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to execute MongoDB query: " + std::string(e.what()));
+        return false;
+    }
+}
+
+// Redis specific methods
+
+bool DatabaseManager::connectRedis(DatabaseConnection& conn) {
+    try {
+        redisContext* context = redisConnect(
+            conn.config["host"].get<std::string>().c_str(),
+            conn.config["port"].get<int>());
+        if (context == nullptr || context->err) {
+            setLastError("Failed to connect to Redis: " + 
+                        (context ? context->errstr : "Unknown error"));
+            if (context) redisFree(context);
+            return false;
+        }
+        conn.handle = context;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to connect to Redis: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::disconnectRedis(DatabaseConnection& conn) {
+    try {
+        redisContext* context = static_cast<redisContext*>(conn.handle);
+        redisFree(context);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to disconnect from Redis: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool DatabaseManager::executeRedisQuery(DatabaseConnection& conn,
+                                      const std::string& query,
+                                      nlohmann::json& result) {
+    try {
+        redisContext* context = static_cast<redisContext*>(conn.handle);
+        redisReply* reply = static_cast<redisReply*>(
+            redisCommand(context, query.c_str()));
+        if (reply == nullptr) {
+            setLastError("Failed to execute Redis command");
+            return false;
+        }
+
+        result = parseRedisReply(reply);
+        freeReplyObject(reply);
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to execute Redis query: " + std::string(e.what()));
+        return false;
+    }
+}
+
+nlohmann::json DatabaseManager::parseRedisReply(redisReply* reply) {
+    switch (reply->type) {
+        case REDIS_REPLY_STRING:
+            return reply->str;
+        case REDIS_REPLY_INTEGER:
+            return reply->integer;
+        case REDIS_REPLY_ARRAY: {
+            nlohmann::json array = nlohmann::json::array();
+            for (size_t i = 0; i < reply->elements; i++) {
+                array.push_back(parseRedisReply(reply->element[i]));
+            }
+            return array;
+        }
+        case REDIS_REPLY_NIL:
+            return nullptr;
+        case REDIS_REPLY_STATUS:
+            return reply->str;
+        case REDIS_REPLY_ERROR:
+            return reply->str;
+        default:
+            return nullptr;
+    }
+}
+
+} // namespace satox::core 

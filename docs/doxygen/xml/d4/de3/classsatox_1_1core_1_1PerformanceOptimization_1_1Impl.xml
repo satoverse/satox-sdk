@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::PerformanceOptimization::Impl</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a83b4dcf6e40dd0355de810ec7cb4d4ce" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::thread &gt;</type>
+        <definition>std::vector&lt;std::thread&gt; satox::core::PerformanceOptimization::Impl::workers_</definition>
+        <argsstring></argsstring>
+        <name>workers_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::workers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="153" column="17" bodyfile="src/core/src/performance_optimization.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a7f89dfcc117df29d112fe3a0ea103f6b" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::function&lt; void()&gt; &gt;</type>
+        <definition>std::queue&lt;std::function&lt;void()&gt; &gt; satox::core::PerformanceOptimization::Impl::tasks_</definition>
+        <argsstring></argsstring>
+        <name>tasks_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::tasks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="154" column="16" bodyfile="src/core/src/performance_optimization.cpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a3e7021dea6f0a71b1d0c0ae4994747b3" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::PerformanceOptimization::Impl::queue_mutex_</definition>
+        <argsstring></argsstring>
+        <name>queue_mutex_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::queue_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="155" column="16" bodyfile="src/core/src/performance_optimization.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a9c673db36e65f08207c525a2192e33ee" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::core::PerformanceOptimization::Impl::condition_</definition>
+        <argsstring></argsstring>
+        <name>condition_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::condition_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="156" column="29" bodyfile="src/core/src/performance_optimization.cpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a40b84f6e20e1ad3489b6449b1608be68" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::PerformanceOptimization::Impl::is_running_</definition>
+        <argsstring></argsstring>
+        <name>is_running_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::is_running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="157" column="17" bodyfile="src/core/src/performance_optimization.cpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a550bfc081f7f31fe567e9f3ab2c1e019" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; satox::core::PerformanceOptimization::Impl::cache_</definition>
+        <argsstring></argsstring>
+        <name>cache_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::cache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="160" column="24" bodyfile="src/core/src/performance_optimization.cpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a1e436eb0a2353be931d7900d19860d05" prot="private" static="no" mutable="yes">
+        <type>std::shared_mutex</type>
+        <definition>std::shared_mutex satox::core::PerformanceOptimization::Impl::cache_mutex_</definition>
+        <argsstring></argsstring>
+        <name>cache_mutex_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::cache_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="161" column="31" bodyfile="src/core/src/performance_optimization.cpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a1cbd248455b7eb718055b735cb854e30" prot="private" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t satox::core::PerformanceOptimization::Impl::max_cache_size_</definition>
+        <argsstring></argsstring>
+        <name>max_cache_size_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::max_cache_size_</qualifiedname>
+        <initializer>= 10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="162" column="18" bodyfile="src/core/src/performance_optimization.cpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a063a7bd90f1aa94b77f7e95de15f5d04" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; std::string &gt;</type>
+        <definition>std::unordered_set&lt;std::string&gt; satox::core::PerformanceOptimization::Impl::connections_</definition>
+        <argsstring></argsstring>
+        <name>connections_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::connections_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="165" column="24" bodyfile="src/core/src/performance_optimization.cpp" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1adf57082e4cfec7f1e6ecdbdb5395b1a2" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::PerformanceOptimization::Impl::connection_mutex_</definition>
+        <argsstring></argsstring>
+        <name>connection_mutex_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::connection_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="166" column="16" bodyfile="src/core/src/performance_optimization.cpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a5d794b5e8fe790dd231f65554c043b6e" prot="private" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t satox::core::PerformanceOptimization::Impl::max_connections_</definition>
+        <argsstring></argsstring>
+        <name>max_connections_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::max_connections_</qualifiedname>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="167" column="18" bodyfile="src/core/src/performance_optimization.cpp" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a763edb444a0da3c2b3d089e13b3fa332" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; satox::core::PerformanceOptimization::Impl::batch_</definition>
+        <argsstring></argsstring>
+        <name>batch_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::batch_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="170" column="24" bodyfile="src/core/src/performance_optimization.cpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a545cc6715833fcf7759b5b318711a61a" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::PerformanceOptimization::Impl::batch_mutex_</definition>
+        <argsstring></argsstring>
+        <name>batch_mutex_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::batch_mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="171" column="16" bodyfile="src/core/src/performance_optimization.cpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a565e74d765e2d3d817d114ff49498937" prot="private" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t satox::core::PerformanceOptimization::Impl::batch_size_</definition>
+        <argsstring></argsstring>
+        <name>batch_size_</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::batch_size_</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="172" column="18" bodyfile="src/core/src/performance_optimization.cpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1aeb3f408d6b7f16f037ff4db11a0ed20b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::PerformanceOptimization::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="43" column="5" bodyfile="src/core/src/performance_optimization.cpp" bodystart="43" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a389aa7caada8abfedc5ab2f7d4152772" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::PerformanceOptimization::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="66" column="5" bodyfile="src/core/src/performance_optimization.cpp" bodystart="66" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1ae6d34247b0a949947f96339c78430041" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::addToCache</definition>
+        <argsstring>(const std::string &amp;key, const std::string &amp;value)</argsstring>
+        <name>addToCache</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::addToCache</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="80" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="80" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a63f04ae267f52f8925304358cedba25c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; satox::core::PerformanceOptimization::Impl::getFromCache</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getFromCache</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::getFromCache</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="88" column="19" bodyfile="src/core/src/performance_optimization.cpp" bodystart="88" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a21f107a3a9ba98890fa2a7df53b85d7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::addConnection</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>addConnection</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::addConnection</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="98" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1ab0178fadcdf5a55700b107d01c38d869" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::removeConnection</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>removeConnection</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::removeConnection</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="105" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a9912a04e8fac71505d2b032e66f8b70d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::addToBatch</definition>
+        <argsstring>(const std::string &amp;operation, const std::string &amp;data)</argsstring>
+        <name>addToBatch</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::addToBatch</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="111" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="111" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1ac6030a8b08728515be395aec61529217" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::executeParallel</definition>
+        <argsstring>(F &amp;&amp;func)</argsstring>
+        <name>executeParallel</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::executeParallel</qualifiedname>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="121" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a30d2207cd0e11a4dfca529c93c6dc62a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::optimizeMemory</definition>
+        <argsstring>()</argsstring>
+        <name>optimizeMemory</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::optimizeMemory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="128" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="128" bodyend="135"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1afdffc02fae07fbe24dc9f42920928c4f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::PerformanceOptimization::Impl::processBatch</definition>
+        <argsstring>(const std::string &amp;operation)</argsstring>
+        <name>processBatch</name>
+        <qualifiedname>satox::core::PerformanceOptimization::Impl::processBatch</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/performance_optimization.cpp" line="138" column="10" bodyfile="src/core/src/performance_optimization.cpp" bodystart="138" bodyend="150"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/src/performance_optimization.cpp" line="41" column="1" bodyfile="src/core/src/performance_optimization.cpp" bodystart="41" bodyend="173"/>
+    <listofallmembers>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a21f107a3a9ba98890fa2a7df53b85d7e" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>addConnection</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a9912a04e8fac71505d2b032e66f8b70d" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>addToBatch</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1ae6d34247b0a949947f96339c78430041" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>addToCache</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a763edb444a0da3c2b3d089e13b3fa332" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>batch_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a545cc6715833fcf7759b5b318711a61a" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>batch_mutex_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a565e74d765e2d3d817d114ff49498937" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>batch_size_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a550bfc081f7f31fe567e9f3ab2c1e019" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>cache_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a1e436eb0a2353be931d7900d19860d05" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>cache_mutex_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a9c673db36e65f08207c525a2192e33ee" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>condition_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1adf57082e4cfec7f1e6ecdbdb5395b1a2" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>connection_mutex_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a063a7bd90f1aa94b77f7e95de15f5d04" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>connections_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1ac6030a8b08728515be395aec61529217" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>executeParallel</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a63f04ae267f52f8925304358cedba25c" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>getFromCache</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1aeb3f408d6b7f16f037ff4db11a0ed20b" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>Impl</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a40b84f6e20e1ad3489b6449b1608be68" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>is_running_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a1cbd248455b7eb718055b735cb854e30" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>max_cache_size_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a5d794b5e8fe790dd231f65554c043b6e" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>max_connections_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a30d2207cd0e11a4dfca529c93c6dc62a" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>optimizeMemory</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1afdffc02fae07fbe24dc9f42920928c4f" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>processBatch</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a3e7021dea6f0a71b1d0c0ae4994747b3" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>queue_mutex_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1ab0178fadcdf5a55700b107d01c38d869" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>removeConnection</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a7f89dfcc117df29d112fe3a0ea103f6b" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>tasks_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a83b4dcf6e40dd0355de810ec7cb4d4ce" prot="private" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>workers_</name></member>
+      <member refid="d4/de3/classsatox_1_1core_1_1PerformanceOptimization_1_1Impl_1a389aa7caada8abfedc5ab2f7d4152772" prot="public" virt="non-virtual"><scope>satox::core::PerformanceOptimization::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

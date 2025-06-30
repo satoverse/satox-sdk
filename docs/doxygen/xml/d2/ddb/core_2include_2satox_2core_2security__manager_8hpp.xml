@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d2/ddb/core_2include_2satox_2core_2security__manager_8hpp" kind="file" language="C++">
+    <compoundname>security_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">unordered_set</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">chrono</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/security_manager.hpp</label>
+        <link refid="d2/ddb/core_2include_2satox_2core_2security__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>chrono</label>
+      </node>
+      <node id="9">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="8">
+        <label>unordered_set</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d0/df7/classsatox_1_1core_1_1SecurityManager" prot="public">satox::core::SecurityManager</innerclass>
+    <innerclass refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" prot="public">satox::core::SecurityManager::SecurityConfig</innerclass>
+    <innerclass refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" prot="public">satox::core::SecurityManager::SecurityStats</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="d0/df7/classsatox_1_1core_1_1SecurityManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8c5ad7028d5777f4032d69315d85b6ca" kindref="member">SecurityManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig_1a952907ac15446c9329c1350fd823f737" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig_1a952907ac15446c9329c1350fd823f737" kindref="member">network</ref>;</highlight></codeline>
+<codeline lineno="49" refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig_1aee20ac1fabde0c051198d4666f728f34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig_1aee20ac1fabde0c051198d4666f728f34" kindref="member">key_length</ref><sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="50" refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig_1ac7f1375a8178d385cb0a021f76dcb359" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig_1ac7f1375a8178d385cb0a021f76dcb359" kindref="member">sessionTimeout</ref><sp/>=<sp/>3600;<sp/></highlight><highlight class="comment">//<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>more<sp/>config<sp/>fields<sp/>as<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10a41bc94cbd8eebea13ce0491b2ac11b88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10a41bc94cbd8eebea13ce0491b2ac11b88" kindref="member">LOW</ref>,</highlight></codeline>
+<codeline lineno="57" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ac87f3be66ffc3c0d4249f1c2cc5f3cce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ac87f3be66ffc3c0d4249f1c2cc5f3cce" kindref="member">MEDIUM</ref>,</highlight></codeline>
+<codeline lineno="58" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ab89de3b4b81c4facfac906edf29aec8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ab89de3b4b81c4facfac906edf29aec8c" kindref="member">HIGH</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" kindref="compound">SecurityStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="63" refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1ab1b9d6835f3579de31cdc5b73529c5f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1ab1b9d6835f3579de31cdc5b73529c5f0" kindref="member">totalEncryptions</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64" refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1a80666b72ee2e69267db2729bd47ee8de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1a80666b72ee2e69267db2729bd47ee8de" kindref="member">totalDecryptions</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65" refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1ae80fe5979eb47f622232c6243e756886" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1ae80fe5979eb47f622232c6243e756886" kindref="member">totalAuths</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="66" refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1af23484f60796f4bb884a0b64a4cbef63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1af23484f60796f4bb884a0b64a4cbef63" kindref="member">successfulLogins</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67" refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1aea1b72c8b7132e19160cf5b6eaf8f996" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats_1aea1b72c8b7132e19160cf5b6eaf8f996" kindref="member">failedAttempts</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>more<sp/>stats<sp/>as<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" kindref="member">SecurityCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref>)&gt;;</highlight></codeline>
+<codeline lineno="73" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" kindref="member">AuditCallback</ref><sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8c5ad7028d5777f4032d69315d85b6ca" kindref="member">SecurityManager</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1644350b3df120db31db2257f9dbd06e" kindref="member">~SecurityManager</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab3c6552ea3709879f529e722d184553c" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae3bfd31a98cc8966da64c3efe397dd15" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8d30b8b6ae3953abb63aaca506356ed1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a8d30b8b6ae3953abb63aaca506356ed1" kindref="member">generateKeyPair</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key_id);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a79118511a5fc0c1fff4e6465b0d1b362" kindref="member">validateKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4507f1109bbadfb38ccfb62cc2e18126" kindref="member">storeKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a604340549d66066effd1f46ad17ff349" kindref="member">getKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyId);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a20d8ec2be8f6d5f18e744868b205b8b5" kindref="member">generateKey</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a4afab2c03c0223691d4cb403793a6eb7" kindref="member">sign</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acbc4791b4176fe5ebae812b22e8b04e3" kindref="member">verify</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>signature);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5cbe9f4f0ccbde74521d80983e33756e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5cbe9f4f0ccbde74521d80983e33756e" kindref="member">encrypt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="95" refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a13e9a460296a092269543dfb601d4a23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a13e9a460296a092269543dfb601d4a23" kindref="member">decrypt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>encrypted_data);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5cbe9f4f0ccbde74521d80983e33756e" kindref="member">encrypt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a13e9a460296a092269543dfb601d4a23" kindref="member">decrypt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7d2c728e978ed44e55c3bbfc0edf5fd4" kindref="member">encryptString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aeaeab4a379d375d816903965cc117d5f" kindref="member">decryptString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a5a547cc445a968171d6f3dd8dea77c36" kindref="member">authenticate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>username,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>password);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ada14ada74c1f442f4833e44454403ee5" kindref="member">validateSession</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sessionId);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9f92b94782183a6acda062b7eea128c1" kindref="member">createSession</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>username);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1bdce2f3de6f463486f73b7ad6c3d8d9" kindref="member">invalidateSession</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sessionId);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9d6155b94f42efbb791d976b013bef83" kindref="member">isSessionExpired</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sessionId);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a662efaa06f0bcefd9932d2fe9259ee64" kindref="member">cleanupExpiredSessions</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a01a7ffcb363bba42102b8a3963acf554" kindref="member">validateInput</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>input);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aed0084937eb09ba55ac7b59c4eb9871c" kindref="member">checkPermission</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>user,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>resource);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ac7e2cff1b4ee6d073f73df9d019e07c8" kindref="member">getSecurityLevel</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ab5bb9d772b07507450fbcecc42615f15" kindref="member">setSecurityLevel</ref>(<ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref><sp/>level);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a1d43424efce3b0644bf2884250cafa38" kindref="member">logEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>event,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>details);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a82bbeb987fc592143fd9e2f9b68c09d4" kindref="member">getAuditLog</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1af09a6e5b65425a3c253775f72411df41" kindref="member">clearAuditLog</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a2306c0c90803cc3500b3ccea24042e9b" kindref="member">registerSecurityCallback</ref>(<ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca60ec128a81f602dadcbf423447f931" kindref="member">SecurityCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a26d69bab8309b66986e9e4d136f7c4e9" kindref="member">registerAuditCallback</ref>(<ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7faa235379c80c16507cca02ce1f7e6c" kindref="member">AuditCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aa6fe174ded06b9130f34abb882c1ed45" kindref="member">unregisterSecurityCallback</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a17d788ef0b1a7f1552c57b1cca4d6c50" kindref="member">unregisterAuditCallback</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1abd4f6534f5f5b49506545bb86467b8d1" kindref="member">notifySecurityEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>event,<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref><sp/>level);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9abf8572d56167deb057cb4b1d8f22ee" kindref="member">notifyAuditEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>event,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>details);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" kindref="compound">SecurityStats</ref><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a9e40fe4fb087d6df8256747c4478834f" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1aca23da79d31ade1f7068e963b02dccbc" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a0386bbda7efbf6dda27882ac2fa9a1ed" kindref="member">getConfig</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1a7dde6b6997e20ba50ab3fa88c5a879ac" kindref="member">updateConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ae43b4f72b842fc58ca50d398302f727f" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1acfae6cf777c1f27526fbf6f764bff440" kindref="member">setLastError</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d72/structsatox_1_1core_1_1SecurityManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d6c/structsatox_1_1core_1_1SecurityManager_1_1SecurityStats" kindref="compound">SecurityStats</ref><sp/>stats_;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>last_error_;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>keys_;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>sessions_;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::chrono::system_clock::time_point&gt;<sp/>sessionTimes_;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>auditLog_;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;SecurityCallback&gt;<sp/>securityCallbacks_;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AuditCallback&gt;<sp/>auditCallbacks_;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10" kindref="member">SecurityLevel</ref><sp/>security_level_<sp/>=<sp/><ref refid="d0/df7/classsatox_1_1core_1_1SecurityManager_1ad4d0506c85787774aa8e97d542610a10ac87f3be66ffc3c0d4249f1c2cc5f3cce" kindref="member">SecurityLevel::MEDIUM</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/security_manager.hpp"/>
+  </compounddef>
+</doxygen>

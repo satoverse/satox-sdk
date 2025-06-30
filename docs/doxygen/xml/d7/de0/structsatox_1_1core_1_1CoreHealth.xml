@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d7/de0/structsatox_1_1core_1_1CoreHealth" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::CoreHealth</compoundname>
+    <includes refid="dd/d27/core_2include_2satox_2core_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d7/de0/structsatox_1_1core_1_1CoreHealth_1a3e24393f47a8a6214dbb97415949c227" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/dd3/namespacesatox_1_1core_1aaa7ca677e5e438eacd4f667f61cff1a6" kindref="member">CoreStatus</ref></type>
+        <definition>CoreStatus satox::core::CoreHealth::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>satox::core::CoreHealth::status</qualifiedname>
+        <initializer>= <ref refid="d9/dd3/namespacesatox_1_1core_1aaa7ca677e5e438eacd4f667f61cff1a6a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">CoreStatus::UNKNOWN</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="68" column="16" bodyfile="src/core/include/satox/core/types.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/de0/structsatox_1_1core_1_1CoreHealth_1aeb34aa80df02b381aad6b91c8ee81938" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::CoreHealth::healthy</definition>
+        <argsstring></argsstring>
+        <name>healthy</name>
+        <qualifiedname>satox::core::CoreHealth::healthy</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="69" column="10" bodyfile="src/core/include/satox/core/types.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/de0/structsatox_1_1core_1_1CoreHealth_1ace8550671851d509966e22a1977d7a9e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CoreHealth::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>satox::core::CoreHealth::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="70" column="17" bodyfile="src/core/include/satox/core/types.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/de0/structsatox_1_1core_1_1CoreHealth_1a43b611f0e2c2c10962ec4ff648e96eff" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CoreHealth::lastCheck</definition>
+        <argsstring></argsstring>
+        <name>lastCheck</name>
+        <qualifiedname>satox::core::CoreHealth::lastCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="71" column="43" bodyfile="src/core/include/satox/core/types.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/de0/structsatox_1_1core_1_1CoreHealth_1ac957a25fc1f0426a940f34468764f581" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::core::CoreHealth::consecutiveFailures</definition>
+        <argsstring></argsstring>
+        <name>consecutiveFailures</name>
+        <qualifiedname>satox::core::CoreHealth::consecutiveFailures</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="72" column="9" bodyfile="src/core/include/satox/core/types.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/de0/structsatox_1_1core_1_1CoreHealth_1afa2dd8fa1e36d92c60b762e3c6eb72b8" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::CoreHealth::details</definition>
+        <argsstring></argsstring>
+        <name>details</name>
+        <qualifiedname>satox::core::CoreHealth::details</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/types.hpp" line="73" column="20" bodyfile="src/core/include/satox/core/types.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::core::CoreHealth</label>
+        <link refid="d7/de0/structsatox_1_1core_1_1CoreHealth"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/types.hpp" line="67" column="1" bodyfile="src/core/include/satox/core/types.hpp" bodystart="67" bodyend="74"/>
+    <listofallmembers>
+      <member refid="d7/de0/structsatox_1_1core_1_1CoreHealth_1ac957a25fc1f0426a940f34468764f581" prot="public" virt="non-virtual"><scope>satox::core::CoreHealth</scope><name>consecutiveFailures</name></member>
+      <member refid="d7/de0/structsatox_1_1core_1_1CoreHealth_1afa2dd8fa1e36d92c60b762e3c6eb72b8" prot="public" virt="non-virtual"><scope>satox::core::CoreHealth</scope><name>details</name></member>
+      <member refid="d7/de0/structsatox_1_1core_1_1CoreHealth_1aeb34aa80df02b381aad6b91c8ee81938" prot="public" virt="non-virtual"><scope>satox::core::CoreHealth</scope><name>healthy</name></member>
+      <member refid="d7/de0/structsatox_1_1core_1_1CoreHealth_1a43b611f0e2c2c10962ec4ff648e96eff" prot="public" virt="non-virtual"><scope>satox::core::CoreHealth</scope><name>lastCheck</name></member>
+      <member refid="d7/de0/structsatox_1_1core_1_1CoreHealth_1ace8550671851d509966e22a1977d7a9e" prot="public" virt="non-virtual"><scope>satox::core::CoreHealth</scope><name>message</name></member>
+      <member refid="d7/de0/structsatox_1_1core_1_1CoreHealth_1a3e24393f47a8a6214dbb97415949c227" prot="public" virt="non-virtual"><scope>satox::core::CoreHealth</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

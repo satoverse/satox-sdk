@@ -1,0 +1,1560 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::ipfs::IPFSManager</compoundname>
+    <includes refid="d2/da0/core_2include_2satox_2ipfs_2ipfs__manager_8hpp" local="no">ipfs_manager.hpp</includes>
+    <innerclass refid="d3/d2b/structsatox_1_1ipfs_1_1IPFSManager_1_1CachedContent" prot="private">satox::ipfs::IPFSManager::CachedContent</innerclass>
+    <innerclass refid="d3/d5b/classsatox_1_1ipfs_1_1IPFSManager_1_1Impl" prot="private">satox::ipfs::IPFSManager::Impl</innerclass>
+    <innerclass refid="d0/d7a/structsatox_1_1ipfs_1_1IPFSManager_1_1IPFSStatistics" prot="public">satox::ipfs::IPFSManager::IPFSStatistics</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a314d4a5df041074715474296484f319a" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const <ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &amp;)&gt;</type>
+        <definition>using satox::ipfs::IPFSManager::ContentCallback =  std::function&lt;void(const std::string&amp;, const IPFSContent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ContentCallback</name>
+        <qualifiedname>satox::ipfs::IPFSManager::ContentCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="64" column="5" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a506f97c8d372da27d07fa004a9ab6aef" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>using satox::ipfs::IPFSManager::ErrorCallback =  std::function&lt;void(const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ErrorCallback</name>
+        <qualifiedname>satox::ipfs::IPFSManager::ErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="65" column="5" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa206e2539be53b03cefd7f1eed0e73ed" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, uint32_t)&gt;</type>
+        <definition>using satox::ipfs::IPFSManager::ProgressCallback =  std::function&lt;void(const std::string&amp;, uint32_t)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ProgressCallback</name>
+        <qualifiedname>satox::ipfs::IPFSManager::ProgressCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="66" column="5" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a39076142db6ede9197ef004499f7d7cd" prot="private" static="no" mutable="no">
+        <type><ref refid="db/d79/structsatox_1_1ipfs_1_1IPFSConfig" kindref="compound">IPFSConfig</ref></type>
+        <definition>IPFSConfig satox::ipfs::IPFSManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="139" column="16" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3e039f1ddb9645362dcc3c9b16bcc466" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, IPFSContent&gt; satox::ipfs::IPFSManager::content_</definition>
+        <argsstring></argsstring>
+        <name>content_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::content_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="140" column="24" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1adcb3a48bf89f66439d450adceccae607" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, CachedContent &gt;</type>
+        <definition>std::unordered_map&lt;std::string, CachedContent&gt; satox::ipfs::IPFSManager::cache_</definition>
+        <argsstring></argsstring>
+        <name>cache_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::cache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="141" column="24" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab4b9eeb654e2ed10a7eb4648d4f0a0ad" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::ipfs::IPFSManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="142" column="24" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a80b8d4129e7df331a3d9119d2622e014" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IPFSManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="143" column="17" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad1b364d37f6992532c23fd1b1968719e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a314d4a5df041074715474296484f319a" kindref="member">ContentCallback</ref> &gt;</type>
+        <definition>std::vector&lt;ContentCallback&gt; satox::ipfs::IPFSManager::contentCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>contentCallbacks_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::contentCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="145" column="17" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1abb1af8d85c7b867b4c57631824ae5bda" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a506f97c8d372da27d07fa004a9ab6aef" kindref="member">ErrorCallback</ref> &gt;</type>
+        <definition>std::vector&lt;ErrorCallback&gt; satox::ipfs::IPFSManager::errorCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>errorCallbacks_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::errorCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="146" column="17" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3f6ea154e792f484cc2ff251706227c7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa206e2539be53b03cefd7f1eed0e73ed" kindref="member">ProgressCallback</ref> &gt;</type>
+        <definition>std::vector&lt;ProgressCallback&gt; satox::ipfs::IPFSManager::progressCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>progressCallbacks_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::progressCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="147" column="17" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab44fba4cf22121d61605b5b6ace6f147" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Impl &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; satox::ipfs::IPFSManager::pimpl_</definition>
+        <argsstring></argsstring>
+        <name>pimpl_</name>
+        <qualifiedname>satox::ipfs::IPFSManager::pimpl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="119" column="21" bodyfile="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IPFSManager::IPFSManager</definition>
+        <argsstring>()</argsstring>
+        <name>IPFSManager</name>
+        <qualifiedname>satox::ipfs::IPFSManager::IPFSManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="68" column="5" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="334" bodyend="334"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afc2a6f5b4736789c3ea3ae00f2ef7853" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="41" endline="46">getInstance</referencedby>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a40536d64d16ed7db27479e989380f70e">IPFSManager</referencedby>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aaf3918b9feb2971999973d3f4d98d94c">IPFSManager</referencedby>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afcc46097b8523df3020969ceba6f7e5d">operator=</referencedby>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afbe3b0b8d356dddb89ff797f7e0239c0">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a91480e94e687485894e4d0d095443e38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IPFSManager::~IPFSManager</definition>
+        <argsstring>()</argsstring>
+        <name>~IPFSManager</name>
+        <qualifiedname>satox::ipfs::IPFSManager::~IPFSManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="69" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af90ecdacfa823b017392da62c0678b48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::initialize</definition>
+        <argsstring>(const IPFSConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::ipfs::IPFSManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="db/d79/structsatox_1_1ipfs_1_1IPFSConfig" kindref="compound">IPFSConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="71" column="10"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a4814321a30a9d6d9c036d1ba32292999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::ipfs::IPFSManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="72" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="341" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IPFSManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="73" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="439" bodyend="441"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa57632d2038acd679f1b3156eb53a524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IPFSManager::addContent</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::string &amp;content_type, const std::unordered_map&lt; std::string, std::string &gt; &amp;metadata={})</argsstring>
+        <name>addContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::addContent</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content_type</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>metadata</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="76" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a2b77b26d9a3cfece17ac3ee0ba030641" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::removeContent</definition>
+        <argsstring>(const std::string &amp;cid)</argsstring>
+        <name>removeContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::removeContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="78" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a80e0cf79cf7e2752273f217b8c792c77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &gt;</type>
+        <definition>std::optional&lt; IPFSContent &gt; satox::ipfs::IPFSManager::getContent</definition>
+        <argsstring>(const std::string &amp;cid)</argsstring>
+        <name>getContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="79" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a74ee9228bce23fd6b47e5a5c831baf54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::ipfs::IPFSManager::listContent</definition>
+        <argsstring>() const</argsstring>
+        <name>listContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::listContent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="80" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2d3def8433e6dbe624fd1139526e2e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::pinContent</definition>
+        <argsstring>(const std::string &amp;cid)</argsstring>
+        <name>pinContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::pinContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="83" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aed42c2320b455e50c07cd47f59da2eaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::unpinContent</definition>
+        <argsstring>(const std::string &amp;cid)</argsstring>
+        <name>unpinContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::unpinContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="84" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3d86d48acffbdaf838880d7549aa7bf2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::isContentPinned</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>isContentPinned</name>
+        <qualifiedname>satox::ipfs::IPFSManager::isContentPinned</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="85" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a0b1d8a19d763d64d88485c194ff6e192" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::ipfs::IPFSManager::listPinnedContent</definition>
+        <argsstring>() const</argsstring>
+        <name>listPinnedContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::listPinnedContent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="86" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a6630c514da18c5d62236cb4d3f1d8b9e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IPFSManager::getGatewayUrl</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>getGatewayUrl</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getGatewayUrl</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="89" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aae1317725399d984944a8f2be4ff222f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::isGatewayEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>isGatewayEnabled</name>
+        <qualifiedname>satox::ipfs::IPFSManager::isGatewayEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="90" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3bd89c60a9b99fddf6e40ecc81c1f8eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::batchAddContent</definition>
+        <argsstring>(const std::vector&lt; std::pair&lt; std::vector&lt; uint8_t &gt;, std::string &gt; &gt; &amp;contents)</argsstring>
+        <name>batchAddContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::batchAddContent</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; std::vector&lt; uint8_t &gt;, std::string &gt; &gt; &amp;</type>
+          <declname>contents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="93" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aebe37c42ab231352e7972bf0cc74f32f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::batchPinContent</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;cids)</argsstring>
+        <name>batchPinContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::batchPinContent</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>cids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="94" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a10e333840ae8c2424f3af4667ace8f6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::batchUnpinContent</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;cids)</argsstring>
+        <name>batchUnpinContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::batchUnpinContent</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>cids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="95" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a414d2224a69bb7c67f8e9a7660afd6a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::updateMetadata</definition>
+        <argsstring>(const std::string &amp;cid, const std::unordered_map&lt; std::string, std::string &gt; &amp;metadata)</argsstring>
+        <name>updateMetadata</name>
+        <qualifiedname>satox::ipfs::IPFSManager::updateMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="98" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ace48c728027b0e2b2935275c784724bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::unordered_map&lt; std::string, std::string &gt; &gt;</type>
+        <definition>std::optional&lt; std::unordered_map&lt; std::string, std::string &gt; &gt; satox::ipfs::IPFSManager::getMetadata</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>getMetadata</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getMetadata</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="99" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a2cd97bfd8d48866c5883b54a8b26031e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::setContentType</definition>
+        <argsstring>(const std::string &amp;cid, const std::string &amp;content_type)</argsstring>
+        <name>setContentType</name>
+        <qualifiedname>satox::ipfs::IPFSManager::setContentType</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="100" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af18b4a84f9c5aa476203688b101b680a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; satox::ipfs::IPFSManager::getContentType</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>getContentType</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getContentType</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="101" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a6ced8073baa75915be9c85692ff208b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="d0/d7a/structsatox_1_1ipfs_1_1IPFSManager_1_1IPFSStatistics" kindref="compound">IPFSStatistics</ref> &gt;</type>
+        <definition>std::optional&lt; IPFSStatistics &gt; satox::ipfs::IPFSManager::getStatistics</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatistics</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getStatistics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="111" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a4cd78ef412109d4b73232423ba590b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::clearCache</definition>
+        <argsstring>()</argsstring>
+        <name>clearCache</name>
+        <qualifiedname>satox::ipfs::IPFSManager::clearCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="114" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a5b8b57dab33beef24bea5a65990165e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::isCached</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>isCached</name>
+        <qualifiedname>satox::ipfs::IPFSManager::isCached</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="115" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a6a77c4b73fc08d750b8dca4815bb39cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &gt;</type>
+        <definition>std::optional&lt; IPFSContent &gt; satox::ipfs::IPFSManager::getFromCache</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>getFromCache</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getFromCache</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="116" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af84da298c8b16479760250925a1e9bff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::registerContentCallback</definition>
+        <argsstring>(ContentCallback callback)</argsstring>
+        <name>registerContentCallback</name>
+        <qualifiedname>satox::ipfs::IPFSManager::registerContentCallback</qualifiedname>
+        <param>
+          <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a314d4a5df041074715474296484f319a" kindref="member">ContentCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="119" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af03dbe1599f4a2219bef4e220e0f3b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::registerErrorCallback</definition>
+        <argsstring>(ErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::ipfs::IPFSManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a506f97c8d372da27d07fa004a9ab6aef" kindref="member">ErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="120" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad9853399e863abaac5dd32dccfa4bc3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::registerProgressCallback</definition>
+        <argsstring>(ProgressCallback callback)</argsstring>
+        <name>registerProgressCallback</name>
+        <qualifiedname>satox::ipfs::IPFSManager::registerProgressCallback</qualifiedname>
+        <param>
+          <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa206e2539be53b03cefd7f1eed0e73ed" kindref="member">ProgressCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="121" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a40536d64d16ed7db27479e989380f70e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IPFSManager::IPFSManager</definition>
+        <argsstring>(const IPFSManager &amp;)=delete</argsstring>
+        <name>IPFSManager</name>
+        <qualifiedname>satox::ipfs::IPFSManager::IPFSManager</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="52" column="5"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="334" endline="334">IPFSManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afcc46097b8523df3020969ceba6f7e5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;</type>
+        <definition>IPFSManager &amp; satox::ipfs::IPFSManager::operator=</definition>
+        <argsstring>(const IPFSManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::ipfs::IPFSManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="53" column="17"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="334" endline="334">IPFSManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aaf3918b9feb2971999973d3f4d98d94c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IPFSManager::IPFSManager</definition>
+        <argsstring>(IPFSManager &amp;&amp;)=default</argsstring>
+        <name>IPFSManager</name>
+        <qualifiedname>satox::ipfs::IPFSManager::IPFSManager</qualifiedname>
+        <param>
+          <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="56" column="5"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="334" endline="334">IPFSManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afbe3b0b8d356dddb89ff797f7e0239c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;</type>
+        <definition>IPFSManager &amp; satox::ipfs::IPFSManager::operator=</definition>
+        <argsstring>(IPFSManager &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::ipfs::IPFSManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="57" column="17"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="334" endline="334">IPFSManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a76ff34895cf25537ff058bd924b28d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::initialize</definition>
+        <argsstring>(const Config &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::ipfs::IPFSManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="da/dc2/structsatox_1_1ipfs_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="60" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="337" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a4814321a30a9d6d9c036d1ba32292999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::ipfs::IPFSManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="61" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a1efb48f701d83fb5c920a205341e1581" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>satox::ipfs::IPFSManager::isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="62" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="345" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1acc423fae6de4216c059b021b637c46dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::ipfs::IPFSManager::isInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="63" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="349" bodyend="351"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab66d6d0dcb619d6f076acf54c63108db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::ipfs::IPFSManager::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="64" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="353" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ac96dc9011864d8dcb02ea67b6f63bc53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::addFile</definition>
+        <argsstring>(const std::string &amp;filePath, std::string &amp;hash)</argsstring>
+        <name>addFile</name>
+        <qualifiedname>satox::ipfs::IPFSManager::addFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="67" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="379" bodyend="381"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ae11612bcf8d3b54e5b98c1a45677424c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::addFileData</definition>
+        <argsstring>(const std::string &amp;data, std::string &amp;hash)</argsstring>
+        <name>addFileData</name>
+        <qualifiedname>satox::ipfs::IPFSManager::addFileData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="68" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="383" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aab0d7bcf595ac18514699c837133ce34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::getFile</definition>
+        <argsstring>(const std::string &amp;hash, const std::string &amp;outputPath)</argsstring>
+        <name>getFile</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="69" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="401" bodyend="403"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a28070141097d5c40a6b7693d1f71417f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::getFile</definition>
+        <argsstring>(const std::string &amp;hash, std::string &amp;data)</argsstring>
+        <name>getFile</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="70" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="405" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa5edaa5c19783cb4f0b6d3d129561e9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::pinFile</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>pinFile</name>
+        <qualifiedname>satox::ipfs::IPFSManager::pinFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="71" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="427" bodyend="429"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a9ef16d4c47ac745fc8245a3373bdc5fd" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="454" endline="456">pinHash</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1addb88feae94e49828d7d9b40939773d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::unpinFile</definition>
+        <argsstring>(const std::string &amp;hash)</argsstring>
+        <name>unpinFile</name>
+        <qualifiedname>satox::ipfs::IPFSManager::unpinFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="72" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="431" bodyend="433"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a573888753b63f5a27fc6488fed7b3097" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="458" endline="460">unpinHash</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a9c56eb97498f1483a28d01e2357861fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::getPinnedFiles</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;pinnedFiles)</argsstring>
+        <name>getPinnedFiles</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getPinnedFiles</qualifiedname>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>pinnedFiles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="73" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="435" bodyend="437"/>
+        <referencedby refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IPFSManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="74" column="17"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ac96dc9011864d8dcb02ea67b6f63bc53" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="379" endline="381">addFile</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aab0d7bcf595ac18514699c837133ce34" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="401" endline="403">getFile</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="439" endline="441">getLastError</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a9c56eb97498f1483a28d01e2357861fa" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="435" endline="437">getPinnedFiles</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af90ecdacfa823b017392da62c0678b48">initialize</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1acc423fae6de4216c059b021b637c46dd" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="349" endline="351">isInitialized</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa5edaa5c19783cb4f0b6d3d129561e9f" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="427" endline="429">pinFile</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1addb88feae94e49828d7d9b40939773d0" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="431" endline="433">unpinFile</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a12395f3ca53505a4fa7fb4f178f69be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::ipfs::IPFSManager::addData</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>addData</name>
+        <qualifiedname>satox::ipfs::IPFSManager::addData</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="77" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="444" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ae4f07aec234d5e91fd70cb922d809d1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::ipfs::IPFSManager::getData</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getData</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="78" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="449" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a9ef16d4c47ac745fc8245a3373bdc5fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::pinHash</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>pinHash</name>
+        <qualifiedname>satox::ipfs::IPFSManager::pinHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="79" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="454" bodyend="456"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa5edaa5c19783cb4f0b6d3d129561e9f" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="427" endline="429">pinFile</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a573888753b63f5a27fc6488fed7b3097" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::unpinHash</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>unpinHash</name>
+        <qualifiedname>satox::ipfs::IPFSManager::unpinHash</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="80" column="10" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="458" bodyend="460"/>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1addb88feae94e49828d7d9b40939773d0" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="431" endline="433">unpinFile</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a72dc15f52f9785738c6670d9760bb52c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::ipfs::IPFSManager::listPinnedHashes</definition>
+        <argsstring>()</argsstring>
+        <name>listPinnedHashes</name>
+        <qualifiedname>satox::ipfs::IPFSManager::listPinnedHashes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="81" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="462" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1acb19998539261fb6dfd4f9e2bc53fae8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::ipfs::IPFSManager::getIPFSInfo</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSInfo</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="82" column="20" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="467" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aeb85edd2fa150860ed9667fdd51c134a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::ipfs::IPFSManager::getIPFSHistory</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSHistory</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSHistory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="83" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="472" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ade2883c74be4b22f92fb991b9bc82624" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::ipfs::IPFSManager::getIPFSBalances</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSBalances</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSBalances</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="84" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="477" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad1ddfed80362783f3fdc76e097f18d13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::ipfs::IPFSManager::getIPFSTransactions</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSTransactions</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSTransactions</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="85" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="482" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ac6bd2e475874dab87865c432c9ac009e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::ipfs::IPFSManager::getIPFSAddresses</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSAddresses</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSAddresses</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="86" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="487" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad4c55f7d28ea26b41090f1f461a180d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::ipfs::IPFSManager::getIPFSAddressBalances</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSAddressBalances</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSAddressBalances</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="87" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="492" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aafd38a3484439ef2b458cfb7e3fd62ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::ipfs::IPFSManager::getIPFSAddressTransactions</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSAddressTransactions</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSAddressTransactions</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="88" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="497" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a33e69ec89dc1c27045ca3adef4a348a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::ipfs::IPFSManager::getIPFSAddressHistory</definition>
+        <argsstring>(const std::string &amp;ipfs_hash)</argsstring>
+        <name>getIPFSAddressHistory</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getIPFSAddressHistory</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ipfs_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="89" column="17" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="502" bodyend="505"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ace32482a407cb587fe4bb2bb12a1cacc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::validateConfig</definition>
+        <argsstring>(const IPFSConfig &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::ipfs::IPFSManager::validateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="db/d79/structsatox_1_1ipfs_1_1IPFSConfig" kindref="compound">IPFSConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="129" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a427e6ac1ec0ed92b33cacc443e4e11d3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::validateContent</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data) const</argsstring>
+        <name>validateContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::validateContent</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="130" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab10a1cb69e803bfc734988bf8c2d354d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::validateCID</definition>
+        <argsstring>(const std::string &amp;cid) const</argsstring>
+        <name>validateCID</name>
+        <qualifiedname>satox::ipfs::IPFSManager::validateCID</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="131" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a7a2192c39a8f933f4a9c90289b762bfa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::updateContentAccessTime</definition>
+        <argsstring>(const std::string &amp;cid)</argsstring>
+        <name>updateContentAccessTime</name>
+        <qualifiedname>satox::ipfs::IPFSManager::updateContentAccessTime</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="132" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3cf05e1503c221b69338db11daacee59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::persistContent</definition>
+        <argsstring>(const std::string &amp;cid, const IPFSContent &amp;content)</argsstring>
+        <name>persistContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::persistContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="133" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aeddbff6f19b08edca46af149992dcbeb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::ipfs::IPFSManager::loadContent</definition>
+        <argsstring>(const std::string &amp;cid, IPFSContent &amp;content)</argsstring>
+        <name>loadContent</name>
+        <qualifiedname>satox::ipfs::IPFSManager::loadContent</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <param>
+          <type><ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="134" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab25f447927afdac86aeee78735f84310" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::notifyContentUpdate</definition>
+        <argsstring>(const std::string &amp;cid, const IPFSContent &amp;content)</argsstring>
+        <name>notifyContentUpdate</name>
+        <qualifiedname>satox::ipfs::IPFSManager::notifyContentUpdate</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="dc/d95/structsatox_1_1ipfs_1_1IPFSContent" kindref="compound">IPFSContent</ref> &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="135" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af626871abde1360ca7170f83ff0eef78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::notifyError</definition>
+        <argsstring>(const std::string &amp;error)</argsstring>
+        <name>notifyError</name>
+        <qualifiedname>satox::ipfs::IPFSManager::notifyError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="136" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aefd4f01542eda0e82d76dc84d263f598" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::ipfs::IPFSManager::notifyProgress</definition>
+        <argsstring>(const std::string &amp;cid, uint32_t progress)</argsstring>
+        <name>notifyProgress</name>
+        <qualifiedname>satox::ipfs::IPFSManager::notifyProgress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cid</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>progress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="137" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IPFSManager::IPFSManager</definition>
+        <argsstring>()</argsstring>
+        <name>IPFSManager</name>
+        <qualifiedname>satox::ipfs::IPFSManager::IPFSManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="92" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a91480e94e687485894e4d0d095443e38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::ipfs::IPFSManager::~IPFSManager</definition>
+        <argsstring>()</argsstring>
+        <name>~IPFSManager</name>
+        <qualifiedname>satox::ipfs::IPFSManager::~IPFSManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="93" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afc2a6f5b4736789c3ea3ae00f2ef7853" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager" kindref="compound">IPFSManager</ref> &amp;</type>
+        <definition>IPFSManager &amp; satox::ipfs::IPFSManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::ipfs::IPFSManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ipfs/include/satox/ipfs/ipfs_manager.hpp" line="49" column="24" bodyfile="src/ipfs/src/ipfs_manager.cpp" bodystart="41" bodyend="46"/>
+        <references refid="d2/dc8/namespacesatox_1_1ipfs_1a3294d1aa3cd3d04a1d7705d82673117c" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="39">satox::ipfs::instance</references>
+        <references refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" compoundref="de/d7d/ipfs_2src_2ipfs__manager_8cpp" startline="334" endline="334">IPFSManager</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/ipfs/ipfs_manager.hpp" line="62" column="1" bodyfile="src/core/include/satox/ipfs/ipfs_manager.hpp" bodystart="62" bodyend="148"/>
+    <listofallmembers>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa57632d2038acd679f1b3156eb53a524" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>addContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a12395f3ca53505a4fa7fb4f178f69be0" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>addData</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ac96dc9011864d8dcb02ea67b6f63bc53" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>addFile</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ae11612bcf8d3b54e5b98c1a45677424c" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>addFileData</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3bd89c60a9b99fddf6e40ecc81c1f8eb" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>batchAddContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aebe37c42ab231352e7972bf0cc74f32f" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>batchPinContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a10e333840ae8c2424f3af4667ace8f6c" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>batchUnpinContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1adcb3a48bf89f66439d450adceccae607" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>cache_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a4cd78ef412109d4b73232423ba590b16" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>clearCache</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a39076142db6ede9197ef004499f7d7cd" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>config_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3e039f1ddb9645362dcc3c9b16bcc466" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>content_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a314d4a5df041074715474296484f319a" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>ContentCallback</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad1b364d37f6992532c23fd1b1968719e" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>contentCallbacks_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a506f97c8d372da27d07fa004a9ab6aef" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>ErrorCallback</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1abb1af8d85c7b867b4c57631824ae5bda" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>errorCallbacks_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a80e0cf79cf7e2752273f217b8c792c77" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af18b4a84f9c5aa476203688b101b680a" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getContentType</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ae4f07aec234d5e91fd70cb922d809d1e" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getData</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aab0d7bcf595ac18514699c837133ce34" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getFile</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a28070141097d5c40a6b7693d1f71417f" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getFile</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a6a77c4b73fc08d750b8dca4815bb39cc" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getFromCache</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a6630c514da18c5d62236cb4d3f1d8b9e" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getGatewayUrl</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afc2a6f5b4736789c3ea3ae00f2ef7853" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getInstance</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad4c55f7d28ea26b41090f1f461a180d3" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSAddressBalances</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ac6bd2e475874dab87865c432c9ac009e" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSAddresses</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a33e69ec89dc1c27045ca3adef4a348a4" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSAddressHistory</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aafd38a3484439ef2b458cfb7e3fd62ab" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSAddressTransactions</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ade2883c74be4b22f92fb991b9bc82624" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSBalances</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aeb85edd2fa150860ed9667fdd51c134a" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSHistory</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1acb19998539261fb6dfd4f9e2bc53fae8" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSInfo</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad1ddfed80362783f3fdc76e097f18d13" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getIPFSTransactions</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getLastError</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a56e75bc5053beac9bd93f41250a8afca" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getLastError</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ace48c728027b0e2b2935275c784724bf" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getMetadata</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a9c56eb97498f1483a28d01e2357861fa" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getPinnedFiles</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a6ced8073baa75915be9c85692ff208b8" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>getStatistics</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af90ecdacfa823b017392da62c0678b48" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>initialize</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a76ff34895cf25537ff058bd924b28d07" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>initialize</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>IPFSManager</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a40536d64d16ed7db27479e989380f70e" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>IPFSManager</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aaf3918b9feb2971999973d3f4d98d94c" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>IPFSManager</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2bcc702581a3e3ff03b93bc4c2687a5" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>IPFSManager</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a5b8b57dab33beef24bea5a65990165e2" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>isCached</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3d86d48acffbdaf838880d7549aa7bf2" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>isContentPinned</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aae1317725399d984944a8f2be4ff222f" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>isGatewayEnabled</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab66d6d0dcb619d6f076acf54c63108db" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>isHealthy</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1acc423fae6de4216c059b021b637c46dd" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>isInitialized</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a1efb48f701d83fb5c920a205341e1581" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>isRunning</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a80b8d4129e7df331a3d9119d2622e014" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>lastError_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a74ee9228bce23fd6b47e5a5c831baf54" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>listContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a0b1d8a19d763d64d88485c194ff6e192" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>listPinnedContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a72dc15f52f9785738c6670d9760bb52c" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>listPinnedHashes</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aeddbff6f19b08edca46af149992dcbeb" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>loadContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab4b9eeb654e2ed10a7eb4648d4f0a0ad" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>mutex_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab25f447927afdac86aeee78735f84310" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>notifyContentUpdate</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af626871abde1360ca7170f83ff0eef78" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>notifyError</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aefd4f01542eda0e82d76dc84d263f598" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>notifyProgress</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afcc46097b8523df3020969ceba6f7e5d" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>operator=</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1afbe3b0b8d356dddb89ff797f7e0239c0" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>operator=</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3cf05e1503c221b69338db11daacee59" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>persistContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab44fba4cf22121d61605b5b6ace6f147" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>pimpl_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab2d3def8433e6dbe624fd1139526e2e4" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>pinContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa5edaa5c19783cb4f0b6d3d129561e9f" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>pinFile</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a9ef16d4c47ac745fc8245a3373bdc5fd" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>pinHash</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aa206e2539be53b03cefd7f1eed0e73ed" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>ProgressCallback</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a3f6ea154e792f484cc2ff251706227c7" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>progressCallbacks_</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af84da298c8b16479760250925a1e9bff" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>registerContentCallback</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1af03dbe1599f4a2219bef4e220e0f3b80" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>registerErrorCallback</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ad9853399e863abaac5dd32dccfa4bc3a" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>registerProgressCallback</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a2b77b26d9a3cfece17ac3ee0ba030641" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>removeContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a2cd97bfd8d48866c5883b54a8b26031e" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>setContentType</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a4814321a30a9d6d9c036d1ba32292999" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>shutdown</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a4814321a30a9d6d9c036d1ba32292999" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>shutdown</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1aed42c2320b455e50c07cd47f59da2eaa" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>unpinContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1addb88feae94e49828d7d9b40939773d0" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>unpinFile</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a573888753b63f5a27fc6488fed7b3097" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>unpinHash</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a7a2192c39a8f933f4a9c90289b762bfa" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>updateContentAccessTime</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a414d2224a69bb7c67f8e9a7660afd6a1" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>updateMetadata</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ab10a1cb69e803bfc734988bf8c2d354d" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>validateCID</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1ace32482a407cb587fe4bb2bb12a1cacc" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>validateConfig</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a427e6ac1ec0ed92b33cacc443e4e11d3" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>validateContent</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a91480e94e687485894e4d0d095443e38" prot="public" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>~IPFSManager</name></member>
+      <member refid="dc/d29/classsatox_1_1ipfs_1_1IPFSManager_1a91480e94e687485894e4d0d095443e38" prot="private" virt="non-virtual"><scope>satox::ipfs::IPFSManager</scope><name>~IPFSManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

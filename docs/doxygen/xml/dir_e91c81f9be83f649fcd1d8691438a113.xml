@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_e91c81f9be83f649fcd1d8691438a113" kind="dir">
+    <compoundname>src/wallet</compoundname>
+    <innerdir refid="dir_c60f9ed89e05797107ae21c0c0947f57">src/wallet/include</innerdir>
+    <innerdir refid="dir_5ef6854c128b8e6485741c3e368410fd">src/wallet/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A standalone C++ wallet library for the Satox blockchain, providing key management, address derivation, and cryptographic utilities.</para>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md131">
+<title>Features</title><para><itemizedlist>
+<listitem><para>Key pair generation and validation</para>
+</listitem><listitem><para>Address derivation</para>
+</listitem><listitem><para>Secure cryptographic operations using OpenSSL EVP API</para>
+</listitem><listitem><para>Designed for standalone use or SDK integration</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md132">
+<title>Build Instructions</title><para><programlisting filename=".sh"><codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md133">
+<title>Install</title><para><programlisting filename=".sh"><codeline><highlight class="normal">make<sp/>install</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md134">
+<title>Standalone Usage Example</title><para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" kindref="compound">satox/wallet/key_manager.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d9/d9b/namespacesatox_1_1wallet" kindref="compound">satox::wallet</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d0a/main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager" kindref="compound">KeyManager</ref><sp/>km;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>km.<ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a78304d3036d313ddba88e1501e34ae6c" kindref="member">initialize</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyManager::KeyPair</ref><sp/>kp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(km.<ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac1216cb4dd6d1b086ae86e0ef8d3ebdf" kindref="member">generateKeyPair</ref>(kp))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>kp.privateKey,<sp/>kp.publicKey,<sp/>kp.address</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md135">
+<title>SDK Integration Example</title><para>In your SDK&apos;s CMakeLists.txt: <programlisting filename=".cmake"><codeline><highlight class="normal">add_subdirectory(path/to/satox-wallet)</highlight></codeline>
+<codeline><highlight class="normal">target_link_libraries(satox-sdk<sp/>PRIVATE<sp/>satox-wallet)</highlight></codeline>
+<codeline><highlight class="normal">target_include_directories(satox-sdk<sp/>PRIVATE<sp/>path/to/satox-wallet/include)</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md136">
+<title>Testing</title><para><programlisting filename=".sh"><codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">ctest</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md137">
+<title>API Documentation</title><para><itemizedlist>
+<listitem><para>See <computeroutput><ref refid="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" kindref="compound">include/satox/wallet/key_manager.hpp</ref></computeroutput> for Doxygen-style comments and API details.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md138">
+<title>⚠️ Limitations</title><sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md139">
+<title><bold>Blockchain Compatibility</bold></title><para><itemizedlist>
+<listitem><para><bold>No Smart Contract Support:</bold> Satox is based on Ravencoin and does <bold>not</bold> support smart contracts or EVM compatibility</para>
+</listitem><listitem><para><bold>Asset-Based:</bold> Focuses on asset creation, management, and transfer rather than programmable contracts</para>
+</listitem><listitem><para><bold>UTXO Model:</bold> Uses Unspent Transaction Output (UTXO) model like Bitcoin/Ravencoin, not account-based like Ethereum</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md140">
+<title><bold>Platform Support</bold></title><para><itemizedlist>
+<listitem><para><bold>Desktop Focus:</bold> Primarily designed for desktop/server environments</para>
+</listitem><listitem><para><bold>Mobile Limitations:</bold> Mobile SDK provides limited functionality compared to core SDK</para>
+</listitem><listitem><para><bold>Browser Support:</bold> WebAssembly bindings have performance limitations for complex operations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md141">
+<title><bold>Network Requirements</bold></title><para><itemizedlist>
+<listitem><para><bold>Internet Connection:</bold> Requires active internet connection for blockchain operations</para>
+</listitem><listitem><para><bold>Node Synchronization:</bold> Full node operations require significant storage and bandwidth</para>
+</listitem><listitem><para><bold>API Dependencies:</bold> Some features depend on external API services</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md142">
+<title><bold>Development Considerations</bold></title><para><itemizedlist>
+<listitem><para><bold>Learning Curve:</bold> Ravencoin/UTXO model differs from Ethereum/smart contract development</para>
+</listitem><listitem><para><bold>Testing Environment:</bold> Testnet required for development and testing</para>
+</listitem><listitem><para><bold>Asset Management:</bold> Asset creation and management have specific requirements and limitations</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="/home/pform/pform-building-stuff/satox-projects/SDK-projects/projects/satox-sdk/src/wallet/README.md_1autotoc_md143">
+<title>License</title><para>MIT </para>
+</sect1>
+    </detaileddescription>
+    <location file="src/wallet/"/>
+  </compounddef>
+</doxygen>

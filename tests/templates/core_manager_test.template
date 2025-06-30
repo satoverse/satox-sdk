@@ -1,0 +1,230 @@
+# Core Manager Test Template
+# This template should be adapted for each language while maintaining the same test structure
+
+# Test Suite: Core Manager
+# Language: {LANGUAGE}
+# Description: Tests the core functionality of the Satox SDK
+
+# Test Cases:
+# 1. Initialization
+#    - Test manager creation
+#    - Test initialization
+#    - Test double initialization error
+#    - Test uninitialized operations error
+
+# 2. Version Management
+#    - Test version retrieval
+#    - Test version format
+
+# 3. Build Information
+#    - Test build info retrieval
+#    - Test build info structure
+
+# 4. Configuration
+#    - Test config validation
+#    - Test invalid config handling
+#    - Test config update
+
+# 5. Data Management
+#    - Test backup creation
+#    - Test backup restoration
+#    - Test invalid backup handling
+
+# 6. Maintenance
+#    - Test maintenance execution
+#    - Test maintenance scheduling
+
+# 7. Health Checks
+#    - Test health check execution
+#    - Test health status format
+#    - Test health metrics
+
+# 8. Reset Functionality
+#    - Test reset to defaults
+#    - Test reset confirmation
+#    - Test reset validation
+
+# Implementation Notes:
+# - Each test should verify both success and failure cases
+# - All operations should check for proper initialization
+# - Error messages should be consistent across languages
+# - Mock data should be used for external dependencies
+# - Tests should be independent and not rely on execution order
+
+# Example Test Structure (Python):
+"""
+def test_initialization():
+    manager = CoreManager()
+    assert not manager.is_initialized()
+    manager.initialize()
+    assert manager.is_initialized()
+    with pytest.raises(RuntimeError):
+        manager.initialize()  # Double initialization should fail
+
+def test_version():
+    manager = CoreManager()
+    manager.initialize()
+    version = manager.get_version()
+    assert isinstance(version, str)
+    assert version.count('.') == 2  # Semantic versioning
+
+def test_build_info():
+    manager = CoreManager()
+    manager.initialize()
+    build_info = manager.get_build_info()
+    assert isinstance(build_info, dict)
+    assert 'version' in build_info
+    assert 'build_time' in build_info
+"""
+
+# Example Test Structure (JavaScript):
+"""
+describe('CoreManager', () => {
+    let manager;
+
+    beforeEach(() => {
+        manager = new CoreManager();
+    });
+
+    test('initialization', () => {
+        expect(manager.isInitialized()).toBe(false);
+        manager.initialize();
+        expect(manager.isInitialized()).toBe(true);
+        expect(() => manager.initialize()).toThrow();
+    });
+
+    test('version', () => {
+        manager.initialize();
+        const version = manager.getVersion();
+        expect(typeof version).toBe('string');
+        expect(version.split('.').length).toBe(3);
+    });
+
+    test('build info', () => {
+        manager.initialize();
+        const buildInfo = manager.getBuildInfo();
+        expect(typeof buildInfo).toBe('object');
+        expect(buildInfo).toHaveProperty('version');
+        expect(buildInfo).toHaveProperty('buildTime');
+    });
+});
+"""
+
+# Example Test Structure (Go):
+"""
+func TestCoreManager(t *testing.T) {
+    manager := NewCoreManager()
+    
+    t.Run("initialization", func(t *testing.T) {
+        if manager.IsInitialized() {
+            t.Error("Manager should not be initialized")
+        }
+        err := manager.Initialize()
+        if err != nil {
+            t.Errorf("Initialization failed: %v", err)
+        }
+        if !manager.IsInitialized() {
+            t.Error("Manager should be initialized")
+        }
+        err = manager.Initialize()
+        if err == nil {
+            t.Error("Double initialization should fail")
+        }
+    })
+
+    t.Run("version", func(t *testing.T) {
+        version, err := manager.GetVersion()
+        if err != nil {
+            t.Errorf("GetVersion failed: %v", err)
+        }
+        if !strings.Contains(version, ".") {
+            t.Error("Version should be in semantic versioning format")
+        }
+    })
+}
+"""
+
+# Example Test Structure (Lua):
+"""
+describe("CoreManager", function()
+    local manager
+
+    setup(function()
+        manager = CoreManager.new()
+    end)
+
+    it("should handle initialization", function()
+        assert.is_false(manager:isInitialized())
+        manager:initialize()
+        assert.is_true(manager:isInitialized())
+        assert.has_error(function()
+            manager:initialize()
+        end, "CoreManager already initialized")
+    end)
+
+    it("should return version", function()
+        manager:initialize()
+        local version = manager:getVersion()
+        assert.is_string(version)
+        assert.is_true(#version:split("%.") == 3)
+    end)
+end)
+"""
+
+# Example Test Structure (C#):
+"""
+[TestClass]
+public class CoreManagerTests
+{
+    private CoreManager _manager;
+
+    [TestInitialize]
+    public void Setup()
+    {
+        _manager = new CoreManager();
+    }
+
+    [TestMethod]
+    public void TestInitialization()
+    {
+        Assert.IsFalse(_manager.IsInitialized);
+        _manager.Initialize();
+        Assert.IsTrue(_manager.IsInitialized);
+        Assert.ThrowsException<InvalidOperationException>(() => _manager.Initialize());
+    }
+
+    [TestMethod]
+    public void TestVersion()
+    {
+        _manager.Initialize();
+        var version = _manager.GetVersion();
+        Assert.IsNotNull(version);
+        Assert.IsTrue(version.Split('.').Length == 3);
+    }
+}
+"""
+
+# Example Test Structure (WASM):
+"""
+describe('CoreManager', () => {
+    let manager;
+
+    beforeEach(() => {
+        manager = new CoreManager();
+    });
+
+    test('initialization', () => {
+        expect(manager.isInitialized()).toBe(false);
+        manager.initialize();
+        expect(manager.isInitialized()).toBe(true);
+        expect(() => manager.initialize()).toThrow();
+    });
+
+    test('version', () => {
+        manager.initialize();
+        const version = manager.getVersion();
+        expect(typeof version).toBe('string');
+        expect(version.split('.').length).toBe(3);
+    });
+});
+""" 

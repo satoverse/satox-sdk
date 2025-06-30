@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection" kind="struct" language="C++" prot="private">
+    <compoundname>satox::database::ConnectionPool::Connection</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1aa207cc3540c49ceb828d7dd16b5581c4" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; void &gt;</type>
+        <definition>std::shared_ptr&lt;void&gt; satox::database::ConnectionPool::Connection::handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <qualifiedname>satox::database::ConnectionPool::Connection::handle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="107" column="25" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1aae52d45f3a57fad61a8844a65bb7ab18" prot="public" static="no" mutable="no">
+        <type>std::chrono::steady_clock::time_point</type>
+        <definition>std::chrono::steady_clock::time_point satox::database::ConnectionPool::Connection::created_at</definition>
+        <argsstring></argsstring>
+        <name>created_at</name>
+        <qualifiedname>satox::database::ConnectionPool::Connection::created_at</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="108" column="47" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1a961ba6bbc3cefa98ac80fb9577c548ed" prot="public" static="no" mutable="no">
+        <type>std::chrono::steady_clock::time_point</type>
+        <definition>std::chrono::steady_clock::time_point satox::database::ConnectionPool::Connection::last_used</definition>
+        <argsstring></argsstring>
+        <name>last_used</name>
+        <qualifiedname>satox::database::ConnectionPool::Connection::last_used</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="109" column="47" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1a75d27ca82dbfd8edfbfd0df5722b5a70" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::database::ConnectionPool::Connection::in_use</definition>
+        <argsstring></argsstring>
+        <name>in_use</name>
+        <qualifiedname>satox::database::ConnectionPool::Connection::in_use</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/connection_pool.hpp" line="110" column="14" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::database::ConnectionPool::Connection</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; void &gt;</label>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; void &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/database/include/satox/database/connection_pool.hpp" line="106" column="5" bodyfile="src/database/include/satox/database/connection_pool.hpp" bodystart="106" bodyend="111"/>
+    <listofallmembers>
+      <member refid="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1aae52d45f3a57fad61a8844a65bb7ab18" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool::Connection</scope><name>created_at</name></member>
+      <member refid="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1aa207cc3540c49ceb828d7dd16b5581c4" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool::Connection</scope><name>handle</name></member>
+      <member refid="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1a75d27ca82dbfd8edfbfd0df5722b5a70" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool::Connection</scope><name>in_use</name></member>
+      <member refid="d3/d06/structsatox_1_1database_1_1ConnectionPool_1_1Connection_1a961ba6bbc3cefa98ac80fb9577c548ed" prot="public" virt="non-virtual"><scope>satox::database::ConnectionPool::Connection</scope><name>last_used</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

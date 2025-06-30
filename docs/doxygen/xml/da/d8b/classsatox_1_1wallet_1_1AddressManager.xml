@@ -1,0 +1,827 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="da/d8b/classsatox_1_1wallet_1_1AddressManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::wallet::AddressManager</compoundname>
+    <includes refid="d7/d40/address__manager_8hpp" local="no">address_manager.hpp</includes>
+    <innerclass refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" prot="public">satox::wallet::AddressManager::AddressInfo</innerclass>
+    <innerclass refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" prot="public">satox::wallet::AddressManager::Error</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a60d24fa492f0b39cadffcae0ff09c675" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::wallet::AddressManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::wallet::AddressManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="116" column="16" bodyfile="src/wallet/include/satox/wallet/address_manager.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac6676098f7228b2a465d000fc16fa991" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref> &gt;</type>
+        <definition>std::map&lt;std::string, AddressInfo&gt; satox::wallet::AddressManager::addressCache_</definition>
+        <argsstring></argsstring>
+        <name>addressCache_</name>
+        <qualifiedname>satox::wallet::AddressManager::addressCache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="117" column="14" bodyfile="src/wallet/include/satox/wallet/address_manager.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a79e9a159a49e46a0f23ad20c3bb7df78" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error satox::wallet::AddressManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::wallet::AddressManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="118" column="11" bodyfile="src/wallet/include/satox/wallet/address_manager.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1afd4156c9f66663634f035f87220e7682" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::wallet::AddressManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::wallet::AddressManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="119" column="10" bodyfile="src/wallet/include/satox/wallet/address_manager.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a681e210c5c6d08f0dec78c46643e1a94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" kindref="compound">AddressManager</ref> &amp;</type>
+        <definition>AddressManager &amp; satox::wallet::AddressManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::wallet::AddressManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="46" column="27" bodyfile="src/wallet/src/address_manager.cpp" bodystart="39" bodyend="42"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52">AddressManager</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::wallet::AddressManager::AddressManager</definition>
+        <argsstring>(const AddressManager &amp;)=delete</argsstring>
+        <name>AddressManager</name>
+        <qualifiedname>satox::wallet::AddressManager::AddressManager</qualifiedname>
+        <param>
+          <type>const <ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" kindref="compound">AddressManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="49" column="5"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52">AddressManager</references>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52">AddressManager</referencedby>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a681e210c5c6d08f0dec78c46643e1a94" compoundref="df/d17/address__manager_8cpp" startline="39" endline="42">getInstance</referencedby>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a34ddf06bf02153bafec808ff4411d275">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a34ddf06bf02153bafec808ff4411d275" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" kindref="compound">AddressManager</ref> &amp;</type>
+        <definition>AddressManager &amp; satox::wallet::AddressManager::operator=</definition>
+        <argsstring>(const AddressManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::wallet::AddressManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="da/d8b/classsatox_1_1wallet_1_1AddressManager" kindref="compound">AddressManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="50" column="20"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52">AddressManager</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a38c37caaeefabbb1d58775fc8de3036b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::AddressManager::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::wallet::AddressManager::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="53" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="44" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a57183aba72a98962dc6aa086c4b05d16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::AddressManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::wallet::AddressManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="54" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="57" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1acd115c67bda6f3f62bc5973f69a82371" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::generateAddress</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>generateAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::generateAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="57" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="69" bodyend="98"/>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5f949fe5aefb9271c4ef876eee1c4294" compoundref="df/d17/address__manager_8cpp" startline="318" endline="320">deriveAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9f92aa4a563eb97ceccc505868b9a236" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::generateSegWitAddress</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>generateSegWitAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::generateSegWitAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="58" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="100" bodyend="121"/>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aee2bfc13bcd7c3293213737a2cae0ce4" compoundref="df/d17/address__manager_8cpp" startline="322" endline="324">deriveSegWitAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af44caa2e1af67c77cf857cfdac0094b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::generateMultiSigAddress</definition>
+        <argsstring>(const std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &amp;publicKeys, int requiredSignatures)</argsstring>
+        <name>generateMultiSigAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::generateMultiSigAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &amp;</type>
+          <declname>publicKeys</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>requiredSignatures</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="59" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="123" bodyend="155"/>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a520663432e613f3d02e3bbf4810639c1" compoundref="df/d17/address__manager_8cpp" startline="326" endline="328">deriveMultiSigAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ae437b493304002d39bb0dcad15c76870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::AddressManager::validateAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>validateAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::validateAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="62" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="157" bodyend="180"/>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7945d0c1dcacecd7fcb5a7237166b308" compoundref="df/d17/address__manager_8cpp" startline="276" endline="316">getAddressInfo</referencedby>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a18cace5500e4030b17731f6eb19abaa8" compoundref="df/d17/address__manager_8cpp" startline="240" endline="268">toSegWitAddress</referencedby>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a8e4afa551b1d5bb3156201d5adf78b6a" compoundref="df/d17/address__manager_8cpp" startline="199" endline="201">validateMultiSigAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a30ef9bb8fbac62191502f971119f1c28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::AddressManager::validateSegWitAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>validateSegWitAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::validateSegWitAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="63" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="182" bodyend="197"/>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7945d0c1dcacecd7fcb5a7237166b308" compoundref="df/d17/address__manager_8cpp" startline="276" endline="316">getAddressInfo</referencedby>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad36932ff8a1c43ab834958509303b01a" compoundref="df/d17/address__manager_8cpp" startline="203" endline="238">toLegacyAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a8e4afa551b1d5bb3156201d5adf78b6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::wallet::AddressManager::validateMultiSigAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>validateMultiSigAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::validateMultiSigAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="64" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="199" bodyend="201"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ae437b493304002d39bb0dcad15c76870" compoundref="df/d17/address__manager_8cpp" startline="157" endline="180">validateAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad36932ff8a1c43ab834958509303b01a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::toLegacyAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>toLegacyAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::toLegacyAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="67" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="203" bodyend="238"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a30ef9bb8fbac62191502f971119f1c28" compoundref="df/d17/address__manager_8cpp" startline="182" endline="197">validateSegWitAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a18cace5500e4030b17731f6eb19abaa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::toSegWitAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>toSegWitAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::toSegWitAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="68" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="240" bodyend="268"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ae437b493304002d39bb0dcad15c76870" compoundref="df/d17/address__manager_8cpp" startline="157" endline="180">validateAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aa2f3d8b5b1ddeca65fa6cdb5afc6796e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::toMultiSigAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>toMultiSigAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::toMultiSigAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="69" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="270" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7945d0c1dcacecd7fcb5a7237166b308" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref></type>
+        <definition>AddressManager::AddressInfo satox::wallet::AddressManager::getAddressInfo</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>getAddressInfo</name>
+        <qualifiedname>satox::wallet::AddressManager::getAddressInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="79" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="276" bodyend="316"/>
+        <references refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a2c616d6cb4ccb8949b241f2aa944bdde" compoundref="d7/d40/address__manager_8hpp" startline="73">satox::wallet::AddressManager::AddressInfo::address</references>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad1cee81eb1030446b895cc7644540c71" compoundref="df/d17/address__manager_8cpp" startline="330" endline="333">cacheAddress</references>
+        <references refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a52813a3a3ff2b421a74748b2d7011a59" compoundref="d7/d40/address__manager_8hpp" startline="75">satox::wallet::AddressManager::AddressInfo::scriptHash</references>
+        <references refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo_1a2239d4eed26c51c5390f538deb02f325" compoundref="d7/d40/address__manager_8hpp" startline="74">satox::wallet::AddressManager::AddressInfo::type</references>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ae437b493304002d39bb0dcad15c76870" compoundref="df/d17/address__manager_8cpp" startline="157" endline="180">validateAddress</references>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a30ef9bb8fbac62191502f971119f1c28" compoundref="df/d17/address__manager_8cpp" startline="182" endline="197">validateSegWitAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5f949fe5aefb9271c4ef876eee1c4294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::deriveAddress</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, uint32_t purpose, uint32_t coinType, uint32_t account, uint32_t change, uint32_t addressIndex)</argsstring>
+        <name>deriveAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::deriveAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>purpose</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>coinType</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>account</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>change</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>addressIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="82" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="318" bodyend="320"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1acd115c67bda6f3f62bc5973f69a82371" compoundref="df/d17/address__manager_8cpp" startline="69" endline="98">generateAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aee2bfc13bcd7c3293213737a2cae0ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::deriveSegWitAddress</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;publicKey, uint32_t purpose, uint32_t coinType, uint32_t account, uint32_t change, uint32_t addressIndex)</argsstring>
+        <name>deriveSegWitAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::deriveSegWitAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>purpose</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>coinType</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>account</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>change</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>addressIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="83" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="322" bodyend="324"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9f92aa4a563eb97ceccc505868b9a236" compoundref="df/d17/address__manager_8cpp" startline="100" endline="121">generateSegWitAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a520663432e613f3d02e3bbf4810639c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::deriveMultiSigAddress</definition>
+        <argsstring>(const std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &amp;publicKeys, int requiredSignatures, uint32_t purpose, uint32_t coinType, uint32_t account, uint32_t change, uint32_t addressIndex)</argsstring>
+        <name>deriveMultiSigAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::deriveMultiSigAddress</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &amp;</type>
+          <declname>publicKeys</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>requiredSignatures</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>purpose</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>coinType</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>account</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>change</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>addressIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="84" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="326" bodyend="328"/>
+        <references refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af44caa2e1af67c77cf857cfdac0094b5" compoundref="df/d17/address__manager_8cpp" startline="123" endline="155">generateMultiSigAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad1cee81eb1030446b895cc7644540c71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::AddressManager::cacheAddress</definition>
+        <argsstring>(const std::string &amp;address, const AddressInfo &amp;info)</argsstring>
+        <name>cacheAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::cacheAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="87" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="330" bodyend="333"/>
+        <referencedby refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7945d0c1dcacecd7fcb5a7237166b308" compoundref="df/d17/address__manager_8cpp" startline="276" endline="316">getAddressInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac8c173d76eebc338093fa8b1d2703529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::AddressManager::removeCachedAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>removeCachedAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::removeCachedAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="88" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="335" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9de108d28c93ab8ad101a721adee45ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/dc3/structsatox_1_1wallet_1_1AddressManager_1_1AddressInfo" kindref="compound">AddressInfo</ref></type>
+        <definition>AddressManager::AddressInfo satox::wallet::AddressManager::getCachedAddress</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>getCachedAddress</name>
+        <qualifiedname>satox::wallet::AddressManager::getCachedAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="89" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="340" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af5b094b7d70cb7dc307b4306ea5e4121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::AddressManager::clearAddressCache</definition>
+        <argsstring>()</argsstring>
+        <name>clearAddressCache</name>
+        <qualifiedname>satox::wallet::AddressManager::clearAddressCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="90" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="349" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7d91149aaa07a44b68003a601e8336a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/db2/structsatox_1_1wallet_1_1AddressManager_1_1Error" kindref="compound">Error</ref></type>
+        <definition>AddressManager::Error satox::wallet::AddressManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::wallet::AddressManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="97" column="11" bodyfile="src/wallet/src/address_manager.cpp" bodystart="354" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7c5f3a0785fa71caa0730739553796c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::wallet::AddressManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::wallet::AddressManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="98" column="10" bodyfile="src/wallet/src/address_manager.cpp" bodystart="358" bodyend="360"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a04cfff19e4bb49ab41d23ddd797ee854" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::wallet::AddressManager::AddressManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>AddressManager</name>
+        <qualifiedname>satox::wallet::AddressManager::AddressManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="101" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af3fd055c01ea010dd769664482ba1547" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::wallet::AddressManager::~AddressManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~AddressManager</name>
+        <qualifiedname>satox::wallet::AddressManager::~AddressManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="102" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a8a0dbf2e2c6c494e1d3218a9899f375c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::hash160</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>hash160</name>
+        <qualifiedname>satox::wallet::AddressManager::hash160</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="105" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="363" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aba9bf579b12f34886e26917757cfab18" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::sha256</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>sha256</name>
+        <qualifiedname>satox::wallet::AddressManager::sha256</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="106" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="368" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a345c47c05f2d5a4a884120640b6f9f9f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::ripemd160</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>ripemd160</name>
+        <qualifiedname>satox::wallet::AddressManager::ripemd160</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="107" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="390" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a3dbabc31373fa21189251d79b109bb1f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::doubleSha256</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>doubleSha256</name>
+        <qualifiedname>satox::wallet::AddressManager::doubleSha256</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="108" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="412" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a87a0029e5f643bfd242b0b4b305638f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::base58Encode</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>base58Encode</name>
+        <qualifiedname>satox::wallet::AddressManager::base58Encode</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="109" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="417" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9a0c74ab1e05adaa226c7f5544afd033" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::base58Decode</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>base58Decode</name>
+        <qualifiedname>satox::wallet::AddressManager::base58Decode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="110" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="456" bodyend="533"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac9ca7f54474d9dd42e3bc6ec21531ed7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::wallet::AddressManager::bech32Encode</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::string &amp;hrp)</argsstring>
+        <name>bech32Encode</name>
+        <qualifiedname>satox::wallet::AddressManager::bech32Encode</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hrp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="111" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="535" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ab6e8f35a14999e5a35e0cf7895dbaed4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::bech32Decode</definition>
+        <argsstring>(const std::string &amp;str, std::string &amp;hrp)</argsstring>
+        <name>bech32Decode</name>
+        <qualifiedname>satox::wallet::AddressManager::bech32Decode</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>hrp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="112" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="546" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7b1f4ec3ae1934163bfdc579a077aaf3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::wallet::AddressManager::createRedeemScript</definition>
+        <argsstring>(const std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &amp;publicKeys, int requiredSignatures)</argsstring>
+        <name>createRedeemScript</name>
+        <qualifiedname>satox::wallet::AddressManager::createRedeemScript</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; uint8_t &gt; &gt; &amp;</type>
+          <declname>publicKeys</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>requiredSignatures</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="113" column="17" bodyfile="src/wallet/src/address_manager.cpp" bodystart="567" bodyend="584"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/wallet/include/satox/wallet/address_manager.hpp" line="44" column="1" bodyfile="src/wallet/include/satox/wallet/address_manager.hpp" bodystart="44" bodyend="120"/>
+    <listofallmembers>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac6676098f7228b2a465d000fc16fa991" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>addressCache_</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5909ccefbb9e5a880e283c6f0f515c52" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>AddressManager</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a04cfff19e4bb49ab41d23ddd797ee854" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>AddressManager</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9a0c74ab1e05adaa226c7f5544afd033" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>base58Decode</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a87a0029e5f643bfd242b0b4b305638f6" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>base58Encode</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ab6e8f35a14999e5a35e0cf7895dbaed4" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>bech32Decode</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac9ca7f54474d9dd42e3bc6ec21531ed7" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>bech32Encode</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad1cee81eb1030446b895cc7644540c71" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>cacheAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af5b094b7d70cb7dc307b4306ea5e4121" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>clearAddressCache</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7c5f3a0785fa71caa0730739553796c5" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>clearLastError</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7b1f4ec3ae1934163bfdc579a077aaf3" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>createRedeemScript</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a5f949fe5aefb9271c4ef876eee1c4294" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>deriveAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a520663432e613f3d02e3bbf4810639c1" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>deriveMultiSigAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aee2bfc13bcd7c3293213737a2cae0ce4" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>deriveSegWitAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a3dbabc31373fa21189251d79b109bb1f" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>doubleSha256</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1acd115c67bda6f3f62bc5973f69a82371" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>generateAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af44caa2e1af67c77cf857cfdac0094b5" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>generateMultiSigAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9f92aa4a563eb97ceccc505868b9a236" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>generateSegWitAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7945d0c1dcacecd7fcb5a7237166b308" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>getAddressInfo</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a9de108d28c93ab8ad101a721adee45ff" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>getCachedAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a681e210c5c6d08f0dec78c46643e1a94" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>getInstance</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a7d91149aaa07a44b68003a601e8336a9" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>getLastError</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a8a0dbf2e2c6c494e1d3218a9899f375c" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>hash160</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a38c37caaeefabbb1d58775fc8de3036b" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>initialize</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1afd4156c9f66663634f035f87220e7682" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>initialized_</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a79e9a159a49e46a0f23ad20c3bb7df78" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>lastError_</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a60d24fa492f0b39cadffcae0ff09c675" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>mutex_</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a34ddf06bf02153bafec808ff4411d275" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>operator=</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ac8c173d76eebc338093fa8b1d2703529" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>removeCachedAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a345c47c05f2d5a4a884120640b6f9f9f" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>ripemd160</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aba9bf579b12f34886e26917757cfab18" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>sha256</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a57183aba72a98962dc6aa086c4b05d16" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>shutdown</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ad36932ff8a1c43ab834958509303b01a" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>toLegacyAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1aa2f3d8b5b1ddeca65fa6cdb5afc6796e" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>toMultiSigAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a18cace5500e4030b17731f6eb19abaa8" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>toSegWitAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1ae437b493304002d39bb0dcad15c76870" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>validateAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a8e4afa551b1d5bb3156201d5adf78b6a" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>validateMultiSigAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1a30ef9bb8fbac62191502f971119f1c28" prot="public" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>validateSegWitAddress</name></member>
+      <member refid="da/d8b/classsatox_1_1wallet_1_1AddressManager_1af3fd055c01ea010dd769664482ba1547" prot="private" virt="non-virtual"><scope>satox::wallet::AddressManager</scope><name>~AddressManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

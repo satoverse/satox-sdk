@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/da4/structsatox_1_1database_1_1DatabaseHealth" kind="struct" language="C++" prot="public">
+    <compoundname>satox::database::DatabaseHealth</compoundname>
+    <includes refid="dc/d57/database_2include_2satox_2database_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1aeecddb8a6810279843409e3375031d20" prot="public" static="no" mutable="no">
+        <type><ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052" kindref="member">DatabaseStatus</ref></type>
+        <definition>DatabaseStatus satox::database::DatabaseHealth::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>satox::database::DatabaseHealth::status</qualifiedname>
+        <initializer>= <ref refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">DatabaseStatus::UNKNOWN</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="107" column="20" bodyfile="src/database/include/satox/database/types.hpp" bodystart="107" bodyend="-1"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa4b16650bd0ee6bfd2fa822da73e785f" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="49" endline="108">satox::database::DatabaseManager::initialize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8262e51d51cec89a6a41c7e390c89b7a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseHealth::healthy</definition>
+        <argsstring></argsstring>
+        <name>healthy</name>
+        <qualifiedname>satox::database::DatabaseHealth::healthy</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="108" column="10" bodyfile="src/database/include/satox/database/types.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8eb1cc3f6438bc51e4b461487c9b5111" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseHealth::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>satox::database::DatabaseHealth::message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="109" column="17" bodyfile="src/database/include/satox/database/types.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac2a6142906d71a4d8ef49359b456e0c3" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::database::DatabaseHealth::lastCheck</definition>
+        <argsstring></argsstring>
+        <name>lastCheck</name>
+        <qualifiedname>satox::database::DatabaseHealth::lastCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="110" column="43" bodyfile="src/database/include/satox/database/types.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a9b1f4a7e3ab850323523c24b9c83f896" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::database::DatabaseHealth::consecutiveFailures</definition>
+        <argsstring></argsstring>
+        <name>consecutiveFailures</name>
+        <qualifiedname>satox::database::DatabaseHealth::consecutiveFailures</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="111" column="9" bodyfile="src/database/include/satox/database/types.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac73c3fd6d6c577daafd00db462be4974" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::DatabaseHealth::details</definition>
+        <argsstring></argsstring>
+        <name>details</name>
+        <qualifiedname>satox::database::DatabaseHealth::details</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="112" column="20" bodyfile="src/database/include/satox/database/types.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::database::DatabaseHealth</label>
+        <link refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/database/include/satox/database/types.hpp" line="106" column="1" bodyfile="src/database/include/satox/database/types.hpp" bodystart="106" bodyend="113"/>
+    <listofallmembers>
+      <member refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a9b1f4a7e3ab850323523c24b9c83f896" prot="public" virt="non-virtual"><scope>satox::database::DatabaseHealth</scope><name>consecutiveFailures</name></member>
+      <member refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac73c3fd6d6c577daafd00db462be4974" prot="public" virt="non-virtual"><scope>satox::database::DatabaseHealth</scope><name>details</name></member>
+      <member refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8262e51d51cec89a6a41c7e390c89b7a" prot="public" virt="non-virtual"><scope>satox::database::DatabaseHealth</scope><name>healthy</name></member>
+      <member refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1ac2a6142906d71a4d8ef49359b456e0c3" prot="public" virt="non-virtual"><scope>satox::database::DatabaseHealth</scope><name>lastCheck</name></member>
+      <member refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1a8eb1cc3f6438bc51e4b461487c9b5111" prot="public" virt="non-virtual"><scope>satox::database::DatabaseHealth</scope><name>message</name></member>
+      <member refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1aeecddb8a6810279843409e3375031d20" prot="public" virt="non-virtual"><scope>satox::database::DatabaseHealth</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

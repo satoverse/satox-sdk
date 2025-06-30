@@ -1,0 +1,41 @@
+{
+    "security": {
+        "pqc": {
+            "enabled": true,
+            "default_level": "Level3",
+            "hybrid_mode": true,
+            "key_rotation": {
+                "enabled": true,
+                "interval": "30d"
+            },
+            "fallback": {
+                "enabled": true,
+                "algorithm": "AES-256-GCM"
+            },
+            "algorithms": {
+                "kem": {
+                    "default": "ML-KEM-768",
+                    "fallback": "AES-256-GCM"
+                },
+                "dsa": {
+                    "default": "ML-DSA-192",
+                    "fallback": "Ed25519"
+                }
+            },
+            "performance": {
+                "cache_enabled": true,
+                "cache_size": 1000,
+                "cache_ttl": "1h"
+            },
+            "monitoring": {
+                "enabled": true,
+                "metrics": [
+                    "operation_time",
+                    "error_rate",
+                    "key_usage",
+                    "resource_usage"
+                ]
+            }
+        }
+    }
+} 

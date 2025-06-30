@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp" kind="file" language="C++">
+    <compoundname>transaction_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="d3/d16/connection__pool_8hpp" local="yes">satox/database/connection_pool.hpp</includes>
+    <includedby refid="d1/dd1/migration__manager_8hpp" local="yes">src/database/include/satox/database/migration_manager.hpp</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>satox/database/connection_pool.hpp</label>
+        <link refid="d3/d16/connection__pool_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/database/include/satox/database/transaction_manager.hpp</label>
+        <link refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>atomic</label>
+      </node>
+      <node id="7">
+        <label>chrono</label>
+      </node>
+      <node id="12">
+        <label>condition_variable</label>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="9">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="11">
+        <label>queue</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/database/include/satox/database/migration_manager.hpp</label>
+        <link refid="d1/dd1/migration__manager_8hpp"/>
+      </node>
+      <node id="1">
+        <label>src/database/include/satox/database/transaction_manager.hpp</label>
+        <link refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="df/d54/classsatox_1_1database_1_1TransactionManager" prot="public">satox::database::TransactionManager</innerclass>
+    <innerclass refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" prot="public">satox::database::TransactionManager::TransactionConfig</innerclass>
+    <innerclass refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" prot="public">satox::database::TransactionManager::TransactionStats</innerclass>
+    <innerclass refid="df/d35/structsatox_1_1database_1_1TransactionManager_1_1Transaction" prot="private">satox::database::TransactionManager::Transaction</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="db/dfd/namespacesatox_1_1database">satox::database</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d3/d16/connection__pool_8hpp" kindref="compound">satox/database/connection_pool.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/dfd/namespacesatox_1_1database" kindref="compound">database</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="df/d54/classsatox_1_1database_1_1TransactionManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TransactionManager<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" kindref="compound">TransactionConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="44" refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1add65d70eb1f9bc5530fbb781c785d543" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1add65d70eb1f9bc5530fbb781c785d543" kindref="member">timeout</ref>;</highlight></codeline>
+<codeline lineno="45" refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1a4874d23229fe661463bea4143d236261" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1a4874d23229fe661463bea4143d236261" kindref="member">auto_commit</ref>;</highlight></codeline>
+<codeline lineno="46" refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1ae7bb0b96176d41d4bb35cabe0c349ada" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1ae7bb0b96176d41d4bb35cabe0c349ada" kindref="member">read_only</ref>;</highlight></codeline>
+<codeline lineno="47" refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1a87153fd41f9113529c52d439de23e8d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig_1a87153fd41f9113529c52d439de23e8d5" kindref="member">isolation_level</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" kindref="compound">TransactionStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1ab1bb651511627332c891bf93bca54d6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1ab1bb651511627332c891bf93bca54d6f" kindref="member">active_transactions</ref>;</highlight></codeline>
+<codeline lineno="52" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1abf57ac880e8149f3a6508978ef5963af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1abf57ac880e8149f3a6508978ef5963af" kindref="member">committed_transactions</ref>;</highlight></codeline>
+<codeline lineno="53" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a928501de8721af5c670f0202f0c8fd5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a928501de8721af5c670f0202f0c8fd5f" kindref="member">rolled_back_transactions</ref>;</highlight></codeline>
+<codeline lineno="54" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1ace29fa454accdba686c4402cb026cf47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1ace29fa454accdba686c4402cb026cf47" kindref="member">failed_transactions</ref>;</highlight></codeline>
+<codeline lineno="55" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a4f2a27cf023ae3de8afdca3b4fbb5178" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a4f2a27cf023ae3de8afdca3b4fbb5178" kindref="member">avg_transaction_time</ref>;</highlight></codeline>
+<codeline lineno="56" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a1513c98c0bbe4a0f63e44bada9222ca5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a1513c98c0bbe4a0f63e44bada9222ca5" kindref="member">deadlocks</ref>;</highlight></codeline>
+<codeline lineno="57" refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a0201e805b766ebc9f42f63bffe9fd17a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats_1a0201e805b766ebc9f42f63bffe9fd17a" kindref="member">timeouts</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ae9a60f71e6d148590a616b3e38636fe9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>TransactionManager&amp;<sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ae9a60f71e6d148590a616b3e38636fe9" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a47b7ab916762896307d2b435157f022b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a47b7ab916762896307d2b435157f022b" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" kindref="compound">TransactionConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="63" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a56af232398d76bca3dd24308f11c5b33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a56af232398d76bca3dd24308f11c5b33" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transaction<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a6100a11b7966437ecf14eb7420edff31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a6100a11b7966437ecf14eb7420edff31" kindref="member">beginTransaction</ref>();</highlight></codeline>
+<codeline lineno="67" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a678715d838e9fc27f3a07a46e4436beb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a678715d838e9fc27f3a07a46e4436beb" kindref="member">commitTransaction</ref>();</highlight></codeline>
+<codeline lineno="68" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a1f9c6aced98ff21f205d01949a4d4eea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a1f9c6aced98ff21f205d01949a4d4eea" kindref="member">rollbackTransaction</ref>();</highlight></codeline>
+<codeline lineno="69" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9c59024e12328ce167b6f9a069b3a522" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9c59024e12328ce167b6f9a069b3a522" kindref="member">isInTransaction</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transaction<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1aa8054078ae163df3831d36c14a4978a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1aa8054078ae163df3831d36c14a4978a5" kindref="member">executeQuery</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>query,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>params<sp/>=<sp/>nlohmann::json::object());</highlight></codeline>
+<codeline lineno="73" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a85283a51677d14239d22f3d23dad9f7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a85283a51677d14239d22f3d23dad9f7d" kindref="member">executeBatch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>queries,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;nlohmann::json&gt;&amp;<sp/>params);</highlight></codeline>
+<codeline lineno="74" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a68d43e041cb04be8b7e966d9d367ec2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a68d43e041cb04be8b7e966d9d367ec2d" kindref="member">executeQueryWithResult</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>query,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nlohmann::json&amp;<sp/>params<sp/>=<sp/>nlohmann::json::object());</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Savepoint<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a53c5fd2c5b9b5ebd373be02085d572eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a53c5fd2c5b9b5ebd373be02085d572eb" kindref="member">createSavepoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="78" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac04761d7543e361aba123d1bce1e61cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac04761d7543e361aba123d1bce1e61cb" kindref="member">rollbackToSavepoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="79" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9302e4e99ad38486f1081a4bfcd438be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9302e4e99ad38486f1081a4bfcd438be" kindref="member">releaseSavepoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transaction<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1adf50fd0d231def18c290037d989b68ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1adf50fd0d231def18c290037d989b68ff" kindref="member">setTimeout</ref>(std::chrono::seconds<sp/>timeout);</highlight></codeline>
+<codeline lineno="83" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a0cb1916e0568048c6f3ff0ef03ed1857" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a0cb1916e0568048c6f3ff0ef03ed1857" kindref="member">setAutoCommit</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>auto_commit);</highlight></codeline>
+<codeline lineno="84" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac5709cc0579a6ea0e71569def7c1973d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac5709cc0579a6ea0e71569def7c1973d" kindref="member">setReadOnly</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>read_only);</highlight></codeline>
+<codeline lineno="85" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a60a874f9ef37aa3a926e98ce13ea9bea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a60a874f9ef37aa3a926e98ce13ea9bea" kindref="member">setIsolationLevel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>level);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>and<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a4b102d9d9e9c60821d7fa2048abda7ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" kindref="compound">TransactionStats</ref><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a4b102d9d9e9c60821d7fa2048abda7ce" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a064e749f64e7b9db4912d42561e78561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a064e749f64e7b9db4912d42561e78561" kindref="member">resetStats</ref>();</highlight></codeline>
+<codeline lineno="90" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a96a038e87988447f3ec0596868a57bec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a96a038e87988447f3ec0596868a57bec" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91" refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9a55fbfacf915a68c6cf5131ada42c6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9a55fbfacf915a68c6cf5131ada42c6b" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>TransactionManager()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>~TransactionManager();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>TransactionManager(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TransactionManager&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>TransactionManager&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TransactionManager&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>transaction<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Transaction<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;void&gt;<sp/>connection;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::steady_clock::time_point<sp/>start_time;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>isolation_level;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>read_only;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>savepoints;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateTransaction()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkTimeout()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStats(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>committed);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleDeadlock();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleTimeout();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>TransactionConfig<sp/>config_;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Transaction&gt;<sp/>current_transaction_;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>running_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>active_transactions_;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>committed_transactions_;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>rolled_back_transactions_;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>failed_transactions_;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>deadlocks_;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>timeouts_;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>last_error_;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/database/include/satox/database/transaction_manager.hpp"/>
+  </compounddef>
+</doxygen>

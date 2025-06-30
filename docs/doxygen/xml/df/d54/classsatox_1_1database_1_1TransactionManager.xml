@@ -1,0 +1,712 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/d54/classsatox_1_1database_1_1TransactionManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::database::TransactionManager</compoundname>
+    <includes refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp" local="no">transaction_manager.hpp</includes>
+    <innerclass refid="df/d35/structsatox_1_1database_1_1TransactionManager_1_1Transaction" prot="private">satox::database::TransactionManager::Transaction</innerclass>
+    <innerclass refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" prot="public">satox::database::TransactionManager::TransactionConfig</innerclass>
+    <innerclass refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" prot="public">satox::database::TransactionManager::TransactionStats</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1af9110f64f95e5533a87aff24175e5316" prot="private" static="no" mutable="no">
+        <type><ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" kindref="compound">TransactionConfig</ref></type>
+        <definition>TransactionConfig satox::database::TransactionManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::database::TransactionManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="115" column="23" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a667e047de7566c0a6a8ab023b3f7205e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Transaction &gt;</type>
+        <definition>std::unique_ptr&lt;Transaction&gt; satox::database::TransactionManager::current_transaction_</definition>
+        <argsstring></argsstring>
+        <name>current_transaction_</name>
+        <qualifiedname>satox::database::TransactionManager::current_transaction_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="116" column="21" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1af4b619ed034f7a8a920a1454ee3b1cbe" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::database::TransactionManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::database::TransactionManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="117" column="24" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1acc5b5dfffa8b89b6aa96190b117be97a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::database::TransactionManager::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::database::TransactionManager::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="118" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1aca785f57ebeee4d745b358097d5fba42" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::TransactionManager::active_transactions_</definition>
+        <argsstring></argsstring>
+        <name>active_transactions_</name>
+        <qualifiedname>satox::database::TransactionManager::active_transactions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="119" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a163449bef8256a4c7fa02a54a500f561" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::TransactionManager::committed_transactions_</definition>
+        <argsstring></argsstring>
+        <name>committed_transactions_</name>
+        <qualifiedname>satox::database::TransactionManager::committed_transactions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="120" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1af98f2f58acaa33f486b28ce00efdc2ff" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::TransactionManager::rolled_back_transactions_</definition>
+        <argsstring></argsstring>
+        <name>rolled_back_transactions_</name>
+        <qualifiedname>satox::database::TransactionManager::rolled_back_transactions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="121" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a2b9f714a097150f466b7f39dc7a58893" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::TransactionManager::failed_transactions_</definition>
+        <argsstring></argsstring>
+        <name>failed_transactions_</name>
+        <qualifiedname>satox::database::TransactionManager::failed_transactions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="122" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a8a2e396d3e269c6be4afccc115891f78" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::TransactionManager::deadlocks_</definition>
+        <argsstring></argsstring>
+        <name>deadlocks_</name>
+        <qualifiedname>satox::database::TransactionManager::deadlocks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="123" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a6303704502c23c343bd12d04b3b885f1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::TransactionManager::timeouts_</definition>
+        <argsstring></argsstring>
+        <name>timeouts_</name>
+        <qualifiedname>satox::database::TransactionManager::timeouts_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="124" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d54/classsatox_1_1database_1_1TransactionManager_1accf503ec9172cc61cd14fb2f0310ab73" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::TransactionManager::last_error_</definition>
+        <argsstring></argsstring>
+        <name>last_error_</name>
+        <qualifiedname>satox::database::TransactionManager::last_error_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="125" column="17" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1ae9a60f71e6d148590a616b3e38636fe9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager" kindref="compound">TransactionManager</ref> &amp;</type>
+        <definition>static TransactionManager &amp; satox::database::TransactionManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::database::TransactionManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="60" column="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a47b7ab916762896307d2b435157f022b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::initialize</definition>
+        <argsstring>(const TransactionConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::database::TransactionManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="db/d8a/structsatox_1_1database_1_1TransactionManager_1_1TransactionConfig" kindref="compound">TransactionConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="62" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a56af232398d76bca3dd24308f11c5b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::database::TransactionManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="63" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a6100a11b7966437ecf14eb7420edff31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::beginTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>beginTransaction</name>
+        <qualifiedname>satox::database::TransactionManager::beginTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="66" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a678715d838e9fc27f3a07a46e4436beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::commitTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>commitTransaction</name>
+        <qualifiedname>satox::database::TransactionManager::commitTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="67" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a1f9c6aced98ff21f205d01949a4d4eea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::rollbackTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>rollbackTransaction</name>
+        <qualifiedname>satox::database::TransactionManager::rollbackTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="68" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a9c59024e12328ce167b6f9a069b3a522" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::isInTransaction</definition>
+        <argsstring>() const</argsstring>
+        <name>isInTransaction</name>
+        <qualifiedname>satox::database::TransactionManager::isInTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="69" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1aa8054078ae163df3831d36c14a4978a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::executeQuery</definition>
+        <argsstring>(const std::string &amp;query, const nlohmann::json &amp;params=nlohmann::json::object())</argsstring>
+        <name>executeQuery</name>
+        <qualifiedname>satox::database::TransactionManager::executeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+          <defval>nlohmann::json::object()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="72" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a85283a51677d14239d22f3d23dad9f7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::executeBatch</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;queries, const std::vector&lt; nlohmann::json &gt; &amp;params)</argsstring>
+        <name>executeBatch</name>
+        <qualifiedname>satox::database::TransactionManager::executeBatch</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>queries</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; nlohmann::json &gt; &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="73" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a68d43e041cb04be8b7e966d9d367ec2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::TransactionManager::executeQueryWithResult</definition>
+        <argsstring>(const std::string &amp;query, const nlohmann::json &amp;params=nlohmann::json::object())</argsstring>
+        <name>executeQueryWithResult</name>
+        <qualifiedname>satox::database::TransactionManager::executeQueryWithResult</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+          <defval>nlohmann::json::object()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="74" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a53c5fd2c5b9b5ebd373be02085d572eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::createSavepoint</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>createSavepoint</name>
+        <qualifiedname>satox::database::TransactionManager::createSavepoint</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="77" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1ac04761d7543e361aba123d1bce1e61cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::rollbackToSavepoint</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>rollbackToSavepoint</name>
+        <qualifiedname>satox::database::TransactionManager::rollbackToSavepoint</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="78" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a9302e4e99ad38486f1081a4bfcd438be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::releaseSavepoint</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>releaseSavepoint</name>
+        <qualifiedname>satox::database::TransactionManager::releaseSavepoint</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="79" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1adf50fd0d231def18c290037d989b68ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::setTimeout</definition>
+        <argsstring>(std::chrono::seconds timeout)</argsstring>
+        <name>setTimeout</name>
+        <qualifiedname>satox::database::TransactionManager::setTimeout</qualifiedname>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="82" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a0cb1916e0568048c6f3ff0ef03ed1857" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::setAutoCommit</definition>
+        <argsstring>(bool auto_commit)</argsstring>
+        <name>setAutoCommit</name>
+        <qualifiedname>satox::database::TransactionManager::setAutoCommit</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>auto_commit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="83" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1ac5709cc0579a6ea0e71569def7c1973d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::setReadOnly</definition>
+        <argsstring>(bool read_only)</argsstring>
+        <name>setReadOnly</name>
+        <qualifiedname>satox::database::TransactionManager::setReadOnly</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>read_only</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="84" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a60a874f9ef37aa3a926e98ce13ea9bea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::setIsolationLevel</definition>
+        <argsstring>(const std::string &amp;level)</argsstring>
+        <name>setIsolationLevel</name>
+        <qualifiedname>satox::database::TransactionManager::setIsolationLevel</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="85" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a4b102d9d9e9c60821d7fa2048abda7ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/da5/structsatox_1_1database_1_1TransactionManager_1_1TransactionStats" kindref="compound">TransactionStats</ref></type>
+        <definition>TransactionStats satox::database::TransactionManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::database::TransactionManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="88" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a064e749f64e7b9db4912d42561e78561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::database::TransactionManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="89" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a96a038e87988447f3ec0596868a57bec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::database::TransactionManager::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="90" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a9a55fbfacf915a68c6cf5131ada42c6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::TransactionManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::database::TransactionManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="91" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1afc18ef086313e1437703e515f1753c80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::TransactionManager::TransactionManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>TransactionManager</name>
+        <qualifiedname>satox::database::TransactionManager::TransactionManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="94" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a3f6a133ebb17e489800d1c4739a6d724" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::TransactionManager::~TransactionManager</definition>
+        <argsstring>()</argsstring>
+        <name>~TransactionManager</name>
+        <qualifiedname>satox::database::TransactionManager::~TransactionManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="95" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a4d86fcc91ce5c89031a7656506c26574" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::TransactionManager::TransactionManager</definition>
+        <argsstring>(const TransactionManager &amp;)=delete</argsstring>
+        <name>TransactionManager</name>
+        <qualifiedname>satox::database::TransactionManager::TransactionManager</qualifiedname>
+        <param>
+          <type>const <ref refid="df/d54/classsatox_1_1database_1_1TransactionManager" kindref="compound">TransactionManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="96" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a9e11a27d21acce39e407c3477ddd2901" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d54/classsatox_1_1database_1_1TransactionManager" kindref="compound">TransactionManager</ref> &amp;</type>
+        <definition>TransactionManager &amp; satox::database::TransactionManager::operator=</definition>
+        <argsstring>(const TransactionManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::database::TransactionManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="df/d54/classsatox_1_1database_1_1TransactionManager" kindref="compound">TransactionManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="97" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1af9d0cff9520a70865c8dd74ffbf2ff08" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::validateTransaction</definition>
+        <argsstring>() const</argsstring>
+        <name>validateTransaction</name>
+        <qualifiedname>satox::database::TransactionManager::validateTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="109" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1a60f357c82bb26b257e6c7e69fc721650" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::TransactionManager::checkTimeout</definition>
+        <argsstring>() const</argsstring>
+        <name>checkTimeout</name>
+        <qualifiedname>satox::database::TransactionManager::checkTimeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="110" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1ac299103adcc47ffa41b8daee6daf3759" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::updateStats</definition>
+        <argsstring>(bool success, bool committed)</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::database::TransactionManager::updateStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>committed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="111" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1aa7b7a4c391ceee693c1f2d00602a7766" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::handleDeadlock</definition>
+        <argsstring>()</argsstring>
+        <name>handleDeadlock</name>
+        <qualifiedname>satox::database::TransactionManager::handleDeadlock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="112" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d54/classsatox_1_1database_1_1TransactionManager_1ae4670298ff07421fb65a5f5f35178d17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::TransactionManager::handleTimeout</definition>
+        <argsstring>()</argsstring>
+        <name>handleTimeout</name>
+        <qualifiedname>satox::database::TransactionManager::handleTimeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/transaction_manager.hpp" line="113" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/database/include/satox/database/transaction_manager.hpp" line="41" column="1" bodyfile="src/database/include/satox/database/transaction_manager.hpp" bodystart="41" bodyend="126"/>
+    <listofallmembers>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1aca785f57ebeee4d745b358097d5fba42" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>active_transactions_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a6100a11b7966437ecf14eb7420edff31" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>beginTransaction</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a60f357c82bb26b257e6c7e69fc721650" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>checkTimeout</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a163449bef8256a4c7fa02a54a500f561" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>committed_transactions_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a678715d838e9fc27f3a07a46e4436beb" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>commitTransaction</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1af9110f64f95e5533a87aff24175e5316" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>config_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a53c5fd2c5b9b5ebd373be02085d572eb" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>createSavepoint</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a667e047de7566c0a6a8ab023b3f7205e" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>current_transaction_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a8a2e396d3e269c6be4afccc115891f78" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>deadlocks_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a85283a51677d14239d22f3d23dad9f7d" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>executeBatch</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1aa8054078ae163df3831d36c14a4978a5" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>executeQuery</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a68d43e041cb04be8b7e966d9d367ec2d" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>executeQueryWithResult</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a2b9f714a097150f466b7f39dc7a58893" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>failed_transactions_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ae9a60f71e6d148590a616b3e38636fe9" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>getInstance</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9a55fbfacf915a68c6cf5131ada42c6b" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>getLastError</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a4b102d9d9e9c60821d7fa2048abda7ce" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>getStats</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1aa7b7a4c391ceee693c1f2d00602a7766" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>handleDeadlock</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ae4670298ff07421fb65a5f5f35178d17" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>handleTimeout</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a47b7ab916762896307d2b435157f022b" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>initialize</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a96a038e87988447f3ec0596868a57bec" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>isHealthy</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9c59024e12328ce167b6f9a069b3a522" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>isInTransaction</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1accf503ec9172cc61cd14fb2f0310ab73" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>last_error_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1af4b619ed034f7a8a920a1454ee3b1cbe" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>mutex_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9e11a27d21acce39e407c3477ddd2901" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>operator=</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a9302e4e99ad38486f1081a4bfcd438be" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>releaseSavepoint</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a064e749f64e7b9db4912d42561e78561" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>resetStats</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac04761d7543e361aba123d1bce1e61cb" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>rollbackToSavepoint</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a1f9c6aced98ff21f205d01949a4d4eea" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>rollbackTransaction</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1af98f2f58acaa33f486b28ce00efdc2ff" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>rolled_back_transactions_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1acc5b5dfffa8b89b6aa96190b117be97a" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>running_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a0cb1916e0568048c6f3ff0ef03ed1857" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>setAutoCommit</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a60a874f9ef37aa3a926e98ce13ea9bea" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>setIsolationLevel</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac5709cc0579a6ea0e71569def7c1973d" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>setReadOnly</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1adf50fd0d231def18c290037d989b68ff" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>setTimeout</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a56af232398d76bca3dd24308f11c5b33" prot="public" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>shutdown</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a6303704502c23c343bd12d04b3b885f1" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>timeouts_</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1afc18ef086313e1437703e515f1753c80" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>TransactionManager</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a4d86fcc91ce5c89031a7656506c26574" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>TransactionManager</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1ac299103adcc47ffa41b8daee6daf3759" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>updateStats</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1af9d0cff9520a70865c8dd74ffbf2ff08" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>validateTransaction</name></member>
+      <member refid="df/d54/classsatox_1_1database_1_1TransactionManager_1a3f6a133ebb17e489800d1c4739a6d724" prot="private" virt="non-virtual"><scope>satox::database::TransactionManager</scope><name>~TransactionManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

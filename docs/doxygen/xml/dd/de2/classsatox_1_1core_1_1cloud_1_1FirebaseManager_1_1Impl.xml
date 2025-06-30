@@ -1,0 +1,658 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::cloud::FirebaseManager::Impl</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1afb16ebc1d59eb164439b9af9f3ab97ec" prot="private" static="no" mutable="no">
+        <type><ref refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig" kindref="compound">FirebaseConfig</ref></type>
+        <definition>FirebaseConfig satox::core::cloud::FirebaseManager::Impl::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="459" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a29d1904f9d1b030f3110d3dce379b908" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::core::cloud::FirebaseManager::Impl::connected_</definition>
+        <argsstring></argsstring>
+        <name>connected_</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::connected_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="460" column="17" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa245b12870a63eec44fac1c173842d69" prot="private" static="no" mutable="no">
+        <type>CURL *</type>
+        <definition>CURL* satox::core::cloud::FirebaseManager::Impl::curl_handle_</definition>
+        <argsstring></argsstring>
+        <name>curl_handle_</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::curl_handle_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="461" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="461" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ae68819b8a3d3cfa99e4812de61f2d4a7" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::cloud::FirebaseManager::Impl::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="462" column="24" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="462" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ad8ade5f866f18b8c227a6f35c03cd1da" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::function&lt;void(const nlohmann::json&amp;)&gt; &gt; satox::core::cloud::FirebaseManager::Impl::callbacks_</definition>
+        <argsstring></argsstring>
+        <name>callbacks_</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="463" column="14" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="463" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa3b5704ebfaa5da8b97fe222d7ca1921" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::thread &gt;</type>
+        <definition>std::map&lt;std::string, std::thread&gt; satox::core::cloud::FirebaseManager::Impl::subscription_threads_</definition>
+        <argsstring></argsstring>
+        <name>subscription_threads_</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::subscription_threads_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="464" column="14" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="464" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a32d5c6c1b7d8cc49f2cb4e4806923fa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::cloud::FirebaseManager::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="25" column="5" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1acc2c1b32dddff96dedf13f8d7a1674ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::cloud::FirebaseManager::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="30" column="5" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac36347915dd21a4fdafe718413fc9e80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::FirebaseManager::Impl::initialize</definition>
+        <argsstring>(const FirebaseConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/d9d/structsatox_1_1core_1_1FirebaseConfig" kindref="compound">FirebaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="37" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="37" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::FirebaseManager::Impl::isConnected</definition>
+        <argsstring>() const</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::isConnected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="58" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="58" bodyend="60"/>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa948f6baf9cd8d147f7542058877413a" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="297" endline="314">callFunction</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ad8ee145cfda6285f051cf9f971e78079" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="119" endline="136">deleteData</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a59a3479d4651994982612b7c1e8206b7" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="277" endline="295">downloadFile</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a7fa2fd7a803138b7c469143992078eb3" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="166" endline="183">executeQuery</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a9b2dde8fb410319ac3b8edff6b32d142" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="185" endline="217">executeTransaction</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a817b729f459568c12579cfe52e563b8b" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="341" endline="348">getStatus</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1afedf4630733814d65944b8336439f7d3" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="138" endline="164">queryData</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac8fcc8bce1d084d37bce0d69930c2921" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="62" endline="79">readData</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ae5fd0e7e0b5b898e029142799c4bac6f" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="316" endline="339">sendNotification</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a0ddecbc4a4dbda7009f45f453a45490d" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="219" endline="240">subscribe</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a1b25d43f2d1948c1b30def87461808bc" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="100" endline="117">updateData</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac54bdd9161cd3705145765cf3ed7c05d" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="257" endline="275">uploadFile</referencedby>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a8b1dcbbb60017613b3faa2601ca1f57f" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="81" endline="98">writeData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac8fcc8bce1d084d37bce0d69930c2921" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::readData</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>readData</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::readData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="62" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="62" bodyend="79"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a8b1dcbbb60017613b3faa2601ca1f57f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::writeData</definition>
+        <argsstring>(const std::string &amp;path, const nlohmann::json &amp;data)</argsstring>
+        <name>writeData</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::writeData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="81" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="81" bodyend="98"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a9b2dde8fb410319ac3b8edff6b32d142" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="185" endline="217">executeTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a1b25d43f2d1948c1b30def87461808bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::updateData</definition>
+        <argsstring>(const std::string &amp;path, const nlohmann::json &amp;data)</argsstring>
+        <name>updateData</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::updateData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="100" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="100" bodyend="117"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a9b2dde8fb410319ac3b8edff6b32d142" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="185" endline="217">executeTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ad8ee145cfda6285f051cf9f971e78079" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::deleteData</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>deleteData</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::deleteData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="119" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="119" bodyend="136"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a9b2dde8fb410319ac3b8edff6b32d142" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="185" endline="217">executeTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1afedf4630733814d65944b8336439f7d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::queryData</definition>
+        <argsstring>(const std::string &amp;path, const nlohmann::json &amp;query)</argsstring>
+        <name>queryData</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::queryData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="138" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="138" bodyend="164"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <referencedby refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a7fa2fd7a803138b7c469143992078eb3" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="166" endline="183">executeQuery</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a7fa2fd7a803138b7c469143992078eb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::executeQuery</definition>
+        <argsstring>(const std::string &amp;service, const nlohmann::json &amp;params)</argsstring>
+        <name>executeQuery</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::executeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>service</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="166" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="166" bodyend="183"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1afedf4630733814d65944b8336439f7d3" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="138" endline="164">queryData</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a9b2dde8fb410319ac3b8edff6b32d142" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::executeTransaction</definition>
+        <argsstring>(const std::string &amp;service, const std::vector&lt; nlohmann::json &gt; &amp;actions)</argsstring>
+        <name>executeTransaction</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::executeTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>service</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; nlohmann::json &gt; &amp;</type>
+          <declname>actions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="185" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="185" bodyend="217"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ad8ee145cfda6285f051cf9f971e78079" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="119" endline="136">deleteData</references>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a1b25d43f2d1948c1b30def87461808bc" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="100" endline="117">updateData</references>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a8b1dcbbb60017613b3faa2601ca1f57f" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="81" endline="98">writeData</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a0ddecbc4a4dbda7009f45f453a45490d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::cloud::FirebaseManager::Impl::subscribe</definition>
+        <argsstring>(const std::string &amp;path, std::function&lt; void(const nlohmann::json &amp;)&gt; callback)</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::subscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const nlohmann::json &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="219" column="17" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="219" bodyend="240"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1abfc18ab68810dcb728ca662b8e989590" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::FirebaseManager::Impl::unsubscribe</definition>
+        <argsstring>(const std::string &amp;subscription_id)</argsstring>
+        <name>unsubscribe</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::unsubscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subscription_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="242" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="242" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac54bdd9161cd3705145765cf3ed7c05d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::uploadFile</definition>
+        <argsstring>(const std::string &amp;bucket, const std::string &amp;path, const std::string &amp;file_path)</argsstring>
+        <name>uploadFile</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::uploadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="257" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="257" bodyend="275"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a59a3479d4651994982612b7c1e8206b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::downloadFile</definition>
+        <argsstring>(const std::string &amp;bucket, const std::string &amp;path, const std::string &amp;local_path)</argsstring>
+        <name>downloadFile</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::downloadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bucket</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="277" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="277" bodyend="295"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa948f6baf9cd8d147f7542058877413a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::callFunction</definition>
+        <argsstring>(const std::string &amp;function_name, const nlohmann::json &amp;payload)</argsstring>
+        <name>callFunction</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::callFunction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>function_name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="297" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="297" bodyend="314"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ae5fd0e7e0b5b898e029142799c4bac6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::sendNotification</definition>
+        <argsstring>(const std::string &amp;token, const nlohmann::json &amp;notification)</argsstring>
+        <name>sendNotification</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::sendNotification</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>token</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>notification</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="316" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="316" bodyend="339"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a817b729f459568c12579cfe52e563b8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::getStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatus</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::getStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="341" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="341" bodyend="348"/>
+        <references refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" compoundref="d4/d77/cloud_2firebase__manager_8cpp" startline="58" endline="60">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a142f4d91edeecada21cb6488163f8ba9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::FirebaseManager::Impl::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::disconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="350" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="350" bodyend="364"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a33cddaa18b6a0155ded6c5350e35f22f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::cloud::FirebaseManager::Impl::testConnection</definition>
+        <argsstring>()</argsstring>
+        <name>testConnection</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::testConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="367" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="367" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a765b1e545188631c67b7d11eecae2e8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::makeHttpRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;method, const std::string &amp;data)</argsstring>
+        <name>makeHttpRequest</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::makeHttpRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="377" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="377" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ab2d04f27222f95b75915c690467dacd9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::makeFileUploadRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;file_path)</argsstring>
+        <name>makeFileUploadRequest</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::makeFileUploadRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="434" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="434" bodyend="437"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a0fd57ae2a814f3ce46afdb7ea2dff310" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::cloud::FirebaseManager::Impl::makeFileDownloadRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;local_path)</argsstring>
+        <name>makeFileDownloadRequest</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::makeFileDownloadRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="439" column="20" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="439" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a2b8d38508a46b51509520b7b91cdd98f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::cloud::FirebaseManager::Impl::handleSubscription</definition>
+        <argsstring>(const std::string &amp;path, const std::string &amp;subscription_id)</argsstring>
+        <name>handleSubscription</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::handleSubscription</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subscription_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="444" column="10" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="444" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a5e7d27e7214f6021b84ce737ed4ff8f8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::cloud::FirebaseManager::Impl::generateSubscriptionId</definition>
+        <argsstring>()</argsstring>
+        <name>generateSubscriptionId</name>
+        <qualifiedname>satox::core::cloud::FirebaseManager::Impl::generateSubscriptionId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/cloud/firebase_manager.cpp" line="454" column="17" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="454" bodyend="457"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/cloud/firebase_manager.cpp" line="23" column="1" bodyfile="src/core/cloud/firebase_manager.cpp" bodystart="23" bodyend="465"/>
+    <listofallmembers>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ad8ade5f866f18b8c227a6f35c03cd1da" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>callbacks_</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa948f6baf9cd8d147f7542058877413a" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>callFunction</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1afb16ebc1d59eb164439b9af9f3ab97ec" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>config_</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a29d1904f9d1b030f3110d3dce379b908" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>connected_</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa245b12870a63eec44fac1c173842d69" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>curl_handle_</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ad8ee145cfda6285f051cf9f971e78079" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>deleteData</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a142f4d91edeecada21cb6488163f8ba9" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>disconnect</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a59a3479d4651994982612b7c1e8206b7" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>downloadFile</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a7fa2fd7a803138b7c469143992078eb3" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>executeQuery</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a9b2dde8fb410319ac3b8edff6b32d142" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>executeTransaction</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a5e7d27e7214f6021b84ce737ed4ff8f8" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>generateSubscriptionId</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a817b729f459568c12579cfe52e563b8b" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>getStatus</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a2b8d38508a46b51509520b7b91cdd98f" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>handleSubscription</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a32d5c6c1b7d8cc49f2cb4e4806923fa6" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>Impl</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac36347915dd21a4fdafe718413fc9e80" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>initialize</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac20fab8d5e7754c69a58a543c12b0f7c" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>isConnected</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a0fd57ae2a814f3ce46afdb7ea2dff310" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>makeFileDownloadRequest</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ab2d04f27222f95b75915c690467dacd9" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>makeFileUploadRequest</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a765b1e545188631c67b7d11eecae2e8d" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>makeHttpRequest</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ae68819b8a3d3cfa99e4812de61f2d4a7" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>mutex_</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1afedf4630733814d65944b8336439f7d3" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>queryData</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac8fcc8bce1d084d37bce0d69930c2921" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>readData</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ae5fd0e7e0b5b898e029142799c4bac6f" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>sendNotification</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a0ddecbc4a4dbda7009f45f453a45490d" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>subscribe</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1aa3b5704ebfaa5da8b97fe222d7ca1921" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>subscription_threads_</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a33cddaa18b6a0155ded6c5350e35f22f" prot="private" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>testConnection</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1abfc18ab68810dcb728ca662b8e989590" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>unsubscribe</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a1b25d43f2d1948c1b30def87461808bc" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>updateData</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1ac54bdd9161cd3705145765cf3ed7c05d" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>uploadFile</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1a8b1dcbbb60017613b3faa2601ca1f57f" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>writeData</name></member>
+      <member refid="dd/de2/classsatox_1_1core_1_1cloud_1_1FirebaseManager_1_1Impl_1acc2c1b32dddff96dedf13f8d7a1674ed" prot="public" virt="non-virtual"><scope>satox::core::cloud::FirebaseManager::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

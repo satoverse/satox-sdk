@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['binary_0',['BINARY',['../da/d68/classsatox_1_1core_1_1IPFSManager.html#a832b720982f017fbadef80ad085f82c9a98ad0e8750ae10ad556ed7a62affb452',1,'satox::core::IPFSManager']]],
+  ['bitbox_1',['BITBOX',['../d0/d87/classsatox_1_1wallet_1_1WalletManager.html#a5ac942a4a4215a75ae7cc0683781a797a51a8bd948716e6d8e0f0e699e449d157',1,'satox::wallet::WalletManager']]],
+  ['block_2',['BLOCK',['../d9/d7d/structsatox_1_1core_1_1NetworkMessage.html#a68c1c73db8a63ebb135d9d0abac5df2ba4d34f53389ed7f28ca91fc31ea360a66',1,'satox::core::NetworkMessage::BLOCK'],['../df/daa/namespacesatox.html#ad79bbcb7f0f87ba6f076287b2ac5cbd8a4d34f53389ed7f28ca91fc31ea360a66',1,'satox::BLOCK']]],
+  ['block_5fvalidation_3',['BLOCK_VALIDATION',['../db/d68/structsatox_1_1blockchain_1_1RecoveryOperation.html#a5afa5bde8c54cf9e8fc913b34215abf4a37bb7846ea0b9dfc10d6ee157c15700e',1,'satox::blockchain::RecoveryOperation']]],
+  ['blockchain_4',['BLOCKCHAIN',['../d9/db4/classsatox_1_1core_1_1EventManager.html#af82bd1614e01d42b0bb9a1a96f45dd36ae4b25d8c911628d527b2c97039a9f593',1,'satox::core::EventManager::BLOCKCHAIN'],['../d3/dce/classsatox_1_1core_1_1PluginManager.html#afdcdd7fbe9ec149b1f199a8fcfb789afae4b25d8c911628d527b2c97039a9f593',1,'satox::core::PluginManager::BLOCKCHAIN']]],
+  ['blocktxn_5',['BLOCKTXN',['../df/daa/namespacesatox.html#ad79bbcb7f0f87ba6f076287b2ac5cbd8aabf2d377f556063c6762e684369de851',1,'satox']]],
+  ['boolean_6',['BOOLEAN',['../d4/d83/classsatox_1_1core_1_1ConfigManager.html#ac48d80e83016216077e56d42f0605e45ac48d5da12d702e73d6966069f2687376',1,'satox::core::ConfigManager::BOOLEAN'],['../d4/df5/structsatox_1_1core_1_1ConfigValue.html#add31eb42745823ede6e5782e747f698cac48d5da12d702e73d6966069f2687376',1,'satox::core::ConfigValue::BOOLEAN']]],
+  ['burn_5ffailed_7',['BURN_FAILED',['../dc/dd7/namespacesatox_1_1nft.html#ad050fa890372160d03b7fc28f9e2c98cadddbe23a31bc89dfe27a46e2d3c59dd5',1,'satox::nft']]],
+  ['burnable_5fchanged_8',['BURNABLE_CHANGED',['../dc/d55/classsatox_1_1nft_1_1NFTManager.html#a88900d69d788470e3aab2c9a9512d9d9aba8f32d782f048bcd5a2e2e4350b460b',1,'satox::nft::NFTManager']]],
+  ['burned_9',['BURNED',['../d2/d37/classsatox_1_1core_1_1AssetManager.html#a4fc6183c506cf749d6708c6eab33cae3aad9f8dea088d688cb5a70d7d24ea1c2b',1,'satox::core::AssetManager::BURNED'],['../d4/d3a/classsatox_1_1core_1_1NFTManager.html#a395a9683074d1e699dd87074bafa7c07aad9f8dea088d688cb5a70d7d24ea1c2b',1,'satox::core::NFTManager::BURNED'],['../dc/d55/classsatox_1_1nft_1_1NFTManager.html#a88900d69d788470e3aab2c9a9512d9d9aad9f8dea088d688cb5a70d7d24ea1c2b',1,'satox::nft::NFTManager::BURNED']]]
+];

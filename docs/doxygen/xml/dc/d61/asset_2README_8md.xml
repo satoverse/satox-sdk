@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dc/d61/asset_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Satox<sp/>Asset<sp/>Component</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>component<sp/>provides<sp/>comprehensive<sp/>asset<sp/>management<sp/>functionality<sp/>for<sp/>the<sp/>Satox<sp/>SDK,<sp/>following<sp/>the<sp/>unified<sp/>architecture<sp/>pattern<sp/>and<sp/>template<sp/>compliance<sp/>requirements.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Asset<sp/>creation<sp/>and<sp/>management</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Asset<sp/>transfers<sp/>and<sp/>balance<sp/>tracking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Asset<sp/>reissuance<sp/>and<sp/>burning</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Asset<sp/>freezing<sp/>and<sp/>unfreezing</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Comprehensive<sp/>validation<sp/>and<sp/>verification</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Statistics<sp/>and<sp/>monitoring</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Health<sp/>checks<sp/>and<sp/>error<sp/>handling</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Callback<sp/>system<sp/>for<sp/>event<sp/>notifications</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Architecture</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>Asset<sp/>component<sp/>follows<sp/>the<sp/>established<sp/>template<sp/>patterns:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Namespace**:<sp/>`satox::asset`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Singleton<sp/>Pattern**:<sp/>`AssetManager::getInstance()`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Thread<sp/>Safety**:<sp/>Proper<sp/>mutex<sp/>usage<sp/>for<sp/>all<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Error<sp/>Handling**:<sp/>Comprehensive<sp/>error<sp/>management<sp/>with<sp/>context</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Logging**:<sp/>Structured<sp/>logging<sp/>to<sp/>`logs/components/asset/`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Statistics**:<sp/>Performance<sp/>monitoring<sp/>and<sp/>metrics<sp/>collection</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Basic<sp/>Initialization</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;satox/asset/asset_manager.hpp&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>the<sp/>manager<sp/>instance</highlight></codeline>
+<codeline><highlight class="normal">auto&amp;<sp/>manager<sp/>=<sp/>satox::asset::AssetManager::getInstance();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>with<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetConfig<sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.name<sp/>=<sp/>&quot;my_asset_manager&quot;;</highlight></codeline>
+<codeline><highlight class="normal">config.type<sp/>=<sp/>satox::asset::AssetType::TOKEN;</highlight></codeline>
+<codeline><highlight class="normal">config.maxAssets<sp/>=<sp/>1000;</highlight></codeline>
+<codeline><highlight class="normal">config.timeout<sp/>=<sp/>30;</highlight></codeline>
+<codeline><highlight class="normal">config.enableLogging<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">config.logPath<sp/>=<sp/>&quot;logs/components/asset/&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(!manager.initialize(config))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>&quot;Initialization<sp/>failed:<sp/>&quot;<sp/>&lt;&lt;<sp/>manager.getLastError()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Asset<sp/>Creation</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Create<sp/>a<sp/>new<sp/>asset</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetCreationRequest<sp/>request;</highlight></codeline>
+<codeline><highlight class="normal">request.name<sp/>=<sp/>&quot;MyToken&quot;;</highlight></codeline>
+<codeline><highlight class="normal">request.symbol<sp/>=<sp/>&quot;MTK&quot;;</highlight></codeline>
+<codeline><highlight class="normal">request.amount<sp/>=<sp/>1000000;</highlight></codeline>
+<codeline><highlight class="normal">request.units<sp/>=<sp/>8;</highlight></codeline>
+<codeline><highlight class="normal">request.reissuable<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">request.owner_address<sp/>=<sp/>&quot;alice@example.com&quot;;</highlight></codeline>
+<codeline><highlight class="normal">request.metadata[&quot;description&quot;]<sp/>=<sp/>&quot;My<sp/>custom<sp/>token&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.createAsset(request))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Asset<sp/>created<sp/>successfully!&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Asset<sp/>Transfers</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Transfer<sp/>assets<sp/>between<sp/>addresses</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetTransferRequest<sp/>transfer;</highlight></codeline>
+<codeline><highlight class="normal">transfer.asset_name<sp/>=<sp/>&quot;MyToken&quot;;</highlight></codeline>
+<codeline><highlight class="normal">transfer.from_address<sp/>=<sp/>&quot;alice@example.com&quot;;</highlight></codeline>
+<codeline><highlight class="normal">transfer.to_address<sp/>=<sp/>&quot;bob@example.com&quot;;</highlight></codeline>
+<codeline><highlight class="normal">transfer.amount<sp/>=<sp/>100000;</highlight></codeline>
+<codeline><highlight class="normal">transfer.timestamp<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::now().time_since_epoch()).count();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.transferAsset(transfer))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Transfer<sp/>successful!&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Asset<sp/>Operations</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Reissue<sp/>assets<sp/>(if<sp/>reissuable)</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetReissueRequest<sp/>reissue;</highlight></codeline>
+<codeline><highlight class="normal">reissue.asset_name<sp/>=<sp/>&quot;MyToken&quot;;</highlight></codeline>
+<codeline><highlight class="normal">reissue.owner_address<sp/>=<sp/>&quot;alice@example.com&quot;;</highlight></codeline>
+<codeline><highlight class="normal">reissue.amount<sp/>=<sp/>500000;</highlight></codeline>
+<codeline><highlight class="normal">reissue.reissuable<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">reissue.timestamp<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::now().time_since_epoch()).count();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">manager.reissueAsset(reissue);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Burn<sp/>assets</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetBurnRequest<sp/>burn;</highlight></codeline>
+<codeline><highlight class="normal">burn.asset_name<sp/>=<sp/>&quot;MyToken&quot;;</highlight></codeline>
+<codeline><highlight class="normal">burn.owner_address<sp/>=<sp/>&quot;alice@example.com&quot;;</highlight></codeline>
+<codeline><highlight class="normal">burn.amount<sp/>=<sp/>100000;</highlight></codeline>
+<codeline><highlight class="normal">burn.timestamp<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::now().time_since_epoch()).count();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">manager.burnAsset(burn);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Freeze/unfreeze<sp/>assets</highlight></codeline>
+<codeline><highlight class="normal">manager.freezeAsset(&quot;MyToken&quot;,<sp/>&quot;alice@example.com&quot;);</highlight></codeline>
+<codeline><highlight class="normal">manager.unfreezeAsset(&quot;MyToken&quot;,<sp/>&quot;alice@example.com&quot;);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Asset<sp/>Queries</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>asset<sp/>metadata</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetMetadata<sp/>metadata;</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.getAssetMetadata(&quot;MyToken&quot;,<sp/>metadata))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Asset:<sp/>&quot;<sp/>&lt;&lt;<sp/>metadata.name<sp/>&lt;&lt;<sp/>&quot;<sp/>(&quot;<sp/>&lt;&lt;<sp/>metadata.symbol<sp/>&lt;&lt;<sp/>&quot;)&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Total<sp/>supply:<sp/>&quot;<sp/>&lt;&lt;<sp/>metadata.total_supply<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Check<sp/>balances</highlight></codeline>
+<codeline><highlight class="normal">uint64_t<sp/>balance;</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.getAssetBalance(&quot;alice@example.com&quot;,<sp/>&quot;MyToken&quot;,<sp/>balance))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Balance:<sp/>&quot;<sp/>&lt;&lt;<sp/>balance<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>List<sp/>all<sp/>assets</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>assets<sp/>=<sp/>manager.listAssets();</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>(const<sp/>auto&amp;<sp/>asset<sp/>:<sp/>assets)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>asset[&quot;name&quot;].get&lt;std::string&gt;()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Validation<sp/>and<sp/>Verification</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Validate<sp/>asset<sp/>metadata</highlight></codeline>
+<codeline><highlight class="normal">satox::asset::AssetMetadata<sp/>metadata;</highlight></codeline>
+<codeline><highlight class="normal">metadata.name<sp/>=<sp/>&quot;TestAsset&quot;;</highlight></codeline>
+<codeline><highlight class="normal">metadata.symbol<sp/>=<sp/>&quot;TEST&quot;;</highlight></codeline>
+<codeline><highlight class="normal">metadata.total_supply<sp/>=<sp/>1000000;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">satox::asset::AssetVerificationResult<sp/>result;</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.validateAssetMetadata(metadata,<sp/>result))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(result.valid)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Metadata<sp/>is<sp/>valid&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Validation<sp/>failed:<sp/>&quot;<sp/>&lt;&lt;<sp/>result.error_message<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Verify<sp/>asset</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.verifyAsset(&quot;MyToken&quot;,<sp/>result))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(result.valid)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Asset<sp/>is<sp/>valid&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Statistics<sp/>and<sp/>Monitoring</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Enable<sp/>statistics</highlight></codeline>
+<codeline><highlight class="normal">manager.enableStats(true);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>statistics</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>stats<sp/>=<sp/>manager.getStats();</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>&quot;Total<sp/>operations:<sp/>&quot;<sp/>&lt;&lt;<sp/>stats.totalOperations<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>&quot;Successful<sp/>operations:<sp/>&quot;<sp/>&lt;&lt;<sp/>stats.successfulOperations<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>&quot;Failed<sp/>operations:<sp/>&quot;<sp/>&lt;&lt;<sp/>stats.failedOperations<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Health<sp/>check</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(manager.healthCheck())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>auto<sp/>health<sp/>=<sp/>manager.getHealthStatus();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Health:<sp/>OK&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Total<sp/>assets:<sp/>&quot;<sp/>&lt;&lt;<sp/>health[&quot;total_assets&quot;].get&lt;int&gt;()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Callbacks<sp/>and<sp/>Event<sp/>Handling</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Register<sp/>callbacks</highlight></codeline>
+<codeline><highlight class="normal">manager.registerAssetCallback([](const<sp/>std::string&amp;<sp/>event,<sp/>bool<sp/>success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Asset<sp/>event:<sp/>&quot;<sp/>&lt;&lt;<sp/>event<sp/>&lt;&lt;<sp/>&quot;<sp/>-<sp/>&quot;<sp/>&lt;&lt;<sp/>(success<sp/>?<sp/>&quot;SUCCESS&quot;<sp/>:<sp/>&quot;FAILED&quot;)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">manager.registerErrorCallback([](const<sp/>std::string&amp;<sp/>operation,<sp/>const<sp/>std::string&amp;<sp/>error)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>&quot;Error<sp/>in<sp/>&quot;<sp/>&lt;&lt;<sp/>operation<sp/>&lt;&lt;<sp/>&quot;:<sp/>&quot;<sp/>&lt;&lt;<sp/>error<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Testing</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>specific<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">./satox-asset-tests</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Examples</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>the<sp/>basic<sp/>usage<sp/>example</highlight></codeline>
+<codeline><highlight class="normal">./asset-example</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Configuration<sp/>Options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Option<sp/>|<sp/>Type<sp/>|<sp/>Description<sp/>|<sp/>Default<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|--------|------|-------------|---------|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>name<sp/>|<sp/>string<sp/>|<sp/>Manager<sp/>name<sp/>|<sp/>-<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>type<sp/>|<sp/>AssetType<sp/>|<sp/>Asset<sp/>type<sp/>(TOKEN,<sp/>NFT,<sp/>etc.)<sp/>|<sp/>TOKEN<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>maxAssets<sp/>|<sp/>int<sp/>|<sp/>Maximum<sp/>number<sp/>of<sp/>assets<sp/>|<sp/>1000<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>timeout<sp/>|<sp/>int<sp/>|<sp/>Operation<sp/>timeout<sp/>in<sp/>seconds<sp/>|<sp/>30<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>enableLogging<sp/>|<sp/>bool<sp/>|<sp/>Enable<sp/>logging<sp/>|<sp/>true<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>logPath<sp/>|<sp/>string<sp/>|<sp/>Log<sp/>file<sp/>path<sp/>|<sp/>-<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Error<sp/>Handling</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>component<sp/>provides<sp/>comprehensive<sp/>error<sp/>handling:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>All<sp/>operations<sp/>return<sp/>boolean<sp/>success/failure</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Detailed<sp/>error<sp/>messages<sp/>via<sp/>`getLastError()`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Error<sp/>callbacks<sp/>for<sp/>event-driven<sp/>error<sp/>handling</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Validation<sp/>results<sp/>with<sp/>detailed<sp/>feedback</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Thread<sp/>Safety</highlight></codeline>
+<codeline><highlight class="normal">All<sp/>operations<sp/>are<sp/>thread-safe<sp/>using<sp/>proper<sp/>mutex<sp/>synchronization:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Read<sp/>operations<sp/>use<sp/>shared<sp/>locks<sp/>where<sp/>appropriate</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Write<sp/>operations<sp/>use<sp/>exclusive<sp/>locks</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Callbacks<sp/>are<sp/>executed<sp/>safely</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Logging</highlight></codeline>
+<codeline><highlight class="normal">Logs<sp/>are<sp/>written<sp/>to<sp/>the<sp/>configured<sp/>log<sp/>path<sp/>with<sp/>structured<sp/>format:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Timestamps<sp/>and<sp/>log<sp/>levels</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Operation<sp/>context<sp/>and<sp/>results</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Performance<sp/>metrics</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Error<sp/>details<sp/>and<sp/>stack<sp/>traces</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Compliance</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>component<sp/>follows<sp/>all<sp/>SDK<sp/>template<sp/>requirements:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Template-compliant<sp/>structure</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Proper<sp/>namespace<sp/>usage<sp/>(`satox::asset`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Singleton<sp/>pattern<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Thread-safe<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Comprehensive<sp/>error<sp/>handling</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Statistics<sp/>and<sp/>monitoring</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Health<sp/>check<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Callback<sp/>registration<sp/>system</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Configuration<sp/>validation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>✅<sp/>Centralized<sp/>logging<sp/>structure</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>⚠️<sp/>Limitations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Blockchain<sp/>Compatibility**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**No<sp/>Smart<sp/>Contract<sp/>Support:**<sp/>Satox<sp/>is<sp/>based<sp/>on<sp/>Ravencoin<sp/>and<sp/>does<sp/>**not**<sp/>support<sp/>smart<sp/>contracts<sp/>or<sp/>EVM<sp/>compatibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset-Based:**<sp/>Focuses<sp/>on<sp/>asset<sp/>creation,<sp/>management,<sp/>and<sp/>transfer<sp/>rather<sp/>than<sp/>programmable<sp/>contracts</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**UTXO<sp/>Model:**<sp/>Uses<sp/>Unspent<sp/>Transaction<sp/>Output<sp/>(UTXO)<sp/>model<sp/>like<sp/>Bitcoin/Ravencoin,<sp/>not<sp/>account-based<sp/>like<sp/>Ethereum</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Platform<sp/>Support**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Desktop<sp/>Focus:**<sp/>Primarily<sp/>designed<sp/>for<sp/>desktop/server<sp/>environments</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mobile<sp/>Limitations:**<sp/>Mobile<sp/>SDK<sp/>provides<sp/>limited<sp/>functionality<sp/>compared<sp/>to<sp/>core<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Browser<sp/>Support:**<sp/>WebAssembly<sp/>bindings<sp/>have<sp/>performance<sp/>limitations<sp/>for<sp/>complex<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Network<sp/>Requirements**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Internet<sp/>Connection:**<sp/>Requires<sp/>active<sp/>internet<sp/>connection<sp/>for<sp/>blockchain<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Node<sp/>Synchronization:**<sp/>Full<sp/>node<sp/>operations<sp/>require<sp/>significant<sp/>storage<sp/>and<sp/>bandwidth</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**API<sp/>Dependencies:**<sp/>Some<sp/>features<sp/>depend<sp/>on<sp/>external<sp/>API<sp/>services</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Development<sp/>Considerations**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Learning<sp/>Curve:**<sp/>Ravencoin/UTXO<sp/>model<sp/>differs<sp/>from<sp/>Ethereum/smart<sp/>contract<sp/>development</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Testing<sp/>Environment:**<sp/>Testnet<sp/>required<sp/>for<sp/>development<sp/>and<sp/>testing</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset<sp/>Management:**<sp/>Asset<sp/>creation<sp/>and<sp/>management<sp/>have<sp/>specific<sp/>requirements<sp/>and<sp/>limitations</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="src/asset/README.md"/>
+  </compounddef>
+</doxygen>

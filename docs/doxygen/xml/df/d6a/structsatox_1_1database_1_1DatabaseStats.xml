@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/d6a/structsatox_1_1database_1_1DatabaseStats" kind="struct" language="C++" prot="public">
+    <compoundname>satox::database::DatabaseStats</compoundname>
+    <includes refid="dc/d57/database_2include_2satox_2database_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aa79b72e83175326c11a05637c573eb0a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::database::DatabaseStats::totalOperations</definition>
+        <argsstring></argsstring>
+        <name>totalOperations</name>
+        <qualifiedname>satox::database::DatabaseStats::totalOperations</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="61" column="9" bodyfile="src/database/include/satox/database/types.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d6a/structsatox_1_1database_1_1DatabaseStats_1addfe6166fc3c54ff1e1f1df40e16b80b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::database::DatabaseStats::successfulOperations</definition>
+        <argsstring></argsstring>
+        <name>successfulOperations</name>
+        <qualifiedname>satox::database::DatabaseStats::successfulOperations</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="62" column="9" bodyfile="src/database/include/satox/database/types.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a88841708b58cba5c0b41d41a72c07723" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::database::DatabaseStats::failedOperations</definition>
+        <argsstring></argsstring>
+        <name>failedOperations</name>
+        <qualifiedname>satox::database::DatabaseStats::failedOperations</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="63" column="9" bodyfile="src/database/include/satox/database/types.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aab836210933cf96faa738f39376ff467" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::database::DatabaseStats::lastOperation</definition>
+        <argsstring></argsstring>
+        <name>lastOperation</name>
+        <qualifiedname>satox::database::DatabaseStats::lastOperation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="64" column="43" bodyfile="src/database/include/satox/database/types.hpp" bodystart="64" bodyend="-1"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa4b16650bd0ee6bfd2fa822da73e785f" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="49" endline="108">satox::database::DatabaseManager::initialize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a880e3aa545b5f691620ec71fa13ba4e9" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double satox::database::DatabaseStats::averageOperationTime</definition>
+        <argsstring></argsstring>
+        <name>averageOperationTime</name>
+        <qualifiedname>satox::database::DatabaseStats::averageOperationTime</qualifiedname>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="65" column="12" bodyfile="src/database/include/satox/database/types.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a21f33e6a1426221acff890b448edd86e" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::DatabaseStats::additionalStats</definition>
+        <argsstring></argsstring>
+        <name>additionalStats</name>
+        <qualifiedname>satox::database::DatabaseStats::additionalStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/types.hpp" line="66" column="20" bodyfile="src/database/include/satox/database/types.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/database/include/satox/database/types.hpp" line="60" column="1" bodyfile="src/database/include/satox/database/types.hpp" bodystart="60" bodyend="67"/>
+    <listofallmembers>
+      <member refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a21f33e6a1426221acff890b448edd86e" prot="public" virt="non-virtual"><scope>satox::database::DatabaseStats</scope><name>additionalStats</name></member>
+      <member refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a880e3aa545b5f691620ec71fa13ba4e9" prot="public" virt="non-virtual"><scope>satox::database::DatabaseStats</scope><name>averageOperationTime</name></member>
+      <member refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1a88841708b58cba5c0b41d41a72c07723" prot="public" virt="non-virtual"><scope>satox::database::DatabaseStats</scope><name>failedOperations</name></member>
+      <member refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aab836210933cf96faa738f39376ff467" prot="public" virt="non-virtual"><scope>satox::database::DatabaseStats</scope><name>lastOperation</name></member>
+      <member refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1addfe6166fc3c54ff1e1f1df40e16b80b" prot="public" virt="non-virtual"><scope>satox::database::DatabaseStats</scope><name>successfulOperations</name></member>
+      <member refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aa79b72e83175326c11a05637c573eb0a" prot="public" virt="non-virtual"><scope>satox::database::DatabaseStats</scope><name>totalOperations</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

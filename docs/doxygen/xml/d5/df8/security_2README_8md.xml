@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/df8/security_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Satox<sp/>Security<sp/>Component</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>component<sp/>provides<sp/>comprehensive<sp/>security<sp/>functionality<sp/>for<sp/>the<sp/>Satox<sp/>SDK,<sp/>including:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Post-Quantum<sp/>Cryptography<sp/>(PQC)<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Input<sp/>validation<sp/>and<sp/>sanitization</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Rate<sp/>limiting<sp/>and<sp/>security<sp/>monitoring</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>General<sp/>security<sp/>management</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**PQC<sp/>Support**:<sp/>ML-DSA,<sp/>ML-KEM,<sp/>Hybrid<sp/>encryption</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Input<sp/>Validation**:<sp/>Email,<sp/>URL,<sp/>IP<sp/>address<sp/>validation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Rate<sp/>Limiting**:<sp/>Configurable<sp/>rate<sp/>limiting<sp/>per<sp/>operation</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Security<sp/>Monitoring**:<sp/>Comprehensive<sp/>security<sp/>event<sp/>tracking</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Thread<sp/>Safety**:<sp/>All<sp/>operations<sp/>are<sp/>thread-safe</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;satox/security/security_manager.hpp&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>the<sp/>security<sp/>manager</highlight></codeline>
+<codeline><highlight class="normal">auto&amp;<sp/>security<sp/>=<sp/>satox::security::SecurityManager::getInstance();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Configure<sp/>security</highlight></codeline>
+<codeline><highlight class="normal">satox::security::SecurityConfig<sp/>config;</highlight></codeline>
+<codeline><highlight class="normal">config.enablePQC<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">config.enableInputValidation<sp/>=<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal">config.enableRateLimiting<sp/>=<sp/>true;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(!security.initialize(config))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>&quot;Failed<sp/>to<sp/>initialize<sp/>security:<sp/>&quot;<sp/>&lt;&lt;<sp/>security.getLastError()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Use<sp/>PQC<sp/>for<sp/>signing</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(security.signWithPQC(&quot;ML-DSA&quot;,<sp/>&quot;data_to_sign&quot;))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Data<sp/>signed<sp/>successfully!&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Validate<sp/>input</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(security.validateEmail(&quot;user@example.com&quot;))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Valid<sp/>email<sp/>address!&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Check<sp/>rate<sp/>limit</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(security.checkRateLimit(&quot;user123&quot;,<sp/>&quot;login&quot;))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Rate<sp/>limit<sp/>OK!&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Testing</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>⚠️<sp/>Limitations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Blockchain<sp/>Compatibility**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**No<sp/>Smart<sp/>Contract<sp/>Support:**<sp/>Satox<sp/>is<sp/>based<sp/>on<sp/>Ravencoin<sp/>and<sp/>does<sp/>**not**<sp/>support<sp/>smart<sp/>contracts<sp/>or<sp/>EVM<sp/>compatibility</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset-Based:**<sp/>Focuses<sp/>on<sp/>asset<sp/>creation,<sp/>management,<sp/>and<sp/>transfer<sp/>rather<sp/>than<sp/>programmable<sp/>contracts</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**UTXO<sp/>Model:**<sp/>Uses<sp/>Unspent<sp/>Transaction<sp/>Output<sp/>(UTXO)<sp/>model<sp/>like<sp/>Bitcoin/Ravencoin,<sp/>not<sp/>account-based<sp/>like<sp/>Ethereum</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Platform<sp/>Support**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Desktop<sp/>Focus:**<sp/>Primarily<sp/>designed<sp/>for<sp/>desktop/server<sp/>environments</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mobile<sp/>Limitations:**<sp/>Mobile<sp/>SDK<sp/>provides<sp/>limited<sp/>functionality<sp/>compared<sp/>to<sp/>core<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Browser<sp/>Support:**<sp/>WebAssembly<sp/>bindings<sp/>have<sp/>performance<sp/>limitations<sp/>for<sp/>complex<sp/>operations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Network<sp/>Requirements**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Internet<sp/>Connection:**<sp/>Requires<sp/>active<sp/>internet<sp/>connection<sp/>for<sp/>blockchain<sp/>operations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Node<sp/>Synchronization:**<sp/>Full<sp/>node<sp/>operations<sp/>require<sp/>significant<sp/>storage<sp/>and<sp/>bandwidth</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**API<sp/>Dependencies:**<sp/>Some<sp/>features<sp/>depend<sp/>on<sp/>external<sp/>API<sp/>services</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>**Development<sp/>Considerations**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Learning<sp/>Curve:**<sp/>Ravencoin/UTXO<sp/>model<sp/>differs<sp/>from<sp/>Ethereum/smart<sp/>contract<sp/>development</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Testing<sp/>Environment:**<sp/>Testnet<sp/>required<sp/>for<sp/>development<sp/>and<sp/>testing</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Asset<sp/>Management:**<sp/>Asset<sp/>creation<sp/>and<sp/>management<sp/>have<sp/>specific<sp/>requirements<sp/>and<sp/>limitations</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="src/security/README.md"/>
+  </compounddef>
+</doxygen>

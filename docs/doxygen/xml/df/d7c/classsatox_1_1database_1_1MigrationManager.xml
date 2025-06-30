@@ -1,0 +1,741 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/d7c/classsatox_1_1database_1_1MigrationManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::database::MigrationManager</compoundname>
+    <includes refid="d1/dd1/migration__manager_8hpp" local="no">migration_manager.hpp</includes>
+    <innerclass refid="de/dd5/structsatox_1_1database_1_1MigrationManager_1_1Migration" prot="private">satox::database::MigrationManager::Migration</innerclass>
+    <innerclass refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" prot="public">satox::database::MigrationManager::MigrationConfig</innerclass>
+    <innerclass refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" prot="public">satox::database::MigrationManager::MigrationInfo</innerclass>
+    <innerclass refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" prot="public">satox::database::MigrationManager::MigrationStats</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a95065f20c4d516db20e828cb1f529b1b" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" kindref="compound">MigrationConfig</ref></type>
+        <definition>MigrationConfig satox::database::MigrationManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::database::MigrationManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="134" column="21" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a40ba4295d1c84cb9235778a40be87299" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, Migration &gt;</type>
+        <definition>std::map&lt;std::string, Migration&gt; satox::database::MigrationManager::migrations_</definition>
+        <argsstring></argsstring>
+        <name>migrations_</name>
+        <qualifiedname>satox::database::MigrationManager::migrations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="135" column="14" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1aba86bc80214b580e37180d855befd409" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::database::MigrationManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::database::MigrationManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="136" column="24" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a54937828c19d770f580e7796343fc3eb" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::database::MigrationManager::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::database::MigrationManager::running_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="137" column="17" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a435285bfb4055ad5f53883fdc5d77d90" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::MigrationManager::total_migrations_</definition>
+        <argsstring></argsstring>
+        <name>total_migrations_</name>
+        <qualifiedname>satox::database::MigrationManager::total_migrations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="138" column="17" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae181c52231e6a36c7cee3cd4ecb798a0" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::MigrationManager::applied_migrations_</definition>
+        <argsstring></argsstring>
+        <name>applied_migrations_</name>
+        <qualifiedname>satox::database::MigrationManager::applied_migrations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="139" column="17" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1aa15b915c35746cb3b21e3ab77642052d" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; satox::database::MigrationManager::failed_migrations_</definition>
+        <argsstring></argsstring>
+        <name>failed_migrations_</name>
+        <qualifiedname>satox::database::MigrationManager::failed_migrations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="140" column="17" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a6459a166849a19d23af155d87ecee22c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::MigrationManager::last_error_</definition>
+        <argsstring></argsstring>
+        <name>last_error_</name>
+        <qualifiedname>satox::database::MigrationManager::last_error_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="141" column="17" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1adfcf2d7aa34ddb67b71da5695c9f7c81" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager" kindref="compound">MigrationManager</ref> &amp;</type>
+        <definition>static MigrationManager &amp; satox::database::MigrationManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::database::MigrationManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="73" column="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a3dd19ee5ac7e22f8d6b5f6207677e204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::initialize</definition>
+        <argsstring>(const MigrationConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::database::MigrationManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" kindref="compound">MigrationConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="75" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a4848c6a53030352da074401e24913c13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::MigrationManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::database::MigrationManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="76" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1ab94e397c95f27ab0ea5f769c0eec2b3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::createMigration</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;description)</argsstring>
+        <name>createMigration</name>
+        <qualifiedname>satox::database::MigrationManager::createMigration</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="79" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2d5bbdc4d7733cdad9a03cad2bfd851a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::applyMigration</definition>
+        <argsstring>(const std::string &amp;version)</argsstring>
+        <name>applyMigration</name>
+        <qualifiedname>satox::database::MigrationManager::applyMigration</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="80" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a860ffb5d147a7f424f0cd7eed8556e67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::rollbackMigration</definition>
+        <argsstring>(const std::string &amp;version)</argsstring>
+        <name>rollbackMigration</name>
+        <qualifiedname>satox::database::MigrationManager::rollbackMigration</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="81" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a206b94237d2500f30eaf814de8ea84e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::validateMigrations</definition>
+        <argsstring>()</argsstring>
+        <name>validateMigrations</name>
+        <qualifiedname>satox::database::MigrationManager::validateMigrations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="82" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a88b35b9e1b72331e7e72d6d2c822a06f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" kindref="compound">MigrationInfo</ref> &gt;</type>
+        <definition>std::vector&lt; MigrationInfo &gt; satox::database::MigrationManager::getMigrationHistory</definition>
+        <argsstring>() const</argsstring>
+        <name>getMigrationHistory</name>
+        <qualifiedname>satox::database::MigrationManager::getMigrationHistory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="85" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae49edaf95cc2ddb68f9c203a260b9974" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" kindref="compound">MigrationInfo</ref> &gt;</type>
+        <definition>std::vector&lt; MigrationInfo &gt; satox::database::MigrationManager::getPendingMigrations</definition>
+        <argsstring>() const</argsstring>
+        <name>getPendingMigrations</name>
+        <qualifiedname>satox::database::MigrationManager::getPendingMigrations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="86" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a772737329ba6ba80f5ccf05938e98992" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" kindref="compound">MigrationStats</ref></type>
+        <definition>MigrationStats satox::database::MigrationManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::database::MigrationManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="87" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a85422acb43fa781848c6c7673f0bb485" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::MigrationManager::getCurrentVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentVersion</name>
+        <qualifiedname>satox::database::MigrationManager::getCurrentVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="88" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1ad9601a19d754acf930ef93c9eec7cb6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::isUpToDate</definition>
+        <argsstring>() const</argsstring>
+        <name>isUpToDate</name>
+        <qualifiedname>satox::database::MigrationManager::isUpToDate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="89" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2497e610a78430783ecbe7e4321c375a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::migrateUp</definition>
+        <argsstring>()</argsstring>
+        <name>migrateUp</name>
+        <qualifiedname>satox::database::MigrationManager::migrateUp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="92" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1aaf757e4f7ab989c3e104eb08c9e229c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::migrateDown</definition>
+        <argsstring>()</argsstring>
+        <name>migrateDown</name>
+        <qualifiedname>satox::database::MigrationManager::migrateDown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="93" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1aff94538fd758922cd045a462943ee294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::migrateToVersion</definition>
+        <argsstring>(const std::string &amp;version)</argsstring>
+        <name>migrateToVersion</name>
+        <qualifiedname>satox::database::MigrationManager::migrateToVersion</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="94" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a822f5b03f50324854c846af8d0261bf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::migrateToLatest</definition>
+        <argsstring>()</argsstring>
+        <name>migrateToLatest</name>
+        <qualifiedname>satox::database::MigrationManager::migrateToLatest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="95" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a255190b955c53643ffc77bced758c8dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::MigrationManager::setAutoMigrate</definition>
+        <argsstring>(bool auto_migrate)</argsstring>
+        <name>setAutoMigrate</name>
+        <qualifiedname>satox::database::MigrationManager::setAutoMigrate</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>auto_migrate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="98" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2b7436754923b05aa6fa5b233013e005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::MigrationManager::setValidateMigrations</definition>
+        <argsstring>(bool validate)</argsstring>
+        <name>setValidateMigrations</name>
+        <qualifiedname>satox::database::MigrationManager::setValidateMigrations</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>validate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="99" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a5c6c35ac20edac4c6bff4e5b71c5cb3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::MigrationManager::setTimeout</definition>
+        <argsstring>(std::chrono::seconds timeout)</argsstring>
+        <name>setTimeout</name>
+        <qualifiedname>satox::database::MigrationManager::setTimeout</qualifiedname>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="100" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a8227489bab5e6cfba3afba94ead35f9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::database::MigrationManager::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="103" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae605c3dbfcdb3872bbe533b2d80da170" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::MigrationManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::database::MigrationManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="104" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a1c29040de288efe9ff17b37b8fc55384" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::MigrationManager::MigrationManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>MigrationManager</name>
+        <qualifiedname>satox::database::MigrationManager::MigrationManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="107" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1aa5841416b14b71e523d3a371bb65cb35" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::MigrationManager::~MigrationManager</definition>
+        <argsstring>()</argsstring>
+        <name>~MigrationManager</name>
+        <qualifiedname>satox::database::MigrationManager::~MigrationManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="108" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1aec62bab7922019a39accc68ce187d675" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::MigrationManager::MigrationManager</definition>
+        <argsstring>(const MigrationManager &amp;)=delete</argsstring>
+        <name>MigrationManager</name>
+        <qualifiedname>satox::database::MigrationManager::MigrationManager</qualifiedname>
+        <param>
+          <type>const <ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager" kindref="compound">MigrationManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="109" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a465f3dcbd7c384f37123c1f902223c82" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager" kindref="compound">MigrationManager</ref> &amp;</type>
+        <definition>MigrationManager &amp; satox::database::MigrationManager::operator=</definition>
+        <argsstring>(const MigrationManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::database::MigrationManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager" kindref="compound">MigrationManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="110" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1af568a23f72fa76e2dd687d2ebff4ef49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::loadMigrations</definition>
+        <argsstring>()</argsstring>
+        <name>loadMigrations</name>
+        <qualifiedname>satox::database::MigrationManager::loadMigrations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="123" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1af783840e6f15487bbefec8091da4e5b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::saveMigration</definition>
+        <argsstring>(const MigrationInfo &amp;info)</argsstring>
+        <name>saveMigration</name>
+        <qualifiedname>satox::database::MigrationManager::saveMigration</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" kindref="compound">MigrationInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="124" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1abeeb00068980e7f97184d8c0310c8d8e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::executeMigration</definition>
+        <argsstring>(const Migration &amp;migration, bool up)</argsstring>
+        <name>executeMigration</name>
+        <qualifiedname>satox::database::MigrationManager::executeMigration</qualifiedname>
+        <param>
+          <type>const Migration &amp;</type>
+          <declname>migration</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="125" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a86e7f2a7d71481d3a1a110c5b61a49c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::validateMigration</definition>
+        <argsstring>(const Migration &amp;migration)</argsstring>
+        <name>validateMigration</name>
+        <qualifiedname>satox::database::MigrationManager::validateMigration</qualifiedname>
+        <param>
+          <type>const Migration &amp;</type>
+          <declname>migration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="126" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a3380b4f19b2abeb90aa57deed88745ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::MigrationManager::calculateChecksum</definition>
+        <argsstring>(const std::string &amp;content)</argsstring>
+        <name>calculateChecksum</name>
+        <qualifiedname>satox::database::MigrationManager::calculateChecksum</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="127" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1ab3d4e42438b1bb611df3eaa678a1a039" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::createMigrationsTable</definition>
+        <argsstring>()</argsstring>
+        <name>createMigrationsTable</name>
+        <qualifiedname>satox::database::MigrationManager::createMigrationsTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="128" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a318605843cc12872d03f720a3f3dad6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::updateMigrationsTable</definition>
+        <argsstring>(const MigrationInfo &amp;info)</argsstring>
+        <name>updateMigrationsTable</name>
+        <qualifiedname>satox::database::MigrationManager::updateMigrationsTable</qualifiedname>
+        <param>
+          <type>const <ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" kindref="compound">MigrationInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="129" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a719eb78813bfbe0c645af6801ffcfe15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; Migration &gt;</type>
+        <definition>std::vector&lt; Migration &gt; satox::database::MigrationManager::parseMigrationFile</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>parseMigrationFile</name>
+        <qualifiedname>satox::database::MigrationManager::parseMigrationFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="130" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a808ea6893413ec1afaf470a2206d5e5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::backupDatabase</definition>
+        <argsstring>()</argsstring>
+        <name>backupDatabase</name>
+        <qualifiedname>satox::database::MigrationManager::backupDatabase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="131" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7c/classsatox_1_1database_1_1MigrationManager_1a97088930f4bc4a168a63f462e86a3120" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::MigrationManager::restoreDatabase</definition>
+        <argsstring>()</argsstring>
+        <name>restoreDatabase</name>
+        <qualifiedname>satox::database::MigrationManager::restoreDatabase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/migration_manager.hpp" line="132" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/database/include/satox/database/migration_manager.hpp" line="43" column="1" bodyfile="src/database/include/satox/database/migration_manager.hpp" bodystart="43" bodyend="142"/>
+    <listofallmembers>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae181c52231e6a36c7cee3cd4ecb798a0" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>applied_migrations_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2d5bbdc4d7733cdad9a03cad2bfd851a" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>applyMigration</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a808ea6893413ec1afaf470a2206d5e5a" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>backupDatabase</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a3380b4f19b2abeb90aa57deed88745ca" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>calculateChecksum</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a95065f20c4d516db20e828cb1f529b1b" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>config_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ab94e397c95f27ab0ea5f769c0eec2b3c" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>createMigration</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ab3d4e42438b1bb611df3eaa678a1a039" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>createMigrationsTable</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1abeeb00068980e7f97184d8c0310c8d8e" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>executeMigration</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aa15b915c35746cb3b21e3ab77642052d" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>failed_migrations_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a85422acb43fa781848c6c7673f0bb485" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>getCurrentVersion</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1adfcf2d7aa34ddb67b71da5695c9f7c81" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>getInstance</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae605c3dbfcdb3872bbe533b2d80da170" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>getLastError</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a88b35b9e1b72331e7e72d6d2c822a06f" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>getMigrationHistory</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae49edaf95cc2ddb68f9c203a260b9974" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>getPendingMigrations</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a772737329ba6ba80f5ccf05938e98992" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>getStats</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a3dd19ee5ac7e22f8d6b5f6207677e204" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>initialize</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a8227489bab5e6cfba3afba94ead35f9f" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>isHealthy</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ad9601a19d754acf930ef93c9eec7cb6e" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>isUpToDate</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a6459a166849a19d23af155d87ecee22c" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>last_error_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1af568a23f72fa76e2dd687d2ebff4ef49" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>loadMigrations</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aaf757e4f7ab989c3e104eb08c9e229c9" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>migrateDown</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a822f5b03f50324854c846af8d0261bf0" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>migrateToLatest</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aff94538fd758922cd045a462943ee294" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>migrateToVersion</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2497e610a78430783ecbe7e4321c375a" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>migrateUp</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a1c29040de288efe9ff17b37b8fc55384" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>MigrationManager</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aec62bab7922019a39accc68ce187d675" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>MigrationManager</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a40ba4295d1c84cb9235778a40be87299" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>migrations_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aba86bc80214b580e37180d855befd409" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>mutex_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a465f3dcbd7c384f37123c1f902223c82" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>operator=</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a719eb78813bfbe0c645af6801ffcfe15" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>parseMigrationFile</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a97088930f4bc4a168a63f462e86a3120" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>restoreDatabase</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a860ffb5d147a7f424f0cd7eed8556e67" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>rollbackMigration</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a54937828c19d770f580e7796343fc3eb" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>running_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1af783840e6f15487bbefec8091da4e5b8" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>saveMigration</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a255190b955c53643ffc77bced758c8dd" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>setAutoMigrate</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a5c6c35ac20edac4c6bff4e5b71c5cb3a" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>setTimeout</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2b7436754923b05aa6fa5b233013e005" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>setValidateMigrations</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a4848c6a53030352da074401e24913c13" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>shutdown</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a435285bfb4055ad5f53883fdc5d77d90" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>total_migrations_</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a318605843cc12872d03f720a3f3dad6a" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>updateMigrationsTable</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a86e7f2a7d71481d3a1a110c5b61a49c6" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>validateMigration</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a206b94237d2500f30eaf814de8ea84e7" prot="public" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>validateMigrations</name></member>
+      <member refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aa5841416b14b71e523d3a371bb65cb35" prot="private" virt="non-virtual"><scope>satox::database::MigrationManager</scope><name>~MigrationManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

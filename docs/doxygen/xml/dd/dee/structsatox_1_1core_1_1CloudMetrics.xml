@@ -1,0 +1,597 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/dee/structsatox_1_1core_1_1CloudMetrics" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::CloudMetrics</compoundname>
+    <includes refid="d3/d7b/cloud__monitoring_8hpp" local="no">cloud_monitoring.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a4bf25b11e5012226079c83b9241c1e55" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::total_operations</definition>
+        <argsstring></argsstring>
+        <name>total_operations</name>
+        <qualifiedname>satox::core::CloudMetrics::total_operations</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="71" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="71" bodyend="71"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a39ffffc76534be36acdb16175dfe405a" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::successful_operations</definition>
+        <argsstring></argsstring>
+        <name>successful_operations</name>
+        <qualifiedname>satox::core::CloudMetrics::successful_operations</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="72" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="72" bodyend="72"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a232015c299ff976bf1521ffa7c5e0998" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::failed_operations</definition>
+        <argsstring></argsstring>
+        <name>failed_operations</name>
+        <qualifiedname>satox::core::CloudMetrics::failed_operations</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="73" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="73" bodyend="73"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ae4d41fe41ce4a19cfccd58d6a46c6cb8" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::timeout_operations</definition>
+        <argsstring></argsstring>
+        <name>timeout_operations</name>
+        <qualifiedname>satox::core::CloudMetrics::timeout_operations</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="74" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="74" bodyend="74"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a25597ad1cee414edcba9090d513cb737" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::retry_operations</definition>
+        <argsstring></argsstring>
+        <name>retry_operations</name>
+        <qualifiedname>satox::core::CloudMetrics::retry_operations</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="75" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="75" bodyend="75"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a80b358c0fb04cfd8bd492413acbdb3c5" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::total_queries</definition>
+        <argsstring></argsstring>
+        <name>total_queries</name>
+        <qualifiedname>satox::core::CloudMetrics::total_queries</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="77" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="77" bodyend="77"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1acdf0754906b84277f225abbb6c3ff12b" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::successful_queries</definition>
+        <argsstring></argsstring>
+        <name>successful_queries</name>
+        <qualifiedname>satox::core::CloudMetrics::successful_queries</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="78" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="78" bodyend="78"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab1a8a932137e4088cd6ed962d143c100" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::failed_queries</definition>
+        <argsstring></argsstring>
+        <name>failed_queries</name>
+        <qualifiedname>satox::core::CloudMetrics::failed_queries</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="79" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="79" bodyend="79"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ada2b541605cd929dd489ed9a9dabe2da" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; double &gt;</type>
+        <definition>std::atomic&lt;double&gt; satox::core::CloudMetrics::average_query_time</definition>
+        <argsstring></argsstring>
+        <name>average_query_time</name>
+        <qualifiedname>satox::core::CloudMetrics::average_query_time</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="80" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab747f83b7afb6445a1efc016eb4d6257" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; double &gt;</type>
+        <definition>std::atomic&lt;double&gt; satox::core::CloudMetrics::max_query_time</definition>
+        <argsstring></argsstring>
+        <name>max_query_time</name>
+        <qualifiedname>satox::core::CloudMetrics::max_query_time</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="81" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab0a49b78f018d9abd1ae7dbe09f8ea25" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; double &gt;</type>
+        <definition>std::atomic&lt;double&gt; satox::core::CloudMetrics::min_query_time</definition>
+        <argsstring></argsstring>
+        <name>min_query_time</name>
+        <qualifiedname>satox::core::CloudMetrics::min_query_time</qualifiedname>
+        <initializer>{std::numeric_limits&lt;double&gt;::max()}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="82" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a0f556e1b8355976c076853bc07d40fab" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::total_connections</definition>
+        <argsstring></argsstring>
+        <name>total_connections</name>
+        <qualifiedname>satox::core::CloudMetrics::total_connections</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="84" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="84" bodyend="84"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a13f5e43b1e2c70ff7caabc5beb968775" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::active_connections</definition>
+        <argsstring></argsstring>
+        <name>active_connections</name>
+        <qualifiedname>satox::core::CloudMetrics::active_connections</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="85" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="85" bodyend="85"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1aec905217125502362f150a16243b0caf" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::connection_errors</definition>
+        <argsstring></argsstring>
+        <name>connection_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::connection_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="86" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="86" bodyend="86"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a8c4c278a32c58cd759f8c5f9c294a4ea" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::total_subscriptions</definition>
+        <argsstring></argsstring>
+        <name>total_subscriptions</name>
+        <qualifiedname>satox::core::CloudMetrics::total_subscriptions</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="88" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="88" bodyend="88"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ac02ddf32a19cd168db1bdf05b780c904" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::active_subscriptions</definition>
+        <argsstring></argsstring>
+        <name>active_subscriptions</name>
+        <qualifiedname>satox::core::CloudMetrics::active_subscriptions</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="89" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="89" bodyend="89"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a9bca75b784b35433fe8fb1d2cab2690f" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::subscription_errors</definition>
+        <argsstring></argsstring>
+        <name>subscription_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::subscription_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="90" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="90" bodyend="90"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1af4eb48a138f9ab2b6f934532e4bfefb5" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::total_requests</definition>
+        <argsstring></argsstring>
+        <name>total_requests</name>
+        <qualifiedname>satox::core::CloudMetrics::total_requests</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="92" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="92" bodyend="92"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a1dd2bd112609c313cd78b30a3ea11dc3" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::successful_requests</definition>
+        <argsstring></argsstring>
+        <name>successful_requests</name>
+        <qualifiedname>satox::core::CloudMetrics::successful_requests</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="93" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="93" bodyend="93"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1af004b070d5deff9c102abe6b8e8b7857" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::failed_requests</definition>
+        <argsstring></argsstring>
+        <name>failed_requests</name>
+        <qualifiedname>satox::core::CloudMetrics::failed_requests</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="94" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="94" bodyend="94"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a7dfe5f8adaab545e1a158f7a68ad7d53" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; double &gt;</type>
+        <definition>std::atomic&lt;double&gt; satox::core::CloudMetrics::average_response_time</definition>
+        <argsstring></argsstring>
+        <name>average_response_time</name>
+        <qualifiedname>satox::core::CloudMetrics::average_response_time</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="95" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1acc8d9ae242bba6b19f8f84f19bc7adde" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; double &gt;</type>
+        <definition>std::atomic&lt;double&gt; satox::core::CloudMetrics::max_response_time</definition>
+        <argsstring></argsstring>
+        <name>max_response_time</name>
+        <qualifiedname>satox::core::CloudMetrics::max_response_time</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="96" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a306116cbe5fe9780e6a87f9d6d496d71" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; double &gt;</type>
+        <definition>std::atomic&lt;double&gt; satox::core::CloudMetrics::min_response_time</definition>
+        <argsstring></argsstring>
+        <name>min_response_time</name>
+        <qualifiedname>satox::core::CloudMetrics::min_response_time</qualifiedname>
+        <initializer>{std::numeric_limits&lt;double&gt;::max()}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="97" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a8814fcc6b794ebf2747be6d1b469a892" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::total_errors</definition>
+        <argsstring></argsstring>
+        <name>total_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::total_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="99" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="99" bodyend="99"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a0d5ccd56c8040674551c028bd07e241f" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::authentication_errors</definition>
+        <argsstring></argsstring>
+        <name>authentication_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::authentication_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="100" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="100" bodyend="100"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3916fc762ae471f6ba6f77b2e8485247" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::network_errors</definition>
+        <argsstring></argsstring>
+        <name>network_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::network_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="101" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="101" bodyend="101"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ae892858c458a417e47195e1e1170c81a" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::timeout_errors</definition>
+        <argsstring></argsstring>
+        <name>timeout_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::timeout_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="102" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="102" bodyend="102"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1adc0149190f1910365e7b935967116e6a" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::rate_limit_errors</definition>
+        <argsstring></argsstring>
+        <name>rate_limit_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::rate_limit_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="103" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="103" bodyend="103"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3ff66f7625ef71791ac0a6289efd3524" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; int64_t &gt;</type>
+        <definition>std::atomic&lt;int64_t&gt; satox::core::CloudMetrics::quota_errors</definition>
+        <argsstring></argsstring>
+        <name>quota_errors</name>
+        <qualifiedname>satox::core::CloudMetrics::quota_errors</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="104" column="17" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="104" bodyend="104"/>
+        <referencedby refid="d7/d4d/classsatox_1_1core_1_1CloudMonitoring_1aa02dcfef9389346e1a17b383048fdca7" compoundref="df/d5d/cloud__monitoring_8cpp" startline="365" endline="401">satox::core::CloudMonitoring::getAggregatedMetrics</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ad65568494b195afa1bfba093790405be" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CloudMetrics::last_operation</definition>
+        <argsstring></argsstring>
+        <name>last_operation</name>
+        <qualifiedname>satox::core::CloudMetrics::last_operation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="106" column="43" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3dd02d3eaf18ba533937a1a85f6775e4" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CloudMetrics::last_error</definition>
+        <argsstring></argsstring>
+        <name>last_error</name>
+        <qualifiedname>satox::core::CloudMetrics::last_error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="107" column="43" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab580a6da86d91000192664cb3b09bd46" prot="public" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CloudMetrics::last_success</definition>
+        <argsstring></argsstring>
+        <name>last_success</name>
+        <qualifiedname>satox::core::CloudMetrics::last_success</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="108" column="43" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Cloud monitoring metrics. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="1">
+        <label>satox::core::CloudMetrics</label>
+        <link refid="dd/dee/structsatox_1_1core_1_1CloudMetrics"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>active_connections</edgelabel>
+          <edgelabel>active_subscriptions</edgelabel>
+          <edgelabel>authentication_errors</edgelabel>
+          <edgelabel>connection_errors</edgelabel>
+          <edgelabel>failed_operations</edgelabel>
+          <edgelabel>failed_queries</edgelabel>
+          <edgelabel>failed_requests</edgelabel>
+          <edgelabel>network_errors</edgelabel>
+          <edgelabel>quota_errors</edgelabel>
+          <edgelabel>rate_limit_errors</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>average_query_time</edgelabel>
+          <edgelabel>average_response_time</edgelabel>
+          <edgelabel>max_query_time</edgelabel>
+          <edgelabel>max_response_time</edgelabel>
+          <edgelabel>min_query_time</edgelabel>
+          <edgelabel>min_response_time</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::atomic&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::atomic&lt; double &gt;</label>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; double &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::atomic&lt; int64_t &gt;</label>
+        <childnode refid="3" relation="template-instance">
+          <edgelabel>&lt; int64_t &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/include/satox/core/cloud/cloud_monitoring.hpp" line="70" column="1" bodyfile="src/core/include/satox/core/cloud/cloud_monitoring.hpp" bodystart="70" bodyend="109"/>
+    <listofallmembers>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a13f5e43b1e2c70ff7caabc5beb968775" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>active_connections</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ac02ddf32a19cd168db1bdf05b780c904" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>active_subscriptions</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a0d5ccd56c8040674551c028bd07e241f" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>authentication_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ada2b541605cd929dd489ed9a9dabe2da" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>average_query_time</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a7dfe5f8adaab545e1a158f7a68ad7d53" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>average_response_time</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1aec905217125502362f150a16243b0caf" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>connection_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a232015c299ff976bf1521ffa7c5e0998" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>failed_operations</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab1a8a932137e4088cd6ed962d143c100" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>failed_queries</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1af004b070d5deff9c102abe6b8e8b7857" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>failed_requests</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3dd02d3eaf18ba533937a1a85f6775e4" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>last_error</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ad65568494b195afa1bfba093790405be" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>last_operation</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab580a6da86d91000192664cb3b09bd46" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>last_success</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab747f83b7afb6445a1efc016eb4d6257" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>max_query_time</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1acc8d9ae242bba6b19f8f84f19bc7adde" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>max_response_time</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ab0a49b78f018d9abd1ae7dbe09f8ea25" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>min_query_time</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a306116cbe5fe9780e6a87f9d6d496d71" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>min_response_time</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3916fc762ae471f6ba6f77b2e8485247" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>network_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a3ff66f7625ef71791ac0a6289efd3524" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>quota_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1adc0149190f1910365e7b935967116e6a" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>rate_limit_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a25597ad1cee414edcba9090d513cb737" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>retry_operations</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a9bca75b784b35433fe8fb1d2cab2690f" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>subscription_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a39ffffc76534be36acdb16175dfe405a" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>successful_operations</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1acdf0754906b84277f225abbb6c3ff12b" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>successful_queries</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a1dd2bd112609c313cd78b30a3ea11dc3" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>successful_requests</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ae892858c458a417e47195e1e1170c81a" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>timeout_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1ae4d41fe41ce4a19cfccd58d6a46c6cb8" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>timeout_operations</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a0f556e1b8355976c076853bc07d40fab" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>total_connections</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a8814fcc6b794ebf2747be6d1b469a892" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>total_errors</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a4bf25b11e5012226079c83b9241c1e55" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>total_operations</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a80b358c0fb04cfd8bd492413acbdb3c5" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>total_queries</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1af4eb48a138f9ab2b6f934532e4bfefb5" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>total_requests</name></member>
+      <member refid="dd/dee/structsatox_1_1core_1_1CloudMetrics_1a8c4c278a32c58cd759f8c5f9c294a4ea" prot="public" virt="non-virtual"><scope>satox::core::CloudMetrics</scope><name>total_subscriptions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

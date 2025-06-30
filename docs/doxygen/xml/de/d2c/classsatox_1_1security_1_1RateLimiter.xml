@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d2c/classsatox_1_1security_1_1RateLimiter" kind="class" language="C++" prot="public">
+    <compoundname>satox::security::RateLimiter</compoundname>
+    <includes refid="d9/dd7/security_2include_2satox_2security_2rate__limiter_8hpp" local="no">rate_limiter.hpp</includes>
+    <innerclass refid="d0/d85/structsatox_1_1security_1_1RateLimiter_1_1RateLimit" prot="private">satox::security::RateLimiter::RateLimit</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1adf731b69662dcbc746e82b57efd887c2" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::security::RateLimiter::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::security::RateLimiter::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="86" column="16" bodyfile="src/security/include/satox/security/rate_limiter.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a5a45936eddd92940ddcd2076f39108fb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::security::RateLimiter::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::security::RateLimiter::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="87" column="10" bodyfile="src/security/include/satox/security/rate_limiter.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a430bec72339a2fd7b5324c099e2eb6ad" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, RateLimit &gt;</type>
+        <definition>std::unordered_map&lt;std::string, RateLimit&gt; satox::security::RateLimiter::limits_</definition>
+        <argsstring></argsstring>
+        <name>limits_</name>
+        <qualifiedname>satox::security::RateLimiter::limits_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="88" column="24" bodyfile="src/security/include/satox/security/rate_limiter.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1aa7b694e7be901250b2c066f5c72602fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::RateLimiter::RateLimiter</definition>
+        <argsstring>()</argsstring>
+        <name>RateLimiter</name>
+        <qualifiedname>satox::security::RateLimiter::RateLimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="39" column="5" bodyfile="src/security/src/rate_limiter.cpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a4f7c513362a355bea14f6701aa167bfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::security::RateLimiter::~RateLimiter</definition>
+        <argsstring>()</argsstring>
+        <name>~RateLimiter</name>
+        <qualifiedname>satox::security::RateLimiter::~RateLimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="40" column="5" bodyfile="src/security/src/rate_limiter.cpp" bodystart="33" bodyend="35"/>
+        <references refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a2c743b309a1c70a7072572f1dba96b1f" compoundref="db/d33/security_2src_2rate__limiter_8cpp" startline="48" endline="57">shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a502808d8d541531465961cdbd71613ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::RateLimiter::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::security::RateLimiter::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="43" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="37" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a2c743b309a1c70a7072572f1dba96b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::RateLimiter::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::security::RateLimiter::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="46" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="48" bodyend="57"/>
+        <referencedby refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a4f7c513362a355bea14f6701aa167bfe" compoundref="db/d33/security_2src_2rate__limiter_8cpp" startline="33" endline="35">~RateLimiter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1ad85e2f270644587f30153220c298249e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::RateLimiter::checkLimit</definition>
+        <argsstring>(const std::string &amp;key, int maxRequests, int timeWindow)</argsstring>
+        <name>checkLimit</name>
+        <qualifiedname>satox::security::RateLimiter::checkLimit</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxRequests</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeWindow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="49" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="59" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a753c673043572b9f7bd26926e86d9320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::RateLimiter::resetLimit</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>resetLimit</name>
+        <qualifiedname>satox::security::RateLimiter::resetLimit</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="52" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="93" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1af9be0b059642cf76750363d4a719d6c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::security::RateLimiter::getRequestCount</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getRequestCount</name>
+        <qualifiedname>satox::security::RateLimiter::getRequestCount</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="55" column="9" bodyfile="src/security/src/rate_limiter.cpp" bodystart="101" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a3fe563842cb83cd75fd93ccc10cdc794" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::security::RateLimiter::getTimeRemaining</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getTimeRemaining</name>
+        <qualifiedname>satox::security::RateLimiter::getTimeRemaining</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="58" column="9" bodyfile="src/security/src/rate_limiter.cpp" bodystart="115" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1ac340528283d7c1bfa25f54c555ce722d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::RateLimiter::setTimeWindow</definition>
+        <argsstring>(const std::string &amp;key, int timeWindow)</argsstring>
+        <name>setTimeWindow</name>
+        <qualifiedname>satox::security::RateLimiter::setTimeWindow</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeWindow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="61" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="133" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a1a255630a93888154419a24ce3f69de3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::security::RateLimiter::setMaxRequests</definition>
+        <argsstring>(const std::string &amp;key, int maxRequests)</argsstring>
+        <name>setMaxRequests</name>
+        <qualifiedname>satox::security::RateLimiter::setMaxRequests</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxRequests</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="64" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="143" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1a0f296eadd8910f0366015a7fd7330f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::security::RateLimiter::getWindowStart</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getWindowStart</name>
+        <qualifiedname>satox::security::RateLimiter::getWindowStart</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="67" column="43" bodyfile="src/security/src/rate_limiter.cpp" bodystart="153" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1addcaba354c812ea2fbb2874de934f75b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::security::RateLimiter::getTimeWindow</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getTimeWindow</name>
+        <qualifiedname>satox::security::RateLimiter::getTimeWindow</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="70" column="9" bodyfile="src/security/src/rate_limiter.cpp" bodystart="167" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1ae1dc975be71908e53670e49061e7d021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::security::RateLimiter::getMaxRequests</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getMaxRequests</name>
+        <qualifiedname>satox::security::RateLimiter::getMaxRequests</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="73" column="9" bodyfile="src/security/src/rate_limiter.cpp" bodystart="181" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d2c/classsatox_1_1security_1_1RateLimiter_1aa8787c429eb3d02ad4d40be2a909e889" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::security::RateLimiter::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::security::RateLimiter::isInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/security/include/satox/security/rate_limiter.hpp" line="76" column="10" bodyfile="src/security/src/rate_limiter.cpp" bodystart="195" bodyend="197"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/security/include/satox/security/rate_limiter.hpp" line="37" column="1" bodyfile="src/security/include/satox/security/rate_limiter.hpp" bodystart="37" bodyend="89"/>
+    <listofallmembers>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1ad85e2f270644587f30153220c298249e" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>checkLimit</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1ae1dc975be71908e53670e49061e7d021" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>getMaxRequests</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1af9be0b059642cf76750363d4a719d6c7" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>getRequestCount</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a3fe563842cb83cd75fd93ccc10cdc794" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>getTimeRemaining</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1addcaba354c812ea2fbb2874de934f75b" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>getTimeWindow</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a0f296eadd8910f0366015a7fd7330f73" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>getWindowStart</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a502808d8d541531465961cdbd71613ea" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>initialize</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a5a45936eddd92940ddcd2076f39108fb" prot="private" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>initialized_</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1aa8787c429eb3d02ad4d40be2a909e889" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>isInitialized</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a430bec72339a2fd7b5324c099e2eb6ad" prot="private" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>limits_</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1adf731b69662dcbc746e82b57efd887c2" prot="private" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>mutex_</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1aa7b694e7be901250b2c066f5c72602fd" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>RateLimiter</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a753c673043572b9f7bd26926e86d9320" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>resetLimit</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a1a255630a93888154419a24ce3f69de3" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>setMaxRequests</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1ac340528283d7c1bfa25f54c555ce722d" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>setTimeWindow</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a2c743b309a1c70a7072572f1dba96b1f" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>shutdown</name></member>
+      <member refid="de/d2c/classsatox_1_1security_1_1RateLimiter_1a4f7c513362a355bea14f6701aa167bfe" prot="public" virt="non-virtual"><scope>satox::security::RateLimiter</scope><name>~RateLimiter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="de/d65/blockchain_8h" kind="file" language="C++">
+    <compoundname>blockchain.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">filesystem</includes>
+    <includes refid="d1/da1/network__interface_8h" local="yes">network_interface.h</includes>
+    <includes local="no">deque</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/blockchain.h</label>
+        <link refid="de/d65/blockchain_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>network_interface.h</label>
+        <link refid="d1/da1/network__interface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>atomic</label>
+      </node>
+      <node id="15">
+        <label>chrono</label>
+      </node>
+      <node id="12">
+        <label>condition_variable</label>
+      </node>
+      <node id="17">
+        <label>deque</label>
+      </node>
+      <node id="9">
+        <label>filesystem</label>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="14">
+        <label>future</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="11">
+        <label>queue</label>
+      </node>
+      <node id="16">
+        <label>random</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>thread</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d3/d32/structsatox_1_1core_1_1Block" prot="public">satox::core::Block</innerclass>
+    <innerclass refid="dd/d17/structsatox_1_1core_1_1ChainState" prot="public">satox::core::ChainState</innerclass>
+    <innerclass refid="d3/d13/classsatox_1_1core_1_1BlockchainManager" prot="public">satox::core::BlockchainManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d1/da1/network__interface_8h" kindref="compound">network_interface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d3/d32/structsatox_1_1core_1_1Block" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/d32/structsatox_1_1core_1_1Block" kindref="compound">Block</ref><sp/>{</highlight></codeline>
+<codeline lineno="43" refid="d3/d32/structsatox_1_1core_1_1Block_1acc96ddf0647c56d97e163c93df461087" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1acc96ddf0647c56d97e163c93df461087" kindref="member">hash</ref>;</highlight></codeline>
+<codeline lineno="44" refid="d3/d32/structsatox_1_1core_1_1Block_1a03a9da87eaa38066af96279d5d13cef4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1a03a9da87eaa38066af96279d5d13cef4" kindref="member">previousHash</ref>;</highlight></codeline>
+<codeline lineno="45" refid="d3/d32/structsatox_1_1core_1_1Block_1a576085684c29829db0f2300722d46069" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1a576085684c29829db0f2300722d46069" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="46" refid="d3/d32/structsatox_1_1core_1_1Block_1a3ef808cb46d12c188d9e9a8d1a7249d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1a3ef808cb46d12c188d9e9a8d1a7249d3" kindref="member">timestamp</ref>;</highlight></codeline>
+<codeline lineno="47" refid="d3/d32/structsatox_1_1core_1_1Block_1a47646cbd8ec66f56e1b6ec9d3f5de83d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1a47646cbd8ec66f56e1b6ec9d3f5de83d" kindref="member">transactions</ref>;</highlight></codeline>
+<codeline lineno="48" refid="d3/d32/structsatox_1_1core_1_1Block_1a20f218f8dcabebb1530c8baac5912d98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1a20f218f8dcabebb1530c8baac5912d98" kindref="member">merkleRoot</ref>;</highlight></codeline>
+<codeline lineno="49" refid="d3/d32/structsatox_1_1core_1_1Block_1ade9af694168a1cc75e499091561d81c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1ade9af694168a1cc75e499091561d81c4" kindref="member">difficulty</ref>;</highlight></codeline>
+<codeline lineno="50" refid="d3/d32/structsatox_1_1core_1_1Block_1a1292621eb47bd4280a68653d472a08de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/d32/structsatox_1_1core_1_1Block_1a1292621eb47bd4280a68653d472a08de" kindref="member">nonce</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="dd/d17/structsatox_1_1core_1_1ChainState" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/d17/structsatox_1_1core_1_1ChainState" kindref="compound">ChainState</ref><sp/>{</highlight></codeline>
+<codeline lineno="54" refid="dd/d17/structsatox_1_1core_1_1ChainState_1a5d474f26c86d3ae92a3017d47a107416" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="dd/d17/structsatox_1_1core_1_1ChainState_1a5d474f26c86d3ae92a3017d47a107416" kindref="member">currentHeight</ref>;</highlight></codeline>
+<codeline lineno="55" refid="dd/d17/structsatox_1_1core_1_1ChainState_1af94a7932b681f0df7fb7d3993395f4b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d17/structsatox_1_1core_1_1ChainState_1af94a7932b681f0df7fb7d3993395f4b4" kindref="member">bestBlockHash</ref>;</highlight></codeline>
+<codeline lineno="56" refid="dd/d17/structsatox_1_1core_1_1ChainState_1a4d33eeb4bd2377da3afa2b4dbccdc06f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="dd/d17/structsatox_1_1core_1_1ChainState_1a4d33eeb4bd2377da3afa2b4dbccdc06f" kindref="member">totalDifficulty</ref>;</highlight></codeline>
+<codeline lineno="57" refid="dd/d17/structsatox_1_1core_1_1ChainState_1adb7ee500e15b956bb3afccc0317edeff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dd/d17/structsatox_1_1core_1_1ChainState_1adb7ee500e15b956bb3afccc0317edeff" kindref="member">isSyncing</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="d3/d13/classsatox_1_1core_1_1BlockchainManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a8e502d28d3d793a37d07cb7ef0b8575f" kindref="member">~BlockchainManager</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a3b274d66bc37280dd44b3552a4e9526c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a3b274d66bc37280dd44b3552a4e9526c" kindref="member">BlockchainManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67" refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a7e3e44fc30f6040202442a42672903ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>&amp;<sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a7e3e44fc30f6040202442a42672903ab" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>moving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1acdf739e4b8c1130509c5ca8d251efb84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1acdf739e4b8c1130509c5ca8d251efb84" kindref="member">BlockchainManager</ref>(<ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="71" refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a4c2af646e7d2271ccd79921b0ad156e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>&amp;<sp/>operator=(<ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1cd937fe24ab178e02e77a1997ba3ffe" kindref="member">BlockchainManager</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Core<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1af9a1cdd62c7b0e7cba7b4da9a8481f1d" kindref="member">initialize</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="d6/d65/namespacesatox_1_1network" kindref="compound">network</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;mainnet&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1acd682c86cc35221c364b8ab62a915f8a" kindref="member">cleanup</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1adde48e0404662b535e216986be94c552" kindref="member">isChainValid</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a5721bb59f4e2175eb46efe2dc3bfbe29" kindref="member">validateBlock</ref>(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block)<sp/>const;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1ac60e7195d84619e74d21bad7f2a6c847" kindref="member">validateChain</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1adf0779a713acca06e43a2215a3febd4e" kindref="member">updateChainState</ref>(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&gt;<sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a95e92e13180ea5006d4d13da0c8fd29c" kindref="member">getBlockRange</ref>(uint64_t<sp/>startHeight,<sp/>uint64_t<sp/>endHeight)<sp/>const;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/d17/structsatox_1_1core_1_1ChainState" kindref="compound">ChainState</ref><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1af056ee01c0f4f93b8c07c21e7f6d1dde" kindref="member">getChainState</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a98b56cc88aa84c8d9583c231105d7a9e" kindref="member">loadChainState</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1ab45380620df2c9afbe5abd1037f93461" kindref="member">getStateDirectory</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1e40de940ae539f475456ec854766958" kindref="member">getLatestBlock</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1acc25766feebf9b30bf78ca58761e85c8" kindref="member">getBlockByHash</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1af37eae14f190221d5ccf915be5898a42" kindref="member">getTransactionByHash</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a614cccce9d4e58f5917e26f91e60d677" kindref="member">getBalance</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a677bd02b0990441230434505584315d7" kindref="member">sendTransaction</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>transaction);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Network<sp/>and<sp/>Synchronization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1ac63694c56e9ab0021e83e726185c8bb6" kindref="member">connectToNetwork</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>nodeAddress,<sp/>uint16_t<sp/>port);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a8ab2f1bc6736e5806d97be91035071ad" kindref="member">disconnectFromNetwork</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a1b4ad64f51d28744324e523192230282" kindref="member">isConnected</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a908c704ff24d0d1e2b7f869127a61f89" kindref="member">startSync</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a067810e63719681768889d5e836a2dea" kindref="member">stopSync</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1ae7df535ea2f3a1fcbcd93a6d27c96cec" kindref="member">isSyncing</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1afed9fbf64a9cac83ab69b0f01de74eac" kindref="member">setSyncCallback</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;<sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1ad972bb801d5d39bd5cb947c56532cba2" kindref="member">getPeers</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Block<sp/>Validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d13/classsatox_1_1core_1_1BlockchainManager_1a476a68ba0565b4e3a85e9f91292cf599" kindref="member">validateTransaction</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>transaction)<sp/>const;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>mutable<sp/>std::mutex<sp/>stateMutex_;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>mutable<sp/>std::mutex<sp/>peerMutex_;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>connected_;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/d17/structsatox_1_1core_1_1ChainState" kindref="compound">ChainState</ref><sp/>chainState_;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&gt;<sp/>blockCache_;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;<sp/>peers_;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>networkName_;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>nodeAddress_;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;<sp/>syncing_;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;)&gt;<sp/>syncCallback_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::thread<sp/>syncThread_;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;<ref refid="d2/dfe/classsatox_1_1core_1_1NetworkInterface" kindref="compound">NetworkInterface</ref>&gt;<sp/>networkInterface_;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::deque&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;<sp/>transactionPool_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Network<sp/>and<sp/>Synchronization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>syncLoop();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestSyncFromNetwork();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processNetworkMessages();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleNetworkMessage(const<sp/><ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleBlockMessage(const<sp/><ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleTransactionMessage(const<sp/><ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handlePeerListMessage(const<sp/><ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleNetworkError(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>error);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>requestBlockFromNetwork(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>hash);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleSyncResponse(const<sp/><ref refid="d9/d7d/structsatox_1_1core_1_1NetworkMessage" kindref="compound">NetworkMessage</ref>&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Block<sp/>and<sp/>Chain<sp/>Management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>persistChainState();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updatePeerList(const<sp/>std::vector&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;&amp;<sp/>newPeers);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sendBlockToNetwork(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>saveBlock(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>loadBlockCache();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref><sp/>loadBlock(const<sp/>std::filesystem::path&amp;<sp/>path);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verifyBlockProof(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block)<sp/>const;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verifyTransactionProof(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>transaction)<sp/>const;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateMerkleTree(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>File<sp/>System<sp/>Operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>getStateFilePath()<sp/>const;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>getBlocksDirectory()<sp/>const;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>getBlockFilePath(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>hash)<sp/>const;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>Functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref><sp/>parseBlockFromMessage(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/>std::vector&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;<sp/>parsePeerList(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>serializeBlock(const<sp/><ref refid="d5/d40/structsatox_1_1core_1_1BlockchainManager_1_1Block" kindref="compound">Block</ref>&amp;<sp/>block);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/blockchain.h"/>
+  </compounddef>
+</doxygen>

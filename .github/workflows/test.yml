@@ -1,0 +1,146 @@
+name: Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build-type: [Debug, Release]
+        compiler: [gcc-9, clang-10]
+
+    services:
+      satoxcoin-node:
+        image: satoverse/satoxcoin-mainnet
+        ports:
+          - 7777:7777
+          - 60777:60777
+        options: >-
+          --health-cmd "curl -f http://localhost:7777"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake libssl-dev libcurl4-openssl-dev
+        sudo apt-get install -y ${{ matrix.compiler }}
+        sudo apt-get install -y ninja-build clang-tidy cppcheck
+        sudo apt-get install -y libboost-all-dev libgtest-dev doxygen graphviz
+
+    - name: Configure CMake
+      run: |
+        cmake -B ${{github.workspace}}/build \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build-type }} \
+          -DCMAKE_CXX_COMPILER=${{ matrix.compiler }} \
+          -DBUILD_TESTING=ON \
+          -DENABLE_COVERAGE=${{ matrix.build-type == 'Debug' }}
+
+    - name: Build
+      run: |
+        cmake --build ${{github.workspace}}/build --config ${{ matrix.build-type }} -- -j $(nproc)
+
+    - name: Run unit tests
+      run: |
+        cd ${{github.workspace}}/build
+        ctest -C ${{ matrix.build-type }} --output-on-failure
+
+    - name: Run integration tests
+      run: |
+        cd ${{github.workspace}}/build
+        ./satox-wallet/tests/wallet_manager_integration_tests
+
+    - name: Run benchmarks
+      run: |
+        cd ${{github.workspace}}/build
+        ./satox-wallet/tests/wallet_manager_benchmarks
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.build-type }}-${{ matrix.compiler }}
+        path: |
+          ${{github.workspace}}/build/Testing/**/*.xml
+          ${{github.workspace}}/build/benchmark-results.json
+
+    - name: Generate coverage report
+      if: matrix.build-type == 'Debug'
+      run: |
+        cd ${{github.workspace}}/build
+        lcov --capture --directory . --output-file coverage.info
+        lcov --remove coverage.info '/usr/*' --output-file coverage.info
+        lcov --list coverage.info
+
+    - name: Upload coverage report
+      if: matrix.build-type == 'Debug'
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report-${{ matrix.compiler }}
+        path: ${{github.workspace}}/build/coverage.info
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install clang-format
+      run: sudo apt-get install -y clang-format-10
+
+    - name: Check formatting
+      run: |
+        find . -name "*.cpp" -o -name "*.hpp" | xargs clang-format-10 --dry-run --Werror
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake libssl-dev libcurl4-openssl-dev
+
+    - name: Run cppcheck
+      run: |
+        sudo apt-get install -y cppcheck
+        cppcheck --enable=all --suppress=missingIncludeSystem .
+
+    - name: Run OSSAR
+      uses: github/codeql-action/init@v1
+      with:
+        languages: cpp
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+
+  notify:
+    needs: [test, lint, security]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify on failure
+      if: failure()
+      uses: actions/github-script@v4
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          const run_id = context.runId;
+          const run_url = `https://github.com/${owner}/${repo}/actions/runs/${run_id}`;
+          
+          const message = `Test run failed: ${run_url}`;
+          github.rest.issues.createComment({
+            owner,
+            repo,
+            issue_number: context.issue.number,
+            body: message
+          }); 

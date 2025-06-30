@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/d3e/asset_8h" kind="file" language="C++">
+    <compoundname>asset.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">chrono</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/core/include/satox/core/asset.h</label>
+        <link refid="d3/d3e/asset_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="db/d53/structsatox_1_1core_1_1Asset" prot="public">satox::core::Asset</innerclass>
+    <innerclass refid="d2/d37/classsatox_1_1core_1_1AssetManager" prot="public">satox::core::AssetManager</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/dd3/namespacesatox_1_1core">satox::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/dd3/namespacesatox_1_1core" kindref="compound">core</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="db/d53/structsatox_1_1core_1_1Asset" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d53/structsatox_1_1core_1_1Asset" kindref="compound">Asset</ref><sp/>{</highlight></codeline>
+<codeline lineno="38" refid="db/d53/structsatox_1_1core_1_1Asset_1aa4cc0d02e275dc9bbbb5d6f440a2a9e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1aa4cc0d02e275dc9bbbb5d6f440a2a9e0" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="39" refid="db/d53/structsatox_1_1core_1_1Asset_1a5c1d3a1cb46a134f34cd6b12175c0c20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a5c1d3a1cb46a134f34cd6b12175c0c20" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="40" refid="db/d53/structsatox_1_1core_1_1Asset_1a27a8f78cda55aa60cc1273b714820c2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a27a8f78cda55aa60cc1273b714820c2b" kindref="member">symbol</ref>;</highlight></codeline>
+<codeline lineno="41" refid="db/d53/structsatox_1_1core_1_1Asset_1a46e3d7bbc1d16a2ed6602beb673b6e7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a46e3d7bbc1d16a2ed6602beb673b6e7f" kindref="member">owner</ref>;</highlight></codeline>
+<codeline lineno="42" refid="db/d53/structsatox_1_1core_1_1Asset_1a6eaf90c827dc1c698c5dfc0a85b44890" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a6eaf90c827dc1c698c5dfc0a85b44890" kindref="member">totalSupply</ref>;</highlight></codeline>
+<codeline lineno="43" refid="db/d53/structsatox_1_1core_1_1Asset_1a6c9b2f7f4087e9bc5b15f4f9f7225bcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a6c9b2f7f4087e9bc5b15f4f9f7225bcd" kindref="member">decimals</ref>;</highlight></codeline>
+<codeline lineno="44" refid="db/d53/structsatox_1_1core_1_1Asset_1a240cdddc1e9b074f171375a8d86bb582" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a240cdddc1e9b074f171375a8d86bb582" kindref="member">contractAddress</ref>;</highlight></codeline>
+<codeline lineno="45" refid="db/d53/structsatox_1_1core_1_1Asset_1a2b259d40b2922658a5ececbd7b0ace55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a2b259d40b2922658a5ececbd7b0ace55" kindref="member">createdAt</ref>;</highlight></codeline>
+<codeline lineno="46" refid="db/d53/structsatox_1_1core_1_1Asset_1a0be10d4a4c205b6149cdababf619d537" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a0be10d4a4c205b6149cdababf619d537" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="47" refid="db/d53/structsatox_1_1core_1_1Asset_1a8977b384fb3c518999aa137f93c526e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="db/d53/structsatox_1_1core_1_1Asset_1a8977b384fb3c518999aa137f93c526e4" kindref="member">metadata</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d2/d37/classsatox_1_1core_1_1AssetManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a0adf32b540e1af6e138572073a2030ac" kindref="member">~AssetManager</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prevent<sp/>copying</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ae3e562e7d9b57452b7392107c1a66b05" kindref="member">AssetManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57" refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>&amp;<sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a360f5c3e14a920cda91b416281847a5c" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>moving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a3a78026e5c271a034c1d6392c95287d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a3a78026e5c271a034c1d6392c95287d2" kindref="member">AssetManager</ref>(<ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="61" refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ac5be80475bcb6c18e197024429021958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>&amp;<sp/>operator=(<ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1ad62590bf5d805e10287b6bc5eb377ef8" kindref="member">AssetManager</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Core<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4be91f88a4877b0e977f3c95a2a62ecf" kindref="member">initialize</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9e0451ed01dcbf92cbe455d901fda28d" kindref="member">createAsset</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>name,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>symbol,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>owner,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>totalSupply,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>decimals<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;18&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1aae3ad8c333353d362c93e55412ee397e" kindref="member">updateAsset</ref>(const<sp/><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref>&amp;<sp/><ref refid="d5/d84/namespacesatox_1_1asset" kindref="compound">asset</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a8c1ec969f130df0537c0fe0d3c931a89" kindref="member">deleteAsset</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>assetId);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9013533b663455aa917da5a64976cbdd" kindref="member">getAsset</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>assetId);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref>&gt;<sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1acab5070fdd2201ae81997d1b8f3a88a5" kindref="member">getAssetsByOwner</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>owner);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref>&gt;<sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a4df61469ff0ee9da0e977df23cb25fb9" kindref="member">getAllAssets</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1a9ca7890ad7f617c6f26f2866b5068286" kindref="member">transferAsset</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>assetId,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>to,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>amount);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d2/d37/classsatox_1_1core_1_1AssetManager_1acd764cb8a42eaaa849a93f07f738e9da" kindref="member">getAssetBalance</ref>(const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>assetId,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>address);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanup();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>generateAssetId(const<sp/><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref>&amp;<sp/><ref refid="d5/d84/namespacesatox_1_1asset" kindref="compound">asset</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateAsset(const<sp/><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref>&amp;<sp/><ref refid="d5/d84/namespacesatox_1_1asset" kindref="compound">asset</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/><ref refid="d2/d74/structsatox_1_1core_1_1AssetManager_1_1Asset" kindref="compound">Asset</ref>&gt;<sp/>assets_;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>std::map&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;&gt;<sp/>balances_;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/core/include/satox/core/asset.h"/>
+  </compounddef>
+</doxygen>

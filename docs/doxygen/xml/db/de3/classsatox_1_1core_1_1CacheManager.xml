@@ -1,0 +1,886 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="db/de3/classsatox_1_1core_1_1CacheManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::CacheManager</compoundname>
+    <includes refid="d1/dea/cache__manager_8hpp" local="no">cache_manager.hpp</includes>
+    <innerclass refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" prot="public">satox::core::CacheManager::CacheConfig</innerclass>
+    <innerclass refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" prot="public">satox::core::CacheManager::CacheEntry</innerclass>
+    <innerclass refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" prot="public">satox::core::CacheManager::CacheStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::core::CacheManager::CacheCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>CacheCallback</name>
+        <qualifiedname>satox::core::CacheManager::CacheCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="74" column="5" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a3f97bc839f19b70d064ff028033a55eb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::CacheManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="140" column="10" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a1023a46d1bccc2e18389487cf83d0849" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::CacheManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::CacheManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="141" column="16" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a9f403fc38b20e143405b6d66df62d265" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" kindref="compound">CacheEntry</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, CacheEntry&gt; satox::core::CacheManager::cache_</definition>
+        <argsstring></argsstring>
+        <name>cache_</name>
+        <qualifiedname>satox::core::CacheManager::cache_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="142" column="24" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a13b9b0cda38d1c9d211446d116d8bbd2" prot="private" static="no" mutable="no">
+        <type>std::list&lt; std::string &gt;</type>
+        <definition>std::list&lt;std::string&gt; satox::core::CacheManager::lruList_</definition>
+        <argsstring></argsstring>
+        <name>lruList_</name>
+        <qualifiedname>satox::core::CacheManager::lruList_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="143" column="15" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1ac76cd276ed532b87a73c2c625bc0461c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" kindref="member">CacheCallback</ref> &gt;</type>
+        <definition>std::vector&lt;CacheCallback&gt; satox::core::CacheManager::callbacks_</definition>
+        <argsstring></argsstring>
+        <name>callbacks_</name>
+        <qualifiedname>satox::core::CacheManager::callbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="144" column="17" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a3c83e869b393b2ed35358cdc86a9d5e8" prot="private" static="no" mutable="no">
+        <type><ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" kindref="compound">CacheConfig</ref></type>
+        <definition>CacheConfig satox::core::CacheManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::CacheManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="145" column="17" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1afb768a488fe6792553d2a3aae0447285" prot="private" static="no" mutable="no">
+        <type><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" kindref="compound">CacheStats</ref></type>
+        <definition>CacheStats satox::core::CacheManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::CacheManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="146" column="16" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a5f1a1a32e52a9ea7197df0b6a2d09649" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::CacheManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::CacheManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="147" column="17" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/de3/classsatox_1_1core_1_1CacheManager_1a7a1cace3e691bc750da3a3b360d15ecd" prot="private" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CacheManager::lastCleanup_</definition>
+        <argsstring></argsstring>
+        <name>lastCleanup_</name>
+        <qualifiedname>satox::core::CacheManager::lastCleanup_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="148" column="43" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1afd6382b9e12c0d66533e6bab12b80231" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/de3/classsatox_1_1core_1_1CacheManager" kindref="compound">CacheManager</ref> &amp;</type>
+        <definition>CacheManager &amp; satox::core::CacheManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::CacheManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="77" column="25" bodyfile="src/core/src/cache_manager.cpp" bodystart="33" bodyend="36"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851">CacheManager</references>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1a5d5a55616a06520f608ba6834a125816" compoundref="da/d8f/satox__manager_8cpp" startline="225" endline="227">satox::core::SatoxManager::getCacheManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CacheManager::CacheManager</definition>
+        <argsstring>(const CacheManager &amp;)=delete</argsstring>
+        <name>CacheManager</name>
+        <qualifiedname>satox::core::CacheManager::CacheManager</qualifiedname>
+        <param>
+          <type>const <ref refid="db/de3/classsatox_1_1core_1_1CacheManager" kindref="compound">CacheManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="80" column="5"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851">CacheManager</references>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851">CacheManager</referencedby>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1afd6382b9e12c0d66533e6bab12b80231" compoundref="dd/d71/cache__manager_8cpp" startline="33" endline="36">getInstance</referencedby>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1abf47a60ccd27f43f5f168eb14c636f78">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1abf47a60ccd27f43f5f168eb14c636f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/de3/classsatox_1_1core_1_1CacheManager" kindref="compound">CacheManager</ref> &amp;</type>
+        <definition>CacheManager &amp; satox::core::CacheManager::operator=</definition>
+        <argsstring>(const CacheManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::CacheManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="db/de3/classsatox_1_1core_1_1CacheManager" kindref="compound">CacheManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="81" column="18"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851">CacheManager</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a6430b03deabb3e70f1ac3ee353305ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::initialize</definition>
+        <argsstring>(const CacheConfig &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::CacheManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig" kindref="compound">CacheConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="84" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="38" bodyend="57"/>
+        <references refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1a3f1f06818665c85931e0fbd6ac3b2415" compoundref="d1/dea/cache__manager_8hpp" startline="66">satox::core::CacheManager::CacheConfig::maxEntries</references>
+        <references refid="de/ddf/structsatox_1_1core_1_1CacheManager_1_1CacheConfig_1aa96ccf4ba1ff7309f578e1eaa5f6a1d8" compoundref="d1/dea/cache__manager_8hpp" startline="65">satox::core::CacheManager::CacheConfig::maxSize</references>
+        <references refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats_1a22f194a3eefeb8809b05daf7a09f8f90" compoundref="d1/dea/cache__manager_8hpp" startline="56">satox::core::CacheManager::CacheStats::maxSize</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a9de0cd5d34aaa5f6912dcf7cce5a5e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::CacheManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="85" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="59" bodyend="65"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8e2005eb4d9f6a6d8a796c39ffdd4e06" compoundref="dd/d71/cache__manager_8cpp" startline="214" endline="220">clear</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a3741ab92280e103940e90f5f49886aba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::set</definition>
+        <argsstring>(const std::string &amp;key, const std::string &amp;value, std::chrono::seconds ttl=std::chrono::seconds(0))</argsstring>
+        <name>set</name>
+        <qualifiedname>satox::core::CacheManager::set</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>ttl</declname>
+          <defval>std::chrono::seconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="88" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="67" bodyend="114"/>
+        <references refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a8f7e6fa94e5c9412de8d65dde9cb3173" compoundref="d1/dea/cache__manager_8hpp" startline="48">satox::core::CacheManager::CacheEntry::accessCount</references>
+        <references refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a02fe1465c3fe0489f33bf4f1f2f3adc9" compoundref="d1/dea/cache__manager_8hpp" startline="46">satox::core::CacheManager::CacheEntry::expiry</references>
+        <references refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1ac161ae939d85d9d0441c7dcbe9960f95" compoundref="d1/dea/cache__manager_8hpp" startline="44">satox::core::CacheManager::CacheEntry::key</references>
+        <references refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a6a29f065f44cac18b64428a590f93e38" compoundref="d1/dea/cache__manager_8hpp" startline="49">satox::core::CacheManager::CacheEntry::lastAccess</references>
+        <references refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a96d639a900f07fd43d29f4046677558e" compoundref="d1/dea/cache__manager_8hpp" startline="47">satox::core::CacheManager::CacheEntry::size</references>
+        <references refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry_1a51e71028246ccaa99cade771baff1c11" compoundref="d1/dea/cache__manager_8hpp" startline="45">satox::core::CacheManager::CacheEntry::value</references>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8dbacbf29564e7fb65f1305ff08531cb" compoundref="dd/d71/cache__manager_8cpp" startline="116" endline="119">set</referencedby>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1a96cf4cb8c853d1f2104d44bbeef02674" compoundref="dd/d71/cache__manager_8cpp" startline="222" endline="238">setMulti</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a8dbacbf29564e7fb65f1305ff08531cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::set</definition>
+        <argsstring>(const std::string &amp;key, const nlohmann::json &amp;value, std::chrono::seconds ttl=std::chrono::seconds(0))</argsstring>
+        <name>set</name>
+        <qualifiedname>satox::core::CacheManager::set</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>ttl</declname>
+          <defval>std::chrono::seconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="90" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="116" bodyend="119"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3741ab92280e103940e90f5f49886aba" compoundref="dd/d71/cache__manager_8cpp" startline="67" endline="114">set</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a687a723c4a8976ed448343a0c2c440e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; satox::core::CacheManager::get</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>get</name>
+        <qualifiedname>satox::core::CacheManager::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="92" column="19" bodyfile="src/core/src/cache_manager.cpp" bodystart="121" bodyend="153"/>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1ae9fd95b72c9c8cfdebcdb337d43794c9" compoundref="dd/d71/cache__manager_8cpp" startline="155" endline="167">getJson</referencedby>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1a98b7af13a777bf927c97110f61e2a096" compoundref="dd/d71/cache__manager_8cpp" startline="240" endline="259">getMulti</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1ae9fd95b72c9c8cfdebcdb337d43794c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; nlohmann::json &gt;</type>
+        <definition>std::optional&lt; nlohmann::json &gt; satox::core::CacheManager::getJson</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getJson</name>
+        <qualifiedname>satox::core::CacheManager::getJson</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="93" column="19" bodyfile="src/core/src/cache_manager.cpp" bodystart="155" bodyend="167"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1a687a723c4a8976ed448343a0c2c440e9" compoundref="dd/d71/cache__manager_8cpp" startline="121" endline="153">get</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a115c09243e399f56df251988d85335ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::remove</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>remove</name>
+        <qualifiedname>satox::core::CacheManager::remove</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="94" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="169" bodyend="187"/>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1adf97ee49290bca663983fc0e40395104" compoundref="dd/d71/cache__manager_8cpp" startline="261" endline="276">removeMulti</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a6e1fe79e30e04a36492dc3089e986508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::exists</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>exists</name>
+        <qualifiedname>satox::core::CacheManager::exists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="95" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="189" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a8e2005eb4d9f6a6d8a796c39ffdd4e06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>satox::core::CacheManager::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="96" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="214" bodyend="220"/>
+        <referencedby refid="db/de3/classsatox_1_1core_1_1CacheManager_1a9de0cd5d34aaa5f6912dcf7cce5a5e3d" compoundref="dd/d71/cache__manager_8cpp" startline="59" endline="65">shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a96cf4cb8c853d1f2104d44bbeef02674" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::setMulti</definition>
+        <argsstring>(const std::unordered_map&lt; std::string, std::string &gt; &amp;entries, std::chrono::seconds ttl=std::chrono::seconds(0))</argsstring>
+        <name>setMulti</name>
+        <qualifiedname>satox::core::CacheManager::setMulti</qualifiedname>
+        <param>
+          <type>const std::unordered_map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>entries</declname>
+        </param>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>ttl</declname>
+          <defval>std::chrono::seconds(0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="99" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="222" bodyend="238"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3741ab92280e103940e90f5f49886aba" compoundref="dd/d71/cache__manager_8cpp" startline="67" endline="114">set</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a98b7af13a777bf927c97110f61e2a096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt; std::string, std::string &gt; satox::core::CacheManager::getMulti</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;keys)</argsstring>
+        <name>getMulti</name>
+        <qualifiedname>satox::core::CacheManager::getMulti</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>keys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="101" column="24" bodyfile="src/core/src/cache_manager.cpp" bodystart="240" bodyend="259"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1a687a723c4a8976ed448343a0c2c440e9" compoundref="dd/d71/cache__manager_8cpp" startline="121" endline="153">get</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1adf97ee49290bca663983fc0e40395104" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::removeMulti</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;keys)</argsstring>
+        <name>removeMulti</name>
+        <qualifiedname>satox::core::CacheManager::removeMulti</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>keys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="103" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="261" bodyend="276"/>
+        <references refid="db/de3/classsatox_1_1core_1_1CacheManager_1a115c09243e399f56df251988d85335ef" compoundref="dd/d71/cache__manager_8cpp" startline="169" endline="187">remove</references>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a29bae68237f622caba3dc10026159b12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::setTTL</definition>
+        <argsstring>(const std::string &amp;key, std::chrono::seconds ttl)</argsstring>
+        <name>setTTL</name>
+        <qualifiedname>satox::core::CacheManager::setTTL</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::chrono::seconds</type>
+          <declname>ttl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="106" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="278" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a93bd27b145a5c728a98f8b31d074f739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point satox::core::CacheManager::getExpiry</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getExpiry</name>
+        <qualifiedname>satox::core::CacheManager::getExpiry</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="107" column="43" bodyfile="src/core/src/cache_manager.cpp" bodystart="295" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a4eb35d6fc98e6ac0df6d1a78c75570c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::core::CacheManager::getSize</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getSize</name>
+        <qualifiedname>satox::core::CacheManager::getSize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="108" column="12" bodyfile="src/core/src/cache_manager.cpp" bodystart="311" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1aee6cf662b94c609eae14ca21e4942378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::core::CacheManager::getTotalSize</definition>
+        <argsstring>()</argsstring>
+        <name>getTotalSize</name>
+        <qualifiedname>satox::core::CacheManager::getTotalSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="109" column="12" bodyfile="src/core/src/cache_manager.cpp" bodystart="327" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1ae76bdfcab3dfee3cb3ea6281cc4fd250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::core::CacheManager::getEntryCount</definition>
+        <argsstring>()</argsstring>
+        <name>getEntryCount</name>
+        <qualifiedname>satox::core::CacheManager::getEntryCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="110" column="12" bodyfile="src/core/src/cache_manager.cpp" bodystart="332" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1ad07f71c600d133a2ed81bd8075b94057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dbf/structsatox_1_1core_1_1CacheManager_1_1CacheStats" kindref="compound">CacheStats</ref></type>
+        <definition>CacheManager::CacheStats satox::core::CacheManager::getStats</definition>
+        <argsstring>()</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::CacheManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="111" column="16" bodyfile="src/core/src/cache_manager.cpp" bodystart="337" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a99d7540676f4ef7ab25015cba6d8513a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::registerCallback</definition>
+        <argsstring>(CacheCallback callback)</argsstring>
+        <name>registerCallback</name>
+        <qualifiedname>satox::core::CacheManager::registerCallback</qualifiedname>
+        <param>
+          <type><ref refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" kindref="member">CacheCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="114" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="348" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a48d4b6a0d193114eabe70f92af0d98e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::unregisterCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterCallback</name>
+        <qualifiedname>satox::core::CacheManager::unregisterCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="115" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="353" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a0dc65c2c33716015fa8b02be14833323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>satox::core::CacheManager::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="118" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="358" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a31e39ef32129e9f74d6c4f830bd73907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::resize</definition>
+        <argsstring>(size_t newMaxSize)</argsstring>
+        <name>resize</name>
+        <qualifiedname>satox::core::CacheManager::resize</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>newMaxSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="119" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="385" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a9e003b9a12e7dc7fea575fe8580210a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::setMaxEntries</definition>
+        <argsstring>(size_t newMaxEntries)</argsstring>
+        <name>setMaxEntries</name>
+        <qualifiedname>satox::core::CacheManager::setMaxEntries</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>newMaxEntries</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="120" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="404" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1af23c576eaebaa5f9ca4e38720cd7708d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::CacheManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::CacheManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="123" column="17" bodyfile="src/core/src/cache_manager.cpp" bodystart="422" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a8f7a3dbe8e90990ee8ba7fa74453516e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::CacheManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="124" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="426" bodyend="428"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1afd1bb0bd7652c86c892f43276431ca39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CacheManager::CacheManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>CacheManager</name>
+        <qualifiedname>satox::core::CacheManager::CacheManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="127" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a1d8daa4ce2459e438a4f890bfc656733" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::CacheManager::~CacheManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CacheManager</name>
+        <qualifiedname>satox::core::CacheManager::~CacheManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="128" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1adb1a4ffa258e4057c633699b78ff72a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::evictEntry</definition>
+        <argsstring>()</argsstring>
+        <name>evictEntry</name>
+        <qualifiedname>satox::core::CacheManager::evictEntry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="131" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="430" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a1f5dcb1c69818a3f6e3f54e98ee206fd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::updateAccessStats</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>updateAccessStats</name>
+        <qualifiedname>satox::core::CacheManager::updateAccessStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="132" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="474" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1ac68daef1eddab2609ea3ebef19560df0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::notifyCallbacks</definition>
+        <argsstring>(const std::string &amp;key, const std::string &amp;value)</argsstring>
+        <name>notifyCallbacks</name>
+        <qualifiedname>satox::core::CacheManager::notifyCallbacks</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="133" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="484" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a1c0522f64db96acd5e7bb6848426528a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::validateKey</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>validateKey</name>
+        <qualifiedname>satox::core::CacheManager::validateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="134" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="490" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1af277bd37b750908be2f92504b2bb1ab6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::CacheManager::validateValue</definition>
+        <argsstring>(const std::string &amp;value)</argsstring>
+        <name>validateValue</name>
+        <qualifiedname>satox::core::CacheManager::validateValue</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="135" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="498" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1aa73a49b3f9923944ad532f486eb91e19" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::core::CacheManager::calculateEntrySize</definition>
+        <argsstring>(const CacheEntry &amp;entry)</argsstring>
+        <name>calculateEntrySize</name>
+        <qualifiedname>satox::core::CacheManager::calculateEntrySize</qualifiedname>
+        <param>
+          <type>const <ref refid="db/d77/structsatox_1_1core_1_1CacheManager_1_1CacheEntry" kindref="compound">CacheEntry</ref> &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="136" column="12" bodyfile="src/core/src/cache_manager.cpp" bodystart="506" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="db/de3/classsatox_1_1core_1_1CacheManager_1a7681fdc91b92030fce447600d6d520e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::CacheManager::updateStats</definition>
+        <argsstring>(bool hit)</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::core::CacheManager::updateStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>hit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/cache_manager.hpp" line="137" column="10" bodyfile="src/core/src/cache_manager.cpp" bodystart="510" bodyend="516"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/cache_manager.hpp" line="40" column="1" bodyfile="src/core/include/satox/core/cache_manager.hpp" bodystart="40" bodyend="149"/>
+    <listofallmembers>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a9f403fc38b20e143405b6d66df62d265" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>cache_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1a4d794f7e7e0d11055e39ecc7bdab5b" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>CacheCallback</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1afc2508a08a90571f59a3bbc7ff7de851" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>CacheManager</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1afd1bb0bd7652c86c892f43276431ca39" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>CacheManager</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1aa73a49b3f9923944ad532f486eb91e19" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>calculateEntrySize</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1ac76cd276ed532b87a73c2c625bc0461c" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>callbacks_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a0dc65c2c33716015fa8b02be14833323" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>cleanup</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8e2005eb4d9f6a6d8a796c39ffdd4e06" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>clear</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8f7a3dbe8e90990ee8ba7fa74453516e" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>clearLastError</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3c83e869b393b2ed35358cdc86a9d5e8" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>config_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1adb1a4ffa258e4057c633699b78ff72a9" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>evictEntry</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a6e1fe79e30e04a36492dc3089e986508" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>exists</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a687a723c4a8976ed448343a0c2c440e9" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>get</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1ae76bdfcab3dfee3cb3ea6281cc4fd250" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getEntryCount</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a93bd27b145a5c728a98f8b31d074f739" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getExpiry</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1afd6382b9e12c0d66533e6bab12b80231" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getInstance</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1ae9fd95b72c9c8cfdebcdb337d43794c9" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getJson</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1af23c576eaebaa5f9ca4e38720cd7708d" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getLastError</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a98b7af13a777bf927c97110f61e2a096" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getMulti</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a4eb35d6fc98e6ac0df6d1a78c75570c0" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getSize</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1ad07f71c600d133a2ed81bd8075b94057" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getStats</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1aee6cf662b94c609eae14ca21e4942378" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>getTotalSize</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a6430b03deabb3e70f1ac3ee353305ff8" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>initialize</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3f97bc839f19b70d064ff028033a55eb" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>initialized_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a7a1cace3e691bc750da3a3b360d15ecd" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>lastCleanup_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a5f1a1a32e52a9ea7197df0b6a2d09649" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>lastError_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a13b9b0cda38d1c9d211446d116d8bbd2" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>lruList_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1023a46d1bccc2e18389487cf83d0849" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>mutex_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1ac68daef1eddab2609ea3ebef19560df0" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>notifyCallbacks</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1abf47a60ccd27f43f5f168eb14c636f78" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>operator=</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a99d7540676f4ef7ab25015cba6d8513a" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>registerCallback</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a115c09243e399f56df251988d85335ef" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>remove</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1adf97ee49290bca663983fc0e40395104" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>removeMulti</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a31e39ef32129e9f74d6c4f830bd73907" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>resize</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a3741ab92280e103940e90f5f49886aba" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>set</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a8dbacbf29564e7fb65f1305ff08531cb" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>set</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a9e003b9a12e7dc7fea575fe8580210a9" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>setMaxEntries</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a96cf4cb8c853d1f2104d44bbeef02674" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>setMulti</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a29bae68237f622caba3dc10026159b12" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>setTTL</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a9de0cd5d34aaa5f6912dcf7cce5a5e3d" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>shutdown</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1afb768a488fe6792553d2a3aae0447285" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>stats_</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a48d4b6a0d193114eabe70f92af0d98e9" prot="public" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>unregisterCallback</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1f5dcb1c69818a3f6e3f54e98ee206fd" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>updateAccessStats</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a7681fdc91b92030fce447600d6d520e4" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>updateStats</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1c0522f64db96acd5e7bb6848426528a" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>validateKey</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1af277bd37b750908be2f92504b2bb1ab6" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>validateValue</name></member>
+      <member refid="db/de3/classsatox_1_1core_1_1CacheManager_1a1d8daa4ce2459e438a4f890bfc656733" prot="private" virt="non-virtual"><scope>satox::core::CacheManager</scope><name>~CacheManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

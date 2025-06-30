@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d8/de8/KeccakF-1600-reference_8c" kind="file" language="C++">
+    <compoundname>KeccakF-1600-reference.c</compoundname>
+    <includes refid="dd/d5f/KeccakF-1600-reference_8h" local="yes">KeccakF-1600-reference.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>KeccakF-1600-reference.h</label>
+        <link refid="dd/d5f/KeccakF-1600-reference_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c</label>
+        <link refid="d8/de8/KeccakF-1600-reference_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="d8/de8/KeccakF-1600-reference_8c_1aa7c83a952d8f32c4828a95910f5d2f60" prot="public" static="no">
+        <name>ROL64</name>
+        <param><defname>a</defname></param>
+        <param><defname>offset</defname></param>
+        <initializer>((((uint64_t)a) &lt;&lt; offset) | (((uint64_t)a) &gt;&gt; (64-offset)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" line="4" column="9" bodyfile="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" bodystart="4" bodyend="-1"/>
+        <referencedby refid="dd/d5f/KeccakF-1600-reference_8h_1a9579edfff1790be29cfb33c55d0026f4" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="32" endline="68">KeccakF_1600_StatePermute</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="d8/de8/KeccakF-1600-reference_8c_1a199fa981773d755650ae45cf6f3dd7b3" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t KeccakF_RoundConstants[KECCAK_F_1600_ROUNDS]</definition>
+        <argsstring>[KECCAK_F_1600_ROUNDS]</argsstring>
+        <name>KeccakF_RoundConstants</name>
+        <initializer>= {
+    0x0000000000000001ULL, 0x0000000000008082ULL, 0x800000000000808aULL,
+    0x8000000080008000ULL, 0x000000000000808bULL, 0x0000000080000001ULL,
+    0x8000000080008081ULL, 0x8000000000008009ULL, 0x000000000000008aULL,
+    0x0000000000000088ULL, 0x0000000080008009ULL, 0x000000008000000aULL,
+    0x000000008000808bULL, 0x800000000000008bULL, 0x8000000000008089ULL,
+    0x8000000000008003ULL, 0x8000000000008002ULL, 0x8000000000000080ULL,
+    0x000000000000800aULL, 0x800000008000000aULL, 0x8000000080008081ULL,
+    0x8000000000008080ULL, 0x0000000080000001ULL, 0x8000000080008008ULL
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" line="6" column="23" bodyfile="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" bodystart="6" bodyend="15"/>
+        <referencedby refid="dd/d5f/KeccakF-1600-reference_8h_1a9579edfff1790be29cfb33c55d0026f4" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="32" endline="68">KeccakF_1600_StatePermute</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d8/de8/KeccakF-1600-reference_8c_1a1e3d2ba7d471ef2885905c4d7169e36d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakF_1600_Initialize</definition>
+        <argsstring>(KeccakF_1600_State *state)</argsstring>
+        <name>KeccakF_1600_Initialize</name>
+        <param>
+          <type><ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" line="17" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" bodystart="17" bodyend="19"/>
+        <references refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="11">KeccakF_1600_State::A</references>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a05840663491384d69ce560288e97b964" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="7">KECCAK_F_1600_LANES</references>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1afab45db0378700afd04e6a5b9a0f73a0" compoundref="d9/db3/KeccakSponge_8c" startline="4" endline="10">KeccakSponge_Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/de8/KeccakF-1600-reference_8c_1a96070b6810568d955671ccc769c72c71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakF_1600_StateXORBytes</definition>
+        <argsstring>(KeccakF_1600_State *state, const unsigned char *data, unsigned int offset, unsigned int length)</argsstring>
+        <name>KeccakF_1600_StateXORBytes</name>
+        <param>
+          <type><ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" line="21" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" bodystart="21" bodyend="26"/>
+        <references refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="11">KeccakF_1600_State::A</references>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1a0dea0ec27e252be914996a10848e9d10" compoundref="d9/db3/KeccakSponge_8c" startline="12" endline="29">KeccakSponge_Absorb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/de8/KeccakF-1600-reference_8c_1a2501119969421f4a9f0ee78cd55445b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakF_1600_StateExtractBytes</definition>
+        <argsstring>(const KeccakF_1600_State *state, unsigned char *data, unsigned int offset, unsigned int length)</argsstring>
+        <name>KeccakF_1600_StateExtractBytes</name>
+        <param>
+          <type>const <ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" line="28" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" bodystart="28" bodyend="30"/>
+        <references refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="11">KeccakF_1600_State::A</references>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1affa225cf50299bad7641318082b78500" compoundref="d9/db3/KeccakSponge_8c" startline="31" endline="48">KeccakSponge_Squeeze</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/de8/KeccakF-1600-reference_8c_1a9579edfff1790be29cfb33c55d0026f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeccakF_1600_StatePermute</definition>
+        <argsstring>(KeccakF_1600_State *state)</argsstring>
+        <name>KeccakF_1600_StatePermute</name>
+        <param>
+          <type><ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" line="32" column="6" bodyfile="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c" bodystart="32" bodyend="68"/>
+        <references refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="11">KeccakF_1600_State::A</references>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a05840663491384d69ce560288e97b964" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="7">KECCAK_F_1600_LANES</references>
+        <references refid="dd/d5f/KeccakF-1600-reference_8h_1a87e45964f29d7e6abe11dd535e6ee02d" compoundref="dd/d5f/KeccakF-1600-reference_8h" startline="8">KECCAK_F_1600_ROUNDS</references>
+        <references refid="d8/de8/KeccakF-1600-reference_8c_1a199fa981773d755650ae45cf6f3dd7b3" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="6" endline="15">KeccakF_RoundConstants</references>
+        <references refid="d8/de8/KeccakF-1600-reference_8c_1aa7c83a952d8f32c4828a95910f5d2f60" compoundref="d8/de8/KeccakF-1600-reference_8c" startline="4">ROL64</references>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1a0dea0ec27e252be914996a10848e9d10" compoundref="d9/db3/KeccakSponge_8c" startline="12" endline="29">KeccakSponge_Absorb</referencedby>
+        <referencedby refid="d3/d38/KeccakSponge_8h_1affa225cf50299bad7641318082b78500" compoundref="d9/db3/KeccakSponge_8c" startline="31" endline="48">KeccakSponge_Squeeze</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/d5f/KeccakF-1600-reference_8h" kindref="compound">KeccakF-1600-reference.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="d8/de8/KeccakF-1600-reference_8c_1aa7c83a952d8f32c4828a95910f5d2f60" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ROL64(a,<sp/>offset)<sp/>((((uint64_t)a)<sp/>&lt;&lt;<sp/>offset)<sp/>|<sp/>(((uint64_t)a)<sp/>&gt;&gt;<sp/>(64-offset)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="d8/de8/KeccakF-1600-reference_8c_1a199fa981773d755650ae45cf6f3dd7b3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1a199fa981773d755650ae45cf6f3dd7b3" kindref="member">KeccakF_RoundConstants</ref>[<ref refid="dd/d5f/KeccakF-1600-reference_8h_1a87e45964f29d7e6abe11dd535e6ee02d" kindref="member">KECCAK_F_1600_ROUNDS</ref>]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>0x0000000000000001ULL,<sp/>0x0000000000008082ULL,<sp/>0x800000000000808aULL,</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>0x8000000080008000ULL,<sp/>0x000000000000808bULL,<sp/>0x0000000080000001ULL,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>0x8000000080008081ULL,<sp/>0x8000000000008009ULL,<sp/>0x000000000000008aULL,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>0x0000000000000088ULL,<sp/>0x0000000080008009ULL,<sp/>0x000000008000000aULL,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>0x000000008000808bULL,<sp/>0x800000000000008bULL,<sp/>0x8000000000008089ULL,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>0x8000000000008003ULL,<sp/>0x8000000000008002ULL,<sp/>0x8000000000000080ULL,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>0x000000000000800aULL,<sp/>0x800000008000000aULL,<sp/>0x8000000080008081ULL,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>0x8000000000008080ULL,<sp/>0x0000000080000001ULL,<sp/>0x8000000080008008ULL</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="dd/d5f/KeccakF-1600-reference_8h_1a1e3d2ba7d471ef2885905c4d7169e36d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1a1e3d2ba7d471ef2885905c4d7169e36d" kindref="member">KeccakF_1600_Initialize</ref>(<ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(state-&gt;<ref refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" kindref="member">A</ref>,<sp/>0,<sp/><ref refid="dd/d5f/KeccakF-1600-reference_8h_1a05840663491384d69ce560288e97b964" kindref="member">KECCAK_F_1600_LANES</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="dd/d5f/KeccakF-1600-reference_8h_1a96070b6810568d955671ccc769c72c71" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1a96070b6810568d955671ccc769c72c71" kindref="member">KeccakF_1600_StateXORBytes</ref>(<ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref><sp/>*state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)state-&gt;<ref refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" kindref="member">A</ref>)[offset<sp/>+<sp/>i]<sp/>^=<sp/>data[i];</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="dd/d5f/KeccakF-1600-reference_8h_1a2501119969421f4a9f0ee78cd55445b8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1a2501119969421f4a9f0ee78cd55445b8" kindref="member">KeccakF_1600_StateExtractBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(data,<sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)state-&gt;<ref refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" kindref="member">A</ref>)<sp/>+<sp/>offset,<sp/>length);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="dd/d5f/KeccakF-1600-reference_8h_1a9579edfff1790be29cfb33c55d0026f4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1a9579edfff1790be29cfb33c55d0026f4" kindref="member">KeccakF_1600_StatePermute</ref>(<ref refid="d2/d53/structKeccakF__1600__State" kindref="compound">KeccakF_1600_State</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>*A<sp/>=<sp/>state-&gt;<ref refid="d2/d53/structKeccakF__1600__State_1a69964663fb05c2cc06b0845875d377b0" kindref="member">A</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>B[<ref refid="dd/d5f/KeccakF-1600-reference_8h_1a05840663491384d69ce560288e97b964" kindref="member">KECCAK_F_1600_LANES</ref>];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>C[5];</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>D[5];</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/>y,<sp/>i;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="dd/d5f/KeccakF-1600-reference_8h_1a87e45964f29d7e6abe11dd535e6ee02d" kindref="member">KECCAK_F_1600_ROUNDS</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Theta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(x<sp/>=<sp/>0;<sp/>x<sp/>&lt;<sp/>5;<sp/>x++)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C[x]<sp/>=<sp/>A[x]<sp/>^<sp/>A[x+5]<sp/>^<sp/>A[x+10]<sp/>^<sp/>A[x+15]<sp/>^<sp/>A[x+20];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(x<sp/>=<sp/>0;<sp/>x<sp/>&lt;<sp/>5;<sp/>x++)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>D[x]<sp/>=<sp/>C[(x+4)%5]<sp/>^<sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1aa7c83a952d8f32c4828a95910f5d2f60" kindref="member">ROL64</ref>(C[(x+1)%5],<sp/>1);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(y<sp/>=<sp/>0;<sp/>y<sp/>&lt;<sp/>5;<sp/>y++)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A[x+5*y]<sp/>^=<sp/>D[x];</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rho<sp/>and<sp/>Pi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(x<sp/>=<sp/>0;<sp/>x<sp/>&lt;<sp/>5;<sp/>x++)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(y<sp/>=<sp/>0;<sp/>y<sp/>&lt;<sp/>5;<sp/>y++)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B[y+5*((2*x+3*y)%5)]<sp/>=<sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1aa7c83a952d8f32c4828a95910f5d2f60" kindref="member">ROL64</ref>(A[x+5*y],<sp/>((x+1)*(x+2)/2)%64);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Chi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(x<sp/>=<sp/>0;<sp/>x<sp/>&lt;<sp/>5;<sp/>x++)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(y<sp/>=<sp/>0;<sp/>y<sp/>&lt;<sp/>5;<sp/>y++)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A[x+5*y]<sp/>=<sp/>B[x+5*y]<sp/>^<sp/>((~B[((x+1)%5)+5*y])<sp/>&amp;<sp/>B[((x+2)%5)+5*y]);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iota</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A[0]<sp/>^=<sp/><ref refid="d8/de8/KeccakF-1600-reference_8c_1a199fa981773d755650ae45cf6f3dd7b3" kindref="member">KeccakF_RoundConstants</ref>[i];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/blockchain/third_party/keccak/src/KeccakF-1600-reference.c"/>
+  </compounddef>
+</doxygen>

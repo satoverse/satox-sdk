@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'satox-sdk'
+    static_configs:
+      - targets: ['localhost:9090']
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['localhost:8080']
+
+rule_files:
+  - "rules/*.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['localhost:9093'] 

@@ -1,0 +1,523 @@
+#include "satox/core/security_manager.hpp"
+#include <openssl/evp.h>
+#include <openssl/aes.h>
+#include <openssl/rand.h>
+#include <openssl/sha.h>
+#include <openssl/rsa.h>
+#include <openssl/pem.h>
+#include <openssl/err.h>
+#include <sstream>
+#include <iomanip>
+#include <random>
+#include <chrono>
+
+namespace satox::core {
+
+SecurityManager& SecurityManager::getInstance() {
+    static SecurityManager instance;
+    return instance;
+}
+
+bool SecurityManager::initialize(const nlohmann::json& config) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (initialized_) {
+        setLastError("Security Manager already initialized");
+        return false;
+    }
+
+    try {
+        // Initialize OpenSSL
+        OpenSSL_add_all_algorithms();
+        ERR_load_crypto_strings();
+        
+        // Store configuration
+        config_ = config;
+        initialized_ = true;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to initialize Security Manager: " + std::string(e.what()));
+        return false;
+    }
+}
+
+bool SecurityManager::shutdown() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        return true;
+    }
+
+    try {
+        // Cleanup OpenSSL
+        EVP_cleanup();
+        ERR_free_strings();
+        
+        initialized_ = false;
+        return true;
+    } catch (const std::exception& e) {
+        setLastError("Failed to shutdown Security Manager: " + std::string(e.what()));
+        return false;
+    }
+}
+
+std::string SecurityManager::generateKey(KeyType type, size_t length) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return "";
+    }
+
+    try {
+        std::vector<unsigned char> key(length);
+        if (RAND_bytes(key.data(), length) != 1) {
+            setLastError("Failed to generate random key");
+            return "";
+        }
+
+        std::stringstream ss;
+        for (size_t i = 0; i < length; ++i) {
+            ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(key[i]);
+        }
+        return ss.str();
+    } catch (const std::exception& e) {
+        setLastError("Failed to generate key: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::string SecurityManager::hash(const std::string& data, HashType type) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return "";
+    }
+
+    try {
+        unsigned char hash[EVP_MAX_MD_SIZE];
+        unsigned int hashLen;
+
+        const EVP_MD* md = nullptr;
+        switch (type) {
+            case HashType::SHA256:
+                md = EVP_sha256();
+                break;
+            case HashType::SHA512:
+                md = EVP_sha512();
+                break;
+            default:
+                setLastError("Unsupported hash type");
+                return "";
+        }
+
+        EVP_MD_CTX* ctx = EVP_MD_CTX_new();
+        if (!ctx) {
+            setLastError("Failed to create hash context");
+            return "";
+        }
+
+        if (EVP_DigestInit_ex(ctx, md, nullptr) != 1 ||
+            EVP_DigestUpdate(ctx, data.c_str(), data.length()) != 1 ||
+            EVP_DigestFinal_ex(ctx, hash, &hashLen) != 1) {
+            EVP_MD_CTX_free(ctx);
+            setLastError("Failed to compute hash");
+            return "";
+        }
+
+        EVP_MD_CTX_free(ctx);
+
+        std::stringstream ss;
+        for (unsigned int i = 0; i < hashLen; ++i) {
+            ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);
+        }
+        return ss.str();
+    } catch (const std::exception& e) {
+        setLastError("Failed to compute hash: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::string SecurityManager::encrypt(const std::string& data, const std::string& key,
+                                   EncryptionType type) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return "";
+    }
+
+    try {
+        std::vector<unsigned char> iv(EVP_MAX_IV_LENGTH);
+        if (RAND_bytes(iv.data(), iv.size()) != 1) {
+            setLastError("Failed to generate IV");
+            return "";
+        }
+
+        const EVP_CIPHER* cipher = nullptr;
+        switch (type) {
+            case EncryptionType::AES256:
+                cipher = EVP_aes_256_cbc();
+                break;
+            default:
+                setLastError("Unsupported encryption type");
+                return "";
+        }
+
+        EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();
+        if (!ctx) {
+            setLastError("Failed to create encryption context");
+            return "";
+        }
+
+        std::vector<unsigned char> keyBytes(key.begin(), key.end());
+        if (EVP_EncryptInit_ex(ctx, cipher, nullptr, keyBytes.data(), iv.data()) != 1) {
+            EVP_CIPHER_CTX_free(ctx);
+            setLastError("Failed to initialize encryption");
+            return "";
+        }
+
+        std::vector<unsigned char> ciphertext(data.length() + EVP_MAX_BLOCK_LENGTH);
+        int len1, len2;
+
+        if (EVP_EncryptUpdate(ctx, ciphertext.data(), &len1,
+                            reinterpret_cast<const unsigned char*>(data.c_str()),
+                            data.length()) != 1) {
+            EVP_CIPHER_CTX_free(ctx);
+            setLastError("Failed to encrypt data");
+            return "";
+        }
+
+        if (EVP_EncryptFinal_ex(ctx, ciphertext.data() + len1, &len2) != 1) {
+            EVP_CIPHER_CTX_free(ctx);
+            setLastError("Failed to finalize encryption");
+            return "";
+        }
+
+        EVP_CIPHER_CTX_free(ctx);
+
+        // Combine IV and ciphertext
+        std::vector<unsigned char> result(iv.begin(), iv.end());
+        result.insert(result.end(), ciphertext.begin(), ciphertext.begin() + len1 + len2);
+
+        std::stringstream ss;
+        for (unsigned char byte : result) {
+            ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte);
+        }
+        return ss.str();
+    } catch (const std::exception& e) {
+        setLastError("Failed to encrypt data: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::string SecurityManager::decrypt(const std::string& data, const std::string& key,
+                                   EncryptionType type) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return "";
+    }
+
+    try {
+        // Convert hex string to bytes
+        std::vector<unsigned char> encryptedData;
+        for (size_t i = 0; i < data.length(); i += 2) {
+            std::string byteString = data.substr(i, 2);
+            unsigned char byte = static_cast<unsigned char>(std::stoi(byteString, nullptr, 16));
+            encryptedData.push_back(byte);
+        }
+
+        // Extract IV
+        std::vector<unsigned char> iv(encryptedData.begin(),
+                                    encryptedData.begin() + EVP_MAX_IV_LENGTH);
+        std::vector<unsigned char> ciphertext(encryptedData.begin() + EVP_MAX_IV_LENGTH,
+                                            encryptedData.end());
+
+        const EVP_CIPHER* cipher = nullptr;
+        switch (type) {
+            case EncryptionType::AES256:
+                cipher = EVP_aes_256_cbc();
+                break;
+            default:
+                setLastError("Unsupported encryption type");
+                return "";
+        }
+
+        EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();
+        if (!ctx) {
+            setLastError("Failed to create decryption context");
+            return "";
+        }
+
+        std::vector<unsigned char> keyBytes(key.begin(), key.end());
+        if (EVP_DecryptInit_ex(ctx, cipher, nullptr, keyBytes.data(), iv.data()) != 1) {
+            EVP_CIPHER_CTX_free(ctx);
+            setLastError("Failed to initialize decryption");
+            return "";
+        }
+
+        std::vector<unsigned char> plaintext(ciphertext.size());
+        int len1, len2;
+
+        if (EVP_DecryptUpdate(ctx, plaintext.data(), &len1,
+                            ciphertext.data(), ciphertext.size()) != 1) {
+            EVP_CIPHER_CTX_free(ctx);
+            setLastError("Failed to decrypt data");
+            return "";
+        }
+
+        if (EVP_DecryptFinal_ex(ctx, plaintext.data() + len1, &len2) != 1) {
+            EVP_CIPHER_CTX_free(ctx);
+            setLastError("Failed to finalize decryption");
+            return "";
+        }
+
+        EVP_CIPHER_CTX_free(ctx);
+
+        return std::string(plaintext.begin(), plaintext.begin() + len1 + len2);
+    } catch (const std::exception& e) {
+        setLastError("Failed to decrypt data: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::pair<std::string, std::string> SecurityManager::generateKeyPair(KeyPairType type) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return {"", ""};
+    }
+
+    try {
+        EVP_PKEY_CTX* ctx = nullptr;
+        switch (type) {
+            case KeyPairType::RSA:
+                ctx = EVP_PKEY_CTX_new_id(EVP_PKEY_RSA, nullptr);
+                break;
+            case KeyPairType::EC:
+                ctx = EVP_PKEY_CTX_new_id(EVP_PKEY_EC, nullptr);
+                break;
+            default:
+                setLastError("Unsupported key pair type");
+                return {"", ""};
+        }
+
+        if (!ctx) {
+            setLastError("Failed to create key pair context");
+            return {"", ""};
+        }
+
+        if (EVP_PKEY_keygen_init(ctx) <= 0) {
+            EVP_PKEY_CTX_free(ctx);
+            setLastError("Failed to initialize key pair generation");
+            return {"", ""};
+        }
+
+        if (type == KeyPairType::RSA) {
+            if (EVP_PKEY_CTX_set_rsa_keygen_bits(ctx, 2048) <= 0) {
+                EVP_PKEY_CTX_free(ctx);
+                setLastError("Failed to set RSA key size");
+                return {"", ""};
+            }
+        }
+
+        EVP_PKEY* pkey = nullptr;
+        if (EVP_PKEY_keygen(ctx, &pkey) <= 0) {
+            EVP_PKEY_CTX_free(ctx);
+            setLastError("Failed to generate key pair");
+            return {"", ""};
+        }
+
+        // Convert to PEM format
+        BIO* bio = BIO_new(BIO_s_mem());
+        if (!bio) {
+            EVP_PKEY_free(pkey);
+            EVP_PKEY_CTX_free(ctx);
+            setLastError("Failed to create BIO");
+            return {"", ""};
+        }
+
+        if (PEM_write_bio_PrivateKey(bio, pkey, nullptr, nullptr, 0, nullptr, nullptr) <= 0) {
+            BIO_free(bio);
+            EVP_PKEY_free(pkey);
+            EVP_PKEY_CTX_free(ctx);
+            setLastError("Failed to write private key");
+            return {"", ""};
+        }
+
+        if (PEM_write_bio_PUBKEY(bio, pkey) <= 0) {
+            BIO_free(bio);
+            EVP_PKEY_free(pkey);
+            EVP_PKEY_CTX_free(ctx);
+            setLastError("Failed to write public key");
+            return {"", ""};
+        }
+
+        char* privateKey = nullptr;
+        char* publicKey = nullptr;
+        long privateKeyLen = BIO_get_mem_data(bio, &privateKey);
+        long publicKeyLen = BIO_get_mem_data(bio, &publicKey);
+
+        std::string privateKeyStr(privateKey, privateKeyLen);
+        std::string publicKeyStr(publicKey, publicKeyLen);
+
+        BIO_free(bio);
+        EVP_PKEY_free(pkey);
+        EVP_PKEY_CTX_free(ctx);
+
+        return {privateKeyStr, publicKeyStr};
+    } catch (const std::exception& e) {
+        setLastError("Failed to generate key pair: " + std::string(e.what()));
+        return {"", ""};
+    }
+}
+
+std::string SecurityManager::sign(const std::string& data, const std::string& privateKey) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return "";
+    }
+
+    try {
+        // Read private key
+        BIO* bio = BIO_new_mem_buf(privateKey.c_str(), -1);
+        if (!bio) {
+            setLastError("Failed to create BIO");
+            return "";
+        }
+
+        EVP_PKEY* pkey = PEM_read_bio_PrivateKey(bio, nullptr, nullptr, nullptr);
+        BIO_free(bio);
+        if (!pkey) {
+            setLastError("Failed to read private key");
+            return "";
+        }
+
+        // Create signature context
+        EVP_MD_CTX* ctx = EVP_MD_CTX_new();
+        if (!ctx) {
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to create signature context");
+            return "";
+        }
+
+        if (EVP_DigestSignInit(ctx, nullptr, EVP_sha256(), nullptr, pkey) != 1) {
+            EVP_MD_CTX_free(ctx);
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to initialize signature");
+            return "";
+        }
+
+        if (EVP_DigestSignUpdate(ctx, data.c_str(), data.length()) != 1) {
+            EVP_MD_CTX_free(ctx);
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to update signature");
+            return "";
+        }
+
+        size_t sigLen;
+        if (EVP_DigestSignFinal(ctx, nullptr, &sigLen) != 1) {
+            EVP_MD_CTX_free(ctx);
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to get signature length");
+            return "";
+        }
+
+        std::vector<unsigned char> signature(sigLen);
+        if (EVP_DigestSignFinal(ctx, signature.data(), &sigLen) != 1) {
+            EVP_MD_CTX_free(ctx);
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to finalize signature");
+            return "";
+        }
+
+        EVP_MD_CTX_free(ctx);
+        EVP_PKEY_free(pkey);
+
+        std::stringstream ss;
+        for (size_t i = 0; i < sigLen; ++i) {
+            ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(signature[i]);
+        }
+        return ss.str();
+    } catch (const std::exception& e) {
+        setLastError("Failed to sign data: " + std::string(e.what()));
+        return "";
+    }
+}
+
+bool SecurityManager::verify(const std::string& data, const std::string& signature,
+                           const std::string& publicKey) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        setLastError("Security Manager not initialized");
+        return false;
+    }
+
+    try {
+        // Read public key
+        BIO* bio = BIO_new_mem_buf(publicKey.c_str(), -1);
+        if (!bio) {
+            setLastError("Failed to create BIO");
+            return false;
+        }
+
+        EVP_PKEY* pkey = PEM_read_bio_PUBKEY(bio, nullptr, nullptr, nullptr);
+        BIO_free(bio);
+        if (!pkey) {
+            setLastError("Failed to read public key");
+            return false;
+        }
+
+        // Convert signature from hex string
+        std::vector<unsigned char> sigBytes;
+        for (size_t i = 0; i < signature.length(); i += 2) {
+            std::string byteString = signature.substr(i, 2);
+            unsigned char byte = static_cast<unsigned char>(std::stoi(byteString, nullptr, 16));
+            sigBytes.push_back(byte);
+        }
+
+        // Create verification context
+        EVP_MD_CTX* ctx = EVP_MD_CTX_new();
+        if (!ctx) {
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to create verification context");
+            return false;
+        }
+
+        if (EVP_DigestVerifyInit(ctx, nullptr, EVP_sha256(), nullptr, pkey) != 1) {
+            EVP_MD_CTX_free(ctx);
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to initialize verification");
+            return false;
+        }
+
+        if (EVP_DigestVerifyUpdate(ctx, data.c_str(), data.length()) != 1) {
+            EVP_MD_CTX_free(ctx);
+            EVP_PKEY_free(pkey);
+            setLastError("Failed to update verification");
+            return false;
+        }
+
+        int result = EVP_DigestVerifyFinal(ctx, sigBytes.data(), sigBytes.size());
+        EVP_MD_CTX_free(ctx);
+        EVP_PKEY_free(pkey);
+
+        return result == 1;
+    } catch (const std::exception& e) {
+        setLastError("Failed to verify signature: " + std::string(e.what()));
+        return false;
+    }
+}
+
+void SecurityManager::setLastError(const std::string& error) const {
+    lastError_ = error;
+}
+
+} // namespace satox::core 

@@ -1,0 +1,2079 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d3/d26/classsatox_1_1core_1_1WalletManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::WalletManager</compoundname>
+    <includes refid="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" local="no">wallet_manager.hpp</includes>
+    <innerclass refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" prot="public">satox::core::WalletManager::TransactionInfo</innerclass>
+    <innerclass refid="d7/ded/structsatox_1_1core_1_1WalletManager_1_1WalletInfo" prot="public">satox::core::WalletManager::WalletInfo</innerclass>
+    <innerclass refid="d8/d1d/structsatox_1_1core_1_1WalletManager_1_1WalletStats" prot="public">satox::core::WalletManager::WalletStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WalletType</name>
+        <qualifiedname>satox::core::WalletManager::WalletType</qualifiedname>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53a27178471f2c4019c872d1545a0f154c7" prot="public">
+          <name>HD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53a456d016bd133625e5036aa9a556f2730" prot="public">
+          <name>LEGACY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53ae50f553ee62b9fcbec1b8c8120c29050" prot="public">
+          <name>MULTISIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53a8d7fb2367cbb043ea4f82b5fb812c8f7" prot="public">
+          <name>WATCH_ONLY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="42" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="enum" id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WalletState</name>
+        <qualifiedname>satox::core::WalletManager::WalletState</qualifiedname>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453add652546039b18970b8dcf2cff824268" prot="public">
+          <name>UNINITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453adee5f03c2c4e73657824e028494b18c0" prot="public">
+          <name>INITIALIZED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453a298a2da567ae581f8886ef8d533107f4" prot="public">
+          <name>UNLOCKED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" prot="public">
+          <name>LOCKED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="50" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="enum" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>TransactionType</name>
+        <qualifiedname>satox::core::WalletManager::TransactionType</qualifiedname>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822a548e51fa67d541384e9585adf0db95dc" prot="public">
+          <name>SEND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822a42ddaaef1ffd16ad35901150add8f8f2" prot="public">
+          <name>RECEIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822ad6b863459e847e4743d1fe1ae086ee71" prot="public">
+          <name>STAKE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822a95784bf5457f0eb13f33cf8465f86162" prot="public">
+          <name>UNSTAKE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822a976833ce4acf2300c23fa43050f1ca30" prot="public">
+          <name>ASSET_ISSUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822a2c2686223461fa11d37be464976eca37" prot="public">
+          <name>ASSET_TRANSFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822a43567e0d57842ca4b341f4827da33e42" prot="public">
+          <name>ASSET_BURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822afbf62c8b6fa8035ecb71fc3d763209df" prot="public">
+          <name>NFT_MINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822ae272565590a2564438ba19f3a09e1a59" prot="public">
+          <name>NFT_TRANSFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822afe047ee8f7586a63308525f7db61e562" prot="public">
+          <name>NFT_BURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="59" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="59" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="enum" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>TransactionState</name>
+        <qualifiedname>satox::core::WalletManager::TransactionState</qualifiedname>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dac69f06e1a9b016d133907b4e5f5864d2" prot="public">
+          <name>PENDING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977da1e314c89b115f3a21ca40f76d231bcd0" prot="public">
+          <name>CONFIRMED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dab9e14d9b2886bcff408b85aefa780419" prot="public">
+          <name>FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dac69a1e32a105a29d95e6e7a883188d62" prot="public">
+          <name>DROPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="73" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="73" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/d26/classsatox_1_1core_1_1WalletManager_1adc88076cdc39652e6e1277ec30a6ade1" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453" kindref="member">WalletState</ref>)&gt;</type>
+        <definition>using satox::core::WalletManager::WalletCallback =  std::function&lt;void(const std::string&amp;, WalletState)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WalletCallback</name>
+        <qualifiedname>satox::core::WalletManager::WalletCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="127" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aa2e5d647a0a783fa9b5c6edbfdf096af" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977d" kindref="member">TransactionState</ref>)&gt;</type>
+        <definition>using satox::core::WalletManager::TransactionCallback =  std::function&lt;void(const std::string&amp;, TransactionState)&gt;</definition>
+        <argsstring></argsstring>
+        <name>TransactionCallback</name>
+        <qualifiedname>satox::core::WalletManager::TransactionCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="128" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a93f4f5918ce480397a92912b21e6f37d" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, double)&gt;</type>
+        <definition>using satox::core::WalletManager::BalanceCallback =  std::function&lt;void(const std::string&amp;, double)&gt;</definition>
+        <argsstring></argsstring>
+        <name>BalanceCallback</name>
+        <qualifiedname>satox::core::WalletManager::BalanceCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="129" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aa296d45b53eff3fee87f058980417e92" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>using satox::core::WalletManager::ErrorCallback =  std::function&lt;void(const std::string&amp;, const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ErrorCallback</name>
+        <qualifiedname>satox::core::WalletManager::ErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="130" column="5" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aecac2e6feefaac60f71b8dc743f4504a" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::WalletManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::WalletManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="245" column="24" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a5dae99e52d4200b7fad869c3c443f2ee" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::WalletManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="246" column="10" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8f995cda4260c551b85cba61593251b8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::statsEnabled_</definition>
+        <argsstring></argsstring>
+        <name>statsEnabled_</name>
+        <qualifiedname>satox::core::WalletManager::statsEnabled_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="247" column="10" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a2c010059934d181a87cf8834989271ae" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::WalletManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="248" column="17" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3796f80e641d4c99406472cbf2e34ccd" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="d7/ded/structsatox_1_1core_1_1WalletManager_1_1WalletInfo" kindref="compound">WalletInfo</ref> &gt;</type>
+        <definition>std::map&lt;std::string, WalletInfo&gt; satox::core::WalletManager::wallets_</definition>
+        <argsstring></argsstring>
+        <name>wallets_</name>
+        <qualifiedname>satox::core::WalletManager::wallets_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="249" column="14" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aaee7cde791be134551d3f44b4e40010b" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; <ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;TransactionInfo&gt; &gt; satox::core::WalletManager::transactions_</definition>
+        <argsstring></argsstring>
+        <name>transactions_</name>
+        <qualifiedname>satox::core::WalletManager::transactions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="250" column="14" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a2062782bc399d8c8be5e3d5b83135e4c" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::map&lt; std::string, double &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::map&lt;std::string, double&gt; &gt; satox::core::WalletManager::balances_</definition>
+        <argsstring></argsstring>
+        <name>balances_</name>
+        <qualifiedname>satox::core::WalletManager::balances_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="251" column="14" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a97942d6596513fbe209f775c468b05aa" prot="private" static="no" mutable="no">
+        <type><ref refid="d8/d1d/structsatox_1_1core_1_1WalletManager_1_1WalletStats" kindref="compound">WalletStats</ref></type>
+        <definition>WalletStats satox::core::WalletManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::WalletManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="252" column="17" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1af206c9e1db6fc9008f43e7bce74f0119" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1adc88076cdc39652e6e1277ec30a6ade1" kindref="member">WalletCallback</ref> &gt;</type>
+        <definition>std::vector&lt;WalletCallback&gt; satox::core::WalletManager::walletCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>walletCallbacks_</name>
+        <qualifiedname>satox::core::WalletManager::walletCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="253" column="17" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a0e595e14632e77be9442d36c48cc638a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa2e5d647a0a783fa9b5c6edbfdf096af" kindref="member">TransactionCallback</ref> &gt;</type>
+        <definition>std::vector&lt;TransactionCallback&gt; satox::core::WalletManager::transactionCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>transactionCallbacks_</name>
+        <qualifiedname>satox::core::WalletManager::transactionCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="254" column="17" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1adfea91394468a9333bfb572dd23768fe" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a93f4f5918ce480397a92912b21e6f37d" kindref="member">BalanceCallback</ref> &gt;</type>
+        <definition>std::vector&lt;BalanceCallback&gt; satox::core::WalletManager::balanceCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>balanceCallbacks_</name>
+        <qualifiedname>satox::core::WalletManager::balanceCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="255" column="17" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d26/classsatox_1_1core_1_1WalletManager_1afc8d56b78f496261d719a57922042ff0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa296d45b53eff3fee87f058980417e92" kindref="member">ErrorCallback</ref> &gt;</type>
+        <definition>std::vector&lt;ErrorCallback&gt; satox::core::WalletManager::errorCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>errorCallbacks_</name>
+        <qualifiedname>satox::core::WalletManager::errorCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="256" column="17" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="256" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1acc98cf7173f9690951680fb0f755a38e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref> &amp;</type>
+        <definition>WalletManager &amp; satox::core::WalletManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::WalletManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="133" column="26" bodyfile="src/core/src/wallet_manager.cpp" bodystart="37" bodyend="40"/>
+        <referencedby refid="de/d4d/classsatox_1_1core_1_1CoreManager_1a095e8ed4004eb1443622eca855d563d9" compoundref="d2/d5f/core__manager_8cpp" startline="212" endline="215">satox::core::CoreManager::getWalletManager</referencedby>
+        <referencedby refid="d8/def/classsatox_1_1core_1_1SatoxManager_1a2a67d9c315a26015dfb6e074f52fa526" compoundref="da/d8f/satox__manager_8cpp" startline="194" endline="196">satox::core::SatoxManager::getWalletManager</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a7619c855da946f7ac089a542d0882902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::initialize</definition>
+        <argsstring>(const nlohmann::json &amp;config)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::WalletManager::initialize</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="136" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="42" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ac42105e29990a13888a0908a00e0dd29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::WalletManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="137" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="60" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a73afb330d2adaeef5b277a42577572aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::createWallet</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;name, WalletType type)</argsstring>
+        <name>createWallet</name>
+        <qualifiedname>satox::core::WalletManager::createWallet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53" kindref="member">WalletType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="140" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="77" bodyend="116"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453adee5f03c2c4e73657824e028494b18c0" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="52">INITIALIZED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a6946ad1c73fdba75ad5716b50f5e01b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::importWallet</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;name, const std::string &amp;privateKey)</argsstring>
+        <name>importWallet</name>
+        <qualifiedname>satox::core::WalletManager::importWallet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="141" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="118" bodyend="160"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a9318f7f9b73281b72c30e530bc358bb9" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="356" endline="359">getAddressFromPrivateKey</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a929ed0c8460afadc7746e2b258b03219" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="361" endline="364">getPublicKeyFromPrivateKey</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453adee5f03c2c4e73657824e028494b18c0" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="52">INITIALIZED</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53a456d016bd133625e5036aa9a556f2730" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="44">LEGACY</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a453b3d8c408dc96b632c5b5188464de4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::exportWallet</definition>
+        <argsstring>(const std::string &amp;id, std::string &amp;privateKey)</argsstring>
+        <name>exportWallet</name>
+        <qualifiedname>satox::core::WalletManager::exportWallet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="142" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="162" bodyend="183"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3ea782f03aca7b6e0300f286eedab870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::deleteWallet</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>deleteWallet</name>
+        <qualifiedname>satox::core::WalletManager::deleteWallet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="143" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="185" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a222e8bcd61e0edf74c31ac90ddf2d8f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::lockWallet</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>lockWallet</name>
+        <qualifiedname>satox::core::WalletManager::lockWallet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="144" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="206" bodyend="229"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1acdc6b0ad4bf901830863aadf74bad27c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::unlockWallet</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;password)</argsstring>
+        <name>unlockWallet</name>
+        <qualifiedname>satox::core::WalletManager::unlockWallet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="145" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="231" bodyend="259"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453a298a2da567ae581f8886ef8d533107f4" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="53">UNLOCKED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a855f67856f65c2ecec9a50666c817615" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::isWalletLocked</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>isWalletLocked</name>
+        <qualifiedname>satox::core::WalletManager::isWalletLocked</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="146" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="261" bodyend="268"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a466ec870d8523d51bbe42ddb625768a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::isWalletExists</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>isWalletExists</name>
+        <qualifiedname>satox::core::WalletManager::isWalletExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="147" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="270" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aebb6cdbd4caf2201d038b5f2d0f6549a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d7/ded/structsatox_1_1core_1_1WalletManager_1_1WalletInfo" kindref="compound">WalletInfo</ref></type>
+        <definition>WalletManager::WalletInfo satox::core::WalletManager::getWalletInfo</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>getWalletInfo</name>
+        <qualifiedname>satox::core::WalletManager::getWalletInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="148" column="16" bodyfile="src/core/src/wallet_manager.cpp" bodystart="275" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aeeae3d58bff6d938659f8c55cb1ca212" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/ded/structsatox_1_1core_1_1WalletManager_1_1WalletInfo" kindref="compound">WalletInfo</ref> &gt;</type>
+        <definition>std::vector&lt; WalletManager::WalletInfo &gt; satox::core::WalletManager::getAllWallets</definition>
+        <argsstring>() const</argsstring>
+        <name>getAllWallets</name>
+        <qualifiedname>satox::core::WalletManager::getAllWallets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="149" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="284" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a9220ed325dd7270ce2e84e40b68ce1b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/ded/structsatox_1_1core_1_1WalletManager_1_1WalletInfo" kindref="compound">WalletInfo</ref> &gt;</type>
+        <definition>std::vector&lt; WalletManager::WalletInfo &gt; satox::core::WalletManager::getWalletsByType</definition>
+        <argsstring>(WalletType type) const</argsstring>
+        <name>getWalletsByType</name>
+        <qualifiedname>satox::core::WalletManager::getWalletsByType</qualifiedname>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53" kindref="member">WalletType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="150" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="293" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a5d2e85b256ac3bf5d1377e6bf0be2864" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d7/ded/structsatox_1_1core_1_1WalletManager_1_1WalletInfo" kindref="compound">WalletInfo</ref> &gt;</type>
+        <definition>std::vector&lt; WalletManager::WalletInfo &gt; satox::core::WalletManager::getWalletsByState</definition>
+        <argsstring>(WalletState state) const</argsstring>
+        <name>getWalletsByState</name>
+        <qualifiedname>satox::core::WalletManager::getWalletsByState</qualifiedname>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453" kindref="member">WalletState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="151" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="304" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a1ce3239092568d1e16af115d2a36b61e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateAddress</definition>
+        <argsstring>(const std::string &amp;walletId)</argsstring>
+        <name>generateAddress</name>
+        <qualifiedname>satox::core::WalletManager::generateAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="154" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="315" bodyend="349"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53a27178471f2c4019c872d1545a0f154c7" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="43">HD</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53a456d016bd133625e5036aa9a556f2730" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="44">LEGACY</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3e15dca5b2c8e738f45eda85ce1f0f90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::validateAddress</definition>
+        <argsstring>(const std::string &amp;address) const</argsstring>
+        <name>validateAddress</name>
+        <qualifiedname>satox::core::WalletManager::validateAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="155" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="351" bodyend="354"/>
+        <referencedby refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3d767d0ce6fb4e538b5343e853fbeb17" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="366" endline="424">createTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a9318f7f9b73281b72c30e530bc358bb9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::getAddressFromPrivateKey</definition>
+        <argsstring>(const std::string &amp;privateKey) const</argsstring>
+        <name>getAddressFromPrivateKey</name>
+        <qualifiedname>satox::core::WalletManager::getAddressFromPrivateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="156" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="356" bodyend="359"/>
+        <referencedby refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a6946ad1c73fdba75ad5716b50f5e01b4" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="118" endline="160">importWallet</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a929ed0c8460afadc7746e2b258b03219" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::getPublicKeyFromPrivateKey</definition>
+        <argsstring>(const std::string &amp;privateKey) const</argsstring>
+        <name>getPublicKeyFromPrivateKey</name>
+        <qualifiedname>satox::core::WalletManager::getPublicKeyFromPrivateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="157" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="361" bodyend="364"/>
+        <referencedby refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a6946ad1c73fdba75ad5716b50f5e01b4" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="118" endline="160">importWallet</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3d767d0ce6fb4e538b5343e853fbeb17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::createTransaction</definition>
+        <argsstring>(const std::string &amp;walletId, TransactionType type, const std::string &amp;toAddress, double amount, const std::string &amp;assetId=&quot;&quot;)</argsstring>
+        <name>createTransaction</name>
+        <qualifiedname>satox::core::WalletManager::createTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822" kindref="member">TransactionType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>toAddress</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>amount</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="160" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="366" bodyend="424"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ad0c4c9bfd363107dc4ba11c3f277035c" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="617" endline="631">getBalance</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dac69f06e1a9b016d133907b4e5f5864d2" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="74">PENDING</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3e15dca5b2c8e738f45eda85ce1f0f90" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="351" endline="354">validateAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3811c890bad07f64a37d0a21053eaa5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::signTransaction</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId)</argsstring>
+        <name>signTransaction</name>
+        <qualifiedname>satox::core::WalletManager::signTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="163" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="426" bodyend="463"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453aaeff3f3f2731681b2ed6a27786a56203" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="54">LOCKED</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dac69f06e1a9b016d133907b4e5f5864d2" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="74">PENDING</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ac3a6b7cbcfa22050e40440b478e12a64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::broadcastTransaction</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId)</argsstring>
+        <name>broadcastTransaction</name>
+        <qualifiedname>satox::core::WalletManager::broadcastTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="164" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="465" bodyend="506"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977da1e314c89b115f3a21ca40f76d231bcd0" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="75">CONFIRMED</references>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dac69f06e1a9b016d133907b4e5f5864d2" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="74">PENDING</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a330226194431dd788f751422b7e37d39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::confirmTransaction</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId)</argsstring>
+        <name>confirmTransaction</name>
+        <qualifiedname>satox::core::WalletManager::confirmTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="165" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="508" bodyend="539"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977da1e314c89b115f3a21ca40f76d231bcd0" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="75">CONFIRMED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a114eceb79ca8e5c4763b75f017ac00ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::failTransaction</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId)</argsstring>
+        <name>failTransaction</name>
+        <qualifiedname>satox::core::WalletManager::failTransaction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="166" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="541" bodyend="568"/>
+        <references refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977dab9e14d9b2886bcff408b85aefa780419" compoundref="d1/d62/core_2include_2satox_2core_2wallet__manager_8hpp" startline="76">FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1af855e60aab721830ee55f8b1480761d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref></type>
+        <definition>WalletManager::TransactionInfo satox::core::WalletManager::getTransactionInfo</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId) const</argsstring>
+        <name>getTransactionInfo</name>
+        <qualifiedname>satox::core::WalletManager::getTransactionInfo</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="167" column="21" bodyfile="src/core/src/wallet_manager.cpp" bodystart="570" bodyend="585"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ad2e99ca2f48bde28e637f4ef7570722a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref> &gt;</type>
+        <definition>std::vector&lt; WalletManager::TransactionInfo &gt; satox::core::WalletManager::getTransactionsByType</definition>
+        <argsstring>(const std::string &amp;walletId, TransactionType type) const</argsstring>
+        <name>getTransactionsByType</name>
+        <qualifiedname>satox::core::WalletManager::getTransactionsByType</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822" kindref="member">TransactionType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="168" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="587" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a31596ba473e3dafae2cb95d6ac106ee8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref> &gt;</type>
+        <definition>std::vector&lt; WalletManager::TransactionInfo &gt; satox::core::WalletManager::getTransactionsByState</definition>
+        <argsstring>(const std::string &amp;walletId, TransactionState state) const</argsstring>
+        <name>getTransactionsByState</name>
+        <qualifiedname>satox::core::WalletManager::getTransactionsByState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977d" kindref="member">TransactionState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="170" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="602" bodyend="615"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ad0c4c9bfd363107dc4ba11c3f277035c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::core::WalletManager::getBalance</definition>
+        <argsstring>(const std::string &amp;walletId) const</argsstring>
+        <name>getBalance</name>
+        <qualifiedname>satox::core::WalletManager::getBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="174" column="12" bodyfile="src/core/src/wallet_manager.cpp" bodystart="617" bodyend="631"/>
+        <referencedby refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3d767d0ce6fb4e538b5343e853fbeb17" compoundref="dc/d13/core_2src_2wallet__manager_8cpp" startline="366" endline="424">createTransaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a51ff1747055997f9b62830d44a102362" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::core::WalletManager::getAssetBalance</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;assetId) const</argsstring>
+        <name>getAssetBalance</name>
+        <qualifiedname>satox::core::WalletManager::getAssetBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="175" column="12" bodyfile="src/core/src/wallet_manager.cpp" bodystart="633" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a4e54e7491e90023a0aa2ae53630a4093" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, double &gt;</type>
+        <definition>std::map&lt; std::string, double &gt; satox::core::WalletManager::getAllBalances</definition>
+        <argsstring>(const std::string &amp;walletId) const</argsstring>
+        <name>getAllBalances</name>
+        <qualifiedname>satox::core::WalletManager::getAllBalances</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="176" column="14" bodyfile="src/core/src/wallet_manager.cpp" bodystart="647" bodyend="654"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a6bed1e7f10f9f39150af58a225a6884e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::updateBalance</definition>
+        <argsstring>(const std::string &amp;walletId, double amount)</argsstring>
+        <name>updateBalance</name>
+        <qualifiedname>satox::core::WalletManager::updateBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="177" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="656" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ab6c24c4bcac5218d70485ff29ed3893c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::updateAssetBalance</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;assetId, double amount)</argsstring>
+        <name>updateAssetBalance</name>
+        <qualifiedname>satox::core::WalletManager::updateAssetBalance</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>assetId</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="178" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="675" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a735b47e6e85d2134fdbb9de342b8d9e7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d1d/structsatox_1_1core_1_1WalletManager_1_1WalletStats" kindref="compound">WalletStats</ref></type>
+        <definition>WalletManager::WalletStats satox::core::WalletManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::WalletManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="182" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="694" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a0a3855dabe52a8ce2165d11eeabf1f14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::WalletManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="183" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="699" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a45af7c9068d4173939e22467b11674e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::core::WalletManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="184" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="704" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a152c9dd19a5a6b40896df202d6e147d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::registerWalletCallback</definition>
+        <argsstring>(WalletCallback callback)</argsstring>
+        <name>registerWalletCallback</name>
+        <qualifiedname>satox::core::WalletManager::registerWalletCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1adc88076cdc39652e6e1277ec30a6ade1" kindref="member">WalletCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="187" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="710" bodyend="713"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a9b225c2fd7ae887f6dc1c0fff2eefa0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::registerTransactionCallback</definition>
+        <argsstring>(TransactionCallback callback)</argsstring>
+        <name>registerTransactionCallback</name>
+        <qualifiedname>satox::core::WalletManager::registerTransactionCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa2e5d647a0a783fa9b5c6edbfdf096af" kindref="member">TransactionCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="188" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="715" bodyend="718"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a7f07138c85f938c80018711f3d909173" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::registerBalanceCallback</definition>
+        <argsstring>(BalanceCallback callback)</argsstring>
+        <name>registerBalanceCallback</name>
+        <qualifiedname>satox::core::WalletManager::registerBalanceCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a93f4f5918ce480397a92912b21e6f37d" kindref="member">BalanceCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="189" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="720" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a8424ea545a118413398e92a816288844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::registerErrorCallback</definition>
+        <argsstring>(ErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::core::WalletManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa296d45b53eff3fee87f058980417e92" kindref="member">ErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="190" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="725" bodyend="728"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ad812a0a50613f94020a4a0de2248031a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::unregisterWalletCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterWalletCallback</name>
+        <qualifiedname>satox::core::WalletManager::unregisterWalletCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="191" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="730" bodyend="733"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aa7bda663f4d0bb97583b24fb0e4c0af4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::unregisterTransactionCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterTransactionCallback</name>
+        <qualifiedname>satox::core::WalletManager::unregisterTransactionCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="192" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="735" bodyend="738"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aa1828871aecc7ae80846baa980cdb272" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::unregisterBalanceCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterBalanceCallback</name>
+        <qualifiedname>satox::core::WalletManager::unregisterBalanceCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="193" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="740" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a6f0b4ac802d1db4325e058789c6fd6bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::unregisterErrorCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterErrorCallback</name>
+        <qualifiedname>satox::core::WalletManager::unregisterErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="194" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="745" bodyend="748"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a81ff7276a799f88b93ea217a9f17fbba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::WalletManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="197" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="750" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1af4eee3d4528fcbfef3dbc5cc94206337" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::WalletManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="198" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="755" bodyend="758"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a5fcbf26a9ce9ffa30f0c749b85ebe4f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::setLastError</definition>
+        <argsstring>(const std::string &amp;error)</argsstring>
+        <name>setLastError</name>
+        <qualifiedname>satox::core::WalletManager::setLastError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="199" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="760" bodyend="763"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a19db1ec142cbed0ec83f15aed854b9a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::WalletManager::WalletManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>WalletManager</name>
+        <qualifiedname>satox::core::WalletManager::WalletManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="202" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a0eca0be8e7b2217aadfff888f5d65a74" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::WalletManager::~WalletManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~WalletManager</name>
+        <qualifiedname>satox::core::WalletManager::~WalletManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="203" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a4dac856cbab94f83afd3218bdb8a0660" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::WalletManager::WalletManager</definition>
+        <argsstring>(const WalletManager &amp;)=delete</argsstring>
+        <name>WalletManager</name>
+        <qualifiedname>satox::core::WalletManager::WalletManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="204" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3aef6e10fc3b9385ef1fe38341bde493" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref> &amp;</type>
+        <definition>WalletManager &amp; satox::core::WalletManager::operator=</definition>
+        <argsstring>(const WalletManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::WalletManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d3/d26/classsatox_1_1core_1_1WalletManager" kindref="compound">WalletManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="205" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ae7de01abb7f55c90a5b59a415362a3e5" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::validateConfig</definition>
+        <argsstring>(const nlohmann::json &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::core::WalletManager::validateConfig</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="208" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="766" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a15c5c3612cb7309ec602a6104edc200c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::validateWalletId</definition>
+        <argsstring>(const std::string &amp;id) const</argsstring>
+        <name>validateWalletId</name>
+        <qualifiedname>satox::core::WalletManager::validateWalletId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="209" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="770" bodyend="772"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a0deaf70e73515da486bfa05f326b39e2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::validatePrivateKey</definition>
+        <argsstring>(const std::string &amp;privateKey) const</argsstring>
+        <name>validatePrivateKey</name>
+        <qualifiedname>satox::core::WalletManager::validatePrivateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="210" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="774" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a99f046a8d584acff93f2b410bfefcbc3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::checkWalletLimit</definition>
+        <argsstring>() const</argsstring>
+        <name>checkWalletLimit</name>
+        <qualifiedname>satox::core::WalletManager::checkWalletLimit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="211" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="778" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3d4ec49d7c29f5e91b97d57bd26eba53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::updateWalletState</definition>
+        <argsstring>(const std::string &amp;id, WalletState state)</argsstring>
+        <name>updateWalletState</name>
+        <qualifiedname>satox::core::WalletManager::updateWalletState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453" kindref="member">WalletState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="212" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="782" bodyend="788"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a22dfe421124e67fd69b403fca8d1faa8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::updateTransactionState</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId, TransactionState state)</argsstring>
+        <name>updateTransactionState</name>
+        <qualifiedname>satox::core::WalletManager::updateTransactionState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977d" kindref="member">TransactionState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="213" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="790" bodyend="799"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a1547c0ac881292ebb0acbb8c4f95ea5f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::updateWalletStats</definition>
+        <argsstring>()</argsstring>
+        <name>updateWalletStats</name>
+        <qualifiedname>satox::core::WalletManager::updateWalletStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="215" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="801" bodyend="848"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a0064564c73ba872fd598b20e94871c14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::notifyWalletChange</definition>
+        <argsstring>(const std::string &amp;id, WalletState state)</argsstring>
+        <name>notifyWalletChange</name>
+        <qualifiedname>satox::core::WalletManager::notifyWalletChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453" kindref="member">WalletState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="216" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="850" bodyend="858"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a3c43418b1df9ad5ec921c16da1004cb7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::notifyTransactionChange</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;txId, TransactionState state)</argsstring>
+        <name>notifyTransactionChange</name>
+        <qualifiedname>satox::core::WalletManager::notifyTransactionChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977d" kindref="member">TransactionState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="217" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="860" bodyend="870"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1acf63083c520748636c63c3aa68569189" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::notifyBalanceChange</definition>
+        <argsstring>(const std::string &amp;walletId, double balance)</argsstring>
+        <name>notifyBalanceChange</name>
+        <qualifiedname>satox::core::WalletManager::notifyBalanceChange</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>balance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="219" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="872" bodyend="880"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aae0ee98ef1d2c5b57010512df6057522" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::WalletManager::notifyError</definition>
+        <argsstring>(const std::string &amp;id, const std::string &amp;error)</argsstring>
+        <name>notifyError</name>
+        <qualifiedname>satox::core::WalletManager::notifyError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="220" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="882" bodyend="890"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a78df0ca74d977e212d77e895ae35b196" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateHDAddress</definition>
+        <argsstring>(const std::string &amp;walletId)</argsstring>
+        <name>generateHDAddress</name>
+        <qualifiedname>satox::core::WalletManager::generateHDAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="223" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="893" bodyend="912"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a88f796757adfc8ffbcdf9fc1ddb759a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateLegacyAddress</definition>
+        <argsstring>(const std::string &amp;walletId)</argsstring>
+        <name>generateLegacyAddress</name>
+        <qualifiedname>satox::core::WalletManager::generateLegacyAddress</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="224" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="914" bodyend="928"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ab6a6af3298cb0b3736e031045f0a3774" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateTransactionId</definition>
+        <argsstring>()</argsstring>
+        <name>generateTransactionId</name>
+        <qualifiedname>satox::core::WalletManager::generateTransactionId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="225" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="930" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a718b3cee5d4ad52bb9727595d32a2966" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::encryptPrivateKey</definition>
+        <argsstring>(const std::string &amp;privateKey)</argsstring>
+        <name>encryptPrivateKey</name>
+        <qualifiedname>satox::core::WalletManager::encryptPrivateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="226" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="948" bodyend="969"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aea262d996db4d91fed795f2de674e262" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::decryptPrivateKey</definition>
+        <argsstring>(const std::string &amp;encryptedKey)</argsstring>
+        <name>decryptPrivateKey</name>
+        <qualifiedname>satox::core::WalletManager::decryptPrivateKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>encryptedKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="227" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="971" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a9be65732d0f7a9fa55d4a48d6dce7866" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::verifyPassword</definition>
+        <argsstring>(const std::string &amp;walletId, const std::string &amp;password)</argsstring>
+        <name>verifyPassword</name>
+        <qualifiedname>satox::core::WalletManager::verifyPassword</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="228" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="997" bodyend="1017"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1abc8e5e728462e421cd4f1bb8bf6d816d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::signTransactionData</definition>
+        <argsstring>(const std::string &amp;txId, const std::string &amp;encryptedPrivateKey)</argsstring>
+        <name>signTransactionData</name>
+        <qualifiedname>satox::core::WalletManager::signTransactionData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>encryptedPrivateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="229" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1019" bodyend="1049"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a5e736d396feec8ad2198b82643f2bff1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::broadcastTransactionToNetwork</definition>
+        <argsstring>(const TransactionInfo &amp;tx)</argsstring>
+        <name>broadcastTransactionToNetwork</name>
+        <qualifiedname>satox::core::WalletManager::broadcastTransactionToNetwork</qualifiedname>
+        <param>
+          <type>const <ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="230" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1051" bodyend="1081"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a26db784ed5afc8f99bacd5b800d1f064" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::hashWalletId</definition>
+        <argsstring>(const std::string &amp;walletId)</argsstring>
+        <name>hashWalletId</name>
+        <qualifiedname>satox::core::WalletManager::hashWalletId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>walletId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="233" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1084" bodyend="1091"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1acf6ab12279521fe860356fce760c2904" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateChecksum</definition>
+        <argsstring>(const std::string &amp;data)</argsstring>
+        <name>generateChecksum</name>
+        <qualifiedname>satox::core::WalletManager::generateChecksum</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="234" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1093" bodyend="1100"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a9398095f0e26cbedbbb269b1e9b80ebe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::hashString</definition>
+        <argsstring>(const std::string &amp;data)</argsstring>
+        <name>hashString</name>
+        <qualifiedname>satox::core::WalletManager::hashString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="235" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1102" bodyend="1109"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ab13f979a58f0f887de035a61f13d7195" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateEncryptionKey</definition>
+        <argsstring>()</argsstring>
+        <name>generateEncryptionKey</name>
+        <qualifiedname>satox::core::WalletManager::generateEncryptionKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="236" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1111" bodyend="1122"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1aa328cdb32ccac21e2748bebbac5fb626" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::encryptData</definition>
+        <argsstring>(const std::string &amp;data, const std::string &amp;key)</argsstring>
+        <name>encryptData</name>
+        <qualifiedname>satox::core::WalletManager::encryptData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="237" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1124" bodyend="1131"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1addba94c45a2c237326c93793bc687327" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::decryptData</definition>
+        <argsstring>(const std::string &amp;encrypted, const std::string &amp;key)</argsstring>
+        <name>decryptData</name>
+        <qualifiedname>satox::core::WalletManager::decryptData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>encrypted</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="238" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1133" bodyend="1140"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a1b584251f1a4260cc366c991a6c87c96" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::createTransactionData</definition>
+        <argsstring>(const std::string &amp;txId)</argsstring>
+        <name>createTransactionData</name>
+        <qualifiedname>satox::core::WalletManager::createTransactionData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>txId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="239" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1142" bodyend="1167"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1ad673112d9adc74bb7eed05b796423a67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::signData</definition>
+        <argsstring>(const std::string &amp;data, const std::string &amp;privateKey)</argsstring>
+        <name>signData</name>
+        <qualifiedname>satox::core::WalletManager::signData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="240" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1169" bodyend="1173"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a426093f264bf69d2d440ed951a1bd807" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::WalletManager::validateTransaction</definition>
+        <argsstring>(const TransactionInfo &amp;tx)</argsstring>
+        <name>validateTransaction</name>
+        <qualifiedname>satox::core::WalletManager::validateTransaction</qualifiedname>
+        <param>
+          <type>const <ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="241" column="10" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1175" bodyend="1190"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d26/classsatox_1_1core_1_1WalletManager_1a7e829427fa60f01df020505300062283" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::WalletManager::generateTransactionHash</definition>
+        <argsstring>(const TransactionInfo &amp;tx)</argsstring>
+        <name>generateTransactionHash</name>
+        <qualifiedname>satox::core::WalletManager::generateTransactionHash</qualifiedname>
+        <param>
+          <type>const <ref refid="da/d1b/structsatox_1_1core_1_1WalletManager_1_1TransactionInfo" kindref="compound">TransactionInfo</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/wallet_manager.hpp" line="242" column="17" bodyfile="src/core/src/wallet_manager.cpp" bodystart="1192" bodyend="1197"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/wallet_manager.hpp" line="39" column="1" bodyfile="src/core/include/satox/core/wallet_manager.hpp" bodystart="39" bodyend="257"/>
+    <listofallmembers>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a93f4f5918ce480397a92912b21e6f37d" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>BalanceCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1adfea91394468a9333bfb572dd23768fe" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>balanceCallbacks_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a2062782bc399d8c8be5e3d5b83135e4c" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>balances_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ac3a6b7cbcfa22050e40440b478e12a64" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>broadcastTransaction</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a5e736d396feec8ad2198b82643f2bff1" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>broadcastTransactionToNetwork</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a99f046a8d584acff93f2b410bfefcbc3" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>checkWalletLimit</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1af4eee3d4528fcbfef3dbc5cc94206337" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>clearLastError</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a330226194431dd788f751422b7e37d39" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>confirmTransaction</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3d767d0ce6fb4e538b5343e853fbeb17" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>createTransaction</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a1b584251f1a4260cc366c991a6c87c96" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>createTransactionData</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a73afb330d2adaeef5b277a42577572aa" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>createWallet</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1addba94c45a2c237326c93793bc687327" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>decryptData</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aea262d996db4d91fed795f2de674e262" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>decryptPrivateKey</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3ea782f03aca7b6e0300f286eedab870" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>deleteWallet</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a45af7c9068d4173939e22467b11674e2" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>enableStats</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa328cdb32ccac21e2748bebbac5fb626" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>encryptData</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a718b3cee5d4ad52bb9727595d32a2966" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>encryptPrivateKey</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa296d45b53eff3fee87f058980417e92" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>ErrorCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc8d56b78f496261d719a57922042ff0" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>errorCallbacks_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a453b3d8c408dc96b632c5b5188464de4" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>exportWallet</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a114eceb79ca8e5c4763b75f017ac00ee" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>failTransaction</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a1ce3239092568d1e16af115d2a36b61e" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateAddress</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1acf6ab12279521fe860356fce760c2904" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateChecksum</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ab13f979a58f0f887de035a61f13d7195" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateEncryptionKey</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a78df0ca74d977e212d77e895ae35b196" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateHDAddress</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a88f796757adfc8ffbcdf9fc1ddb759a5" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateLegacyAddress</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a7e829427fa60f01df020505300062283" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateTransactionHash</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ab6a6af3298cb0b3736e031045f0a3774" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>generateTransactionId</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a9318f7f9b73281b72c30e530bc358bb9" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getAddressFromPrivateKey</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a4e54e7491e90023a0aa2ae53630a4093" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getAllBalances</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aeeae3d58bff6d938659f8c55cb1ca212" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getAllWallets</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a51ff1747055997f9b62830d44a102362" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getAssetBalance</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ad0c4c9bfd363107dc4ba11c3f277035c" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getBalance</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1acc98cf7173f9690951680fb0f755a38e" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getInstance</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a81ff7276a799f88b93ea217a9f17fbba" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getLastError</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a929ed0c8460afadc7746e2b258b03219" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getPublicKeyFromPrivateKey</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a735b47e6e85d2134fdbb9de342b8d9e7" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getStats</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1af855e60aab721830ee55f8b1480761d0" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getTransactionInfo</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a31596ba473e3dafae2cb95d6ac106ee8" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getTransactionsByState</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ad2e99ca2f48bde28e637f4ef7570722a" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getTransactionsByType</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aebb6cdbd4caf2201d038b5f2d0f6549a" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getWalletInfo</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a5d2e85b256ac3bf5d1377e6bf0be2864" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getWalletsByState</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a9220ed325dd7270ce2e84e40b68ce1b4" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>getWalletsByType</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a9398095f0e26cbedbbb269b1e9b80ebe" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>hashString</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a26db784ed5afc8f99bacd5b800d1f064" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>hashWalletId</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a6946ad1c73fdba75ad5716b50f5e01b4" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>importWallet</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a7619c855da946f7ac089a542d0882902" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>initialize</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a5dae99e52d4200b7fad869c3c443f2ee" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>initialized_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a466ec870d8523d51bbe42ddb625768a0" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>isWalletExists</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a855f67856f65c2ecec9a50666c817615" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>isWalletLocked</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a2c010059934d181a87cf8834989271ae" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>lastError_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a222e8bcd61e0edf74c31ac90ddf2d8f6" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>lockWallet</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aecac2e6feefaac60f71b8dc743f4504a" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>mutex_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1acf63083c520748636c63c3aa68569189" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>notifyBalanceChange</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aae0ee98ef1d2c5b57010512df6057522" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>notifyError</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3c43418b1df9ad5ec921c16da1004cb7" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>notifyTransactionChange</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a0064564c73ba872fd598b20e94871c14" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>notifyWalletChange</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3aef6e10fc3b9385ef1fe38341bde493" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>operator=</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a7f07138c85f938c80018711f3d909173" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>registerBalanceCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8424ea545a118413398e92a816288844" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>registerErrorCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a9b225c2fd7ae887f6dc1c0fff2eefa0c" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>registerTransactionCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a152c9dd19a5a6b40896df202d6e147d8" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>registerWalletCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a0a3855dabe52a8ce2165d11eeabf1f14" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>resetStats</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a5fcbf26a9ce9ffa30f0c749b85ebe4f3" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>setLastError</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ac42105e29990a13888a0908a00e0dd29" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>shutdown</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ad673112d9adc74bb7eed05b796423a67" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>signData</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3811c890bad07f64a37d0a21053eaa5e" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>signTransaction</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1abc8e5e728462e421cd4f1bb8bf6d816d" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>signTransactionData</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a97942d6596513fbe209f775c468b05aa" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>stats_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8f995cda4260c551b85cba61593251b8" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>statsEnabled_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa2e5d647a0a783fa9b5c6edbfdf096af" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>TransactionCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a0e595e14632e77be9442d36c48cc638a" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>transactionCallbacks_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aaee7cde791be134551d3f44b4e40010b" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>transactions_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a8ed2613847db75cf984364a5554a977d" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>TransactionState</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ae02dad344835bdf41d2a5cb205073822" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>TransactionType</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1acdc6b0ad4bf901830863aadf74bad27c" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>unlockWallet</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa1828871aecc7ae80846baa980cdb272" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>unregisterBalanceCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a6f0b4ac802d1db4325e058789c6fd6bc" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>unregisterErrorCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1aa7bda663f4d0bb97583b24fb0e4c0af4" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>unregisterTransactionCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ad812a0a50613f94020a4a0de2248031a" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>unregisterWalletCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ab6c24c4bcac5218d70485ff29ed3893c" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>updateAssetBalance</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a6bed1e7f10f9f39150af58a225a6884e" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>updateBalance</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a22dfe421124e67fd69b403fca8d1faa8" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>updateTransactionState</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3d4ec49d7c29f5e91b97d57bd26eba53" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>updateWalletState</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a1547c0ac881292ebb0acbb8c4f95ea5f" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>updateWalletStats</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3e15dca5b2c8e738f45eda85ce1f0f90" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>validateAddress</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1ae7de01abb7f55c90a5b59a415362a3e5" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>validateConfig</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a0deaf70e73515da486bfa05f326b39e2" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>validatePrivateKey</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a426093f264bf69d2d440ed951a1bd807" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>validateTransaction</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a15c5c3612cb7309ec602a6104edc200c" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>validateWalletId</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a9be65732d0f7a9fa55d4a48d6dce7866" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>verifyPassword</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1adc88076cdc39652e6e1277ec30a6ade1" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>WalletCallback</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1af206c9e1db6fc9008f43e7bce74f0119" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>walletCallbacks_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a19db1ec142cbed0ec83f15aed854b9a1" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>WalletManager</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a4dac856cbab94f83afd3218bdb8a0660" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>WalletManager</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a3796f80e641d4c99406472cbf2e34ccd" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>wallets_</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1afc47cdebb0cae60e8408ed150d45e453" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>WalletState</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a96002f5afb5578569624a65aba759f53" prot="public" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>WalletType</name></member>
+      <member refid="d3/d26/classsatox_1_1core_1_1WalletManager_1a0eca0be8e7b2217aadfff888f5d65a74" prot="private" virt="non-virtual"><scope>satox::core::WalletManager</scope><name>~WalletManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d33/structsatox_1_1TxIn" kind="struct" language="C++" prot="public">
+    <compoundname>satox::TxIn</compoundname>
+    <includes refid="da/d86/p2p__protocol_8hpp" local="no">p2p_protocol.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/d33/structsatox_1_1TxIn_1a512462686bcb9299afd027d898b5de95" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d31/structsatox_1_1OutPoint" kindref="compound">OutPoint</ref></type>
+        <definition>OutPoint satox::TxIn::prevout</definition>
+        <argsstring></argsstring>
+        <name>prevout</name>
+        <qualifiedname>satox::TxIn::prevout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="158" column="14" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d33/structsatox_1_1TxIn_1addcf958a33e1f8b6b1f7f82bc7ad5b43" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; satox::TxIn::script_sig</definition>
+        <argsstring></argsstring>
+        <name>script_sig</name>
+        <qualifiedname>satox::TxIn::script_sig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="159" column="17" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d33/structsatox_1_1TxIn_1a73dc29a538c892f219599e4fe75b2f07" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t satox::TxIn::sequence</definition>
+        <argsstring></argsstring>
+        <name>sequence</name>
+        <qualifiedname>satox::TxIn::sequence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="160" column="14" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="160" bodyend="-1"/>
+        <referencedby refid="d1/d33/structsatox_1_1TxIn_1a905c4b3660300c1582c29a58e22696e6" compoundref="da/d86/p2p__protocol_8hpp" startline="162" endline="162">TxIn</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d33/structsatox_1_1TxIn_1a905c4b3660300c1582c29a58e22696e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::TxIn::TxIn</definition>
+        <argsstring>()</argsstring>
+        <name>TxIn</name>
+        <qualifiedname>satox::TxIn::TxIn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/src/p2p_protocol.hpp" line="162" column="5" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="162" bodyend="162"/>
+        <references refid="d1/d33/structsatox_1_1TxIn_1a73dc29a538c892f219599e4fe75b2f07" compoundref="da/d86/p2p__protocol_8hpp" startline="160">sequence</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>T</label>
+      </node>
+      <node id="2">
+        <label>satox::OutPoint</label>
+        <link refid="d4/d31/structsatox_1_1OutPoint"/>
+      </node>
+      <node id="1">
+        <label>satox::TxIn</label>
+        <link refid="d1/d33/structsatox_1_1TxIn"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>prevout</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>script_sig</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; uint8_t &gt;</label>
+        <childnode refid="4" relation="template-instance">
+          <edgelabel>&lt; uint8_t &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/network/src/p2p_protocol.hpp" line="157" column="1" bodyfile="src/network/src/p2p_protocol.hpp" bodystart="157" bodyend="163"/>
+    <listofallmembers>
+      <member refid="d1/d33/structsatox_1_1TxIn_1a512462686bcb9299afd027d898b5de95" prot="public" virt="non-virtual"><scope>satox::TxIn</scope><name>prevout</name></member>
+      <member refid="d1/d33/structsatox_1_1TxIn_1addcf958a33e1f8b6b1f7f82bc7ad5b43" prot="public" virt="non-virtual"><scope>satox::TxIn</scope><name>script_sig</name></member>
+      <member refid="d1/d33/structsatox_1_1TxIn_1a73dc29a538c892f219599e4fe75b2f07" prot="public" virt="non-virtual"><scope>satox::TxIn</scope><name>sequence</name></member>
+      <member refid="d1/d33/structsatox_1_1TxIn_1a905c4b3660300c1582c29a58e22696e6" prot="public" virt="non-virtual"><scope>satox::TxIn</scope><name>TxIn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

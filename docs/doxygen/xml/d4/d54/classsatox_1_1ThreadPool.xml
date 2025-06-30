@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d4/d54/classsatox_1_1ThreadPool" kind="class" language="C++" prot="public">
+    <compoundname>satox::ThreadPool</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d54/classsatox_1_1ThreadPool_1a5a5c788135bf4f7c89c6bb0ad7e52097" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::thread &gt;</type>
+        <definition>std::vector&lt;std::thread&gt; satox::ThreadPool::workers</definition>
+        <argsstring></argsstring>
+        <name>workers</name>
+        <qualifiedname>satox::ThreadPool::workers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="90" column="17" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d54/classsatox_1_1ThreadPool_1a161a5b206a5222a1017c3886ba0f7e37" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::function&lt; void()&gt; &gt;</type>
+        <definition>std::queue&lt;std::function&lt;void()&gt; &gt; satox::ThreadPool::tasks</definition>
+        <argsstring></argsstring>
+        <name>tasks</name>
+        <qualifiedname>satox::ThreadPool::tasks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="91" column="16" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d54/classsatox_1_1ThreadPool_1ac1b9b33e02278c00e2ff20fd6d9c6207" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::ThreadPool::queue_mutex</definition>
+        <argsstring></argsstring>
+        <name>queue_mutex</name>
+        <qualifiedname>satox::ThreadPool::queue_mutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="92" column="16" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d54/classsatox_1_1ThreadPool_1afdda5561b6906427282fb9e8d4297136" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable satox::ThreadPool::condition</definition>
+        <argsstring></argsstring>
+        <name>condition</name>
+        <qualifiedname>satox::ThreadPool::condition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="93" column="29" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d54/classsatox_1_1ThreadPool_1a686e3a2149d45004724f688eabb120fa" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::ThreadPool::stop</definition>
+        <argsstring></argsstring>
+        <name>stop</name>
+        <qualifiedname>satox::ThreadPool::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="94" column="10" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d54/classsatox_1_1ThreadPool_1a68a3de4bba7bf5266b4f9a1611584a06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::ThreadPool::ThreadPool</definition>
+        <argsstring>(size_t threads)</argsstring>
+        <name>ThreadPool</name>
+        <qualifiedname>satox::ThreadPool::ThreadPool</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>threads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="45" column="5" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="45" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d54/classsatox_1_1ThreadPool_1a4547c25597bab2c9e02ec53c4c61c19b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>std::future&lt; void &gt;</type>
+        <definition>std::future&lt; void &gt; satox::ThreadPool::enqueue</definition>
+        <argsstring>(F &amp;&amp;f)</argsstring>
+        <name>enqueue</name>
+        <qualifiedname>satox::ThreadPool::enqueue</qualifiedname>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="66" column="17" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="66" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d54/classsatox_1_1ThreadPool_1a8300a9566fc3a010eed931108a4308ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::ThreadPool::~ThreadPool</definition>
+        <argsstring>()</argsstring>
+        <name>~ThreadPool</name>
+        <qualifiedname>satox::ThreadPool::~ThreadPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/nft/src/nft_manager_optimized.cpp" line="79" column="5" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="79" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/nft/src/nft_manager_optimized.cpp" line="43" column="1" bodyfile="src/nft/src/nft_manager_optimized.cpp" bodystart="43" bodyend="95"/>
+    <listofallmembers>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1afdda5561b6906427282fb9e8d4297136" prot="private" virt="non-virtual"><scope>satox::ThreadPool</scope><name>condition</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1a4547c25597bab2c9e02ec53c4c61c19b" prot="public" virt="non-virtual"><scope>satox::ThreadPool</scope><name>enqueue</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1ac1b9b33e02278c00e2ff20fd6d9c6207" prot="private" virt="non-virtual"><scope>satox::ThreadPool</scope><name>queue_mutex</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1a686e3a2149d45004724f688eabb120fa" prot="private" virt="non-virtual"><scope>satox::ThreadPool</scope><name>stop</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1a161a5b206a5222a1017c3886ba0f7e37" prot="private" virt="non-virtual"><scope>satox::ThreadPool</scope><name>tasks</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1a68a3de4bba7bf5266b4f9a1611584a06" prot="public" virt="non-virtual"><scope>satox::ThreadPool</scope><name>ThreadPool</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1a5a5c788135bf4f7c89c6bb0ad7e52097" prot="private" virt="non-virtual"><scope>satox::ThreadPool</scope><name>workers</name></member>
+      <member refid="d4/d54/classsatox_1_1ThreadPool_1a8300a9566fc3a010eed931108a4308ca" prot="public" virt="non-virtual"><scope>satox::ThreadPool</scope><name>~ThreadPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

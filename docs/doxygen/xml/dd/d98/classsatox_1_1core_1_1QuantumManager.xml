@@ -1,0 +1,1631 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dd/d98/classsatox_1_1core_1_1QuantumManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::core::QuantumManager</compoundname>
+    <includes refid="d8/d4b/quantum_8h" local="no">quantum.h</includes>
+    <innerclass refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo" prot="public">satox::core::QuantumManager::AlgorithmInfo</innerclass>
+    <innerclass refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" prot="public">satox::core::QuantumManager::QuantumEncryption</innerclass>
+    <innerclass refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" prot="public">satox::core::QuantumManager::QuantumKeyPair</innerclass>
+    <innerclass refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" prot="public">satox::core::QuantumManager::QuantumSignature</innerclass>
+    <innerclass refid="d6/d59/structsatox_1_1core_1_1QuantumManager_1_1QuantumStats" prot="public">satox::core::QuantumManager::QuantumStats</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Algorithm</name>
+        <qualifiedname>satox::core::QuantumManager::Algorithm</qualifiedname>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a7940742ed29f3c597997b12dbcadfa17" prot="public">
+          <name>CRYSTALS_KYBER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a68dbf986e982af2a15ef57d720c419fa" prot="public">
+          <name>CRYSTALS_DILITHIUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68ab48c6b32c41d8a5c7572c9db8852d5c7" prot="public">
+          <name>FALCON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a6ea9c88fae22a96490aaadacd00d7ae3" prot="public">
+          <name>SPHINCS_PLUS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a234386af5fe814dfab329bd1dff908f6" prot="public">
+          <name>NTRU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a36ffd24cd662e1a7bc157c9bd7547f12" prot="public">
+          <name>SABER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68afdd3f053ff47a2ff29aef1b5e42f9955" prot="public">
+          <name>SHA_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a355c37ce8ac7c39c69bf3ba1c19d12f5" prot="public">
+          <name>SHAKE_128</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a7511a73e753f72a517b5f62a0f40a040" prot="public">
+          <name>SHAKE_256</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="79" column="5" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="79" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a258b305145fea21de6474e0f0f3516ab" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>using satox::core::QuantumManager::ErrorCallback =  std::function&lt;void(const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ErrorCallback</name>
+        <qualifiedname>satox::core::QuantumManager::ErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="125" column="5" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0cc7c05848ad084446a9328de5122331" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d6/d59/structsatox_1_1core_1_1QuantumManager_1_1QuantumStats" kindref="compound">QuantumStats</ref> &amp;)&gt;</type>
+        <definition>using satox::core::QuantumManager::StatsCallback =  std::function&lt;void(const QuantumStats&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>StatsCallback</name>
+        <qualifiedname>satox::core::QuantumManager::StatsCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="126" column="5" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1acb3bcd5e2460fba94407d56bd564ed7d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::QuantumManager::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="58" column="10" bodyfile="src/core/include/satox/core/quantum.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a11b525daf76c720a6a64cc28182dae22" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::algorithm_</definition>
+        <argsstring></argsstring>
+        <name>algorithm_</name>
+        <qualifiedname>satox::core::QuantumManager::algorithm_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="59" column="17" bodyfile="src/core/include/satox/core/quantum.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1dabbdcc34c52cb5ed9aca8d670cacfb" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::core::QuantumManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="182" column="17" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1af7c0dfcdfa203d9b7182ebdbc950998f" prot="private" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::core::QuantumManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::QuantumManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="183" column="20" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aa59fbdf05befc99aeeb5071eb67d2a72" prot="private" static="no" mutable="no">
+        <type><ref refid="d6/d59/structsatox_1_1core_1_1QuantumManager_1_1QuantumStats" kindref="compound">QuantumStats</ref></type>
+        <definition>QuantumStats satox::core::QuantumManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::core::QuantumManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="184" column="18" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a2df795ff9871dd2f9576ef847482d588" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::statsEnabled_</definition>
+        <argsstring></argsstring>
+        <name>statsEnabled_</name>
+        <qualifiedname>satox::core::QuantumManager::statsEnabled_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="185" column="10" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a53fbe19c10bd51da6d6217c0c0421873" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a258b305145fea21de6474e0f0f3516ab" kindref="member">ErrorCallback</ref></type>
+        <definition>ErrorCallback satox::core::QuantumManager::errorCallback_</definition>
+        <argsstring></argsstring>
+        <name>errorCallback_</name>
+        <qualifiedname>satox::core::QuantumManager::errorCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="187" column="19" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a58106d31f8e39d4cea33b49d40afbd24" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0cc7c05848ad084446a9328de5122331" kindref="member">StatsCallback</ref></type>
+        <definition>StatsCallback satox::core::QuantumManager::statsCallback_</definition>
+        <argsstring></argsstring>
+        <name>statsCallback_</name>
+        <qualifiedname>satox::core::QuantumManager::statsCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="188" column="19" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aff1b8ad323c85f0054f07d21055144e6" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::QuantumManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::QuantumManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="190" column="24" bodyfile="src/core/include/satox/core/quantum_manager.hpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::QuantumManager</definition>
+        <argsstring>()</argsstring>
+        <name>QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::QuantumManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="36" column="5" bodyfile="src/core/src/quantum.cpp" bodystart="37" bodyend="37"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a128442a95e048419d1fd3f6030615488" compoundref="da/db8/quantum__manager_8cpp" startline="34" endline="37">getInstance</referencedby>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1c5581aad9127b6338a238a322afef6e">operator=</referencedby>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a810f5e8fbbe47cb725a1d67b419deb72">QuantumManager</referencedby>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6495aa428eafc418a057f0abc9fa6be4">QuantumManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1acda21c32a60133c1e7c51d2c9895a781" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::~QuantumManager</definition>
+        <argsstring>()</argsstring>
+        <name>~QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::~QuantumManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="37" column="5" bodyfile="src/core/src/quantum.cpp" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a810f5e8fbbe47cb725a1d67b419deb72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::QuantumManager</definition>
+        <argsstring>(const QuantumManager &amp;)=delete</argsstring>
+        <name>QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::QuantumManager</qualifiedname>
+        <param>
+          <type>const <ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="40" column="5"/>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" compoundref="db/de1/quantum_8cpp" startline="37" endline="37">QuantumManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1c5581aad9127b6338a238a322afef6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        <definition>QuantumManager &amp; satox::core::QuantumManager::operator=</definition>
+        <argsstring>(const QuantumManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::QuantumManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="41" column="20"/>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" compoundref="db/de1/quantum_8cpp" startline="37" endline="37">QuantumManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6495aa428eafc418a057f0abc9fa6be4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::QuantumManager</definition>
+        <argsstring>(QuantumManager &amp;&amp;) noexcept=default</argsstring>
+        <name>QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::QuantumManager</qualifiedname>
+        <param>
+          <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="44" column="5"/>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" compoundref="db/de1/quantum_8cpp" startline="37" endline="37">QuantumManager</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        <definition>QuantumManager &amp; satox::core::QuantumManager::operator=</definition>
+        <argsstring>(QuantumManager &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::QuantumManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="45" column="20"/>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac558b148f265a4974c217a32801a0503" compoundref="db/de1/quantum_8cpp" startline="86" endline="98">decrypt</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac1193a90d61b29c16423cfda68be3844" compoundref="db/de1/quantum_8cpp" startline="110" endline="118">deserializeKey</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a825e2bc866be81af90f56e38d12ab9dc" compoundref="db/de1/quantum_8cpp" startline="72" endline="84">encrypt</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac55fe2b11c178807dffe66e2fcaab4ce" compoundref="db/de1/quantum_8cpp" startline="58" endline="70">generateKeyPair</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a4d0838735883d3adb19017b0767122b2" compoundref="db/de1/quantum_8cpp" startline="45" endline="56">initialize</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" compoundref="db/de1/quantum_8cpp" startline="37" endline="37">QuantumManager</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a304d6a6ec46c14628bce7628f1a9deca" compoundref="db/de1/quantum_8cpp" startline="100" endline="108">serializeKey</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a4d0838735883d3adb19017b0767122b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::QuantumManager::initialize</definition>
+        <argsstring>(const std::string &amp;algorithm)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::QuantumManager::initialize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>algorithm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="48" column="10" bodyfile="src/core/src/quantum.cpp" bodystart="45" bodyend="56"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac55fe2b11c178807dffe66e2fcaab4ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; std::string, std::string &gt;</type>
+        <definition>std::pair&lt; std::string, std::string &gt; satox::core::QuantumManager::generateKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="49" column="15" bodyfile="src/core/src/quantum.cpp" bodystart="58" bodyend="70"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a825e2bc866be81af90f56e38d12ab9dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::encrypt</definition>
+        <argsstring>(const std::string &amp;publicKey, const std::string &amp;data)</argsstring>
+        <name>encrypt</name>
+        <qualifiedname>satox::core::QuantumManager::encrypt</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="50" column="17" bodyfile="src/core/src/quantum.cpp" bodystart="72" bodyend="84"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac558b148f265a4974c217a32801a0503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::decrypt</definition>
+        <argsstring>(const std::string &amp;privateKey, const std::string &amp;encryptedData)</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>satox::core::QuantumManager::decrypt</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>encryptedData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="51" column="17" bodyfile="src/core/src/quantum.cpp" bodystart="86" bodyend="98"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a304d6a6ec46c14628bce7628f1a9deca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::serializeKey</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>serializeKey</name>
+        <qualifiedname>satox::core::QuantumManager::serializeKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="52" column="17" bodyfile="src/core/src/quantum.cpp" bodystart="100" bodyend="108"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac1193a90d61b29c16423cfda68be3844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::deserializeKey</definition>
+        <argsstring>(const std::string &amp;serialized)</argsstring>
+        <name>deserializeKey</name>
+        <qualifiedname>satox::core::QuantumManager::deserializeKey</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>serialized</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="53" column="17" bodyfile="src/core/src/quantum.cpp" bodystart="110" bodyend="118"/>
+        <referencedby refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a8dc089a57fde7df9005d3ce0515c0576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::initialize</definition>
+        <argsstring>(const nlohmann::json &amp;config=nlohmann::json::object())</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::core::QuantumManager::initialize</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+          <defval>nlohmann::json::object()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="44" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="39" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a119bfe2c1b8ec58aad802bea90a4c65f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::core::QuantumManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="45" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="66" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a345ab294e32c01747170e0f339b30b67" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::core::QuantumManager::isInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="46" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a2f001ca94b0ef687361f0626bd470e20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateKeyPair</definition>
+        <argsstring>(const std::string &amp;algorithm=&quot;CRYSTALS-Kyber&quot;)</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateKeyPair</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>algorithm</declname>
+          <defval>&quot;CRYSTALS-Kyber&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="53" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="87" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aefd573baf3268fb723653c254d22cf46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref></type>
+        <definition>QuantumManager::QuantumSignature satox::core::QuantumManager::sign</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>sign</name>
+        <qualifiedname>satox::core::QuantumManager::sign</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="60" column="22" bodyfile="src/core/src/quantum_manager.cpp" bodystart="339" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6385eb134c23d18dc81da375b9105afb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::verify</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const QuantumSignature &amp;signature)</argsstring>
+        <name>verify</name>
+        <qualifiedname>satox::core::QuantumManager::verify</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref> &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="61" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="506" bodyend="534"/>
+        <references refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature_1a1e3581d2c69315a243c4a8d76585a5cf" compoundref="da/d06/quantum__manager_8hpp" startline="58">satox::core::QuantumManager::QuantumSignature::publicKey</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a61bc79edb2f4362d39899b2c2e49d21c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref></type>
+        <definition>QuantumManager::QuantumEncryption satox::core::QuantumManager::encrypt</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>encrypt</name>
+        <qualifiedname>satox::core::QuantumManager::encrypt</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="68" column="23" bodyfile="src/core/src/quantum_manager.cpp" bodystart="613" bodyend="641"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a63264b12996c335ae1a306f599f76f45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::decrypt</definition>
+        <argsstring>(const QuantumEncryption &amp;encryption, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>decrypt</name>
+        <qualifiedname>satox::core::QuantumManager::decrypt</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref> &amp;</type>
+          <declname>encryption</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="69" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="753" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a73189b975b907ace479cd85a15fe710a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::generateRandomBytes</definition>
+        <argsstring>(size_t length)</argsstring>
+        <name>generateRandomBytes</name>
+        <qualifiedname>satox::core::QuantumManager::generateRandomBytes</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="72" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="875" bodyend="894"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6814a6e001ea989ec27c56c5a5dfda70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t satox::core::QuantumManager::generateRandomNumber</definition>
+        <argsstring>(uint64_t min, uint64_t max)</argsstring>
+        <name>generateRandomNumber</name>
+        <qualifiedname>satox::core::QuantumManager::generateRandomNumber</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="73" column="14" bodyfile="src/core/src/quantum_manager.cpp" bodystart="896" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a5382e821514647fb79b2a09b71ccc67c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::hash</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::string &amp;algorithm=&quot;SHA-3&quot;)</argsstring>
+        <name>hash</name>
+        <qualifiedname>satox::core::QuantumManager::hash</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>algorithm</declname>
+          <defval>&quot;SHA-3&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="76" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="916" bodyend="935"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a71b721d3611c5c6264f890925084568d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo" kindref="compound">AlgorithmInfo</ref></type>
+        <definition>QuantumManager::AlgorithmInfo satox::core::QuantumManager::getAlgorithmInfo</definition>
+        <argsstring>(Algorithm algorithm) const</argsstring>
+        <name>getAlgorithmInfo</name>
+        <qualifiedname>satox::core::QuantumManager::getAlgorithmInfo</qualifiedname>
+        <param>
+          <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68" kindref="member">Algorithm</ref></type>
+          <declname>algorithm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="102" column="19" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1074" bodyend="1169"/>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1a5c79712a4439d7bc9b05742f762e6245" compoundref="da/d06/quantum__manager_8hpp" startline="97">satox::core::QuantumManager::AlgorithmInfo::ciphertextSize</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a68dbf986e982af2a15ef57d720c419fa" compoundref="da/d06/quantum__manager_8hpp" startline="81">CRYSTALS_DILITHIUM</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a7940742ed29f3c597997b12dbcadfa17" compoundref="da/d06/quantum__manager_8hpp" startline="80">CRYSTALS_KYBER</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1adb1c8debd76baebf41713a6ce6c597f4" compoundref="da/d06/quantum__manager_8hpp" startline="94">satox::core::QuantumManager::AlgorithmInfo::description</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68ab48c6b32c41d8a5c7572c9db8852d5c7" compoundref="da/d06/quantum__manager_8hpp" startline="82">FALCON</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1a2ee7e59fd538a0fb80408b3fd4dc1d54" compoundref="da/d06/quantum__manager_8hpp" startline="99">satox::core::QuantumManager::AlgorithmInfo::isEncryption</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1a7f1d24e63d5433a9c539d8835434a32d" compoundref="da/d06/quantum__manager_8hpp" startline="100">satox::core::QuantumManager::AlgorithmInfo::isHash</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1ae2a365b2164a333aa260f49cb53a8aed" compoundref="da/d06/quantum__manager_8hpp" startline="98">satox::core::QuantumManager::AlgorithmInfo::isSignature</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1a297d4686545a883908b2909a6ae6b623" compoundref="da/d06/quantum__manager_8hpp" startline="95">satox::core::QuantumManager::AlgorithmInfo::keySize</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1ad0c1c8fb0a862b1866d633a7c7591193" compoundref="da/d06/quantum__manager_8hpp" startline="93">satox::core::QuantumManager::AlgorithmInfo::name</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a234386af5fe814dfab329bd1dff908f6" compoundref="da/d06/quantum__manager_8hpp" startline="84">NTRU</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a36ffd24cd662e1a7bc157c9bd7547f12" compoundref="da/d06/quantum__manager_8hpp" startline="85">SABER</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68afdd3f053ff47a2ff29aef1b5e42f9955" compoundref="da/d06/quantum__manager_8hpp" startline="86">SHA_3</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a355c37ce8ac7c39c69bf3ba1c19d12f5" compoundref="da/d06/quantum__manager_8hpp" startline="87">SHAKE_128</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a7511a73e753f72a517b5f62a0f40a040" compoundref="da/d06/quantum__manager_8hpp" startline="88">SHAKE_256</references>
+        <references refid="d9/dd6/structsatox_1_1core_1_1QuantumManager_1_1AlgorithmInfo_1a3e0cef8f2d72fca41c79d5c21c47b00a" compoundref="da/d06/quantum__manager_8hpp" startline="96">satox::core::QuantumManager::AlgorithmInfo::signatureSize</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a6ea9c88fae22a96490aaadacd00d7ae3" compoundref="da/d06/quantum__manager_8hpp" startline="83">SPHINCS_PLUS</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a94101c026009c8bed30e3ff3b78b4342" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68" kindref="member">Algorithm</ref> &gt;</type>
+        <definition>std::vector&lt; QuantumManager::Algorithm &gt; satox::core::QuantumManager::getSupportedAlgorithms</definition>
+        <argsstring>() const</argsstring>
+        <name>getSupportedAlgorithms</name>
+        <qualifiedname>satox::core::QuantumManager::getSupportedAlgorithms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="103" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1171" bodyend="1183"/>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a68dbf986e982af2a15ef57d720c419fa" compoundref="da/d06/quantum__manager_8hpp" startline="81">CRYSTALS_DILITHIUM</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a7940742ed29f3c597997b12dbcadfa17" compoundref="da/d06/quantum__manager_8hpp" startline="80">CRYSTALS_KYBER</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68ab48c6b32c41d8a5c7572c9db8852d5c7" compoundref="da/d06/quantum__manager_8hpp" startline="82">FALCON</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a234386af5fe814dfab329bd1dff908f6" compoundref="da/d06/quantum__manager_8hpp" startline="84">NTRU</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a36ffd24cd662e1a7bc157c9bd7547f12" compoundref="da/d06/quantum__manager_8hpp" startline="85">SABER</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68afdd3f053ff47a2ff29aef1b5e42f9955" compoundref="da/d06/quantum__manager_8hpp" startline="86">SHA_3</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a355c37ce8ac7c39c69bf3ba1c19d12f5" compoundref="da/d06/quantum__manager_8hpp" startline="87">SHAKE_128</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a7511a73e753f72a517b5f62a0f40a040" compoundref="da/d06/quantum__manager_8hpp" startline="88">SHAKE_256</references>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68a6ea9c88fae22a96490aaadacd00d7ae3" compoundref="da/d06/quantum__manager_8hpp" startline="83">SPHINCS_PLUS</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a15fa59ede84a85f0d774301a03254d38" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d59/structsatox_1_1core_1_1QuantumManager_1_1QuantumStats" kindref="compound">QuantumStats</ref></type>
+        <definition>QuantumManager::QuantumStats satox::core::QuantumManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::core::QuantumManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="116" column="18" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1185" bodyend="1188"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a00fc3e8487929ec9589afd7096ce89db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::core::QuantumManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="117" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1190" bodyend="1194"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aa2c4b5da5422b26564e373f2ee7cee0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::core::QuantumManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="118" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1196" bodyend="1200"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a5db50eb0f84911b01a98091fd9053a1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::core::QuantumManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::core::QuantumManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="121" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1202" bodyend="1205"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aec040f806d8c7b528b3a151829d43883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::core::QuantumManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="122" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1207" bodyend="1211"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1afd854988f936609aca9e96f6e26055a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::registerErrorCallback</definition>
+        <argsstring>(ErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::core::QuantumManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a258b305145fea21de6474e0f0f3516ab" kindref="member">ErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="128" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1213" bodyend="1217"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1adb15aa8d16e89e3efa0975545faf60d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::registerStatsCallback</definition>
+        <argsstring>(StatsCallback callback)</argsstring>
+        <name>registerStatsCallback</name>
+        <qualifiedname>satox::core::QuantumManager::registerStatsCallback</qualifiedname>
+        <param>
+          <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0cc7c05848ad084446a9328de5122331" kindref="member">StatsCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="129" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1219" bodyend="1223"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1afb91a4600b84a88341fabb89e48134d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::unregisterErrorCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterErrorCallback</name>
+        <qualifiedname>satox::core::QuantumManager::unregisterErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="130" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1225" bodyend="1229"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aeeaac6c789def6c2da987c198975989a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::unregisterStatsCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterStatsCallback</name>
+        <qualifiedname>satox::core::QuantumManager::unregisterStatsCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="131" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1231" bodyend="1235"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a9f0362a4feae91c48ab61064c172ffd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::QuantumManager::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>satox::core::QuantumManager::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum.h" line="56" column="10" bodyfile="src/core/src/quantum.cpp" bodystart="120" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a19c200dde6a03cfd424414950bf15a6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::QuantumManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::QuantumManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="134" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a27b3d86259fdac434af813d19fc5f998" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::~QuantumManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::~QuantumManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="135" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a810f5e8fbbe47cb725a1d67b419deb72" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::QuantumManager::QuantumManager</definition>
+        <argsstring>(const QuantumManager &amp;)=delete</argsstring>
+        <name>QuantumManager</name>
+        <qualifiedname>satox::core::QuantumManager::QuantumManager</qualifiedname>
+        <param>
+          <type>const <ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="136" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1c5581aad9127b6338a238a322afef6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        <definition>QuantumManager &amp; satox::core::QuantumManager::operator=</definition>
+        <argsstring>(const QuantumManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::core::QuantumManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="137" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a7fd022236ce0255c3cd4ab95476308be" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::validateConfig</definition>
+        <argsstring>(const nlohmann::json &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::core::QuantumManager::validateConfig</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="139" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1237" bodyend="1310"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a3019fb086b7296c5c72b314a2acb2a90" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::QuantumManager::handleError</definition>
+        <argsstring>(const std::string &amp;error)</argsstring>
+        <name>handleError</name>
+        <qualifiedname>satox::core::QuantumManager::handleError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="140" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1312" bodyend="1317"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6e2e12b05539dac9f4cc8ca8ddd132aa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::core::QuantumManager::updateStats</definition>
+        <argsstring>()</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::core::QuantumManager::updateStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="141" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1319" bodyend="1327"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a3afaa8087d97affe6fdb17c070bf3d96" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateKyberKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateKyberKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateKyberKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="144" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="115" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0136719e0cbd465a3ead1cf48bc9b8e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateDilithiumKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateDilithiumKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateDilithiumKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="145" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="143" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aa0eb67ebcb964d6c8cb48ae6d5bdbb07" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateFalconKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateFalconKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateFalconKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="146" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="169" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a9fb80040b0ddfc2d99e82aa6a73fae49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateSphincsKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateSphincsKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateSphincsKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="147" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="195" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1addb542a2c4db233994f8bc018413969e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateNTRUKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateNTRUKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateNTRUKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="148" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="221" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a694c41ca16dbcd8651864d7d1928ebdb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateSABERKeyPair</definition>
+        <argsstring>()</argsstring>
+        <name>generateSABERKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateSABERKeyPair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="149" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="247" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac8bc0fbc3a433c08c1d2d17585f4a830" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dc2/structsatox_1_1core_1_1QuantumManager_1_1QuantumKeyPair" kindref="compound">QuantumKeyPair</ref></type>
+        <definition>QuantumManager::QuantumKeyPair satox::core::QuantumManager::generateOpenSSLKeyPair</definition>
+        <argsstring>(const std::string &amp;algorithm)</argsstring>
+        <name>generateOpenSSLKeyPair</name>
+        <qualifiedname>satox::core::QuantumManager::generateOpenSSLKeyPair</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>algorithm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="150" column="20" bodyfile="src/core/src/quantum_manager.cpp" bodystart="273" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a663310e0a0286ff8329629a6ee211c24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref></type>
+        <definition>QuantumManager::QuantumSignature satox::core::QuantumManager::signWithDilithium</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>signWithDilithium</name>
+        <qualifiedname>satox::core::QuantumManager::signWithDilithium</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="153" column="22" bodyfile="src/core/src/quantum_manager.cpp" bodystart="369" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ae6de7c60ffc5d6cdcf0466108b558494" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref></type>
+        <definition>QuantumManager::QuantumSignature satox::core::QuantumManager::signWithFalcon</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>signWithFalcon</name>
+        <qualifiedname>satox::core::QuantumManager::signWithFalcon</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="154" column="22" bodyfile="src/core/src/quantum_manager.cpp" bodystart="394" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ad3c7a7e27471eee7cf8cd3235a5613ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref></type>
+        <definition>QuantumManager::QuantumSignature satox::core::QuantumManager::signWithSphincs</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>signWithSphincs</name>
+        <qualifiedname>satox::core::QuantumManager::signWithSphincs</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="155" column="22" bodyfile="src/core/src/quantum_manager.cpp" bodystart="417" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1aec889d3a759cc2a51734767ff7fbec42" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref></type>
+        <definition>QuantumManager::QuantumSignature satox::core::QuantumManager::signWithOpenSSL</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>signWithOpenSSL</name>
+        <qualifiedname>satox::core::QuantumManager::signWithOpenSSL</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="156" column="22" bodyfile="src/core/src/quantum_manager.cpp" bodystart="440" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac85d681b6bf0939fb8c7885b0b0991df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::verifyWithDilithium</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const QuantumSignature &amp;signature)</argsstring>
+        <name>verifyWithDilithium</name>
+        <qualifiedname>satox::core::QuantumManager::verifyWithDilithium</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref> &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="159" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="536" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a7de7b03d094b27ef8518c6933ef9e28a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::verifyWithFalcon</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const QuantumSignature &amp;signature)</argsstring>
+        <name>verifyWithFalcon</name>
+        <qualifiedname>satox::core::QuantumManager::verifyWithFalcon</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref> &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="160" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="553" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a8b7f2f4b877c472c5754706d2ab5e42e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::verifyWithSphincs</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const QuantumSignature &amp;signature)</argsstring>
+        <name>verifyWithSphincs</name>
+        <qualifiedname>satox::core::QuantumManager::verifyWithSphincs</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref> &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="161" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="566" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a16f3cd31385d25f085d5ddc31dabab81" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::QuantumManager::verifyWithOpenSSL</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const QuantumSignature &amp;signature)</argsstring>
+        <name>verifyWithOpenSSL</name>
+        <qualifiedname>satox::core::QuantumManager::verifyWithOpenSSL</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d6/d66/structsatox_1_1core_1_1QuantumManager_1_1QuantumSignature" kindref="compound">QuantumSignature</ref> &amp;</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="162" column="10" bodyfile="src/core/src/quantum_manager.cpp" bodystart="579" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ad882fa8f3a30b08ab7e9b3c7e593d3a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref></type>
+        <definition>QuantumManager::QuantumEncryption satox::core::QuantumManager::encryptWithKyber</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>encryptWithKyber</name>
+        <qualifiedname>satox::core::QuantumManager::encryptWithKyber</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="165" column="23" bodyfile="src/core/src/quantum_manager.cpp" bodystart="643" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a97a5fb44503535b2b3352a7f5ec2da9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref></type>
+        <definition>QuantumManager::QuantumEncryption satox::core::QuantumManager::encryptWithNTRU</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>encryptWithNTRU</name>
+        <qualifiedname>satox::core::QuantumManager::encryptWithNTRU</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="166" column="23" bodyfile="src/core/src/quantum_manager.cpp" bodystart="664" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a81b6de19f63dad5128c2ae44dd6ffbb2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref></type>
+        <definition>QuantumManager::QuantumEncryption satox::core::QuantumManager::encryptWithSABER</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>encryptWithSABER</name>
+        <qualifiedname>satox::core::QuantumManager::encryptWithSABER</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="167" column="23" bodyfile="src/core/src/quantum_manager.cpp" bodystart="683" bodyend="700"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1af343e2a2e3d0617210db953aaa1a006a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref></type>
+        <definition>QuantumManager::QuantumEncryption satox::core::QuantumManager::encryptWithOpenSSL</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data, const std::vector&lt; uint8_t &gt; &amp;publicKey)</argsstring>
+        <name>encryptWithOpenSSL</name>
+        <qualifiedname>satox::core::QuantumManager::encryptWithOpenSSL</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>publicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="168" column="23" bodyfile="src/core/src/quantum_manager.cpp" bodystart="702" bodyend="751"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1acc869517372d80afe3103e42ffce4c38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::decryptWithKyber</definition>
+        <argsstring>(const QuantumEncryption &amp;encryption, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>decryptWithKyber</name>
+        <qualifiedname>satox::core::QuantumManager::decryptWithKyber</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref> &amp;</type>
+          <declname>encryption</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="171" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="783" bodyend="798"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a670e886fff0d2d4b78f280fef76146e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::decryptWithNTRU</definition>
+        <argsstring>(const QuantumEncryption &amp;encryption, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>decryptWithNTRU</name>
+        <qualifiedname>satox::core::QuantumManager::decryptWithNTRU</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref> &amp;</type>
+          <declname>encryption</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="172" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="800" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1af823f8f2dec6e7fb8dc48e5f843febb8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::decryptWithSABER</definition>
+        <argsstring>(const QuantumEncryption &amp;encryption, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>decryptWithSABER</name>
+        <qualifiedname>satox::core::QuantumManager::decryptWithSABER</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref> &amp;</type>
+          <declname>encryption</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="173" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="813" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a51b8f1006d9d1cec05f0183d5aa6c2d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::decryptWithOpenSSL</definition>
+        <argsstring>(const QuantumEncryption &amp;encryption, const std::vector&lt; uint8_t &gt; &amp;privateKey)</argsstring>
+        <name>decryptWithOpenSSL</name>
+        <qualifiedname>satox::core::QuantumManager::decryptWithOpenSSL</qualifiedname>
+        <param>
+          <type>const <ref refid="d6/d69/structsatox_1_1core_1_1QuantumManager_1_1QuantumEncryption" kindref="compound">QuantumEncryption</ref> &amp;</type>
+          <declname>encryption</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>privateKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="174" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="826" bodyend="873"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1ae85fc8959d1d5e64ef46ec3ed78826ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::hashWithSHA3</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>hashWithSHA3</name>
+        <qualifiedname>satox::core::QuantumManager::hashWithSHA3</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="177" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="937" bodyend="980"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a272ad1a51ffa6b770086c68d6ae435e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::hashWithSHAKE128</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>hashWithSHAKE128</name>
+        <qualifiedname>satox::core::QuantumManager::hashWithSHAKE128</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="178" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="982" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a3acc5a1275c3561e8b3f808a3dd232c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; satox::core::QuantumManager::hashWithSHAKE256</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>hashWithSHAKE256</name>
+        <qualifiedname>satox::core::QuantumManager::hashWithSHAKE256</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="179" column="17" bodyfile="src/core/src/quantum_manager.cpp" bodystart="1028" bodyend="1072"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="dd/d98/classsatox_1_1core_1_1QuantumManager_1a128442a95e048419d1fd3f6030615488" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/d98/classsatox_1_1core_1_1QuantumManager" kindref="compound">QuantumManager</ref> &amp;</type>
+        <definition>QuantumManager &amp; satox::core::QuantumManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::core::QuantumManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/core/quantum_manager.hpp" line="41" column="27" bodyfile="src/core/src/quantum_manager.cpp" bodystart="34" bodyend="37"/>
+        <references refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" compoundref="db/de1/quantum_8cpp" startline="37" endline="37">QuantumManager</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/core/quantum.h" line="34" column="1" bodyfile="src/core/include/satox/core/quantum.h" bodystart="34" bodyend="60"/>
+    <listofallmembers>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a689f6852e74d18d4555ee0c4044f1c68" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>Algorithm</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a11b525daf76c720a6a64cc28182dae22" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>algorithm_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a9f0362a4feae91c48ab61064c172ffd0" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>cleanup</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aec040f806d8c7b528b3a151829d43883" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>clearLastError</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1af7c0dfcdfa203d9b7182ebdbc950998f" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>config_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac558b148f265a4974c217a32801a0503" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>decrypt</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a63264b12996c335ae1a306f599f76f45" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>decrypt</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1acc869517372d80afe3103e42ffce4c38" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>decryptWithKyber</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a670e886fff0d2d4b78f280fef76146e0" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>decryptWithNTRU</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a51b8f1006d9d1cec05f0183d5aa6c2d5" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>decryptWithOpenSSL</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1af823f8f2dec6e7fb8dc48e5f843febb8" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>decryptWithSABER</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac1193a90d61b29c16423cfda68be3844" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>deserializeKey</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a00fc3e8487929ec9589afd7096ce89db" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>enableStats</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a825e2bc866be81af90f56e38d12ab9dc" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>encrypt</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a61bc79edb2f4362d39899b2c2e49d21c" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>encrypt</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ad882fa8f3a30b08ab7e9b3c7e593d3a1" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>encryptWithKyber</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a97a5fb44503535b2b3352a7f5ec2da9e" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>encryptWithNTRU</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1af343e2a2e3d0617210db953aaa1a006a" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>encryptWithOpenSSL</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a81b6de19f63dad5128c2ae44dd6ffbb2" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>encryptWithSABER</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a258b305145fea21de6474e0f0f3516ab" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>ErrorCallback</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a53fbe19c10bd51da6d6217c0c0421873" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>errorCallback_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0136719e0cbd465a3ead1cf48bc9b8e6" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateDilithiumKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aa0eb67ebcb964d6c8cb48ae6d5bdbb07" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateFalconKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac55fe2b11c178807dffe66e2fcaab4ce" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a2f001ca94b0ef687361f0626bd470e20" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a3afaa8087d97affe6fdb17c070bf3d96" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateKyberKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1addb542a2c4db233994f8bc018413969e" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateNTRUKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac8bc0fbc3a433c08c1d2d17585f4a830" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateOpenSSLKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a73189b975b907ace479cd85a15fe710a" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateRandomBytes</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6814a6e001ea989ec27c56c5a5dfda70" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateRandomNumber</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a694c41ca16dbcd8651864d7d1928ebdb" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateSABERKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a9fb80040b0ddfc2d99e82aa6a73fae49" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>generateSphincsKeyPair</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a71b721d3611c5c6264f890925084568d" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>getAlgorithmInfo</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a128442a95e048419d1fd3f6030615488" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>getInstance</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a5db50eb0f84911b01a98091fd9053a1c" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>getLastError</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a15fa59ede84a85f0d774301a03254d38" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>getStats</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a94101c026009c8bed30e3ff3b78b4342" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>getSupportedAlgorithms</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a3019fb086b7296c5c72b314a2acb2a90" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>handleError</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a5382e821514647fb79b2a09b71ccc67c" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>hash</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ae85fc8959d1d5e64ef46ec3ed78826ca" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>hashWithSHA3</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a272ad1a51ffa6b770086c68d6ae435e6" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>hashWithSHAKE128</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a3acc5a1275c3561e8b3f808a3dd232c5" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>hashWithSHAKE256</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a4d0838735883d3adb19017b0767122b2" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>initialize</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a8dc089a57fde7df9005d3ce0515c0576" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>initialize</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1acb3bcd5e2460fba94407d56bd564ed7d" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>initialized_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a345ab294e32c01747170e0f339b30b67" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>isInitialized</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1dabbdcc34c52cb5ed9aca8d670cacfb" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>lastError_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aff1b8ad323c85f0054f07d21055144e6" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>mutex_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1c5581aad9127b6338a238a322afef6e" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>operator=</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac878d8f7f90127c95a1f3b45043811bd" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>operator=</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a1c5581aad9127b6338a238a322afef6e" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>operator=</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0a233b1eb86331afe7db93270f3558d9" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>QuantumManager</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a810f5e8fbbe47cb725a1d67b419deb72" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>QuantumManager</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6495aa428eafc418a057f0abc9fa6be4" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>QuantumManager</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a19c200dde6a03cfd424414950bf15a6b" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>QuantumManager</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a810f5e8fbbe47cb725a1d67b419deb72" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>QuantumManager</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1afd854988f936609aca9e96f6e26055a1" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>registerErrorCallback</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1adb15aa8d16e89e3efa0975545faf60d7" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>registerStatsCallback</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aa2c4b5da5422b26564e373f2ee7cee0f" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>resetStats</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a304d6a6ec46c14628bce7628f1a9deca" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>serializeKey</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a119bfe2c1b8ec58aad802bea90a4c65f" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>shutdown</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aefd573baf3268fb723653c254d22cf46" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>sign</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a663310e0a0286ff8329629a6ee211c24" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>signWithDilithium</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ae6de7c60ffc5d6cdcf0466108b558494" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>signWithFalcon</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aec889d3a759cc2a51734767ff7fbec42" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>signWithOpenSSL</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ad3c7a7e27471eee7cf8cd3235a5613ff" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>signWithSphincs</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aa59fbdf05befc99aeeb5071eb67d2a72" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>stats_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a0cc7c05848ad084446a9328de5122331" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>StatsCallback</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a58106d31f8e39d4cea33b49d40afbd24" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>statsCallback_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a2df795ff9871dd2f9576ef847482d588" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>statsEnabled_</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1afb91a4600b84a88341fabb89e48134d1" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>unregisterErrorCallback</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1aeeaac6c789def6c2da987c198975989a" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>unregisterStatsCallback</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6e2e12b05539dac9f4cc8ca8ddd132aa" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>updateStats</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a7fd022236ce0255c3cd4ab95476308be" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>validateConfig</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a6385eb134c23d18dc81da375b9105afb" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>verify</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1ac85d681b6bf0939fb8c7885b0b0991df" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>verifyWithDilithium</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a7de7b03d094b27ef8518c6933ef9e28a" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>verifyWithFalcon</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a16f3cd31385d25f085d5ddc31dabab81" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>verifyWithOpenSSL</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a8b7f2f4b877c472c5754706d2ab5e42e" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>verifyWithSphincs</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1acda21c32a60133c1e7c51d2c9895a781" prot="public" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>~QuantumManager</name></member>
+      <member refid="dd/d98/classsatox_1_1core_1_1QuantumManager_1a27b3d86259fdac434af813d19fc5f998" prot="private" virt="non-virtual"><scope>satox::core::QuantumManager</scope><name>~QuantumManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp" kind="file" language="C++">
+    <compoundname>key_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">openssl/ec.h</includes>
+    <includes local="no">openssl/bn.h</includes>
+    <includes local="no">openssl/evp.h</includes>
+    <includedby refid="d7/d67/wallet_2src_2key__manager_8cpp" local="yes">src/wallet/src/key_manager.cpp</includedby>
+    <includedby refid="db/d1c/wallet_2src_2wallet__manager_8cpp" local="yes">src/wallet/src/wallet_manager.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/wallet/include/satox/wallet/key_manager.hpp</label>
+        <link refid="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+      <node id="7">
+        <label>openssl/bn.h</label>
+      </node>
+      <node id="6">
+        <label>openssl/ec.h</label>
+      </node>
+      <node id="8">
+        <label>openssl/evp.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/wallet/include/satox/wallet/key_manager.hpp</label>
+        <link refid="d1/d65/wallet_2include_2satox_2wallet_2key__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/wallet/src/key_manager.cpp</label>
+        <link refid="d7/d67/wallet_2src_2key__manager_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/wallet/src/wallet_manager.cpp</label>
+        <link refid="db/d1c/wallet_2src_2wallet__manager_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager" prot="public">satox::wallet::KeyManager</innerclass>
+    <innerclass refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" prot="public">satox::wallet::KeyManager::KeyPair</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="d9/d9b/namespacesatox_1_1wallet">satox::wallet</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/ec.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/bn.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/evp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d9/d9b/namespacesatox_1_1wallet" kindref="compound">wallet</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1abde755e82446b4ea45250bd971a56c65" kindref="member">KeyManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>pair<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref><sp/>{</highlight></codeline>
+<codeline lineno="43" refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a2025e62eeda8dff038476ddd69fab0f7" kindref="member">privateKey</ref>;</highlight></codeline>
+<codeline lineno="44" refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a106e0d17c78ba135422feeaeb5f79ac9" kindref="member">publicKey</ref>;</highlight></codeline>
+<codeline lineno="45" refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a83860d4fa5cb0881301287e793449007" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a83860d4fa5cb0881301287e793449007" kindref="member">chainCode</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>HD<sp/>wallet<sp/>derivation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair_1a3afdbdeded0909ebcecc18c44375023a" kindref="member">address</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>and<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1abde755e82446b4ea45250bd971a56c65" kindref="member">KeyManager</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a80eae26fdc3eed6d231ec45f1b928fb4" kindref="member">~KeyManager</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialization<sp/>and<sp/>cleanup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a78304d3036d313ddba88e1501e34ae6c" kindref="member">initialize</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a85b5608659960d122c8b829bd99d4f8e" kindref="member">cleanup</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>generation<sp/>and<sp/>derivation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac1216cb4dd6d1b086ae86e0ef8d3ebdf" kindref="member">generateKeyPair</ref>(<ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref>&amp;<sp/>keyPair);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a66aa9b759bdb3847610f37492de4cf9e" kindref="member">deriveKeyPairFromSeed</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>seed,<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref>&amp;<sp/>keyPair);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aefdec54b2aeef392c395f6e898ed558c" kindref="member">deriveKeyPairFromPrivateKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>privateKey,<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref>&amp;<sp/>keyPair);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a805ba62946ba100ebca3935417493d7d" kindref="member">deriveChildKeyPair</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref>&amp;<sp/>parent,<sp/>uint32_t<sp/>index,<sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref>&amp;<sp/>child);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1afe94a968617a97550cb3bc5ff89f9721" kindref="member">validatePrivateKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>privateKey)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a2f892259d850a4174b3b1ef8586cf924" kindref="member">validatePublicKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a91b7f573d808522f6378ca33de44c4d5" kindref="member">validateKeyPair</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dd6/structsatox_1_1wallet_1_1KeyManager_1_1KeyPair" kindref="compound">KeyPair</ref>&amp;<sp/>keyPair)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>conversion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ac3e4d64d97bf06714c9b8a82cd5abdcd" kindref="member">privateKeyToPublicKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>privateKey,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1acb53b9f93bdbd383f86cdee3a9eca21f" kindref="member">publicKeyToAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey,<sp/>std::string&amp;<sp/>address)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Key<sp/>encryption</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad2f64a157e89862c05aa6e9d526e0827" kindref="member">encryptPrivateKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>privateKey,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>password,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>encrypted)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1ad6aad10b97bcb5f8b08ffac982a596c8" kindref="member">decryptPrivateKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>encrypted,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>password,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>privateKey)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1a0ce935549c4f5d2a7649c8fbe1cc3f9d" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dc1/classsatox_1_1wallet_1_1KeyManager_1aebeeeddc2f7f64aba5057d5a451dbcbe" kindref="member">clearLastError</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initializeOpenSSL();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanupOpenSSL();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>generateRandomBytes(std::vector&lt;uint8_t&gt;&amp;<sp/>bytes,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>computeSHA256(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>hash)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>computeRIPEMD160(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>hash)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>computeDoubleSHA256(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>hash)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>deriveKeyFromPassword(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>password,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>salt,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>computeHMACSHA512(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>key,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>hmac)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>bytesToHex(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>bytes)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hexToBytes(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hex,<sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>bytes)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>deriveAddress(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>publicKey)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::string<sp/>lastError_;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>EC_KEY*<sp/>key_;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EC_GROUP*<sp/>group_;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>BIGNUM*<sp/>order_;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>wallet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/wallet/include/satox/wallet/key_manager.hpp"/>
+  </compounddef>
+</doxygen>

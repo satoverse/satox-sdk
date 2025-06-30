@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d6/da1/structsatox_1_1network_1_1NetworkResult" kind="struct" language="C++" prot="public">
+    <compoundname>satox::network::NetworkResult</compoundname>
+    <includes refid="db/d96/network_2include_2satox_2network_2types_8hpp" local="no">types.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d6/da1/structsatox_1_1network_1_1NetworkResult_1a349b4aa82cdbe57cc75e2ac824245c10" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkResult::success</definition>
+        <argsstring></argsstring>
+        <name>success</name>
+        <qualifiedname>satox::network::NetworkResult::success</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="69" column="10" bodyfile="src/network/include/satox/network/types.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/da1/structsatox_1_1network_1_1NetworkResult_1a267a39df01883de00b84f0341900602c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>satox::network::NetworkResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="70" column="17" bodyfile="src/network/include/satox/network/types.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/da1/structsatox_1_1network_1_1NetworkResult_1a92cfbbc1af122505ed00fad27076f834" prot="public" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::network::NetworkResult::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>satox::network::NetworkResult::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="71" column="20" bodyfile="src/network/include/satox/network/types.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/da1/structsatox_1_1network_1_1NetworkResult_1a3809cf70275368229d2381855547d2bb" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds satox::network::NetworkResult::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>satox::network::NetworkResult::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/types.hpp" line="72" column="31" bodyfile="src/network/include/satox/network/types.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>satox::network::NetworkResult</label>
+        <link refid="d6/da1/structsatox_1_1network_1_1NetworkResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/network/include/satox/network/types.hpp" line="68" column="1" bodyfile="src/network/include/satox/network/types.hpp" bodystart="68" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a92cfbbc1af122505ed00fad27076f834" prot="public" virt="non-virtual"><scope>satox::network::NetworkResult</scope><name>data</name></member>
+      <member refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a3809cf70275368229d2381855547d2bb" prot="public" virt="non-virtual"><scope>satox::network::NetworkResult</scope><name>duration</name></member>
+      <member refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a267a39df01883de00b84f0341900602c" prot="public" virt="non-virtual"><scope>satox::network::NetworkResult</scope><name>error</name></member>
+      <member refid="d6/da1/structsatox_1_1network_1_1NetworkResult_1a349b4aa82cdbe57cc75e2ac824245c10" prot="public" virt="non-virtual"><scope>satox::network::NetworkResult</scope><name>success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

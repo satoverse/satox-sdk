@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/de2/nft_2include_2satox_2nft_2types_8hpp" kind="file" language="C++">
+    <compoundname>types.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/nft/include/satox/nft/types.hpp</label>
+        <link refid="d5/de2/nft_2include_2satox_2nft_2types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="df/dd1/structsatox_1_1nft_1_1Version" prot="public">satox::nft::Version</innerclass>
+    <innerclass refid="d1/d8d/structsatox_1_1nft_1_1NftConfig" prot="public">satox::nft::NftConfig</innerclass>
+    <innerclass refid="dc/d0d/structsatox_1_1nft_1_1NftStats" prot="public">satox::nft::NftStats</innerclass>
+    <innerclass refid="da/d7a/structsatox_1_1nft_1_1NftResult" prot="public">satox::nft::NftResult</innerclass>
+    <innerclass refid="df/d7f/structsatox_1_1nft_1_1NftHealth" prot="public">satox::nft::NftHealth</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="dc/dd7/namespacesatox_1_1nft">satox::nft</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dc/dd7/namespacesatox_1_1nft" kindref="compound">satox::nft</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Version<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="df/dd1/structsatox_1_1nft_1_1Version" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/dd1/structsatox_1_1nft_1_1Version" kindref="compound">Version</ref><sp/>{</highlight></codeline>
+<codeline lineno="38" refid="df/dd1/structsatox_1_1nft_1_1Version_1a1a54c814a4643a0e4d54379caca36d23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a1a54c814a4643a0e4d54379caca36d23" kindref="member">major</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39" refid="df/dd1/structsatox_1_1nft_1_1Version_1aa5d9694fb17468ed5459b492f35962ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/dd1/structsatox_1_1nft_1_1Version_1aa5d9694fb17468ed5459b492f35962ce" kindref="member">minor</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="40" refid="df/dd1/structsatox_1_1nft_1_1Version_1a98e1a8164c12b0fd00dedeb85fcab749" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a98e1a8164c12b0fd00dedeb85fcab749" kindref="member">patch</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41" refid="df/dd1/structsatox_1_1nft_1_1Version_1a7bc677cc591fd935478d32f73fe87f19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a7bc677cc591fd935478d32f73fe87f19" kindref="member">build</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42" refid="df/dd1/structsatox_1_1nft_1_1Version_1a57c888ac6360f4a0a70b6edc82990502" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a57c888ac6360f4a0a70b6edc82990502" kindref="member">commit</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="df/dd1/structsatox_1_1nft_1_1Version_1a8f63aebfbd2e8f115eac87dd2a418f49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a8f63aebfbd2e8f115eac87dd2a418f49" kindref="member">toString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::to_string(<ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a1a54c814a4643a0e4d54379caca36d23" kindref="member">major</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="df/dd1/structsatox_1_1nft_1_1Version_1aa5d9694fb17468ed5459b492f35962ce" kindref="member">minor</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="df/dd1/structsatox_1_1nft_1_1Version_1a98e1a8164c12b0fd00dedeb85fcab749" kindref="member">patch</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configuration<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d1/d8d/structsatox_1_1nft_1_1NftConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/d8d/structsatox_1_1nft_1_1NftConfig" kindref="compound">NftConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a9864ad8d2f47b6ccebdab5e1d892cb26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a9864ad8d2f47b6ccebdab5e1d892cb26" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;satox_nft&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a8227a2e5564c110b589dde6fc19e954d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1a8227a2e5564c110b589dde6fc19e954d" kindref="member">enableLogging</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53" refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1abdd612bb9c001c17c5a9c4e6587a4af8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1abdd612bb9c001c17c5a9c4e6587a4af8" kindref="member">logPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/components/nft/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54" refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1acf51c7972abac25295491f84871ba8db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="d1/d8d/structsatox_1_1nft_1_1NftConfig_1acf51c7972abac25295491f84871ba8db" kindref="member">additionalConfig</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Statistics<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="dc/d0d/structsatox_1_1nft_1_1NftStats" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats" kindref="compound">NftStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1a7f62edfc0e7aa47d5c8a2358e95ae3e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1a7f62edfc0e7aa47d5c8a2358e95ae3e8" kindref="member">totalOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60" refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1add0778b8c04188b8f277676003f1da5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1add0778b8c04188b8f277676003f1da5f" kindref="member">successfulOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61" refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1a5f7e111bb6cd764c4ca9ceff9ef2ef70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1a5f7e111bb6cd764c4ca9ceff9ef2ef70" kindref="member">failedOperations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62" refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1aacec6c52032f46628e91cf4366e23c6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1aacec6c52032f46628e91cf4366e23c6d" kindref="member">lastOperation</ref>;</highlight></codeline>
+<codeline lineno="63" refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1ad9a1888e82d47fee57181e0b289383f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1ad9a1888e82d47fee57181e0b289383f4" kindref="member">averageOperationTime</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="64" refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1ab32467fc30c56f35e56ebea0b3bca52b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="dc/d0d/structsatox_1_1nft_1_1NftStats_1ab32467fc30c56f35e56ebea0b3bca52b" kindref="member">additionalStats</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Result<sp/>structures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="da/d7a/structsatox_1_1nft_1_1NftResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="da/d7a/structsatox_1_1nft_1_1NftResult" kindref="compound">NftResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="69" refid="da/d7a/structsatox_1_1nft_1_1NftResult_1a0e365ff8c624db1fd625138de82e2729" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/d7a/structsatox_1_1nft_1_1NftResult_1a0e365ff8c624db1fd625138de82e2729" kindref="member">success</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70" refid="da/d7a/structsatox_1_1nft_1_1NftResult_1a14bd75df37713c276afb89967248c913" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="da/d7a/structsatox_1_1nft_1_1NftResult_1a14bd75df37713c276afb89967248c913" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="71" refid="da/d7a/structsatox_1_1nft_1_1NftResult_1ab8805177d9dc2e81bf83d23d708a6dbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="da/d7a/structsatox_1_1nft_1_1NftResult_1ab8805177d9dc2e81bf83d23d708a6dbf" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="72" refid="da/d7a/structsatox_1_1nft_1_1NftResult_1a71c18f8bc4e7db1cde167bfb78f593e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="da/d7a/structsatox_1_1nft_1_1NftResult_1a71c18f8bc4e7db1cde167bfb78f593e6" kindref="member">duration</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485" kindref="member">NftStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="77" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a696b031073e74bf2cb98e5ef201d4aa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">UNKNOWN</ref>,</highlight></codeline>
+<codeline lineno="78" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a86bf8c89d85949f8f45cde2f73fce113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a86bf8c89d85949f8f45cde2f73fce113" kindref="member">INITIALIZING</ref>,</highlight></codeline>
+<codeline lineno="79" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485adee5f03c2c4e73657824e028494b18c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485adee5f03c2c4e73657824e028494b18c0" kindref="member">INITIALIZED</ref>,</highlight></codeline>
+<codeline lineno="80" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a43491564ebcfd38568918efbd6e840fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a43491564ebcfd38568918efbd6e840fd" kindref="member">RUNNING</ref>,</highlight></codeline>
+<codeline lineno="81" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a09d4d696b4e935115b9313e3c412509a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a09d4d696b4e935115b9313e3c412509a" kindref="member">STOPPED</ref>,</highlight></codeline>
+<codeline lineno="82" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485abb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref>,</highlight></codeline>
+<codeline lineno="83" refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a055c1a591abb0e8cd86dc969727bcc0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a055c1a591abb0e8cd86dc969727bcc0b" kindref="member">DISABLED</ref></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Component<sp/>health</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="df/d7f/structsatox_1_1nft_1_1NftHealth" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth" kindref="compound">NftHealth</ref><sp/>{</highlight></codeline>
+<codeline lineno="88" refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1ac8099d301073a68af5e0af97975b7394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485" kindref="member">NftStatus</ref><sp/><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1ac8099d301073a68af5e0af97975b7394" kindref="member">status</ref><sp/>=<sp/><ref refid="dc/dd7/namespacesatox_1_1nft_1a834a5ae847257820d253878104ee3485a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">NftStatus::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="89" refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a3a7bfa151032ecdfa1bb9478adf2af93" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a3a7bfa151032ecdfa1bb9478adf2af93" kindref="member">healthy</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90" refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a85866e33f32041d019777997c3aa4896" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a85866e33f32041d019777997c3aa4896" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="91" refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1aa8c545d999b883acde5072780f7a4726" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1aa8c545d999b883acde5072780f7a4726" kindref="member">lastCheck</ref>;</highlight></codeline>
+<codeline lineno="92" refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a7cf719bf4c41288cfad07e34cbe38522" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a7cf719bf4c41288cfad07e34cbe38522" kindref="member">consecutiveFailures</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="93" refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a33513f67e4c8dac0eca978e25665ea05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>nlohmann::json<sp/><ref refid="df/d7f/structsatox_1_1nft_1_1NftHealth_1a33513f67e4c8dac0eca978e25665ea05" kindref="member">details</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox::nft</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/nft/include/satox/nft/types.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl" kind="struct" language="C++" prot="public">
+    <compoundname>satox::core::SupabaseManager::Impl</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a9517ada192ad7bb278d1259cbc0e3b63" prot="public" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::core::SupabaseManager::Impl::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="29" column="16" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a9d3eb9f7e7f88a3e9231e3fd8d68bbae" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::core::SupabaseManager::Impl::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::initialized_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="30" column="10" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="30" bodyend="-1"/>
+        <referencedby refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a95da41c32e557e9bd682af1ffb89741e" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="35" endline="37">Impl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1aa46910669e5f9056f01cb2be3400dd6d" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::unique_ptr&lt; <ref refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection" kindref="compound">SupabaseConnection</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::unique_ptr&lt;SupabaseConnection&gt; &gt; satox::core::SupabaseManager::Impl::connections_</definition>
+        <argsstring></argsstring>
+        <name>connections_</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::connections_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="31" column="24" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ab83822bae32bf44c660dc11db1efb20a" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::core::SupabaseManager::Impl::last_error_</definition>
+        <argsstring></argsstring>
+        <name>last_error_</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::last_error_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="32" column="17" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ae3ed739b00374a8a5cb59c3bcd214fed" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="50" endline="117">makeHttpRequest</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a7b8601534f590ee5035ef9e0c2178f63" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig" kindref="compound">SupabaseConfig</ref></type>
+        <definition>SupabaseConfig satox::core::SupabaseManager::Impl::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="33" column="20" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="33" bodyend="-1"/>
+        <referencedby refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ae3ed739b00374a8a5cb59c3bcd214fed" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="50" endline="117">makeHttpRequest</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a95da41c32e557e9bd682af1ffb89741e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::SupabaseManager::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="35" column="5" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="35" bodyend="37"/>
+        <references refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a9d3eb9f7e7f88a3e9231e3fd8d68bbae" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="30">initialized_</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ac66627c91c8d19b5d5592485dabcfce5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>satox::core::SupabaseManager::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="39" column="5" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ae3ed739b00374a8a5cb59c3bcd214fed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::core::SupabaseManager::Impl::makeHttpRequest</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;method, const nlohmann::json &amp;headers, const nlohmann::json &amp;data, nlohmann::json &amp;response)</argsstring>
+        <name>makeHttpRequest</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::makeHttpRequest</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>headers</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>nlohmann::json &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="50" column="10" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="50" bodyend="117"/>
+        <references refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a7b8601534f590ee5035ef9e0c2178f63" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="33">config_</references>
+        <references refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ab83822bae32bf44c660dc11db1efb20a" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="32">last_error_</references>
+        <references refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a8cd5a22659ff77c3b6f8931aa5a37643" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="44" endline="47">WriteCallback</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a8cd5a22659ff77c3b6f8931aa5a37643" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t satox::core::SupabaseManager::Impl::WriteCallback</definition>
+        <argsstring>(void *contents, size_t size, size_t nmemb, std::string *userp)</argsstring>
+        <name>WriteCallback</name>
+        <qualifiedname>satox::core::SupabaseManager::Impl::WriteCallback</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>contents</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nmemb</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>userp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/src/cloud/supabase_manager.cpp" line="44" column="19" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="44" bodyend="47"/>
+        <referencedby refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ae3ed739b00374a8a5cb59c3bcd214fed" compoundref="df/d03/src_2cloud_2supabase__manager_8cpp" startline="50" endline="117">makeHttpRequest</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="11">
+        <label>K</label>
+      </node>
+      <node id="12">
+        <label>T</label>
+      </node>
+      <node id="8">
+        <label>satox::core::SupabaseConfig</label>
+        <link refid="d9/d9c/structsatox_1_1core_1_1SupabaseConfig"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>anon_key</edgelabel>
+          <edgelabel>auth_scheme</edgelabel>
+          <edgelabel>database_url</edgelabel>
+          <edgelabel>log_level</edgelabel>
+          <edgelabel>schema</edgelabel>
+          <edgelabel>service_role_key</edgelabel>
+          <edgelabel>url</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>satox::core::SupabaseConnection</label>
+        <link refid="d2/d6d/structsatox_1_1core_1_1SupabaseConnection"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>subscriptions</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>satox::core::SupabaseManager::Impl</label>
+        <link refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mutex_</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>connections_</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>last_error_</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>config_</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::mutex</label>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::unique_ptr&lt; T &gt;</label>
+        <childnode refid="12" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::unique_ptr&lt; satox::core::SupabaseConnection &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; satox::core::SupabaseConnection &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::unordered_map&lt; K, T &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::unordered_map&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; std::string, std::function&lt; void(const nlohmann::json &amp;)&gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::unordered_map&lt; std::string, std::unique_ptr&lt; satox::core::SupabaseConnection &gt; &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; std::string, std::unique_ptr&lt; satox::core::SupabaseConnection &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/core/src/cloud/supabase_manager.cpp" line="28" column="1" bodyfile="src/core/src/cloud/supabase_manager.cpp" bodystart="28" bodyend="118"/>
+    <listofallmembers>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a7b8601534f590ee5035ef9e0c2178f63" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>config_</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1aa46910669e5f9056f01cb2be3400dd6d" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>connections_</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a95da41c32e557e9bd682af1ffb89741e" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>Impl</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a9d3eb9f7e7f88a3e9231e3fd8d68bbae" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>initialized_</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ab83822bae32bf44c660dc11db1efb20a" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>last_error_</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ae3ed739b00374a8a5cb59c3bcd214fed" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>makeHttpRequest</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a9517ada192ad7bb278d1259cbc0e3b63" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>mutex_</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1a8cd5a22659ff77c3b6f8931aa5a37643" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>WriteCallback</name></member>
+      <member refid="d0/db8/structsatox_1_1core_1_1SupabaseManager_1_1Impl_1ac66627c91c8d19b5d5592485dabcfce5" prot="public" virt="non-virtual"><scope>satox::core::SupabaseManager::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

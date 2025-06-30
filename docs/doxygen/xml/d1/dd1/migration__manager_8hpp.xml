@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d1/dd1/migration__manager_8hpp" kind="file" language="C++">
+    <compoundname>migration_manager.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">nlohmann/json.hpp</includes>
+    <includes refid="d3/d16/connection__pool_8hpp" local="yes">satox/database/connection_pool.hpp</includes>
+    <includes refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp" local="yes">satox/database/transaction_manager.hpp</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>satox/database/connection_pool.hpp</label>
+        <link refid="d3/d16/connection__pool_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/database/include/satox/database/migration_manager.hpp</label>
+        <link refid="d1/dd1/migration__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>satox/database/transaction_manager.hpp</label>
+        <link refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>atomic</label>
+      </node>
+      <node id="8">
+        <label>chrono</label>
+      </node>
+      <node id="13">
+        <label>condition_variable</label>
+      </node>
+      <node id="9">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>mutex</label>
+      </node>
+      <node id="10">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="12">
+        <label>queue</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="df/d7c/classsatox_1_1database_1_1MigrationManager" prot="public">satox::database::MigrationManager</innerclass>
+    <innerclass refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" prot="public">satox::database::MigrationManager::MigrationConfig</innerclass>
+    <innerclass refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" prot="public">satox::database::MigrationManager::MigrationInfo</innerclass>
+    <innerclass refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" prot="public">satox::database::MigrationManager::MigrationStats</innerclass>
+    <innerclass refid="de/dd5/structsatox_1_1database_1_1MigrationManager_1_1Migration" prot="private">satox::database::MigrationManager::Migration</innerclass>
+    <innernamespace refid="df/daa/namespacesatox">satox</innernamespace>
+    <innernamespace refid="db/dfd/namespacesatox_1_1database">satox::database</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nlohmann/json.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d3/d16/connection__pool_8hpp" kindref="compound">satox/database/connection_pool.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dc/d31/database_2include_2satox_2database_2transaction__manager_8hpp" kindref="compound">satox/database/transaction_manager.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="df/daa/namespacesatox" kindref="compound">satox</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/dfd/namespacesatox_1_1database" kindref="compound">database</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="df/d7c/classsatox_1_1database_1_1MigrationManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MigrationManager<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" kindref="compound">MigrationConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="46" refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1a8db96ff476a7baf11f37466d2741b133" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1a8db96ff476a7baf11f37466d2741b133" kindref="member">migrations_table</ref>;</highlight></codeline>
+<codeline lineno="47" refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1a867c2eee9c53e46dc6d693a3ec12b804" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1a867c2eee9c53e46dc6d693a3ec12b804" kindref="member">migrations_path</ref>;</highlight></codeline>
+<codeline lineno="48" refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1aba0db811da3b9cbe95aa0969adbc0142" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1aba0db811da3b9cbe95aa0969adbc0142" kindref="member">auto_migrate</ref>;</highlight></codeline>
+<codeline lineno="49" refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1affbd761f65ceec76b3b4bd0e83e33135" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1affbd761f65ceec76b3b4bd0e83e33135" kindref="member">validate_migrations</ref>;</highlight></codeline>
+<codeline lineno="50" refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1aaee38de63096977386ab67185fb5cd25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig_1aaee38de63096977386ab67185fb5cd25" kindref="member">timeout</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo" kindref="compound">MigrationInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="54" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a116b9230ca3162ec234edaae21f085d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a116b9230ca3162ec234edaae21f085d7" kindref="member">version</ref>;</highlight></codeline>
+<codeline lineno="55" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a0272b40a7d70899cb50137b6975c9329" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a0272b40a7d70899cb50137b6975c9329" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="56" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a0c0c6dba18d41869dbbf6449d45e386f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a0c0c6dba18d41869dbbf6449d45e386f" kindref="member">description</ref>;</highlight></codeline>
+<codeline lineno="57" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a9db3dfeb417143917e1aafd1a8bb4baa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::system_clock::time_point<sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a9db3dfeb417143917e1aafd1a8bb4baa" kindref="member">applied_at</ref>;</highlight></codeline>
+<codeline lineno="58" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a3aa372d779b2785a63c4bf6701f083eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1a3aa372d779b2785a63c4bf6701f083eb" kindref="member">checksum</ref>;</highlight></codeline>
+<codeline lineno="59" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1acd24ddee64531e8e419f5da90cd53859" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1acd24ddee64531e8e419f5da90cd53859" kindref="member">success</ref>;</highlight></codeline>
+<codeline lineno="60" refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1ac146217a0407f12c43196a57a0140c22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d7/df6/structsatox_1_1database_1_1MigrationManager_1_1MigrationInfo_1ac146217a0407f12c43196a57a0140c22" kindref="member">error</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" kindref="compound">MigrationStats</ref><sp/>{</highlight></codeline>
+<codeline lineno="64" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a1542ceb392593f72999fe82777468aa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a1542ceb392593f72999fe82777468aa3" kindref="member">total_migrations</ref>;</highlight></codeline>
+<codeline lineno="65" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1ac37b292a1404306fe80d686bfd9d202d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1ac37b292a1404306fe80d686bfd9d202d" kindref="member">applied_migrations</ref>;</highlight></codeline>
+<codeline lineno="66" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a23e5e8c3183bf3d5e643d06ee66e7b65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a23e5e8c3183bf3d5e643d06ee66e7b65" kindref="member">pending_migrations</ref>;</highlight></codeline>
+<codeline lineno="67" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a3944b781d5179351b6f98c8b968fe617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a3944b781d5179351b6f98c8b968fe617" kindref="member">failed_migrations</ref>;</highlight></codeline>
+<codeline lineno="68" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a75ca81cac6dae0ea970adbbdb2adeea3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a75ca81cac6dae0ea970adbbdb2adeea3" kindref="member">avg_migration_time</ref>;</highlight></codeline>
+<codeline lineno="69" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a008679db6c0bb6821c805d1890faa60c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1a008679db6c0bb6821c805d1890faa60c" kindref="member">current_version</ref>;</highlight></codeline>
+<codeline lineno="70" refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1afeb513172a0cae410f5e501710f4f95b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats_1afeb513172a0cae410f5e501710f4f95b" kindref="member">latest_version</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1adfcf2d7aa34ddb67b71da5695c9f7c81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>MigrationManager&amp;<sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1adfcf2d7aa34ddb67b71da5695c9f7c81" kindref="member">getInstance</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a3dd19ee5ac7e22f8d6b5f6207677e204" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a3dd19ee5ac7e22f8d6b5f6207677e204" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/def/structsatox_1_1database_1_1MigrationManager_1_1MigrationConfig" kindref="compound">MigrationConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="76" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a4848c6a53030352da074401e24913c13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a4848c6a53030352da074401e24913c13" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Migration<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ab94e397c95f27ab0ea5f769c0eec2b3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ab94e397c95f27ab0ea5f769c0eec2b3c" kindref="member">createMigration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>description);</highlight></codeline>
+<codeline lineno="80" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2d5bbdc4d7733cdad9a03cad2bfd851a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2d5bbdc4d7733cdad9a03cad2bfd851a" kindref="member">applyMigration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>version);</highlight></codeline>
+<codeline lineno="81" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a860ffb5d147a7f424f0cd7eed8556e67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a860ffb5d147a7f424f0cd7eed8556e67" kindref="member">rollbackMigration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>version);</highlight></codeline>
+<codeline lineno="82" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a206b94237d2500f30eaf814de8ea84e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a206b94237d2500f30eaf814de8ea84e7" kindref="member">validateMigrations</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Migration<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a88b35b9e1b72331e7e72d6d2c822a06f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;MigrationInfo&gt;<sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a88b35b9e1b72331e7e72d6d2c822a06f" kindref="member">getMigrationHistory</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae49edaf95cc2ddb68f9c203a260b9974" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;MigrationInfo&gt;<sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae49edaf95cc2ddb68f9c203a260b9974" kindref="member">getPendingMigrations</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a772737329ba6ba80f5ccf05938e98992" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d53/structsatox_1_1database_1_1MigrationManager_1_1MigrationStats" kindref="compound">MigrationStats</ref><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a772737329ba6ba80f5ccf05938e98992" kindref="member">getStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a85422acb43fa781848c6c7673f0bb485" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a85422acb43fa781848c6c7673f0bb485" kindref="member">getCurrentVersion</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ad9601a19d754acf930ef93c9eec7cb6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ad9601a19d754acf930ef93c9eec7cb6e" kindref="member">isUpToDate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Migration<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2497e610a78430783ecbe7e4321c375a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2497e610a78430783ecbe7e4321c375a" kindref="member">migrateUp</ref>();</highlight></codeline>
+<codeline lineno="93" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aaf757e4f7ab989c3e104eb08c9e229c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aaf757e4f7ab989c3e104eb08c9e229c9" kindref="member">migrateDown</ref>();</highlight></codeline>
+<codeline lineno="94" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aff94538fd758922cd045a462943ee294" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1aff94538fd758922cd045a462943ee294" kindref="member">migrateToVersion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>version);</highlight></codeline>
+<codeline lineno="95" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a822f5b03f50324854c846af8d0261bf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a822f5b03f50324854c846af8d0261bf0" kindref="member">migrateToLatest</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a255190b955c53643ffc77bced758c8dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a255190b955c53643ffc77bced758c8dd" kindref="member">setAutoMigrate</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>auto_migrate);</highlight></codeline>
+<codeline lineno="99" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2b7436754923b05aa6fa5b233013e005" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a2b7436754923b05aa6fa5b233013e005" kindref="member">setValidateMigrations</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validate);</highlight></codeline>
+<codeline lineno="100" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a5c6c35ac20edac4c6bff4e5b71c5cb3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a5c6c35ac20edac4c6bff4e5b71c5cb3a" kindref="member">setTimeout</ref>(std::chrono::seconds<sp/>timeout);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Health<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a8227489bab5e6cfba3afba94ead35f9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1a8227489bab5e6cfba3afba94ead35f9f" kindref="member">isHealthy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104" refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae605c3dbfcdb3872bbe533b2d80da170" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/d7c/classsatox_1_1database_1_1MigrationManager_1ae605c3dbfcdb3872bbe533b2d80da170" kindref="member">getLastError</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>MigrationManager()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>~MigrationManager();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>MigrationManager(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MigrationManager&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>MigrationManager&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MigrationManager&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>migration<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Migration<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>version;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>name;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>description;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>up_sql;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>down_sql;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>checksum;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>loadMigrations();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>saveMigration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MigrationInfo&amp;<sp/>info);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>executeMigration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Migration&amp;<sp/>migration,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>up);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validateMigration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Migration&amp;<sp/>migration);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="df/daa/namespacesatox_1ae80ce1f7ea517a4383fae0c21b9eb377" kindref="member">calculateChecksum</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>content);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createMigrationsTable();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateMigrationsTable(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MigrationInfo&amp;<sp/>info);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Migration&gt;<sp/>parseMigrationFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>backupDatabase();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>restoreDatabase();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>MigrationConfig<sp/>config_;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>Migration&gt;<sp/>migrations_;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>running_;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>total_migrations_;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>applied_migrations_;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>failed_migrations_;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>last_error_;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>satox<sp/></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/database/include/satox/database/migration_manager.hpp"/>
+  </compounddef>
+</doxygen>

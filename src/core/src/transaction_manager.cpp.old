@@ -1,0 +1,368 @@
+#include "satox/core/transaction_manager.hpp"
+#include "satox/core/logging_manager.hpp"
+#include <algorithm>
+#include <sstream>
+#include <iomanip>
+
+namespace satox::core {
+
+TransactionManager& TransactionManager::getInstance() {
+    static TransactionManager instance;
+    return instance;
+}
+
+bool TransactionManager::initialize(const nlohmann::json& config) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (initialized_) {
+        lastError_ = "Transaction Manager already initialized";
+        return false;
+    }
+
+    if (!validateConfig(config)) {
+        lastError_ = "Invalid configuration";
+        return false;
+    }
+
+    initialized_ = true;
+    statsEnabled_ = config.value("enableStats", false);
+    return true;
+}
+
+void TransactionManager::shutdown() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        return;
+    }
+
+    transactions_.clear();
+    transactionCallbacks_.clear();
+    stateCallbacks_.clear();
+    errorCallbacks_.clear();
+    initialized_ = false;
+}
+
+bool TransactionManager::createTransaction(const Transaction& transaction) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        lastError_ = "Transaction Manager not initialized";
+        return false;
+    }
+
+    if (!validateTransaction(transaction)) {
+        lastError_ = "Invalid transaction";
+        return false;
+    }
+
+    if (!validateTransactionHash(transaction.hash)) {
+        lastError_ = "Invalid transaction hash";
+        return false;
+    }
+
+    transactions_[transaction.hash] = transaction;
+    updateTransactionStats(transaction);
+    notifyTransactionChange(transaction);
+    return true;
+}
+
+bool TransactionManager::signTransaction(const std::string& txHash) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        lastError_ = "Transaction Manager not initialized";
+        return false;
+    }
+
+    auto it = transactions_.find(txHash);
+    if (it == transactions_.end()) {
+        lastError_ = "Transaction not found";
+        return false;
+    }
+
+    if (it->second.state != TransactionState::CREATED) {
+        lastError_ = "Invalid transaction state for signing";
+        return false;
+    }
+
+    updateTransactionState(txHash, TransactionState::SIGNED);
+    return true;
+}
+
+bool TransactionManager::broadcastTransaction(const std::string& txHash) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        lastError_ = "Transaction Manager not initialized";
+        return false;
+    }
+
+    auto it = transactions_.find(txHash);
+    if (it == transactions_.end()) {
+        lastError_ = "Transaction not found";
+        return false;
+    }
+
+    if (it->second.state != TransactionState::SIGNED) {
+        lastError_ = "Invalid transaction state for broadcasting";
+        return false;
+    }
+
+    it->second.broadcastTime = std::chrono::system_clock::now();
+    updateTransactionState(txHash, TransactionState::BROADCAST);
+    return true;
+}
+
+bool TransactionManager::confirmTransaction(const std::string& txHash, uint64_t height) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        lastError_ = "Transaction Manager not initialized";
+        return false;
+    }
+
+    auto it = transactions_.find(txHash);
+    if (it == transactions_.end()) {
+        lastError_ = "Transaction not found";
+        return false;
+    }
+
+    if (it->second.state != TransactionState::BROADCAST) {
+        lastError_ = "Invalid transaction state for confirmation";
+        return false;
+    }
+
+    it->second.confirmationTime = std::chrono::system_clock::now();
+    it->second.confirmationHeight = height;
+    updateTransactionState(txHash, TransactionState::CONFIRMED);
+    return true;
+}
+
+bool TransactionManager::failTransaction(const std::string& txHash, const std::string& error) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    
+    if (!initialized_) {
+        lastError_ = "Transaction Manager not initialized";
+        return false;
+    }
+
+    auto it = transactions_.find(txHash);
+    if (it == transactions_.end()) {
+        lastError_ = "Transaction not found";
+        return false;
+    }
+
+    it->second.errorMessage = error;
+    updateTransactionState(txHash, TransactionState::FAILED);
+    return true;
+}
+
+bool TransactionManager::isTransactionExists(const std::string& txHash) const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    return transactions_.find(txHash) != transactions_.end();
+}
+
+Transaction TransactionManager::getTransaction(const std::string& txHash) const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    auto it = transactions_.find(txHash);
+    if (it == transactions_.end()) {
+        return Transaction{};
+    }
+    return it->second;
+}
+
+std::vector<Transaction> TransactionManager::getTransactionsByType(TransactionType type) const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    std::vector<Transaction> result;
+    for (const auto& [hash, tx] : transactions_) {
+        if (tx.type == type) {
+            result.push_back(tx);
+        }
+    }
+    return result;
+}
+
+std::vector<Transaction> TransactionManager::getTransactionsByState(TransactionState state) const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    std::vector<Transaction> result;
+    for (const auto& [hash, tx] : transactions_) {
+        if (tx.state == state) {
+            result.push_back(tx);
+        }
+    }
+    return result;
+}
+
+std::vector<Transaction> TransactionManager::getTransactionsByAddress(const std::string& address) const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    std::vector<Transaction> result;
+    for (const auto& [hash, tx] : transactions_) {
+        for (const auto& output : tx.outputs) {
+            if (output.address == address) {
+                result.push_back(tx);
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+bool TransactionManager::validateTransaction(const Transaction& transaction) const {
+    if (transaction.hash.empty() || transaction.inputs.empty() || transaction.outputs.empty()) {
+        return false;
+    }
+    return validateInputs(transaction.inputs) && validateOutputs(transaction.outputs);
+}
+
+bool TransactionManager::validateInputs(const std::vector<Input>& inputs) const {
+    for (const auto& input : inputs) {
+        if (input.txId.empty() || input.scriptSig.empty()) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool TransactionManager::validateOutputs(const std::vector<Output>& outputs) const {
+    for (const auto& output : outputs) {
+        if (output.address.empty() || output.scriptPubKey.empty() || output.amount == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+TransactionStats TransactionManager::getStats() const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    return stats_;
+}
+
+void TransactionManager::resetStats() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    stats_ = TransactionStats{};
+}
+
+bool TransactionManager::enableStats(bool enable) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    statsEnabled_ = enable;
+    return true;
+}
+
+void TransactionManager::registerTransactionCallback(TransactionCallback callback) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    transactionCallbacks_["all"].push_back(callback);
+}
+
+void TransactionManager::registerStateCallback(StateCallback callback) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    stateCallbacks_.push_back(callback);
+}
+
+void TransactionManager::registerErrorCallback(ErrorCallback callback) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    errorCallbacks_.push_back(callback);
+}
+
+void TransactionManager::unregisterTransactionCallback() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    transactionCallbacks_.clear();
+}
+
+void TransactionManager::unregisterStateCallback() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    stateCallbacks_.clear();
+}
+
+void TransactionManager::unregisterErrorCallback() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    errorCallbacks_.clear();
+}
+
+std::string TransactionManager::getLastError() const {
+    std::lock_guard<std::mutex> lock(mutex_);
+    return lastError_;
+}
+
+void TransactionManager::clearLastError() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    lastError_.clear();
+}
+
+// Private helper methods
+bool TransactionManager::validateConfig(const nlohmann::json& config) const {
+    return true; // Add validation logic as needed
+}
+
+bool TransactionManager::validateTransactionHash(const std::string& hash) const {
+    return !hash.empty() && hash.length() == 64;
+}
+
+bool TransactionManager::validateAddress(const std::string& address) const {
+    return !address.empty() && address.length() <= 64;
+}
+
+void TransactionManager::updateTransactionState(const std::string& txHash, TransactionState state) {
+    auto it = transactions_.find(txHash);
+    if (it != transactions_.end()) {
+        it->second.state = state;
+        notifyStateChange(txHash, state);
+    }
+}
+
+void TransactionManager::updateTransactionStats(const Transaction& transaction) {
+    if (!statsEnabled_) {
+        return;
+    }
+
+    stats_.totalTransactions++;
+    stats_.createdTransactions = std::count_if(transactions_.begin(), transactions_.end(),
+        [](const auto& pair) { return pair.second.state == TransactionState::CREATED; });
+    stats_.signedTransactions = std::count_if(transactions_.begin(), transactions_.end(),
+        [](const auto& pair) { return pair.second.state == TransactionState::SIGNED; });
+    stats_.broadcastTransactions = std::count_if(transactions_.begin(), transactions_.end(),
+        [](const auto& pair) { return pair.second.state == TransactionState::BROADCAST; });
+    stats_.confirmedTransactions = std::count_if(transactions_.begin(), transactions_.end(),
+        [](const auto& pair) { return pair.second.state == TransactionState::CONFIRMED; });
+    stats_.failedTransactions = std::count_if(transactions_.begin(), transactions_.end(),
+        [](const auto& pair) { return pair.second.state == TransactionState::FAILED; });
+
+    // Update type distribution
+    stats_.typeDistribution = nlohmann::json::object();
+    for (const auto& [hash, tx] : transactions_) {
+        std::string typeStr = std::to_string(static_cast<int>(tx.type));
+        stats_.typeDistribution[typeStr] = stats_.typeDistribution.value(typeStr, 0) + 1;
+    }
+}
+
+void TransactionManager::notifyTransactionChange(const Transaction& transaction) {
+    for (const auto& callback : transactionCallbacks_["all"]) {
+        try {
+            callback(transaction);
+        } catch (const std::exception& e) {
+            notifyError(transaction.hash, e.what());
+        }
+    }
+}
+
+void TransactionManager::notifyStateChange(const std::string& txHash, TransactionState state) {
+    for (const auto& callback : stateCallbacks_) {
+        try {
+            callback(txHash, state);
+        } catch (const std::exception& e) {
+            notifyError(txHash, e.what());
+        }
+    }
+}
+
+void TransactionManager::notifyError(const std::string& txHash, const std::string& error) {
+    for (const auto& callback : errorCallbacks_) {
+        try {
+            callback(txHash, error);
+        } catch (...) {
+            // Ignore errors in error callbacks
+        }
+    }
+}
+
+} // namespace satox::core 

@@ -1,0 +1,520 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer" kind="class" language="C++" prot="public">
+    <compoundname>satox::database::QueryOptimizer</compoundname>
+    <includes refid="d7/d5d/query__optimizer_8hpp" local="no">query_optimizer.hpp</includes>
+    <innerclass refid="d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo" prot="public">satox::database::QueryOptimizer::IndexInfo</innerclass>
+    <innerclass refid="de/db3/structsatox_1_1database_1_1QueryOptimizer_1_1QueryPlan" prot="public">satox::database::QueryOptimizer::QueryPlan</innerclass>
+    <innerclass refid="d2/d29/structsatox_1_1database_1_1QueryOptimizer_1_1TableStats" prot="public">satox::database::QueryOptimizer::TableStats</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a48cbcfb46ad4d7bbbaa34187a0f205e7" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; <ref refid="d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo" kindref="compound">IndexInfo</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;IndexInfo&gt; &gt; satox::database::QueryOptimizer::tableIndexes_</definition>
+        <argsstring></argsstring>
+        <name>tableIndexes_</name>
+        <qualifiedname>satox::database::QueryOptimizer::tableIndexes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="96" column="24" bodyfile="src/database/include/satox/database/query_optimizer.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1afc4484a29ef71b98cbb447a01d1a1a7b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="d2/d29/structsatox_1_1database_1_1QueryOptimizer_1_1TableStats" kindref="compound">TableStats</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, TableStats&gt; satox::database::QueryOptimizer::tableStats_</definition>
+        <argsstring></argsstring>
+        <name>tableStats_</name>
+        <qualifiedname>satox::database::QueryOptimizer::tableStats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="97" column="24" bodyfile="src/database/include/satox/database/query_optimizer.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a98c373296d58a491a34bc28bd9246790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::QueryOptimizer::QueryOptimizer</definition>
+        <argsstring>()</argsstring>
+        <name>QueryOptimizer</name>
+        <qualifiedname>satox::database::QueryOptimizer::QueryOptimizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="62" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a90322a15d850297ef2eb70c3b9ce8593" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::QueryOptimizer::~QueryOptimizer</definition>
+        <argsstring>()</argsstring>
+        <name>~QueryOptimizer</name>
+        <qualifiedname>satox::database::QueryOptimizer::~QueryOptimizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="63" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a2e04d80c5c05b97abe4094f245b78bab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/db3/structsatox_1_1database_1_1QueryOptimizer_1_1QueryPlan" kindref="compound">QueryPlan</ref></type>
+        <definition>QueryPlan satox::database::QueryOptimizer::optimizeQuery</definition>
+        <argsstring>(const std::string &amp;query, const nlohmann::json &amp;params)</argsstring>
+        <name>optimizeQuery</name>
+        <qualifiedname>satox::database::QueryOptimizer::optimizeQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="66" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a124648546dcb38cc25189ed6b3f653ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/db3/structsatox_1_1database_1_1QueryOptimizer_1_1QueryPlan" kindref="compound">QueryPlan</ref></type>
+        <definition>QueryPlan satox::database::QueryOptimizer::optimizeSelect</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;conditions)</argsstring>
+        <name>optimizeSelect</name>
+        <qualifiedname>satox::database::QueryOptimizer::optimizeSelect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="67" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a13e5ff063da68cbd7389ed1cc9e2978c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/db3/structsatox_1_1database_1_1QueryOptimizer_1_1QueryPlan" kindref="compound">QueryPlan</ref></type>
+        <definition>QueryPlan satox::database::QueryOptimizer::optimizeJoin</definition>
+        <argsstring>(const std::string &amp;table1, const std::string &amp;table2, const nlohmann::json &amp;joinConditions)</argsstring>
+        <name>optimizeJoin</name>
+        <qualifiedname>satox::database::QueryOptimizer::optimizeJoin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table1</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table2</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>joinConditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="68" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a0e2f4044f01470ac1e4950ad0e8b891c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/db3/structsatox_1_1database_1_1QueryOptimizer_1_1QueryPlan" kindref="compound">QueryPlan</ref></type>
+        <definition>QueryPlan satox::database::QueryOptimizer::optimizeAggregate</definition>
+        <argsstring>(const std::string &amp;table, const std::vector&lt; std::string &gt; &amp;groupBy, const std::vector&lt; std::string &gt; &amp;aggregate)</argsstring>
+        <name>optimizeAggregate</name>
+        <qualifiedname>satox::database::QueryOptimizer::optimizeAggregate</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>groupBy</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>aggregate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="69" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1aa8e6d53f1f4d1863604d6429b2dc503e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::QueryOptimizer::addIndex</definition>
+        <argsstring>(const IndexInfo &amp;index)</argsstring>
+        <name>addIndex</name>
+        <qualifiedname>satox::database::QueryOptimizer::addIndex</qualifiedname>
+        <param>
+          <type>const <ref refid="d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo" kindref="compound">IndexInfo</ref> &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="72" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a431cbec64cf3d1958e2f01a4b59d7d8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::QueryOptimizer::removeIndex</definition>
+        <argsstring>(const std::string &amp;indexName)</argsstring>
+        <name>removeIndex</name>
+        <qualifiedname>satox::database::QueryOptimizer::removeIndex</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>indexName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="73" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a23df0659fa9ac27b71207a00380b129b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo" kindref="compound">IndexInfo</ref> &gt;</type>
+        <definition>std::vector&lt; IndexInfo &gt; satox::database::QueryOptimizer::getIndexes</definition>
+        <argsstring>(const std::string &amp;table) const</argsstring>
+        <name>getIndexes</name>
+        <qualifiedname>satox::database::QueryOptimizer::getIndexes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="74" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a430f881e2485b5ae699318a4f79bfd0b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::QueryOptimizer::hasIndex</definition>
+        <argsstring>(const std::string &amp;table, const std::vector&lt; std::string &gt; &amp;columns) const</argsstring>
+        <name>hasIndex</name>
+        <qualifiedname>satox::database::QueryOptimizer::hasIndex</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>columns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="75" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a271c92b9f9e0209b3b79171484be5f6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::QueryOptimizer::updateTableStats</definition>
+        <argsstring>(const std::string &amp;table, const TableStats &amp;stats)</argsstring>
+        <name>updateTableStats</name>
+        <qualifiedname>satox::database::QueryOptimizer::updateTableStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d2/d29/structsatox_1_1database_1_1QueryOptimizer_1_1TableStats" kindref="compound">TableStats</ref> &amp;</type>
+          <declname>stats</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="78" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a3c43ca01e6287f7445ea78cb7dff5f8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d29/structsatox_1_1database_1_1QueryOptimizer_1_1TableStats" kindref="compound">TableStats</ref></type>
+        <definition>TableStats satox::database::QueryOptimizer::getTableStats</definition>
+        <argsstring>(const std::string &amp;table) const</argsstring>
+        <name>getTableStats</name>
+        <qualifiedname>satox::database::QueryOptimizer::getTableStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="79" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a7630ba958cd37574f2d09f754992b834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::QueryOptimizer::updateColumnStats</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;column, double selectivity)</argsstring>
+        <name>updateColumnStats</name>
+        <qualifiedname>satox::database::QueryOptimizer::updateColumnStats</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>selectivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="80" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1ac3b0885d7b769928d1a4b95edcfe45e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::database::QueryOptimizer::estimateQueryCost</definition>
+        <argsstring>(const QueryPlan &amp;plan) const</argsstring>
+        <name>estimateQueryCost</name>
+        <qualifiedname>satox::database::QueryOptimizer::estimateQueryCost</qualifiedname>
+        <param>
+          <type>const <ref refid="de/db3/structsatox_1_1database_1_1QueryOptimizer_1_1QueryPlan" kindref="compound">QueryPlan</ref> &amp;</type>
+          <declname>plan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="83" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a11c2d65254299da6208735299b578b1f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::database::QueryOptimizer::estimateJoinCost</definition>
+        <argsstring>(const std::string &amp;table1, const std::string &amp;table2, const nlohmann::json &amp;conditions) const</argsstring>
+        <name>estimateJoinCost</name>
+        <qualifiedname>satox::database::QueryOptimizer::estimateJoinCost</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table1</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table2</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="84" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1aaf4cc748d9535216ad4675f03d58b1e7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::database::QueryOptimizer::estimateScanCost</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;conditions) const</argsstring>
+        <name>estimateScanCost</name>
+        <qualifiedname>satox::database::QueryOptimizer::estimateScanCost</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="85" column="12"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1ac34b4ae3b3cc5ceab35e05cc530f451d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo" kindref="compound">IndexInfo</ref> &gt;</type>
+        <definition>std::vector&lt; IndexInfo &gt; satox::database::QueryOptimizer::findApplicableIndexes</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;conditions) const</argsstring>
+        <name>findApplicableIndexes</name>
+        <qualifiedname>satox::database::QueryOptimizer::findApplicableIndexes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="89" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a86ab9cdeb4bd328ed197e4ba349d47b1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double satox::database::QueryOptimizer::calculateSelectivity</definition>
+        <argsstring>(const nlohmann::json &amp;conditions) const</argsstring>
+        <name>calculateSelectivity</name>
+        <qualifiedname>satox::database::QueryOptimizer::calculateSelectivity</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="90" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a9364df7b2375d2e49c0fa3a8d195211d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::QueryOptimizer::buildIndexScanQuery</definition>
+        <argsstring>(const std::string &amp;table, const IndexInfo &amp;index, const nlohmann::json &amp;conditions) const</argsstring>
+        <name>buildIndexScanQuery</name>
+        <qualifiedname>satox::database::QueryOptimizer::buildIndexScanQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d4/da3/structsatox_1_1database_1_1QueryOptimizer_1_1IndexInfo" kindref="compound">IndexInfo</ref> &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="91" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a5a203686d4820497f106ce3a2392f7d7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::QueryOptimizer::buildTableScanQuery</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;conditions) const</argsstring>
+        <name>buildTableScanQuery</name>
+        <qualifiedname>satox::database::QueryOptimizer::buildTableScanQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="92" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a17d024f0d9c3e850975dab571bf25cd0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::QueryOptimizer::buildJoinQuery</definition>
+        <argsstring>(const std::string &amp;table1, const std::string &amp;table2, const nlohmann::json &amp;conditions) const</argsstring>
+        <name>buildJoinQuery</name>
+        <qualifiedname>satox::database::QueryOptimizer::buildJoinQuery</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table1</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table2</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/query_optimizer.hpp" line="93" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/database/include/satox/database/query_optimizer.hpp" line="37" column="1" bodyfile="src/database/include/satox/database/query_optimizer.hpp" bodystart="37" bodyend="98"/>
+    <listofallmembers>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1aa8e6d53f1f4d1863604d6429b2dc503e" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>addIndex</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a9364df7b2375d2e49c0fa3a8d195211d" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>buildIndexScanQuery</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a17d024f0d9c3e850975dab571bf25cd0" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>buildJoinQuery</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a5a203686d4820497f106ce3a2392f7d7" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>buildTableScanQuery</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a86ab9cdeb4bd328ed197e4ba349d47b1" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>calculateSelectivity</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a11c2d65254299da6208735299b578b1f" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>estimateJoinCost</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1ac3b0885d7b769928d1a4b95edcfe45e3" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>estimateQueryCost</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1aaf4cc748d9535216ad4675f03d58b1e7" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>estimateScanCost</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1ac34b4ae3b3cc5ceab35e05cc530f451d" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>findApplicableIndexes</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a23df0659fa9ac27b71207a00380b129b" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>getIndexes</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a3c43ca01e6287f7445ea78cb7dff5f8d" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>getTableStats</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a430f881e2485b5ae699318a4f79bfd0b" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>hasIndex</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a0e2f4044f01470ac1e4950ad0e8b891c" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>optimizeAggregate</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a13e5ff063da68cbd7389ed1cc9e2978c" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>optimizeJoin</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a2e04d80c5c05b97abe4094f245b78bab" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>optimizeQuery</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a124648546dcb38cc25189ed6b3f653ab" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>optimizeSelect</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a98c373296d58a491a34bc28bd9246790" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>QueryOptimizer</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a431cbec64cf3d1958e2f01a4b59d7d8c" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>removeIndex</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a48cbcfb46ad4d7bbbaa34187a0f205e7" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>tableIndexes_</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1afc4484a29ef71b98cbb447a01d1a1a7b" prot="private" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>tableStats_</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a7630ba958cd37574f2d09f754992b834" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>updateColumnStats</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a271c92b9f9e0209b3b79171484be5f6c" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>updateTableStats</name></member>
+      <member refid="d5/d3e/classsatox_1_1database_1_1QueryOptimizer_1a90322a15d850297ef2eb70c3b9ce8593" prot="public" virt="non-virtual"><scope>satox::database::QueryOptimizer</scope><name>~QueryOptimizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="d0/da4/classsatox_1_1network_1_1NetworkManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::network::NetworkManager</compoundname>
+    <includes refid="df/d31/core_2include_2satox_2network_2network__manager_8hpp" local="no">network_manager.hpp</includes>
+    <innerclass refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" prot="public">satox::network::NetworkManager::Impl</innerclass>
+    <innerclass refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" prot="public">satox::network::NetworkManager::NetworkConfig</innerclass>
+    <innerclass refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" prot="public">satox::network::NetworkManager::NetworkStats</innerclass>
+    <innerclass refid="df/d59/structsatox_1_1network_1_1NetworkManager_1_1Peer" prot="private">satox::network::NetworkManager::Peer</innerclass>
+    <innerclass refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" prot="public">satox::network::NetworkManager::RPCRequest</innerclass>
+    <innerclass refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" prot="public">satox::network::NetworkManager::RPCResponse</innerclass>
+    <innerclass refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" prot="public">satox::network::NetworkManager::SecurityConfig</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>MessageType</name>
+        <qualifiedname>satox::network::NetworkManager::MessageType</qualifiedname>
+        <enumvalue id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8caba0f80fd6dc71eb760cb83b97b8d3035" prot="public">
+          <name>P2P_MESSAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca1f2b7d58390dd9ed323d33e211bb09b6" prot="public">
+          <name>RPC_REQUEST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca9a325d5a48aef8c80e4c212d68924eb8" prot="public">
+          <name>RPC_RESPONSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8ca0d895a0a05a7cce9b2c0c8bb252f78cc" prot="public">
+          <name>HEARTBEAT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8cafcfc11b740f8aad4ccf8f5e733f3a4e9" prot="public">
+          <name>PEER_DISCOVERY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="101" column="5" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="101" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, const std::vector&lt; uint8_t &gt; &amp;)&gt;</type>
+        <definition>using satox::network::NetworkManager::MessageCallback =  std::function&lt;void(const std::string&amp;, const std::vector&lt;uint8_t&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>MessageCallback</name>
+        <qualifiedname>satox::network::NetworkManager::MessageCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="43" column="5" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, bool)&gt;</type>
+        <definition>using satox::network::NetworkManager::PeerCallback =  std::function&lt;void(const std::string&amp;, bool)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PeerCallback</name>
+        <qualifiedname>satox::network::NetworkManager::PeerCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="44" column="5" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref> &amp;)&gt;</type>
+        <definition>using satox::network::NetworkManager::RPCCallback =  std::function&lt;void(const RPCResponse&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>RPCCallback</name>
+        <qualifiedname>satox::network::NetworkManager::RPCCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="110" column="5" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a55e4d3ad1fcfcd3bc97859be527fe7ff" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref>, const std::string &amp;, const std::vector&lt; uint8_t &gt; &amp;)&gt;</type>
+        <definition>using satox::network::NetworkManager::MessageCallback =  std::function&lt;void(MessageType, const std::string&amp;, const std::vector&lt;uint8_t&gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>MessageCallback</name>
+        <qualifiedname>satox::network::NetworkManager::MessageCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="111" column="5" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;, bool)&gt;</type>
+        <definition>using satox::network::NetworkManager::PeerCallback =  std::function&lt;void(const std::string&amp;, bool)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PeerCallback</name>
+        <qualifiedname>satox::network::NetworkManager::PeerCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="112" column="5" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>using satox::network::NetworkManager::ErrorCallback =  std::function&lt;void(const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ErrorCallback</name>
+        <qualifiedname>satox::network::NetworkManager::ErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="113" column="5" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" prot="public" static="no">
+        <type><ref refid="db/d46/classsatox_1_1network_1_1LetsEncryptManager_1adc58ef24e1d72207957391ecc548b808" kindref="member">LetsEncryptManager::CertificateUpdateCallback</ref></type>
+        <definition>using satox::network::NetworkManager::CertificateUpdateCallback =  LetsEncryptManager::CertificateUpdateCallback</definition>
+        <argsstring></argsstring>
+        <name>CertificateUpdateCallback</name>
+        <qualifiedname>satox::network::NetworkManager::CertificateUpdateCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="114" column="5" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9abbbbae9e639c7e7278448550b3f7f3" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkManager::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <qualifiedname>satox::network::NetworkManager::type_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="86" column="17" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5d21bc73ae22aa366d804130bacee17c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int satox::network::NetworkManager::port_</definition>
+        <argsstring></argsstring>
+        <name>port_</name>
+        <qualifiedname>satox::network::NetworkManager::port_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="87" column="9" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a4681e279f094d40d967730e2a8e14649" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::network::NetworkManager::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>satox::network::NetworkManager::running_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="88" column="17" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a6aaa1ccb511e11e399c0f183de3ae7ed" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::network::NetworkManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="89" column="17" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a2f58db2b3f7c2d701ee87e1bf9423927" prot="private" static="no" mutable="yes">
+        <type>std::mutex</type>
+        <definition>std::mutex satox::network::NetworkManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::network::NetworkManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="90" column="24" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac480eb1ef81aafbde89a91862a9d02b6" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; Peer &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;Peer&gt; &gt; satox::network::NetworkManager::peers_</definition>
+        <argsstring></argsstring>
+        <name>peers_</name>
+        <qualifiedname>satox::network::NetworkManager::peers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="92" column="24" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b77c41abea90bf8c88520b002e79b1f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref> &gt;</type>
+        <definition>std::vector&lt;MessageCallback&gt; satox::network::NetworkManager::messageCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>messageCallbacks_</name>
+        <qualifiedname>satox::network::NetworkManager::messageCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="93" column="17" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a457242730ffdd99fc6f12b887957e463" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref> &gt;</type>
+        <definition>std::vector&lt;PeerCallback&gt; satox::network::NetworkManager::peerCallbacks_</definition>
+        <argsstring></argsstring>
+        <name>peerCallbacks_</name>
+        <qualifiedname>satox::network::NetworkManager::peerCallbacks_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="94" column="17" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a878fc9c0b933a4bb3cb3520f40390faf" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread satox::network::NetworkManager::listenerThread_</definition>
+        <argsstring></argsstring>
+        <name>listenerThread_</name>
+        <qualifiedname>satox::network::NetworkManager::listenerThread_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="95" column="17" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a252ffd07a91abe62eadf250e1d8da8b2" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; satox::network::NetworkManager::pimpl_</definition>
+        <argsstring></argsstring>
+        <name>pimpl_</name>
+        <qualifiedname>satox::network::NetworkManager::pimpl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="181" column="21" bodyfile="src/network/include/satox/network/network_manager.hpp" bodystart="181" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::NetworkManager::NetworkManager</definition>
+        <argsstring>(const std::string &amp;type, int port)</argsstring>
+        <name>NetworkManager</name>
+        <qualifiedname>satox::network::NetworkManager::NetworkManager</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="46" column="5"/>
+        <referencedby refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac22a0eebf8c41d1468bb123136dfdd27" compoundref="dd/d55/network_2src_2network__manager_8cpp" startline="159" endline="162">getInstance</referencedby>
+        <referencedby refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad">getLastError</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a243b2bb2a7bd8496dcf8795a05b4911c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::NetworkManager::~NetworkManager</definition>
+        <argsstring>()</argsstring>
+        <name>~NetworkManager</name>
+        <qualifiedname>satox::network::NetworkManager::~NetworkManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="47" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::network::NetworkManager::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="49" column="10"/>
+        <referencedby refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0b483bf2832c88547d6e0a80194a7952" compoundref="dd/d55/network_2src_2network__manager_8cpp" startline="164" endline="166">initialize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>bool satox::network::NetworkManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::network::NetworkManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="50" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="168" bodyend="170"/>
+        <referencedby refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1acba70bd1ea583a7423b4793190ae7e16" compoundref="dd/d55/network_2src_2network__manager_8cpp" startline="355" endline="358">satox::network::NetworkManager::Impl::~Impl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::network::NetworkManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="51" column="17" bodyfile="src/network/src/network_manager.cpp" bodystart="292" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a70d04335690fe349dcd6a9802d5dcc65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::startListening</definition>
+        <argsstring>()</argsstring>
+        <name>startListening</name>
+        <qualifiedname>satox::network::NetworkManager::startListening</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="54" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1aeb9fefad1fe4ea84afb08dc38b5132e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::stopListening</definition>
+        <argsstring>()</argsstring>
+        <name>stopListening</name>
+        <qualifiedname>satox::network::NetworkManager::stopListening</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="55" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b1b6a98118ae20332b2b5fc4ba94776" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::connect</definition>
+        <argsstring>(const std::string &amp;address, int port)</argsstring>
+        <name>connect</name>
+        <qualifiedname>satox::network::NetworkManager::connect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="56" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a4982164741dc9b17aba2cc773f92f71c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::disconnect</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::network::NetworkManager::disconnect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="57" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a06307bd7c4e4f960286752409e224443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::broadcast</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>broadcast</name>
+        <qualifiedname>satox::network::NetworkManager::broadcast</qualifiedname>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="58" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac90367907199ad3113c8fd105ee65916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::send</definition>
+        <argsstring>(const std::string &amp;address, const std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>send</name>
+        <qualifiedname>satox::network::NetworkManager::send</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="59" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7ab137d83a02921ed48515e1a98bed75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::registerMessageCallback</definition>
+        <argsstring>(MessageCallback callback)</argsstring>
+        <name>registerMessageCallback</name>
+        <qualifiedname>satox::network::NetworkManager::registerMessageCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="62" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::registerPeerCallback</definition>
+        <argsstring>(PeerCallback callback)</argsstring>
+        <name>registerPeerCallback</name>
+        <qualifiedname>satox::network::NetworkManager::registerPeerCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="63" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="248" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a93f8a93d8d0cea17f0aea885704f8e8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; NetworkManager::Peer &gt; satox::network::NetworkManager::getConnectedPeers</definition>
+        <argsstring>() const</argsstring>
+        <name>getConnectedPeers</name>
+        <qualifiedname>satox::network::NetworkManager::getConnectedPeers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="66" column="17" bodyfile="src/network/src/network_manager.cpp" bodystart="208" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isPeerConnected</definition>
+        <argsstring>(const std::string &amp;address) const</argsstring>
+        <name>isPeerConnected</name>
+        <qualifiedname>satox::network::NetworkManager::isPeerConnected</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="67" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="204" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::network::NetworkManager::getPeerCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getPeerCount</name>
+        <qualifiedname>satox::network::NetworkManager::getPeerCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="68" column="9" bodyfile="src/network/src/network_manager.cpp" bodystart="212" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0b483bf2832c88547d6e0a80194a7952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::initialize</definition>
+        <argsstring>(const NetworkConfig &amp;config=NetworkConfig{})</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::network::NetworkManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref> &amp;</type>
+          <declname>config</declname>
+          <defval><ref refid="dd/d44/structsatox_1_1network_1_1NetworkManager_1_1NetworkConfig" kindref="compound">NetworkConfig</ref>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="117" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="164" bodyend="166"/>
+        <references refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384">initialize</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::network::NetworkManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="118" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9d1515ad852f2f2fbc82925cec61fe9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::network::NetworkManager::isInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="119" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="172" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a32e9e41b455b2da9753e48fe0e9f7de6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::network::NetworkManager::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="120" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="304" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a45c5bce667450a3cc15b5baeb0e55ee7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>satox::network::NetworkManager::isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="123" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0f53c40765516fd288cd7dfe377b8eae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isP2PRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isP2PRunning</name>
+        <qualifiedname>satox::network::NetworkManager::isP2PRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="124" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="180" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1acc3a11eefe463db6184565867518d076" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isRPCRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRPCRunning</name>
+        <qualifiedname>satox::network::NetworkManager::isRPCRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="125" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="184" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1aea2316b0381413f4fc7c76444f35ccf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::startP2P</definition>
+        <argsstring>()</argsstring>
+        <name>startP2P</name>
+        <qualifiedname>satox::network::NetworkManager::startP2P</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="128" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="188" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1db68300569b25205ad413ed550b83a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::stopP2P</definition>
+        <argsstring>()</argsstring>
+        <name>stopP2P</name>
+        <qualifiedname>satox::network::NetworkManager::stopP2P</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="129" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="192" bodyend="194"/>
+        <referencedby refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afe8b11709ccd2e9de9f0496fa4a64716" compoundref="dd/d55/network_2src_2network__manager_8cpp" startline="401" endline="439">satox::network::NetworkManager::Impl::shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3bd1e14fca9953461ea3f501df24f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::connectToPeer</definition>
+        <argsstring>(const std::string &amp;address, uint16_t port)</argsstring>
+        <name>connectToPeer</name>
+        <qualifiedname>satox::network::NetworkManager::connectToPeer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="130" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="196" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1abfb9e0633c18a16fc972a1d9c0d409ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::disconnectPeer</definition>
+        <argsstring>(const std::string &amp;address)</argsstring>
+        <name>disconnectPeer</name>
+        <qualifiedname>satox::network::NetworkManager::disconnectPeer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="131" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::isPeerConnected</definition>
+        <argsstring>(const std::string &amp;address) const</argsstring>
+        <name>isPeerConnected</name>
+        <qualifiedname>satox::network::NetworkManager::isPeerConnected</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="132" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a297e4876d10872975b333924b588b85b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; Peer &gt;</type>
+        <definition>std::vector&lt; Peer &gt; satox::network::NetworkManager::getConnectedPeers</definition>
+        <argsstring>() const</argsstring>
+        <name>getConnectedPeers</name>
+        <qualifiedname>satox::network::NetworkManager::getConnectedPeers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="133" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int satox::network::NetworkManager::getPeerCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getPeerCount</name>
+        <qualifiedname>satox::network::NetworkManager::getPeerCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="134" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a52d35cc9b3411614d850fd16454ef06f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::startRPC</definition>
+        <argsstring>()</argsstring>
+        <name>startRPC</name>
+        <qualifiedname>satox::network::NetworkManager::startRPC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="137" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="216" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a577b14e32e0cb39b9348be7a2ac64822" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::stopRPC</definition>
+        <argsstring>()</argsstring>
+        <name>stopRPC</name>
+        <qualifiedname>satox::network::NetworkManager::stopRPC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="138" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="220" bodyend="222"/>
+        <referencedby refid="d2/daf/classsatox_1_1network_1_1NetworkManager_1_1Impl_1afe8b11709ccd2e9de9f0496fa4a64716" compoundref="dd/d55/network_2src_2network__manager_8cpp" startline="401" endline="439">satox::network::NetworkManager::Impl::shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac47d4c2bf60b0b7f131ed350ca4cfb43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::registerRPCMethod</definition>
+        <argsstring>(const std::string &amp;method, std::function&lt; RPCResponse(const RPCRequest &amp;)&gt; handler)</argsstring>
+        <name>registerRPCMethod</name>
+        <qualifiedname>satox::network::NetworkManager::registerRPCMethod</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="d8/d9d/structsatox_1_1network_1_1NetworkManager_1_1RPCResponse" kindref="compound">RPCResponse</ref>(const <ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref> &amp;)&gt;</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="139" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="224" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a835c255045db787f429de83cd5d66fbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::callRPC</definition>
+        <argsstring>(const std::string &amp;address, const RPCRequest &amp;request, RPCCallback callback)</argsstring>
+        <name>callRPC</name>
+        <qualifiedname>satox::network::NetworkManager::callRPC</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/dec/structsatox_1_1network_1_1NetworkManager_1_1RPCRequest" kindref="compound">RPCRequest</ref> &amp;</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" kindref="member">RPCCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="140" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="228" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a386383c2347d0bfb94b61f5ab359489d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::sendP2PMessage</definition>
+        <argsstring>(const std::string &amp;peer_address, const std::vector&lt; uint8_t &gt; &amp;message)</argsstring>
+        <name>sendP2PMessage</name>
+        <qualifiedname>satox::network::NetworkManager::sendP2PMessage</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>peer_address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="143" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="232" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1aff092c3045f529e4ba6b46c45efa426d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::sendRPCMessage</definition>
+        <argsstring>(const std::string &amp;client_address, const nlohmann::json &amp;message)</argsstring>
+        <name>sendRPCMessage</name>
+        <qualifiedname>satox::network::NetworkManager::sendRPCMessage</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>client_address</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="144" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="236" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a6b76f8d53986fe5580e4a36c91572204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::registerMessageCallback</definition>
+        <argsstring>(MessageType type, MessageCallback callback)</argsstring>
+        <name>registerMessageCallback</name>
+        <qualifiedname>satox::network::NetworkManager::registerMessageCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" kindref="member">MessageCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="145" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="240" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19224836d039a8329fd589229693f0e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::unregisterMessageCallback</definition>
+        <argsstring>(MessageType type)</argsstring>
+        <name>unregisterMessageCallback</name>
+        <qualifiedname>satox::network::NetworkManager::unregisterMessageCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" kindref="member">MessageType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="146" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="244" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::registerPeerCallback</definition>
+        <argsstring>(PeerCallback callback)</argsstring>
+        <name>registerPeerCallback</name>
+        <qualifiedname>satox::network::NetworkManager::registerPeerCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" kindref="member">PeerCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="149" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1adce4d53d623845faa17659dbc78ae11c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::unregisterPeerCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterPeerCallback</name>
+        <qualifiedname>satox::network::NetworkManager::unregisterPeerCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="150" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="252" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac306afebb77c6b57f69e8578e796dd37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::registerErrorCallback</definition>
+        <argsstring>(ErrorCallback callback)</argsstring>
+        <name>registerErrorCallback</name>
+        <qualifiedname>satox::network::NetworkManager::registerErrorCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" kindref="member">ErrorCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="151" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="256" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a853ddd2e2f41ce7430354ab9ec00f873" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::unregisterErrorCallback</definition>
+        <argsstring>()</argsstring>
+        <name>unregisterErrorCallback</name>
+        <qualifiedname>satox::network::NetworkManager::unregisterErrorCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="152" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="260" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5514868aab271932db2852e38751afda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::enableEncryption</definition>
+        <argsstring>(const SecurityConfig &amp;config)</argsstring>
+        <name>enableEncryption</name>
+        <qualifiedname>satox::network::NetworkManager::enableEncryption</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="155" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="264" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b5e235a3e76498913920b5ae7bd070b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::enableSSL</definition>
+        <argsstring>(const SecurityConfig &amp;config)</argsstring>
+        <name>enableSSL</name>
+        <qualifiedname>satox::network::NetworkManager::enableSSL</qualifiedname>
+        <param>
+          <type>const <ref refid="d9/dc1/structsatox_1_1network_1_1NetworkManager_1_1SecurityConfig" kindref="compound">SecurityConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="156" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="314" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a873a2fa3e7fbe4f8dba63d4869ee045c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::disableSSL</definition>
+        <argsstring>()</argsstring>
+        <name>disableSSL</name>
+        <qualifiedname>satox::network::NetworkManager::disableSSL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="157" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="323" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa6be25b5659470fad7c93255d056ac3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/daa/structsatox_1_1network_1_1LetsEncryptManager_1_1Certificate" kindref="compound">LetsEncryptManager::Certificate</ref></type>
+        <definition>LetsEncryptManager::Certificate satox::network::NetworkManager::getCurrentCertificate</definition>
+        <argsstring>() const</argsstring>
+        <name>getCurrentCertificate</name>
+        <qualifiedname>satox::network::NetworkManager::getCurrentCertificate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="158" column="37" bodyfile="src/network/src/network_manager.cpp" bodystart="268" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a73407d67c9b8812885f0c280732d1f3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::renewCertificate</definition>
+        <argsstring>()</argsstring>
+        <name>renewCertificate</name>
+        <qualifiedname>satox::network::NetworkManager::renewCertificate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="159" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="272" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a3d2762652371a04455b0563e12d72a83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::registerCertificateUpdateCallback</definition>
+        <argsstring>(CertificateUpdateCallback callback)</argsstring>
+        <name>registerCertificateUpdateCallback</name>
+        <qualifiedname>satox::network::NetworkManager::registerCertificateUpdateCallback</qualifiedname>
+        <param>
+          <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" kindref="member">CertificateUpdateCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="160" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="276" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a014af406f3e29fd3ba59740b3a354b28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d76/structsatox_1_1network_1_1NetworkManager_1_1NetworkStats" kindref="compound">NetworkStats</ref></type>
+        <definition>NetworkManager::NetworkStats satox::network::NetworkManager::getNetworkStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getNetworkStats</name>
+        <qualifiedname>satox::network::NetworkManager::getNetworkStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="163" column="18" bodyfile="src/network/src/network_manager.cpp" bodystart="280" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8addda877f2a249f8d75f00f1bf133ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::enableStats</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>enableStats</name>
+        <qualifiedname>satox::network::NetworkManager::enableStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="164" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="284" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae967e67c5ccef0cfc6a868ec99c5c6c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::network::NetworkManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="165" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="288" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::network::NetworkManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::network::NetworkManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="168" column="17"/>
+        <references refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72">NetworkManager</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ab5b0b228aa8c8993beae7816c03ed963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::network::NetworkManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="169" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="296" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa01ba3d876f0dfd0742dbc402f40fadf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::healthCheck</definition>
+        <argsstring>() const</argsstring>
+        <name>healthCheck</name>
+        <qualifiedname>satox::network::NetworkManager::healthCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="172" column="10" bodyfile="src/network/src/network_manager.cpp" bodystart="300" bodyend="302"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19dde7ff0de0ec106aa09d63065aa385" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::network::NetworkManager::initializeNetwork</definition>
+        <argsstring>()</argsstring>
+        <name>initializeNetwork</name>
+        <qualifiedname>satox::network::NetworkManager::initializeNetwork</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="80" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1aecc2265c88f2520546c7757f1de3aa14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::cleanupNetwork</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupNetwork</name>
+        <qualifiedname>satox::network::NetworkManager::cleanupNetwork</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="81" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1afc3bb3e3b13c074d0192a13c0a5437cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::handleIncomingConnection</definition>
+        <argsstring>()</argsstring>
+        <name>handleIncomingConnection</name>
+        <qualifiedname>satox::network::NetworkManager::handleIncomingConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="82" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19898c796f553e73d0ceee8248d1ae85" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::handlePeerMessages</definition>
+        <argsstring>(std::shared_ptr&lt; Peer &gt; peer)</argsstring>
+        <name>handlePeerMessages</name>
+        <qualifiedname>satox::network::NetworkManager::handlePeerMessages</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; Peer &gt;</type>
+          <declname>peer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="83" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1afd7892f24c5621fe3fd77322429293c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::network::NetworkManager::processMessageQueue</definition>
+        <argsstring>(std::shared_ptr&lt; Peer &gt; peer)</argsstring>
+        <name>processMessageQueue</name>
+        <qualifiedname>satox::network::NetworkManager::processMessageQueue</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; Peer &gt;</type>
+          <declname>peer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/include/satox/network/network_manager.hpp" line="84" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7800b5958c4ed4000c81489a62f1fce2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::NetworkManager::NetworkManager</definition>
+        <argsstring>()</argsstring>
+        <name>NetworkManager</name>
+        <qualifiedname>satox::network::NetworkManager::NetworkManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="175" column="5" bodyfile="src/network/src/network_manager.cpp" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace1af62a8c0214ad31edec99453dce12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::NetworkManager::~NetworkManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~NetworkManager</name>
+        <qualifiedname>satox::network::NetworkManager::~NetworkManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="176" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a4930cdf83760ad8af1fcee276ed6d5b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::network::NetworkManager::NetworkManager</definition>
+        <argsstring>(const NetworkManager &amp;)=delete</argsstring>
+        <name>NetworkManager</name>
+        <qualifiedname>satox::network::NetworkManager::NetworkManager</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager" kindref="compound">NetworkManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="177" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1a51bb07938b6d63947e503a770d7d83f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager" kindref="compound">NetworkManager</ref> &amp;</type>
+        <definition>NetworkManager &amp; satox::network::NetworkManager::operator=</definition>
+        <argsstring>(const NetworkManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::network::NetworkManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager" kindref="compound">NetworkManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="178" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac22a0eebf8c41d1468bb123136dfdd27" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/da4/classsatox_1_1network_1_1NetworkManager" kindref="compound">NetworkManager</ref> &amp;</type>
+        <definition>NetworkManager &amp; satox::network::NetworkManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::network::NetworkManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/network/include/satox/network/network_manager.hpp" line="45" column="27" bodyfile="src/network/src/network_manager.cpp" bodystart="159" bodyend="162"/>
+        <references refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72">NetworkManager</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/core/include/satox/network/network_manager.hpp" line="41" column="1" bodyfile="src/core/include/satox/network/network_manager.hpp" bodystart="41" bodyend="96"/>
+    <listofallmembers>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a06307bd7c4e4f960286752409e224443" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>broadcast</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a835c255045db787f429de83cd5d66fbe" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>callRPC</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ad6f5c730e8da45ddc99fec42d3788795" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>CertificateUpdateCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aecc2265c88f2520546c7757f1de3aa14" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>cleanupNetwork</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ab5b0b228aa8c8993beae7816c03ed963" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>clearLastError</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b1b6a98118ae20332b2b5fc4ba94776" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>connect</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3bd1e14fca9953461ea3f501df24f7" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>connectToPeer</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a873a2fa3e7fbe4f8dba63d4869ee045c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>disableSSL</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a4982164741dc9b17aba2cc773f92f71c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>disconnect</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1abfb9e0633c18a16fc972a1d9c0d409ce" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>disconnectPeer</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5514868aab271932db2852e38751afda" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>enableEncryption</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b5e235a3e76498913920b5ae7bd070b" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>enableSSL</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8addda877f2a249f8d75f00f1bf133ec" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>enableStats</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a42ee5c83f93fc704b6470fa20c8848f6" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>ErrorCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a93f8a93d8d0cea17f0aea885704f8e8d" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getConnectedPeers</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a297e4876d10872975b333924b588b85b" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getConnectedPeers</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa6be25b5659470fad7c93255d056ac3c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getCurrentCertificate</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac22a0eebf8c41d1468bb123136dfdd27" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getInstance</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getLastError</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b5c99bf017bfcddb202e6f11ed598ad" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getLastError</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a014af406f3e29fd3ba59740b3a354b28" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getNetworkStats</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getPeerCount</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac1671eafd426dbc8031cdf40bece67a9" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>getPeerCount</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1afc3bb3e3b13c074d0192a13c0a5437cd" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>handleIncomingConnection</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19898c796f553e73d0ceee8248d1ae85" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>handlePeerMessages</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aa01ba3d876f0dfd0742dbc402f40fadf" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>healthCheck</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a140719fdaa1a26d9533c976149276384" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>initialize</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0b483bf2832c88547d6e0a80194a7952" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>initialize</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19dde7ff0de0ec106aa09d63065aa385" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>initializeNetwork</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a32e9e41b455b2da9753e48fe0e9f7de6" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isHealthy</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9d1515ad852f2f2fbc82925cec61fe9f" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isInitialized</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a0f53c40765516fd288cd7dfe377b8eae" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isP2PRunning</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isPeerConnected</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace8c83d0fedce17114aea903566ca4c9" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isPeerConnected</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1acc3a11eefe463db6184565867518d076" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isRPCRunning</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a45c5bce667450a3cc15b5baeb0e55ee7" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>isRunning</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a6aaa1ccb511e11e399c0f183de3ae7ed" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>lastError_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a878fc9c0b933a4bb3cb3520f40390faf" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>listenerThread_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a61c81a830c70a4c6658f5ecaba122094" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>MessageCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a55e4d3ad1fcfcd3bc97859be527fe7ff" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>MessageCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1b77c41abea90bf8c88520b002e79b1f" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>messageCallbacks_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a46f8f6f4073c6cf6d121235fea6abe8c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>MessageType</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a2f58db2b3f7c2d701ee87e1bf9423927" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>mutex_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a90d4295054a04b7860e9ad6685347e72" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>NetworkManager</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7800b5958c4ed4000c81489a62f1fce2" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>NetworkManager</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a4930cdf83760ad8af1fcee276ed6d5b6" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>NetworkManager</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a51bb07938b6d63947e503a770d7d83f6" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>operator=</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>PeerCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae937e3dc0502a142ab5ac47167368aee" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>PeerCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a457242730ffdd99fc6f12b887957e463" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>peerCallbacks_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac480eb1ef81aafbde89a91862a9d02b6" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>peers_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a252ffd07a91abe62eadf250e1d8da8b2" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>pimpl_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a5d21bc73ae22aa366d804130bacee17c" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>port_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1afd7892f24c5621fe3fd77322429293c9" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>processMessageQueue</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a3d2762652371a04455b0563e12d72a83" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerCertificateUpdateCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac306afebb77c6b57f69e8578e796dd37" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerErrorCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7ab137d83a02921ed48515e1a98bed75" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerMessageCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a6b76f8d53986fe5580e4a36c91572204" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerMessageCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerPeerCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8637c7ddba487b54048c49dd6ebc48c8" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerPeerCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac47d4c2bf60b0b7f131ed350ca4cfb43" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>registerRPCMethod</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a73407d67c9b8812885f0c280732d1f3c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>renewCertificate</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ae967e67c5ccef0cfc6a868ec99c5c6c7" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>resetStats</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a8e964c5477010502865f09f3831544fc" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>RPCCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a4681e279f094d40d967730e2a8e14649" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>running_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ac90367907199ad3113c8fd105ee65916" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>send</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a386383c2347d0bfb94b61f5ab359489d" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>sendP2PMessage</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aff092c3045f529e4ba6b46c45efa426d" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>sendRPCMessage</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>shutdown</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a7b3e64713927bf383ba5146520d8ae48" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>shutdown</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a70d04335690fe349dcd6a9802d5dcc65" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>startListening</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aea2316b0381413f4fc7c76444f35ccf7" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>startP2P</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a52d35cc9b3411614d850fd16454ef06f" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>startRPC</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1aeb9fefad1fe4ea84afb08dc38b5132e8" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>stopListening</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a1db68300569b25205ad413ed550b83a8" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>stopP2P</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a577b14e32e0cb39b9348be7a2ac64822" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>stopRPC</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a9abbbbae9e639c7e7278448550b3f7f3" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>type_</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a853ddd2e2f41ce7430354ab9ec00f873" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>unregisterErrorCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a19224836d039a8329fd589229693f0e6" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>unregisterMessageCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1adce4d53d623845faa17659dbc78ae11c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>unregisterPeerCallback</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1a243b2bb2a7bd8496dcf8795a05b4911c" prot="public" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>~NetworkManager</name></member>
+      <member refid="d0/da4/classsatox_1_1network_1_1NetworkManager_1ace1af62a8c0214ad31edec99453dce12" prot="private" virt="non-virtual"><scope>satox::network::NetworkManager</scope><name>~NetworkManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

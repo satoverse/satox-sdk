@@ -1,0 +1,1740 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="df/dcb/classsatox_1_1database_1_1DatabaseManager" kind="class" language="C++" prot="public">
+    <compoundname>satox::database::DatabaseManager</compoundname>
+    <includes refid="dc/d21/database_2include_2satox_2database_2database__manager_8hpp" local="no">database_manager.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a1c951381eba93a4757e6d8b95cedf31b" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;operation, bool success, const std::string &amp;error)&gt;</type>
+        <definition>using satox::database::DatabaseManager::DatabaseCallback =  std::function&lt;void(const std::string&amp; operation, bool success, const std::string&amp; error)&gt;</definition>
+        <argsstring></argsstring>
+        <name>DatabaseCallback</name>
+        <qualifiedname>satox::database::DatabaseManager::DatabaseCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="41" column="5" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a2835844c36daf626aad00dc43e6386aa" prot="public" static="no">
+        <type>std::function&lt; void(bool connected, const std::string &amp;details)&gt;</type>
+        <definition>using satox::database::DatabaseManager::ConnectionCallback =  std::function&lt;void(bool connected, const std::string&amp; details)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ConnectionCallback</name>
+        <qualifiedname>satox::database::DatabaseManager::ConnectionCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="42" column="5" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a712584403ecb2fa72a9419d8d01229f1" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" kindref="compound">DatabaseHealth</ref> &amp;health)&gt;</type>
+        <definition>using satox::database::DatabaseManager::HealthCallback =  std::function&lt;void(const DatabaseHealth&amp; health)&gt;</definition>
+        <argsstring></argsstring>
+        <name>HealthCallback</name>
+        <qualifiedname>satox::database::DatabaseManager::HealthCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="43" column="5" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a74ebefa8c9f1ed6cb88f4ef2b5cd17ff" prot="private" static="no" mutable="yes">
+        <type>std::recursive_mutex</type>
+        <definition>std::recursive_mutex satox::database::DatabaseManager::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <qualifiedname>satox::database::DatabaseManager::mutex_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="147" column="34" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a35c92d4392efe2e5c8860ccd7aff7a67" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; satox::database::DatabaseManager::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <qualifiedname>satox::database::DatabaseManager::initialized_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="148" column="17" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac6e13415c4483da9525bac9d13d629b8" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref></type>
+        <definition>DatabaseConfig satox::database::DatabaseManager::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>satox::database::DatabaseManager::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="149" column="20" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abb503fdbc86b0b01744adde6a883a330" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseManager::currentDatabase_</definition>
+        <argsstring></argsstring>
+        <name>currentDatabase_</name>
+        <qualifiedname>satox::database::DatabaseManager::currentDatabase_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="150" column="17" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a4e5017b3ca16e511c29607de297dffb7" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseManager::connectionString_</definition>
+        <argsstring></argsstring>
+        <name>connectionString_</name>
+        <qualifiedname>satox::database::DatabaseManager::connectionString_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="151" column="17" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5e223c9a805c8b3478c3d52a63bd650e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::isConnected_</definition>
+        <argsstring></argsstring>
+        <name>isConnected_</name>
+        <qualifiedname>satox::database::DatabaseManager::isConnected_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="152" column="10" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a4da6e8dda64dab53cea2cdfba2d47539" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, nlohmann::json &gt;</type>
+        <definition>std::unordered_map&lt;std::string, nlohmann::json&gt; satox::database::DatabaseManager::tableSchemas_</definition>
+        <argsstring></argsstring>
+        <name>tableSchemas_</name>
+        <qualifiedname>satox::database::DatabaseManager::tableSchemas_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="153" column="24" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a70499a6404fff172f83339a2df1b5b5a" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; satox::database::DatabaseManager::tableIndexes_</definition>
+        <argsstring></argsstring>
+        <name>tableIndexes_</name>
+        <qualifiedname>satox::database::DatabaseManager::tableIndexes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="154" column="24" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abed386b3ed7bee73bf31a128c4b37b3e" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::database::DatabaseManager::maxConnections_</definition>
+        <argsstring></argsstring>
+        <name>maxConnections_</name>
+        <qualifiedname>satox::database::DatabaseManager::maxConnections_</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="155" column="12" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa17187fd51e15b4269b2e0ff70699548" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t satox::database::DatabaseManager::connectionTimeout_</definition>
+        <argsstring></argsstring>
+        <name>connectionTimeout_</name>
+        <qualifiedname>satox::database::DatabaseManager::connectionTimeout_</qualifiedname>
+        <initializer>= 5000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="156" column="12" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a61d24cea2b5d6879e7f86a66533fe31d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::inTransaction_</definition>
+        <argsstring></argsstring>
+        <name>inTransaction_</name>
+        <qualifiedname>satox::database::DatabaseManager::inTransaction_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="157" column="10" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a38a69902d892bbf2158055ba4651a501" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="db/d15/structsatox_1_1database_1_1DatabaseData" kindref="compound">DatabaseData</ref> &gt;</type>
+        <definition>std::map&lt;std::string, DatabaseData&gt; satox::database::DatabaseManager::databases_</definition>
+        <argsstring></argsstring>
+        <name>databases_</name>
+        <qualifiedname>satox::database::DatabaseManager::databases_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="160" column="14" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1af38dbc1b8c6e27c8aee8312cc0625148" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="db/d15/structsatox_1_1database_1_1DatabaseData" kindref="compound">DatabaseData</ref> &gt;</type>
+        <definition>std::map&lt;std::string, DatabaseData&gt; satox::database::DatabaseManager::transactionSnapshot_</definition>
+        <argsstring></argsstring>
+        <name>transactionSnapshot_</name>
+        <qualifiedname>satox::database::DatabaseManager::transactionSnapshot_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="161" column="14" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a7a0977d45a0e9fbf688968de346c880e" prot="private" static="no" mutable="no">
+        <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a1c951381eba93a4757e6d8b95cedf31b" kindref="member">DatabaseCallback</ref></type>
+        <definition>DatabaseCallback satox::database::DatabaseManager::databaseCallback_</definition>
+        <argsstring></argsstring>
+        <name>databaseCallback_</name>
+        <qualifiedname>satox::database::DatabaseManager::databaseCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="164" column="22" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a31bf5cf8a733a54dd728e59e2b8bfd6d" prot="private" static="no" mutable="no">
+        <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a2835844c36daf626aad00dc43e6386aa" kindref="member">ConnectionCallback</ref></type>
+        <definition>ConnectionCallback satox::database::DatabaseManager::connectionCallback_</definition>
+        <argsstring></argsstring>
+        <name>connectionCallback_</name>
+        <qualifiedname>satox::database::DatabaseManager::connectionCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="165" column="24" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a816d483ed59397fbe5e7f6e53c573f6f" prot="private" static="no" mutable="no">
+        <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a712584403ecb2fa72a9419d8d01229f1" kindref="member">HealthCallback</ref></type>
+        <definition>HealthCallback satox::database::DatabaseManager::healthCallback_</definition>
+        <argsstring></argsstring>
+        <name>healthCallback_</name>
+        <qualifiedname>satox::database::DatabaseManager::healthCallback_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="166" column="20" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5bf54f3392636325ee9b4aef9059a17e" prot="private" static="no" mutable="yes">
+        <type><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats" kindref="compound">DatabaseStats</ref></type>
+        <definition>DatabaseStats satox::database::DatabaseManager::stats_</definition>
+        <argsstring></argsstring>
+        <name>stats_</name>
+        <qualifiedname>satox::database::DatabaseManager::stats_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="169" column="27" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a71e3f6dd6254adc9a75f770168f5647c" prot="private" static="no" mutable="yes">
+        <type><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" kindref="compound">DatabaseHealth</ref></type>
+        <definition>DatabaseHealth satox::database::DatabaseManager::health_</definition>
+        <argsstring></argsstring>
+        <name>health_</name>
+        <qualifiedname>satox::database::DatabaseManager::health_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="170" column="28" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a50477f88eeeeb0e560d1f5cf334efe45" prot="private" static="no" mutable="yes">
+        <type><ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198" kindref="member">DatabaseErrorCode</ref></type>
+        <definition>DatabaseErrorCode satox::database::DatabaseManager::lastErrorCode_</definition>
+        <argsstring></argsstring>
+        <name>lastErrorCode_</name>
+        <qualifiedname>satox::database::DatabaseManager::lastErrorCode_</qualifiedname>
+        <initializer>= <ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198ad0749aaba8b833466dfcbb0428e4f89c" kindref="member">DatabaseErrorCode::SUCCESS</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="171" column="31" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a8f3d91b490ca1244cd689fc1dbe72a5d" prot="private" static="no" mutable="yes">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseManager::lastError_</definition>
+        <argsstring></argsstring>
+        <name>lastError_</name>
+        <qualifiedname>satox::database::DatabaseManager::lastError_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="172" column="25" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5ad7c9a21c96d884cbe883c15cbd1b55" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; spdlog::logger &gt;</type>
+        <definition>std::shared_ptr&lt;spdlog::logger&gt; satox::database::DatabaseManager::logger_</definition>
+        <argsstring></argsstring>
+        <name>logger_</name>
+        <qualifiedname>satox::database::DatabaseManager::logger_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="175" column="21" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad09010f756ea44e690691a65d695ddc8" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="dd/d53/structsatox_1_1database_1_1Version" kindref="compound">Version</ref></type>
+        <definition>const Version satox::database::DatabaseManager::VERSION</definition>
+        <argsstring></argsstring>
+        <name>VERSION</name>
+        <qualifiedname>satox::database::DatabaseManager::VERSION</qualifiedname>
+        <initializer>{0, 1, 0, &quot;build&quot;, &quot;commit&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="178" column="26" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ab3e8f0d2dfff4e964c87b6a7277ef731" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+        <definition>DatabaseManager &amp; satox::database::DatabaseManager::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>satox::database::DatabaseManager::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="46" column="28" bodyfile="src/database/src/database_manager.cpp" bodystart="24" bodyend="27"/>
+        <referencedby refid="dd/deb/satox__sdk__c_8cpp_1a6624d815757db0a326f68bbe3b48ac60" compoundref="dd/deb/satox__sdk__c_8cpp" startline="189" endline="208">satox_database_manager_create</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa4b16650bd0ee6bfd2fa822da73e785f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::initialize</definition>
+        <argsstring>(const DatabaseConfig &amp;config=DatabaseConfig{})</argsstring>
+        <name>initialize</name>
+        <qualifiedname>satox::database::DatabaseManager::initialize</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+          <defval><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="49" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="49" bodyend="108"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a1940a630a2a25829533b90f9be04f184" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="20">satox::database::ALREADY_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a7a348bf6d29011d629d13513e5382240" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="29">satox::database::INITIALIZATION_ERROR</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052adee5f03c2c4e73657824e028494b18c0" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="98">satox::database::INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198af295a0c3e37c94f078e1c5476479132d" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="18">satox::database::INVALID_ARGUMENT</references>
+        <references refid="df/d6a/structsatox_1_1database_1_1DatabaseStats_1aab836210933cf96faa738f39376ff467" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="64">satox::database::DatabaseStats::lastOperation</references>
+        <references refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth_1aeecddb8a6810279843409e3375031d20" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="107">satox::database::DatabaseHealth::status</references>
+        <references refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a20c696a2d1f6b727047215a7857f15c7" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1301" endline="1310">validateConfig</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a654c51fe9f52f185db69c9f663139a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>satox::database::DatabaseManager::shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="50" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="110" bodyend="180"/>
+        <references refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0ec521d42c3122390a454fd24292cc49" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="395" endline="410">disconnect</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a1a780f772d445b2e1f54b266b9347d5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::isInitialized</definition>
+        <argsstring>() const</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>satox::database::DatabaseManager::isInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="51" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="240" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa65b5cc72f48a479fba06a0ca48e7a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::setConfig</definition>
+        <argsstring>(const DatabaseConfig &amp;config)</argsstring>
+        <name>setConfig</name>
+        <qualifiedname>satox::database::DatabaseManager::setConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="54" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1283" bodyend="1294"/>
+        <references refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a126d0f6d00000ab9365c7c30bc4d0eeb" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="55">satox::database::DatabaseConfig::connectionTimeout</references>
+        <references refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a9c3a5d0de3446ee27388acfcbb3eeb07" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="54">satox::database::DatabaseConfig::maxConnections</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aee0fb9ce0a776f9c0eaa19005a84ddbb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref></type>
+        <definition>DatabaseConfig satox::database::DatabaseManager::getConfig</definition>
+        <argsstring>() const</argsstring>
+        <name>getConfig</name>
+        <qualifiedname>satox::database::DatabaseManager::getConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="55" column="20" bodyfile="src/database/src/database_manager.cpp" bodystart="1296" bodyend="1299"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a20c696a2d1f6b727047215a7857f15c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::validateConfig</definition>
+        <argsstring>(const DatabaseConfig &amp;config) const</argsstring>
+        <name>validateConfig</name>
+        <qualifiedname>satox::database::DatabaseManager::validateConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig" kindref="compound">DatabaseConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="56" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1301" bodyend="1310"/>
+        <references refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a126d0f6d00000ab9365c7c30bc4d0eeb" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="55">satox::database::DatabaseConfig::connectionTimeout</references>
+        <references refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a9c3a5d0de3446ee27388acfcbb3eeb07" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="54">satox::database::DatabaseConfig::maxConnections</references>
+        <references refid="d0/df3/structsatox_1_1database_1_1DatabaseConfig_1a2b628c7dbd95742a5850efcf202e89e3" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="51">satox::database::DatabaseConfig::name</references>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa4b16650bd0ee6bfd2fa822da73e785f" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="49" endline="108">initialize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac3b40406766cd08437aef73d9ef59569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::createDatabase</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>createDatabase</name>
+        <qualifiedname>satox::database::DatabaseManager::createDatabase</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="59" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="200" bodyend="236"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198af295a0c3e37c94f078e1c5476479132d" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="18">satox::database::INVALID_ARGUMENT</references>
+        <references refid="db/d15/structsatox_1_1database_1_1DatabaseData_1a29d4c5b97daea7a51e5c383c74779a14" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="123">satox::database::DatabaseData::name</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+        <referencedby refid="dd/deb/satox__sdk__c_8cpp_1a6fe38bb29bff13ac74b987dbfbc782f0" compoundref="dd/deb/satox__sdk__c_8cpp" startline="214" endline="221">satox_database_manager_create_database</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa379c972eae75a47f2e914f0a02f4702" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::deleteDatabase</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>deleteDatabase</name>
+        <qualifiedname>satox::database::DatabaseManager::deleteDatabase</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="60" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="297" bodyend="330"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac2fb5271098b86839ca70a300791a7fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::useDatabase</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>useDatabase</name>
+        <qualifiedname>satox::database::DatabaseManager::useDatabase</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="61" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="332" bodyend="364"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a2ae4f323f19e41a2d1d54bed4a930ebc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::database::DatabaseManager::listDatabases</definition>
+        <argsstring>()</argsstring>
+        <name>listDatabases</name>
+        <qualifiedname>satox::database::DatabaseManager::listDatabases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="62" column="17" bodyfile="src/database/src/database_manager.cpp" bodystart="277" bodyend="295"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <referencedby refid="dd/deb/satox__sdk__c_8cpp_1a5c563e34dd062f2ea0864a485c4e8697" compoundref="dd/deb/satox__sdk__c_8cpp" startline="223" endline="235">satox_database_manager_list_databases</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa889d54846742da667a18fef095f7f71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::databaseExists</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>databaseExists</name>
+        <qualifiedname>satox::database::DatabaseManager::databaseExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="63" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="260" bodyend="275"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac3db052ed6860f3513bf658062823ad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::createTable</definition>
+        <argsstring>(const std::string &amp;name, const nlohmann::json &amp;schema)</argsstring>
+        <name>createTable</name>
+        <qualifiedname>satox::database::DatabaseManager::createTable</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="66" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1362" bodyend="1406"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198af295a0c3e37c94f078e1c5476479132d" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="18">satox::database::INVALID_ARGUMENT</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+        <references refid="d6/d2d/structsatox_1_1database_1_1TableData_1a3b4aab964b6047a4338acccbaeb68a35" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="117">satox::database::TableData::schema</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a3d7f9c81a11b7e31d9c8a1e83639ea73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::deleteTable</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>deleteTable</name>
+        <qualifiedname>satox::database::DatabaseManager::deleteTable</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="67" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="462" bodyend="501"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad014dd3c0a6f15a80f3b0b8f890e96f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::tableExists</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>tableExists</name>
+        <qualifiedname>satox::database::DatabaseManager::tableExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="68" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="413" bodyend="434"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1afeb7903f7ecb98b2b9baa916932d1631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::database::DatabaseManager::listTables</definition>
+        <argsstring>()</argsstring>
+        <name>listTables</name>
+        <qualifiedname>satox::database::DatabaseManager::listTables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="69" column="17" bodyfile="src/database/src/database_manager.cpp" bodystart="436" bodyend="460"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a9939cb2acef5b5cd66d0d1f41cdb2b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::DatabaseManager::getTableSchema</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>getTableSchema</name>
+        <qualifiedname>satox::database::DatabaseManager::getTableSchema</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="70" column="20" bodyfile="src/database/src/database_manager.cpp" bodystart="1408" bodyend="1434"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a918a81ebf5cf163c56190683be0a3d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::insert</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;data)</argsstring>
+        <name>insert</name>
+        <qualifiedname>satox::database::DatabaseManager::insert</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="73" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="504" bodyend="558"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198af295a0c3e37c94f078e1c5476479132d" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="18">satox::database::INVALID_ARGUMENT</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac84466c7ec1c60f65df0df6213ded2a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::update</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;id, const nlohmann::json &amp;data)</argsstring>
+        <name>update</name>
+        <qualifiedname>satox::database::DatabaseManager::update</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="74" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="620" bodyend="672"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a72d48af933aefcb0b4216238ca74a8b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::remove</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;id)</argsstring>
+        <name>remove</name>
+        <qualifiedname>satox::database::DatabaseManager::remove</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="75" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="674" bodyend="724"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aff3a8fdb976f5c17f1b4d14f6ba96ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::DatabaseManager::find</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;id)</argsstring>
+        <name>find</name>
+        <qualifiedname>satox::database::DatabaseManager::find</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="76" column="20" bodyfile="src/database/src/database_manager.cpp" bodystart="726" bodyend="773"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abeddf579bf32d6a664c50805742ded25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; nlohmann::json &gt;</type>
+        <definition>std::vector&lt; nlohmann::json &gt; satox::database::DatabaseManager::query</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;query)</argsstring>
+        <name>query</name>
+        <qualifiedname>satox::database::DatabaseManager::query</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="77" column="17" bodyfile="src/database/src/database_manager.cpp" bodystart="560" bodyend="618"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+        <references refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abeddf579bf32d6a664c50805742ded25" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="560" endline="618">query</references>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abeddf579bf32d6a664c50805742ded25" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="560" endline="618">query</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a401cef7093f60b1fbc1e21d352d88aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::beginTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>beginTransaction</name>
+        <qualifiedname>satox::database::DatabaseManager::beginTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="80" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="776" bodyend="814"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a486197fb5f082ed99409c87c5e207ff9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::commitTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>commitTransaction</name>
+        <qualifiedname>satox::database::DatabaseManager::commitTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="81" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="816" bodyend="844"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a177a56086b276fc82d07418ededa4c07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::rollbackTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>rollbackTransaction</name>
+        <qualifiedname>satox::database::DatabaseManager::rollbackTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="82" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="846" bodyend="881"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a481d68889f84aa94f0b9f9e71fd95d06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::isInTransaction</definition>
+        <argsstring>() const</argsstring>
+        <name>isInTransaction</name>
+        <qualifiedname>satox::database::DatabaseManager::isInTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="83" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="883" bodyend="886"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa50fbbd20006f0b7d9f27d867e1084ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::createIndex</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;field)</argsstring>
+        <name>createIndex</name>
+        <qualifiedname>satox::database::DatabaseManager::createIndex</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="86" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="889" bodyend="929"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ae022f7673e4dc45d9d49270901b24f1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::dropIndex</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;field)</argsstring>
+        <name>dropIndex</name>
+        <qualifiedname>satox::database::DatabaseManager::dropIndex</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>field</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="87" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="931" bodyend="977"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac772be0101d418db30b24a06e8be3b36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; satox::database::DatabaseManager::listIndexes</definition>
+        <argsstring>(const std::string &amp;table)</argsstring>
+        <name>listIndexes</name>
+        <qualifiedname>satox::database::DatabaseManager::listIndexes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="88" column="17" bodyfile="src/database/src/database_manager.cpp" bodystart="979" bodyend="1010"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a69e95593746e7c5b97c09ae34810d339" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::createBackup</definition>
+        <argsstring>(const std::string &amp;backupPath)</argsstring>
+        <name>createBackup</name>
+        <qualifiedname>satox::database::DatabaseManager::createBackup</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backupPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="91" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1013" bodyend="1064"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a710a376f3bb057a6b538c7f6d1992949" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::restoreFromBackup</definition>
+        <argsstring>(const std::string &amp;backupPath)</argsstring>
+        <name>restoreFromBackup</name>
+        <qualifiedname>satox::database::DatabaseManager::restoreFromBackup</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>backupPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="92" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1066" bodyend="1135"/>
+        <references refid="d6/d2d/structsatox_1_1database_1_1TableData_1aaf668d7bc0f602b23adf3d0efc2324cd" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="119">satox::database::TableData::indexes</references>
+        <references refid="db/d15/structsatox_1_1database_1_1DatabaseData_1a29d4c5b97daea7a51e5c383c74779a14" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="123">satox::database::DatabaseData::name</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+        <references refid="d6/d2d/structsatox_1_1database_1_1TableData_1adb50fbe1712c7e30bd17005ca01d6ac9" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="118">satox::database::TableData::records</references>
+        <references refid="d6/d2d/structsatox_1_1database_1_1TableData_1a3b4aab964b6047a4338acccbaeb68a35" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="117">satox::database::TableData::schema</references>
+        <references refid="db/d15/structsatox_1_1database_1_1DatabaseData_1adf9a5df0be549752f5c4fb023fc15d04" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="124">satox::database::DatabaseData::tables</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a7ff6fca767c7beac8d108c176c9c5d27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::connect</definition>
+        <argsstring>(const std::string &amp;connectionString)</argsstring>
+        <name>connect</name>
+        <qualifiedname>satox::database::DatabaseManager::connect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>connectionString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="95" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="366" bodyend="393"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a719c714e030c63fa8fb32c8067006910" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1313" endline="1337">reconnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0ec521d42c3122390a454fd24292cc49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>satox::database::DatabaseManager::disconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="96" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="395" bodyend="410"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a719c714e030c63fa8fb32c8067006910" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1313" endline="1337">reconnect</referencedby>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a654c51fe9f52f185db69c9f663139a2c" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="110" endline="180">shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1afbbc576501ff5797117ad460d0f36284" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::isConnected</definition>
+        <argsstring>() const</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>satox::database::DatabaseManager::isConnected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="97" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="245" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a719c714e030c63fa8fb32c8067006910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::reconnect</definition>
+        <argsstring>()</argsstring>
+        <name>reconnect</name>
+        <qualifiedname>satox::database::DatabaseManager::reconnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="98" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1313" bodyend="1337"/>
+        <references refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a7ff6fca767c7beac8d108c176c9c5d27" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="366" endline="393">connect</references>
+        <references refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0ec521d42c3122390a454fd24292cc49" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="395" endline="410">disconnect</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a02de9649e258d1dd94056e676061e969" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="19">satox::database::NOT_INITIALIZED</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198a8f8d49d3d0842358e0fe8f43601d8537" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="23">satox::database::OPERATION_FAILED</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abc61526a06d50b71f80e827afe3f595a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::setMaxConnections</definition>
+        <argsstring>(size_t max)</argsstring>
+        <name>setMaxConnections</name>
+        <qualifiedname>satox::database::DatabaseManager::setMaxConnections</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="101" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1339" bodyend="1348"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a294240f5435e96ffd6ceb903ed4e6bb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::database::DatabaseManager::getMaxConnections</definition>
+        <argsstring>() const</argsstring>
+        <name>getMaxConnections</name>
+        <qualifiedname>satox::database::DatabaseManager::getMaxConnections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="102" column="12" bodyfile="src/database/src/database_manager.cpp" bodystart="250" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1affc24bbd4444e918dd95a8fcfbe8a6bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::setConnectionTimeout</definition>
+        <argsstring>(size_t milliseconds)</argsstring>
+        <name>setConnectionTimeout</name>
+        <qualifiedname>satox::database::DatabaseManager::setConnectionTimeout</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>milliseconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="103" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1350" bodyend="1359"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5ae61847dfee5f4054bf1ec437e03d47" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t satox::database::DatabaseManager::getConnectionTimeout</definition>
+        <argsstring>() const</argsstring>
+        <name>getConnectionTimeout</name>
+        <qualifiedname>satox::database::DatabaseManager::getConnectionTimeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="104" column="12" bodyfile="src/database/src/database_manager.cpp" bodystart="255" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1af2cdf7f940c044733a9f1b51ea95fdbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::setDatabaseCallback</definition>
+        <argsstring>(DatabaseCallback callback)</argsstring>
+        <name>setDatabaseCallback</name>
+        <qualifiedname>satox::database::DatabaseManager::setDatabaseCallback</qualifiedname>
+        <param>
+          <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a1c951381eba93a4757e6d8b95cedf31b" kindref="member">DatabaseCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="107" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1138" bodyend="1147"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a753cda4e7dbed8140907dc65113cab92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::setConnectionCallback</definition>
+        <argsstring>(ConnectionCallback callback)</argsstring>
+        <name>setConnectionCallback</name>
+        <qualifiedname>satox::database::DatabaseManager::setConnectionCallback</qualifiedname>
+        <param>
+          <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a2835844c36daf626aad00dc43e6386aa" kindref="member">ConnectionCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="108" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1149" bodyend="1158"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad9595c0b2158ef8eb336e1fe0b4790c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::setHealthCallback</definition>
+        <argsstring>(HealthCallback callback)</argsstring>
+        <name>setHealthCallback</name>
+        <qualifiedname>satox::database::DatabaseManager::setHealthCallback</qualifiedname>
+        <param>
+          <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a712584403ecb2fa72a9419d8d01229f1" kindref="member">HealthCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="109" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1160" bodyend="1169"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac62c0a2236670673e66f785179d2708b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::clearCallbacks</definition>
+        <argsstring>()</argsstring>
+        <name>clearCallbacks</name>
+        <qualifiedname>satox::database::DatabaseManager::clearCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="110" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1171" bodyend="1187"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a11eb6fe2df2cdd643e31ac5041a3672b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d6a/structsatox_1_1database_1_1DatabaseStats" kindref="compound">DatabaseStats</ref></type>
+        <definition>DatabaseStats satox::database::DatabaseManager::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <qualifiedname>satox::database::DatabaseManager::getStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="113" column="19" bodyfile="src/database/src/database_manager.cpp" bodystart="1190" bodyend="1197"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aad4b6560b7e9938a4667ee66a50c385a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::resetStats</definition>
+        <argsstring>()</argsstring>
+        <name>resetStats</name>
+        <qualifiedname>satox::database::DatabaseManager::resetStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="114" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1199" bodyend="1208"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a613d3bd49ca24eeeffb290f2e42696a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/da4/structsatox_1_1database_1_1DatabaseHealth" kindref="compound">DatabaseHealth</ref></type>
+        <definition>DatabaseHealth satox::database::DatabaseManager::getHealth</definition>
+        <argsstring>() const</argsstring>
+        <name>getHealth</name>
+        <qualifiedname>satox::database::DatabaseManager::getHealth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="115" column="20" bodyfile="src/database/src/database_manager.cpp" bodystart="1210" bodyend="1217"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa1d5a833b37bfb77a6318b16d6f9ffdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::isHealthy</definition>
+        <argsstring>() const</argsstring>
+        <name>isHealthy</name>
+        <qualifiedname>satox::database::DatabaseManager::isHealthy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="116" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1219" bodyend="1228"/>
+        <referencedby refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1adffc7d3bd20465ada40a75f18753e8c0" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1588" endline="1620">getHealthStatus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5e5d9fa0e8cb7a2e6cd0ec5ce2b78213" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::performHealthCheck</definition>
+        <argsstring>()</argsstring>
+        <name>performHealthCheck</name>
+        <qualifiedname>satox::database::DatabaseManager::performHealthCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="117" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1230" bodyend="1253"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052abb1ca97ec761fc37101737ba0aa2e7c5" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="101">satox::database::ERROR</references>
+        <references refid="db/dfd/namespacesatox_1_1database_1a4792725d5bfd72dfdb5c539acc8f8052a43491564ebcfd38568918efbd6e840fd" compoundref="dc/d57/database_2include_2satox_2database_2types_8hpp" startline="99">satox::database::RUNNING</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1adffc7d3bd20465ada40a75f18753e8c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json satox::database::DatabaseManager::getHealthStatus</definition>
+        <argsstring>()</argsstring>
+        <name>getHealthStatus</name>
+        <qualifiedname>satox::database::DatabaseManager::getHealthStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="118" column="20" bodyfile="src/database/src/database_manager.cpp" bodystart="1588" bodyend="1620"/>
+        <references refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa1d5a833b37bfb77a6318b16d6f9ffdc" compoundref="d7/d7a/database_2src_2database__manager_8cpp" startline="1219" endline="1228">isHealthy</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a6b2bef491416cc1395bc38cc952705ed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198" kindref="member">DatabaseErrorCode</ref></type>
+        <definition>DatabaseErrorCode satox::database::DatabaseManager::getLastErrorCode</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastErrorCode</name>
+        <qualifiedname>satox::database::DatabaseManager::getLastErrorCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="121" column="23" bodyfile="src/database/src/database_manager.cpp" bodystart="1256" bodyend="1259"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a8abc9baa72661e795c633f7a31e7fe70" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseManager::getLastError</definition>
+        <argsstring>() const</argsstring>
+        <name>getLastError</name>
+        <qualifiedname>satox::database::DatabaseManager::getLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="122" column="17" bodyfile="src/database/src/database_manager.cpp" bodystart="1261" bodyend="1264"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ab63aa3ca3bb8fbc546bfa2aada27cb53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::clearLastError</definition>
+        <argsstring>()</argsstring>
+        <name>clearLastError</name>
+        <qualifiedname>satox::database::DatabaseManager::clearLastError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="123" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1266" bodyend="1275"/>
+        <references refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198ad0749aaba8b833466dfcbb0428e4f89c" compoundref="d9/dba/database_2include_2satox_2database_2error_8hpp" startline="16">satox::database::SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a55c567ac6a2454419b359a614e8986ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/d53/structsatox_1_1database_1_1Version" kindref="compound">Version</ref></type>
+        <definition>Version satox::database::DatabaseManager::getVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersion</name>
+        <qualifiedname>satox::database::DatabaseManager::getVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="126" column="13" bodyfile="src/database/src/database_manager.cpp" bodystart="1278" bodyend="1280"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad883933b6d1585b94799920f39c8b3b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::DatabaseManager::DatabaseManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>DatabaseManager</name>
+        <qualifiedname>satox::database::DatabaseManager::DatabaseManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="129" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a224cd4109ed7d559f0ad81a73e4f4012" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::DatabaseManager::~DatabaseManager</definition>
+        <argsstring>()</argsstring>
+        <name>~DatabaseManager</name>
+        <qualifiedname>satox::database::DatabaseManager::~DatabaseManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="130" column="5" bodyfile="src/database/src/database_manager.cpp" bodystart="1622" bodyend="1628"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac6ce09b6b3fd3df36d072ba4aee9090c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>satox::database::DatabaseManager::DatabaseManager</definition>
+        <argsstring>(const DatabaseManager &amp;)=delete</argsstring>
+        <name>DatabaseManager</name>
+        <qualifiedname>satox::database::DatabaseManager::DatabaseManager</qualifiedname>
+        <param>
+          <type>const <ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="131" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a233b264c4b33b4597d42bd0044f7f1f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+        <definition>DatabaseManager &amp; satox::database::DatabaseManager::operator=</definition>
+        <argsstring>(const DatabaseManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>satox::database::DatabaseManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="df/dcb/classsatox_1_1database_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="132" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a74b02e54848d76820e9ef084162cdad9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::validateDatabaseName</definition>
+        <argsstring>(const std::string &amp;name) const</argsstring>
+        <name>validateDatabaseName</name>
+        <qualifiedname>satox::database::DatabaseManager::validateDatabaseName</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="135" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1495" bodyend="1503"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ade2e77055d4bdf6254d9530fc4b918b9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::validateTableName</definition>
+        <argsstring>(const std::string &amp;name) const</argsstring>
+        <name>validateTableName</name>
+        <qualifiedname>satox::database::DatabaseManager::validateTableName</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="136" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1505" bodyend="1513"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a34876772ac198a42c06cd2a44bc49106" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::validateSchema</definition>
+        <argsstring>(const nlohmann::json &amp;schema) const</argsstring>
+        <name>validateSchema</name>
+        <qualifiedname>satox::database::DatabaseManager::validateSchema</qualifiedname>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="137" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1515" bodyend="1522"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a163277c8fb27f009ed7dd8c060a91788" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::validateData</definition>
+        <argsstring>(const std::string &amp;table, const nlohmann::json &amp;data) const</argsstring>
+        <name>validateData</name>
+        <qualifiedname>satox::database::DatabaseManager::validateData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const nlohmann::json &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="138" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1524" bodyend="1569"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0ca021f69fa2d5f0f41daca0dcbbcfa8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::handleError</definition>
+        <argsstring>(const std::string &amp;operation, DatabaseErrorCode code, const std::string &amp;error)</argsstring>
+        <name>handleError</name>
+        <qualifiedname>satox::database::DatabaseManager::handleError</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type><ref refid="db/dfd/namespacesatox_1_1database_1a39a52ecf35dfba5b1e247d97a3c9c198" kindref="member">DatabaseErrorCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="139" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1474" bodyend="1492"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa806bd6293fd53359ae26e44669b4297" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::invokeCallbacks</definition>
+        <argsstring>(const std::string &amp;operation, bool success, const std::string &amp;error)</argsstring>
+        <name>invokeCallbacks</name>
+        <qualifiedname>satox::database::DatabaseManager::invokeCallbacks</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="140" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="182" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0d59acf50dcd8e0565a70a909d57bdca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::updateStats</definition>
+        <argsstring>(bool success, std::chrono::milliseconds duration)</argsstring>
+        <name>updateStats</name>
+        <qualifiedname>satox::database::DatabaseManager::updateStats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="141" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1571" bodyend="1586"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aeecf3371bf39ad2e8f0981be60d1f685" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::logOperation</definition>
+        <argsstring>(const std::string &amp;operation, bool success, const std::string &amp;error)</argsstring>
+        <name>logOperation</name>
+        <qualifiedname>satox::database::DatabaseManager::logOperation</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="142" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1448" bodyend="1472"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac35b7de157bad0a61a8679dbcc39ba04" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string satox::database::DatabaseManager::generateUniqueId</definition>
+        <argsstring>()</argsstring>
+        <name>generateUniqueId</name>
+        <qualifiedname>satox::database::DatabaseManager::generateUniqueId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="143" column="17" bodyfile="src/database/src/database_manager.cpp" bodystart="1437" bodyend="1441"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a704e453568dccec5ece8d8096e429b1d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool satox::database::DatabaseManager::hasRecentErrors</definition>
+        <argsstring>() const</argsstring>
+        <name>hasRecentErrors</name>
+        <qualifiedname>satox::database::DatabaseManager::hasRecentErrors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="144" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="1443" bodyend="1446"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aefd2690d7b5b7ad12c54f3a03a03af1f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void satox::database::DatabaseManager::initializeLogging</definition>
+        <argsstring>(const std::string &amp;logPath)</argsstring>
+        <name>initializeLogging</name>
+        <qualifiedname>satox::database::DatabaseManager::initializeLogging</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>logPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/database/include/satox/database/database_manager.hpp" line="181" column="10" bodyfile="src/database/src/database_manager.cpp" bodystart="29" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Database Manager - Manages database operations and connections. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a singleton interface for database operations including:<itemizedlist>
+<listitem><para>Database creation, deletion, and management</para>
+</listitem><listitem><para>Table operations (create, delete, query)</para>
+</listitem><listitem><para><ref refid="d0/d68/classsatox_1_1database_1_1Transaction" kindref="compound">Transaction</ref> management</para>
+</listitem><listitem><para>Connection pooling</para>
+</listitem><listitem><para>Backup and restore operations</para>
+</listitem><listitem><para>Health monitoring and statistics </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="src/database/include/satox/database/database_manager.hpp" line="38" column="1" bodyfile="src/database/include/satox/database/database_manager.hpp" bodystart="38" bodyend="182"/>
+    <listofallmembers>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a401cef7093f60b1fbc1e21d352d88aab" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>beginTransaction</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac62c0a2236670673e66f785179d2708b" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>clearCallbacks</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ab63aa3ca3bb8fbc546bfa2aada27cb53" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>clearLastError</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a486197fb5f082ed99409c87c5e207ff9" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>commitTransaction</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac6e13415c4483da9525bac9d13d629b8" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>config_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a7ff6fca767c7beac8d108c176c9c5d27" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>connect</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a2835844c36daf626aad00dc43e6386aa" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>ConnectionCallback</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a31bf5cf8a733a54dd728e59e2b8bfd6d" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>connectionCallback_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a4e5017b3ca16e511c29607de297dffb7" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>connectionString_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa17187fd51e15b4269b2e0ff70699548" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>connectionTimeout_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a69e95593746e7c5b97c09ae34810d339" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>createBackup</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac3b40406766cd08437aef73d9ef59569" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>createDatabase</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa50fbbd20006f0b7d9f27d867e1084ec" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>createIndex</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac3db052ed6860f3513bf658062823ad3" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>createTable</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abb503fdbc86b0b01744adde6a883a330" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>currentDatabase_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a1c951381eba93a4757e6d8b95cedf31b" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>DatabaseCallback</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a7a0977d45a0e9fbf688968de346c880e" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>databaseCallback_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa889d54846742da667a18fef095f7f71" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>databaseExists</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad883933b6d1585b94799920f39c8b3b5" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>DatabaseManager</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac6ce09b6b3fd3df36d072ba4aee9090c" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>DatabaseManager</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a38a69902d892bbf2158055ba4651a501" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>databases_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa379c972eae75a47f2e914f0a02f4702" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>deleteDatabase</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a3d7f9c81a11b7e31d9c8a1e83639ea73" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>deleteTable</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0ec521d42c3122390a454fd24292cc49" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>disconnect</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ae022f7673e4dc45d9d49270901b24f1b" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>dropIndex</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aff3a8fdb976f5c17f1b4d14f6ba96ad2" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>find</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac35b7de157bad0a61a8679dbcc39ba04" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>generateUniqueId</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aee0fb9ce0a776f9c0eaa19005a84ddbb" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getConfig</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5ae61847dfee5f4054bf1ec437e03d47" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getConnectionTimeout</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a613d3bd49ca24eeeffb290f2e42696a9" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getHealth</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1adffc7d3bd20465ada40a75f18753e8c0" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getHealthStatus</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ab3e8f0d2dfff4e964c87b6a7277ef731" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getInstance</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a8abc9baa72661e795c633f7a31e7fe70" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getLastError</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a6b2bef491416cc1395bc38cc952705ed" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getLastErrorCode</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a294240f5435e96ffd6ceb903ed4e6bb1" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getMaxConnections</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a11eb6fe2df2cdd643e31ac5041a3672b" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getStats</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a9939cb2acef5b5cd66d0d1f41cdb2b0b" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getTableSchema</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a55c567ac6a2454419b359a614e8986ac" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>getVersion</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0ca021f69fa2d5f0f41daca0dcbbcfa8" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>handleError</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a704e453568dccec5ece8d8096e429b1d" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>hasRecentErrors</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a71e3f6dd6254adc9a75f770168f5647c" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>health_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a712584403ecb2fa72a9419d8d01229f1" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>HealthCallback</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a816d483ed59397fbe5e7f6e53c573f6f" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>healthCallback_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa4b16650bd0ee6bfd2fa822da73e785f" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>initialize</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a35c92d4392efe2e5c8860ccd7aff7a67" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>initialized_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aefd2690d7b5b7ad12c54f3a03a03af1f" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>initializeLogging</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a918a81ebf5cf163c56190683be0a3d12" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>insert</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a61d24cea2b5d6879e7f86a66533fe31d" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>inTransaction_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa806bd6293fd53359ae26e44669b4297" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>invokeCallbacks</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1afbbc576501ff5797117ad460d0f36284" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>isConnected</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5e223c9a805c8b3478c3d52a63bd650e" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>isConnected_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa1d5a833b37bfb77a6318b16d6f9ffdc" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>isHealthy</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a1a780f772d445b2e1f54b266b9347d5e" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>isInitialized</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a481d68889f84aa94f0b9f9e71fd95d06" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>isInTransaction</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a8f3d91b490ca1244cd689fc1dbe72a5d" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>lastError_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a50477f88eeeeb0e560d1f5cf334efe45" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>lastErrorCode_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a2ae4f323f19e41a2d1d54bed4a930ebc" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>listDatabases</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac772be0101d418db30b24a06e8be3b36" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>listIndexes</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1afeb7903f7ecb98b2b9baa916932d1631" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>listTables</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5ad7c9a21c96d884cbe883c15cbd1b55" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>logger_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aeecf3371bf39ad2e8f0981be60d1f685" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>logOperation</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abed386b3ed7bee73bf31a128c4b37b3e" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>maxConnections_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a74ebefa8c9f1ed6cb88f4ef2b5cd17ff" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>mutex_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a233b264c4b33b4597d42bd0044f7f1f6" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>operator=</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5e5d9fa0e8cb7a2e6cd0ec5ce2b78213" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>performHealthCheck</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abeddf579bf32d6a664c50805742ded25" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>query</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a719c714e030c63fa8fb32c8067006910" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>reconnect</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a72d48af933aefcb0b4216238ca74a8b5" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>remove</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aad4b6560b7e9938a4667ee66a50c385a" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>resetStats</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a710a376f3bb057a6b538c7f6d1992949" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>restoreFromBackup</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a177a56086b276fc82d07418ededa4c07" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>rollbackTransaction</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1aa65b5cc72f48a479fba06a0ca48e7a70" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>setConfig</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a753cda4e7dbed8140907dc65113cab92" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>setConnectionCallback</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1affc24bbd4444e918dd95a8fcfbe8a6bd" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>setConnectionTimeout</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1af2cdf7f940c044733a9f1b51ea95fdbd" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>setDatabaseCallback</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad9595c0b2158ef8eb336e1fe0b4790c9" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>setHealthCallback</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1abc61526a06d50b71f80e827afe3f595a" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>setMaxConnections</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a654c51fe9f52f185db69c9f663139a2c" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>shutdown</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a5bf54f3392636325ee9b4aef9059a17e" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>stats_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad014dd3c0a6f15a80f3b0b8f890e96f4" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>tableExists</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a70499a6404fff172f83339a2df1b5b5a" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>tableIndexes_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a4da6e8dda64dab53cea2cdfba2d47539" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>tableSchemas_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1af38dbc1b8c6e27c8aee8312cc0625148" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>transactionSnapshot_</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac84466c7ec1c60f65df0df6213ded2a1" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>update</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a0d59acf50dcd8e0565a70a909d57bdca" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>updateStats</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ac2fb5271098b86839ca70a300791a7fb" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>useDatabase</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a20c696a2d1f6b727047215a7857f15c7" prot="public" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>validateConfig</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a163277c8fb27f009ed7dd8c060a91788" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>validateData</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a74b02e54848d76820e9ef084162cdad9" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>validateDatabaseName</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a34876772ac198a42c06cd2a44bc49106" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>validateSchema</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ade2e77055d4bdf6254d9530fc4b918b9" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>validateTableName</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1ad09010f756ea44e690691a65d695ddc8" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>VERSION</name></member>
+      <member refid="df/dcb/classsatox_1_1database_1_1DatabaseManager_1a224cd4109ed7d559f0ad81a73e4f4012" prot="private" virt="non-virtual"><scope>satox::database::DatabaseManager</scope><name>~DatabaseManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
