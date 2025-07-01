@@ -7,11 +7,41 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Add custom cmake modules path
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+# Debug: Print module path
+message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+
 # --- Dependencies ---
 # Find required packages for the entire SDK.
 # Components will link to these as needed.
 find_package(OpenSSL REQUIRED)
-find_package(spdlog REQUIRED)
+
+# Try to find spdlog with fallback
+find_package(spdlog QUIET)
+if(NOT spdlog_FOUND)
+    message(WARNING "spdlog not found via find_package, trying alternative methods...")
+    
+    # Try to find spdlog headers directly
+    find_path(SPDLOG_INCLUDE_DIR
+        NAMES spdlog/spdlog.h
+        PATHS
+            /usr/include
+            /usr/local/include
+            /opt/local/include
+            ${CMAKE_CURRENT_SOURCE_DIR}/external/spdlog/include
+    )
+    
+    if(SPDLOG_INCLUDE_DIR)
+        message(STATUS "Found spdlog headers at: ${SPDLOG_INCLUDE_DIR}")
+        set(spdlog_FOUND TRUE)
+        add_library(spdlog::spdlog INTERFACE IMPORTED)
+        set_target_properties(spdlog::spdlog PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "${SPDLOG_INCLUDE_DIR}"
+        )
+    else()
+        message(FATAL_ERROR "spdlog not found. Please install libspdlog-dev or build from source.")
+    endif()
+endif()
+
 find_package(fmt REQUIRED)
 find_package(Threads REQUIRED)
 find_package(CURL REQUIRED)

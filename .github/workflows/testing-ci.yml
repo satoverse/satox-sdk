@@ -70,6 +70,12 @@ jobs:
         sudo apt-get install -y python3-pip python3-dev
         sudo apt-get install -y libspdlog-dev libfmt-dev nlohmann-json3-dev
         
+        # Verify spdlog installation
+        echo "=== Verifying spdlog installation ==="
+        pkg-config --exists spdlog && echo "spdlog found via pkg-config" || echo "spdlog not found via pkg-config"
+        ls -la /usr/include/spdlog/ 2>/dev/null && echo "spdlog headers found" || echo "spdlog headers not found"
+        find /usr -name "spdlog.h" 2>/dev/null | head -5
+        
         # Install spdlog from source if package not available
         if ! pkg-config --exists spdlog; then
           echo "Installing spdlog from source..."
@@ -108,6 +114,12 @@ jobs:
           sudo ldconfig
           cd ../..
         fi
+        
+        # Final verification
+        echo "=== Final dependency verification ==="
+        pkg-config --exists spdlog && echo "✅ spdlog: OK" || echo "❌ spdlog: NOT FOUND"
+        pkg-config --exists fmt && echo "✅ fmt: OK" || echo "❌ fmt: NOT FOUND"
+        pkg-config --exists nlohmann_json && echo "✅ nlohmann_json: OK" || echo "❌ nlohmann_json: NOT FOUND"
         
         # Install liboqs for quantum cryptography
         if [ ! -d "liboqs" ]; then
