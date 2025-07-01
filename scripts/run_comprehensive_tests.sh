@@ -197,6 +197,9 @@ check_environment() {
         print_status $YELLOW "Warning: ${missing_tests} test executables are missing. Some tests will be skipped."
     fi
     
+    # Set library path for all tests
+    export LD_LIBRARY_PATH="${BUILD_DIR}/src/core:${BUILD_DIR}/src/asset:${BUILD_DIR}/src/network:${BUILD_DIR}/src/blockchain:${BUILD_DIR}/src/security:${BUILD_DIR}/src/database:${BUILD_DIR}/src/wallet:${BUILD_DIR}/src/ipfs:${BUILD_DIR}/src/nft:${BUILD_DIR}/satox-assets:${BUILD_DIR}/satox-transactions:${LD_LIBRARY_PATH}"
+    
     print_status $GREEN "Environment check completed"
 }
 

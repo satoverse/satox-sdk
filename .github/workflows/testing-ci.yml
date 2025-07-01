@@ -68,7 +68,46 @@ jobs:
         sudo apt-get install -y libboost-all-dev libgtest-dev doxygen graphviz
         sudo apt-get install -y nodejs npm pkg-config lcov
         sudo apt-get install -y python3-pip python3-dev
-        sudo apt-get install -y libspdlog-dev
+        sudo apt-get install -y libspdlog-dev libfmt-dev nlohmann-json3-dev
+        
+        # Install spdlog from source if package not available
+        if ! pkg-config --exists spdlog; then
+          echo "Installing spdlog from source..."
+          git clone https://github.com/gabime/spdlog.git
+          cd spdlog
+          mkdir build && cd build
+          cmake .. -DSPDLOG_BUILD_SHARED=ON -DSPDLOG_ENABLE_PCH=OFF
+          make -j$(nproc)
+          sudo make install
+          sudo ldconfig
+          cd ../..
+        fi
+        
+        # Install fmt from source if package not available
+        if ! pkg-config --exists fmt; then
+          echo "Installing fmt from source..."
+          git clone https://github.com/fmtlib/fmt.git
+          cd fmt
+          mkdir build && cd build
+          cmake .. -DFMT_DOC=OFF -DFMT_TEST=OFF
+          make -j$(nproc)
+          sudo make install
+          sudo ldconfig
+          cd ../..
+        fi
+        
+        # Install nlohmann/json from source if package not available
+        if ! pkg-config --exists nlohmann_json; then
+          echo "Installing nlohmann/json from source..."
+          git clone https://github.com/nlohmann/json.git
+          cd json
+          mkdir build && cd build
+          cmake .. -DJSON_BuildTests=OFF
+          make -j$(nproc)
+          sudo make install
+          sudo ldconfig
+          cd ../..
+        fi
         
         # Install liboqs for quantum cryptography
         if [ ! -d "liboqs" ]; then

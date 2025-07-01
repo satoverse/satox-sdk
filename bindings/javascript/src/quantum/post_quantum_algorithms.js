@@ -1,6 +1,4 @@
-const { createRequire } = require('module');
-const require = createRequire(import.meta.url);
-const satox = require('satox');
+const satox = require('../../build/Release/satox-sdk');
 
 class PostQuantumAlgorithms {
     constructor() {
@@ -124,4 +122,4 @@ class PostQuantumAlgorithms {
     }
 }
 
-export default PostQuantumAlgorithms; 
+module.exports = PostQuantumAlgorithms; 

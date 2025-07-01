@@ -1,6 +1,6 @@
 const { SatoxManager } = require('../src/satox');
 const { TransactionManager } = require('../src/transaction');
-const { PostQuantumAlgorithms } = require('../src/quantum/post_quantum_algorithms');
+const PostQuantumAlgorithms = require('../src/quantum/post_quantum_algorithms');
 
 describe('SatoxManager', () => {
     let satoxManager;
@@ -19,7 +19,9 @@ describe('SatoxManager', () => {
     });
 
     afterEach(async () => {
-        await satoxManager.shutdown();
+        if (satoxManager && typeof satoxManager.shutdown === 'function') {
+            await satoxManager.shutdown();
+        }
     });
 
     // Basic Functionality Tests
@@ -139,7 +141,7 @@ describe('SatoxManager', () => {
 
         satoxManager.registerComponent(component);
         await satoxManager.shutdown();
-        await satoxManager.initialize();
+        await satoxManager.reinitialize();
 
         expect(satoxManager.getComponent('test-component')).toBeDefined();
         expect(satoxManager.isInitialized()).toBe(true);

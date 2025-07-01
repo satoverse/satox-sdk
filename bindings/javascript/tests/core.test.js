@@ -1,5 +1,4 @@
 const { SatoxManager } = require('../src/core');
-const { expect } = require('chai');
 
 describe('SatoxManager', () => {
     let manager;
@@ -10,7 +9,7 @@ describe('SatoxManager', () => {
 
     it('should initialize successfully', () => {
         manager.initialize();
-        expect(manager.isInitialized()).to.be.true;
+        expect(manager.isInitialized()).toBe(true);
     });
 
     it('should register components', () => {
@@ -23,7 +22,7 @@ describe('SatoxManager', () => {
         };
         
         manager.registerComponent(component);
-        expect(manager.isComponentRegistered('TestComponent')).to.be.true;
+        expect(manager.isComponentRegistered('TestComponent')).toBe(true);
     });
 
     it('should handle errors properly', () => {
@@ -31,7 +30,7 @@ describe('SatoxManager', () => {
         
         expect(() => {
             manager.registerComponent(null);
-        }).to.throw('Invalid component');
+        }).toThrow('Invalid component');
     });
 
     it('should handle concurrent operations', async () => {
@@ -47,6 +46,6 @@ describe('SatoxManager', () => {
         });
         
         await Promise.all(promises);
-        expect(manager.isInitialized()).to.be.true;
+        expect(manager.isInitialized()).toBe(true);
     });
 }); 
