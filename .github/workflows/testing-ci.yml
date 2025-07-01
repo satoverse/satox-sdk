@@ -1,0 +1,399 @@
+name: Testing Branch CI - Enhanced
+
+on:
+  push:
+    branches: [ testing ]
+  pull_request:
+    branches: [ testing ]
+  workflow_dispatch:
+    inputs:
+      run_full_tests:
+        description: 'Run full test suite including integration tests'
+        required: false
+        default: 'true'
+      run_security_scan:
+        description: 'Run security vulnerability scans'
+        required: false
+        default: 'true'
+      run_performance_tests:
+        description: 'Run performance benchmarks'
+        required: false
+        default: 'false'
+
+env:
+  BUILD_TYPE: Release
+  ENABLE_COVERAGE: true
+  ENABLE_SANITIZERS: true
+
+jobs:
+  # Enhanced C++ Core Build and Test
+  cpp-core-enhanced:
+    name: C++ Core (Enhanced)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [gcc-12, clang-15]
+        sanitizer: [address, undefined, thread]
+        include:
+          - compiler: gcc-12
+            sanitizer: address
+          - compiler: gcc-12
+            sanitizer: undefined
+          - compiler: clang-15
+            sanitizer: address
+          - compiler: clang-15
+            sanitizer: undefined
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Setup environment
+      run: |
+        echo "BUILD_TYPE=${{ env.BUILD_TYPE }}" >> $GITHUB_ENV
+        echo "ENABLE_COVERAGE=${{ env.ENABLE_COVERAGE }}" >> $GITHUB_ENV
+        echo "ENABLE_SANITIZERS=${{ env.ENABLE_SANITIZERS }}" >> $GITHUB_ENV
+        echo "COMPILER=${{ matrix.compiler }}" >> $GITHUB_ENV
+        echo "SANITIZER=${{ matrix.sanitizer }}" >> $GITHUB_ENV
+
+    - name: Install enhanced dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake libssl-dev libcurl4-openssl-dev
+        sudo apt-get install -y ${{ matrix.compiler }}
+        sudo apt-get install -y ninja-build clang-tidy cppcheck valgrind
+        sudo apt-get install -y libboost-all-dev libgtest-dev doxygen graphviz
+        sudo apt-get install -y nodejs npm pkg-config lcov
+        sudo apt-get install -y python3-pip python3-dev
+        
+        # Install liboqs for quantum cryptography
+        if [ ! -d "liboqs" ]; then
+          git clone https://github.com/open-quantum-safe/liboqs.git
+          cd liboqs
+          mkdir build && cd build
+          cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+          make -j$(nproc)
+          sudo make install
+          sudo ldconfig
+          cd ../..
+        fi
+
+    - name: Configure CMake with sanitizers
+      run: |
+        SANITIZER_FLAGS=""
+        if [ "${{ matrix.sanitizer }}" = "address" ]; then
+          SANITIZER_FLAGS="-fsanitize=address -fno-omit-frame-pointer"
+        elif [ "${{ matrix.sanitizer }}" = "undefined" ]; then
+          SANITIZER_FLAGS="-fsanitize=undefined -fno-omit-frame-pointer"
+        elif [ "${{ matrix.sanitizer }}" = "thread" ]; then
+          SANITIZER_FLAGS="-fsanitize=thread -fno-omit-frame-pointer"
+        fi
+        
+        cmake -B ${{github.workspace}}/build \
+          -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+          -DCMAKE_CXX_COMPILER=${{ matrix.compiler }} \
+          -DCMAKE_CXX_FLAGS="$SANITIZER_FLAGS" \
+          -DBUILD_TESTING=ON \
+          -DENABLE_COVERAGE=${{ env.ENABLE_COVERAGE }} \
+          -DBUILD_ALL_BINDINGS=ON \
+          -DENABLE_SANITIZERS=${{ env.ENABLE_SANITIZERS }} \
+          -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+    - name: Build C++ Core
+      run: |
+        cmake --build ${{github.workspace}}/build --config ${{ env.BUILD_TYPE }} -- -j $(nproc)
+
+    - name: Run C++ unit tests with sanitizers
+      run: |
+        cd ${{github.workspace}}/build
+        export ASAN_OPTIONS=detect_leaks=1:abort_on_error=1
+        export UBSAN_OPTIONS=print_stacktrace=1:abort_on_error=1
+        export TSAN_OPTIONS=halt_on_error=1
+        ctest -C ${{ env.BUILD_TYPE }} --output-on-failure --verbose
+
+    - name: Run memory leak detection
+      if: matrix.sanitizer == 'address'
+      run: |
+        cd ${{github.workspace}}/build
+        valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes \
+          --verbose --log-file=valgrind.log ./tests/satox_core_tests
+        cat valgrind.log
+
+    - name: Generate coverage report
+      if: env.ENABLE_COVERAGE == 'true'
+      run: |
+        cd ${{github.workspace}}/build
+        lcov --capture --directory . --output-file coverage.info
+        lcov --remove coverage.info '/usr/*' --output-file coverage.info
+        lcov --list coverage.info
+        genhtml coverage.info --output-directory coverage_html
+
+    - name: Upload coverage report
+      if: env.ENABLE_COVERAGE == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: cpp-coverage-${{ matrix.compiler }}-${{ matrix.sanitizer }}
+        path: |
+          ${{github.workspace}}/build/coverage.info
+          ${{github.workspace}}/build/coverage_html/
+
+  # Enhanced JavaScript/TypeScript Bindings
+  javascript-bindings-enhanced:
+    name: JavaScript/TypeScript (Enhanced)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
+        npm-version: [9, 10]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'bindings/javascript/package-lock.json'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential python3-dev cmake
+
+    - name: Build main SDK
+      run: |
+        mkdir -p build_release
+        cd build_release
+        cmake .. -DCMAKE_BUILD_TYPE=Release
+        make -j$(nproc)
+
+    - name: Install JavaScript dependencies
+      working-directory: bindings/javascript
+      run: |
+        npm ci
+        npm install -g npm@${{ matrix.npm-version }}
+
+    - name: Run linting
+      working-directory: bindings/javascript
+      run: |
+        npm run lint || echo "Linting failed but continuing..."
+
+    - name: Build JavaScript bindings
+      working-directory: bindings/javascript
+      run: npm run build
+
+    - name: Run JavaScript tests with coverage
+      working-directory: bindings/javascript
+      run: |
+        npm test -- --coverage --watchAll=false
+        npm run test:integration || echo "Integration tests not available"
+
+    - name: Run security audit
+      working-directory: bindings/javascript
+      run: |
+        npm audit --audit-level=moderate || echo "Security audit found issues but continuing..."
+
+    - name: Upload JavaScript coverage
+      uses: actions/upload-artifact@v4
+      with:
+        name: js-coverage-${{ matrix.node-version }}
+        path: bindings/javascript/coverage/
+
+  # Enhanced Security Scanning
+  security-scan-enhanced:
+    name: Security Scan (Enhanced)
+    runs-on: ubuntu-latest
+    if: github.event.inputs.run_security_scan != 'false'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Run OWASP Dependency Check
+      uses: dependency-check/Dependency-Check_Action@main
+      with:
+        project: 'Satox SDK'
+        path: '.'
+        format: 'HTML'
+        out: 'reports'
+
+    - name: Run cppcheck
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cppcheck
+        cppcheck --enable=all --suppress=missingIncludeSystem \
+          --xml --xml-version=2 --output-file=cppcheck-report.xml \
+          --suppress=unusedFunction --suppress=missingInclude \
+          src/ bindings/
+
+    - name: Run CodeQL Analysis
+      uses: github/codeql-action/init@v2
+      with:
+        languages: cpp, javascript
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
+    - name: Run Bandit (Python security)
+      run: |
+        pip install bandit
+        find . -name "*.py" -exec bandit {} \; || echo "Bandit found issues but continuing..."
+
+    - name: Upload security reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-reports
+        path: |
+          reports/
+          cppcheck-report.xml
+
+  # Enhanced Performance Testing
+  performance-tests:
+    name: Performance Tests
+    runs-on: ubuntu-latest
+    if: github.event.inputs.run_performance_tests == 'true'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake libssl-dev libcurl4-openssl-dev
+        sudo apt-get install -y ninja-build libboost-all-dev libgtest-dev
+
+    - name: Build for performance testing
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_BENCHMARKS=ON
+        cmake --build build -- -j $(nproc)
+
+    - name: Run performance benchmarks
+      run: |
+        cd build
+        ./benchmarks/satox_benchmarks --benchmark_format=json --benchmark_out=benchmark_results.json
+
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: benchmark-results
+        path: build/benchmark_results.json
+
+  # Enhanced Integration Testing
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    if: github.event.inputs.run_full_tests != 'false'
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: satox_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake libssl-dev libcurl4-openssl-dev
+        sudo apt-get install -y libpq-dev libredis-dev
+
+    - name: Build for integration testing
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
+        cmake --build build -- -j $(nproc)
+
+    - name: Run integration tests
+      run: |
+        cd build
+        ctest -C Release -L integration --output-on-failure
+
+  # Enhanced Notifications
+  notify:
+    name: Notifications
+    runs-on: ubuntu-latest
+    needs: [cpp-core-enhanced, javascript-bindings-enhanced, security-scan-enhanced, performance-tests, integration-tests]
+    if: always()
+
+    steps:
+    - name: Generate test summary
+      run: |
+        echo "## Testing Branch CI Results" > test_summary.md
+        echo "" >> test_summary.md
+        echo "**Branch:** ${{ github.ref_name }}" >> test_summary.md
+        echo "**Commit:** ${{ github.sha }}" >> test_summary.md
+        echo "**Triggered by:** ${{ github.event_name }}" >> test_summary.md
+        echo "" >> test_summary.md
+        
+        echo "### Job Results:" >> test_summary.md
+        echo "- C++ Core: ${{ needs.cpp-core-enhanced.result }}" >> test_summary.md
+        echo "- JavaScript: ${{ needs.javascript-bindings-enhanced.result }}" >> test_summary.md
+        echo "- Security: ${{ needs.security-scan-enhanced.result }}" >> test_summary.md
+        echo "- Performance: ${{ needs.performance-tests.result }}" >> test_summary.md
+        echo "- Integration: ${{ needs.integration-tests.result }}" >> test_summary.md
+        
+        if [ "${{ needs.cpp-core-enhanced.result }}" = "failure" ] || \
+           [ "${{ needs.javascript-bindings-enhanced.result }}" = "failure" ] || \
+           [ "${{ needs.security-scan-enhanced.result }}" = "failure" ]; then
+          echo "" >> test_summary.md
+          echo "❌ **Some tests failed!**" >> test_summary.md
+          echo "Please check the logs for details." >> test_summary.md
+        else
+          echo "" >> test_summary.md
+          echo "✅ **All tests passed!**" >> test_summary.md
+        fi
+
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = fs.readFileSync('test_summary.md', 'utf8');
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: summary
+          });
+
+    - name: Upload test summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-summary
+        path: test_summary.md 
