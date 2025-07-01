@@ -28,7 +28,7 @@ env:
 jobs:
   # Enhanced C++ Core Build and Test
   cpp-core-enhanced:
-    name: C++ Core (Enhanced)
+    name: C++ Core (Enhanced) (${{ matrix.compiler }}, ${{ matrix.sanitizer }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -43,6 +43,7 @@ jobs:
             sanitizer: address
           - compiler: clang-15
             sanitizer: undefined
+    timeout-minutes: 30
 
     steps:
     - name: Checkout code
@@ -71,7 +72,7 @@ jobs:
         sudo apt-get install -y libspdlog-dev libfmt-dev nlohmann-json3-dev
         
         # Install prometheus-cpp dependencies
-        sudo apt-get install -y libprometheus-cpp-dev
+        sudo apt-get install -y libprometheus-cpp-dev || echo "libprometheus-cpp-dev not available in repository, will install from source"
         
         # Verify spdlog installation
         echo "=== Verifying spdlog installation ==="
@@ -130,6 +131,9 @@ jobs:
           sudo make install
           sudo ldconfig
           cd ../..
+          echo "prometheus-cpp installed from source"
+        else
+          echo "prometheus-cpp found via package manager"
         fi
         
         # Final verification
