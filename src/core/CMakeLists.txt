@@ -11,10 +11,37 @@ find_package(nlohmann_json REQUIRED)
 find_package(CURL REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(fmt REQUIRED)
-find_package(prometheus-cpp REQUIRED)
+
+# Try to find prometheus-cpp with fallback
+find_package(prometheus-cpp QUIET)
+if(NOT prometheus-cpp_FOUND)
+    message(WARNING "prometheus-cpp not found via find_package, trying alternative methods...")
+    
+    # Try to find prometheus-cpp headers directly
+    find_path(PROMETHEUS_CPP_INCLUDE_DIR
+        NAMES prometheus/counter.h
+        PATHS
+            /usr/include
+            /usr/local/include
+            /opt/local/include
+            ${CMAKE_CURRENT_SOURCE_DIR}/external/prometheus-cpp/core/include
+    )
+    
+    if(PROMETHEUS_CPP_INCLUDE_DIR)
+        message(STATUS "Found prometheus-cpp headers at: ${PROMETHEUS_CPP_INCLUDE_DIR}")
+        set(prometheus-cpp_FOUND TRUE)
+        add_library(prometheus-cpp::core INTERFACE IMPORTED)
+        set_target_properties(prometheus-cpp::core PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "${PROMETHEUS_CPP_INCLUDE_DIR}"
+        )
+    else()
+        message(WARNING "prometheus-cpp not found. Monitoring features will be disabled.")
+        set(prometheus-cpp_FOUND FALSE)
+    endif()
+endif()
+
 find_package(SQLite3 REQUIRED)
 find_package(GTest REQUIRED)
-find_package(prometheus-cpp REQUIRED)
 
 # Database configuration options
 option(SATOX_ENABLE_ALL_DATABASES "Enable all database backends (requires external installations)" OFF)

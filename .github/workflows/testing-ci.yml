@@ -70,6 +70,9 @@ jobs:
         sudo apt-get install -y python3-pip python3-dev
         sudo apt-get install -y libspdlog-dev libfmt-dev nlohmann-json3-dev
         
+        # Install prometheus-cpp dependencies
+        sudo apt-get install -y libprometheus-cpp-dev
+        
         # Verify spdlog installation
         echo "=== Verifying spdlog installation ==="
         pkg-config --exists spdlog && echo "spdlog found via pkg-config" || echo "spdlog not found via pkg-config"
@@ -115,11 +118,26 @@ jobs:
           cd ../..
         fi
         
+        # Install prometheus-cpp from source if package not available
+        if ! pkg-config --exists prometheus-cpp; then
+          echo "Installing prometheus-cpp from source..."
+          git clone https://github.com/jupp0r/prometheus-cpp.git
+          cd prometheus-cpp
+          git submodule update --init --recursive
+          mkdir build && cd build
+          cmake .. -DENABLE_TESTING=OFF -DUSE_THIRDPARTY_LIBRARIES=ON
+          make -j$(nproc)
+          sudo make install
+          sudo ldconfig
+          cd ../..
+        fi
+        
         # Final verification
         echo "=== Final dependency verification ==="
         pkg-config --exists spdlog && echo "✅ spdlog: OK" || echo "❌ spdlog: NOT FOUND"
         pkg-config --exists fmt && echo "✅ fmt: OK" || echo "❌ fmt: NOT FOUND"
         pkg-config --exists nlohmann_json && echo "✅ nlohmann_json: OK" || echo "❌ nlohmann_json: NOT FOUND"
+        pkg-config --exists prometheus-cpp && echo "✅ prometheus-cpp: OK" || echo "❌ prometheus-cpp: NOT FOUND"
         
         # Install liboqs for quantum cryptography
         if [ ! -d "liboqs" ]; then
